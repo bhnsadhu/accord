@@ -12,6 +12,7 @@ const schibsted = Schibsted_Grotesk({ variable: "--font-schibsted", subsets: ["l
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://accord.bhanusadhu.com"),
   title: { default: "Accord: know the bottle, find the next one", template: "%s · Accord" },
   description:
     "Identify fragrances from a photo, explore 24,642 perfumes by note and accord, and get recommendations that show their evidence.",
@@ -54,7 +55,8 @@ function Footer() {
           <ScentLensLink />
           .
         </p>
-        <ul className="flex gap-6">
+        <ul className="flex flex-wrap gap-x-6 gap-y-3">
+          <li><Link href="/learn" className="hover:text-ink">Fragrance guide</Link></li>
           <li>
             <Link href="/how-it-works" className="hover:text-ink">
               How it works

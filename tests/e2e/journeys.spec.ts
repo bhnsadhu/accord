@@ -5,12 +5,13 @@ const photo = "tests/e2e/fixtures/photo.jpg";
 test("search from the homepage, open a fragrance, see why others are similar", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Find your next signature.");
+  await expect(page.locator("html")).not.toHaveClass(/accord-intro-active/);
   await page.getByRole("searchbox", { name: "Search fragrances" }).first().fill("santal 33");
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/discover\?q=santal\+33/);
   await page.getByRole("link", { name: "View fragrance: Santal 33 by Le Labo", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1, name: "Santal 33" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Sandalwood" })).toBeVisible();
+  await expect(page.locator(".reference-note summary").filter({ hasText: "Sandalwood" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Smells similar" })).toBeVisible();
   await expect(page.getByText(/^Shares /).first()).toBeVisible();
 });

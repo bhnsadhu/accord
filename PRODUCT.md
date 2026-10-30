@@ -7,12 +7,14 @@
 web
 
 ## Users
-Fragrance enthusiasts: people who already own several bottles, know (or want to learn) notes and accords, and spend time researching what to try next. They arrive with one of four questions: "What fragrance is this?", "What would I like?", "What smells like my favorite?", "How do I organize and understand my collection?". They use Accord on a laptop while researching and on a phone in a store, at a friend's place, or in front of their own shelf.
+Fragrance enthusiasts: people who already own several bottles, know (or want to learn) notes and accords, and spend time researching what to try next. They arrive with one of five questions: "What fragrance is this?", "What would I like?", "What smells like my favorite?", "What do this fragrance's notes and family mean?", "How do I organize and understand my collection?". They use Accord on a laptop while researching and on a phone in a store, at a friend's place, or in front of their own shelf.
 
 Secondary audience: recruiters and hiring managers evaluating Bhanu Sadhu's product and engineering judgment. They should experience a real consumer product, not a demo, and find the engineering story in the README and docs.
 
 ## Product Purpose
 Accord identifies, recommends, compares and collects fragrances. It is useful on the first visit without an account (browse, search, explain, recommend from a few taste choices) and becomes more personal as people rate and collect. Success: a visitor finds a fragrance they want to try and understands why it was suggested.
+
+It also serves as a fragrance reference: start with a named fragrance, understand its listed facts and scent vocabulary, then follow a note, family or house into the catalog. General educational explanations stay distinct from verified facts about an individual fragrance.
 
 ## Positioning
 Accord pairs a real bottle-recognition engine (ScentLens: detection, fine-tuned visual embeddings, label reading, calibrated abstention over 24,642 catalog fragrances) with an explainable recommender that shows its evidence (shared notes, named fragrances, accords). It never pretends to know: uncertain scans say so, match scores are relative percentiles, and nothing about a fragrance is invented.

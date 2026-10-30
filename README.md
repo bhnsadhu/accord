@@ -2,9 +2,10 @@
 
 **Know the bottle. Find the next one.** · Live at **[accord.bhanusadhu.com](https://accord.bhanusadhu.com)**
 
-Accord is a fragrance discovery, recognition and collection app. It answers four questions people who love perfume actually ask:
+Accord is a fragrance discovery, reference, recognition and collection app. It answers five questions people who love perfume actually ask:
 
 - *What fragrance is this?* Photograph a bottle; [ScentLens](https://github.com/bhnsadhu/scent-lens) identifies it, or says it isn't sure.
+- *What can I learn about it?* Read its catalog profile, open note explanations, follow a note into other fragrances, and use the fragrance guide to understand the terminology.
 - *What would I like?* Recommendations from your favourites, ratings and notes, each with the evidence behind it.
 - *What smells like my favourite?* Similar fragrances by shared notes, accord family and character, with a side-by-side comparison.
 - *How do I organise my collection?* Owned, tried and wishlist shelves, ratings and favourites, and a summary of what your shelves say.
@@ -16,6 +17,7 @@ It works without an account; signing in keeps your collection on every device.
 | Area | What it does |
 |---|---|
 | Catalog | 24,642 fragrances, 1,255 brands, 285 notes. Text metadata only (see [Data](#data)). |
+| Reference | Fragrance profiles, a searchable note library, 24 concise note definitions, family context and a guide to fragrance terminology. Sources and scope: [docs/FRAGRANCE-REFERENCE.md](docs/FRAGRANCE-REFERENCE.md). |
 | Search | Postgres `pg_trgm` fuzzy search on brand and name (typos, word order, accents) with filters for accord family, facet, catalog family, notes to include or exclude, and gender label. |
 | Recommendations | Explainable content-based engine in TypeScript: IDF-weighted note vectors, accord and family overlap, similarity to your nearest favourite, and a personalized PageRank walk over the fragrance-note graph. Diversified with MMR. Evaluated offline against ablations ([docs/EVALUATION.md](docs/EVALUATION.md)). |
 | Collections | Shelves, 1 to 5 ratings, favourites. Guests keep them in local storage; on sign-in they merge into the account. Ratings change later recommendations. |

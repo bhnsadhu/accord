@@ -1,7 +1,7 @@
 import { cacheLife, cacheTag } from "next/cache";
 import { db } from "@/db";
 import { similarFragrances } from "@/lib/reco/service";
-import { facetCounts, getFragrance, getFragrancesByIds, listNotes, searchFragrances, type SearchParams } from "./queries";
+import { facetCounts, getFragrance, getFragrancesByIds, getNote, listNotes, searchFragrances, type SearchParams } from "./queries";
 
 // The catalog only changes when it is re-seeded; tag "catalog" invalidates it.
 
@@ -53,6 +53,13 @@ export async function cachedNotes() {
   cacheLife("weeks");
   cacheTag("catalog");
   return listNotes(db);
+}
+
+export async function cachedNote(key: string) {
+  "use cache";
+  cacheLife("weeks");
+  cacheTag("catalog");
+  return getNote(db, key);
 }
 
 /**

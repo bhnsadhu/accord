@@ -84,7 +84,7 @@ export function AuthForm({ mode, github }: { mode: "sign-in" | "sign-up"; github
       )}
       <p className="mt-8 text-[15px] text-ink-2">
         {signUp ? "Already have an account? " : "New to Accord? "}
-        <Link href={signUp ? "/sign-in" : "/sign-up"} className="text-ink underline">
+        <Link href={signUp ? "/sign-in" : "/sign-up"} className="font-semibold text-ink">
           {signUp ? "Sign in" : "Create an account"}
         </Link>
       </p>

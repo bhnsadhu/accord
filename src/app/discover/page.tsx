@@ -19,6 +19,7 @@ function parse(raw: Raw): SearchParams {
   const sort = one(raw.sort);
   return {
     q: one(raw.q),
+    brand: one(raw.brand),
     wheel: one(raw.wheel),
     facet: one(raw.facet),
     family: one(raw.family),
@@ -49,6 +50,7 @@ export default function DiscoverPage({ searchParams }: PageProps<"/discover">) {
   return (
     <div className="archive-page mx-auto w-full max-w-[1440px] px-4 pt-8 sm:px-8 lg:px-16 lg:pt-12">
       <h1 className="archive-heading text-[clamp(36px,4vw,56px)] font-semibold leading-none tracking-[-0.035em]">Discover</h1>
+      <nav className="reference-wayfinding archive-learning-links" aria-label="Explore fragrance knowledge"><Link href="/notes">Browse notes</Link><Link href="/learn">Fragrance guide</Link></nav>
       <Bench />
       <Suspense fallback={<ResultsSkeleton />}>
         <Results searchParams={searchParams} />
@@ -64,6 +66,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
   const noteLabel = new Map(notes.map((n) => [n.key, n.label]));
   const pages = Math.max(1, Math.ceil(result.total / result.pageSize));
   const active = [
+    params.brand && { label: result.items[0]?.brand ?? params.brand, clear: "brand" },
     params.wheel && { label: params.wheel, clear: "wheel" },
     params.facet && { label: params.facet, clear: "facet" },
     params.family && { label: `${params.family} family`, clear: "family" },
@@ -88,6 +91,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
           <form action="/discover" className="archive-filter-form mt-8 grid gap-6">
             <AutoSubmit />
             {params.q && <input type="hidden" name="q" value={params.q} />}
+            {params.brand && <input type="hidden" name="brand" value={params.brand} />}
             {params.wheel && <input type="hidden" name="wheel" value={params.wheel} />}
             {params.facet && <input type="hidden" name="facet" value={params.facet} />}
             {params.family && <input type="hidden" name="family" value={params.family} />}
@@ -143,6 +147,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
           <p className="text-sm text-ink-2" aria-live="polite">
             <span className="font-mono tabular">{result.total.toLocaleString("en-US")}</span> {result.total === 1 ? "fragrance" : "fragrances"}
           </p>
+          {params.notes?.[0] && noteLabel.has(params.notes[0]) && <Link className="text-sm font-medium" href={`/notes/${encodeURIComponent(params.notes[0])}`}>About {noteLabel.get(params.notes[0])?.toLowerCase()}</Link>}
           {active.map((a) => (
             <Link
               key={a.clear}

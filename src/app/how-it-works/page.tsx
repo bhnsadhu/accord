@@ -24,6 +24,7 @@ export default function HowItWorksPage() {
             fragrance wheel, a character (fresher, classical, crisp, richer) and facets. Notes are normalised so &ldquo;Jasmine
             (Grandiflorum)&rdquo; and &ldquo;Jasmine&rdquo; compare equal.
           </p>
+          <p className="mt-3">New to the terminology? The <Link href="/learn" className="font-medium text-ink">fragrance guide</Link> explains notes, families and concentrations. The <Link href="/notes" className="font-medium text-ink">note library</Link> connects short reference descriptions to actual catalog entries.</p>
         </section>
         <section>
           <h2>Similarity</h2>
@@ -31,7 +32,7 @@ export default function HowItWorksPage() {
             Two fragrances are compared on shared notes (55%), accord overlap (25%), catalog family (15%) and character (5%). Notes
             are weighted by rarity: sharing osmanthus says more than sharing musk, which half the catalog lists. The blend adapts
             the accord-aware similarity from the open-source{" "}
-            <a href="https://github.com/mikeyoknow/fragrance-dna" className="text-ink underline">
+            <a href="https://github.com/mikeyoknow/fragrance-dna" className="font-semibold text-ink">
               Fragrance DNA
             </a>{" "}
             project.

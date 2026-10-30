@@ -109,7 +109,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
                   <Link
                     href={`/discover?note=${keyByLabel.get(n) ?? ""}`}
                     className="block border border-paper-edge bg-paper px-3.5 py-1.5 text-[15px] transition-colors hover:border-ink-3"
-                    style={{ borderRadius: 999 }}
+                    style={{ borderRadius: 2 }}
                   >
                     {n}
                   </Link>

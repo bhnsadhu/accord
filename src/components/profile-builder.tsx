@@ -147,7 +147,7 @@ function Chip({ on, onClick, children, tone }: { on: boolean; onClick: () => voi
             : "border-ink bg-ink text-paper"
           : "border-rule bg-paper text-ink hover:border-ink-3"
       }`}
-      style={{ borderRadius: 999 }}
+      style={{ borderRadius: 2 }}
     >
       {children}
     </button>

@@ -64,7 +64,7 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
           <ul className="mt-2 flex flex-wrap justify-center gap-1.5">
             {data.shared.length ? (
               data.shared.map((n) => (
-                <li key={n} className="border border-ink px-3 py-1 text-[15px]" style={{ borderRadius: 999 }}>
+                <li key={n} className="border border-ink px-3 py-1 text-[15px]" style={{ borderRadius: 2 }}>
                   {n}
                 </li>
               ))

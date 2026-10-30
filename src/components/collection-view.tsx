@@ -74,7 +74,7 @@ export function CollectionView() {
   return (
     <div className="mt-8 grid gap-12 xl:grid-cols-[minmax(0,1fr)_320px]">
       <div className="min-w-0">
-        <div role="tablist" aria-label="Shelves" className="grid grid-cols-2 gap-x-5 gap-y-1 border-b border-rule min-[420px]:flex min-[420px]:flex-wrap sm:gap-x-6">
+        <div role="tablist" aria-label="Shelves" className="grid grid-cols-2 gap-x-2 gap-y-1 min-[420px]:flex min-[420px]:flex-wrap">
           {TABS.map((t) => (
             <button
               key={t.id}
@@ -82,7 +82,7 @@ export function CollectionView() {
               type="button"
               aria-selected={tab === t.id}
               onClick={() => setTab(t.id)}
-              className="-mb-px flex min-h-11 items-center gap-1.5 whitespace-nowrap border-b-2 border-transparent py-2 text-left text-[15px] text-ink-2 hover:text-ink aria-selected:border-ink aria-selected:font-semibold aria-selected:text-ink"
+              className="flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-[4px] px-3 py-2 text-left text-[15px] text-ink-2 transition-colors hover:bg-bench-deep/50 hover:text-ink aria-selected:bg-bench-deep aria-selected:font-semibold aria-selected:text-ink"
             >
               {t.label} <span className="font-mono text-xs text-ink-3 tabular">{counts[t.id]}</span>
             </button>

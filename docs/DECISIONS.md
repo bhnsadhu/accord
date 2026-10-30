@@ -10,6 +10,7 @@
 | 2026-10-30 | Deploy to Vercel + Neon at accord.bhanusadhu.com and turn the scanner on with budget-sized caps | Approved in chat ("do this all yourself", "turn on") |
 | 2026-10-30 | Logo: four options drafted (`.impeccable/mocks/logo/options.html`); decision deferred | Placeholder strip mark stays until then |
 | 2026-10-30 | Visual world: **Blotter** — fragrances as smelling strips on a neutral evaluation bench, stained by accord family | Chosen over Wheel (dark, Edwards wheel) and Chord (overlapping bands). Preview palette and type (Schibsted Grotesk, Geist Mono) adopted with it. Logo mark is a placeholder pending approval. |
+| 2026-10-30 | Push and deploy requested changes after checks; no separate preview approval required | Owner will review on the live site. Applies to the current no-underline change and future requested work. Preserve the live paper-and-silver direction; the dark redesign remains shelved. |
 
 ## Engineering decisions (mine, within approved scope)
 

@@ -157,6 +157,8 @@ Use horizontal paper strips for fragrance lists in recommendations, collections,
 
 ## Controls, navigation, and accessibility
 
+Links and text actions use no underlines in any state. Current navigation and sort choices use stronger text; the selected collection shelf uses a subtle neutral fill and stronger text. Keep the visible keyboard-focus outline.
+
 Primary actions use graphite fills and paper text. Secondary actions use a restrained neutral border. Controls have 4–6px corners; tags are almost square at 2px. Avoid pill-shaped note chips and card grids that replace the strip vocabulary. Fields have visible labels, appropriate input types, clear errors, and real submit behavior.
 
 The main sections remain **Discover / For you / Collection / Scan**. At desktop widths they appear in the top navigation; below 1100px they move into the four-section bottom bar. Keep content clear of that fixed bar. Quick find, Cmd/Ctrl K, account/profile access, and the skip link remain available.
@@ -169,4 +171,4 @@ Motion uses cubic-bezier(0.16, 1, 0.3, 1): short paper movements around 350–40
 
 Use this document for the current direction, [globals.css](src/app/globals.css) for implemented style values, [hues.ts](src/lib/hues.ts) for the family mapping, and source components for interaction behavior. Earlier .impeccable design snapshots describe the previous treatment and are not the authority for the new reference direction.
 
-Review Home and Discover in a real browser at desktop and phone sizes. Verify real search/filter URLs, result counts, no-results recovery, preview selection, comparison, direct detail links, mobile disclosure/inline preview, keyboard focus, and reduced motion. Check other routes for regressions when changing shared paper styles. Visual approval and local verification do not substitute for the owner's separate push/deployment approval.
+Review Home and Discover in a real browser at desktop and phone sizes. Verify real search/filter URLs, result counts, no-results recovery, preview selection, comparison, direct detail links, mobile disclosure/inline preview, keyboard focus, and reduced motion. Check other routes for regressions when changing shared paper styles. The owner authorized requested changes to be pushed and deployed after checks on 2026-10-30, without a separate preview approval. Preserve the current strip-and-silver direction; a later request to hold deployment overrides this standing preference.

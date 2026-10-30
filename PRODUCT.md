@@ -33,7 +33,7 @@ Accord pairs a real bottle-recognition engine (ScentLens: detection, fine-tuned 
 ## Brand Commitments
 - Name: Accord.
 - Approved creative direction (by Bhanu): "What if Linear's product team built the best fragrance discovery platform?" Clarity, precision, speed, restraint, strong hierarchy, intentional high-quality motion, Apple-level attention to detail, with Accord's own original identity. Not a copy of Linear, Apple, or any fragrance site. Optional secondary reference for interaction personality: gaurimenon.com.
-- Bhanu approves final colors, fonts, logo, homepage composition, navigation, card design, layouts and motion.
+- Bhanu directs colors, fonts, logo, homepage composition, navigation, layouts, and motion. As of 2026-10-30, requested changes may be pushed and deployed after checks without a separate preview approval; he will review them on the live site.
 
 ## Evidence on Hand
 - Real catalog metadata (local seed from ScentLens export).

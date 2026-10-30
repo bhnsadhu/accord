@@ -46,10 +46,13 @@ export function Nav() {
             type="button"
             onClick={() => palette.open()}
             className="flex h-9 items-center gap-2 px-2 text-ink-2 transition-colors hover:text-ink"
-            aria-label="Find a fragrance"
+            aria-keyshortcuts="Meta+K Control+K"
           >
             <SearchIcon />
-            <kbd className="hidden font-mono text-xs text-ink-3 sm:inline">⌘K</kbd>
+            <span className="sr-only">Find a fragrance</span>
+            <kbd aria-hidden className="hidden font-mono text-xs text-ink-3 sm:inline">
+              ⌘K
+            </kbd>
           </button>
           {!ready ? (
             <span className="h-9 w-20" aria-hidden />

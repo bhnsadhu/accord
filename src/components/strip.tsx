@@ -7,36 +7,40 @@ type StripFragrance = Pick<FragranceSummary, "productId" | "slug" | "brand" | "n
 
 /**
  * A smelling strip standing in the fan: tapered tip up, stained by the
- * fragrance's wheel family. The parent rotates it; hovering slides it up
- * its own axis, out of the fan.
+ * fragrance's wheel family. The parent rotates it. Only the stained tip is
+ * the link, so neighbouring strips never share a touch target; hovering or
+ * focusing it slides the whole strip up its own axis, out of the fan.
  */
 export function StripV({ fragrance, angle = 0, height = 640 }: { fragrance: StripFragrance; angle?: number; height?: number }) {
   return (
     <div className="absolute bottom-0 left-[-22px] w-11 origin-bottom" style={{ transform: `rotate(${angle}deg)`, height }}>
-      <Link
-        href={`/fragrance/${fragrance.slug}`}
-        className="lift group block h-full w-full hover:-translate-y-6 focus-visible:-translate-y-6"
-        aria-label={`${fragrance.brand} ${fragrance.name}`}
-        style={{ "--hue": hueFor(fragrance.wheel) } as CSSProperties}
-      >
+      <div className="fan-strip lift h-full w-full" style={{ "--hue": hueFor(fragrance.wheel) } as CSSProperties}>
         <span className="strip-v block h-full w-full" style={{ boxShadow: "inset 0 0 0 1px var(--color-paper-edge)" }}>
           <span className="stain-v" style={{ "--stain-depth": "190px" } as CSSProperties} />
-          <span className="absolute left-1/2 top-[220px] rotate-180 whitespace-nowrap text-[13px] tracking-[0.01em] text-ink [writing-mode:vertical-rl] -translate-x-1/2">
+          <span
+            aria-hidden
+            className="absolute left-1/2 top-[220px] -translate-x-1/2 rotate-180 whitespace-nowrap text-[13px] tracking-[0.01em] text-ink [writing-mode:vertical-rl]"
+          >
             <b className="font-semibold">{fragrance.brand}</b> · {fragrance.name}
           </span>
         </span>
-      </Link>
+        <Link
+          href={`/fragrance/${fragrance.slug}`}
+          className="absolute inset-x-0 top-0 h-[200px]"
+          aria-label={`${fragrance.brand} ${fragrance.name}`}
+        />
+      </div>
     </div>
   );
 }
 
 /** A fan of strips held in a beaker below the frame. */
-export function StripFan({ fragrances, spread = 46, height = 640, className = "" }: { fragrances: StripFragrance[]; spread?: number; height?: number; className?: string }) {
+export function StripFan({ fragrances, spread = 54, height = 640, className = "" }: { fragrances: StripFragrance[]; spread?: number; height?: number; className?: string }) {
   const n = fragrances.length;
   return (
-    <div className={`pointer-events-none absolute h-0 w-0 [&_a]:pointer-events-auto ${className}`} aria-label="Fragrances">
+    <div className={`pointer-events-none absolute h-0 w-0 [&_a]:pointer-events-auto ${className}`}>
       {fragrances.map((f, i) => (
-        <StripV key={f.productId} fragrance={f} height={height} angle={n > 1 ? -spread / 2 - 7 + (i * spread) / (n - 1) : 0} />
+        <StripV key={f.productId} fragrance={f} height={height} angle={n > 1 ? -spread / 2 - 5 + (i * spread) / (n - 1) : 0} />
       ))}
     </div>
   );

@@ -121,17 +121,34 @@ a {
   filter: drop-shadow(0 6px 10px rgb(28 30 29 / 0.12));
 }
 
-.lift:hover,
-.lift:focus-visible {
+.lift:not(.fan-strip):hover,
+.lift:not(.fan-strip):focus-visible {
   filter: drop-shadow(0 18px 22px rgb(28 30 29 / 0.24));
 }
 
-.lift:hover .stain-v,
-.lift:focus-visible .stain-v,
+.lift:not(.fan-strip):hover .stain-v,
+.lift:not(.fan-strip):focus-visible .stain-v,
 .lift:hover .stain-h,
 .lift:focus-visible .stain-h {
   --stain-opacity: 1;
   filter: saturate(1.35);
+}
+
+/* Fan strips lift only when their tip (the link) is hovered or focused. */
+.fan-strip:has(a:hover),
+.fan-strip:has(a:focus-visible) {
+  translate: 0 -24px;
+  filter: drop-shadow(0 18px 22px rgb(28 30 29 / 0.24));
+}
+
+.fan-strip:has(a:hover) .stain-v,
+.fan-strip:has(a:focus-visible) .stain-v {
+  --stain-opacity: 1;
+  filter: saturate(1.35);
+}
+
+.fan-strip a:focus-visible {
+  outline-offset: -2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

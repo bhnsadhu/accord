@@ -55,7 +55,7 @@ export default async function Home() {
           <StripFan
             fragrances={fan}
             height={720}
-            className="bottom-[-330px] left-1/2 lg:bottom-[-150px] lg:left-[78%]"
+            className="bottom-[-330px] left-1/2 lg:bottom-[-150px] lg:left-[75%]"
           />
         </div>
 

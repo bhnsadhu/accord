@@ -7,6 +7,8 @@
 | 2026-10-30 | Creative direction: "What if Linear built Accord", Apple-level craft, original identity | From the master brief |
 | 2026-10-30 | Homepage first viewport wins over **fragrance enthusiasts first**; recruiters judge it as a real product | Engineering story lives in README/docs |
 | 2026-10-30 | PRODUCT.md product truth approved as written | |
+| 2026-10-30 | Deploy to Vercel + Neon at accord.bhanusadhu.com and turn the scanner on with budget-sized caps | Approved in chat ("do this all yourself", "turn on") |
+| 2026-10-30 | Logo: four options drafted (`.impeccable/mocks/logo/options.html`); decision deferred | Placeholder strip mark stays until then |
 | 2026-10-30 | Visual world: **Blotter** — fragrances as smelling strips on a neutral evaluation bench, stained by accord family | Chosen over Wheel (dark, Edwards wheel) and Chord (overlapping bands). Preview palette and type (Schibsted Grotesk, Geist Mono) adopted with it. Logo mark is a placeholder pending approval. |
 
 ## Engineering decisions (mine, within approved scope)
@@ -21,3 +23,4 @@
 | Recommender: content-based + nearest-liked + small PPR term; no collaborative filtering | No real interaction data exists; ablation in docs/EVALUATION.md |
 | Match score = percentile of eligible catalog | Honest relative measure; never shown as a probability of enjoyment |
 | Guest state in localStorage, merged into the account on sign-in (account data wins on conflicts) | Useful before sign-up; nothing lost on sign-in |
+| Server session checks bypass Better Auth's cookie cache | Sign-out and account deletion revoke access immediately, even for a replayed cookie |

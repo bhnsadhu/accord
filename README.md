@@ -1,6 +1,6 @@
 # Accord
 
-**Know the bottle. Find the next one.**
+**Know the bottle. Find the next one.** · Live at **[accord.bhanusadhu.com](https://accord.bhanusadhu.com)**
 
 Accord is a fragrance discovery, recognition and collection app. It answers four questions people who love perfume actually ask:
 
@@ -19,7 +19,7 @@ It works without an account; signing in keeps your collection on every device.
 | Search | Postgres `pg_trgm` fuzzy search on brand and name (typos, word order, accents) with filters for accord family, facet, catalog family, notes to include or exclude, and gender label. |
 | Recommendations | Explainable content-based engine in TypeScript: IDF-weighted note vectors, accord and family overlap, similarity to your nearest favourite, and a personalized PageRank walk over the fragrance–note graph. Diversified with MMR. Evaluated offline against ablations ([docs/EVALUATION.md](docs/EVALUATION.md)). |
 | Collections | Shelves, 1–5 ratings, favourites. Guests keep them in local storage; on sign-in they merge into the account. Ratings change later recommendations. |
-| Scanner | Server-side client for the ScentLens `/identify` API with image validation, Postgres-backed daily quotas, concurrency leases and a result cache. Off in production until Modal spend limits are verified ([COSTS.md](COSTS.md)). |
+| Scanner | Server-side client for the ScentLens `/identify` API with image validation, Postgres-backed daily quotas, concurrency leases and a result cache. Live, with daily caps sized to a $1/month compute budget ([COSTS.md](COSTS.md)). |
 | Accounts | Better Auth (email and password, optional GitHub), rate limited, with full account deletion. |
 
 ## Stack
@@ -73,13 +73,13 @@ The catalog is the Hugging Face dataset `doevent/perfume`, cleaned by ScentLens.
 
 ## Deployment
 
-Designed for Vercel Hobby and Neon Free. Not deployed yet; deployment, domain (`accord.bhanusadhu.com`) and enabling the scanner each need explicit approval. Costs and limits: [COSTS.md](COSTS.md).
+Vercel Hobby (Git-connected: every push to `main` deploys production) with Neon Free provisioned through the Vercel Marketplace, served at `accord.bhanusadhu.com`. Migrations and the catalog seed run from a local machine against the unpooled Neon URL (`vercel env pull`). Costs and limits: [COSTS.md](COSTS.md).
 
 ## Known limitations
 
 - Notes are listed as the catalog gives them, without top/heart/base layers.
 - Recommendation quality is evaluated offline on a proxy task; there is no real-user data yet.
-- The scanner is off in production until the Modal spend limit is confirmed. When on, a cold ScentLens container takes about a minute.
+- Scanning is capped at a few scans a day to stay within a $1/month free compute budget; a cold ScentLens container takes up to a minute.
 - Flankers missing from the catalog can be identified as a catalog sibling (a documented ScentLens limit).
 
 ## Credits

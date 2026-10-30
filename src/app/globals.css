@@ -65,6 +65,21 @@ a, button {
   text-decoration-line: none;
 }
 
+.scentlens-link {
+  color: var(--color-ink);
+  font-weight: 600;
+  background-color: var(--color-bench-deep);
+  padding: 0.05em 0.22em;
+  border-radius: 3px;
+  text-decoration: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.scentlens-link:hover {
+  background-color: var(--color-rule);
+}
+
 .desktop-sections a[aria-current="page"],
 .archive-sort a[aria-current="true"] {
   font-weight: 600;

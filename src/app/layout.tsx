@@ -3,6 +3,7 @@ import { Geist_Mono, Schibsted_Grotesk } from "next/font/google";
 import Link from "next/link";
 import { PaletteProvider } from "@/components/command-palette";
 import { Nav } from "@/components/nav";
+import { ScentLensLink } from "@/components/scentlens-link";
 import { Toaster } from "@/components/toaster";
 import { AccordProvider } from "@/lib/store";
 import "./globals.css";
@@ -48,11 +49,9 @@ function Footer() {
     <footer className="mt-24 border-t border-rule">
       <div className="mx-auto grid max-w-[1440px] gap-6 px-4 py-10 text-sm text-ink-3 sm:px-8 md:grid-cols-[1fr_auto] lg:px-16">
         <p className="max-w-2xl leading-relaxed">
-          Catalog text from the <span className="text-ink-2">doevent/perfume</span> dataset as cleaned by ScentLens. Accord shows no
+          Catalog text from the <span className="text-ink-2">doevent/perfume</span> dataset as cleaned by <ScentLensLink />. Accord shows no
           catalog photos, prices or ratings. Bottle recognition by{" "}
-          <a href="https://github.com/bhnsadhu/scent-lens" className="text-ink-2 underline">
-            ScentLens
-          </a>
+          <ScentLensLink />
           .
         </p>
         <ul className="flex gap-6">
@@ -63,7 +62,7 @@ function Footer() {
           </li>
           <li>
             <a href="https://github.com/bhnsadhu/accord" className="hover:text-ink">
-              Source
+              Repository
             </a>
           </li>
         </ul>

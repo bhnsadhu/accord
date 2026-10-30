@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Bench } from "@/components/bench";
 import { HomeFan } from "@/components/home-fan";
+import { ScentLensLink } from "@/components/scentlens-link";
 import { ArrowIcon, CameraIcon, SearchIcon } from "@/components/icons";
 import { MatchFigure, StripRow } from "@/components/strip";
 import { cachedArchetypes, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSimilar } from "@/lib/catalog/cached";
@@ -145,7 +146,7 @@ export default async function Home() {
             A careful eye for your next scent.
           </h2>
           <p className="mt-6 max-w-[34em] text-lg leading-relaxed text-ink-2">
-            ScentLens finds the bottle, compares it with 24,642 catalog fragrances and reads its label. When the evidence is thin it
+            <ScentLensLink /> finds the bottle, compares it with 24,642 catalog fragrances and reads its label. When the evidence is thin it
             says so and shows its best candidates as unconfirmed, instead of guessing.
           </p>
           <Link href="/scan" className="mt-6 inline-flex items-center gap-2 font-medium hover:underline">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ScentLensLink } from "@/components/scentlens-link";
 
 export const metadata: Metadata = { title: "How it works" };
 
@@ -11,7 +12,7 @@ export default function HowItWorksPage() {
         <section>
           <h2>The catalog</h2>
           <p className="mt-3">
-            24,642 fragrances from 1,255 brands, cleaned by ScentLens from the public <strong>doevent/perfume</strong> dataset. Accord
+            24,642 fragrances from 1,255 brands, cleaned by <ScentLensLink /> from the public <strong>doevent/perfume</strong> dataset. Accord
             uses only the text: brand, name, notes, family, the accord phrase, gender label and year. It shows no catalog photos or
             descriptions because their rights are unverified, and it has no prices, reviews or ratings to show, so it invents none.
           </p>
@@ -54,9 +55,7 @@ export default function HowItWorksPage() {
           <h2>Recognition</h2>
           <p className="mt-3">
             Bottle scanning is{" "}
-            <a href="https://github.com/bhnsadhu/scent-lens" className="text-ink underline">
-              ScentLens
-            </a>
+            <ScentLensLink />
             : OWLv2 detection, a fine-tuned SigLIP 2 image model, label reading and a calibrated decision to answer or abstain.
             Accord passes your photo to it once, never stores it, and limits daily scans to stay within free hosting.
           </p>

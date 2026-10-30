@@ -14,6 +14,8 @@
 
 ## Engineering decisions (mine, within approved scope)
 
+2026-10-30: Bhanu requested a “Repository” link label and consistently highlighted, clickable ScentLens mentions. Keep all links free of underlines; ScentLens uses the existing ink and silver bench colors. For this small edit, skip checks and commit/push as requested.
+
 | Decision | Why |
 |---|---|
 | node-postgres driver for local and Neon (pooled URL) | One code path, transactions available, works with Vercel Fluid `attachDatabasePool` |

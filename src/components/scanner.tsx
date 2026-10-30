@@ -8,6 +8,7 @@ import type { IdentifyResult } from "@/lib/scan/scentlens";
 import { ArrowIcon, CameraIcon } from "./icons";
 import { CollectionControls } from "./collection-controls";
 import { StripRow } from "./strip";
+import { ScentLensLink, ScentLensText } from "./scentlens-link";
 
 type Status = { enabled: false } | { enabled: true; mock: boolean; remaining: number; signedIn: boolean };
 type Done = { status: "done"; result: IdentifyResult; cached: boolean; remaining: number; fragrances: FragranceSummary[]; mock: boolean };
@@ -156,7 +157,7 @@ export function Scanner() {
         {status.mock && (
           <p className="mt-2 text-sm font-medium text-alert">Development mode: results are fixed test data, not recognition.</p>
         )}
-        <p className="mt-2 text-sm text-ink-3">Photos are sent to ScentLens for this scan only and never stored.</p>
+        <p className="mt-2 text-sm text-ink-3">Photos are sent to <ScentLensLink /> for this scan only and never stored.</p>
       </div>
 
       <div aria-live="polite">
@@ -166,17 +167,17 @@ export function Scanner() {
           <div>
             <p className="text-2xl font-semibold tracking-[-0.02em]">Reading the bottle…</p>
             <p className="mt-2 text-ink-2">
-              {waited < 10
+              <ScentLensText>{waited < 10
                 ? "Finding the bottle, comparing it with the catalog, reading the label."
-                : "ScentLens is waking up. After a quiet spell the first scan takes about a minute; later ones take a few seconds."}
+                : "ScentLens is waking up. After a quiet spell the first scan takes about a minute; later ones take a few seconds."}</ScentLensText>
             </p>
             <p className="mt-4 font-mono text-sm text-ink-3 tabular">{waited}s</p>
           </div>
         )}
         {phase.kind === "problem" && (
           <div className="bg-paper p-6 shadow-[var(--shadow-paper)]" style={{ borderRadius: 4 }} role="alert">
-            <p className="text-xl font-semibold">{phase.title}</p>
-            <p className="mt-2 text-ink-2">{phase.detail}</p>
+            <p className="text-xl font-semibold"><ScentLensText>{phase.title}</ScentLensText></p>
+            <p className="mt-2 text-ink-2"><ScentLensText>{phase.detail}</ScentLensText></p>
             <div className="mt-5 flex gap-5">
               {phase.retry && (
                 <button type="button" onClick={() => input.current?.click()} className="font-medium underline">

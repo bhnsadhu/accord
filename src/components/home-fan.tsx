@@ -41,19 +41,14 @@ export function HomeFan({ fragrances }: { fragrances: FragranceSummary[] }) {
             <span className="sr-only"> by {f.brand}</span>
           </button>
         ))}
-        <div className="blotter-stand" aria-hidden="true">
-          <div className="blotter-stand-top">
-            {fragrances.slice(0, 6).map((f, i) => <span key={f.productId} className="blotter-slot" style={{ "--position": `${POSITIONS[i]}%`, "--compact-position": `${COMPACT_POSITIONS[i]}%`, "--angle": `${ANGLES[i] / 3}deg` } as CSSProperties} />)}
-          </div>
-          <div className="blotter-stand-front"><span>Fragrance blotters</span></div>
-        </div>
+        <div className="bench-rail" aria-hidden />
       </div>
       <div className="signature-selection" aria-live="polite" aria-atomic="true" style={{ "--hue": hueFor(selected.wheel) } as CSSProperties}>
-        <div className="signature-identity selection-change" key={`identity-${selected.productId}`}>
+        <div className="signature-identity">
           <span className="signature-family" aria-hidden />
           <div><h2>{selected.name}</h2><p>{selected.brand}<span> · {selected.wheel}</span></p></div>
         </div>
-        <div className="signature-notes selection-change" key={`notes-${selected.productId}`}><span>Notes</span><p>{selected.notes.slice(0, 4).join(" · ")}</p></div>
+        <div className="signature-notes"><span>Notes</span><p>{selected.notes.slice(0, 4).join(" · ")}</p></div>
         <div className="signature-actions">
           <Link className="bench-button" href={`/fragrance/${selected.slug}`}>View fragrance <ArrowIcon /></Link>
           <Link className="bench-button secondary" href={`/discover?q=${encodeURIComponent(selected.brand)}`}>Explore the house</Link>

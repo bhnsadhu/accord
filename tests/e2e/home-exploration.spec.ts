@@ -46,7 +46,7 @@ test("scan entry opens the scanner and its frame preserves upload and error reco
       : { status: "invalid", error: "Try a clearer photo." },
   }));
   await page.goto("/");
-  await page.getByRole("link", { name: "Scan a bottle Find your fragrance from a photo" }).click();
+  await page.getByRole("link", { name: "Scan a bottle Identify from a photo" }).click();
   await expect(page.getByRole("heading", { name: "Scan a bottle" })).toBeVisible();
   const input = page.locator('input[type="file"]');
   await input.focus();

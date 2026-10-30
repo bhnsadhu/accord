@@ -4,7 +4,6 @@ import Link from "next/link";
 import { PaletteProvider } from "@/components/command-palette";
 import { Nav } from "@/components/nav";
 import { ScentLensLink } from "@/components/scentlens-link";
-import { ExternalLinkIcon } from "@/components/icons";
 import { Toaster } from "@/components/toaster";
 import { AccordProvider } from "@/lib/store";
 import "./globals.css";
@@ -63,7 +62,7 @@ function Footer() {
           </li>
           <li>
             <a href="https://github.com/bhnsadhu/accord" className="project-link">
-              Repository <ExternalLinkIcon width={12} height={12} />
+              Repository
             </a>
           </li>
         </ul>

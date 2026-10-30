@@ -53,7 +53,7 @@ export default async function Home() {
             </form>
             <Link href="/scan" className="signature-scan">
               <CameraIcon className="signature-scan-camera" />
-              <span><strong>Scan a bottle</strong><span>Find your fragrance from a photo</span></span>
+              <span><strong>Scan a bottle</strong><span>Identify from a photo</span></span>
               <ArrowIcon className="signature-scan-arrow" />
             </Link>
           </div>

@@ -66,23 +66,10 @@ a, button {
 }
 
 .scentlens-link, .project-link {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.2em;
   color: var(--color-ink);
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.scentlens-link svg, .project-link svg {
-  align-self: center;
-  flex: none;
-  transition: transform 150ms var(--ease-paper);
-}
-
-.scentlens-link:hover svg, .project-link:hover svg {
-  transform: translate(1px, -1px);
 }
 
 .desktop-sections a[aria-current="page"],
@@ -161,7 +148,7 @@ button { cursor: pointer; }
 .specimen-emboss { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); writing-mode: vertical-rl; font-size: 15px; letter-spacing: -.04em; color: #b3b0a7; text-shadow: 1px 1px 0 white, -1px -1px 0 #96928740; }
 .detail-paper { height: 530px; width: 88px; margin: 0 auto; transform: rotate(3deg); }
 
-/* Home: paper strips sit in a shaped, slotted metal blotter stand. */
+/* Home: a wide spatial fan stands behind a thin brushed-metal rail. */
 .signature-hero {
   position: relative; overflow: clip; padding-top: 30px;
   background: linear-gradient(167deg, #fbfcfde0 0%, #e4e7eb80 37%, #c2c7ce77 57%, #edf0f399 81%, #f0f1f3 100%);
@@ -174,15 +161,16 @@ button { cursor: pointer; }
 .signature-heading { position: relative; z-index: 5; max-width: 1600px; margin: auto; padding: 0 48px; display: grid; grid-template-columns: minmax(0, 1fr) 430px; align-items: center; gap: 32px; }
 .signature-heading h1 { font-size: clamp(46px, 5vw, 76px); font-weight: 450; line-height: 1.06; letter-spacing: -.055em; text-wrap: balance; }
 .signature-heading > div > p { margin-top: 11px; color: var(--color-ink-2); font-size: 22px; line-height: 1.4; letter-spacing: -.02em; }
-.signature-search form { display: flex; gap: 10px; }
+.signature-search { --signature-control-height: 54px; }
+.signature-search form { display: flex; gap: 10px; height: var(--signature-control-height); }
 .signature-search label { min-width: 0; display: flex; align-items: center; gap: 12px; border: 1px solid #aeb4bd; background: #ffffff80; border-radius: 6px; padding: 0 17px; flex: 1; }
 .signature-search label:focus-within { outline: 2px solid var(--color-focus); outline-offset: 3px; }
-.signature-search input { min-width: 0; width: 100%; height: 52px; outline: none; background: transparent; font-size: 15px; }
+.signature-search input { min-width: 0; width: 100%; height: calc(var(--signature-control-height) - 2px); outline: none; background: transparent; font-size: 15px; }
 .signature-search input::placeholder { color: var(--color-ink-3); }
-.signature-scan { display: flex; align-items: center; gap: 15px; min-height: 76px; margin-top: 12px; padding: 14px 17px; border: 1px solid #aeb4bd; border-radius: 6px; background: #fcfcfbd9; transition: background-color 180ms, border-color 180ms; }
+.signature-scan { display: flex; align-items: center; gap: 15px; height: var(--signature-control-height); margin-top: 12px; padding: 4px 17px; border: 1px solid #aeb4bd; border-radius: 6px; background: #fcfcfbd9; transition: background-color 180ms, border-color 180ms; }
 .signature-scan > span { flex: 1; min-width: 0; }
-.signature-scan strong { display: block; font-size: 17px; font-weight: 550; letter-spacing: -.02em; }
-.signature-scan > span > span { display: block; margin-top: 3px; font-size: 13px; color: var(--color-ink-2); }
+.signature-scan strong { display: block; font-size: 17px; line-height: 1.2; font-weight: 550; letter-spacing: -.02em; }
+.signature-scan > span > span { display: block; margin-top: 2px; font-size: 13px; line-height: 1.2; color: var(--color-ink-2); }
 .signature-scan-camera { width: 27px; height: 27px; flex: none; }
 .signature-scan-arrow { width: 20px; height: 20px; flex: none; transition: transform 220ms var(--ease-paper); }
 .signature-scan:hover { background: var(--color-paper); border-color: var(--color-ink-2); }
@@ -191,20 +179,17 @@ button { cursor: pointer; }
 .signature-bench { position: relative; max-width: 1600px; margin: 0 auto; }
 .hero-fan { height: 500px; position: relative; margin-top: 12px; }
 .bench-cast-light { position: absolute; inset: 15% 0 0; background: radial-gradient(ellipse at 40% 30%, #fff9, transparent 60%); pointer-events: none; }
-.hero-strip { position: absolute; left: var(--position); bottom: 64px; width: 70px; height: var(--height); transform-origin: 50% 100%; transform: translateX(-50%) rotate(var(--angle)); z-index: 2; transition: transform 650ms var(--ease-paper); border: 0; padding: 0; background: none; }
+.hero-strip { position: absolute; left: var(--position); bottom: 40px; width: 70px; height: var(--height); transform-origin: 50% 100%; transform: translateX(-50%) rotate(var(--angle)); z-index: 2; transition: transform 650ms var(--ease-paper); border: 0; padding: 0; background: none; }
 .hero-strip::before { content: ''; position: absolute; inset: 8px -18px -6px 15px; background: #252c3969; filter: blur(13px); transform: skewX(-6deg) translateY(8px); pointer-events: none; }
 .hero-strip .strip-specimen { transition: box-shadow 650ms var(--ease-paper); }
-.hero-strip.is-selected { z-index: 6; transform: translateX(-50%) rotate(var(--angle)) translateY(-14px); }
+.hero-strip.is-selected { z-index: 6; transform: translateX(-50%) rotate(var(--angle)) translateY(16px); }
 .hero-strip.is-selected .strip-specimen { box-shadow: 0 1px 2px #fff inset, 0 -4px 2px #b4b0a7 inset, 2px 4px 1px #aaa69e, 10px 18px 17px -8px #11182770; }
 .hero-strip.is-selected .stain-v { opacity: .94; }
 .hero-strip:focus-visible { outline-offset: 8px; }
 .hero-strip .specimen-print strong { font-size: 24px; }
 .hero-strip .specimen-print > span { display: none; }
-.blotter-stand { position: absolute; bottom: 22px; left: 8%; width: 84%; height: 56px; pointer-events: none; }
-.blotter-stand-top { position: absolute; inset: 0 0 20px; border-radius: 50%; background: linear-gradient(175deg, #b5bac1, #f4f5f6 48%, #c7cbd0); box-shadow: 0 1px 0 #fff inset; }
-.blotter-slot { position: absolute; left: calc((var(--position) - 8%) / .84); top: 10px; width: 74px; height: 6px; border-radius: 50%; background: #515762; box-shadow: 0 1px 1px #fff; transform: translateX(-50%) rotate(var(--angle)); }
-.blotter-stand-front { position: absolute; inset: 24px 0 0; z-index: 5; display: flex; align-items: center; justify-content: center; border-radius: 0 0 50% 50% / 0 0 100% 100%; background: linear-gradient(#e0e3e6, #afb5bd); box-shadow: 0 12px 14px -10px #30374380; }
-.blotter-stand-front > span { margin-top: -3px; color: #555c66; font-size: 10px; letter-spacing: .04em; text-shadow: 0 1px 0 #ffffffb3; }
+
+.bench-rail { position: absolute; bottom: 32px; left: -2%; width: 104%; height: 25px; z-index: 5; pointer-events: none; background: linear-gradient(#f9f9f8 0%, #d2d3d5 14%, #f3f3f0 18%, #c4c5c7 45%, #d9d9d8 60%, #b3b4b6 88%, #8c8e92 100%); box-shadow: 0 -1px 0 #fff, 0 2px 1px #85878b, 0 8px 7px -5px #131b296b; }
 .signature-selection { position: relative; z-index: 7; max-width: 1050px; margin: 0 auto; padding: 4px 32px 32px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 15px 60px; }
 .signature-identity { display: flex; align-items: flex-start; gap: 17px; }
 .signature-family { flex: none; margin-top: 5px; width: 5px; height: 34px; background: var(--hue); border-radius: 2px; }
@@ -383,10 +368,10 @@ main h1 { font-weight: 450; }
   body { padding-bottom: 62px; }
   .signature-heading { grid-template-columns: 1fr; gap: 23px; }
   .signature-search { width: min(580px,100%); }
-  .hero-fan { height: 440px; margin-top: 55px; }
+  .hero-fan { height: 440px; margin-top: 25px; }
   .hero-strip { height: calc(var(--height) * .85); width: 58px; left: var(--compact-position); transform: translateX(-50%) rotate(var(--compact-angle)); }
-  .hero-strip.is-selected { transform: translateX(-50%) rotate(var(--compact-angle)) translateY(-10px); }
-  .blotter-slot { left: calc((var(--compact-position) - 8%) / .84); width: 62px; }
+  .hero-strip.is-selected { transform: translateX(-50%) rotate(var(--compact-angle)) translateY(16px); }
+
   .hero-strip .specimen-print strong { font-size: 21px; }
   .signature-selection { max-width: 800px; gap: 15px 32px; }
   .signature-identity h2 { font-size: 30px; }
@@ -408,22 +393,20 @@ main h1 { font-weight: 450; }
   .signature-heading { padding-inline: 22px; gap: 24px; }
   .signature-heading h1 { font-size: clamp(42px, 10.5vw, 62px); max-width: 11em; line-height: 1.05; letter-spacing: -.05em; text-wrap: initial; }
   .signature-heading > div > p { font-size: 16px; margin-top: 12px; }
-  .signature-search form { gap: 8px; }.signature-search input { font-size: 13px; height: 46px; }
+  .signature-search { --signature-control-height: 48px; }
+  .signature-search form { gap: 8px; }.signature-search input { font-size: 13px; }
   .signature-search label { padding-inline: 12px; gap: 8px; }.signature-search label svg { width: 17px; }
   .signature-search .bench-button { min-height: 46px; font-size: 13px; }
-  .signature-scan { min-height: 70px; padding: 12px 14px; gap: 12px; }
+  .signature-scan { padding: 4px 14px; gap: 12px; }
   .signature-scan strong { font-size: 16px; }
   .signature-scan > span > span { font-size: 12px; }
-  .hero-fan { height: 270px; margin-top: 42px; }
-  .hero-strip { height: calc(var(--height) * .51); width: 35px; bottom: 44px; }
+  .hero-fan { height: 270px; margin-top: 17px; }
+  .hero-strip { height: calc(var(--height) * .51); width: 35px; bottom: 31px; }
   .hero-strip::before { inset: 3px -8px 0 8px; filter: blur(8px); }
   .hero-strip .specimen-print strong { font-size: 14px; }
   .hero-strip .specimen-emboss { font-size: 11px; bottom: 15px; }
-  .blotter-stand { height: 36px; bottom: 15px; }
-  .blotter-stand-top { bottom: 12px; }
-  .blotter-slot { left: calc((var(--compact-position) - 8%) / .84); top: 7px; width: 37px; height: 4px; }
-  .blotter-stand-front { top: 16px; }
-  .blotter-stand-front > span { font-size: 8px; margin-top: -2px; }
+
+  .bench-rail { height: 16px; bottom: 24px; }
   .signature-selection { grid-template-columns: 1fr; gap: 13px; padding: 5px 22px 22px; }
   .signature-identity h2 { font-size: 28px; }.signature-identity p { font-size: 13px; }
   .signature-family { height: 29px; margin-top: 3px; width: 4px; }
@@ -465,7 +448,6 @@ main h1 { font-weight: 450; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; scroll-behavior: auto !important; }
 }
-
 
 body:has(.signature-hero) > header { background: #f6f7f9; }
 .archive-mobile-preview-heading { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 12px; }

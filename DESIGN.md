@@ -108,15 +108,15 @@ Horizontal strips have a **short stained tip at the right**. Keep most of the pa
 
 Vertical specimens use a short stained end, about 14% of the paper by default. Home places it at the top; the Discover preview places its 11% tip at the bottom. Names are printed along the paper, with secondary brand text where space allows. A faint embossed Accord wordmark can appear on the specimen.
 
-Gradients describe absorption, brushed metal, or directional light. A bounded oval metal stand with six visible slots holds the Home fan, and soft light gives it spatial depth. Do not restore the edge-to-edge metal bar or use decorative rules to fill space. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
+Gradients describe absorption, brushed metal, or directional light. The original silver rail and soft light give the Home fan spatial depth. The owner restored this fan, background, and selection movement after reviewing the oval stand. Alternatives for the rail are exploratory until selected. Do not use decorative rules merely to fill space. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
 
 Unconfirmed scanner candidates remain rectangular **ghost strips**: no family stain, no material shadow, and a dashed neutral edge. Their uncertainty must also be stated in text. A blank candidate is not an answer.
 
 ## Home: Precision Bench
 
-The opening composition is wide and spatial. A clear headline and short product explanation sit above the bench; the search form occupies the adjacent desktop column. Search is a real GET form to Discover. Scan a bottle is an equally prominent, full-width entry below it with a camera icon and a short photo-identification explanation. The header, hero, and fan share a maximum width of 1600px.
+The opening composition is wide and spatial. A clear headline and short product explanation sit above the bench; the search form occupies the adjacent desktop column. Search is a real GET form to Discover. Scan a bottle is a prominent, full-width entry below it with a camera icon and a short photo-identification explanation. Its height matches the search and Explore controls: 54px on larger screens and 48px on phones. The header, hero, and fan share a maximum width of 1600px.
 
-Six real fragrances form a spreading fan in a **slotted silver blotter stand**. The stand has curved ends, a visible top and front face, and a small Fragrance blotters inscription. The strips vary in angle and height, each with a readable identity and family stain. Selection lifts a strip clear of its slot. On smaller screens the fan compresses its angles, heights, and spacing while preserving distinct targets and staying clear of the scanner action.
+Six real fragrances form a spreading fan behind the original **silver bench rail**. The strips vary in angle and height, each with a readable identity and family stain. Selection moves the strip forward and down along its own axis, in front of the rail. On smaller screens the fan compresses its angles, heights, and spacing while preserving distinct targets and staying clear of the scanner action.
 
 The fan is an interactive preview:
 
@@ -159,7 +159,7 @@ Use horizontal paper strips for fragrance lists in recommendations, collections,
 
 ## Controls, navigation, and accessibility
 
-Use no em or en dashes in project text. Write numeric ranges with “to” and missing metadata as “Not listed”. Repository and ScentLens links use stronger text and a small external-link arrow, with no background highlight.
+Use no em or en dashes in project text. Write numeric ranges with “to” and missing metadata as “Not listed”. Repository and ScentLens links use stronger text, with no arrows or background highlights.
 
 Links and text actions use no underlines in any state. Current navigation and sort choices use stronger text; the selected collection shelf uses a subtle neutral fill and stronger text. Keep the visible keyboard-focus outline.
 

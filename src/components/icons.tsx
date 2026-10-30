@@ -78,14 +78,6 @@ export function ArrowIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function ExternalLinkIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...base} {...props}>
-      <path d="M5 15 15 5M6 5h9v9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
 /** Placeholder mark (pending approval): a strip with a stained tip. */
 export function AccordMark(props: SVGProps<SVGSVGElement>) {
   return (

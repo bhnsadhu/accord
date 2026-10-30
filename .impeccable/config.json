@@ -8,6 +8,18 @@
         "value": "geist mono",
         "createdAt": "2026-10-30T07:36:57.901Z",
         "reason": "Bhanu chose the Blotter direction whose approved preview used Geist Mono for ids and numbers only; recorded in docs/DECISIONS.md"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "hanken grotesk",
+        "createdAt": "2026-10-30T07:55:50.948Z",
+        "reason": "Only in the unchosen Wheel decision sketch (.impeccable/mocks, gitignored); Bhanu chose Blotter"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "albert sans",
+        "createdAt": "2026-10-30T07:55:50.971Z",
+        "reason": "Only in the unchosen Chord decision sketch (.impeccable/mocks, gitignored); Bhanu chose Blotter"
       }
     ]
   }

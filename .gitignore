@@ -54,3 +54,4 @@ next-env.d.ts
 /.impeccable/build/
 /.impeccable/hook.cache.json
 /.impeccable/questions/
+/.next-e2e/

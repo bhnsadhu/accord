@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useAccord } from "@/lib/store";
 import { usePalette } from "./command-palette";
-import { AccordMark, SearchIcon } from "./icons";
+import { SearchIcon } from "./icons";
 
 const LINKS = [
   { href: "/discover", label: "Discover" },
@@ -20,12 +21,11 @@ export function Nav() {
 
   return (
     <header className="relative z-20">
-      <nav aria-label="Main" className="mx-auto flex h-[72px] max-w-[1440px] items-center gap-6 px-4 sm:px-8 lg:px-16">
-        <Link href="/" className="flex items-center gap-2.5 text-[21px] font-bold tracking-[-0.03em]">
-          <AccordMark />
-          Accord
+      <nav aria-label="Main" className="accord-navigation mx-auto flex h-[72px] max-w-[1440px] items-center gap-6 px-4 sm:px-8 lg:px-16">
+        <Link href="/" className="accord-wordmark flex items-center gap-2.5 text-[21px] font-bold tracking-[-0.03em]">
+          <Image src="/brand/accord-wordmark.svg" alt="Accord" width={111} height={30} unoptimized />
         </Link>
-        <ul className="hidden items-center gap-7 pl-6 text-[15px] md:flex">
+        <ul className="desktop-sections hidden items-center gap-7 pl-6 text-[15px] md:flex">
           {LINKS.map((l) => {
             const current = pathname === l.href || pathname.startsWith(`${l.href}/`);
             return (
@@ -66,7 +66,7 @@ export function Nav() {
                 Sign in
               </Link>
               <Link href="/profile" className="border border-ink px-3.5 py-1.5 transition-colors hover:bg-ink hover:text-paper" style={{ borderRadius: 4 }}>
-                Build your profile
+                Your taste
               </Link>
             </>
           )}
@@ -79,7 +79,7 @@ export function Nav() {
 
 function MobileTabs({ pathname }: { pathname: string }) {
   return (
-    <nav aria-label="Sections" className="fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-paper/95 pb-[env(safe-area-inset-bottom)] md:hidden">
+    <nav aria-label="Sections" className="mobile-sections fixed inset-x-0 bottom-0 z-30 border-t border-rule bg-paper/95 pb-[env(safe-area-inset-bottom)] md:hidden">
       <ul className="grid grid-cols-4 text-center text-[13px]">
         {LINKS.map((l) => {
           const current = pathname === l.href || pathname.startsWith(`${l.href}/`);

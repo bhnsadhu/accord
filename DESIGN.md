@@ -1,10 +1,22 @@
 ---
 name: Accord
-description: Know the bottle, find the next one. A fragrance evaluation bench where every perfume is a smelling strip.
+description: A fragrance evaluation bench built from textured cotton paper, restrained family stains, and precise catalog evidence.
+direction:
+  home: Precision Bench
+  discover: Scent Archive
+  status: Implementation and production deployment approved by the owner on 2026-10-30.
+  logo: Plain Accord wordmark A; no added symbol.
 colors:
-  ink: "#1c1e1d"
-  ink-2: "#464a47"
-  ink-3: "#585c58"
+  ink: "#15181c"
+  ink-2: "#525760"
+  ink-3: "#636974"
+  bench: "#f0f1f3"
+  bench-deep: "#e2e4e7"
+  paper: "#fcfbf8"
+  paper-edge: "#e6e5e0"
+  rule: "#d3d6db"
+  focus: "#2f5bd3"
+  alert: "#a3372b"
   stain-floral: "#d98ba0"
   stain-soft-floral: "#c9a3c8"
   stain-floral-amber: "#e0a16a"
@@ -20,331 +32,141 @@ colors:
   stain-green: "#8db36a"
   stain-fruity: "#e07a5f"
   unstained: "#c4c6c0"
-  focus: "#2f5bd3"
-  alert: "#a3372b"
-  bench: "#e4e5e1"
-  bench-deep: "#d7d9d3"
-  paper: "#fbfbf8"
-  paper-edge: "#e8e8e2"
-  rule: "#c9cbc5"
 typography:
-  display:
-    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(48px, 6.4vw, 88px)"
-    fontWeight: 600
-    lineHeight: 0.98
-    letterSpacing: "-0.035em"
-  headline:
-    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(32px, 3.6vw, 48px)"
-    fontWeight: 600
-    lineHeight: 1.05
-    letterSpacing: "-0.03em"
-  title:
-    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
+  sans: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
+  mono: "Geist Mono, ui-monospace, monospace"
+  home-display:
+    fontSize: "clamp(46px, 5vw, 76px)"
+    fontWeight: 450
+    lineHeight: 1.06
+    letterSpacing: "-0.055em"
+  archive-heading:
+    fontSize: "44px"
+    fontWeight: 450
+    letterSpacing: "-0.045em"
+  archive-name:
     fontSize: "22px"
-    fontWeight: 600
-    lineHeight: 1.3
-    letterSpacing: "-0.015em"
-  title-strip:
-    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "18px"
-    fontWeight: 600
-    lineHeight: 1.375
-    letterSpacing: "-0.01em"
-  body-lede:
-    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "19px"
-    fontWeight: 400
-    lineHeight: 1.625
-  body:
-    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "16px"
-    fontWeight: 400
-    lineHeight: 1.5
-    fontFeature: "\"ss01\", \"cv11\""
-  body-sm:
-    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "15px"
-    fontWeight: 400
-    lineHeight: 1.5
-  label:
-    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "13px"
-    fontWeight: 400
-    lineHeight: 1.4
-  figure:
-    fontFamily: "Geist Mono, ui-monospace, monospace"
-    fontSize: "24px"
     fontWeight: 500
-    lineHeight: 1.33
-    letterSpacing: "-0.02em"
-    fontFeature: "\"tnum\""
+    lineHeight: 1.15
+    letterSpacing: "-0.04em"
+  body:
+    fontSize: "16px"
+    lineHeight: 1.5
 rounded:
+  strip: "3px"
   tag: "2px"
-  control: "4px"
-  track: "6px"
-  swatch: "9999px"
-spacing:
-  gutter-sm: "16px"
-  gutter-md: "32px"
-  gutter-lg: "64px"
-  strip-pad: "16px"
-  section: "96px"
-  section-lg: "128px"
-  container: "1440px"
-components:
-  button-primary:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.control}"
-    padding: "0 24px"
-    height: "52px"
-  button-primary-hover:
-    backgroundColor: "{colors.ink-2}"
-    textColor: "{colors.paper}"
-  button-scan:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.control}"
-    padding: "0 20px"
-    height: "60px"
-  button-outline:
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    height: "52px"
-  button-outline-hover:
-    backgroundColor: "{colors.paper}"
-  button-danger:
-    backgroundColor: "{colors.alert}"
-    textColor: "{colors.paper}"
-    padding: "0 20px"
-    height: "44px"
-  search-field:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    typography: "{typography.title-strip}"
-    rounded: "{rounded.control}"
-    padding: "0 18px"
-    height: "60px"
-  input-field:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    padding: "0 14px"
-    height: "48px"
-  tag-note:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    typography: "{typography.body-sm}"
-    rounded: "{rounded.tag}"
-    padding: "6px 14px"
-  tag-toggle-on:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.tag}"
-    padding: "6px 14px"
-  tag-toggle-avoid:
-    backgroundColor: "{colors.alert}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.tag}"
-    padding: "6px 14px"
-  tag-filter:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.tag}"
-    padding: "4px 8px 4px 12px"
-  segmented-track:
-    backgroundColor: "{colors.bench-deep}"
-    rounded: "{rounded.track}"
-    padding: "4px"
-  segmented-option-on:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "0 16px"
-    height: "40px"
-  strip-laid:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    padding: "16px 20px 16px 0"
-  panel:
-    backgroundColor: "{colors.paper}"
-    rounded: "{rounded.control}"
-    padding: "24px"
-  toast:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.control}"
-    padding: "12px 8px 12px 16px"
+  control: "4px to 6px"
+layout:
+  signature-max: "1600px"
+  content-max: "1440px"
+  archive-max: "1600px"
+  desktop-from: "1100px"
+  inline-preview-through: "700px"
+motion:
+  ease-paper: "cubic-bezier(0.16, 1, 0.3, 1)"
+  strip: "350ms to 400ms"
+  fan: "650ms"
+  reduced-motion: "0ms"
 ---
 
-# Design System: Accord
+# Accord design system
 
-## Overview
+## Approved direction
 
-**Creative North Star: "The Evaluation Bench"**
+The approved references combine **Precision Bench for Home** with **Scent Archive for Discover**. Accord is a modern fragrance workbench: tactile white cotton paper, a cool silver-grey setting, small stains that encode accord family, and typography that makes the catalog easy to inspect. Material detail supplies the fragrance identity; useful selection, search, and evidence supply the technical quality.
 
-Every fragrance in Accord is a smelling strip (a mouillette) and the product is the bench a perfumer evaluates them on. The ground is a neutral bench grey; content sits on blotter-paper white cut into strips with die-cut tapered tips; each strip carries an oil stain in the one hue fixed to its Edwards wheel family, darkening to a tide line where the oil stopped soaking. Everything else is graphite ink. The world is light only, chosen from the use scene: perfume is judged on white paper in neutral daylight.
+The owner reviewed the local implementation and approved production deployment on 2026-10-30. For the logo, the owner selected **option A: the plain Accord typographic wordmark**, with no added symbol. Additional proposed marks were rejected. Do not introduce another emblem as if it were approved.
 
-The system is quiet and typographic. One grotesk sets every word; a mono face appears only where a number or identifier has to be read exactly. There are no catalog images: the stain is the only picture a fragrance gets, and colour on a strip always means its accord family, never decoration. Depth is paper physics: strips rest with a soft drop shadow, lift and saturate when touched, and confirmed versus unconfirmed is carried by stained versus dashed blank paper.
+This direction supersedes the earlier pointed-strip and beaker-fan treatment. Keep the physical smelling-strip idea, now expressed through rectangular paper and a restrained stained end.
 
-Density is moderate. Pages run in one 1440px container with generous section breaks; lists are stacks of laid strips rather than grids of cards.
+## Product truth
 
-**Key Characteristics:**
-- Neutral bench grey ground, blotter-white paper strips with die-cut tapered tips.
-- One fixed stain hue per Edwards wheel family, with a darker tide line; unparsed accords stay unstained.
-- Graphite ink for text and primary actions; no brand accent colour.
-- Schibsted Grotesk for all text; Geist Mono only for ids, counts and figures.
-- Paper shadows and a lift-and-saturate response; no glass, no decorative gradients beyond the stain.
-- Ghost strips (dashed, unstained) mean "unconfirmed".
-- Light only.
+Accord helps people know a bottle, find their next fragrance, and understand their own taste. It is a discovery and collection product, not a fragrance shop.
 
-## Colors
+- The current catalog contains **24,642 fragrances, 1,255 brands, and 285 notes**. Derive filter totals, result counts, and comparison values from the actual data.
+- Catalog metadata is text only. Do not introduce catalog bottle photography, product descriptions, prices, public ratings, popularity claims, or reviews without a verified source and usage rights. The paper material texture is an interface asset, not catalog imagery.
+- Display notes as listed in the catalog. Do not invent top, heart, or base layers, material concentrations, performance, or longevity.
+- Personal ratings are 1–5 and belong to the user. Recommendations, pair similarity, and scan confidence are different concepts and must have distinct labels.
+- A recommendation percentile is relative fit among eligible catalog fragrances, not a probability of liking it. Pair similarity is a separate 0–100 measure: notes 55%, accord 25%, catalog family 15%, character 5%.
+- Put concrete reasons beside suggestions: shared notes, accord family, character, or a liked fragrance. Demonstrations and unconfirmed scanner candidates must be visibly labelled as such.
 
-A near-achromatic bench-and-paper palette with graphite ink, where the only saturated colour is the oil stain encoding each fragrance's wheel family.
+## Color and type
 
-### Primary
-- **Graphite Ink** (ink): all primary text, primary action fills (Scan, Build your profile, submit), selected toggles, the bench rule above closing sections. It is the action colour; there is no separate brand accent.
-- **Pencil Grey** (ink-2): secondary text, ledes, note lists on strips, inactive nav links, and the hover state of ink-filled buttons.
-- **Faint Pencil** (ink-3): field labels, brand lines on strips, captions, placeholders, ghost-strip dashes, annotation rules. Kept dark enough to read on bench grey as running text.
+The neutral tokens above match [globals.css](src/app/globals.css). Ink is the primary text and action color; ink-2 carries secondary copy; ink-3 carries readable labels and metadata. Paper is a slightly warm white against the cooler bench. Bench-deep and rule define recessed controls and dividers. Focus blue is reserved for keyboard outlines; alert red carries errors, destructive actions, and avoided-note state.
 
-### Secondary
-- **Wheel Stains** (stain-floral through stain-fruity, fourteen hues in Edwards wheel order from Floral round to Fruity): the stain on a strip, the legend swatches, the family dot beside an accord name, and the collection's family bar. One hue per family, fixed on every surface so a colour always means the same accord.
-- **Unstained** (unstained): the fallback when a fragrance's accord could not be parsed. It reads as dry paper, never as a family.
+The fourteen family hues come from [hues.ts](src/lib/hues.ts). A hue always names the same Edwards accord family across strips, family labels, filters, and collection summaries. Unparsed families use the neutral unstained fallback. Do not recolor a family to indicate selection, success, rank, or fashion. Material gradients may mix the base hue with white to depict absorption, without changing its meaning.
 
-### Tertiary
-- **Focus Blue** (focus): keyboard focus outlines only (2px solid, 3px offset). Never used as decoration or as an action fill.
-- **Alert Red** (alert): errors, destructive confirmation, the "avoid" state of a note toggle, and the development-mode notice in the scanner.
+Schibsted Grotesk carries names, headings, controls, and prose, with stylistic sets ss01 and cv11. The signature heading uses a light 450 weight, tight tracking, and generous scale; archive names use 500. Smaller labels stay in sentence case, close to the values they describe. Geist Mono is an instrument for exact counts, identifiers, and figures, with tabular numerals; it is not the voice for names or prose.
 
-### Neutral
-- **Bench Grey** (bench): the page ground and theme colour; also the row fill inside hairline-ruled lists.
-- **Deep Bench** (bench-deep): recessed tracks (the shelf segmented control) and the scrollbar track.
-- **Blotter White** (paper): every strip, field, tag, panel, dialog and the mobile tab bar.
-- **Paper Edge** (paper-edge): the inset edge on standing strips, the border of note tags and key caps, the divider inside the command palette.
-- **Bench Rule** (rule): hairline dividers, the footer and mobile tab bar top border, unselected toggle borders.
+Use the actual responsive rules in globals rather than applying one headline scale everywhere. Home reaches 76px on wide screens; Discover starts at 44px, steps to 38px below 1100px, and 34px at phone widths. Body copy stays comfortably readable; metadata is subordinate without disappearing into low contrast.
 
-### Named Rules
-**The One Hue Per Family Rule.** A stain hue belongs to exactly one Edwards wheel family and is never reassigned, tinted for decoration or used for UI state. If a colour is on a strip, it names the accord.
+## Paper, light, and shape
 
-**The Graphite Action Rule.** Actions are graphite ink on paper or bench. Do not introduce a brand accent for buttons or links; the stains are data, not chrome.
+The signature object is a **rectangular cotton-paper smelling strip** with a 3px softened edge. It has fine irregular fiber texture, a small illuminated edge, a subtle thickness shadow, and a soft directional cast shadow. The texture source is [blotter-paper.png](public/materials/blotter-paper.png). Reuse the same material on vertical specimens and horizontal results so they belong to one physical system.
 
-## Typography
+Horizontal strips have a **short stained tip at the right**. Keep most of the paper dry and white; reserve enough right padding that names, notes, figures, and controls never cross the stain. In the archive the tip is 52px on wide screens, 40px at intermediate widths, and 39px on phones. Shared strips use the responsive --strip-tip token, with smaller tips on compact rows.
 
-**Display Font:** Schibsted Grotesk (with ui-sans-serif, system-ui fallback)
-**Body Font:** Schibsted Grotesk, stylistic sets ss01 and cv11 on
-**Label/Mono Font:** Geist Mono (with ui-monospace), tabular figures
+Vertical specimens use a short stained end, about 14% of the paper by default. Home places it at the top; the Discover preview places its 11% tip at the bottom. Names are printed along the paper, with secondary brand text where space allows. A faint embossed Accord wordmark can appear on the specimen.
 
-**Character:** A single editorial grotesk carries headings, body and labels; tight negative tracking on large sizes gives the headings a set, newsprint weight, while body stays at default tracking. Geist Mono is a measuring instrument, not a voice.
+Gradients describe absorption, brushed metal, or directional light. The silver bench rail is a material feature of Home, and soft light gives the fan spatial depth. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
 
-### Hierarchy
-- **Display** (600, clamp 48 to 88px, 0.98, -0.035em, balanced wrap): the homepage headline and other first-viewport statements only.
-- **Headline** (600, clamp 32 to 48px, 1.05, -0.03em): section headings; page titles on inner pages sit in the same band.
-- **Title** (600, 22px, -0.015em): the name on a featured laid strip; the strip-row name steps down to **Title Strip** (600, 18px, -0.01em).
-- **Body Lede** (400, 19px, 1.625): the opening paragraph under a display or headline, held to about 32 to 36em.
-- **Body** (400, 16px, 1.5) and **Body Small** (400, 15px): running text, notes lists, controls, nav links.
-- **Label** (400, 13px, sentence case, no tracking, ink-3): field labels, brand lines on strips, legend items, annotation terms. Always sentence case and attached to the value it labels.
-- **Figure** (Geist Mono 500, 24px, -0.02em, tabular): match and similarity numbers; larger on Compare. Counts and pagination use Geist Mono at 12 to 14px.
+Unconfirmed scanner candidates remain rectangular **ghost strips**: no family stain, no material shadow, and a dashed neutral edge. Their uncertainty must also be stated in text. A blank candidate is not an answer.
 
-### Named Rules
-**The Instrument Mono Rule.** Geist Mono sets only ids (product ids), counts, percentages and match figures, always with tabular numerals. Words, names and headings are never mono.
+## Home: Precision Bench
 
-**The Sentence-Case Label Rule.** Small labels are sentence case at 13px in faint pencil, sitting directly above or beside the value they describe. No uppercase tracked labels.
+The opening composition is wide and spatial. A clear headline and short product explanation sit above the bench; the search form occupies the adjacent desktop column. Search is a real GET form to Discover, with a separate Scan a bottle link. The header, hero, and fan share a maximum width of 1600px.
 
-## Layout
+Six real fragrances form a spreading fan behind a thin **silver bench rail**. The strips vary in angle and height, each with a readable identity and family stain. A low cast light and directional shadows establish depth without a beaker or container. On smaller screens the fan compresses its angles, heights, and spacing while preserving distinct targets.
 
-One centred container (container, 1440px) with responsive gutters of 16px, 32px from 640px and 64px from 1024px. Sections are separated by large breaks (section on small screens, section-lg from 1024px) rather than by rules or backgrounds; a single ink rule may open a closing call-to-action band.
+The fan is an interactive preview:
 
-Lists are vertical stacks of laid strips with 8 to 12px gaps; on wider screens a list may flow into two columns (the wheel tour). Secondary lists use hairline-ruled rows: a rule-coloured grid with a 1px gap and bench-filled rows. Two-column text layouts pair a headline column with a lede column (roughly 5:7). Detail pages pair a standing strip column (about 180px) with the content column.
+- Mouse hover or keyboard focus previews a fragrance. Leaving returns to the committed selection.
+- Clicking or tapping selects the fragrance; aria-pressed reflects that selection.
+- The adjoining preview updates the name, brand, accord family, and a short note list from real metadata. View fragrance opens the detail page; Explore the house opens a brand search.
+- The initial selection prefers Santal 33 when present. Do not imply that an unselected fragrance was opened or saved.
 
-The first viewport on large screens fills the remaining viewport height (between 720 and 860px) with text on the left and a fan of standing strips rising from below the frame on the right. On small screens the fan sits below the text in a fixed 440px window and the nav gives way to a fixed bottom tab bar of four sections.
+The first supporting section explains a real connection, including shared-note evidence and a labelled similarity figure. The personal bench trail is separate from fan selection and reflects actual opened fragrances. Further sections retain the product story: reading a fragrance through its notes, exploring the accord wheel, and distinguishing a scanner answer from unconfirmed candidates.
 
-Text on a laid strip always begins past the stain: left padding is the stain depth (72px, 112px from 640px, adjustable per strip) plus strip-pad.
+## Discover: Scent Archive
 
-## Elevation & Depth
+At **1100px and above**, Discover is a three-column working archive: filters at left, horizontal paper result strips in the center, and a sticky selected-fragrance preview at right. The preview includes a tall paper specimen, name, brand, accord family, character when available, the full listed notes, View fragrance, and Compare. Keep its information visible beside the results rather than hiding it behind another route.
 
-Depth is paper on a bench. Surfaces are flat colour; paper objects (strips, fields, tags, panels) rest with a soft, low-spread paper shadow, and objects that float above the bench (command palette, toast) use a deeper lifted shadow. Strips use drop-shadow filters instead of box shadows so the shadow follows the die-cut tip. Interaction raises paper: hover or focus deepens the drop shadow and saturates the stain; a strip in the fan slides 24px up its own axis and stays lifted once opened, so laid strips form a retraceable trail.
+The primary structure is .archive-page → .archive-layout with .archive-filters and .archive-main. The main area contains the existing search/status UI, .archive-results (list and preview), and pagination. The desktop baseline is a 174px filter column, fluid results, and a 340px preview; responsive CSS adjusts these widths.
 
-Motion is paper physics: 600ms on an exponential ease-out (cubic-bezier(0.16, 1, 0.3, 1)); segmented and toggle state changes run 300ms. Under reduced motion every transition and animation is instant.
+Each result has two explicit interactions: the paper button selects a preview, and its View fragrance link navigates. The selected strip is marked with a graphite check and accessible pressed state. Selection stays local to the page; actual search, filters, sort, counts, and pagination remain server-driven and URL-addressable. A changed ordered result set resets preview and comparison to the new results.
 
-### Shadow Vocabulary
-- **Paper** (`0 1px 0 rgb(28 30 29 / 0.04), 0 10px 28px -16px rgb(28 30 29 / 0.38)`): fields, filter tags, panels, the selected shelf option.
-- **Lifted** (`0 2px 0 rgb(28 30 29 / 0.04), 0 22px 36px -18px rgb(28 30 29 / 0.45)`): command palette and toast.
-- **Strip rest** (`filter: drop-shadow(0 6px 10px rgb(28 30 29 / 0.12))`): every stained strip at rest.
-- **Strip raised** (`filter: drop-shadow(0 18px 22px rgb(28 30 29 / 0.24))`): hover, focus and locked strips.
+Compare anchors the selected fragrance, asks the user to select another result, then exposes Compare the two with the two real product IDs. Cancel clears that pairing. When only one result is present, Compare leads to its similar-fragrances section so the user can find a second scent. Never choose an unexplained comparison partner for them.
 
-### Named Rules
-**The Paper Physics Rule.** Only paper casts shadows, and only soft ones. No hard offset shadows, no glass or blur, no glow.
+Responsive behavior is part of the contract:
 
-**The Lift and Saturate Rule.** Attention lifts paper and saturates the stain together (stain opacity 0.88 to 1, saturate 1.35); never one without the other on a stained strip.
+- **701–1099px:** filters move above results in a native disclosure, closed initially; the result list and selected preview remain beside each other.
+- **700px and below:** filters stay above the list. Explicit selection reveals a compact preview immediately below that strip, containing full notes, View fragrance, and Compare. Close returns focus to the source button. The desktop preview is hidden so selection never appears to do nothing far below the results.
+- The filter disclosure opens on desktop and remains keyboard-operable. Accord family precedes the included/excluded-note form. Existing facets, catalog families, gender, sorting, clear-filter actions, empty results, and pagination remain available.
 
-## Shapes
+## Shared product surfaces
 
-The signature silhouette is the die-cut strip: a rectangle with a tapered point, cut with a clip-path. Standing strips point up (30px tip, 60px on the detail page's large strip); laid strips point left (28px tip). The point is part of the shape, not an ornament, and it is never rounded.
+Use horizontal paper strips for fragrance lists in recommendations, collections, and similar results, and standing specimens for fragrance detail. Shared row links still navigate directly; Discover's explicit preview interaction is specific to its archive layout.
 
-Everything else is nearly square paper. Tags are square paper (tag, 2px); buttons, fields, panels, dialogs and toasts use a barely softened corner (control, 4px); the recessed segmented track is 6px. Full circles appear only as small colour swatches (8 to 10px) in legends and family labels. Borders are 1px hairlines; the one dashed border is the ghost strip's 1.5px dash, drawn to follow the tip.
+**Fragrance detail** presents real identity, accord and catalog family, character, year/gender when available, and the listed notes. Keep Owned, Tried, Wishlist, personal rating, and favourite actions distinct. Similar suggestions show shared-note evidence and link to comparison.
 
-**The Square Paper Rule.** Tags and chips are square paper at 2px. No pills.
+**For you** explains the current recommendation context and each suggestion. An empty profile offers a useful start rather than a fabricated personal match. Feedback, avoided notes, and collection signals must retain their real behavior. Static concepts that show a fixed ranking must label the profile as a sample snapshot rather than imply it recomputes from edits.
 
-## Components
+**Collection and profile** retain Owned, Tried, Wishlist, and Favourites; personal ratings and profile inputs remain editable. Guest data stays in local storage and merges into the account on sign-in. Optional taste inputs should feel optional. Avoided notes are exclusions, not a weak preference. Show currently selected or avoided values so the summary never refers to hidden state.
 
-### Buttons
-Tactile, plain, graphite.
-- **Shape:** barely softened corner (control).
-- **Primary:** graphite ink fill, blotter-white text, medium weight, 52px tall with 24px side padding; the Scan button beside search is 60px to match the field. An arrow icon may trail the label.
-- **Hover / Focus:** fill shifts to pencil grey; focus shows the 2px focus-blue outline.
-- **Outline:** 1px ink border, transparent fill, 52px; hover fills with paper.
-- **Danger:** alert fill, paper text, 44px; used only for destructive confirmation.
-- **Text links:** ink or pencil, medium weight where they are calls to action, underline on hover, 0.2em underline offset and 1px thickness.
+**Scan** is a deliberate upload/identify flow. Preserve preparing, identifying, confirmed, uncertain, invalid, busy, quota, timeout, offline, and disabled states where applicable. Explain what happened and give a usable next action. Only a confirmed answer gets the stained-answer treatment; candidates remain explicitly unconfirmed. Never turn an illustrative example into an asserted scan result.
 
-### Chips (Tags)
-- **Note tag:** paper fill, 1px paper-edge border, 15px text, square paper corner; hover darkens the border to faint pencil. Links to that note in Discover.
-- **Filter tag:** paper fill with paper shadow, 14px drawn close icon in faint pencil; the whole tag removes the filter.
-- **Toggle (profile builder):** unselected is paper with a rule border; selected is ink fill with paper text; "avoid" selection is alert fill. 300ms colour transition.
+## Controls, navigation, and accessibility
 
-### Cards / Containers
-- **Corner Style:** control (4px).
-- **Background:** paper on bench.
-- **Shadow Strategy:** Paper shadow (see Elevation & Depth).
-- **Border:** none.
-- **Internal Padding:** 20px, 24px from 640px.
-Panels are used sparingly (scanner states, detail-page side panels); lists are strips, not cards.
+Primary actions use graphite fills and paper text. Secondary actions use a restrained neutral border. Controls have 4–6px corners; tags are almost square at 2px. Avoid pill-shaped note chips and card grids that replace the strip vocabulary. Fields have visible labels, appropriate input types, clear errors, and real submit behavior.
 
-### Inputs / Fields
-- **Search field:** 60px paper field with paper shadow, control corner, leading search icon in pencil, 18px input text, faint-pencil placeholder, a 3px-cornered key cap hint on wider screens. Focus outlines the whole field in focus blue (2px, 2px offset). It is a real GET form to Discover, with Scan beside it.
-- **Form field:** 48px paper field with paper shadow, 17px text, label above in 15px medium, hint below in faint pencil; focus is the focus-blue outline.
-- **Error:** message in alert red beneath the form, announced as an alert.
+The main sections remain **Discover / For you / Collection / Scan**. At desktop widths they appear in the top navigation; below 1100px they move into the four-section bottom bar. Keep content clear of that fixed bar. Quick find, Cmd/Ctrl K, account/profile access, and the skip link remain available.
 
-### Segmented Shelf Control
-A deep-bench track (6px corner, 4px padding) holding 40px options. The selected option becomes raised paper (paper fill, paper shadow, medium weight, ink); others are pencil text.
+Native links navigate and native buttons change state. Accessible names include the visible label; prefer native content with a short screen-reader-only prefix where a preview needs context. Preview controls expose selection and expanded state, identify the region they control when applicable, and announce the selected fragrance. All mouse interactions must work from the keyboard; visible focus uses a 2px blue outline with a 3px offset. Full names and note lists must remain accessible when the visual layout truncates compact labels.
 
-### Navigation
-72px top bar in the container: placeholder strip mark and 21px bold wordmark (-0.03em), section links in 15px pencil, current section in ink with underline. A search button opens the command palette (Cmd/Ctrl K). Below 768px the links move to a fixed bottom tab bar: paper at 95% with a rule top border, four equal 13px tabs, current tab semibold ink. The command palette is a 640px paper dialog with the lifted shadow over a 25% ink backdrop.
+Motion uses cubic-bezier(0.16, 1, 0.3, 1): short paper movements around 350–400ms, fan selection around 650ms, controls around 250ms. Horizontal strips rise only a few pixels; the selected fan strip moves along its own axis and deepens its shadow/stain. Reduced-motion preferences remove transitions and animations. Do not make essential information depend on motion, hover, color, or decorative texture.
 
-### Smelling Strips (signature)
-- **Laid strip (the list module):** a left-pointing strip at least 96px tall. Every list in the product uses it: search results, recommendations, collections, similar fragrances. Brand and family on a 13px label line, name in Title Strip, notes in 15px pencil truncated to one line, an optional right-aligned aside for a figure. The whole strip is the link.
-- **Standing strip:** up-pointing, 44px wide in the fan with the name set vertically in 13px; only the stained tip is the link so neighbouring strips never share a touch target. The detail page stands a large 104 by 560px strip with the product id in Geist Mono at its foot.
-- **Stain:** a gradient from near-full hue to half-white, closed by a darker tide line (the hue mixed toward umber), at 0.88 opacity at rest.
-- **Ghost strip:** unstained paper at 40% with a 1.5px dashed faint-pencil edge following the tip. It means the candidate is unconfirmed; it does not lift.
-- **Match figure:** a Geist Mono figure above a 12px faint-pencil label (match, similarity), right-aligned on the strip.
+## Maintenance and verification
 
-## Do's and Don'ts
+Use this document for the current direction, [globals.css](src/app/globals.css) for implemented style values, [hues.ts](src/lib/hues.ts) for the family mapping, and source components for interaction behavior. Earlier .impeccable design snapshots describe the previous treatment and are not the authority for the new reference direction.
 
-### Do:
-- **Do** put every fragrance on a strip: laid strips for lists, standing strips for fans and detail pages.
-- **Do** stain a strip with its wheel family's fixed hue and leave unparsed accords unstained.
-- **Do** draw unconfirmed candidates as ghost strips (dashed, unstained) and keep confirmed answers stained.
-- **Do** set ids, counts and match figures in Geist Mono with tabular numerals, and everything else in Schibsted Grotesk.
-- **Do** keep tags as square paper (2px) and controls at 4px.
-- **Do** lift and saturate together on hover and focus, over 600ms on the paper ease-out, instant under reduced motion.
-- **Do** draw icons from the one 20px grid, 1.5px stroke, round-join set.
-- **Do** start strip text past the stain depth.
-
-### Don't:
-- **Don't** show catalog photos or bottle imagery; the stain is the fragrance's only picture.
-- **Don't** add a dark theme; the world is light only.
-- **Don't** use pill-shaped tags or chips.
-- **Don't** use a stain hue for anything other than its accord family.
-- **Don't** use glass, blur, glow or decorative gradients; the stain is the only gradient.
-- **Don't** use hard offset shadows; paper shadows are soft.
-- **Don't** set names, headings or prose in Geist Mono.
-- **Don't** treat the strip mark in the nav and favicon as a final logo; it is a placeholder pending the owner's approval.
+Review Home and Discover in a real browser at desktop and phone sizes. Verify real search/filter URLs, result counts, no-results recovery, preview selection, comparison, direct detail links, mobile disclosure/inline preview, keyboard focus, and reduced motion. Check other routes for regressions when changing shared paper styles. Visual approval and local verification do not substitute for the owner's separate push/deployment approval.

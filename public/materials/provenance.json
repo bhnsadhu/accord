@@ -1,0 +1,6 @@
+{
+  "mode": "Built-in image_gen",
+  "file": "blotter-paper.png",
+  "source": "paper-atelier.png",
+  "prompt": "Use case: product-mockup. Material asset for a premium fragrance blotter web interface. Generate an edge-to-edge orthographic macro photograph of pristine natural white cotton-linter perfume tester paper. Entire square image is the same uniform paper surface, no object outline, no scene, no border, no cast shadow, no text, no logo. Delicate fine pressed cotton fibers, tasteful subtle tactile texture, ivory-white very close to #fbfaf7 without a yellow cast. Smooth premium manufactured boutique perfumery blotter stock, not rough handmade watercolor board. Absolutely even diffuse lighting, no vignette, no shading gradient, no blotches. This will tile at low opacity as a subtle material on CSS-rendered fragrance strips. Fine realism, very low contrast, no coarse fibers, no torn edges, no stains, not concrete, linen, parchment, leather or stone."
+}

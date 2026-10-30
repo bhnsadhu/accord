@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { AutoSubmit } from "@/components/auto-submit";
 import { Bench } from "@/components/bench";
+import { ArchiveFilters, DiscoverResults } from "@/components/discover-results";
 import { CloseIcon, SearchIcon } from "@/components/icons";
-import { StripRow } from "@/components/strip";
 import { cachedFacets, cachedNotes, cachedSearch } from "@/lib/catalog/cached";
 import type { SearchParams } from "@/lib/catalog/queries";
 import { GENDER_LABEL, hueFor } from "@/lib/hues";
@@ -47,8 +47,8 @@ function href(raw: Raw, patch: Record<string, string | undefined>) {
 
 export default function DiscoverPage({ searchParams }: PageProps<"/discover">) {
   return (
-    <div className="mx-auto w-full max-w-[1440px] px-4 pt-8 sm:px-8 lg:px-16 lg:pt-12">
-      <h1 className="text-[clamp(36px,4vw,56px)] font-semibold leading-none tracking-[-0.035em]">Discover</h1>
+    <div className="archive-page mx-auto w-full max-w-[1440px] px-4 pt-8 sm:px-8 lg:px-16 lg:pt-12">
+      <h1 className="archive-heading text-[clamp(36px,4vw,56px)] font-semibold leading-none tracking-[-0.035em]">Discover</h1>
       <Bench />
       <Suspense fallback={<ResultsSkeleton />}>
         <Results searchParams={searchParams} />
@@ -73,55 +73,58 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
   ].filter(Boolean) as { label: string; clear: string }[];
 
   return (
-    <div className="mt-8 grid gap-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-16">
-      <aside aria-label="Filters" className="order-2 lg:order-1">
-        <form action="/discover" className="grid gap-8">
-          <AutoSubmit />
-          {params.q && <input type="hidden" name="q" value={params.q} />}
-          {params.wheel && <input type="hidden" name="wheel" value={params.wheel} />}
-          {params.facet && <input type="hidden" name="facet" value={params.facet} />}
-          {params.family && <input type="hidden" name="family" value={params.family} />}
-          <FilterSelect label="Has note" name="note" value={params.notes?.[0]} options={notes.map((n) => [n.key, n.label])} />
-          <FilterSelect label="Without note" name="without" value={params.excludeNotes?.[0]} options={notes.map((n) => [n.key, n.label])} />
-          <FilterSelect
-            label="Worn as"
-            name="gender"
-            value={params.gender}
-            options={Object.entries(GENDER_LABEL)}
-          />
-          <noscript>
-            <button type="submit" className="h-10 bg-ink px-4 text-paper" style={{ borderRadius: 4 }}>
-              Apply
-            </button>
-          </noscript>
-        </form>
+    <div className="archive-layout mt-8 grid gap-8">
+      <aside aria-label="Filters" className="archive-filters">
+        <ArchiveFilters activeCount={active.length}>
+          <FilterGroup title="Accord family">
+            {facets.wheels.map((w) => (
+              <FilterLink key={w.value} href={href(raw, { wheel: params.wheel === w.value ? undefined : w.value })} active={params.wheel === w.value} count={w.count}>
+                <i className="inline-block size-2.5 shrink-0 rounded-full" style={{ background: hueFor(w.value) }} />
+                {w.value}
+              </FilterLink>
+            ))}
+          </FilterGroup>
 
-        <FilterGroup title="Accord family">
-          {facets.wheels.map((w) => (
-            <FilterLink key={w.value} href={href(raw, { wheel: params.wheel === w.value ? undefined : w.value })} active={params.wheel === w.value} count={w.count}>
-              <i className="inline-block size-2.5 shrink-0 rounded-full" style={{ background: hueFor(w.value) }} />
-              {w.value}
-            </FilterLink>
-          ))}
-        </FilterGroup>
-        <FilterGroup title="Facet">
-          {facets.facets.slice(0, 14).map((f) => (
-            <FilterLink key={f.value} href={href(raw, { facet: params.facet === f.value ? undefined : f.value })} active={params.facet === f.value} count={f.count}>
-              {f.value}
-            </FilterLink>
-          ))}
-        </FilterGroup>
-        <FilterGroup title="Family">
-          {facets.families.map((f) => (
-            <FilterLink key={f.value} href={href(raw, { family: params.family === f.value ? undefined : f.value })} active={params.family === f.value} count={f.count}>
-              {f.value}
-            </FilterLink>
-          ))}
-        </FilterGroup>
+          <form action="/discover" className="archive-filter-form mt-8 grid gap-6">
+            <AutoSubmit />
+            {params.q && <input type="hidden" name="q" value={params.q} />}
+            {params.wheel && <input type="hidden" name="wheel" value={params.wheel} />}
+            {params.facet && <input type="hidden" name="facet" value={params.facet} />}
+            {params.family && <input type="hidden" name="family" value={params.family} />}
+            <FilterSelect label="Has note" name="note" value={params.notes?.[0]} options={notes.map((n) => [n.key, n.label])} />
+            <FilterSelect label="Without note" name="without" value={params.excludeNotes?.[0]} options={notes.map((n) => [n.key, n.label])} />
+            <FilterSelect
+              label="Worn as"
+              name="gender"
+              value={params.gender}
+              options={Object.entries(GENDER_LABEL)}
+            />
+            <noscript>
+              <button type="submit" className="h-10 bg-ink px-4 text-paper" style={{ borderRadius: 4 }}>
+                Apply
+              </button>
+            </noscript>
+          </form>
+
+          <FilterGroup title="Facet">
+            {facets.facets.slice(0, 14).map((f) => (
+              <FilterLink key={f.value} href={href(raw, { facet: params.facet === f.value ? undefined : f.value })} active={params.facet === f.value} count={f.count}>
+                {f.value}
+              </FilterLink>
+            ))}
+          </FilterGroup>
+          <FilterGroup title="Family">
+            {facets.families.map((f) => (
+              <FilterLink key={f.value} href={href(raw, { family: params.family === f.value ? undefined : f.value })} active={params.family === f.value} count={f.count}>
+                {f.value}
+              </FilterLink>
+            ))}
+          </FilterGroup>
+        </ArchiveFilters>
       </aside>
 
-      <section aria-label="Results" className="order-1 min-w-0 lg:order-2">
-        <form action="/discover" role="search" className="flex h-[56px] items-center gap-3 bg-paper px-4 shadow-[var(--shadow-paper)]" style={{ borderRadius: 4 }}>
+      <section aria-label="Results" className="archive-main min-w-0">
+        <form action="/discover" role="search" className="archive-search flex h-[56px] items-center gap-3 bg-paper px-4 shadow-[var(--shadow-paper)]" style={{ borderRadius: 4 }}>
           <SearchIcon className="shrink-0 text-ink-2" />
           <input
             type="search"
@@ -136,7 +139,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
           )}
         </form>
 
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
+        <div className="archive-status mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
           <p className="text-sm text-ink-2" aria-live="polite">
             <span className="font-mono tabular">{result.total.toLocaleString("en-US")}</span> {result.total === 1 ? "fragrance" : "fragrances"}
           </p>
@@ -151,7 +154,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
               {a.label} <CloseIcon width={14} height={14} className="text-ink-3" />
             </Link>
           ))}
-          <div className="ml-auto flex gap-4 text-sm">
+          <div className="archive-sort ml-auto flex gap-4 text-sm">
             {(params.q ? (["relevance", "name", "newest"] as const) : (["name", "newest", "oldest"] as const)).map((s) => {
               const current = (params.sort ?? (params.q ? "relevance" : "name")) === s;
               return (
@@ -164,29 +167,16 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
         </div>
 
         {result.items.length === 0 ? (
-          <div className="mt-10 bg-paper p-8" style={{ borderRadius: 4 }}>
+          <div className="archive-empty mt-10 bg-paper p-8" style={{ borderRadius: 4 }}>
             <p className="text-lg font-medium">No fragrance matches all of that.</p>
             <p className="mt-2 text-ink-2">Remove a filter, or search with fewer letters. Notes are filters on the left, not search words.</p>
           </div>
         ) : (
-          <div className="mt-6 grid gap-3">
-            {result.items.map((f) => (
-              <StripRow
-                key={f.productId}
-                fragrance={f}
-                meta={
-                  <>
-                    {f.wheel && <> · {f.wheel}</>}
-                    {f.year && <> · {f.year}</>}
-                  </>
-                }
-              />
-            ))}
-          </div>
+          <DiscoverResults key={result.items.map((f) => f.productId).join(",")} fragrances={result.items} />
         )}
 
         {pages > 1 && (
-          <nav aria-label="Pages" className="mt-8 flex items-center justify-between font-mono text-sm tabular">
+          <nav aria-label="Pages" className="archive-pagination mt-8 flex items-center justify-between font-mono text-sm tabular">
             {result.page > 1 ? (
               <Link href={href(raw, { page: String(result.page - 1) })} className="hover:underline">
                 ← Previous
@@ -263,7 +253,7 @@ function FilterSelect({ label, name, value, options }: { label: string; name: st
 
 function ResultsSkeleton() {
   return (
-    <div className="mt-8 grid gap-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-16" aria-busy="true" aria-label="Loading results">
+    <div className="archive-layout mt-8 grid gap-8" aria-busy="true" aria-label="Loading results">
       <div className="hidden lg:block" />
       <div className="grid gap-3">
         <div className="h-14 bg-paper/60" />

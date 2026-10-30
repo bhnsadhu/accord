@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties } from "react";
 import { CollectionControls } from "@/components/collection-controls";
 import { ArrowIcon } from "@/components/icons";
-import { StripRow } from "@/components/strip";
+import { StripRow, StripSpecimen } from "@/components/strip";
 import { VisitTracker } from "@/components/visit-tracker";
 import { cachedFragrance, cachedNotes, cachedSimilar } from "@/lib/catalog/cached";
 import { productIdFromSlug } from "@/lib/catalog/text";
@@ -50,13 +50,8 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
         {/* The strip itself, standing. */}
         <div className="hidden lg:block" style={{ "--hue": hue } as CSSProperties}>
           <div className="lift sticky top-8">
-            <div className="strip-v mx-auto h-[560px] w-[104px]" style={{ "--tip": "60px" } as CSSProperties}>
-              <span className="stain-v" style={{ "--stain-depth": "220px", "--stain-opacity": "1" } as CSSProperties} />
-              <span className="absolute bottom-6 left-1/2 -translate-x-1/2 rotate-180 font-mono text-xs text-ink-3 [writing-mode:vertical-rl]">
-                {f.productId}
-              </span>
-            </div>
-          </div>
+            <StripSpecimen fragrance={f} className="detail-paper" />
+        </div>
         </div>
 
         <div className="min-w-0">

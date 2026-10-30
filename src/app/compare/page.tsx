@@ -51,9 +51,9 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
       <h1 className="sr-only">
         {data.a.name} compared with {data.b.name}
       </h1>
-      <div className="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
-        <Side f={data.a} only={data.onlyA} align="left" />
-        <div className="flex flex-col items-center justify-center px-4 py-6 text-center md:w-72">
+      <div className="comparison-layout grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+        <Side f={data.a} only={data.onlyA} />
+        <div className="comparison-evidence flex flex-col items-center justify-center px-4 py-6 text-center md:w-72">
           {breakdown && (
             <>
               <div className="font-mono text-5xl font-medium tracking-[-0.03em] tabular">{Math.round(breakdown.score * 100)}</div>
@@ -73,7 +73,7 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
             )}
           </ul>
         </div>
-        <Side f={data.b} only={data.onlyB} align="right" />
+        <Side f={data.b} only={data.onlyB} />
       </div>
 
       {breakdown && (
@@ -103,12 +103,12 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
   );
 }
 
-function Side({ f, only, align }: { f: NonNullable<Awaited<ReturnType<typeof cachedCompare>>>["a"]; only: string[]; align: "left" | "right" }) {
+function Side({ f, only }: { f: NonNullable<Awaited<ReturnType<typeof cachedCompare>>>["a"]; only: string[] }) {
   return (
-    <article className="lift" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
-      <div className={`strip-h h-full ${align === "right" ? "md:[transform:scaleX(-1)]" : ""}`}>
+    <article className="comparison-fragrance lift" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
+      <div className="strip-h h-full">
         <span className="stain-h" />
-        <div className={`relative py-6 pr-6 ${align === "right" ? "pl-[calc(var(--stain-depth)+16px)] md:[transform:scaleX(-1)] md:pl-6 md:pr-[calc(var(--stain-depth)+16px)] md:text-right" : "strip-text"}`}>
+        <div className="strip-text relative py-6">
           <p className="text-[13px] text-ink-3">
             {f.brand} · {f.wheel ?? "Unclassified"}
           </p>

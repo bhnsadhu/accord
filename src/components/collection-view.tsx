@@ -72,9 +72,9 @@ export function CollectionView() {
   }
 
   return (
-    <div className="mt-8 grid gap-12 lg:grid-cols-[minmax(0,1fr)_320px]">
+    <div className="mt-8 grid gap-12 xl:grid-cols-[minmax(0,1fr)_320px]">
       <div className="min-w-0">
-        <div role="tablist" aria-label="Shelves" className="flex gap-6 border-b border-rule">
+        <div role="tablist" aria-label="Shelves" className="grid grid-cols-2 gap-x-5 gap-y-1 border-b border-rule min-[420px]:flex min-[420px]:flex-wrap sm:gap-x-6">
           {TABS.map((t) => (
             <button
               key={t.id}
@@ -82,13 +82,13 @@ export function CollectionView() {
               type="button"
               aria-selected={tab === t.id}
               onClick={() => setTab(t.id)}
-              className="-mb-px border-b-2 border-transparent pb-3 text-[15px] text-ink-2 hover:text-ink aria-selected:border-ink aria-selected:font-semibold aria-selected:text-ink"
+              className="-mb-px flex min-h-11 items-center gap-1.5 whitespace-nowrap border-b-2 border-transparent py-2 text-left text-[15px] text-ink-2 hover:text-ink aria-selected:border-ink aria-selected:font-semibold aria-selected:text-ink"
             >
               {t.label} <span className="font-mono text-xs text-ink-3 tabular">{counts[t.id]}</span>
             </button>
           ))}
         </div>
-        <div role="tabpanel" className="mt-6 grid gap-3">
+        <div role="tabpanel" className="mt-6 grid gap-3 [&_.strip-text]:flex-col [&_.strip-text>div]:w-full md:[&_.strip-text]:flex-row md:[&_.strip-text>div]:w-auto">
           {shown.length === 0 && <p className="text-ink-2">This shelf is empty.</p>}
           {shown.map((entry) => {
             const f = rows.get(entry.productId);
@@ -109,7 +109,7 @@ export function CollectionView() {
         )}
       </div>
 
-      <aside aria-labelledby="profile-h" className="lg:sticky lg:top-8 lg:self-start">
+      <aside aria-labelledby="profile-h" className="xl:sticky xl:top-8 xl:self-start">
         <h2 id="profile-h" className="text-xl font-semibold tracking-[-0.02em]">
           What your shelves say
         </h2>
@@ -134,8 +134,10 @@ export function CollectionView() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[13px] text-ink-3">Notes that recur</p>
-            <p className="mt-1 text-[15px] text-ink-2">{profile.notes.join(", ")}</p>
+            {profile.notes.length > 0 && <>
+              <p className="mt-6 text-[13px] text-ink-3">Notes that recur</p>
+              <p className="mt-1 text-[15px] text-ink-2">{profile.notes.join(", ")}</p>
+            </>}
           </>
         )}
         <Link href="/for-you" className="mt-6 inline-flex items-center gap-2 font-medium hover:underline">
@@ -178,32 +180,34 @@ function EntryControls({
   onRemove: (id: string) => Promise<void>;
 }) {
   return (
-    <div className="flex flex-col items-end gap-2">
-      <div className="flex items-center" role="radiogroup" aria-label={`Rate ${name}`}>
-        {[1, 2, 3, 4, 5].map((n) => (
-          <button
-            key={n}
-            type="button"
-            role="radio"
-            aria-checked={entry.rating === n}
-            aria-label={`${n} of 5`}
-            onClick={() => onSave({ ...entry, rating: entry.rating === n ? null : n })}
-            className={`p-0.5 ${(entry.rating ?? 0) >= n ? "text-ink" : "text-ink-3 hover:text-ink-2"}`}
-          >
-            <StarIcon filled={(entry.rating ?? 0) >= n} width={18} height={18} />
-          </button>
-        ))}
+    <div className="flex flex-col items-start gap-1 md:items-end">
+      <div className="flex flex-wrap items-center gap-1">
+        <div className="flex items-center" role="radiogroup" aria-label={`Rate ${name}`}>
+          {[1, 2, 3, 4, 5].map((n) => (
+            <button
+              key={n}
+              type="button"
+              role="radio"
+              aria-checked={entry.rating === n}
+              aria-label={`${n} of 5`}
+              onClick={() => onSave({ ...entry, rating: entry.rating === n ? null : n })}
+              className={`flex size-10 items-center justify-center ${(entry.rating ?? 0) >= n ? "text-ink" : "text-ink-3 hover:text-ink-2"}`}
+            >
+              <StarIcon filled={(entry.rating ?? 0) >= n} width={18} height={18} />
+            </button>
+          ))}
+        </div>
         <button
           type="button"
           aria-pressed={entry.favorite}
           aria-label={entry.favorite ? `Remove ${name} from favourites` : `Add ${name} to favourites`}
           onClick={() => onSave({ ...entry, favorite: !entry.favorite })}
-          className="ml-2 p-0.5 text-ink-2 hover:text-ink aria-pressed:text-ink"
+          className="flex size-10 items-center justify-center text-ink-2 hover:text-ink aria-pressed:text-ink"
         >
           <HeartIcon filled={entry.favorite} width={18} height={18} />
         </button>
       </div>
-      <div className="flex items-center gap-2 text-sm">
+      <div className="flex flex-wrap items-center gap-x-3 text-sm">
         <label className="sr-only" htmlFor={`shelf-${entry.productId}`}>
           Shelf for {name}
         </label>
@@ -211,13 +215,13 @@ function EntryControls({
           id={`shelf-${entry.productId}`}
           value={entry.shelf}
           onChange={(e) => onSave({ ...entry, shelf: e.target.value as Shelf })}
-          className="bg-transparent text-ink-2"
+          className="min-h-10 bg-transparent px-2 text-ink-2"
         >
           <option value="owned">Owned</option>
           <option value="tried">Tried</option>
           <option value="wishlist">Wishlist</option>
         </select>
-        <button type="button" onClick={() => onRemove(entry.productId)} className="text-ink-3 underline hover:text-ink">
+        <button type="button" onClick={() => onRemove(entry.productId)} className="min-h-10 px-2 text-ink-3 underline hover:text-ink">
           Remove
         </button>
       </div>

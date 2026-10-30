@@ -84,8 +84,8 @@ export function Recommendations() {
   return (
     <>
       <p className="mt-5 max-w-[44em] text-ink-2">
-        Ranked against all 24,642 fragrances for your taste. &ldquo;Top 1%&rdquo; means it outscored at least 99% of the
-        catalog for you: a relative fit, not a promise you&rsquo;ll love it.{" "}
+        Ranked for your taste. &ldquo;Top 1%&rdquo; means it outscored at least 99% of eligible catalog fragrances:
+        a relative fit, not a promise you&rsquo;ll love it.{" "}
         <Link href="/profile" className="text-ink underline">
           Adjust your profile
         </Link>
@@ -93,13 +93,13 @@ export function Recommendations() {
       {data.items.length === 0 ? (
         <p className="mt-8 text-lg">Nothing fits every rule you set. Avoid fewer notes or widen &ldquo;Worn as&rdquo;.</p>
       ) : (
-        <ol className="mt-8 grid gap-3">
+        <ol className="mt-8 grid gap-3 [&_.strip-text]:flex-col [&_.strip-text>div]:w-full md:[&_.strip-text]:flex-row md:[&_.strip-text>div]:w-auto">
           {data.items.map((item) => (
             <li key={item.fragrance.productId}>
               <StripRow
                 fragrance={item.fragrance}
                 aside={
-                  <div className="flex flex-col items-end gap-3">
+                  <div className="flex items-end justify-between gap-3 text-left md:flex-col md:text-right">
                     {item.match !== null && <MatchFigure value={`top ${Math.max(1, 100 - item.match)}%`} label="for you" />}
                     <Feedback fragrance={item.fragrance} onSave={saveEntry} />
                   </div>
@@ -121,11 +121,11 @@ export function Recommendations() {
 
 function Feedback({ fragrance, onSave }: { fragrance: FragranceSummary; onSave: ReturnType<typeof useAccord>["saveEntry"] }) {
   return (
-    <div className="relative z-10 flex gap-3 text-sm">
+    <div className="relative z-10 flex flex-col items-end gap-x-3 text-sm md:flex-row md:flex-wrap md:justify-end">
       <button
         type="button"
         onClick={() => onSave({ productId: fragrance.productId, shelf: "wishlist", rating: null, favorite: false })}
-        className="text-ink-2 underline hover:text-ink"
+        className="min-h-10 text-left text-ink-2 underline hover:text-ink"
         aria-label={`Add ${fragrance.name} to wishlist`}
       >
         Want to try
@@ -133,7 +133,7 @@ function Feedback({ fragrance, onSave }: { fragrance: FragranceSummary; onSave: 
       <button
         type="button"
         onClick={() => onSave({ productId: fragrance.productId, shelf: "tried", rating: 1, favorite: false })}
-        className="text-ink-2 underline hover:text-ink"
+        className="min-h-10 text-left text-ink-2 underline hover:text-ink"
         aria-label={`Tried ${fragrance.name}, not for me`}
       >
         Tried it, not for me

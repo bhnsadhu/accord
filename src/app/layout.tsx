@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Identify fragrances from a photo, explore 24,642 perfumes by note and accord, and get recommendations that show their evidence.",
 };
 
-export const viewport: Viewport = { themeColor: "#e4e5e1" };
+export const viewport: Viewport = { themeColor: "#f0f1f3" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

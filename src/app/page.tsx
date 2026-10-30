@@ -2,14 +2,13 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Bench } from "@/components/bench";
 import { HomeFan } from "@/components/home-fan";
-import { ArrowIcon } from "@/components/icons";
-import { SearchBar } from "@/components/search-bar";
+import { ArrowIcon, CameraIcon, SearchIcon } from "@/components/icons";
 import { MatchFigure, StripRow } from "@/components/strip";
 import { cachedArchetypes, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSimilar } from "@/lib/catalog/cached";
-import { hueFor, WHEEL_HUES, WHEEL_ORDER } from "@/lib/hues";
+import { hueFor, WHEEL_ORDER } from "@/lib/hues";
 
 // Well-known fragrances for the opening fan, by ScentLens product id.
-const FAN = ["p05819", "p07571", "p15249", "p14487", "p06737", "p10989", "p22724", "p05119", "p07629", "p14069", "p09910"];
+const FAN = ["p14462", "p14486", "p14487", "p14490", "p14466", "p22724"];
 const DISSECT = "p14487"; // Le Labo Santal 33
 // Chance and two close flankers, for the illustration of answered vs unconfirmed.
 const SURE = "p05819";
@@ -30,87 +29,31 @@ export default async function Home() {
 
   return (
     <>
-      {/* First viewport: the bench. */}
-      <section className="relative mx-auto w-full max-w-[1440px] overflow-hidden px-4 sm:px-8 lg:h-[calc(100dvh-72px)] lg:max-h-[860px] lg:min-h-[720px] lg:px-16">
-        <div className="relative z-10 pt-10 lg:w-[min(580px,44vw)] lg:pt-[clamp(48px,10vh,104px)]">
-          <h1 className="text-[clamp(48px,6.4vw,88px)] font-semibold leading-[0.98] tracking-[-0.035em] text-balance">
-            Know the bottle. Find the next one.
-          </h1>
-          <p className="mt-7 max-w-[32em] text-[19px] leading-relaxed text-ink-2">
-            24,642 fragrances, read by note and accord. Search, photograph a bottle, or tell Accord what you wear. Every
-            suggestion shows its evidence.
-          </p>
-          <div className="mt-10">
-            <SearchBar />
+      <section className="signature-hero" aria-labelledby="signature-heading">
+        <div className="signature-heading">
+          <div>
+            <h1 id="signature-heading">Find your next signature.</h1>
+            <p>Fragrance, understood through notes.</p>
           </div>
-          <p className="mt-4 text-sm text-ink-3">
-            Try{" "}
-            <Link className="font-medium text-ink-2 hover:underline" href="/discover?q=santal+33">
-              Santal 33
-            </Link>
-            ,{" "}
-            <Link className="font-medium text-ink-2 hover:underline" href="/discover?q=kurkdjian">
-              Kurkdjian
-            </Link>{" "}
-            or{" "}
-            <Link className="font-medium text-ink-2 hover:underline" href="/discover?note=tonka-bean">
-              tonka bean
-            </Link>
-          </p>
-          <Bench />
+          <div className="signature-search">
+            <form action="/discover" role="search">
+              <label><SearchIcon /><input type="search" name="q" placeholder="Search fragrances or brands" aria-label="Search fragrances" /></label>
+              <button type="submit" className="bench-button">Explore <ArrowIcon /></button>
+            </form>
+            <Link href="/scan"><CameraIcon /> Scan a bottle</Link>
+          </div>
         </div>
+        <HomeFan fragrances={fan} />
+      </section>
 
-        <div className="relative mt-10 h-[440px] overflow-hidden lg:absolute lg:inset-0 lg:mt-0 lg:h-auto">
-          <HomeFan fragrances={fan} height={800} className="bottom-[-380px] left-1/2 lg:bottom-[-90px] lg:left-[75%]" />
-        </div>
-
-        {example && (
-          <article
-            className="lift relative z-10 mt-[-120px] lg:absolute lg:bottom-[7%] lg:right-[3%] lg:mt-0 lg:w-[min(760px,54vw)] lg:-rotate-3"
-            style={{ "--hue": hueFor(example.fragrance.wheel) } as CSSProperties}
-          >
-            <div className="strip-h lg:[--stain-depth:150px]">
-              <span className="stain-h" />
-              <div className="strip-text relative grid grid-cols-[minmax(0,1fr)_auto] gap-x-6 py-4 pr-6">
-                <p className="text-[13px] text-ink-3">
-                  If you love {example.source.name} · {example.source.brand}
-                </p>
-                {example.similarity !== null && (
-                  <div className="row-span-3 self-start">
-                    <MatchFigure value={example.similarity} label="similarity" />
-                  </div>
-                )}
-                <h2 className="text-[22px] font-semibold tracking-[-0.015em]">
-                  <Link href={`/fragrance/${example.fragrance.slug}`} className="after:absolute after:inset-0">
-                    {example.fragrance.name}
-                  </Link>{" "}
-                  <span className="text-base font-normal text-ink-3">{example.fragrance.brand}</span>
-                </h2>
-                {example.sharedNotes.length > 0 && (
-                  <p className="mt-1 text-[15px] text-ink-2">
-                    Shares{" "}
-                    {example.sharedNotes.map((n, i) => (
-                      <span key={n}>
-                        <b className="font-medium text-ink">{n.toLowerCase()}</b>
-                        {i < example.sharedNotes.length - 2 ? ", " : i === example.sharedNotes.length - 2 ? " and " : ""}
-                      </span>
-                    ))}{" "}
-                    with {example.source.name}.
-                  </p>
-                )}
-              </div>
-            </div>
-          </article>
-        )}
-
-        <ul className="relative z-10 mt-8 flex flex-wrap gap-x-6 gap-y-2 pb-6 text-[13px] text-ink-3 lg:absolute lg:bottom-8 lg:left-16 lg:mt-0 lg:pb-0">
-          {["Woody Amber", "Woods", "Aromatic Fougère", "Amber", "Soft Floral"].map((w) => (
-            <li key={w} className="flex items-center gap-2">
-              <i className="inline-block size-2 rounded-full" style={{ background: WHEEL_HUES[w] }} />
-              {w}
-            </li>
-          ))}
-        </ul>
+      <section className="home-evidence" aria-label="How Accord connects fragrances">
+        <div><h2>Every suggestion has a reason.</h2><p>Explore 24,642 fragrances through their notes, accord family, and character.</p></div>
+        {example && <Link href={`/fragrance/${example.fragrance.slug}`} className="home-evidence-example">
+          <div><span>If you love {example.source.name}</span><h3>{example.fragrance.name}</h3><p>{example.fragrance.brand} · Shares {example.sharedNotes.slice(0, 3).join(", ").toLowerCase()}</p></div>
+          {example.similarity !== null && <MatchFigure value={example.similarity} label="similarity" />}
+          <ArrowIcon />
+        </Link>}
+        <div className="home-bench-history"><Bench /></div>
       </section>
 
       {/* One strip, read closely. */}
@@ -118,7 +61,7 @@ export default async function Home() {
         <section className="mx-auto mt-24 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-32 lg:px-16">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
             <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
-              One strip, read the way a perfumer would.
+              Read a fragrance, note by note.
             </h2>
             <p className="max-w-[36em] text-lg leading-relaxed text-ink-2 lg:pt-2">
               Accord turns each catalog entry into notes, an accord family and its character, then compares fragrances on all
@@ -142,7 +85,7 @@ export default async function Home() {
           </article>
 
           {/* Margin annotations, pencilled beside the strip. */}
-          <dl className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-3 lg:pl-[236px]">
+          <dl className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-3 lg:pl-6">
             <Annotation term="Accord family">
               <span className="flex items-center gap-2">
                 <i className="inline-block size-2.5 rounded-full" style={{ background: hueFor(dissect.wheel) }} />
@@ -155,7 +98,7 @@ export default async function Home() {
             </Annotation>
           </dl>
 
-          <div className="mt-12 lg:pl-[236px]">
+          <div className="mt-12 lg:pl-6">
             <p className="text-[13px] text-ink-3">Smells closest to</p>
             <ul className="mt-3 grid min-w-0 gap-px bg-rule">
               {similar.map((s) => (
@@ -199,7 +142,7 @@ export default async function Home() {
       <section className="mx-auto mt-24 grid w-full max-w-[1440px] gap-10 px-4 sm:px-8 lg:mt-32 lg:grid-cols-2 lg:gap-16 lg:px-16">
         <div>
           <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
-            Point a camera at a bottle. Accord says when it isn&rsquo;t sure.
+            A careful eye for your next scent.
           </h2>
           <p className="mt-6 max-w-[34em] text-lg leading-relaxed text-ink-2">
             ScentLens finds the bottle, compares it with 24,642 catalog fragrances and reads its label. When the evidence is thin it

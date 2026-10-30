@@ -14,7 +14,10 @@ function createPool(): Pool {
   if (!connectionString) {
     throw new Error("DATABASE_URL is not set. See .env.example.");
   }
-  const pool = new Pool({ connectionString, max: 5, idleTimeoutMillis: 10_000 });
+  // node-postgres already treats prefer/require/verify-ca as verify-full;
+  // say so explicitly so it doesn't log a warning on every cold start.
+  const url = connectionString.replace(/sslmode=(prefer|require|verify-ca)\b/, "sslmode=verify-full");
+  const pool = new Pool({ connectionString: url, max: 5, idleTimeoutMillis: 10_000 });
   // Lets Vercel Fluid compute close idle clients before a function suspends.
   attachDatabasePool(pool);
   return pool;

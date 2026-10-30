@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import {
   boolean,
+  date,
   check,
   index,
   integer,
@@ -119,4 +120,38 @@ export const collectionItems = pgTable(
     index("collection_items_user_shelf_idx").on(t.userId, t.shelf),
     check("collection_items_rating_range", sql`${t.rating} is null or ${t.rating} between 1 and 5`),
   ],
+);
+
+// ---------------------------------------------------------------------------
+// Scanner protection. No photos are stored: only counters, short leases, and
+// recent results keyed by a SHA-256 of the uploaded bytes.
+// ---------------------------------------------------------------------------
+
+/** Daily counters per scope ("global", "user:<id>", "guest:<hashed ip>"). */
+export const scanQuota = pgTable(
+  "scan_quota",
+  {
+    scope: text("scope").notNull(),
+    day: date("day").notNull(),
+    used: integer("used").notNull().default(0),
+  },
+  (t) => [primaryKey({ columns: [t.scope, t.day] })],
+);
+
+/** A fixed number of upstream call slots; a lease expires on its own if a function dies. */
+export const scanSlots = pgTable("scan_slots", {
+  slot: smallint("slot").primaryKey(),
+  leaseId: text("lease_id"),
+  leasedUntil: timestamp("leased_until", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/** Recent recognition results by image hash, so a resubmitted photo never reaches ScentLens twice. */
+export const scanCache = pgTable(
+  "scan_cache",
+  {
+    imageHash: text("image_hash").primaryKey(),
+    result: jsonb("result").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("scan_cache_created_idx").on(t.createdAt)],
 );

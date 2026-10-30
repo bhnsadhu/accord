@@ -17,9 +17,9 @@ export function scanLimits(env: NodeJS.ProcessEnv = process.env): ScanLimits {
     return Number.isFinite(x) && x >= 0 ? x : d;
   };
   return {
-    globalDaily: n(env.SCAN_GLOBAL_DAILY, 30),
-    userDaily: n(env.SCAN_USER_DAILY, 8),
-    guestDaily: n(env.SCAN_GUEST_DAILY, 2),
+    globalDaily: n(env.SCAN_GLOBAL_DAILY, 3),
+    userDaily: n(env.SCAN_USER_DAILY, 2),
+    guestDaily: n(env.SCAN_GUEST_DAILY, 1),
     leaseSeconds: n(env.SCAN_LEASE_SECONDS, 150),
   };
 }

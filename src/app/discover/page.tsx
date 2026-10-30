@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { AutoSubmit } from "@/components/auto-submit";
 import { Bench } from "@/components/bench";
-import { SearchIcon } from "@/components/icons";
+import { CloseIcon, SearchIcon } from "@/components/icons";
 import { StripRow } from "@/components/strip";
 import { cachedFacets, cachedNotes, cachedSearch } from "@/lib/catalog/cached";
 import type { SearchParams } from "@/lib/catalog/queries";
@@ -144,11 +144,11 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             <Link
               key={a.clear}
               href={href(raw, { [a.clear]: undefined })}
-              className="flex items-center gap-1.5 border border-ink-3 px-3 py-1 text-sm hover:border-ink"
-              style={{ borderRadius: 999 }}
+              className="flex items-center gap-1.5 bg-paper py-1 pl-3 pr-2 text-sm shadow-[var(--shadow-paper)] hover:text-ink"
+              style={{ borderRadius: 2 }}
               aria-label={`Remove filter: ${a.label}`}
             >
-              {a.label} <span aria-hidden>×</span>
+              {a.label} <CloseIcon width={14} height={14} className="text-ink-3" />
             </Link>
           ))}
           <div className="ml-auto flex gap-4 text-sm">

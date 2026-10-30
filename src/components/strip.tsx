@@ -103,7 +103,7 @@ export function StripRow({
         {ghost ? (
           <>
             <span className="ghost-edge" aria-hidden />
-            <svg className="ghost-tip" viewBox="0 0 28 100" preserveAspectRatio="none" aria-hidden>
+            <svg className="ghost-tip" width="28" height="100%" viewBox="0 0 28 100" preserveAspectRatio="none" aria-hidden>
               <polyline
                 points="28,0.75 0.75,50 28,99.25"
                 fill="none"

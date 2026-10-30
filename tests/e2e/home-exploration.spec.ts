@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test("a note reveals real connections, closes, and opens its catalog filter", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator(".signature-bench")).toHaveAttribute("data-intro", "done");
   const sandalwood = page.getByRole("button", { name: "Sandalwood", exact: true });
   await sandalwood.focus();
   await page.keyboard.press("Enter");

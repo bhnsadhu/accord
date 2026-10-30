@@ -66,6 +66,7 @@ motion:
   ease-paper: "cubic-bezier(0.16, 1, 0.3, 1)"
   strip: "350ms to 400ms"
   fan: "650ms"
+  intro: "1050ms per strip, staggered over 250ms"
   reduced-motion: "0ms"
 ---
 
@@ -108,7 +109,7 @@ Horizontal strips have a **short stained tip at the right**. Keep most of the pa
 
 Vertical specimens use a short stained end, about 14% of the paper by default. Home places it at the top; the Discover preview places its 11% tip at the bottom. Names are printed along the paper, with secondary brand text where space allows. A faint embossed Accord wordmark can appear on the specimen.
 
-Gradients describe absorption, brushed metal, or directional light. The original silver rail and soft light give the Home fan spatial depth. The owner restored this fan, background, and selection movement after reviewing the oval stand. Alternatives for the rail are exploratory until selected. Do not use decorative rules merely to fill space. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
+Gradients describe absorption, brushed metal, or directional light. The owner selected **option C: loose blotters with no visible holder**. Keep the original silver background, lighting, resting fan geometry, and selection movement. Do not restore the rail or oval stand. Do not use decorative rules merely to fill space. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
 
 Unconfirmed scanner candidates remain rectangular **ghost strips**: no family stain, no material shadow, and a dashed neutral edge. Their uncertainty must also be stated in text. A blank candidate is not an answer.
 
@@ -116,7 +117,9 @@ Unconfirmed scanner candidates remain rectangular **ghost strips**: no family st
 
 The opening composition is wide and spatial. A clear headline and short product explanation sit above the bench; the search form occupies the adjacent desktop column. Search is a real GET form to Discover. Scan a bottle is a prominent, full-width entry below it with a camera icon and a short photo-identification explanation. Its height matches the search and Explore controls: 54px on larger screens and 48px on phones. The header, hero, and fan share a maximum width of 1600px.
 
-Six real fragrances form a spreading fan behind the original **silver bench rail**. The strips vary in angle and height, each with a readable identity and family stain. Selection moves the strip forward and down along its own axis, in front of the rail. On smaller screens the fan compresses its angles, heights, and spacing while preserving distinct targets and staying clear of the scanner action.
+Six real fragrances form a spreading fan of **loose paper blotters**, without a rail or holder. The strips vary in angle and height, each with a readable identity and family stain. Selection moves the strip forward and down along its own axis. On smaller screens the fan compresses its angles, heights, and spacing while preserving distinct targets and staying clear of the scanner action.
+
+The first Home visit in a document opens with the strips gathered at the center, then spreading into their final positions. The center strips lead and the outer strips follow, finishing in about 1.3 seconds. At the owner's explicit request, a transparent native dialog blocks site interaction and scrolling during this sequence. Skip intro and Escape settle it immediately; a 1.8-second fail-safe also releases it. Reduced motion and disabled JavaScript show the finished composition directly. Client-side returns to Home do not replay it; a fresh page load does. A resize or hidden tab settles the sequence and releases the gate.
 
 The fan is an interactive preview:
 
@@ -171,7 +174,7 @@ Native links navigate and native buttons change state. Accessible names include 
 
 Motion uses cubic-bezier(0.16, 1, 0.3, 1): short paper movements around 350 to 400ms, fan selection around 650ms, controls around 250ms. Horizontal strips rise only a few pixels; the selected fan strip moves along its own axis and deepens its shadow/stain. Reduced-motion preferences remove transitions and animations. Do not make essential information depend on motion, hover, color, or decorative texture.
 
-Supporting motion explains state: note and family disclosures open in place, archive specimens settle into the preview, quick find opens and closes with a short focus transition, and favourite/rating controls acknowledge a press. The scanner photo area uses camera framing corners that tighten on hover and while reading. Motion is interruptible and adds no dependency, scroll lock, artificial loading delay, or looping decoration.
+Supporting motion explains state: note and family disclosures open in place, archive specimens settle into the preview, quick find opens and closes with a short focus transition, and favourite/rating controls acknowledge a press. The scanner photo area uses camera framing corners that tighten on hover and while reading. Supporting motion is interruptible and adds no dependency, network wait, or looping decoration. The short Home introduction is the sole exception that temporarily locks site interaction.
 
 ## Maintenance and verification
 

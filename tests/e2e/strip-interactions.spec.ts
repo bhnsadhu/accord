@@ -25,6 +25,7 @@ test("home: choosing a strip updates the notes and keeps its detail destination"
 
 test("home: a keyboard selection survives leaving the fan", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator(".signature-bench")).toHaveAttribute("data-intro", "done");
   const another = page.getByRole("button", { name: /Preview Another 13/ });
   await another.focus();
   await page.keyboard.press("Enter");

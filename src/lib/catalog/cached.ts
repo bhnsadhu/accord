@@ -60,16 +60,31 @@ export async function cachedNotes() {
  * one well-known fragrance, with the shared notes that justify it. Computed
  * by the real engine; nothing here is written by hand.
  */
-export async function cachedExample(sourceId: string) {
+export async function cachedExample(sourceIds: string[]) {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
   const { getCatalogIndex } = await import("@/lib/reco/load");
   const { recommend } = await import("@/lib/reco/recommend");
+  const { similarity: sim } = await import("@/lib/reco/similarity");
   const index = await getCatalogIndex(db);
-  const recs = recommend(index, { items: [{ productId: sourceId, weight: 1 }] }, { k: 5 });
-  const pick = recs.find((r) => r.reasons.some((x) => x.kind === "shared-notes")) ?? recs[0];
-  if (!pick) return null;
+  // Among well-known sources, show the pair the engine itself scores closest.
+  let best: { sourceId: string; pick: ReturnType<typeof recommend>[number]; score: number } | null = null;
+  for (const sourceId of sourceIds) {
+    const a = index.byId.get(sourceId);
+    if (!a) continue;
+    const recs = recommend(index, { items: [{ productId: sourceId, weight: 1 }] }, { k: 12 });
+    // A different house, so the showcase is never a flanker of its own source.
+    const pick = recs.find(
+      (r) => index.byId.get(r.productId)?.brand !== a.brand && r.reasons.some((x) => x.kind === "shared-notes"),
+    );
+    const b = pick && index.byId.get(pick.productId);
+    if (!pick || !b) continue;
+    const score = sim(a, b);
+    if (!best || score > best.score) best = { sourceId, pick, score };
+  }
+  if (!best) return null;
+  const { sourceId, pick } = best;
   const shared = pick.reasons.find((x) => x.kind === "shared-notes");
   const [rows, notes] = await Promise.all([getFragrancesByIds(db, [sourceId, pick.productId]), listNotes(db)]);
   const label = new Map(notes.map((n) => [n.key, n.label]));

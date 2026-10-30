@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { mergeGuestAction, removeEntryAction, saveEntryAction, saveProfileAction } from "@/app/actions/collection";
 import { authClient } from "./auth-client";
 import { emptyProfile, guestStateSchema, type CollectionEntry, type GuestState, type TasteProfile } from "./profile";
@@ -53,6 +53,37 @@ function removeLocal(key: string) {
   } catch {}
 }
 
+// The trail lives in localStorage and is read through useSyncExternalStore so
+// server HTML and the first client render agree. Snapshots are cached by the
+// raw string so React sees a stable value between writes.
+const EMPTY_TRAIL: string[] = [];
+const trailListeners = new Set<() => void>();
+let trailCache: { raw: string | null; value: string[] } = { raw: null, value: EMPTY_TRAIL };
+
+function readTrail(): string[] {
+  let raw: string | null = null;
+  try {
+    raw = window.localStorage.getItem(TRAIL_KEY);
+  } catch {}
+  if (raw === trailCache.raw) return trailCache.value;
+  let value = EMPTY_TRAIL;
+  try {
+    const parsed: unknown = raw ? JSON.parse(raw) : [];
+    if (Array.isArray(parsed)) value = parsed.filter((x): x is string => typeof x === "string").slice(0, TRAIL_LIMIT);
+  } catch {}
+  trailCache = { raw, value };
+  return value;
+}
+
+function subscribeTrail(notify: () => void) {
+  trailListeners.add(notify);
+  window.addEventListener("storage", notify);
+  return () => {
+    trailListeners.delete(notify);
+    window.removeEventListener("storage", notify);
+  };
+}
+
 const emptyGuest: GuestState = { version: 1, profile: emptyProfile, collection: [] };
 
 export function AccordProvider({ children }: { children: ReactNode }) {
@@ -61,11 +92,8 @@ export function AccordProvider({ children }: { children: ReactNode }) {
   const [account, setAccount] = useState<Account>(null);
   const [profile, setProfile] = useState<TasteProfile>(emptyProfile);
   const [collection, setCollection] = useState<CollectionEntry[]>([]);
-  const [trail, setTrail] = useState<string[]>(() =>
-    typeof window === "undefined"
-      ? []
-      : readLocal(TRAIL_KEY, (v) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string").slice(0, TRAIL_LIMIT) : []), []),
-  );
+  // Server and hydration render an empty trail; the stored one arrives right after.
+  const trail = useSyncExternalStore(subscribeTrail, readTrail, () => EMPTY_TRAIL);
   const [error, setError] = useState<string | null>(null);
   const userId = session.data?.user.id ?? null;
   const loadedFor = useRef<string | null | undefined>(undefined);
@@ -155,11 +183,10 @@ export function AccordProvider({ children }: { children: ReactNode }) {
   );
 
   const visit = useCallback((productId: string) => {
-    setTrail((current) => {
-      const next = [productId, ...current.filter((id) => id !== productId)].slice(0, TRAIL_LIMIT);
-      writeLocal(TRAIL_KEY, next);
-      return next;
-    });
+    const current = readTrail();
+    if (current[0] === productId) return;
+    writeLocal(TRAIL_KEY, [productId, ...current.filter((id) => id !== productId)].slice(0, TRAIL_LIMIT));
+    trailListeners.forEach((notify) => notify());
   }, []);
 
   const value = useMemo<Store>(

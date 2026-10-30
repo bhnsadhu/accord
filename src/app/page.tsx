@@ -10,7 +10,6 @@ import { hueFor, WHEEL_HUES, WHEEL_ORDER } from "@/lib/hues";
 
 // Well-known fragrances for the opening fan, by ScentLens product id.
 const FAN = ["p05819", "p07571", "p15249", "p14487", "p06737", "p10989", "p22724", "p05119", "p07629", "p14069", "p09910"];
-const EXAMPLE_SOURCE = "p05819"; // Chanel Chance Eau De Parfum
 const DISSECT = "p14487"; // Le Labo Santal 33
 // Chance and two close flankers, for the illustration of answered vs unconfirmed.
 const SURE = "p05819";
@@ -19,7 +18,7 @@ const UNSURE = ["p05820", "p05821"];
 export default async function Home() {
   const [fan, example, dissect, similar, tour, illustration] = await Promise.all([
     cachedFragrancesByIds(FAN),
-    cachedExample(EXAMPLE_SOURCE),
+    cachedExample(FAN),
     cachedFragrance(DISSECT),
     cachedSimilar(DISSECT, 3),
     cachedArchetypes(),

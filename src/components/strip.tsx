@@ -96,11 +96,27 @@ export function StripRow({
   const link = href ?? `/fragrance/${fragrance.slug}`;
   return (
     <article
-      className="lift group relative min-w-0"
+      className={`group relative min-w-0 ${ghost ? "" : "lift"}`}
       style={{ "--hue": hueFor(fragrance.wheel) } as CSSProperties}
     >
       <div className={`strip-h min-h-24 ${ghost ? "strip-ghost" : ""}`}>
-        {!ghost && <span className="stain-h" />}
+        {ghost ? (
+          <>
+            <span className="ghost-edge" aria-hidden />
+            <svg className="ghost-tip" viewBox="0 0 28 100" preserveAspectRatio="none" aria-hidden>
+              <polyline
+                points="28,0.75 0.75,50 28,99.25"
+                fill="none"
+                stroke="var(--color-ink-3)"
+                strokeWidth="1.5"
+                strokeDasharray="4 3"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+          </>
+        ) : (
+          <span className="stain-h" />
+        )}
         <div className="strip-text relative flex items-start gap-6 py-4 pr-5">
           <div className="min-w-0 flex-1">
             <p className="text-[13px] text-ink-3">

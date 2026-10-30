@@ -130,8 +130,24 @@ a {
 /* A ghost strip: unstained and dashed, for candidates Accord has not confirmed. */
 .strip-ghost {
   background: rgb(251 251 248 / 0.4);
-  outline: 1.5px dashed var(--color-ink-3);
-  outline-offset: -1.5px;
+}
+
+/* The ghost's dashed edge, drawn to follow the die-cut tip. */
+.ghost-edge {
+  position: absolute;
+  inset: 0 0 0 var(--tip);
+  border: 1.5px dashed var(--color-ink-3);
+  border-left: 0;
+  pointer-events: none;
+}
+
+.ghost-tip {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--tip);
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
 }
 
 .lift {

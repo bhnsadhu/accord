@@ -2,10 +2,12 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Bench } from "@/components/bench";
 import { HomeFan } from "@/components/home-fan";
+import { NoteExplorer } from "@/components/note-explorer";
+import { FamilyExplorer } from "@/components/family-explorer";
 import { ScentLensLink } from "@/components/scentlens-link";
 import { ArrowIcon, CameraIcon, SearchIcon } from "@/components/icons";
 import { MatchFigure, StripRow } from "@/components/strip";
-import { cachedArchetypes, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSimilar } from "@/lib/catalog/cached";
+import { cachedArchetypes, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
 import { hueFor, WHEEL_ORDER } from "@/lib/hues";
 
 // Well-known fragrances for the opening fan, by ScentLens product id.
@@ -20,13 +22,21 @@ export default async function Home() {
     cachedFragrancesByIds(FAN),
     cachedExample(FAN),
     cachedFragrance(DISSECT),
-    cachedSimilar(DISSECT, 3),
+    cachedSimilar(DISSECT, 24),
     cachedArchetypes(),
     cachedFragrancesByIds([SURE, ...UNSURE]),
   ]);
   const wheelTour = [...tour].sort((a, b) => WHEEL_ORDER.indexOf(a.wheel ?? "") - WHEEL_ORDER.indexOf(b.wheel ?? ""));
   const sure = illustration.find((f) => f.productId === SURE);
   const unsure = illustration.filter((f) => UNSURE.includes(f.productId));
+  const noteConnections = dissect ? await Promise.all(dissect.notes.map(async (label, i) => {
+    const key = dissect.noteKeys[i];
+    const result = await cachedSearch({ notes: [key], pageSize: 4 });
+    const related = similar.filter(s => s.sharedNotes.includes(label)).map(s => s.fragrance);
+    const candidates = [...related, ...result.items].filter(f => f.productId !== dissect.productId);
+    const unique = [...new Map(candidates.map(f => [f.productId, f])).values()];
+    return { key, label, total: result.total, fragrances: unique.slice(0, 3) };
+  })) : [];
 
   return (
     <>
@@ -41,7 +51,11 @@ export default async function Home() {
               <label><SearchIcon /><input type="search" name="q" placeholder="Search fragrances or brands" aria-label="Search fragrances" /></label>
               <button type="submit" className="bench-button">Explore <ArrowIcon /></button>
             </form>
-            <Link href="/scan"><CameraIcon /> Scan a bottle</Link>
+            <Link href="/scan" className="signature-scan">
+              <CameraIcon className="signature-scan-camera" />
+              <span><strong>Scan a bottle</strong><span>Find your fragrance from a photo</span></span>
+              <ArrowIcon className="signature-scan-arrow" />
+            </Link>
           </div>
         </div>
         <HomeFan fragrances={fan} />
@@ -93,16 +107,18 @@ export default async function Home() {
                 {dissect.wheel ?? "Unclassified"}
               </span>
             </Annotation>
-            <Annotation term="Character">{dissect.character ?? "—"}</Annotation>
+            <Annotation term="Character">{dissect.character ?? "Not listed"}</Annotation>
             <Annotation term="Catalog family">
-              {[...new Set([dissect.family, dissect.subfamily].filter(Boolean))].join(" · ") || "—"}
+              {[...new Set([dissect.family, dissect.subfamily].filter(Boolean))].join(" · ") || "Not listed"}
             </Annotation>
           </dl>
 
+          <NoteExplorer connections={noteConnections} />
+
           <div className="mt-12 lg:pl-6">
             <p className="text-[13px] text-ink-3">Smells closest to</p>
-            <ul className="mt-3 grid min-w-0 gap-px bg-rule">
-              {similar.map((s) => (
+            <ul className="mt-3 grid min-w-0 gap-3">
+              {similar.slice(0, 3).map((s) => (
                 <li
                   key={s.fragrance.productId}
                   className="flex min-w-0 flex-col gap-1 bg-bench py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
@@ -130,13 +146,7 @@ export default async function Home() {
             closely its notes match the family as a whole.
           </p>
         </div>
-        <ol className="mt-10 grid gap-3 md:grid-flow-col md:grid-cols-2 md:grid-rows-7">
-          {wheelTour.map((f) => (
-            <li key={f.productId} className="min-w-0">
-              <StripRow fragrance={f} />
-            </li>
-          ))}
-        </ol>
+        <FamilyExplorer fragrances={wheelTour} />
       </section>
 
       {/* The scanner, stated plainly and shown in the strip's own terms. */}
@@ -177,7 +187,7 @@ export default async function Home() {
       </section>
 
       <section className="mx-auto mt-24 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-32 lg:px-16">
-        <div className="flex flex-col items-start gap-6 border-t border-ink pt-10 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col items-start gap-6 pt-10 md:flex-row md:items-end md:justify-between">
           <h2 className="max-w-[16em] text-[clamp(28px,3vw,40px)] font-semibold leading-[1.08] tracking-[-0.025em] text-balance">
             Tell Accord three things you wear. It does the rest.
           </h2>
@@ -196,7 +206,7 @@ export default async function Home() {
 
 function Annotation({ term, children }: { term: string; children: React.ReactNode }) {
   return (
-    <div className="border-l border-ink-3 pl-4">
+    <div>
       <dt className="text-[13px] text-ink-3">{term}</dt>
       <dd className="mt-1 text-lg font-medium">{children}</dd>
     </div>

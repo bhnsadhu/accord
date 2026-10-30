@@ -1,3 +1,5 @@
+import { ExternalLinkIcon } from "./icons";
+
 export function ScentLensLink() {
   return (
     <a
@@ -7,6 +9,7 @@ export function ScentLensLink() {
       rel="noreferrer"
     >
       ScentLens
+      <ExternalLinkIcon width={12} height={12} />
     </a>
   );
 }

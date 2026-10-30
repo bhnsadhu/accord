@@ -72,10 +72,10 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
                 {f.wheel ? <Link href={`/discover?wheel=${encodeURIComponent(f.wheel)}`} className="hover:underline">{f.wheel}</Link> : "Unclassified"}
               </span>
             </Fact>
-            <Fact term="Character">{f.character ?? "—"}</Fact>
-            <Fact term="Family">{[...new Set([f.family, f.subfamily].filter(Boolean))].join(" · ") || "—"}</Fact>
+            <Fact term="Character">{f.character ?? "Not listed"}</Fact>
+            <Fact term="Family">{[...new Set([f.family, f.subfamily].filter(Boolean))].join(" · ") || "Not listed"}</Fact>
             <Fact term="Worn as">
-              {f.gender ? GENDER_LABEL[f.gender] : "—"}
+              {f.gender ? GENDER_LABEL[f.gender] : "Not listed"}
               {f.year ? <span className="text-ink-3"> · {f.year}</span> : null}
             </Fact>
           </dl>

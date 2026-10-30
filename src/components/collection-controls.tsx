@@ -64,7 +64,7 @@ export function CollectionControls({ productId }: { productId: string }) {
                 aria-checked={entry?.rating === n}
                 aria-label={`${n} of 5`}
                 onClick={() => update({ rating: entry?.rating === n ? null : n, shelf: entry?.shelf === "wishlist" || !entry ? "tried" : entry.shelf })}
-                className={`p-1 transition-colors ${on ? "text-ink" : "text-ink-3 hover:text-ink-2"}`}
+                className={`rating-choice p-1 transition-colors ${on ? "text-ink" : "text-ink-3 hover:text-ink-2"}`}
               >
                 <StarIcon filled={on} />
               </button>
@@ -75,7 +75,7 @@ export function CollectionControls({ productId }: { productId: string }) {
           type="button"
           aria-pressed={entry?.favorite ?? false}
           onClick={() => update({ favorite: !(entry?.favorite ?? false) })}
-          className="flex items-center gap-2 text-[15px] text-ink-2 hover:text-ink aria-pressed:text-ink"
+          className="collection-favourite flex items-center gap-2 text-[15px] text-ink-2 hover:text-ink aria-pressed:text-ink"
         >
           <HeartIcon filled={entry?.favorite ?? false} />
           {entry?.favorite ? "Favourite" : "Add to favourites"}

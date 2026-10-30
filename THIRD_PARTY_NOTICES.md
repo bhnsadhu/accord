@@ -5,7 +5,7 @@
 ### Fragrance DNA
 - Source: https://github.com/mikeyoknow/fragrance-dna
 - License: MIT, Copyright (c) 2026 Erfan Razmand
-- Used: the accord-aware perfume similarity (note overlap blended with accord overlap, 0.7 / 0.3) and the Personalized PageRank recommender. No code was copied; Accord reimplements both in TypeScript with changes: IDF-weighted note cosine instead of Jaccard, family and wheel-character terms, and a walk on the fragrance–note–accord graph instead of a precomputed perfume similarity graph. See `src/lib/reco/similarity.ts` and `src/lib/reco/graph.ts`.
+- Used: the accord-aware perfume similarity (note overlap blended with accord overlap, 0.7 / 0.3) and the Personalized PageRank recommender. No code was copied; Accord reimplements both in TypeScript with changes: IDF-weighted note cosine instead of Jaccard, family and wheel-character terms, and a walk on the fragrance-note-accord graph instead of a precomputed perfume similarity graph. See `src/lib/reco/similarity.ts` and `src/lib/reco/graph.ts`.
 
 ```
 MIT License

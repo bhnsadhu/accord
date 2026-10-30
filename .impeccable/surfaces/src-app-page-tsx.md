@@ -21,7 +21,7 @@ OWN-WORLD: Neutral bench grey ground, blotter-paper white strips with die-cut ta
 
 STORY: The enthusiast sees that Accord reads 24,642 fragrances by note and accord, trusts suggestions because each shows its evidence, and searches or scans at once.
 
-FIRST VIEWPORT: Left ~40%: 84px headline, lede, working search field with Scan button beside it. Right: fan of 11 real catalog strips rising from below the frame. One recommendation strip laid across the bench lower right with match and evidence. Family legend lower left. Signature interaction: selecting a strip lifts it from the fan and its stain saturates as it locks; laid strips form a retraceable trail. Motion: paper physics, exponential ease-out 500–700 ms, instant under reduced motion.
+FIRST VIEWPORT: Left ~40%: 84px headline, lede, working search field with Scan button beside it. Right: fan of 11 real catalog strips rising from below the frame. One recommendation strip laid across the bench lower right with match and evidence. Family legend lower left. Signature interaction: selecting a strip lifts it from the fan and its stain saturates as it locks; laid strips form a retraceable trail. Motion: paper physics, exponential ease-out 500 to 700 ms, instant under reduced motion.
 
 FORM: Smelling strips (mouillettes), grounded candidate 3 of 7. seed:53633257f486edba
 

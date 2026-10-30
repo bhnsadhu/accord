@@ -206,12 +206,12 @@ export function DiscoverResults({ fragrances }: { fragrances: FragranceSummary[]
       </div>
 
       <aside id={previewId} className="archive-preview" aria-labelledby={titleId}>
-        <div className="archive-preview-strip" aria-hidden="true">
+        <div className="archive-preview-strip specimen-change" key={selected.productId} aria-hidden="true">
           <StripSpecimen fragrance={selected} className="archive-preview-paper" />
         </div>
 
         <div className="archive-preview-content">
-          <header className="archive-preview-heading">
+          <header className="archive-preview-heading selection-change" key={`heading-${selected.productId}`}>
             <h2 id={titleId}>{selected.name}</h2>
             <p>{selected.brand}</p>
           </header>

@@ -29,7 +29,7 @@ Postgres via Drizzle and node-postgres. Neon in production (pooled URL, `attachD
 | `brands`, `notes`, `fragrance_notes` | Normalised catalog | Notes keyed by slug; join table keeps source order (`position`). |
 | `user`, `session`, `account`, `verification`, `rate_limit` | Better Auth | Generated schema. Rate limits stored in Postgres because serverless instances share no memory. |
 | `taste_profiles` | Explicit preferences | One JSONB row per user, validated by zod on read and write. Cascades on user delete. |
-| `collection_items` | Shelves, ratings, favourites | PK `(user_id, product_id)`; rating CHECK 1–5; cascades on user delete. |
+| `collection_items` | Shelves, ratings, favourites | PK `(user_id, product_id)`; rating CHECK 1 to 5; cascades on user delete. |
 | `scan_quota`, `scan_slots`, `scan_cache` | Scanner protection | See below. No photos stored. |
 
 Authorization: every write path takes the user id from the verified session (`currentUser()`), never from input, and every query on user data is scoped by it. Integration tests cover cross-user isolation and cascade deletion.
@@ -47,7 +47,7 @@ Catalog reads go through `"use cache"` wrappers (`src/lib/catalog/cached.ts`) wi
 3. **Profile** (`recommend.ts`): collection entries become weights (rating 5 → 1 … rating 1 → −1; owned 0.6, wishlist 0.4, tried 0.15, favourite 1). A Rocchio-style centroid (dislikes at 0.6 strength) plus explicit liked notes/accords/families. Explicitly avoided notes exclude fragrances outright.
 4. **Scoring**: 0.40 note fit + 0.40 similarity to the nearest liked fragrance + 0.10 personalized PageRank (`graph.ts`) + 0.05 accords + 0.05 family. Weights chosen on the offline evaluation.
 5. **Diversity**: MMR (λ = 0.75) over the top 150 with at most two per brand.
-6. **Explanations**: built only from the score's own terms — explicitly liked notes present, the top contributing notes together with the liked fragrances that contain them, the closest rated fragrance above a similarity threshold, a preferred accord or family.
+6. **Explanations**: built only from the score's own terms: explicitly liked notes present, the top contributing notes together with the liked fragrances that contain them, the closest rated fragrance above a similarity threshold, a preferred accord or family.
 7. **Match**: percentile of eligible catalog outscored. Not a probability.
 8. **Cold start**: per wheel family, the fragrance nearest the family's note centroid ("archetypes"); no popularity data is implied.
 
@@ -56,7 +56,7 @@ Catalog reads go through `"use cache"` wrappers (`src/lib/catalog/cached.ts`) wi
 Request path for `POST /api/scan` (body: JPEG bytes, resized on the client to ≤ 1024 px):
 
 1. Kill switch: `scannerMode()` is `off` unless `SCANNER_MODE=live` with `SCENTLENS_URL`; `mock` only outside production.
-2. Validate: size 1 KB – 2 MB, format by magic bytes (JPEG/PNG/WebP).
+2. Validate: size 1 KB to 2 MB, format by magic bytes (JPEG/PNG/WebP).
 3. Cache: SHA-256 of bytes; a result from the last 24 h is returned with no upstream call and no quota.
 4. Lease one of two slots (`FOR UPDATE SKIP LOCKED`, 150 s expiry), else `429 busy`.
 5. Consume quota atomically for every scope in one transaction (global; user or salted daily guest-IP hash), else `429 quota`.

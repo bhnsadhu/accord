@@ -31,7 +31,7 @@ export type Reason =
 export type Recommendation = {
   productId: string;
   score: number;
-  /** Share of eligible catalog fragrances this one outscored, 0–100. A relative fit, not a probability. */
+  /** Share of eligible catalog fragrances this one outscored, 0 to 100. A relative fit, not a probability. */
   match: number;
   reasons: Reason[];
 };
@@ -42,7 +42,7 @@ export type Recommendation = {
  *  - notes:    cosine between the taste centroid and the fragrance's notes
  *  - accords:  overlap with preferred wheel families and facets
  *  - family:   agreement with preferred catalog families
- *  - graph:    personalized PageRank over the fragrance–note graph
+ *  - graph:    personalized PageRank over the fragrance-note graph
  *  - neighbor: similarity to the single closest liked fragrance, which keeps
  *              a varied taste (citrus *and* oud) from averaging into mush
  */

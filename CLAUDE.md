@@ -1,6 +1,6 @@
 @AGENTS.md
 
-# Accord — engineering notes for Claude
+# Accord: engineering notes for Claude
 
 Accord is a premium fragrance discovery, recognition and collection platform: Bhanu's PM + SWE portfolio project (not commercial). The recognition engine is ScentLens, a separate repo (github.com/bhnsadhu/scent-lens) deployed on Modal. Never merge, rebuild, retrain or redeploy ScentLens without explicit permission.
 
@@ -27,7 +27,7 @@ Fragrances are smelling strips on a neutral evaluation bench; one fixed stain hu
 "What if Linear's product team built the best fragrance discovery platform?" Clarity, precision, speed, restraint, strong hierarchy, high-quality motion, Apple-level craft. Original identity; no copying Linear/Apple; no generic AI-dashboard styling, random glass, gratuitous gradients.
 
 ## Stack
-Next.js 16 App Router (cacheComponents + partialPrefetching ON — read node_modules/next/dist/docs before using caching/params APIs), React 19, TS strict, Tailwind 4, Drizzle + node-postgres, Neon in prod, PGlite locally, Better Auth, Vitest, Playwright.
+Next.js 16 App Router (cacheComponents + partialPrefetching ON: read node_modules/next/dist/docs before using caching/params APIs), React 19, TS strict, Tailwind 4, Drizzle + node-postgres, Neon in prod, PGlite locally, Better Auth, Vitest, Playwright.
 
 ## Local dev
 ```
@@ -37,7 +37,7 @@ npm run dev
 ```
 Checks before every commit: `npm run typecheck && npm run lint && npm test` (+ `npm run build` and `npm run test:e2e` for app changes; e2e starts its own server on :3200 with the scanner mocked).
 
-Next.js 16 gotchas seen here: setState inside effects fails lint (react-compiler rules) — derive state instead; pages reading params/searchParams must await them inside <Suspense>; Turbopack dev can go stale after appending exports to a "use cache" module — restart dev.
+Next.js 16 gotchas seen here: setState inside effects fails lint (react-compiler rules): derive state instead; pages reading params/searchParams must await them inside <Suspense>; Turbopack dev can go stale after appending exports to a "use cache" module: restart dev.
 
 ## Git workflow
 - Commit + push completed, tested chunks to `main` (authorized). Conventional commits. Never force-push.

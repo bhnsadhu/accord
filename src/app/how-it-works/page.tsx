@@ -42,7 +42,7 @@ export default function HowItWorksPage() {
           <p className="mt-3">
             Your profile becomes a weighted set of notes and accords: favourites and high ratings pull towards their notes, low
             ratings push away, and notes you avoid are excluded outright. Each fragrance is scored on fit to that profile, closeness
-            to your single nearest favourite, and a personalized PageRank walk over the fragrance–note graph, then the list is
+            to your single nearest favourite, and a personalized PageRank walk over the fragrance-note graph, then the list is
             diversified so it isn&rsquo;t ten versions of one bottle. Every reason shown is taken from that calculation.
           </p>
           <p className="mt-3">

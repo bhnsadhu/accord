@@ -1,7 +1,7 @@
 import type { CatalogIndex } from "./catalog-index";
 
 /**
- * Personalized PageRank over the fragrance–note–accord graph, after the PPR
+ * Personalized PageRank over the fragrance-note-accord graph, after the PPR
  * recommender in Fragrance DNA (MIT, github.com/mikeyoknow/fragrance-dna),
  * which walks a perfume similarity graph. Here the walk runs on the bipartite
  * graph itself, so it needs no precomputed all-pairs similarity: mass flows

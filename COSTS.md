@@ -33,7 +33,7 @@ Because the container stays up 5 minutes after the last request, each isolated s
 | Same photo within 24 h answered from cache, no upstream call | `scan_cache` (hash + result only) | 24 h |
 | Server-side image validation by magic bytes and size before any quota or call | `src/lib/scan/image.ts` | ≤ 2 MB |
 | Client resizes to ≤ 1024 px JPEG; no automatic retries; one scan in flight per tab | `src/components/scanner.tsx` | |
-| No warm-up pings | — | |
+| No warm-up pings | Not applicable | |
 
 Worst case from Accord's side with defaults: 3 isolated scans/day × ~6 min ≈ 18 container-minutes/day ≈ 9 hours/month. That can exceed the $1 credit late in a month; when it does, Modal stops the app (no charge) and Accord reports the scanner as unavailable until credits renew. Raise the caps only after adding budget.
 

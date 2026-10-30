@@ -2,7 +2,7 @@
 
 All numbers here come from scripts in this repo, run on the local catalog. Nothing is estimated.
 
-## Recommendation engine — offline line hold-out
+## Recommendation engine: offline line hold-out
 
 **Script:** `npx tsx scripts/evaluate-reco.ts` (deterministic seed 42, 300 trials).
 
@@ -44,7 +44,7 @@ Shipped weights: notes 0.40, nearest liked 0.40, graph 0.10, accords 0.05, famil
 | Item | Value |
 |---|---|
 | Photo | ScentLens real-photo set `b058__clean__2`, resized on this machine to ≤ 1024 px JPEG (112 KB), as the browser does |
-| Result | `answered: true`, reason `confident`, confidence 0.999, `product_id` p14603 — Les Eaux Primordiales *Vanille Supermassive* |
+| Result | `answered: true`, reason `confident`, confidence 0.999, `product_id` p14603: Les Eaux Primordiales *Vanille Supermassive* |
 | Ground truth | ScentLens `data/real/labels.csv`: b058 → p14603. Match. |
 | Latency | 21.6 s end to end (container waking); ScentLens reported 5.6 s inside the model |
 | Quota | Guest daily allowance went 1 → 0 as designed |

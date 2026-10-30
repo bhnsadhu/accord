@@ -85,7 +85,7 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
       <dialog
         ref={dialog}
         aria-label="Find a fragrance"
-        className="m-0 mx-auto mt-[12vh] w-[min(640px,calc(100vw-32px))] bg-transparent p-0 backdrop:bg-ink/25"
+        className="quick-find m-0 mx-auto mt-[12vh] w-[min(640px,calc(100vw-32px))] bg-transparent p-0 backdrop:bg-ink/25"
         onClick={(e) => e.target === dialog.current && close()}
       >
         <div className="bg-paper shadow-[var(--shadow-lifted)]" style={{ borderRadius: 4 }}>

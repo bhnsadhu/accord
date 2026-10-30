@@ -6,7 +6,7 @@
  * product name (Chanel Chance, Dior Sauvage, ...). A simulated person likes
  * four fragrances from a line; we hide a fifth and measure where it ranks
  * among all ~24k candidates. Flankers usually share DNA, so a good taste model
- * should rank the hidden one high — but brand and name are never inputs.
+ * should rank the hidden one high: but brand and name are never inputs.
  *
  *   npx tsx scripts/evaluate-reco.ts
  */

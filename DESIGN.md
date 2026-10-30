@@ -86,8 +86,8 @@ Accord helps people know a bottle, find their next fragrance, and understand the
 - The current catalog contains **24,642 fragrances, 1,255 brands, and 285 notes**. Derive filter totals, result counts, and comparison values from the actual data.
 - Catalog metadata is text only. Do not introduce catalog bottle photography, product descriptions, prices, public ratings, popularity claims, or reviews without a verified source and usage rights. The paper material texture is an interface asset, not catalog imagery.
 - Display notes as listed in the catalog. Do not invent top, heart, or base layers, material concentrations, performance, or longevity.
-- Personal ratings are 1–5 and belong to the user. Recommendations, pair similarity, and scan confidence are different concepts and must have distinct labels.
-- A recommendation percentile is relative fit among eligible catalog fragrances, not a probability of liking it. Pair similarity is a separate 0–100 measure: notes 55%, accord 25%, catalog family 15%, character 5%.
+- Personal ratings are 1 to 5 and belong to the user. Recommendations, pair similarity, and scan confidence are different concepts and must have distinct labels.
+- A recommendation percentile is relative fit among eligible catalog fragrances, not a probability of liking it. Pair similarity is a separate 0 to 100 measure: notes 55%, accord 25%, catalog family 15%, character 5%.
 - Put concrete reasons beside suggestions: shared notes, accord family, character, or a liked fragrance. Demonstrations and unconfirmed scanner candidates must be visibly labelled as such.
 
 ## Color and type
@@ -108,15 +108,15 @@ Horizontal strips have a **short stained tip at the right**. Keep most of the pa
 
 Vertical specimens use a short stained end, about 14% of the paper by default. Home places it at the top; the Discover preview places its 11% tip at the bottom. Names are printed along the paper, with secondary brand text where space allows. A faint embossed Accord wordmark can appear on the specimen.
 
-Gradients describe absorption, brushed metal, or directional light. The silver bench rail is a material feature of Home, and soft light gives the fan spatial depth. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
+Gradients describe absorption, brushed metal, or directional light. A bounded oval metal stand with six visible slots holds the Home fan, and soft light gives it spatial depth. Do not restore the edge-to-edge metal bar or use decorative rules to fill space. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
 
 Unconfirmed scanner candidates remain rectangular **ghost strips**: no family stain, no material shadow, and a dashed neutral edge. Their uncertainty must also be stated in text. A blank candidate is not an answer.
 
 ## Home: Precision Bench
 
-The opening composition is wide and spatial. A clear headline and short product explanation sit above the bench; the search form occupies the adjacent desktop column. Search is a real GET form to Discover, with a separate Scan a bottle link. The header, hero, and fan share a maximum width of 1600px.
+The opening composition is wide and spatial. A clear headline and short product explanation sit above the bench; the search form occupies the adjacent desktop column. Search is a real GET form to Discover. Scan a bottle is an equally prominent, full-width entry below it with a camera icon and a short photo-identification explanation. The header, hero, and fan share a maximum width of 1600px.
 
-Six real fragrances form a spreading fan behind a thin **silver bench rail**. The strips vary in angle and height, each with a readable identity and family stain. A low cast light and directional shadows establish depth without a beaker or container. On smaller screens the fan compresses its angles, heights, and spacing while preserving distinct targets.
+Six real fragrances form a spreading fan in a **slotted silver blotter stand**. The stand has curved ends, a visible top and front face, and a small Fragrance blotters inscription. The strips vary in angle and height, each with a readable identity and family stain. Selection lifts a strip clear of its slot. On smaller screens the fan compresses its angles, heights, and spacing while preserving distinct targets and staying clear of the scanner action.
 
 The fan is an interactive preview:
 
@@ -126,6 +126,8 @@ The fan is an interactive preview:
 - The initial selection prefers Santal 33 when present. Do not imply that an unselected fragrance was opened or saved.
 
 The first supporting section explains a real connection, including shared-note evidence and a labelled similarity figure. The personal bench trail is separate from fan selection and reflects actual opened fragrances. Further sections retain the product story: reading a fragrance through its notes, exploring the accord wheel, and distinguishing a scanner answer from unconfirmed candidates.
+
+Follow a note opens an inline catalog connection panel. Counts come from actual note-filtered catalog queries; examples prefer similar fragrances that list the selected note, with catalog results as the fallback. Explore the note opens the corresponding Discover filter. Accord-family strips are native disclosures, one open at a time, showing full listed notes, character, and links to the fragrance or family. They work without JavaScript. Keep these interactions inline so exploration never requires a modal.
 
 ## Discover: Scent Archive
 
@@ -139,7 +141,7 @@ Compare anchors the selected fragrance, asks the user to select another result, 
 
 Responsive behavior is part of the contract:
 
-- **701–1099px:** filters move above results in a native disclosure, closed initially; the result list and selected preview remain beside each other.
+- **701 to 1099px:** filters move above results in a native disclosure, closed initially; the result list and selected preview remain beside each other.
 - **700px and below:** filters stay above the list. Explicit selection reveals a compact preview immediately below that strip, containing full notes, View fragrance, and Compare. Close returns focus to the source button. The desktop preview is hidden so selection never appears to do nothing far below the results.
 - The filter disclosure opens on desktop and remains keyboard-operable. Accord family precedes the included/excluded-note form. Existing facets, catalog families, gender, sorting, clear-filter actions, empty results, and pagination remain available.
 
@@ -157,15 +159,19 @@ Use horizontal paper strips for fragrance lists in recommendations, collections,
 
 ## Controls, navigation, and accessibility
 
+Use no em or en dashes in project text. Write numeric ranges with “to” and missing metadata as “Not listed”. Repository and ScentLens links use stronger text and a small external-link arrow, with no background highlight.
+
 Links and text actions use no underlines in any state. Current navigation and sort choices use stronger text; the selected collection shelf uses a subtle neutral fill and stronger text. Keep the visible keyboard-focus outline.
 
-Primary actions use graphite fills and paper text. Secondary actions use a restrained neutral border. Controls have 4–6px corners; tags are almost square at 2px. Avoid pill-shaped note chips and card grids that replace the strip vocabulary. Fields have visible labels, appropriate input types, clear errors, and real submit behavior.
+Primary actions use graphite fills and paper text. Secondary actions use a restrained neutral border. Controls have 4 to 6px corners; tags are almost square at 2px. Avoid pill-shaped note chips and card grids that replace the strip vocabulary. Fields have visible labels, appropriate input types, clear errors, and real submit behavior.
 
 The main sections remain **Discover / For you / Collection / Scan**. At desktop widths they appear in the top navigation; below 1100px they move into the four-section bottom bar. Keep content clear of that fixed bar. Quick find, Cmd/Ctrl K, account/profile access, and the skip link remain available.
 
 Native links navigate and native buttons change state. Accessible names include the visible label; prefer native content with a short screen-reader-only prefix where a preview needs context. Preview controls expose selection and expanded state, identify the region they control when applicable, and announce the selected fragrance. All mouse interactions must work from the keyboard; visible focus uses a 2px blue outline with a 3px offset. Full names and note lists must remain accessible when the visual layout truncates compact labels.
 
-Motion uses cubic-bezier(0.16, 1, 0.3, 1): short paper movements around 350–400ms, fan selection around 650ms, controls around 250ms. Horizontal strips rise only a few pixels; the selected fan strip moves along its own axis and deepens its shadow/stain. Reduced-motion preferences remove transitions and animations. Do not make essential information depend on motion, hover, color, or decorative texture.
+Motion uses cubic-bezier(0.16, 1, 0.3, 1): short paper movements around 350 to 400ms, fan selection around 650ms, controls around 250ms. Horizontal strips rise only a few pixels; the selected fan strip moves along its own axis and deepens its shadow/stain. Reduced-motion preferences remove transitions and animations. Do not make essential information depend on motion, hover, color, or decorative texture.
+
+Supporting motion explains state: note and family disclosures open in place, archive specimens settle into the preview, quick find opens and closes with a short focus transition, and favourite/rating controls acknowledge a press. The scanner photo area uses camera framing corners that tighten on hover and while reading. Motion is interruptible and adds no dependency, scroll lock, artificial loading delay, or looping decoration.
 
 ## Maintenance and verification
 

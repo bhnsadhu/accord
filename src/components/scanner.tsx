@@ -100,7 +100,7 @@ export function Scanner() {
     }
   }
 
-  if (!status) return <div className="mt-10 h-64" aria-busy="true" />;
+  if (!status) return <div className="mt-10 flex h-64 items-center justify-center gap-3 text-ink-2" role="status" aria-busy="true"><CameraIcon /> Getting the scanner ready…</div>;
 
   if (!status.enabled) {
     return (
@@ -127,8 +127,9 @@ export function Scanner() {
     <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
       <div>
         <label
-          className={`relative flex aspect-[4/5] cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden border-2 border-dashed border-ink-3 bg-paper/60 text-center transition-colors hover:border-ink ${busy ? "pointer-events-none" : ""}`}
+          className={`scan-upload relative flex aspect-[4/5] cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden bg-paper/60 text-center ${busy ? "pointer-events-none" : ""}`}
           style={{ borderRadius: 4 }}
+          data-busy={busy}
         >
           {preview ? (
             // eslint-disable-next-line @next/next/no-img-element -- local object URL preview, never uploaded anywhere else
@@ -140,6 +141,9 @@ export function Scanner() {
               <span className="text-sm text-ink-3">JPEG, PNG or WebP</span>
             </>
           )}
+          <svg className="scan-frame" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none" aria-hidden="true">
+            <path d="M5 25V8a3 3 0 0 1 3-3h17M75 5h17a3 3 0 0 1 3 3v17M95 75v17a3 3 0 0 1-3 3H75M25 95H8a3 3 0 0 1-3-3V75" />
+          </svg>
           <input
             ref={input}
             type="file"
@@ -160,7 +164,8 @@ export function Scanner() {
         <p className="mt-2 text-sm text-ink-3">Photos are sent to <ScentLensLink /> for this scan only and never stored.</p>
       </div>
 
-      <div aria-live="polite">
+      <div aria-live="polite" className="scanner-response">
+        <div className="selection-change" key={phase.kind}>
         {phase.kind === "idle" && <HowItWorks />}
         {phase.kind === "preparing" && <p className="text-lg">Preparing your photo…</p>}
         {phase.kind === "identifying" && (
@@ -191,6 +196,7 @@ export function Scanner() {
           </div>
         )}
         {phase.kind === "done" && <Result data={phase.data} onAgain={() => input.current?.click()} />}
+        </div>
       </div>
     </div>
   );

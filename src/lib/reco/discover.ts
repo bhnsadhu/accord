@@ -4,7 +4,7 @@ import { similarityBreakdown, type SimilarityBreakdown } from "./similarity";
 
 export type SimilarResult = { productId: string; similarity: SimilarityBreakdown; sharedNotes: string[] };
 
-/** "What smells like this?" — nearest neighbours by note/accord/family similarity, diversified. */
+/** "What smells like this?": nearest neighbours by note/accord/family similarity, diversified. */
 export function similarTo(index: CatalogIndex, productId: string, k = 12): SimilarResult[] {
   const target = index.byId.get(productId);
   if (!target) return [];
@@ -41,7 +41,7 @@ export function sharedNoteKeys(index: CatalogIndex, a: Item, b: Item): string[] 
 
 /**
  * Cold start without any signal: for each wheel family, the fragrances closest
- * to that family's average note profile — its most archetypal members —
+ * to that family's average note profile: its most archetypal members :
  * interleaved so the first screen spans the whole wheel. No popularity data
  * exists in the catalog, so none is implied.
  */

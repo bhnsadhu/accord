@@ -20,7 +20,7 @@ All phases complete. Live at https://accord.bhanusadhu.com (Vercel Hobby + Neon 
 Latest UI update (2026-10-30): renamed the footer source link to “Repository” and linked every visible ScentLens mention, including scanner messages, using semibold ink on a subtle silver highlight with no underline. Checks skipped at the owner's request; committed and pushed through the existing workflow.
 
 1. **Logo**: placeholder strip mark; options being explored.
-2. **More scans**: needs Modal budget (card + spend limit) — Bhanu deciding later. Caps: 3/day global, 2 per account, 1 per guest.
+2. **More scans**: needs Modal budget (card + spend limit): Bhanu deciding later. Caps: 3/day global, 2 per account, 1 per guest.
 
 ## Deployment facts
 - Vercel project `bhanu-sadhu-s-projects/accord`, Git-connected: every push to `main` deploys production.

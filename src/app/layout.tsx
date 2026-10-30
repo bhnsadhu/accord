@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PaletteProvider } from "@/components/command-palette";
 import { Nav } from "@/components/nav";
 import { ScentLensLink } from "@/components/scentlens-link";
+import { ExternalLinkIcon } from "@/components/icons";
 import { Toaster } from "@/components/toaster";
 import { AccordProvider } from "@/lib/store";
 import "./globals.css";
@@ -12,7 +13,7 @@ const schibsted = Schibsted_Grotesk({ variable: "--font-schibsted", subsets: ["l
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "Accord — know the bottle, find the next one", template: "%s · Accord" },
+  title: { default: "Accord: know the bottle, find the next one", template: "%s · Accord" },
   description:
     "Identify fragrances from a photo, explore 24,642 perfumes by note and accord, and get recommendations that show their evidence.",
 };
@@ -61,8 +62,8 @@ function Footer() {
             </Link>
           </li>
           <li>
-            <a href="https://github.com/bhnsadhu/accord" className="hover:text-ink">
-              Repository
+            <a href="https://github.com/bhnsadhu/accord" className="project-link">
+              Repository <ExternalLinkIcon width={12} height={12} />
             </a>
           </li>
         </ul>

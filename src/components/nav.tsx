@@ -65,7 +65,7 @@ export function Nav() {
               <Link href="/sign-in" className="hidden text-ink hover:underline sm:inline">
                 Sign in
               </Link>
-              <Link href="/profile" className="rounded-full border border-ink px-3.5 py-1.5 transition-colors hover:bg-ink hover:text-paper">
+              <Link href="/profile" className="border border-ink px-3.5 py-1.5 transition-colors hover:bg-ink hover:text-paper" style={{ borderRadius: 4 }}>
                 Build your profile
               </Link>
             </>

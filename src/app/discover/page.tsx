@@ -90,7 +90,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             options={Object.entries(GENDER_LABEL)}
           />
           <noscript>
-            <button type="submit" className="h-10 bg-ink px-4 text-paper">
+            <button type="submit" className="h-10 bg-ink px-4 text-paper" style={{ borderRadius: 4 }}>
               Apply
             </button>
           </noscript>

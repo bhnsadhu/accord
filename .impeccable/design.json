@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-30T07:54:38.200Z",
+  "title": "Design System: Accord",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Graphite Ink",
+        "canonical": "#1c1e1d",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 164.7)",
+          "oklch(26.4% 0.003 164.7)",
+          "oklch(37.9% 0.003 164.7)",
+          "oklch(49.3% 0.004 164.7)",
+          "oklch(60.7% 0.003 164.7)",
+          "oklch(72.1% 0.003 164.7)",
+          "oklch(83.6% 0.002 164.7)",
+          "oklch(95.0% 0.001 164.7)"
+        ]
+      },
+      "ink-2": {
+        "role": "primary",
+        "displayName": "Pencil Grey",
+        "canonical": "#464a47",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 153.6)",
+          "oklch(26.4% 0.006 153.6)",
+          "oklch(37.9% 0.007 153.6)",
+          "oklch(49.3% 0.007 153.6)",
+          "oklch(60.7% 0.007 153.6)",
+          "oklch(72.1% 0.006 153.6)",
+          "oklch(83.6% 0.004 153.6)",
+          "oklch(95.0% 0.001 153.6)"
+        ]
+      },
+      "ink-3": {
+        "role": "primary",
+        "displayName": "Faint Pencil",
+        "canonical": "#585c58",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 145.4)",
+          "oklch(26.4% 0.006 145.4)",
+          "oklch(37.9% 0.008 145.4)",
+          "oklch(49.3% 0.008 145.4)",
+          "oklch(60.7% 0.008 145.4)",
+          "oklch(72.1% 0.007 145.4)",
+          "oklch(83.6% 0.004 145.4)",
+          "oklch(95.0% 0.002 145.4)"
+        ]
+      },
+      "bench": {
+        "role": "neutral",
+        "displayName": "Bench Grey",
+        "canonical": "#e4e5e1",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 117.9)",
+          "oklch(26.4% 0.004 117.9)",
+          "oklch(37.9% 0.005 117.9)",
+          "oklch(49.3% 0.005 117.9)",
+          "oklch(60.7% 0.005 117.9)",
+          "oklch(72.1% 0.004 117.9)",
+          "oklch(83.6% 0.003 117.9)",
+          "oklch(95.0% 0.001 117.9)"
+        ]
+      },
+      "bench-deep": {
+        "role": "neutral",
+        "displayName": "Deep Bench",
+        "canonical": "#d7d9d3",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 121.6)",
+          "oklch(26.4% 0.007 121.6)",
+          "oklch(37.9% 0.008 121.6)",
+          "oklch(49.3% 0.008 121.6)",
+          "oklch(60.7% 0.008 121.6)",
+          "oklch(72.1% 0.007 121.6)",
+          "oklch(83.6% 0.005 121.6)",
+          "oklch(95.0% 0.002 121.6)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Blotter White",
+        "canonical": "#fbfbf8",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 106.5)",
+          "oklch(26.4% 0.003 106.5)",
+          "oklch(37.9% 0.004 106.5)",
+          "oklch(49.3% 0.004 106.5)",
+          "oklch(60.7% 0.004 106.5)",
+          "oklch(72.1% 0.003 106.5)",
+          "oklch(83.6% 0.002 106.5)",
+          "oklch(95.0% 0.001 106.5)"
+        ]
+      },
+      "paper-edge": {
+        "role": "neutral",
+        "displayName": "Paper Edge",
+        "canonical": "#e8e8e2",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 106.6)",
+          "oklch(26.4% 0.006 106.6)",
+          "oklch(37.9% 0.008 106.6)",
+          "oklch(49.3% 0.008 106.6)",
+          "oklch(60.7% 0.008 106.6)",
+          "oklch(72.1% 0.006 106.6)",
+          "oklch(83.6% 0.004 106.6)",
+          "oklch(95.0% 0.002 106.6)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Bench Rule",
+        "canonical": "#c9cbc5",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 121.7)",
+          "oklch(26.4% 0.007 121.7)",
+          "oklch(37.9% 0.008 121.7)",
+          "oklch(49.3% 0.008 121.7)",
+          "oklch(60.7% 0.008 121.7)",
+          "oklch(72.1% 0.007 121.7)",
+          "oklch(83.6% 0.005 121.7)",
+          "oklch(95.0% 0.002 121.7)"
+        ]
+      },
+      "focus": {
+        "role": "tertiary",
+        "displayName": "Focus Blue",
+        "canonical": "#2f5bd3",
+        "tonalRamp": [
+          "oklch(15.0% 0.098 265.0)",
+          "oklch(26.4% 0.149 265.0)",
+          "oklch(37.9% 0.180 265.0)",
+          "oklch(49.3% 0.191 265.0)",
+          "oklch(60.7% 0.183 265.0)",
+          "oklch(72.1% 0.154 265.0)",
+          "oklch(83.6% 0.105 265.0)",
+          "oklch(95.0% 0.036 265.0)"
+        ]
+      },
+      "alert": {
+        "role": "tertiary",
+        "displayName": "Alert Red",
+        "canonical": "#a3372b",
+        "tonalRamp": [
+          "oklch(15.0% 0.074 29.5)",
+          "oklch(26.4% 0.113 29.5)",
+          "oklch(37.9% 0.136 29.5)",
+          "oklch(49.3% 0.145 29.5)",
+          "oklch(60.7% 0.138 29.5)",
+          "oklch(72.1% 0.117 29.5)",
+          "oklch(83.6% 0.080 29.5)",
+          "oklch(95.0% 0.028 29.5)"
+        ]
+      },
+      "stain-floral": {
+        "role": "secondary",
+        "displayName": "Floral Stain",
+        "canonical": "#d98ba0",
+        "tonalRamp": [
+          "oklch(15.0% 0.050 2.3)",
+          "oklch(26.4% 0.076 2.3)",
+          "oklch(37.9% 0.092 2.3)",
+          "oklch(49.3% 0.098 2.3)",
+          "oklch(60.7% 0.094 2.3)",
+          "oklch(72.1% 0.079 2.3)",
+          "oklch(83.6% 0.054 2.3)",
+          "oklch(95.0% 0.019 2.3)"
+        ]
+      },
+      "stain-soft-floral": {
+        "role": "secondary",
+        "displayName": "Soft Floral Stain",
+        "canonical": "#c9a3c8",
+        "tonalRamp": [
+          "oklch(15.0% 0.034 327.0)",
+          "oklch(26.4% 0.052 327.0)",
+          "oklch(37.9% 0.063 327.0)",
+          "oklch(49.3% 0.067 327.0)",
+          "oklch(60.7% 0.064 327.0)",
+          "oklch(72.1% 0.054 327.0)",
+          "oklch(83.6% 0.037 327.0)",
+          "oklch(95.0% 0.013 327.0)"
+        ]
+      },
+      "stain-floral-amber": {
+        "role": "secondary",
+        "displayName": "Floral Amber Stain",
+        "canonical": "#e0a16a",
+        "tonalRamp": [
+          "oklch(15.0% 0.053 61.4)",
+          "oklch(26.4% 0.080 61.4)",
+          "oklch(37.9% 0.097 61.4)",
+          "oklch(49.3% 0.103 61.4)",
+          "oklch(60.7% 0.099 61.4)",
+          "oklch(72.1% 0.083 61.4)",
+          "oklch(83.6% 0.057 61.4)",
+          "oklch(95.0% 0.020 61.4)"
+        ]
+      },
+      "stain-soft-amber": {
+        "role": "secondary",
+        "displayName": "Soft Amber Stain",
+        "canonical": "#d9b36c",
+        "tonalRamp": [
+          "oklch(15.0% 0.051 82.1)",
+          "oklch(26.4% 0.078 82.1)",
+          "oklch(37.9% 0.094 82.1)",
+          "oklch(49.3% 0.100 82.1)",
+          "oklch(60.7% 0.095 82.1)",
+          "oklch(72.1% 0.080 82.1)",
+          "oklch(83.6% 0.055 82.1)",
+          "oklch(95.0% 0.019 82.1)"
+        ]
+      },
+      "stain-amber": {
+        "role": "secondary",
+        "displayName": "Amber Stain",
+        "canonical": "#c47a3a",
+        "tonalRamp": [
+          "oklch(15.0% 0.062 58.8)",
+          "oklch(26.4% 0.094 58.8)",
+          "oklch(37.9% 0.114 58.8)",
+          "oklch(49.3% 0.121 58.8)",
+          "oklch(60.7% 0.116 58.8)",
+          "oklch(72.1% 0.098 58.8)",
+          "oklch(83.6% 0.067 58.8)",
+          "oklch(95.0% 0.023 58.8)"
+        ]
+      },
+      "stain-woody-amber": {
+        "role": "secondary",
+        "displayName": "Woody Amber Stain",
+        "canonical": "#a8693f",
+        "tonalRamp": [
+          "oklch(15.0% 0.051 53.2)",
+          "oklch(26.4% 0.077 53.2)",
+          "oklch(37.9% 0.093 53.2)",
+          "oklch(49.3% 0.099 53.2)",
+          "oklch(60.7% 0.095 53.2)",
+          "oklch(72.1% 0.080 53.2)",
+          "oklch(83.6% 0.054 53.2)",
+          "oklch(95.0% 0.019 53.2)"
+        ]
+      },
+      "stain-woods": {
+        "role": "secondary",
+        "displayName": "Woods Stain",
+        "canonical": "#8b6a4a",
+        "tonalRamp": [
+          "oklch(15.0% 0.032 65.0)",
+          "oklch(26.4% 0.049 65.0)",
+          "oklch(37.9% 0.059 65.0)",
+          "oklch(49.3% 0.062 65.0)",
+          "oklch(60.7% 0.060 65.0)",
+          "oklch(72.1% 0.050 65.0)",
+          "oklch(83.6% 0.034 65.0)",
+          "oklch(95.0% 0.012 65.0)"
+        ]
+      },
+      "stain-mossy-woods": {
+        "role": "secondary",
+        "displayName": "Mossy Woods Stain",
+        "canonical": "#6f7a4a",
+        "tonalRamp": [
+          "oklch(15.0% 0.036 119.3)",
+          "oklch(26.4% 0.055 119.3)",
+          "oklch(37.9% 0.066 119.3)",
+          "oklch(49.3% 0.070 119.3)",
+          "oklch(60.7% 0.067 119.3)",
+          "oklch(72.1% 0.056 119.3)",
+          "oklch(83.6% 0.039 119.3)",
+          "oklch(95.0% 0.013 119.3)"
+        ]
+      },
+      "stain-dry-woods": {
+        "role": "secondary",
+        "displayName": "Dry Woods Stain",
+        "canonical": "#6b4e3d",
+        "tonalRamp": [
+          "oklch(15.0% 0.024 51.5)",
+          "oklch(26.4% 0.037 51.5)",
+          "oklch(37.9% 0.045 51.5)",
+          "oklch(49.3% 0.047 51.5)",
+          "oklch(60.7% 0.045 51.5)",
+          "oklch(72.1% 0.038 51.5)",
+          "oklch(83.6% 0.026 51.5)",
+          "oklch(95.0% 0.009 51.5)"
+        ]
+      },
+      "stain-aromatic-fougere": {
+        "role": "secondary",
+        "displayName": "Aromatic Fougère Stain",
+        "canonical": "#7e9a6b",
+        "tonalRamp": [
+          "oklch(15.0% 0.038 133.2)",
+          "oklch(26.4% 0.058 133.2)",
+          "oklch(37.9% 0.070 133.2)",
+          "oklch(49.3% 0.074 133.2)",
+          "oklch(60.7% 0.071 133.2)",
+          "oklch(72.1% 0.060 133.2)",
+          "oklch(83.6% 0.041 133.2)",
+          "oklch(95.0% 0.014 133.2)"
+        ]
+      },
+      "stain-citrus": {
+        "role": "secondary",
+        "displayName": "Citrus Stain",
+        "canonical": "#e3c84b",
+        "tonalRamp": [
+          "oklch(15.0% 0.073 96.9)",
+          "oklch(26.4% 0.112 96.9)",
+          "oklch(37.9% 0.135 96.9)",
+          "oklch(49.3% 0.144 96.9)",
+          "oklch(60.7% 0.137 96.9)",
+          "oklch(72.1% 0.116 96.9)",
+          "oklch(83.6% 0.079 96.9)",
+          "oklch(95.0% 0.027 96.9)"
+        ]
+      },
+      "stain-water": {
+        "role": "secondary",
+        "displayName": "Water Stain",
+        "canonical": "#6fa8c7",
+        "tonalRamp": [
+          "oklch(15.0% 0.038 233.1)",
+          "oklch(26.4% 0.058 233.1)",
+          "oklch(37.9% 0.070 233.1)",
+          "oklch(49.3% 0.075 233.1)",
+          "oklch(60.7% 0.071 233.1)",
+          "oklch(72.1% 0.060 233.1)",
+          "oklch(83.6% 0.041 233.1)",
+          "oklch(95.0% 0.014 233.1)"
+        ]
+      },
+      "stain-green": {
+        "role": "secondary",
+        "displayName": "Green Stain",
+        "canonical": "#8db36a",
+        "tonalRamp": [
+          "oklch(15.0% 0.055 131.1)",
+          "oklch(26.4% 0.084 131.1)",
+          "oklch(37.9% 0.101 131.1)",
+          "oklch(49.3% 0.108 131.1)",
+          "oklch(60.7% 0.103 131.1)",
+          "oklch(72.1% 0.087 131.1)",
+          "oklch(83.6% 0.059 131.1)",
+          "oklch(95.0% 0.020 131.1)"
+        ]
+      },
+      "stain-fruity": {
+        "role": "secondary",
+        "displayName": "Fruity Stain",
+        "canonical": "#e07a5f",
+        "tonalRamp": [
+          "oklch(15.0% 0.068 35.8)",
+          "oklch(26.4% 0.104 35.8)",
+          "oklch(37.9% 0.125 35.8)",
+          "oklch(49.3% 0.133 35.8)",
+          "oklch(60.7% 0.127 35.8)",
+          "oklch(72.1% 0.107 35.8)",
+          "oklch(83.6% 0.073 35.8)",
+          "oklch(95.0% 0.025 35.8)"
+        ]
+      },
+      "unstained": {
+        "role": "secondary",
+        "displayName": "Unstained",
+        "canonical": "#c4c6c0",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 121.7)",
+          "oklch(26.4% 0.007 121.7)",
+          "oklch(37.9% 0.008 121.7)",
+          "oklch(49.3% 0.009 121.7)",
+          "oklch(60.7% 0.008 121.7)",
+          "oklch(72.1% 0.007 121.7)",
+          "oklch(83.6% 0.005 121.7)",
+          "oklch(95.0% 0.002 121.7)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "First-viewport statements only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings and inner page titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Name on a featured laid strip."
+      },
+      "title-strip": {
+        "displayName": "Title Strip",
+        "purpose": "Fragrance name in the laid-strip list module."
+      },
+      "body-lede": {
+        "displayName": "Body Lede",
+        "purpose": "Opening paragraph under a display or headline, about 32 to 36em."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Controls, nav links, notes lists, tags."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Sentence-case field labels, brand lines, legends, in ink-3."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Geist Mono match and similarity numbers; ids and counts use the same face smaller."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper",
+        "value": "0 1px 0 rgb(28 30 29 / 0.04), 0 10px 28px -16px rgb(28 30 29 / 0.38)",
+        "purpose": "Fields, filter tags, panels, the selected shelf option."
+      },
+      {
+        "name": "lifted",
+        "value": "0 2px 0 rgb(28 30 29 / 0.04), 0 22px 36px -18px rgb(28 30 29 / 0.45)",
+        "purpose": "Command palette and toast."
+      },
+      {
+        "name": "strip-rest",
+        "value": "drop-shadow(0 6px 10px rgb(28 30 29 / 0.12))",
+        "purpose": "Filter on every stained strip at rest; follows the die-cut tip."
+      },
+      {
+        "name": "strip-raised",
+        "value": "drop-shadow(0 18px 22px rgb(28 30 29 / 0.24))",
+        "purpose": "Filter on hovered, focused and locked strips."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-paper",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Paper physics: lift, stain saturation, fan slide."
+      },
+      {
+        "name": "duration-lift",
+        "value": "600ms",
+        "purpose": "Strip lift and stain transitions."
+      },
+      {
+        "name": "duration-toggle",
+        "value": "300ms",
+        "purpose": "Segmented and toggle state changes."
+      },
+      {
+        "name": "fan-lift",
+        "value": "translate 0 -24px",
+        "purpose": "A fan strip slides up its own axis on hover, focus and once opened."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0ms",
+        "purpose": "All transitions and animations are instant under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "stain": {
+      "tideLine": "color-mix(in oklab, var(--hue) 68%, #3b2a1a)",
+      "restOpacity": 0.88,
+      "activeOpacity": 1,
+      "activeSaturate": 1.35,
+      "depthLaid": "72px; 112px from 640px",
+      "tipStanding": "30px",
+      "tipLaid": "28px"
+    },
+    "focusRing": "2px solid #2f5bd3, offset 3px, 2px radius"
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Graphite action: Build your profile, submit, empty-state calls to action.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Build your profile <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4 10h12m-4.5-4.5L16 10l-4.5 4.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-primary{font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;display:inline-flex;align-items:center;gap:8px;height:52px;padding:0 24px;background:var(--color-ink, #1c1e1d);color:var(--color-paper, #fbfbf8);font-weight:500;font-size:16px;border-radius:4px;text-decoration:none;transition:background-color 150ms;}.ds-btn-primary:hover{background:var(--color-ink-2, #464a47);}.ds-btn-primary:focus-visible{outline:2px solid var(--color-focus, #2f5bd3);outline-offset:3px;}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action beside a primary, e.g. Continue with GitHub.",
+      "html": "<button class=\"ds-btn-outline\" type=\"button\">Continue with GitHub</button>",
+      "css": ".ds-btn-outline{font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;height:52px;padding:0 24px;background:transparent;color:var(--color-ink, #1c1e1d);border:1px solid var(--color-ink, #1c1e1d);border-radius:4px;font-weight:500;font-size:16px;cursor:pointer;transition:background-color 150ms;}.ds-btn-outline:hover{background:var(--color-paper, #fbfbf8);}.ds-btn-outline:focus-visible{outline:2px solid var(--color-focus, #2f5bd3);outline-offset:3px;}"
+    },
+    {
+      "name": "Search with Scan",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "The bench's working search: paper field with paper shadow and the Scan button beside it.",
+      "html": "<form class=\"ds-search\" role=\"search\" onsubmit=\"return false\"><label class=\"ds-search-field\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"8.5\" cy=\"8.5\" r=\"6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"m13 13 5 5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg><input type=\"search\" placeholder=\"Fragrance, brand or note\" aria-label=\"Search fragrances\"><kbd>⌘K</kbd></label><a class=\"ds-scan\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2 6.5A1.5 1.5 0 0 1 3.5 5h2l1.5-2h6L14.5 5h2A1.5 1.5 0 0 1 18 6.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 2 15.5z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/><circle cx=\"10\" cy=\"10.5\" r=\"3.3\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg> Scan a bottle</a></form>",
+      "css": ".ds-search{font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;display:flex;gap:12px;max-width:620px;}.ds-search-field{flex:1;display:flex;align-items:center;gap:12px;height:60px;padding:0 18px;background:var(--color-paper, #fbfbf8);box-shadow:var(--shadow-paper, 0 1px 0 rgb(28 30 29 / 0.04), 0 10px 28px -16px rgb(28 30 29 / 0.38));border-radius:4px;color:var(--color-ink-2, #464a47);}.ds-search-field:focus-within{outline:2px solid var(--color-focus, #2f5bd3);outline-offset:2px;}.ds-search-field input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:18px;color:var(--color-ink, #1c1e1d);outline:none;}.ds-search-field input::placeholder{color:var(--color-ink-3, #585c58);}.ds-search-field kbd{border:1px solid var(--color-paper-edge, #e8e8e2);border-radius:3px;padding:2px 6px;font-family: 'Geist Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums;font-size:12px;color:var(--color-ink-3, #585c58);}.ds-scan{display:flex;align-items:center;gap:10px;height:60px;padding:0 20px;background:var(--color-ink, #1c1e1d);color:var(--color-paper, #fbfbf8);border-radius:4px;font-weight:500;text-decoration:none;transition:background-color 150ms;}.ds-scan:hover{background:var(--color-ink-2, #464a47);}.ds-scan:focus-visible{outline:2px solid var(--color-focus, #2f5bd3);outline-offset:3px;}"
+    },
+    {
+      "name": "Note Tag",
+      "kind": "chip",
+      "refersTo": "tag-note",
+      "description": "Square paper tag for a note; links to that note in Discover. Filter tags add a paper shadow and a drawn close icon.",
+      "html": "<div class=\"ds-tags\"><a class=\"ds-tag\" href=\"#\">Sandalwood</a><a class=\"ds-tag\" href=\"#\">Cardamom</a><a class=\"ds-tag ds-tag-filter\" href=\"#\" aria-label=\"Remove filter: Woods\">Woods <svg width=\"14\" height=\"14\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><path d=\"m5 5 10 10M15 5 5 15\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg></a></div>",
+      "css": ".ds-tags{font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;display:flex;flex-wrap:wrap;gap:8px;}.ds-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--color-paper, #fbfbf8);border:1px solid var(--color-paper-edge, #e8e8e2);border-radius:2px;color:var(--color-ink, #1c1e1d);font-size:15px;text-decoration:none;transition:border-color 150ms;}.ds-tag:hover{border-color:var(--color-ink-3, #585c58);}.ds-tag:focus-visible{outline:2px solid var(--color-focus, #2f5bd3);outline-offset:3px;}.ds-tag-filter{border-color:transparent;box-shadow:var(--shadow-paper, 0 1px 0 rgb(28 30 29 / 0.04), 0 10px 28px -16px rgb(28 30 29 / 0.38));padding:4px 8px 4px 12px;font-size:14px;}.ds-tag-filter svg{color:var(--color-ink-3, #585c58);}"
+    },
+    {
+      "name": "Shelf Segmented Control",
+      "kind": "custom",
+      "refersTo": "segmented-track",
+      "description": "Deep-bench track; the selected shelf becomes raised paper.",
+      "html": "<div class=\"ds-seg\"><button aria-pressed=\"true\">Owned</button><button aria-pressed=\"false\">Tried</button><button aria-pressed=\"false\">Wishlist</button></div>",
+      "css": ".ds-seg{font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;display:inline-flex;padding:4px;background:var(--color-bench-deep, #d7d9d3);border-radius:6px;}.ds-seg button{height:40px;padding:0 16px;border:0;background:transparent;border-radius:4px;font:inherit;font-size:15px;color:var(--color-ink-2, #464a47);cursor:pointer;transition:background-color 300ms, color 300ms, box-shadow 300ms;}.ds-seg button:hover{color:var(--color-ink, #1c1e1d);}.ds-seg button[aria-pressed=\"true\"]{background:var(--color-paper, #fbfbf8);color:var(--color-ink, #1c1e1d);font-weight:500;box-shadow:var(--shadow-paper, 0 1px 0 rgb(28 30 29 / 0.04), 0 10px 28px -16px rgb(28 30 29 / 0.38));}.ds-seg button:focus-visible{outline:2px solid var(--color-focus, #2f5bd3);outline-offset:3px;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "72px top bar: placeholder strip mark, wordmark, pencil links with the current one in ink and underlined.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><svg width=\"16\" height=\"24\" viewBox=\"0 0 18 26\" aria-hidden=\"true\"><path d=\"M9 1 17 6v19H1V6z\" fill=\"#fbfbf8\" stroke=\"#1c1e1d\" stroke-width=\"1.4\"/><path d=\"M1.7 6.5 9 2l7.3 4.5V11H1.7z\" fill=\"#a8693f\"/></svg>Accord</a><ul><li><a href=\"#\" aria-current=\"page\">Discover</a></li><li><a href=\"#\">For you</a></li><li><a href=\"#\">Collection</a></li><li><a href=\"#\">Scan</a></li></ul></nav>",
+      "css": ".ds-nav{font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;display:flex;align-items:center;gap:24px;height:72px;padding:0 32px;background:var(--color-bench, #e4e5e1);}.ds-brand{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700;letter-spacing:-0.03em;color:var(--color-ink, #1c1e1d);text-decoration:none;}.ds-nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0 0 0 24px;font-size:15px;}.ds-nav ul a{color:var(--color-ink-2, #464a47);text-decoration:none;text-underline-offset:0.2em;text-decoration-thickness:1px;transition:color 150ms;}.ds-nav ul a:hover{color:var(--color-ink, #1c1e1d);}.ds-nav ul a[aria-current=\"page\"]{color:var(--color-ink, #1c1e1d);text-decoration:underline;}.ds-nav a:focus-visible{outline:2px solid var(--color-focus, #2f5bd3);outline-offset:3px;border-radius:2px;}"
+    },
+    {
+      "name": "Laid Strip",
+      "kind": "custom",
+      "refersTo": "strip-laid",
+      "description": "The list module: a left-pointing smelling strip stained by its wheel family, with a match figure aside. Lifts and saturates on hover and focus.",
+      "html": "<article class=\"ds-strip\" style=\"--hue:#a8693f\"><div class=\"ds-strip-paper\"><span class=\"ds-stain\"></span><div class=\"ds-strip-text\"><div class=\"ds-strip-main\"><p class=\"ds-strip-brand\">Le Labo · Woody Amber</p><h3><a href=\"#\">Santal 33</a></h3><p class=\"ds-strip-notes\">Sandalwood, cardamom, iris, violet, ambrox, leather</p></div><div class=\"ds-figure\"><div>87</div><span>match</span></div></div></div></article>",
+      "css": ".ds-strip{font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;position:relative;max-width:640px;filter:drop-shadow(0 6px 10px rgb(28 30 29 / 0.12));transition:filter 600ms cubic-bezier(0.16, 1, 0.3, 1);}.ds-strip:hover,.ds-strip:focus-within{filter:drop-shadow(0 18px 22px rgb(28 30 29 / 0.24));}.ds-strip-paper{position:relative;min-height:96px;background:var(--color-paper, #fbfbf8);clip-path:polygon(0 50%, 28px 0, 100% 0, 100% 100%, 28px 100%);}.ds-stain{position:absolute;inset:0 auto 0 0;width:112px;background:radial-gradient(55% 130% at 100% 50%, transparent 60%, color-mix(in oklab, var(--hue) 68%, #3b2a1a) 63%, transparent 68%),linear-gradient(to right, color-mix(in oklab, var(--hue) 94%, white), color-mix(in oklab, var(--hue) 50%, white) 72%, transparent);opacity:.88;transition:opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 600ms cubic-bezier(0.16, 1, 0.3, 1);}.ds-strip:hover .ds-stain,.ds-strip:focus-within .ds-stain{opacity:1;filter:saturate(1.35);}.ds-strip-text{position:relative;display:flex;gap:24px;padding:16px 20px 16px 128px;}.ds-strip-main{flex:1;min-width:0;}.ds-strip-brand{margin:0;font-size:13px;color:var(--color-ink-3, #585c58);}.ds-strip h3{margin:2px 0 0;font-size:18px;font-weight:600;line-height:1.375;letter-spacing:-0.01em;}.ds-strip h3 a{color:var(--color-ink, #1c1e1d);text-decoration:none;}.ds-strip h3 a::after{content:\"\";position:absolute;inset:0;}.ds-strip h3 a:focus-visible{outline:none;}.ds-strip-notes{margin:4px 0 0;font-size:15px;color:var(--color-ink-2, #464a47);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.ds-figure{text-align:right;}.ds-figure div{font-family: 'Geist Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums;font-size:24px;font-weight:500;letter-spacing:-0.02em;color:var(--color-ink, #1c1e1d);}.ds-figure span{font-size:12px;color:var(--color-ink-3, #585c58);}"
+    },
+    {
+      "name": "Ghost Strip",
+      "kind": "custom",
+      "refersTo": "strip-laid",
+      "description": "Unconfirmed candidate: unstained translucent paper with a dashed edge following the tip. Does not lift.",
+      "html": "<article class=\"ds-ghost\"><div class=\"ds-ghost-paper\"><span class=\"ds-ghost-edge\"></span><svg class=\"ds-ghost-tip\" width=\"28\" height=\"100%\" viewBox=\"0 0 28 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><polyline points=\"28,0.75 0.75,50 28,99.25\" fill=\"none\" stroke=\"#585c58\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\" vector-effect=\"non-scaling-stroke\"/></svg><div class=\"ds-ghost-text\"><p>Chanel · Floral Amber</p><h3>Chance Eau Fraîche</h3></div></div></article>",
+      "css": ".ds-ghost{font-family: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;max-width:640px;}.ds-ghost-paper{position:relative;min-height:96px;background:rgb(251 251 248 / 0.4);clip-path:polygon(0 50%, 28px 0, 100% 0, 100% 100%, 28px 100%);}.ds-ghost-edge{position:absolute;inset:0 0 0 28px;border:1.5px dashed var(--color-ink-3, #585c58);border-left:0;pointer-events:none;}.ds-ghost-tip{position:absolute;inset:0 auto 0 0;height:100%;overflow:visible;}.ds-ghost-text{padding:16px 20px 16px 128px;}.ds-ghost-text p{margin:0;font-size:13px;color:var(--color-ink-3, #585c58);}.ds-ghost-text h3{margin:2px 0 0;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--color-ink, #1c1e1d);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Evaluation Bench",
+    "overview": "Every fragrance in Accord is a smelling strip (a mouillette) and the product is the bench a perfumer evaluates them on. The ground is a neutral bench grey; content sits on blotter-paper white cut into strips with die-cut tapered tips; each strip carries an oil stain in the one hue fixed to its Edwards wheel family, darkening to a tide line where the oil stopped soaking. Everything else is graphite ink. The world is light only, chosen from the use scene: perfume is judged on white paper in neutral daylight.\n\nThe system is quiet and typographic. One grotesk sets every word; a mono face appears only where a number or identifier has to be read exactly. There are no catalog images: the stain is the only picture a fragrance gets, and colour on a strip always means its accord family, never decoration. Depth is paper physics: strips rest with a soft drop shadow, lift and saturate when touched, and confirmed versus unconfirmed is carried by stained versus dashed blank paper.\n\nDensity is moderate. Pages run in one 1440px container with generous section breaks; lists are stacks of laid strips rather than grids of cards.",
+    "keyCharacteristics": [
+      "Neutral bench grey ground, blotter-white paper strips with die-cut tapered tips.",
+      "One fixed stain hue per Edwards wheel family, with a darker tide line; unparsed accords stay unstained.",
+      "Graphite ink for text and primary actions; no brand accent colour.",
+      "Schibsted Grotesk for all text; Geist Mono only for ids, counts and figures.",
+      "Paper shadows and a lift-and-saturate response; no glass, no decorative gradients beyond the stain.",
+      "Ghost strips (dashed, unstained) mean \"unconfirmed\".",
+      "Light only."
+    ],
+    "rules": [
+      {
+        "name": "The One Hue Per Family Rule",
+        "body": "A stain hue belongs to exactly one Edwards wheel family and is never reassigned, tinted for decoration or used for UI state. If a colour is on a strip, it names the accord.",
+        "section": "colors"
+      },
+      {
+        "name": "The Graphite Action Rule",
+        "body": "Actions are graphite ink on paper or bench. Do not introduce a brand accent for buttons or links; the stains are data, not chrome.",
+        "section": "colors"
+      },
+      {
+        "name": "The Instrument Mono Rule",
+        "body": "Geist Mono sets only ids (product ids), counts, percentages and match figures, always with tabular numerals. Words, names and headings are never mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence-Case Label Rule",
+        "body": "Small labels are sentence case at 13px in faint pencil, sitting directly above or beside the value they describe. No uppercase tracked labels.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Physics Rule",
+        "body": "Only paper casts shadows, and only soft ones. No hard offset shadows, no glass or blur, no glow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Lift and Saturate Rule",
+        "body": "Attention lifts paper and saturates the stain together (stain opacity 0.88 to 1, saturate 1.35); never one without the other on a stained strip.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Paper Rule",
+        "body": "Tags and chips are square paper at 2px. No pills.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** put every fragrance on a strip: laid strips for lists, standing strips for fans and detail pages.",
+      "**Do** stain a strip with its wheel family's fixed hue and leave unparsed accords unstained.",
+      "**Do** draw unconfirmed candidates as ghost strips (dashed, unstained) and keep confirmed answers stained.",
+      "**Do** set ids, counts and match figures in Geist Mono with tabular numerals, and everything else in Schibsted Grotesk.",
+      "**Do** keep tags as square paper (2px) and controls at 4px.",
+      "**Do** lift and saturate together on hover and focus, over 600ms on the paper ease-out, instant under reduced motion.",
+      "**Do** draw icons from the one 20px grid, 1.5px stroke, round-join set.",
+      "**Do** start strip text past the stain depth."
+    ],
+    "donts": [
+      "**Don't** show catalog photos or bottle imagery; the stain is the fragrance's only picture.",
+      "**Don't** add a dark theme; the world is light only.",
+      "**Don't** use pill-shaped tags or chips.",
+      "**Don't** use a stain hue for anything other than its accord family.",
+      "**Don't** use glass, blur, glow or decorative gradients; the stain is the only gradient.",
+      "**Don't** use hard offset shadows; paper shadows are soft.",
+      "**Don't** set names, headings or prose in Geist Mono.",
+      "**Don't** treat the strip mark in the nav and favicon as a final logo; it is a placeholder pending the owner's approval."
+    ]
+  }
+}

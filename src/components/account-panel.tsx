@@ -77,7 +77,7 @@ export function AccountPanel() {
           Permanently removes your account, profile and all {collection.length} collection entries. This can&rsquo;t be undone.
         </p>
         <label className="mt-5 grid max-w-sm gap-1.5 text-[15px]">
-          Type <b className="font-mono">delete</b> to confirm
+          Type <b className="font-semibold">delete</b> to confirm
           <input
             value={confirm}
             onChange={(e) => setConfirm(e.target.value)}

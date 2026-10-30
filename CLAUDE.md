@@ -20,6 +20,9 @@ Read `docs/PROGRESS.md` first for current state and next actions.
 - No secrets in git. `.env` is local only; `.env.example` lists names.
 - Design: final colors/fonts/logo/layouts/motion need Bhanu's approval (see docs/DESIGN.md, docs/DECISIONS.md). Scaffolding UI is temporary.
 
+## Approved visual world: Blotter
+Fragrances are smelling strips on a neutral evaluation bench; one fixed stain hue per Edwards wheel family (`src/lib/hues.ts`); Schibsted Grotesk + Geist Mono (numbers/ids only); light only. Every list uses the strip module (`src/components/strip.tsx`). Homepage contract: `.impeccable/surfaces/src-app-page-tsx.md`. Unconfirmed scan candidates are ghost (unstained, dashed) strips.
+
 ## Creative direction (approved, high level)
 "What if Linear's product team built the best fragrance discovery platform?" Clarity, precision, speed, restraint, strong hierarchy, high-quality motion, Apple-level craft. Original identity; no copying Linear/Apple; no generic AI-dashboard styling, random glass, gratuitous gradients.
 
@@ -32,7 +35,9 @@ npm run db:server      # PGlite on 127.0.0.1:5433, data in .data/pglite (keep ru
 npm run db:migrate && npm run db:seed
 npm run dev
 ```
-Checks before every commit: `npm run typecheck && npm run lint && npm test` (+ `npm run build` for app changes).
+Checks before every commit: `npm run typecheck && npm run lint && npm test` (+ `npm run build` and `npm run test:e2e` for app changes; e2e starts its own server on :3200 with the scanner mocked).
+
+Next.js 16 gotchas seen here: setState inside effects fails lint (react-compiler rules) — derive state instead; pages reading params/searchParams must await them inside <Suspense>; Turbopack dev can go stale after appending exports to a "use cache" module — restart dev.
 
 ## Git workflow
 - Commit + push completed, tested chunks to `main` (authorized). Conventional commits. Never force-push.

@@ -1,22 +1,28 @@
 # Progress
 
-## Current milestone
-Phase 2–3: catalog + search done; recommendation engine next, then design checkpoint.
+_Last updated 2026-10-30._
 
-## Done
-- Next.js 16.4 app, Tailwind 4, Vitest, ESLint, strict TS.
-- Postgres schema (Drizzle): brands, fragrances (ScentLens product_id PK), notes, fragrance_notes, taste_profiles, collection_items, Better Auth tables.
-- Local Postgres via PGlite socket server (`npm run db:server`).
-- Catalog seed from ScentLens products.csv: 24,642 fragrances, 1,255 brands, 285 notes, 189,312 note links.
-- Accord phrase parser (Edwards wheel family / character / facets) and note normalizer, unit tested.
-- Fuzzy search (pg_trgm word similarity + all-words match) with family/wheel/facet/note/gender/brand filters.
+## Current milestone
+Phase 7 (integration and polish) in progress; Phase 8 (deployment readiness) waiting on Bhanu.
+
+## Done (verified)
+- **App**: Next.js 16.4, Tailwind 4, strict TS, Drizzle/node-postgres, Better Auth.
+- **Data**: schema + 3 migrations; catalog seed from ScentLens products.csv (24,642 fragrances, 1,255 brands, 285 notes, 189,312 links; 36 MB).
+- **Search**: pg_trgm fuzzy search + filters (wheel family, facet, family, include/exclude note, gender), pagination, sort.
+- **Recommender**: IDF note vectors, accord/family similarity, nearest-liked, PPR, MMR, evidence-based reasons, percentile match, archetype cold start. Offline eval in docs/EVALUATION.md.
+- **Collections/profiles**: guest localStorage + accounts, merge on sign-in, ratings feed recommendations, account deletion cascades.
+- **Scanner**: ScentLens client (documented schema), validation, atomic quotas, slot leases, result cache, mock for dev only. Off in production.
+- **Design**: Blotter direction approved and implemented across all pages; homepage direction contract in `.impeccable/surfaces/src-app-page-tsx.md`.
+- **Tests**: 66 Vitest (unit + integration on PGlite), 10 Playwright journeys (desktop + mobile) with mocked scanner, axe WCAG 2.2 AA on 10 pages; typecheck, lint, production build pass.
+- **Docs**: README, CLAUDE.md, PRODUCT.md, docs/{ARCHITECTURE,PRODUCT,DECISIONS,EVALUATION,PROGRESS}.md, COSTS.md, THIRD_PARTY_NOTICES.md, .env.example.
 
 ## Blockers / waiting on Bhanu
-- Modal spend limit: confirm in Modal dashboard (Usage & Billing) that spend limit is $0 so the public ScentLens endpoint cannot create charges. Scanner stays disabled until confirmed.
-- Neon project + connection string needed before deployment (not before).
-- Design direction choice (checkpoint coming).
+1. **Modal spend limit**: confirm Usage & Billing spend limit = $0 (and whether a card is on file). Required before `SCANNER_MODE=live` in production.
+2. **One live ScentLens call** for integration verification (costs a few cents of free credit; wakes the container). Not run yet — needs approval.
+3. **Neon project + pooled connection string**, and approval to create the Vercel project / deploy / point `accord.bhanusadhu.com`.
+4. **Logo**: current mark is a placeholder strip icon.
 
 ## Next actions
-1. Recommendation engine (src/lib/reco) + tests.
-2. Catalog pages (browse, detail) with neutral scaffolding.
-3. Design directions checkpoint.
+1. Apply finish-review fixes; write docs/DESIGN.md from the built world (impeccable documenter).
+2. Deployment checklist (env vars, migrations against Neon, seed from local machine).
+3. After approvals: live scanner verification, then deploy.

@@ -3,7 +3,7 @@
 _Last updated 2026-10-30._
 
 ## Current milestone
-Phases 1–7 complete. Phase 8 (deployment) blocked on Bhanu's approvals below.
+All phases complete. Live at https://accord.bhanusadhu.com (Vercel Hobby + Neon Free), scanner on with budget-sized caps.
 
 ## Done (verified)
 - **App**: Next.js 16.4, Tailwind 4, strict TS, Drizzle/node-postgres, Better Auth.
@@ -16,13 +16,12 @@ Phases 1–7 complete. Phase 8 (deployment) blocked on Bhanu's approvals below.
 - **Tests**: 66 Vitest (unit + integration on PGlite); 19 Playwright tests (9 journeys desktop + mobile, mocked scanner; axe WCAG 2.2 AA on 10 pages); typecheck, lint, production build pass.
 - **Docs**: README, CLAUDE.md, PRODUCT.md, docs/{ARCHITECTURE,PRODUCT,DECISIONS,EVALUATION,PROGRESS}.md, COSTS.md, THIRD_PARTY_NOTICES.md, .env.example.
 
-## Blockers / waiting on Bhanu
-1. **Modal spend limit**: confirm Usage & Billing spend limit = $0 (and whether a card is on file). Required before `SCANNER_MODE=live` in production.
-2. **One live ScentLens call** for integration verification (costs a few cents of free credit; wakes the container). Not run yet — needs approval.
-3. **Neon project + pooled connection string**, and approval to create the Vercel project / deploy / point `accord.bhanusadhu.com`.
-4. **Logo**: current mark is a placeholder strip icon.
+## Open items
+1. **Logo**: placeholder strip mark; options being explored.
+2. **More scans**: needs Modal budget (card + spend limit) — Bhanu deciding later. Caps: 3/day global, 2 per account, 1 per guest.
 
-## Next actions
-1. After approvals: create Neon project, run `npm run db:migrate` and `npm run db:seed` against it from this machine, create the Vercel project with env vars (DATABASE_URL, BETTER_AUTH_SECRET, BETTER_AUTH_URL), deploy, attach accord.bhanusadhu.com.
-2. After the Modal spend limit is confirmed: one live `/identify` call to verify, record latency in docs/EVALUATION.md, then set SCANNER_MODE=live.
-3. Logo exploration when Bhanu wants it.
+## Deployment facts
+- Vercel project `bhanu-sadhu-s-projects/accord`, Git-connected: every push to `main` deploys production.
+- Neon `accord-db` (Free) via Vercel Marketplace; migrations and seed run from this machine with `DATABASE_URL_UNPOOLED` from `vercel env pull .env.production.local`.
+- Env (production): DATABASE_URL (Neon), BETTER_AUTH_SECRET, BETTER_AUTH_URL, SCANNER_MODE=live, SCENTLENS_URL, SCAN_* caps.
+- Modal workspace has no payment method; usage limit $1/month set by Modal, so no charges are possible.

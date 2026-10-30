@@ -39,4 +39,14 @@ Shipped weights: notes 0.40, nearest liked 0.40, graph 0.10, accords 0.05, famil
 
 ## ScentLens integration
 
-Not yet verified. Will record real latency and response checks here once live calls are authorized.
+**Live check, 2026-10-30** (authorized single call, production `https://accord.bhanusadhu.com/api/scan`):
+
+| Item | Value |
+|---|---|
+| Photo | ScentLens real-photo set `b058__clean__2`, resized on this machine to ≤ 1024 px JPEG (112 KB), as the browser does |
+| Result | `answered: true`, reason `confident`, confidence 0.999, `product_id` p14603 — Les Eaux Primordiales *Vanille Supermassive* |
+| Ground truth | ScentLens `data/real/labels.csv`: b058 → p14603. Match. |
+| Latency | 21.6 s end to end (container waking); ScentLens reported 5.6 s inside the model |
+| Quota | Guest daily allowance went 1 → 0 as designed |
+
+This verifies the contract (request format, response schema, id mapping to Accord's catalog, quota accounting). It is **not** an accuracy measurement: one photo, taken from ScentLens's own development photos. Accuracy figures belong to ScentLens and are documented in its repository.

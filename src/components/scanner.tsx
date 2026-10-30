@@ -239,7 +239,7 @@ function Result({ data, onAgain }: { data: Done; onAgain: () => void }) {
         <article className="lift mt-2" style={{ "--hue": hueFor(answer.wheel) } as CSSProperties}>
           <div className="strip-h">
             <span className="stain-h" style={{ "--stain-opacity": "1" } as CSSProperties} />
-            <div className="relative py-5 pl-[clamp(80px,9vw,120px)] pr-6">
+            <div className="strip-text relative py-5 pr-6">
               <p className="text-sm text-ink-3">
                 {answer.brand}
                 {answer.wheel && <> · {answer.wheel}</>}

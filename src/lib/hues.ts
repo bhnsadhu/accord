@@ -1,5 +1,6 @@
 /**
- * One stain hue per Edwards wheel family, fixed across every surface so a
+ * Keys run in Edwards wheel order (Floral round to Fruity), so iterating the
+ * map walks the wheel. One stain hue per Edwards wheel family, fixed across every surface so a
  * colour always means the same accord. Unparsed accords stay unstained.
  */
 export const WHEEL_HUES: Record<string, string> = {
@@ -14,10 +15,12 @@ export const WHEEL_HUES: Record<string, string> = {
   "Dry Woods": "#6b4e3d",
   "Aromatic Fougère": "#7e9a6b",
   Citrus: "#e3c84b",
-  Fruity: "#e07a5f",
-  Green: "#8db36a",
   Water: "#6fa8c7",
+  Green: "#8db36a",
+  Fruity: "#e07a5f",
 };
+
+export const WHEEL_ORDER = Object.keys(WHEEL_HUES);
 
 export const UNSTAINED = "#c4c6c0";
 

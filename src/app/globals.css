@@ -86,6 +86,24 @@ a {
   clip-path: polygon(0 50%, var(--tip) 0, 100% 0, 100% 100%, var(--tip) 100%);
 }
 
+/* How far the oil soaked in on a laid strip; text always starts past it.
+   In the components layer so a utility like [--stain-depth:30px] can override. */
+@layer components {
+  .strip-h {
+    --stain-depth: 72px;
+  }
+
+  @media (min-width: 640px) {
+    .strip-h {
+      --stain-depth: 112px;
+    }
+  }
+
+  .strip-text {
+    padding-left: calc(var(--stain-depth) + 16px);
+  }
+}
+
 /* The soaked end: oil absorbed into paper, with a tide line where it stopped. */
 .stain-v {
   position: absolute;
@@ -101,7 +119,7 @@ a {
 .stain-h {
   position: absolute;
   inset: 0 auto 0 0;
-  width: var(--stain-depth, 120px);
+  width: var(--stain-depth);
   background:
     radial-gradient(55% 130% at 100% 50%, transparent 60%, color-mix(in oklab, var(--hue) 68%, #3b2a1a) 63%, transparent 68%),
     linear-gradient(to right, color-mix(in oklab, var(--hue) 94%, white), color-mix(in oklab, var(--hue) 50%, white) 72%, transparent);
@@ -111,7 +129,7 @@ a {
 
 /* A ghost strip: unstained and dashed, for candidates Accord has not confirmed. */
 .strip-ghost {
-  background: transparent;
+  background: rgb(251 251 248 / 0.4);
   outline: 1.5px dashed var(--color-ink-3);
   outline-offset: -1.5px;
 }
@@ -134,13 +152,16 @@ a {
   filter: saturate(1.35);
 }
 
-/* Fan strips lift only when their tip (the link) is hovered or focused. */
+/* Fan strips lift when their tip (the link) is hovered or focused, and stay
+   lifted, stain saturated, once opened: the trail locks them. */
+.fan-strip.is-locked,
 .fan-strip:has(a:hover),
 .fan-strip:has(a:focus-visible) {
   translate: 0 -24px;
   filter: drop-shadow(0 18px 22px rgb(28 30 29 / 0.24));
 }
 
+.fan-strip.is-locked .stain-v,
 .fan-strip:has(a:hover) .stain-v,
 .fan-strip:has(a:focus-visible) .stain-v {
   --stain-opacity: 1;

@@ -11,15 +11,25 @@ type StripFragrance = Pick<FragranceSummary, "productId" | "slug" | "brand" | "n
  * the link, so neighbouring strips never share a touch target; hovering or
  * focusing it slides the whole strip up its own axis, out of the fan.
  */
-export function StripV({ fragrance, angle = 0, height = 640 }: { fragrance: StripFragrance; angle?: number; height?: number }) {
+export function StripV({
+  fragrance,
+  angle = 0,
+  height = 640,
+  locked = false,
+}: {
+  fragrance: StripFragrance;
+  angle?: number;
+  height?: number;
+  locked?: boolean;
+}) {
   return (
     <div className="absolute bottom-0 left-[-22px] w-11 origin-bottom" style={{ transform: `rotate(${angle}deg)`, height }}>
-      <div className="fan-strip lift h-full w-full" style={{ "--hue": hueFor(fragrance.wheel) } as CSSProperties}>
+      <div className={`fan-strip lift h-full w-full ${locked ? "is-locked" : ""}`} style={{ "--hue": hueFor(fragrance.wheel) } as CSSProperties}>
         <span className="strip-v block h-full w-full" style={{ boxShadow: "inset 0 0 0 1px var(--color-paper-edge)" }}>
           <span className="stain-v" style={{ "--stain-depth": "190px" } as CSSProperties} />
           <span
             aria-hidden
-            className="absolute left-1/2 top-[220px] -translate-x-1/2 rotate-180 whitespace-nowrap text-[13px] tracking-[0.01em] text-ink [writing-mode:vertical-rl]"
+            className="absolute left-1/2 top-[206px] max-h-[300px] -translate-x-1/2 overflow-hidden text-ellipsis whitespace-nowrap text-[13px] tracking-[0.01em] text-ink [writing-mode:vertical-rl]"
           >
             <b className="font-semibold">{fragrance.brand}</b> · {fragrance.name}
           </span>
@@ -35,12 +45,30 @@ export function StripV({ fragrance, angle = 0, height = 640 }: { fragrance: Stri
 }
 
 /** A fan of strips held in a beaker below the frame. */
-export function StripFan({ fragrances, spread = 54, height = 640, className = "" }: { fragrances: StripFragrance[]; spread?: number; height?: number; className?: string }) {
+export function StripFan({
+  fragrances,
+  spread = 54,
+  height = 640,
+  className = "",
+  locked,
+}: {
+  fragrances: StripFragrance[];
+  spread?: number;
+  height?: number;
+  className?: string;
+  locked?: Set<string>;
+}) {
   const n = fragrances.length;
   return (
     <div className={`pointer-events-none absolute h-0 w-0 [&_a]:pointer-events-auto ${className}`}>
       {fragrances.map((f, i) => (
-        <StripV key={f.productId} fragrance={f} height={height} angle={n > 1 ? -spread / 2 - 5 + (i * spread) / (n - 1) : 0} />
+        <StripV
+          key={f.productId}
+          fragrance={f}
+          height={height}
+          locked={locked?.has(f.productId)}
+          angle={n > 1 ? -spread / 2 - 5 + (i * spread) / (n - 1) : 0}
+        />
       ))}
     </div>
   );
@@ -73,7 +101,7 @@ export function StripRow({
     >
       <div className={`strip-h min-h-24 ${ghost ? "strip-ghost" : ""}`}>
         {!ghost && <span className="stain-h" />}
-        <div className="relative flex items-start gap-6 py-4 pl-[clamp(64px,10vw,124px)] pr-5">
+        <div className="strip-text relative flex items-start gap-6 py-4 pr-5">
           <div className="min-w-0 flex-1">
             <p className="text-[13px] text-ink-3">
               {fragrance.brand}
@@ -97,7 +125,7 @@ export function StripRow({
   );
 }
 
-export function MatchFigure({ value, label = "match" }: { value: number; label?: string }) {
+export function MatchFigure({ value, label = "match" }: { value: ReactNode; label?: string }) {
   return (
     <div>
       <div className="font-mono text-2xl font-medium tracking-[-0.02em] tabular">{value}</div>

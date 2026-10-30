@@ -84,8 +84,8 @@ export function Recommendations() {
   return (
     <>
       <p className="mt-5 max-w-[44em] text-ink-2">
-        Ranked against all 24,642 fragrances. The number is how many of them each one outscored for you, as a percentile — a
-        relative fit, not a promise you&rsquo;ll love it.{" "}
+        Ranked against all 24,642 fragrances for your taste. &ldquo;Top 1%&rdquo; means it outscored at least 99% of the
+        catalog for you: a relative fit, not a promise you&rsquo;ll love it.{" "}
         <Link href="/profile" className="text-ink underline">
           Adjust your profile
         </Link>
@@ -100,7 +100,7 @@ export function Recommendations() {
                 fragrance={item.fragrance}
                 aside={
                   <div className="flex flex-col items-end gap-3">
-                    {item.match !== null && <MatchFigure value={item.match} />}
+                    {item.match !== null && <MatchFigure value={`top ${Math.max(1, 100 - item.match)}%`} label="for you" />}
                     <Feedback fragrance={item.fragrance} onSave={saveEntry} />
                   </div>
                 }

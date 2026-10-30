@@ -108,7 +108,7 @@ function Side({ f, only, align }: { f: NonNullable<Awaited<ReturnType<typeof cac
     <article className="lift" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
       <div className={`strip-h h-full ${align === "right" ? "md:[transform:scaleX(-1)]" : ""}`}>
         <span className="stain-h" />
-        <div className={`relative py-6 pl-[clamp(80px,9vw,120px)] pr-6 ${align === "right" ? "md:[transform:scaleX(-1)] md:pl-6 md:pr-[clamp(80px,9vw,120px)] md:text-right" : ""}`}>
+        <div className={`relative py-6 pr-6 ${align === "right" ? "pl-[calc(var(--stain-depth)+16px)] md:[transform:scaleX(-1)] md:pl-6 md:pr-[calc(var(--stain-depth)+16px)] md:text-right" : "strip-text"}`}>
           <p className="text-[13px] text-ink-3">
             {f.brand} · {f.wheel ?? "Unclassified"}
           </p>

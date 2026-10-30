@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "geist mono",
+        "createdAt": "2026-10-30T07:36:57.901Z",
+        "reason": "Bhanu chose the Blotter direction whose approved preview used Geist Mono for ids and numbers only; recorded in docs/DECISIONS.md"
+      }
+    ]
+  }
+}

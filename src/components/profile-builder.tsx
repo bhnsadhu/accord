@@ -261,8 +261,8 @@ function FavouriteList({ ids, onRemove }: { ids: string[]; onRemove: (id: string
     <ul className="mt-5 flex flex-wrap gap-2">
       {shown.map((f) => (
         <li key={f.productId} className="lift" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
-          <div className="strip-h flex h-11 items-center gap-2 pl-10 pr-2 text-[15px]">
-            <span className="stain-h" style={{ "--stain-depth": "40px" } as CSSProperties} />
+          <div className="strip-h strip-text flex h-11 items-center gap-2 pr-2 text-[15px] [--stain-depth:30px]">
+            <span className="stain-h" />
             <Link href={`/fragrance/${f.slug}`} className="relative max-w-56 truncate hover:underline">
               {f.name}
             </Link>

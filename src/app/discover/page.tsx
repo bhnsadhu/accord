@@ -137,8 +137,8 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
         </form>
 
         <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
-          <p className="font-mono text-sm text-ink-2 tabular" aria-live="polite">
-            {result.total.toLocaleString("en-US")} {result.total === 1 ? "fragrance" : "fragrances"}
+          <p className="text-sm text-ink-2" aria-live="polite">
+            <span className="font-mono tabular">{result.total.toLocaleString("en-US")}</span> {result.total === 1 ? "fragrance" : "fragrances"}
           </p>
           {active.map((a) => (
             <Link
@@ -239,10 +239,11 @@ function FilterSelect({ label, name, value, options }: { label: string; name: st
   return (
     <label className="grid gap-2 text-sm font-semibold">
       {label}
+      <span className="relative block">
       <select
         name={name}
         defaultValue={value ?? ""}
-        className="h-10 w-full bg-paper px-3 text-[15px] font-normal shadow-[var(--shadow-paper)]"
+        className="h-10 w-full appearance-none bg-paper pl-3 pr-9 text-[15px] font-normal shadow-[var(--shadow-paper)] outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
         style={{ borderRadius: 4 }}
       >
         <option value="">Any</option>
@@ -252,6 +253,10 @@ function FilterSelect({ label, name, value, options }: { label: string; name: st
           </option>
         ))}
       </select>
+      <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-2" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
+        <path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      </span>
     </label>
   );
 }

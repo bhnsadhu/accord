@@ -61,8 +61,8 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
 
         <div className="min-w-0">
           <div className="flex items-center gap-3 lg:hidden" style={{ "--hue": hue } as CSSProperties}>
-            <div className="strip-h h-6 w-24">
-              <span className="stain-h" style={{ "--stain-depth": "70px" } as CSSProperties} />
+            <div className="strip-h h-6 w-24 [--stain-depth:70px]">
+              <span className="stain-h" />
             </div>
           </div>
           <Link href={`/discover?q=${encodeURIComponent(f.brand)}`} className="mt-4 inline-block text-lg text-ink-2 hover:underline lg:mt-0">

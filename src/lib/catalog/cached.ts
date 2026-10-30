@@ -76,10 +76,13 @@ export async function cachedExample(sourceId: string) {
   const source = rows.find((r) => r.productId === sourceId);
   const fragrance = rows.find((r) => r.productId === pick.productId);
   if (!source || !fragrance) return null;
+  const { similarity } = await import("@/lib/reco/similarity");
+  const a = index.byId.get(sourceId);
+  const b = index.byId.get(pick.productId);
   return {
     source,
     fragrance,
-    match: pick.match,
+    similarity: a && b ? Math.round(similarity(a, b) * 100) : null,
     sharedNotes: shared?.kind === "shared-notes" ? shared.notes.map((k) => label.get(k) ?? k) : [],
   };
 }

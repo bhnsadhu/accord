@@ -33,8 +33,8 @@ export function Bench() {
       <ol className="mt-3 flex gap-2 overflow-x-auto pb-2">
         {shown.map((f) => (
           <li key={f.productId} className="shrink-0" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
-            <Link href={`/fragrance/${f.slug}`} className="lift strip-h flex h-11 max-w-64 items-center pl-10 pr-4 text-sm" title={`${f.brand} ${f.name}`}>
-              <span className="stain-h" style={{ "--stain-depth": "40px" } as CSSProperties} />
+            <Link href={`/fragrance/${f.slug}`} className="lift strip-h strip-text flex h-11 max-w-64 items-center pr-4 text-sm [--stain-depth:30px]" title={`${f.brand} ${f.name}`}>
+              <span className="stain-h" />
               <span className="relative truncate">{f.name}</span>
             </Link>
           </li>

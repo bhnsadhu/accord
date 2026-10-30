@@ -75,9 +75,16 @@ export function personalizedPageRank(
 
   const r = { items: new Float64Array(nItems), notes: new Float64Array(nNotes), accords: new Float64Array(nAccords) };
   let total = 0;
-  for (const [i, w] of restart.items ?? []) if (w > 0) (r.items[i] += w), (total += w);
-  for (const [n, w] of restart.notes ?? []) if (w > 0) (r.notes[n] += w), (total += w);
-  for (const [a, w] of restart.accords ?? []) if (w > 0) (r.accords[a] += w), (total += w);
+  const seed = (target: Float64Array, weights: Map<number, number> | undefined) => {
+    for (const [k, w] of weights ?? []) {
+      if (w <= 0) continue;
+      target[k] += w;
+      total += w;
+    }
+  };
+  seed(r.items, restart.items);
+  seed(r.notes, restart.notes);
+  seed(r.accords, restart.accords);
   if (total === 0) return new Float64Array(nItems);
   for (const arr of [r.items, r.notes, r.accords]) for (let k = 0; k < arr.length; k++) arr[k] /= total;
 

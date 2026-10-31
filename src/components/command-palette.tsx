@@ -89,7 +89,7 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
         onClick={(e) => e.target === dialog.current && close()}
       >
         <div className="bg-paper shadow-[var(--shadow-lifted)]" style={{ borderRadius: 4 }}>
-          <label className="flex items-center gap-3 border-b border-paper-edge px-4">
+          <label className="flex items-center gap-3 border-b border-paper-edge px-4 py-2">
             <SearchIcon className="shrink-0 text-ink-2" />
             <input
               ref={input}
@@ -108,15 +108,16 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
                 }
               }}
               role="combobox"
-              aria-expanded={shownHits.length > 0}
+              aria-expanded={Boolean(q.trim())}
               aria-controls={listId}
-              aria-activedescendant={shownHits.length ? `${listId}-${active}` : undefined}
+              aria-activedescendant={q.trim() ? `${listId}-${active}` : undefined}
+              aria-label="Fragrance or brand"
               placeholder="Fragrance or brand"
-              className="h-14 flex-1 bg-transparent text-lg outline-none placeholder:text-ink-3"
+              className="h-12 min-w-0 flex-1 bg-transparent px-2 text-base sm:text-lg placeholder:text-ink-3"
             />
             <kbd className="font-mono text-xs text-ink-3">esc</kbd>
           </label>
-          <ul id={listId} role="listbox" className="max-h-[52vh] overflow-y-auto py-2">
+          <ul id={listId} role="listbox" aria-label="Fragrance results" hidden={!q.trim()} className="max-h-[52vh] overflow-y-auto py-2">
             {shownHits.map((hit, i) => (
               <li
                 key={hit.productId}
@@ -146,11 +147,11 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
                 {state === "error" ? "Search is unavailable. See all results instead" : `See all results for “${q.trim()}”`}
               </li>
             )}
-            {!q.trim() && <li className="px-4 py-3 text-ink-3">Type a name or brand. Notes and families live in Discover.</li>}
-            {q.trim() && state === "idle" && shownHits.length === 0 && (
-              <li className="px-4 py-2 text-ink-3">No name or brand matches. Try fewer letters.</li>
-            )}
           </ul>
+          {!q.trim() && <p className="px-4 py-5 text-ink-3">Type a name or brand. Notes and families live in Discover.</p>}
+          {q.trim() && state === "idle" && shownHits.length === 0 && (
+            <p role="status" className="px-4 pb-4 text-ink-3">No name or brand matches. Try fewer letters.</p>
+          )}
         </div>
       </dialog>
     </PaletteContext.Provider>

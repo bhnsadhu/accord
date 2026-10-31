@@ -1,11 +1,15 @@
 import { expect, test } from "@playwright/test";
+import { mailLink } from "./mail";
+import { randomInt } from "node:crypto";
+
+test.use({ extraHTTPHeaders: { "x-forwarded-for": `198.19.${randomInt(256)}.${randomInt(1,255)}` } });
 
 const photo = "tests/e2e/fixtures/photo.jpg";
 
 test("search from the homepage, open a fragrance, see why others are similar", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Find your next signature.");
-  await expect(page.locator("html")).not.toHaveClass(/accord-intro-active/);
+  await expect(page.locator(".signature-bench")).toHaveAttribute("data-intro", "done");
   await page.getByRole("searchbox", { name: "Search fragrances" }).first().fill("santal 33");
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/discover\?q=santal\+33/);
@@ -92,6 +96,8 @@ test("account: sign up merges guest data, persists on the server, and can be del
   await page.getByLabel("Email").fill(email);
   await page.getByLabel("Password").fill("correct horse battery");
   await page.getByRole("button", { name: "Create account" }).click();
+  await expect(page).toHaveURL(/\/verify-email/);
+  await page.goto(await mailLink(email, "verify"));
   await expect(page).toHaveURL(/\/collection/);
   await page.getByRole("tab", { name: /Wishlist/ }).click();
   await expect(page.getByRole("heading", { name: "Santal 33" })).toBeVisible();
@@ -115,6 +121,6 @@ test("account: sign up merges guest data, persists on the server, and can be del
 
 test("private routes refuse guests", async ({ request }) => {
   expect((await request.get("/api/me")).status()).toBe(401);
-  const scan = await request.post("/api/scan", { data: Buffer.from("not an image"), headers: { "Content-Type": "image/jpeg" } });
+  const scan = await request.post("/api/scan", { data: Buffer.from("not an image"), headers: { "Content-Type": "image/jpeg", Origin: "http://localhost:3200" } });
   expect(scan.status()).toBe(400);
 });

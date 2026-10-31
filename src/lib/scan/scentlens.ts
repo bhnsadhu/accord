@@ -52,6 +52,24 @@ export function parseIdentifyResponse(data: unknown): IdentifyResult {
 
 export type Identifier = (image: Blob, options: { timeoutMs: number }) => Promise<IdentifyResult>;
 
+/** Raw bytes over a proxy-authenticated endpoint. No public upload cache. */
+export function privateIdentifier(url: string, key: string, secret: string): Identifier {
+  return async (image, { timeoutMs }) => {
+    try {
+      if (!key || !secret) throw new ScanUpstreamError("Scanner authentication is not configured", "unavailable");
+      const response = await fetch(new URL("/identify", url), {
+        method: "POST", headers: { "Modal-Key": key, "Modal-Secret": secret, "Content-Type": image.type },
+        body: image, signal: AbortSignal.timeout(timeoutMs), cache: "no-store",
+      });
+      if (!response.ok) throw new ScanUpstreamError("Scanner unavailable", "unavailable");
+      return parseIdentifyResponse(await response.json());
+    } catch (error) {
+      if (error instanceof ScanUpstreamError) throw error;
+      throw new ScanUpstreamError("Scanner unavailable", error instanceof Error && error.name === "TimeoutError" ? "timeout" : "unavailable");
+    }
+  };
+}
+
 /** Calls the deployed ScentLens Gradio app through @gradio/client. Server only. */
 export function gradioIdentifier(url: string): Identifier {
   return async (image, { timeoutMs }) => {

@@ -106,10 +106,9 @@ export function Scanner() {
     return (
       <section className="mt-10 grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className="bg-paper p-6 shadow-[var(--shadow-paper)] sm:p-8" style={{ borderRadius: 4 }}>
-          <h2 className="text-2xl font-semibold tracking-[-0.02em]">Scanning isn&rsquo;t switched on yet.</h2>
+          <h2 className="text-2xl font-semibold tracking-[-0.02em]">Scanning is temporarily unavailable.</h2>
           <p className="mt-3 leading-relaxed text-ink-2">
-            Recognition runs on a free-tier server. Accord keeps it closed until its spending limits are verified, so
-            nobody&rsquo;s photo ever produces an unexpected bill. Everything else works now.
+            Please try again later. You can still find a fragrance by its name or brand.
           </p>
           <Link href="/discover" className="mt-6 inline-flex items-center gap-2 font-medium hover:underline">
             Find it by name instead <ArrowIcon />
@@ -161,7 +160,7 @@ export function Scanner() {
         {status.mock && (
           <p className="mt-2 text-sm font-medium text-alert">Development mode: results are fixed test data, not recognition.</p>
         )}
-        <p className="mt-2 text-sm text-ink-3">Photos are sent to <ScentLensLink /> for this scan only and never stored.</p>
+        <p className="mt-2 text-sm text-ink-3">Processed by <ScentLensLink /> to identify your bottle. <Link href="/privacy" className="font-medium text-ink-2">How photos are handled</Link></p>
       </div>
 
       <div aria-live="polite" className="scanner-response">
@@ -219,7 +218,9 @@ function problemFor(body: { status?: string; scope?: string; kind?: string; erro
     case "busy":
       return new Problem("ScentLens is busy.", "Other scans are running. Try again in about twenty seconds.", true);
     case "quota":
-      return body.scope === "global"
+      return body.scope === "month"
+        ? new Problem("This month’s scans are used up.", "Scanning reopens next month. You can still find fragrances by name or brand.", false)
+        : body.scope === "global"
         ? new Problem("Today's scans are used up.", "Accord limits scans to stay free. Scanning reopens tomorrow; search works now.", false)
         : new Problem("You've used today's scans.", "Sign in for a larger daily allowance, or search by name.", false);
     case "failed":

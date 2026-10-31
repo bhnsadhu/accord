@@ -4,12 +4,10 @@ import type { Database } from "@/db";
 import { scanCache, scanQuota, scanSlots } from "@/db/schema";
 
 /**
- * Limits that bound what Accord can spend on ScentLens. Defaults are sized so
- * a worst case (every scan spaced out, each paying a cold start and the
- * five-minute idle window on Modal) stays inside the free monthly credit;
- * see COSTS.md for the arithmetic.
+ * Daily and calendar-month limits bound Accord's use of the private recognizer.
+ * See COSTS.md for shared credit limits and the remaining public-demo risk.
  */
-export type ScanLimits = { globalDaily: number; userDaily: number; guestDaily: number; leaseSeconds: number };
+export type ScanLimits = { globalDaily: number; globalMonthly: number; userDaily: number; guestDaily: number; leaseSeconds: number };
 
 export function scanLimits(env: NodeJS.ProcessEnv = process.env): ScanLimits {
   const n = (v: string | undefined, d: number) => {
@@ -18,13 +16,15 @@ export function scanLimits(env: NodeJS.ProcessEnv = process.env): ScanLimits {
   };
   return {
     globalDaily: n(env.SCAN_GLOBAL_DAILY, 3),
+    globalMonthly: n(env.SCAN_GLOBAL_MONTHLY, 60),
     userDaily: n(env.SCAN_USER_DAILY, 2),
     guestDaily: n(env.SCAN_GUEST_DAILY, 1),
     leaseSeconds: n(env.SCAN_LEASE_SECONDS, 150),
   };
 }
 
-export type QuotaScope = { scope: string; limit: number };
+export type QuotaScope = { scope: string; limit: number; period?: "month" };
+const windowDate = (period?: "month") => period === "month" ? sql`date_trunc('month', now() at time zone 'UTC')::date` : sql`(now() at time zone 'UTC')::date`;
 
 /**
  * Take one unit from every scope or none. Each counter is a single
@@ -35,11 +35,11 @@ export type QuotaScope = { scope: string; limit: number };
 export async function consumeQuota(db: Database, scopes: QuotaScope[]): Promise<{ ok: true } | { ok: false; scope: string }> {
   try {
     await db.transaction(async (tx) => {
-      for (const { scope, limit } of scopes) {
+      for (const { scope, limit, period } of [...scopes].sort((a, b) => a.scope.localeCompare(b.scope))) {
         if (limit <= 0) throw new QuotaExhausted(scope);
         const rows = await tx
           .insert(scanQuota)
-          .values({ scope, day: sql`current_date`, used: 1 })
+          .values({ scope, day: windowDate(period), used: 1 })
           .onConflictDoUpdate({
             target: [scanQuota.scope, scanQuota.day],
             set: { used: sql`${scanQuota.used} + 1` },
@@ -64,11 +64,11 @@ class QuotaExhausted extends Error {
 
 export async function remainingQuota(db: Database, scopes: QuotaScope[]): Promise<number> {
   let remaining = Infinity;
-  for (const { scope, limit } of scopes) {
+  for (const { scope, limit, period } of scopes) {
     const [row] = await db
       .select({ used: scanQuota.used })
       .from(scanQuota)
-      .where(and(eq(scanQuota.scope, scope), eq(scanQuota.day, sql`current_date`)));
+      .where(and(eq(scanQuota.scope, scope), eq(scanQuota.day, windowDate(period))));
     remaining = Math.min(remaining, Math.max(0, limit - (row?.used ?? 0)));
   }
   return remaining === Infinity ? 0 : remaining;

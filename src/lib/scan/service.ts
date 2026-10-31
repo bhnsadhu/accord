@@ -1,7 +1,7 @@
 import type { Database } from "@/db";
 import { acquireSlot, cachedResult, consumeQuota, releaseSlot, remainingQuota, scanLimits, storeResult, type QuotaScope } from "./guard";
 import { checkImage, sha256Hex } from "./image";
-import { gradioIdentifier, identifyResultSchema, ScanUpstreamError, type Identifier, type IdentifyResult } from "./scentlens";
+import { gradioIdentifier, privateIdentifier, identifyResultSchema, ScanUpstreamError, type Identifier, type IdentifyResult } from "./scentlens";
 
 export type ScannerMode = "off" | "live" | "mock";
 
@@ -12,7 +12,7 @@ export type ScannerMode = "off" | "live" | "mock";
  */
 export function scannerMode(env: NodeJS.ProcessEnv = process.env): ScannerMode {
   const mode = env.SCANNER_MODE;
-  if (mode === "live" && env.SCENTLENS_URL) return "live";
+  if (mode === "live" && env.SCENTLENS_URL && (env.SCENTLENS_PROTOCOL !== "private" || (env.MODAL_PROXY_KEY && env.MODAL_PROXY_SECRET))) return "live";
   if (mode === "mock" && env.NODE_ENV !== "production") return "mock";
   return "off";
 }
@@ -22,6 +22,7 @@ export type Caller = { userId: string } | { guestKey: string };
 export function quotaScopes(caller: Caller, limits = scanLimits()): QuotaScope[] {
   return [
     { scope: "global", limit: limits.globalDaily },
+    { scope: "global:month", limit: limits.globalMonthly, period: "month" },
     "userId" in caller
       ? { scope: `user:${caller.userId}`, limit: limits.userDaily }
       : { scope: `guest:${caller.guestKey}`, limit: limits.guestDaily },
@@ -33,7 +34,7 @@ export type ScanOutcome =
   | { status: "disabled" }
   | { status: "invalid"; error: string }
   | { status: "busy" }
-  | { status: "quota"; scope: "global" | "caller" }
+  | { status: "quota"; scope: "global" | "month" | "caller" }
   | { status: "failed"; kind: ScanUpstreamError["kind"] };
 
 export type ScanDeps = { db: Database; identifier: Identifier; mode: ScannerMode; timeoutMs?: number };
@@ -58,7 +59,7 @@ export async function scan(deps: ScanDeps, caller: Caller, bytes: Uint8Array): P
   if (!lease) return { status: "busy" };
   try {
     const quota = await consumeQuota(db, scopes);
-    if (!quota.ok) return { status: "quota", scope: quota.scope === "global" ? "global" : "caller" };
+    if (!quota.ok) return { status: "quota", scope: quota.scope === "global:month" ? "month" : quota.scope === "global" ? "global" : "caller" };
     try {
       const result = await identifier(new Blob([bytes as BlobPart], { type: check.type }), { timeoutMs: deps.timeoutMs ?? 100_000 });
       await storeResult(db, hash, result);
@@ -92,6 +93,8 @@ export const mockIdentifier: Identifier = async (image) => {
 };
 
 export function identifierFor(mode: ScannerMode, env: NodeJS.ProcessEnv = process.env): Identifier {
-  if (mode === "live") return gradioIdentifier(env.SCENTLENS_URL!);
+  if (mode === "live") return env.SCENTLENS_PROTOCOL === "private"
+    ? privateIdentifier(env.SCENTLENS_URL!, env.MODAL_PROXY_KEY!, env.MODAL_PROXY_SECRET!)
+    : gradioIdentifier(env.SCENTLENS_URL!);
   return mockIdentifier;
 }

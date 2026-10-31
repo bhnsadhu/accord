@@ -12,6 +12,7 @@ export function AccountPanel() {
   const [confirm, setConfirm] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [exporting, setExporting] = useState(false);
 
   if (!ready) return <div className="mt-8 h-40" aria-busy="true" />;
   if (!account) {
@@ -31,16 +32,33 @@ export function AccountPanel() {
   }
 
   const signOut = async () => {
-    await authClient.signOut();
-    router.push("/");
-    router.refresh();
+    setError(null);
+    try {
+      const result = await authClient.signOut();
+      if (result.error) throw new Error();
+      router.push("/");
+      router.refresh();
+    } catch { setError("Couldn't sign out. Check your connection and try again."); }
+  };
+
+  const exportData = async () => {
+    setExporting(true); setError(null);
+    try {
+      const response = await fetch("/api/me", { cache: "no-store" });
+      if (!response.ok) throw new Error();
+      const data = await response.json();
+      const url = URL.createObjectURL(new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), ...data }, null, 2)], { type: "application/json" }));
+      const link = document.createElement("a"); link.href = url; link.download = "accord-collection.json"; link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch { setError("Couldn't download your data. Please try again."); }
+    finally { setExporting(false); }
   };
 
   const deleteAccount = async () => {
     setPending(true);
     setError(null);
+    try {
     const result = await authClient.deleteUser();
-    setPending(false);
     if (result.error) {
       setError(
         result.error.status === 400 || result.error.status === 403
@@ -51,23 +69,28 @@ export function AccountPanel() {
     }
     router.push("/");
     router.refresh();
+    } catch { setError("Couldn't delete the account. Check your connection and try again."); }
+    finally { setPending(false); }
   };
 
   return (
-    <div className="mt-8 grid gap-10">
-      <dl className="grid gap-px bg-rule sm:grid-cols-2">
-        <div className="bg-paper p-5">
+    <div className="mt-8 grid min-w-0 grid-cols-[minmax(0,1fr)] gap-10">
+      <dl className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-px bg-rule sm:grid-cols-2">
+        <div className="min-w-0 bg-paper p-5">
           <dt className="text-[13px] text-ink-3">Name</dt>
           <dd className="mt-1 text-lg font-medium">{account.name}</dd>
         </div>
-        <div className="bg-paper p-5">
+        <div className="min-w-0 bg-paper p-5">
           <dt className="text-[13px] text-ink-3">Email</dt>
           <dd className="mt-1 truncate text-lg font-medium">{account.email}</dd>
         </div>
       </dl>
-      <button type="button" onClick={signOut} className="justify-self-start font-medium underline">
-        Sign out
-      </button>
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <button type="button" onClick={exportData} disabled={exporting} className="min-h-11 font-medium disabled:opacity-60">{exporting ? "Preparing download…" : "Download your data"}</button>
+        <button type="button" onClick={signOut} className="min-h-11 font-medium">Sign out</button>
+        <Link href="/privacy" className="min-h-11 content-center text-ink-2">Privacy</Link>
+      </div>
+      {error && <p role="alert" className="text-alert">{error}</p>}
 
       <section className="border-t border-rule pt-8" aria-labelledby="delete-h">
         <h2 id="delete-h" className="text-xl font-semibold tracking-[-0.02em]">
@@ -77,7 +100,7 @@ export function AccountPanel() {
           Permanently removes your account, profile and all {collection.length} collection entries. This can&rsquo;t be undone.
         </p>
         <label className="mt-5 grid max-w-sm gap-1.5 text-[15px]">
-          Type <b className="font-semibold">delete</b> to confirm
+          <span>Type <b className="font-semibold">delete</b> to confirm</span>
           <input
             value={confirm}
             onChange={(e) => setConfirm(e.target.value)}
@@ -86,11 +109,6 @@ export function AccountPanel() {
             autoComplete="off"
           />
         </label>
-        {error && (
-          <p role="alert" className="mt-3 text-alert">
-            {error}
-          </p>
-        )}
         <button
           type="button"
           disabled={confirm !== "delete" || pending}

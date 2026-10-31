@@ -23,7 +23,7 @@ test("quick find opens catalog starting points and restores focus on close", asy
 
 test("typing a new query never opens a stale fragrance while results load", async ({ page }) => {
   await page.goto("/discover");
-  await page.keyboard.press("ControlOrMeta+k");
+  await page.getByRole("button", { name: "Find a fragrance", exact: true }).click();
   const dialog = page.getByRole("dialog", { name: "Find a fragrance" });
   const input = dialog.getByRole("combobox");
   await input.fill("baccarat rouge");
@@ -37,7 +37,7 @@ test("typing a new query never opens a stale fragrance while results load", asyn
 
 test("empty matches and failed search retain a working catalog path", async ({ page }) => {
   await page.goto("/discover");
-  await page.keyboard.press("ControlOrMeta+k");
+  await page.getByRole("button", { name: "Find a fragrance", exact: true }).click();
   const dialog = page.getByRole("dialog", { name: "Find a fragrance" });
   const input = dialog.getByRole("combobox");
   await input.fill("zzznosuchfragrance");

@@ -60,7 +60,7 @@ export default function HowItWorksPage() {
             Bottle scanning is{" "}
             <ScentLensLink />
             : OWLv2 detection, a fine-tuned SigLIP 2 image model, label reading and a calibrated decision to answer or abstain.
-            Accord passes your photo to it once, never stores it, and limits daily scans to stay within free hosting.
+            Accord sends your photo for recognition and limits scans to stay within free hosting. Recognition results are cached for up to 24 hours; uploaded photos are not added to Accord’s database. <Link href="/privacy" className="font-medium text-ink">Read how photos are handled.</Link>
           </p>
         </section>
         <p>

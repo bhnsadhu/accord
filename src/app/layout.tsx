@@ -56,6 +56,7 @@ function Footer() {
           .
         </p>
         <ul className="flex flex-wrap gap-x-6 gap-y-3">
+          <li><Link href="/privacy" className="hover:text-ink">Privacy</Link></li>
           <li><Link href="/learn" className="hover:text-ink">Fragrance guide</Link></li>
           <li>
             <Link href="/how-it-works" className="hover:text-ink">

@@ -1,56 +1,27 @@
 # Costs
 
-Goal: **$0 required spend** for personal, non-commercial use within free tiers. Visitors never pay. This file states what each service could cost and what stops it; it does not claim a guarantee where one does not exist.
+Goal: $0 additional spend for personal, non-commercial use within free tiers. No paid plan, card, add-on or paid AI API was added. Account allowances are shared with the owner's other projects, so capacity is limited.
 
-## Services
-
-| Service | Plan | What Accord uses | Main limits to watch |
-|---|---|---|---|
-| Vercel | Hobby (free, non-commercial) | Next.js hosting, functions | Monthly function and bandwidth allowances; Hobby pauses the project when exceeded rather than billing. Function duration: the scan route sets `maxDuration = 120`. Check current numbers at vercel.com/pricing before launch. |
-| Neon | Free | Postgres for catalog and user data | 0.5 GB storage per project; monthly compute-hour allowance with autosuspend. Accord's catalog uses **36 MB** (measured locally, 2026-10-30). |
-| Modal | Starter, **no payment method** | ScentLens recognizer, deployed from the ScentLens repo | Verified 2026-10-30 on the Usage & Billing page: $1.00 included credit per month, usage limit $1 "set by Modal" until a payment method is added, $0 in charges. |
-| GitHub | Free | Source | none |
-
-No paid AI APIs, no paid search, no email provider, no image hosting.
-
-## Modal / ScentLens: the real risk
-
-Measured config (`scent-lens/deploy/modal_app.py`): 4 CPU cores, 4 GiB, `max_containers=1`, `scaledown_window=300` s, 4 concurrent inputs.
-
-Price (modal.com/pricing, 2026-10-30): $0.0000131 per core-second and $0.00000222 per GiB-second, so one warm container costs about **$0.22 per hour**. This workspace's $1 monthly credit covers about **4.5 container-hours**, shared with the public ScentLens demo.
-
-Because the container stays up 5 minutes after the last request, each isolated scan costs up to ~6 minutes of container time (≈ $0.022) including a cold start.
-
-### What Accord controls (implemented)
-
-| Control | Where | Default |
+| Service | Configuration | Boundary |
 |---|---|---|
-| Scanner off unless `SCANNER_MODE=live` and `SCENTLENS_URL` set | `src/lib/scan/service.ts` | off |
-| Global daily scan cap, atomic in Postgres | `scan_quota` | 3 / day |
-| Per-user daily cap | `scan_quota` | 2 / day |
-| Per-guest daily cap (salted, daily-rotated IP hash; raw IP never stored) | `scan_quota` | 1 / day |
-| At most 2 concurrent upstream calls, leases expire if a function dies | `scan_slots` | 2 slots, 150 s lease |
-| Same photo within 24 h answered from cache, no upstream call | `scan_cache` (hash + result only) | 24 h |
-| Server-side image validation by magic bytes and size before any quota or call | `src/lib/scan/image.ts` | ≤ 2 MB |
-| Client resizes to ≤ 1024 px JPEG; no automatic retries; one scan in flight per tab | `src/components/scanner.tsx` | |
-| No warm-up pings | Not applicable | |
+| Vercel | Existing Hobby project | Non-commercial use; free function/bandwidth limits apply. Scanner request duration is capped at 120 seconds. |
+| Neon | Existing Free project | Catalog and accounts use PostgreSQL. Scale-to-zero and free compute/storage allowances apply. |
+| Resend | Existing verified domain, sending-only key | Accord caps at 70 emails/day and 2,000/month, below Free's 100/day and 3,000/month. Other applications share provider quotas. No upgrade or overages enabled by this work. |
+| Modal | Existing Starter workspace, no payment method | Last billing verification October 30, 2026: $1 included credit and a fixed $1 usage limit. This account-specific limit is lower than the publicly advertised credit. Exhaustion stops scanning. |
+| GitHub | Public CI/monitor, private backups | Standard public runners are free. Daily private backup job has a six-minute timeout: at most 186 scheduled minutes/month. Up to seven artifacts of 20 MiB each. Both are within Free's allowance by themselves, but other private repositories share it. |
 
-Worst case from Accord's side with defaults: 3 isolated scans/day × ~6 min ≈ 18 container-minutes/day ≈ 9 hours/month. That can exceed the $1 credit late in a month; when it does, Modal stops the app (no charge) and Accord reports the scanner as unavailable until credits renew. Raise the caps only after adding budget.
+## Scanner budget
 
-### What Accord cannot control
+Accord's authenticated endpoint uses four CPU cores, four GiB RAM, one container and 30 seconds of idle time. Current listed CPU/memory rates total approximately $0.00006128 per container-second. A 30-second observed cold scan plus 30 idle seconds is about $0.0037. Startup and recognition time vary, so this is an observation, not a guaranteed price.
 
-The ScentLens demo endpoint (`https://bhnsadhu--scent-lens-web.us-east.modal.run`) is **public and unauthenticated**. Anyone can call it directly, bypassing every limit above. Accord's quotas bound Accord's traffic only.
+The database enforces three scans/day and 60/calendar month globally, two/day per account and one/day per guest. Every actual attempt counts, including upstream failures. Image size, concurrency and request duration are bounded. Cached results last 24 hours. Unauthenticated calls are rejected by Modal before compute starts.
 
-The protection for that is on Modal's side:
+The separate public ScentLens demo remains on the same workspace. Its direct traffic can consume shared credits and interrupt Accord scanning. An isolated endpoint prevents bypassing Accord's private API but does not isolate the account's credit balance. No card was added; do not add one without first configuring a hard spending boundary.
 
-1. **No payment method on the Modal workspace** (verified 2026-10-30): the usage limit is fixed at the $1 credit, so direct abuse of the public endpoint can exhaust the credit (scanning stops until next month) but **cannot create a bill**. If a card is ever added, set a $0 spend limit first.
-2. Optional, needs approval: redeploy ScentLens with a shared-secret header on a separate Accord-only endpoint, so the public demo and Accord's traffic are separable. Not done; ScentLens is not modified without permission.
+## Operational bounds
 
-Production currently keeps `SCANNER_MODE` unset (scanner off) pending Bhanu's go-ahead to switch it on; the cost question is resolved.
+Backups are encrypted and restore-tested before upload. Seven-day artifact retention and the 20 MiB per-file ceiling keep this repository's artifacts below 140 MiB. A failed backup is not uploaded. Private Actions minutes and artifact storage are shared; stop scheduled jobs if the account's free allowance becomes unavailable. Hourly monitoring performs no scanner inference.
 
-## Remaining financial risks
+Email sends stop at Accord's caps and provider limits. Bulk marketing, contact imports and paid delivery features are not configured. Resend overages were not enabled. Vercel Hobby remains unsuitable for a commercial product without reviewing its terms and costs.
 
-- Modal spend limit not yet confirmed (above).
-- Vercel Hobby is for non-commercial use; Accord must stay non-commercial.
-- Neon compute hours: heavy traffic could exhaust the monthly allowance, which suspends the database (no bill on Free).
-- A future dependency or integration could introduce cost; every new external service must be added here first.
+Sources checked October 31, 2026: [Modal pricing](https://modal.com/pricing), [proxy authentication](https://modal.com/docs/guide/webhook-proxy-auth), [Resend pricing](https://resend.com/pricing), [GitHub Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions). Recovery procedures and verified evidence are in [OPERATIONS.md](docs/OPERATIONS.md).

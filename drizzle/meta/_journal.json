@@ -29,6 +29,13 @@
       "when": 1793440111953,
       "tag": "0003_wandering_trish_tilby",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793442733799,
+      "tag": "0004_rainy_vampiro",
+      "breakpoints": true
     }
   ]
 }

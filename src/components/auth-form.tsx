@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { authClient } from "@/lib/auth-client";
 
-export function AuthForm({ mode, github }: { mode: "sign-in" | "sign-up"; github: boolean }) {
+export function AuthForm({ mode, github, emailEnabled }: { mode: "sign-in" | "sign-up"; github: boolean; emailEnabled: boolean }) {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
@@ -19,22 +19,26 @@ export function AuthForm({ mode, github }: { mode: "sign-in" | "sign-up"; github
     const password = String(form.get("password") ?? "");
     setPending(true);
     setError(null);
+    try {
     const result = signUp
-      ? await authClient.signUp.email({ email, password, name: String(form.get("name") ?? "").trim() || email.split("@")[0] })
-      : await authClient.signIn.email({ email, password });
-    setPending(false);
+      ? await authClient.signUp.email({ email, password, name: String(form.get("name") ?? "").trim() || email.split("@")[0], callbackURL: "/collection" })
+      : await authClient.signIn.email({ email, password, callbackURL: "/collection" });
     if (result.error) {
       setError(
         result.error.status === 429
           ? "Too many attempts. Wait a minute and try again."
+          : result.error.code === "EMAIL_NOT_VERIFIED"
+            ? "Please verify your email before signing in. Check your inbox or request a new link below."
           : signUp
             ? (result.error.message ?? "Couldn't create the account.")
             : "That email and password don't match an account.",
       );
       return;
     }
-    router.push("/collection");
+    router.push(signUp && emailEnabled ? "/verify-email" : "/collection");
     router.refresh();
+    } catch { setError("We couldn't connect. Check your connection and try again."); }
+    finally { setPending(false); }
   }
 
   return (
@@ -73,6 +77,8 @@ export function AuthForm({ mode, github }: { mode: "sign-in" | "sign-up"; github
           {pending ? "One moment…" : signUp ? "Create account" : "Sign in"}
         </button>
       </form>
+      {!signUp && emailEnabled && <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-[15px]"><Link href="/forgot-password">Forgot password?</Link><Link href="/verify-email">Verify your email</Link></div>}
+      {signUp && <p className="mt-4 text-sm text-ink-3">{emailEnabled && "We’ll email a link to verify your address. "}<Link href="/privacy" className="text-ink">How Accord uses your data</Link></p>}
       {github && (
         <button
           type="button"
@@ -93,16 +99,17 @@ export function AuthForm({ mode, github }: { mode: "sign-in" | "sign-up"; github
   );
 }
 
-function Field({ label, hint, ...input }: { label: string; hint?: string } & React.InputHTMLAttributes<HTMLInputElement>) {
+export function Field({ label, hint, ...input }: { label: string; hint?: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <label className="grid gap-1.5 text-[15px] font-medium">
       {label}
       <input
         {...input}
+        aria-describedby={hint ? `${input.name}-hint` : undefined}
         className="h-12 bg-paper px-3.5 text-[17px] font-normal shadow-[var(--shadow-paper)] outline-none focus-visible:outline-2 focus-visible:outline-focus"
         style={{ borderRadius: 4 }}
       />
-      {hint && <span className="text-sm font-normal text-ink-3">{hint}</span>}
+      {hint && <span id={`${input.name}-hint`} className="text-sm font-normal text-ink-3">{hint}</span>}
     </label>
   );
 }

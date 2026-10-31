@@ -19,6 +19,6 @@ export default defineConfig({
     url: "http://localhost:3200/how-it-works",
     reuseExistingServer: false,
     timeout: 180_000,
-    env: { SCANNER_MODE: "mock", SCAN_GUEST_DAILY: "50", SCAN_USER_DAILY: "50", SCAN_GLOBAL_DAILY: "500", NEXT_DIST_DIR: ".next-e2e", BETTER_AUTH_URL: "http://localhost:3200" },
+    env: { SCANNER_MODE: "mock", SCAN_GUEST_DAILY: "50", SCAN_USER_DAILY: "50", SCAN_GLOBAL_DAILY: "500", SCAN_GLOBAL_MONTHLY: "5000", AUTH_EMAIL_ENABLED: "true", AUTH_EMAIL_TEST_INBOX: "output/reference-build/test-mail.jsonl", NEXT_DIST_DIR: ".next-e2e", BETTER_AUTH_URL: "http://localhost:3200" },
   },
 });

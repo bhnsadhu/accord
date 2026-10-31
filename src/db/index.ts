@@ -17,7 +17,7 @@ function createPool(): Pool {
   // node-postgres already treats prefer/require/verify-ca as verify-full;
   // say so explicitly so it doesn't log a warning on every cold start.
   const url = connectionString.replace(/sslmode=(prefer|require|verify-ca)\b/, "sslmode=verify-full");
-  const pool = new Pool({ connectionString: url, max: 5, idleTimeoutMillis: 10_000 });
+  const pool = new Pool({ connectionString: url, max: 5, idleTimeoutMillis: 10_000, connectionTimeoutMillis: 5_000, statement_timeout: 10_000, query_timeout: 15_000 });
   // Lets Vercel Fluid compute close idle clients before a function suspends.
   attachDatabasePool(pool);
   return pool;

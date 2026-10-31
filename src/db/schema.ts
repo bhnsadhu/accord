@@ -110,6 +110,14 @@ export const catalogRequests = pgTable("catalog_requests", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 }, t => [index("catalog_requests_fingerprint_idx").on(t.fingerprint, t.createdAt)]);
 
+/** Short-lived distributed abuse counters. Keys contain daily hashes, never raw addresses. */
+export const requestBudgets = pgTable("request_budgets", {
+  scope: text("scope").notNull(),
+  windowStart: timestamp("window_start", { withTimezone: true }).notNull(),
+  used: integer("used").notNull().default(0),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+}, t => [primaryKey({ columns: [t.scope, t.windowStart] }), index("request_budgets_expiry_idx").on(t.expiresAt)]);
+
 // ---------------------------------------------------------------------------
 // User data
 // ---------------------------------------------------------------------------

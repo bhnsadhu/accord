@@ -27,3 +27,12 @@ Latest UI update (2026-10-30): renamed the footer source link to â€œRepositoryâ€
 - Neon `accord-db` (Free) via Vercel Marketplace; migrations and seed run from this machine with `DATABASE_URL_UNPOOLED` from `vercel env pull .env.production.local`.
 - Env (production): DATABASE_URL (Neon), BETTER_AUTH_SECRET, BETTER_AUTH_URL, SCANNER_MODE=live, SCENTLENS_URL, SCAN_* caps.
 - Modal workspace has no payment method; usage limit $1/month set by Modal, so no charges are possible.
+
+## Production hardening, October 31, 2026
+
+- Added verified email signup, expiring single-use recovery, session revocation and private data export. Resend sending key is stored in Vercel; simulator send accepted.
+- Added privacy, safe error states, security headers, streaming body limits, distributed request budgets and a protected database health check. Production dependency audit reports zero known findings.
+- Created encrypted daily backups in the private accord-ops repository. PostgreSQL 18 restore drill verified all 18 tables; retention cleanup completed.
+- Deployed a separate proxy-authenticated scanner, shorter idle window and a calendar-month cap. Live cold request succeeded in 29.9 seconds; unauthorized requests return 401. Shared public-demo credit remains a capacity limit.
+- Reviewed new account/privacy surfaces at 390 and 1440. Reviewer found two account layout defects, both resolved and scored ship. Documenter confirmed the extension preserves the existing system; preexisting design-sidecar drift was left untouched.
+- See OPERATIONS.md and COSTS.md for recovery, limits and provider boundaries.

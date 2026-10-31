@@ -51,6 +51,15 @@ describe("quota", () => {
   it("treats a zero limit as closed", async () => {
     expect(await consumeQuota(db, [{ scope: "global", limit: 0 }])).toEqual({ ok: false, scope: "global" });
   });
+
+  it("keeps the monthly cap when daily counters are reset", async () => {
+    const scopes = [{ scope: "global", limit: 3 }, { scope: "global:month", limit: 1, period: "month" as const }];
+    expect((await consumeQuota(db, scopes)).ok).toBe(true);
+    await db.execute(sql`delete from scan_quota where scope = 'global'`);
+    expect(await consumeQuota(db, scopes)).toEqual({ ok: false, scope: "global:month" });
+    expect(await remainingQuota(db, scopes)).toBe(0);
+    expect((await db.execute(sql`select extract(day from day)::int as day from scan_quota where scope='global:month'`)).rows[0].day).toBe(1);
+  });
 });
 
 describe("slots", () => {

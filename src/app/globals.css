@@ -256,7 +256,7 @@ button { cursor: pointer; }
 .signature-hero {
   position: relative; overflow: clip; padding-top: 30px;
   border-block: 1px solid #aeb4bd;
-  background: linear-gradient(167deg, #fbfcfde0 0%, #e4e7eb80 37%, #c2c7ce77 57%, #edf0f399 81%, #e2e4e7 100%);
+  background: linear-gradient(167deg, #cbd1d9 0%, #f3f5f7 15%, #cdd3db 29%, #e4e7eb80 37%, #c2c7ce77 57%, #edf0f399 81%, #e2e4e7 100%);
 }
 .signature-hero::before {
   content: ''; position: absolute; inset: 0 -10%; pointer-events: none;
@@ -268,7 +268,7 @@ button { cursor: pointer; }
 .signature-heading > div > p { margin-top: 11px; color: var(--color-ink-2); font-size: 22px; line-height: 1.4; letter-spacing: -.02em; }
 .signature-search { --signature-control-height: 54px; }
 .signature-search form { display: flex; gap: 10px; height: var(--signature-control-height); }
-.signature-search label { min-width: 0; display: flex; align-items: center; gap: 12px; border: 1px solid #aeb4bd; background: #ffffff80; border-radius: 6px; padding: 0 17px; flex: 1; }
+.signature-search label { min-width: 0; display: flex; align-items: center; gap: 12px; border: 1px solid #aeb4bd; background: #ffffffb3; border-radius: 6px; padding: 0 17px; flex: 1; }
 .signature-search label:focus-within { outline: 2px solid var(--color-focus); outline-offset: 3px; }
 .signature-search input { min-width: 0; width: 100%; height: calc(var(--signature-control-height) - 2px); outline: none; background: transparent; font-size: 15px; }
 .signature-search input::placeholder { color: var(--color-ink-3); }

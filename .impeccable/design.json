@@ -124,6 +124,21 @@
           "oklch(95.0% 0.002 121.7)"
         ]
       },
+      "section-rule": {
+        "role": "neutral",
+        "displayName": "Section Rule",
+        "canonical": "#aeb4bd",
+        "tonalRamp": [
+          "oklch(15.0% 0.014 258.4)",
+          "oklch(26.4% 0.014 258.4)",
+          "oklch(37.9% 0.014 258.4)",
+          "oklch(49.3% 0.014 258.4)",
+          "oklch(60.7% 0.014 258.4)",
+          "oklch(72.1% 0.014 258.4)",
+          "oklch(83.6% 0.014 258.4)",
+          "oklch(95.0% 0.014 258.4)"
+        ]
+      },
       "focus": {
         "role": "tertiary",
         "displayName": "Focus Blue",
@@ -579,6 +594,11 @@
       {
         "name": "The Graphite Action Rule",
         "body": "Actions are graphite ink on paper or bench. Do not introduce a brand accent for buttons or links; the stains are data, not chrome.",
+        "section": "colors"
+      },
+      {
+        "name": "The Section Boundary Rule",
+        "body": "Use a straight, uninterrupted 1px line in section-rule for meaningful page boundaries, aligned with section edges. The hero frame, Home's notes demo, family wheel and scanner explanation, fragrance-detail boundaries before Smells similar and More from the house, and the footer share this treatment. Keep the lighter rule token for dense rows, disclosures and preview metadata. Add dividers where they clarify a change of subject, not to every subsection.",
         "section": "colors"
       },
       {

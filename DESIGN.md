@@ -15,6 +15,7 @@ colors:
   paper: "#fcfbf8"
   paper-edge: "#e6e5e0"
   rule: "#d3d6db"
+  section-rule: "#aeb4bd"
   focus: "#2f5bd3"
   alert: "#a3372b"
   stain-floral: "#d98ba0"
@@ -93,7 +94,7 @@ Accord helps people know a bottle, find their next fragrance, and understand the
 
 ## Color and type
 
-The neutral tokens above match [globals.css](src/app/globals.css). Ink is the primary text and action color; ink-2 carries secondary copy; ink-3 carries readable labels and metadata. Paper is a slightly warm white against the cooler bench. Bench-deep and rule define recessed controls and dividers. Focus blue is reserved for keyboard outlines; alert red carries errors, destructive actions, and avoided-note state.
+The neutral tokens above match [globals.css](src/app/globals.css). Ink is the primary text and action color; ink-2 carries secondary copy; ink-3 carries readable labels and metadata. Paper is a slightly warm white against the cooler bench. Bench-deep defines recessed controls; rule separates dense component content; section-rule marks larger page boundaries. Focus blue is reserved for keyboard outlines; alert red carries errors, destructive actions, and avoided-note state.
 
 The fourteen family hues come from [hues.ts](src/lib/hues.ts). A hue always names the same Edwards accord family across strips, family labels, filters, and collection summaries. Unparsed families use the neutral unstained fallback. Do not recolor a family to indicate selection, success, rank, or fashion. Material gradients may mix the base hue with white to depict absorption, without changing its meaning.
 
@@ -111,7 +112,7 @@ Vertical specimens use a short stained end, about 14% of the paper by default. H
 
 Gradients describe absorption, brushed metal, or directional light. The owner selected **option C: loose blotters with no visible holder**. Keep the original silver background, lighting, resting fan geometry, and selection movement. Do not restore the rail or oval stand. Do not use decorative rules merely to fill space. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
 
-Horizontal section dividers are approved wherever they clarify a meaningful boundary. Match the hero's straight, uninterrupted `1px solid #aeb4bd` rule, align it with the section edges, and use it sparingly and consistently across the product.
+**The Section Boundary Rule.** Use a straight, uninterrupted 1px line in section-rule for meaningful page boundaries, aligned with section edges. The hero frame, Home's notes demo, family wheel and scanner explanation, fragrance-detail boundaries before Smells similar and More from the house, and the footer share this treatment. Keep the lighter rule token for dense rows, disclosures and preview metadata. Add dividers where they clarify a change of subject, not to every subsection.
 
 Unconfirmed scanner candidates remain rectangular **ghost strips**: no family stain, no material shadow, and a dashed neutral edge. Their uncertainty must also be stated in text. A blank candidate is not an answer.
 

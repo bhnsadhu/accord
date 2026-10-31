@@ -118,7 +118,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
             </details>
           </section>
 
-          <section className="reference-section" aria-labelledby="similar-h">
+          <section className="reference-section section-divider" aria-labelledby="similar-h">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <h2 id="similar-h" className="text-[clamp(28px,3vw,40px)] font-semibold tracking-[-0.03em]">
                 Smells similar
@@ -163,7 +163,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
               Personal recommendations <ArrowIcon />
             </Link>
           </section>
-          {siblings.length > 0 && <section className="reference-section" aria-labelledby="house-h">
+          {siblings.length > 0 && <section className="reference-section section-divider" aria-labelledby="house-h">
             <div className="reference-section-heading"><h2 id="house-h">More from {f.brand}</h2><Link href={`/discover?brand=${encodeURIComponent(f.brandSlug)}`}>Explore the house <ArrowIcon /></Link></div>
             <div className="mt-6 grid gap-3">{siblings.map(sibling => <StripRow key={sibling.productId} fragrance={sibling} />)}</div>
           </section>}

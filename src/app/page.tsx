@@ -73,8 +73,8 @@ export default async function Home() {
 
       {/* One strip, read closely. */}
       {dissect && (
-        <section className="mx-auto mt-24 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-32 lg:px-16">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+        <section className="mx-auto mt-16 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-24 lg:px-16">
+          <div className="section-divider grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
             <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
               Read a fragrance, note by note.
             </h2>
@@ -136,8 +136,8 @@ export default async function Home() {
       )}
 
       {/* Start anywhere on the wheel, walking it in order. */}
-      <section className="mx-auto mt-24 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-32 lg:px-16">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+      <section className="mx-auto mt-16 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-24 lg:px-16">
+        <div className="section-divider flex flex-wrap items-end justify-between gap-6">
           <h2 className="max-w-[18em] text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
             Start anywhere on the wheel.
           </h2>
@@ -150,40 +150,42 @@ export default async function Home() {
       </section>
 
       {/* The scanner, stated plainly and shown in the strip's own terms. */}
-      <section className="mx-auto mt-24 grid w-full max-w-[1440px] gap-10 px-4 sm:px-8 lg:mt-32 lg:grid-cols-2 lg:gap-16 lg:px-16">
-        <div>
-          <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
-            A careful eye for your next scent.
-          </h2>
-          <p className="mt-6 max-w-[34em] text-lg leading-relaxed text-ink-2">
-            <ScentLensLink /> finds the bottle, compares it with 24,642 catalog fragrances and reads its label. When the evidence is thin it
-            says so and shows its best candidates as unconfirmed, instead of guessing.
-          </p>
-          <Link href="/scan" className="mt-6 inline-flex items-center gap-2 font-medium hover:underline">
-            How scanning works <ArrowIcon />
-          </Link>
+      <section className="mx-auto mt-16 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-24 lg:px-16">
+        <div className="section-divider grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
+              A careful eye for your next scent.
+            </h2>
+            <p className="mt-6 max-w-[34em] text-lg leading-relaxed text-ink-2">
+              <ScentLensLink /> finds the bottle, compares it with 24,642 catalog fragrances and reads its label. When the evidence is thin it
+              says so and shows its best candidates as unconfirmed, instead of guessing.
+            </p>
+            <Link href="/scan" className="mt-6 inline-flex items-center gap-2 font-medium hover:underline">
+              How scanning works <ArrowIcon />
+            </Link>
+          </div>
+          <figure className="min-w-0">
+            {sure && (
+              <>
+                <p className="text-[13px] text-ink-3">An answer is stained</p>
+                <div className="mt-2">
+                  <StripRow fragrance={sure} />
+                </div>
+              </>
+            )}
+            {unsure.length > 0 && (
+              <>
+                <p className="mt-6 text-[13px] text-ink-3">Candidates it can&rsquo;t confirm stay blank</p>
+                <div className="mt-2 grid gap-2">
+                  {unsure.map((f) => (
+                    <StripRow key={f.productId} fragrance={f} ghost />
+                  ))}
+                </div>
+              </>
+            )}
+            <figcaption className="mt-4 text-sm text-ink-3">An illustration of the two states, not a scan result.</figcaption>
+          </figure>
         </div>
-        <figure className="min-w-0">
-          {sure && (
-            <>
-              <p className="text-[13px] text-ink-3">An answer is stained</p>
-              <div className="mt-2">
-                <StripRow fragrance={sure} />
-              </div>
-            </>
-          )}
-          {unsure.length > 0 && (
-            <>
-              <p className="mt-6 text-[13px] text-ink-3">Candidates it can&rsquo;t confirm stay blank</p>
-              <div className="mt-2 grid gap-2">
-                {unsure.map((f) => (
-                  <StripRow key={f.productId} fragrance={f} ghost />
-                ))}
-              </div>
-            </>
-          )}
-          <figcaption className="mt-4 text-sm text-ink-3">An illustration of the two states, not a scan result.</figcaption>
-        </figure>
       </section>
 
       <section className="mx-auto mt-24 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-32 lg:px-16">

@@ -1,12 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { hueFor } from "@/lib/hues";
-import { SearchIcon } from "./icons";
+import { ArrowIcon, CloseIcon, SearchIcon } from "./icons";
 
 type Hit = { productId: string; slug: string; name: string; brand: string; wheel: string | null };
-
+// The four catalog examples shown in the approved search study. Not a ranking.
+const STARTING_IDS = ["p14478", "p14483", "p14463", "p14470"];
 const PaletteContext = createContext<{ open: (initial?: string) => void } | null>(null);
 
 export function usePalette() {
@@ -15,27 +17,32 @@ export function usePalette() {
   return ctx;
 }
 
-/**
- * ⌘K quick find. A native <dialog> keeps focus inside while it is open and
- * returns it on close; arrow keys move through results, Enter opens one, and
- * "See all" hands the query to the full Discover page.
- */
+/** Native modal focus, keyboard results, and a spacious inset search field. */
 export function PaletteProvider({ children }: { children: ReactNode }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const input = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const listId = useId();
+  const titleId = useId();
+  const statusId = useId();
+  const [isOpen, setIsOpen] = useState(false);
   const [q, setQ] = useState("");
-  const [hits, setHits] = useState<Hit[]>([]);
+  const [starters, setStarters] = useState<Hit[] | null>(null);
+  const [starterError, setStarterError] = useState(false);
+  const [response, setResponse] = useState<{ query: string; items: Hit[]; error: boolean } | null>(null);
   const [active, setActive] = useState(0);
-  const [state, setState] = useState<"idle" | "loading" | "error">("idle");
+  const query = q.trim();
 
   const open = useCallback((initial = "") => {
     setQ(initial);
+    setActive(0);
+    setStarterError(false);
+    setIsOpen(true);
     dialog.current?.showModal();
+    input.current?.focus();
     requestAnimationFrame(() => input.current?.select());
   }, []);
-  const close = useCallback(() => dialog.current?.close(), []);
+  const close = useCallback(() => { dialog.current?.close(); setIsOpen(false); }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -50,108 +57,102 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
   }, [open, close]);
 
   useEffect(() => {
-    const query = q.trim();
-    if (!query) return;
+    if (!isOpen) return;
+    const previous = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+    return () => { document.documentElement.style.overflow = previous; };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen || (!query && starters)) return;
     const controller = new AbortController();
     const timer = setTimeout(async () => {
-      setState("loading");
       try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`, { signal: controller.signal });
+        const url = query ? `/api/search?q=${encodeURIComponent(query)}` : `/api/fragrances?ids=${STARTING_IDS.join(",")}`;
+        const res = await fetch(url, { signal: controller.signal });
         if (!res.ok) throw new Error();
         const data = (await res.json()) as { items: Hit[] };
-        setHits(data.items);
+        if (controller.signal.aborted) return;
+        if (query) setResponse({ query, items: data.items, error: false });
+        else setStarters(data.items);
         setActive(0);
-        setState("idle");
-      } catch (err) {
-        if ((err as Error).name !== "AbortError") setState("error");
+      } catch {
+        if (controller.signal.aborted) return;
+        if (query) setResponse({ query, items: [], error: true });
+        else setStarterError(true);
       }
-    }, 120);
-    return () => {
-      clearTimeout(timer);
-      controller.abort();
-    };
-  }, [q]);
+    }, query ? 120 : 0);
+    return () => { clearTimeout(timer); controller.abort(); };
+  }, [query, isOpen, starters]);
 
-  const shownHits = q.trim() ? hits : [];
-  const go = (href: string) => {
-    close();
-    router.push(href);
+  const current = response?.query === query;
+  const shownHits = query ? (current ? response.items : []) : (starters ?? []);
+  const loading = query ? !current : starters === null && !starterError;
+  const error = query ? current && response.error : starterError;
+  const message = error ? "Search is unavailable. You can continue in Discover." :
+    loading ? (query ? "Searching fragrances." : "Loading a few fragrances to explore.") :
+      query && !shownHits.length ? "No name or brand matches. Try fewer letters." : "";
+  const seeAll = query ? `/discover?q=${encodeURIComponent(query)}` : "/discover";
+  const go = (href: string) => { close(); router.push(href); };
+  const moveActive = (next: number) => {
+    const index = Math.max(0, Math.min(next, shownHits.length));
+    setActive(index);
+    requestAnimationFrame(() => dialog.current?.querySelector(`[data-option-index="${index}"]`)?.scrollIntoView({ block: "nearest" }));
   };
-  const seeAll = `/discover?q=${encodeURIComponent(q.trim())}`;
 
   return (
     <PaletteContext.Provider value={{ open }}>
       {children}
-      <dialog
-        ref={dialog}
-        aria-label="Find a fragrance"
-        className="quick-find m-0 mx-auto mt-[12vh] w-[min(640px,calc(100vw-32px))] bg-transparent p-0 backdrop:bg-ink/25"
-        onClick={(e) => e.target === dialog.current && close()}
-      >
-        <div className="bg-paper shadow-[var(--shadow-lifted)]" style={{ borderRadius: 4 }}>
-          <label className="flex items-center gap-3 border-b border-paper-edge px-4 py-2">
-            <SearchIcon className="shrink-0 text-ink-2" />
-            <input
-              ref={input}
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "ArrowDown") {
-                  e.preventDefault();
-                  setActive((a) => Math.min(a + 1, shownHits.length));
-                } else if (e.key === "ArrowUp") {
-                  e.preventDefault();
-                  setActive((a) => Math.max(a - 1, 0));
-                } else if (e.key === "Enter" && q.trim()) {
-                  e.preventDefault();
-                  go(active < shownHits.length ? `/fragrance/${shownHits[active].slug}` : seeAll);
-                }
-              }}
-              role="combobox"
-              aria-expanded={Boolean(q.trim())}
-              aria-controls={listId}
-              aria-activedescendant={q.trim() ? `${listId}-${active}` : undefined}
-              aria-label="Fragrance or brand"
-              placeholder="Fragrance or brand"
-              className="h-12 min-w-0 flex-1 bg-transparent px-2 text-base sm:text-lg placeholder:text-ink-3"
-            />
-            <kbd className="font-mono text-xs text-ink-3">esc</kbd>
-          </label>
-          <ul id={listId} role="listbox" aria-label="Fragrance results" hidden={!q.trim()} className="max-h-[52vh] overflow-y-auto py-2">
-            {shownHits.map((hit, i) => (
-              <li
-                key={hit.productId}
-                id={`${listId}-${i}`}
-                role="option"
-                aria-selected={i === active}
-                onMouseEnter={() => setActive(i)}
-                onClick={() => go(`/fragrance/${hit.slug}`)}
-                className="flex cursor-pointer items-center gap-3 px-4 py-2.5 aria-selected:bg-bench"
-              >
-                <span className="h-5 w-1.5 shrink-0" style={{ background: hueFor(hit.wheel) } as CSSProperties} />
-                <span className="min-w-0 flex-1 truncate">
-                  <span className="font-medium">{hit.name}</span>
-                  <span className="text-ink-3"> · {hit.brand}</span>
-                </span>
+      <dialog ref={dialog} aria-labelledby={titleId} className="quick-find" onClose={() => setIsOpen(false)} onClick={(e) => e.target === dialog.current && close()}>
+        <div className="quick-find-surface">
+          <header className="quick-find-header">
+            <h2 id={titleId}>Find a fragrance</h2>
+            <button type="button" className="quick-find-close" onClick={close} aria-label="Close search"><CloseIcon /></button>
+          </header>
+          <div className="quick-find-search">
+            <label className="quick-find-field">
+              <SearchIcon />
+              <input
+                ref={input} type="search" value={q} maxLength={80} autoComplete="off" spellCheck={false}
+                onChange={(e) => { setQ(e.target.value); setActive(0); }}
+                onKeyDown={(e) => {
+                  if (e.nativeEvent.isComposing) return;
+                  if (e.key === "Escape") { e.preventDefault(); close(); }
+                  else if (e.key === "ArrowDown") { e.preventDefault(); moveActive(active + 1); }
+                  else if (e.key === "ArrowUp") { e.preventDefault(); moveActive(active - 1); }
+                  else if (e.key === "Enter") {
+                    e.preventDefault();
+                    go(active < shownHits.length ? `/fragrance/${shownHits[active].slug}` : seeAll);
+                  }
+                }}
+                role="combobox" aria-expanded="true" aria-controls={listId} aria-autocomplete="list"
+                aria-activedescendant={`${listId}-${active}`} aria-describedby={message ? statusId : undefined}
+                aria-label="Fragrance or brand" placeholder="Fragrance or brand" className="quick-find-input"
+              />
+            </label>
+          </div>
+          <div className="quick-find-content" tabIndex={0} role="region" aria-label="Fragrance matches">
+            <p className="quick-find-caption">{query ? "Fragrances" : "A place to start"}</p>
+            <p id={statusId} role="status" className="quick-find-status" hidden={!message}>{message}</p>
+            <ul id={listId} role="listbox" aria-label="Fragrance results" className="quick-find-results">
+              {shownHits.map((hit, i) => (
+                <li key={hit.productId} id={`${listId}-${i}`} data-option-index={i} role="option" aria-selected={i === active}
+                  onPointerMove={(e) => { if (e.pointerType === "mouse") setActive(i); }} onClick={() => go(`/fragrance/${hit.slug}`)} className="quick-find-result">
+                  <span className="quick-find-blotter" aria-hidden="true" style={{ "--hue": hueFor(hit.wheel) } as CSSProperties} />
+                  <span className="quick-find-result-copy"><span className="quick-find-result-name">{hit.name}</span><span className="quick-find-result-brand">{hit.brand}</span></span>
+                </li>
+              ))}
+              <li id={`${listId}-${shownHits.length}`} data-option-index={shownHits.length} role="option" aria-selected={active === shownHits.length}
+                onPointerMove={(e) => { if (e.pointerType === "mouse") setActive(shownHits.length); }} onClick={() => go(seeAll)}
+                aria-label={query ? `See all results for “${query}”` : "Explore all fragrances"} className="quick-find-all">
+                <span>Explore all results</span><ArrowIcon />
               </li>
-            ))}
-            {q.trim() && (
-              <li
-                id={`${listId}-${shownHits.length}`}
-                role="option"
-                aria-selected={active === shownHits.length}
-                onMouseEnter={() => setActive(shownHits.length)}
-                onClick={() => go(seeAll)}
-                className="cursor-pointer px-4 py-2.5 text-ink-2 aria-selected:bg-bench"
-              >
-                {state === "error" ? "Search is unavailable. See all results instead" : `See all results for “${q.trim()}”`}
-              </li>
-            )}
-          </ul>
-          {!q.trim() && <p className="px-4 py-5 text-ink-3">Type a name or brand. Notes and families live in Discover.</p>}
-          {q.trim() && state === "idle" && shownHits.length === 0 && (
-            <p role="status" className="px-4 pb-4 text-ink-3">No name or brand matches. Try fewer letters.</p>
-          )}
+            </ul>
+          </div>
+          <footer className="quick-find-footer">
+            <Link href="/discover" onClick={close}>Explore notes and families</Link>
+            <span className="quick-find-shortcuts" aria-hidden="true"><kbd>↑ ↓</kbd> to browse <kbd>esc</kbd> to close</span>
+          </footer>
         </div>
       </dialog>
     </PaletteContext.Provider>

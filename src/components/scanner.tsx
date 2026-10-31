@@ -10,7 +10,7 @@ import { CollectionControls } from "./collection-controls";
 import { StripRow } from "./strip";
 import { ScentLensLink, ScentLensText } from "./scentlens-link";
 
-type Status = { enabled: false } | { enabled: true; mock: boolean; remaining: number; signedIn: boolean };
+type Status = { enabled: false } | { enabled: true; mock: boolean; remaining: number; signedIn: boolean; limitedBy?: "month" | "global" | "caller" | null; canIncreaseWithAccount?: boolean };
 type Done = { status: "done"; result: IdentifyResult; cached: boolean; remaining: number; fragrances: FragranceSummary[]; mock: boolean };
 type Phase =
   | { kind: "idle" }
@@ -97,6 +97,8 @@ export function Scanner() {
     } finally {
       inFlight.current = false;
       if (input.current) input.current.value = "";
+      // Another request can exhaust a shared allowance while this scan runs.
+      void fetch("/api/scan", { cache: "no-store" }).then(r => r.json()).then(setStatus).catch(() => {});
     }
   }
 
@@ -154,9 +156,10 @@ export function Scanner() {
           />
         </label>
         <p className="mt-3 font-mono text-sm text-ink-3 tabular">
-          {status.remaining} {status.remaining === 1 ? "scan" : "scans"} left today
-          {!status.signedIn && " · sign in for more"}
+          {status.limitedBy === "month" ? "This month’s scans are used up." : `${status.remaining} ${status.remaining === 1 ? "scan" : "scans"} left today`}
+          {status.canIncreaseWithAccount && " · sign in for more"}
         </p>
+        {status.remaining === 0 && <p className="mt-2 text-sm text-ink-2">{status.limitedBy === "month" ? "The allowance renews next month. " : status.limitedBy ? "The allowance renews tomorrow. " : "Search is still available. "}<Link href="/discover" className="font-medium text-ink">Find it by name</Link></p>}
         {status.mock && (
           <p className="mt-2 text-sm font-medium text-alert">Development mode: results are fixed test data, not recognition.</p>
         )}

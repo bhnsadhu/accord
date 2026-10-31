@@ -24,8 +24,11 @@ export async function GET(request: Request) {
   if (mode === "off") return Response.json({ enabled: false }, { headers: noStore });
   try {
     const caller = await callerFor(request);
-    const remaining = await remainingQuota(db, quotaScopes(caller));
-    return Response.json({ enabled: true, mock: mode === "mock", remaining, signedIn: "userId" in caller }, { headers: noStore });
+    const [daily, monthly, personal] = await Promise.all(quotaScopes(caller).map(scope => remainingQuota(db, [scope])));
+    const remaining = Math.min(daily, monthly, personal);
+    const limitedBy = monthly === 0 ? "month" : daily === 0 ? "global" : personal === 0 ? "caller" : null;
+    const canIncreaseWithAccount = "guestKey" in caller && daily > personal && monthly > personal;
+    return Response.json({ enabled: true, mock: mode === "mock", remaining, limitedBy, canIncreaseWithAccount, signedIn: "userId" in caller }, { headers: noStore });
   } catch {
     reportFailure("scan_status_unavailable");
     return Response.json({ enabled: false }, { status: 503, headers: noStore });

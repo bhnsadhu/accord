@@ -124,3 +124,12 @@ test("private routes refuse guests", async ({ request }) => {
   const scan = await request.post("/api/scan", { data: Buffer.from("not an image"), headers: { "Content-Type": "image/jpeg", Origin: "http://localhost:3200" } });
   expect(scan.status()).toBe(400);
 });
+
+test("scanner explains shared monthly exhaustion without promising more scans on sign-in", async ({ page }) => {
+  await page.route("**/api/scan", route => route.fulfill({ json: { enabled: true, mock: false, remaining: 0, signedIn: false, limitedBy: "month", canIncreaseWithAccount: false } }));
+  await page.goto("/scan");
+  await expect(page.getByText("This month’s scans are used up.")).toBeVisible();
+  await expect(page.getByText("sign in for more", { exact: false })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Find it by name", exact: true })).toBeVisible();
+  await expect(page.locator('input[type="file"]')).toBeDisabled();
+});

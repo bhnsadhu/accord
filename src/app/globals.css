@@ -62,7 +62,12 @@ body {
 }
 
 /* Meaningful section boundaries share the hero's approved line treatment. */
-.section-divider { border-top: 1px solid var(--color-section-rule); padding-top: 32px; }
+.section-divider {
+  border-top: 1px solid var(--color-section-rule);
+  /* Extend only the painted rule, keeping content widths and page overflow intact. */
+  border-image: linear-gradient(var(--color-section-rule), var(--color-section-rule)) 1 / 1px 0 0 / 0 100vw;
+  padding-top: 32px;
+}
 
 /* Links and actions use tone, weight, and focus rather than underlines. */
 a, button {

@@ -598,7 +598,7 @@
       },
       {
         "name": "The Section Boundary Rule",
-        "body": "Use a straight, uninterrupted 1px line in section-rule for meaningful page boundaries, aligned with section edges. The hero frame, Home's notes demo, family wheel and scanner explanation, fragrance-detail boundaries before Smells similar and More from the house, and the footer share this treatment. Keep the lighter rule token for dense rows, disclosures and preview metadata. Add dividers where they clarify a change of subject, not to every subsection.",
+        "body": "Use a straight, uninterrupted 1px line in section-rule for meaningful page boundaries, spanning the full viewport from edge to edge even within inset or off-center content columns. Keep content gutters and alignment intact. The hero frame, Home's notes demo, family wheel and scanner explanation, fragrance-detail boundaries before Smells similar and More from the house, and the footer share this treatment. Keep the lighter rule token for dense rows, disclosures and preview metadata. Add dividers where they clarify a change of subject, not to every subsection.",
         "section": "colors"
       },
       {

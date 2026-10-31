@@ -255,13 +255,11 @@ button { cursor: pointer; }
 /* Home: loose paper blotters fan across the original silver backdrop. */
 .signature-hero {
   position: relative; overflow: clip; padding-top: 30px;
-  background:
-    linear-gradient(#f6f7f9, #f6f7f900) top / 100% 120px no-repeat,
-    linear-gradient(#f0f1f300, var(--color-bench)) bottom / 100% 160px no-repeat,
-    linear-gradient(167deg, #fbfcfde0 0%, #e4e7eb80 37%, #c2c7ce77 57%, #edf0f399 81%, #f0f1f3 100%);
+  border-block: 1px solid #aeb4bd;
+  background: linear-gradient(167deg, #fbfcfde0 0%, #e4e7eb80 37%, #c2c7ce77 57%, #edf0f399 81%, #e2e4e7 100%);
 }
 .signature-hero::before {
-  content: ''; position: absolute; inset: 80px -10% 80px; pointer-events: none;
+  content: ''; position: absolute; inset: 0 -10%; pointer-events: none;
   background: linear-gradient(167deg, transparent 12%, #fff8 17%, transparent 27%, #a3a9b36b 33%, #fff9 34%, transparent 37%, #b4bbc44d 54%, #fff9 55%, transparent 60%);
   filter: blur(14px);
 }

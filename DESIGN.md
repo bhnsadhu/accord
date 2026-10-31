@@ -115,7 +115,7 @@ Unconfirmed scanner candidates remain rectangular **ghost strips**: no family st
 
 ## Home: Precision Bench
 
-The opening composition is wide and spatial. A clear headline and short product explanation sit above the bench; the search form occupies the adjacent desktop column. Search is a real GET form to Discover. Scan a bottle is a prominent, full-width entry below it with a camera icon and a short photo-identification explanation. Its height matches the search and Explore controls: 54px on larger screens and 48px on phones. The header, hero, and fan share a maximum width of 1600px.
+The opening composition is wide and spatial. A clear headline and short product explanation sit above the bench; the search form occupies the adjacent desktop column. Search is a real GET form to Discover. Scan a bottle is a prominent, full-width entry below it with a camera icon and a short photo-identification explanation. Its height matches the search and Explore controls: 54px on larger screens and 48px on phones. The header, hero, and fan share a maximum width of 1600px. Clearly visible full-width lines frame the hero below navigation and above the "Every suggestion has a reason." section. The silver background and directional light fill the entire hero to both boundaries, with a seamless interior and no horizontal lighting seam.
 
 Six real fragrances form a spreading fan of **loose paper blotters**, without a rail or holder. The strips vary in angle and height, each with a readable identity and family stain. Selection moves the strip forward and down along its own axis. On smaller screens the fan compresses its angles, heights, and spacing while preserving distinct targets and staying clear of the scanner action.
 

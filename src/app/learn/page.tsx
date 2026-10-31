@@ -1,3 +1,4 @@
+import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { CSSProperties } from "react";
@@ -8,10 +9,10 @@ import { hueFor } from "@/lib/hues";
 export const metadata: Metadata = { title: "Understand fragrance", description: "A short guide to fragrance notes, families, concentrations and wearing perfume, with paths into Accord’s catalog." };
 
 export default function LearnPage() {
-  return <article className="knowledge-page fragrance-guide">
-    <nav className="reference-wayfinding" aria-label="Guide navigation"><Link href="/discover">Discover</Link><Link href="/notes">Note library</Link></nav>
-    <h1>Understand fragrance.</h1>
-    <p className="knowledge-lead">A few useful words can change how you explore a scent.</p>
+  return <PageShell as="article" width="reference" className="knowledge-page fragrance-guide">
+    <PageTitle>Understand fragrance.</PageTitle>
+    <p className="page-intro knowledge-lead">A few useful words can change how you explore a scent.</p>
+    <nav className="reference-wayfinding page-wayfinding" aria-label="Guide navigation"><Link href="/discover">Discover</Link><Link href="/notes">Note library</Link></nav>
     <nav className="guide-contents" aria-label="In this guide"><a href="#reading">Notes and accords</a><a href="#families">Families</a><a href="#concentration">Concentration</a><a href="#wearing">On your skin</a></nav>
 
     <section id="reading" className="reference-section" aria-labelledby="reading-h">
@@ -51,5 +52,5 @@ export default function LearnPage() {
     </section>
 
     <aside className="knowledge-next"><div><h2>Start with a fragrance you know.</h2><p>Read its notes, compare a few neighbours, and save what you want to try.</p></div><Link href="/discover">Find a fragrance <ArrowIcon /></Link></aside>
-  </article>;
+  </PageShell>;
 }

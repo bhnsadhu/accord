@@ -1,5 +1,6 @@
 "use client";
 
+import { PageShell, PageTitle } from "@/components/page-shell";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
@@ -37,11 +38,11 @@ export function AuthForm({ mode, github }: { mode: "sign-in" | "sign-up"; github
   }
 
   return (
-    <div className="mx-auto w-full max-w-md px-4 pt-10 sm:pt-16">
-      <h1 className="text-[clamp(32px,4vw,48px)] font-semibold leading-none tracking-[-0.035em]">
+    <PageShell width="form">
+      <PageTitle>
         {signUp ? "Create an account" : "Sign in"}
-      </h1>
-      <p className="mt-4 text-ink-2">
+      </PageTitle>
+      <p className="page-intro">
         {signUp
           ? "Keep your collection, ratings and profile across devices. Anything you saved as a guest comes with you."
           : "Welcome back. Your shelves are where you left them."}
@@ -88,7 +89,7 @@ export function AuthForm({ mode, github }: { mode: "sign-in" | "sign-up"; github
           {signUp ? "Sign in" : "Create an account"}
         </Link>
       </p>
-    </div>
+    </PageShell>
   );
 }
 

@@ -1,3 +1,4 @@
+import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -48,14 +49,14 @@ function href(raw: Raw, patch: Record<string, string | undefined>) {
 
 export default function DiscoverPage({ searchParams }: PageProps<"/discover">) {
   return (
-    <div className="archive-page mx-auto w-full max-w-[1440px] px-4 pt-8 sm:px-8 lg:px-16 lg:pt-12">
-      <h1 className="archive-heading text-[clamp(36px,4vw,56px)] font-semibold leading-none tracking-[-0.035em]">Discover</h1>
+    <PageShell className="archive-page">
+      <PageTitle>Discover</PageTitle>
       <nav className="reference-wayfinding archive-learning-links" aria-label="Explore fragrance knowledge"><Link href="/notes">Browse notes</Link><Link href="/learn">Fragrance guide</Link></nav>
       <Bench />
       <Suspense fallback={<ResultsSkeleton />}>
         <Results searchParams={searchParams} />
       </Suspense>
-    </div>
+    </PageShell>
   );
 }
 

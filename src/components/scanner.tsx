@@ -124,10 +124,10 @@ export function Scanner() {
   const waited = phase.kind === "identifying" ? Math.floor((now - phase.since) / 1000) : 0;
 
   return (
-    <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+    <div className="mt-8 grid gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
       <div>
         <label
-          className={`scan-upload relative flex aspect-[4/5] cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden bg-paper/60 text-center ${busy ? "pointer-events-none" : ""}`}
+          className={`scan-upload relative flex aspect-[4/5] max-h-[520px] cursor-pointer flex-col items-center justify-center gap-3 overflow-hidden bg-paper/60 text-center ${busy ? "pointer-events-none" : ""}`}
           style={{ borderRadius: 4 }}
           data-busy={busy}
         >

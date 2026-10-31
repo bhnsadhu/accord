@@ -41,10 +41,11 @@ typography:
     fontWeight: 450
     lineHeight: 1.06
     letterSpacing: "-0.055em"
-  archive-heading:
-    fontSize: "44px"
+  page-title:
+    fontSize: "clamp(36px, 4vw, 56px)"
     fontWeight: 450
-    letterSpacing: "-0.045em"
+    lineHeight: 1.06
+    letterSpacing: "-0.035em"
   archive-name:
     fontSize: "22px"
     fontWeight: 500
@@ -59,9 +60,21 @@ rounded:
   control: "4px to 6px"
 layout:
   signature-max: "1600px"
-  content-max: "1440px"
+  content-max: "1600px"
   archive-max: "1600px"
+  page-gutter-desktop: "48px"
+  page-gutter-tablet: "32px"
+  page-gutter-phone: "22px"
+  page-top-desktop: "48px"
+  page-top-tablet: "32px"
+  page-top-phone: "24px"
+  workspace-max: "1040px"
+  reference-max: "1064px"
+  reading-max: "72ch"
+  account-max: "640px"
+  form-max: "432px"
   desktop-from: "1100px"
+  tablet-from: "701px"
   inline-preview-through: "700px"
 motion:
   ease-paper: "cubic-bezier(0.16, 1, 0.3, 1)"
@@ -100,7 +113,17 @@ The fourteen family hues come from [hues.ts](src/lib/hues.ts). A hue always name
 
 Schibsted Grotesk carries names, headings, controls, and prose, with stylistic sets ss01 and cv11. The signature heading uses a light 450 weight, tight tracking, and generous scale; archive names use 500. Smaller labels stay in sentence case, close to the values they describe. Geist Mono is an instrument for exact counts, identifiers, and figures, with tabular numerals; it is not the voice for names or prose.
 
-Use the actual responsive rules in globals rather than applying one headline scale everywhere. Home reaches 76px on wide screens; Discover starts at 44px, steps to 38px below 1100px, and 34px at phone widths. Body copy stays comfortably readable; metadata is subordinate without disappearing into low contrast.
+**The Page Title Rule.** Ordinary route titles use the shared page-title type role, including Discover and Compare in both empty and populated states. Home retains its larger signature heading, and fragrance detail retains its identity heading beside the specimen. Body copy stays comfortably readable; metadata is subordinate without disappearing into low contrast.
+
+## Layout
+
+Density is moderate. Pages share one 1600px outer frame with generous section breaks; lists are stacks of laid strips rather than grids of cards.
+
+**The Shared Frame Rule.** Align navigation, ordinary route titles, Home supporting sections and footer content to one outer frame. Use 48px horizontal gutters and 48px top spacing from 1100px, 32px gutters and top spacing from 701 to 1099px, and 22px gutters with 24px top spacing through 700px. Narrow content stays left-aligned inside that frame. Keep Home's hero geometry and introduction sequence intact.
+
+[PageShell and PageTitle](src/components/page-shell.tsx) implement the common route frame and heading. The shared page-max, page-gutter and page-top properties in globals control its geometry. Inner measures limit the content without recentering it: workspace for Scan and profile (1040px), reference for knowledge pages (1064px), reading for explanatory pages (72ch), account (640px), and forms (432px). Discover's heading starts at the navigation alignment, without an offset for its filter column.
+
+Ordinary page introductions start 20px below the title, use 18px text with 1.6 line height, and reduce to 16px through 700px. The default measure is 68ch; knowledge introductions use 52ch. Knowledge index and guide links follow the heading and introduction. Object detail keeps contextual navigation before its identity, with the fragrance specimen column retained.
 
 ## Paper, light, and shape
 
@@ -139,7 +162,7 @@ Follow a note opens an inline catalog connection panel. Counts come from actual 
 
 At **1100px and above**, Discover is a three-column working archive: filters at left, horizontal paper result strips in the center, and a sticky selected-fragrance preview at right. The preview includes a tall paper specimen, name, brand, accord family, character when available, the full listed notes, View fragrance, and Compare. Keep its information visible beside the results rather than hiding it behind another route.
 
-The primary structure is .archive-page → .archive-layout with .archive-filters and .archive-main. The main area contains the existing search/status UI, .archive-results (list and preview), and pagination. The desktop baseline is a 174px filter column, fluid results, and a 340px preview; responsive CSS adjusts these widths.
+The primary structure is the shared page shell with the Discover heading, followed by .archive-layout with .archive-filters and .archive-main. The main area contains the existing search/status UI, .archive-results (list and preview), and pagination. The desktop baseline is a 174px filter column, fluid results, and a 340px preview; responsive CSS adjusts these widths.
 
 Each result has two explicit interactions: the paper button selects a preview, and its View fragrance link navigates. The selected strip is marked with a graphite check and accessible pressed state. Selection stays local to the page; actual search, filters, sort, counts, and pagination remain server-driven and URL-addressable. A changed ordered result set resets preview and comparison to the new results.
 
@@ -161,7 +184,9 @@ Use horizontal paper strips for fragrance lists in recommendations, collections,
 
 **Collection and profile** retain Owned, Tried, Wishlist, and Favourites; personal ratings and profile inputs remain editable. Guest data stays in local storage and merges into the account on sign-in. Optional taste inputs should feel optional. Avoided notes are exclusions, not a weak preference. Show currently selected or avoided values so the summary never refers to hidden state.
 
-**Scan** is a deliberate upload/identify flow. Preserve preparing, identifying, confirmed, uncertain, invalid, busy, quota, timeout, offline, and disabled states where applicable. Explain what happened and give a usable next action. Only a confirmed answer gets the stained-answer treatment; candidates remain explicitly unconfirmed. Never turn an illustrative example into an asserted scan result.
+**The Reachable Save Rule.** The profile save bar uses a bottom offset of calc(80px + env(safe-area-inset-bottom)) below 1100px to clear mobile navigation, then sits at the bottom on desktop. Keep builder grid tracks shrinkable with minmax(0, 1fr), and allow the save label to wrap inside the available width on narrow screens.
+
+**Scan** is a deliberate upload/identify flow. Preserve preparing, identifying, confirmed, uncertain, invalid, busy, quota, timeout, offline, and disabled states where applicable. Explain what happened and give a usable next action. Only a confirmed answer gets the stained-answer treatment; candidates remain explicitly unconfirmed. Never turn an illustrative example into an asserted scan result. The workspace becomes two columns from 768px; the upload surface is at most 520px tall.
 
 ## Controls, navigation, and accessibility
 

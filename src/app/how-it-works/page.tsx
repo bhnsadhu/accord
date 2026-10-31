@@ -1,3 +1,4 @@
+import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScentLensLink } from "@/components/scentlens-link";
@@ -6,8 +7,8 @@ export const metadata: Metadata = { title: "How it works" };
 
 export default function HowItWorksPage() {
   return (
-    <article className="mx-auto w-full max-w-[72ch] px-4 pt-8 sm:px-8 lg:pt-12">
-      <h1 className="text-[clamp(36px,4.4vw,60px)] font-semibold leading-[1] tracking-[-0.035em] text-balance">How Accord works</h1>
+    <PageShell as="article" width="reading">
+      <PageTitle>How Accord works</PageTitle>
       <div className="mt-8 grid gap-10 text-[17px] leading-[1.65] text-ink-2 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-[-0.02em] [&_h2]:text-ink [&_strong]:font-semibold [&_strong]:text-ink">
         <section>
           <h2>The catalog</h2>
@@ -67,6 +68,6 @@ export default function HowItWorksPage() {
           </Link>
         </p>
       </div>
-    </article>
+    </PageShell>
   );
 }

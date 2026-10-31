@@ -46,7 +46,7 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
   };
 
   return (
-    <div className={`mt-12 grid gap-14 ${ready ? "" : "pointer-events-none opacity-60"}`}>
+    <div className={`mt-12 grid grid-cols-1 gap-14 ${ready ? "" : "pointer-events-none opacity-60"}`}>
       <Step title="Fragrances you love" hint="Search and add a few. They become favourites in your collection.">
         <FavouriteSearch
           onAdd={(hit) => saveEntry({ productId: hit.productId, shelf: "owned", rating: null, favorite: true })}
@@ -95,7 +95,7 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
               role="radio"
               aria-checked={draft.gender === g}
               onClick={() => setDraft((d) => ({ ...d, gender: g }))}
-              className="h-10 px-4 text-[15px] capitalize text-ink-2 aria-checked:bg-paper aria-checked:font-medium aria-checked:text-ink aria-checked:shadow-[var(--shadow-paper)]"
+              className="min-h-11 px-2 text-[15px] capitalize text-ink-2 aria-checked:bg-paper aria-checked:font-medium aria-checked:text-ink aria-checked:shadow-[var(--shadow-paper)] sm:px-4"
               style={{ borderRadius: 4 }}
             >
               {g === "any" ? "Anything" : g}
@@ -104,7 +104,7 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
         </div>
       </Step>
 
-      <div className="sticky bottom-20 z-10 flex flex-wrap items-center justify-between gap-4 border-t border-ink bg-bench py-5 md:bottom-0">
+      <div className="sticky bottom-[calc(80px+env(safe-area-inset-bottom))] z-10 flex flex-wrap items-center justify-between gap-4 border-t border-ink bg-bench py-5 min-[1100px]:bottom-0">
         <p className="text-sm text-ink-2">
           {favourites.length} favourites · {draft.likedNotes.length} notes liked
           {draft.likedNotes.length > 0 && <span className="text-ink-3"> ({draft.likedNotes.slice(0, 3).map((k) => labelOf.get(k) ?? k).join(", ")}{draft.likedNotes.length > 3 ? "…" : ""})</span>}
@@ -114,10 +114,10 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
           type="button"
           onClick={save}
           disabled={saving}
-          className="inline-flex h-[52px] items-center gap-2 bg-ink px-6 font-medium text-paper transition-[background-color] hover:bg-ink-2 disabled:opacity-60"
+          className="inline-flex min-h-[52px] w-full min-w-0 max-w-full items-center justify-center gap-2 bg-ink px-6 py-3 font-medium text-paper transition-[background-color] hover:bg-ink-2 disabled:opacity-60 sm:w-auto"
           style={{ borderRadius: 4 }}
         >
-          {saving ? "Saving…" : "Save and see recommendations"} <ArrowIcon />
+          <span>{saving ? "Saving…" : "Save and see recommendations"}</span> <ArrowIcon className="shrink-0" />
         </button>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: PageProps<"/notes/[key]">): P
 }
 
 export default function NotePage({ params }: PageProps<"/notes/[key]">) {
-  return <div className="knowledge-page note-reference-page"><Suspense fallback={<p className="reference-empty" role="status">Loading the note.</p>}><NoteDetail params={params} /></Suspense></div>;
+  return <PageShell width="reference" className="knowledge-page note-reference-page"><Suspense fallback={<p className="reference-empty" role="status">Loading the note.</p>}><NoteDetail params={params} /></Suspense></PageShell>;
 }
 
 async function NoteDetail({ params }: { params: Promise<{ key: string }> }) {
@@ -25,8 +26,8 @@ async function NoteDetail({ params }: { params: Promise<{ key: string }> }) {
   const definition = NOTE_GUIDE[note.key];
   return <>
     <nav className="reference-wayfinding" aria-label="Note navigation"><Link href="/notes">Note library</Link><Link href="/learn">Fragrance guide</Link></nav>
-    <h1>{note.label}</h1>
-    <p className="knowledge-lead">{definition ?? "Explore the fragrances that list this note, and the other notes they bring together."}</p>
+    <PageTitle>{note.label}</PageTitle>
+    <p className="page-intro knowledge-lead">{definition ?? "Explore the fragrances that list this note, and the other notes they bring together."}</p>
     <div className="note-reference-intro">
       <p>{definition ? "This describes the note in general. Its impression changes with the composition, and a listed note does not tell you how much is used." : "A scent description is not yet included for this note. The fragrances below come directly from its catalog listings."}</p>
       {definition && <a href={GUIDE_SOURCES.ingredients.href}>Reference: The Perfume Society <ArrowIcon /></a>}

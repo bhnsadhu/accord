@@ -73,7 +73,7 @@ export default async function Home() {
 
       {/* One strip, read closely. */}
       {dissect && (
-        <section className="mx-auto mt-16 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-24 lg:px-16">
+        <section className="site-frame mt-16 lg:mt-24">
           <div className="section-divider grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
             <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
               Read a fragrance, note by note.
@@ -136,7 +136,7 @@ export default async function Home() {
       )}
 
       {/* Start anywhere on the wheel, walking it in order. */}
-      <section className="mx-auto mt-16 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-24 lg:px-16">
+      <section className="site-frame mt-16 lg:mt-24">
         <div className="section-divider flex flex-wrap items-end justify-between gap-6">
           <h2 className="max-w-[18em] text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
             Start anywhere on the wheel.
@@ -150,7 +150,7 @@ export default async function Home() {
       </section>
 
       {/* The scanner, stated plainly and shown in the strip's own terms. */}
-      <section className="mx-auto mt-16 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-24 lg:px-16">
+      <section className="site-frame mt-16 lg:mt-24">
         <div className="section-divider grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
@@ -188,7 +188,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mx-auto mt-24 w-full max-w-[1440px] px-4 sm:px-8 lg:mt-32 lg:px-16">
+      <section className="site-frame mt-24 lg:mt-32">
         <div className="flex flex-col items-start gap-6 pt-10 md:flex-row md:items-end md:justify-between">
           <h2 className="max-w-[16em] text-[clamp(28px,3vw,40px)] font-semibold leading-[1.08] tracking-[-0.025em] text-balance">
             Tell Accord three things you wear. It does the rest.

@@ -396,13 +396,17 @@
       }
     },
     "typographyMeta": {
+      "page-title": {
+        "displayName": "Page Title",
+        "purpose": "Shared title for ordinary routes, including Discover and both Compare states; Home and fragrance identity retain their distinct heading roles."
+      },
       "display": {
         "displayName": "Display",
         "purpose": "First-viewport statements only."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section headings and inner page titles."
+        "purpose": "Section headings; ordinary route titles use page-title."
       },
       "title": {
         "displayName": "Title",
@@ -494,6 +498,18 @@
       {
         "name": "lg",
         "value": "1024px"
+      },
+      {
+        "name": "page-desktop-from",
+        "value": "1100px"
+      },
+      {
+        "name": "page-tablet-from",
+        "value": "701px"
+      },
+      {
+        "name": "page-phone-through",
+        "value": "700px"
       }
     ],
     "stain": {
@@ -575,7 +591,7 @@
   ],
   "narrative": {
     "northStar": "The Evaluation Bench",
-    "overview": "Every fragrance in Accord is a smelling strip (a mouillette) and the product is the bench a perfumer evaluates them on. The ground is a neutral bench grey; content sits on blotter-paper white cut into strips with die-cut tapered tips; each strip carries an oil stain in the one hue fixed to its Edwards wheel family, darkening to a tide line where the oil stopped soaking. Everything else is graphite ink. The world is light only, chosen from the use scene: perfume is judged on white paper in neutral daylight.\n\nThe system is quiet and typographic. One grotesk sets every word; a mono face appears only where a number or identifier has to be read exactly. There are no catalog images: the stain is the only picture a fragrance gets, and colour on a strip always means its accord family, never decoration. Depth is paper physics: strips rest with a soft drop shadow, lift and saturate when touched, and confirmed versus unconfirmed is carried by stained versus dashed blank paper.\n\nDensity is moderate. Pages run in one 1440px container with generous section breaks; lists are stacks of laid strips rather than grids of cards.",
+    "overview": "Every fragrance in Accord is a smelling strip (a mouillette) and the product is the bench a perfumer evaluates them on. The ground is a neutral bench grey; content sits on blotter-paper white cut into strips with die-cut tapered tips; each strip carries an oil stain in the one hue fixed to its Edwards wheel family, darkening to a tide line where the oil stopped soaking. Everything else is graphite ink. The world is light only, chosen from the use scene: perfume is judged on white paper in neutral daylight.\n\nThe system is quiet and typographic. One grotesk sets every word; a mono face appears only where a number or identifier has to be read exactly. There are no catalog images: the stain is the only picture a fragrance gets, and colour on a strip always means its accord family, never decoration. Depth is paper physics: strips rest with a soft drop shadow, lift and saturate when touched, and confirmed versus unconfirmed is carried by stained versus dashed blank paper.\n\nDensity is moderate. Pages share one 1600px outer frame with generous section breaks; lists are stacks of laid strips rather than grids of cards.",
     "keyCharacteristics": [
       "Neutral bench grey ground, blotter-white paper strips with die-cut tapered tips.",
       "One fixed stain hue per Edwards wheel family, with a darker tide line; unparsed accords stay unstained.",
@@ -600,6 +616,21 @@
         "name": "The Section Boundary Rule",
         "body": "Use a straight, uninterrupted 1px line in section-rule for meaningful page boundaries, spanning the full viewport from edge to edge even within inset or off-center content columns. Keep content gutters and alignment intact. The hero frame, Home's notes demo, family wheel and scanner explanation, fragrance-detail boundaries before Smells similar and More from the house, and the footer share this treatment. Keep the lighter rule token for dense rows, disclosures and preview metadata. Add dividers where they clarify a change of subject, not to every subsection.",
         "section": "colors"
+      },
+      {
+        "name": "The Page Title Rule",
+        "body": "Ordinary route titles use the shared page-title type role, including Discover and Compare in both empty and populated states. Home retains its larger signature heading, and fragrance detail retains its identity heading beside the specimen. Body copy stays comfortably readable; metadata is subordinate without disappearing into low contrast.",
+        "section": "typography"
+      },
+      {
+        "name": "The Shared Frame Rule",
+        "body": "Align navigation, ordinary route titles, Home supporting sections and footer content to one outer frame. Use 48px horizontal gutters and 48px top spacing from 1100px, 32px gutters and top spacing from 701 to 1099px, and 22px gutters with 24px top spacing through 700px. Narrow content stays left-aligned inside that frame. Keep Home's hero geometry and introduction sequence intact.",
+        "section": "layout"
+      },
+      {
+        "name": "The Reachable Save Rule",
+        "body": "The profile save bar uses a bottom offset of calc(80px + env(safe-area-inset-bottom)) below 1100px to clear mobile navigation, then sits at the bottom on desktop. Keep builder grid tracks shrinkable with minmax(0, 1fr), and allow the save label to wrap inside the available width on narrow screens.",
+        "section": "layout"
       },
       {
         "name": "The Instrument Mono Rule",

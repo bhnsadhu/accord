@@ -48,7 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 function Footer() {
   return (
     <footer className="mt-24 border-t border-section-rule">
-      <div className="mx-auto grid max-w-[1440px] gap-6 px-4 py-10 text-sm text-ink-3 sm:px-8 md:grid-cols-[1fr_auto] lg:px-16">
+      <div className="site-frame grid gap-6 py-10 text-sm text-ink-3 md:grid-cols-[1fr_auto]">
         <p className="max-w-2xl leading-relaxed">
           Catalog text from the <span className="text-ink-2">doevent/perfume</span> dataset as cleaned by <ScentLensLink />. Accord shows no
           catalog photos, prices or ratings. Bottle recognition by{" "}

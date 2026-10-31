@@ -1,3 +1,4 @@
+import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense, type CSSProperties } from "react";
@@ -10,11 +11,12 @@ export const metadata: Metadata = { title: "Compare" };
 
 export default function ComparePage({ searchParams }: PageProps<"/compare">) {
   return (
-    <div className="mx-auto w-full max-w-[1440px] px-4 pt-8 sm:px-8 lg:px-16 lg:pt-12">
-      <Suspense fallback={<div className="h-96" aria-busy="true" />}>
+    <PageShell>
+      <PageTitle>Compare</PageTitle>
+      <Suspense fallback={<div className="mt-8 h-96" aria-busy="true" />}>
         <Comparison searchParams={searchParams} />
       </Suspense>
-    </div>
+    </PageShell>
   );
 }
 
@@ -26,8 +28,7 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
   if (!data) {
     return (
       <div className="max-w-xl">
-        <h1 className="text-[clamp(36px,4vw,56px)] font-semibold tracking-[-0.035em]">Compare</h1>
-        <p className="mt-4 text-lg text-ink-2">
+        <p className="page-intro">
           Open any fragrance and choose Compare beside a similar one to lay the two strips side by side.
         </p>
         <Link href="/discover" className="mt-6 inline-block font-medium underline">
@@ -48,10 +49,10 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
 
   return (
     <>
-      <h1 className="sr-only">
+      <p className="sr-only">
         {data.a.name} compared with {data.b.name}
-      </h1>
-      <div className="comparison-layout grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+      </p>
+      <div className="comparison-layout mt-8 grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
         <Side f={data.a} only={data.onlyA} />
         <div className="comparison-evidence flex flex-col items-center justify-center px-4 py-6 text-center md:w-72">
           {breakdown && (

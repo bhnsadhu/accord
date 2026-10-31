@@ -63,7 +63,7 @@ export function Recommendations() {
   if (data.kind === "starter") {
     return (
       <>
-        <div className="mt-6 flex flex-col items-start gap-5 border-b border-rule pb-8 md:flex-row md:items-end md:justify-between">
+        <div className="mt-5 flex flex-col items-start gap-5 border-b border-rule pb-8 md:flex-row md:items-end md:justify-between">
           <p className="max-w-[36em] text-lg leading-relaxed text-ink-2">
             Accord doesn&rsquo;t know your taste yet. Add a few favourites or notes and this page becomes yours. Until then, here is
             the most characteristic fragrance of each accord family.
@@ -83,7 +83,7 @@ export function Recommendations() {
 
   return (
     <>
-      <p className="mt-5 max-w-[44em] text-ink-2">
+      <p className="page-intro">
         Ranked for your taste. &ldquo;Top 1%&rdquo; means it outscored at least 99% of eligible catalog fragrances:
         a relative fit, not a promise you&rsquo;ll love it.{" "}
         <Link href="/profile" className="text-ink underline">

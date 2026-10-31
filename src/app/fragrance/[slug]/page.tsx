@@ -1,3 +1,4 @@
+import { PageShell } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -30,11 +31,11 @@ export async function generateMetadata({ params }: PageProps<"/fragrance/[slug]"
 
 export default function FragrancePage({ params }: PageProps<"/fragrance/[slug]">) {
   return (
-    <div className="fragrance-reference mx-auto w-full max-w-[1440px] px-4 pt-8 sm:px-8 lg:px-16 lg:pt-12">
+    <PageShell className="fragrance-reference">
       <Suspense fallback={<DetailSkeleton />}>
         <Detail params={params} />
       </Suspense>
-    </div>
+    </PageShell>
   );
 }
 

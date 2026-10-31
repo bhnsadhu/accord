@@ -21,7 +21,7 @@ export function Nav() {
 
   return (
     <header className="relative z-20">
-      <nav aria-label="Main" className="accord-navigation mx-auto flex h-[72px] max-w-[1440px] items-center gap-6 px-4 sm:px-8 lg:px-16">
+      <nav aria-label="Main" className="accord-navigation site-frame flex items-center">
         <Link href="/" className="accord-wordmark flex items-center gap-2.5 text-[21px] font-bold tracking-[-0.03em]">
           <Image src="/brand/accord-wordmark.svg" alt="Accord" width={111} height={30} unoptimized />
         </Link>

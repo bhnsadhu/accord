@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://accord.bhanusadhu.com"),
   title: { default: "Accord: know the bottle, find the next one", template: "%s · Accord" },
   description:
-    "Identify fragrances from a photo, explore 24,642 perfumes by note and accord, and get recommendations that show their evidence.",
+    "Identify fragrances from a photo, explore perfumes by note and accord, and get recommendations that show their evidence.",
 };
 
 export const viewport: Viewport = { themeColor: "#f0f1f3" };
@@ -50,8 +50,8 @@ function Footer() {
     <footer className="mt-24 border-t border-section-rule">
       <div className="site-frame grid gap-6 py-10 text-sm text-ink-3 md:grid-cols-[1fr_auto]">
         <p className="max-w-2xl leading-relaxed">
-          Catalog text from the <span className="text-ink-2">doevent/perfume</span> dataset as cleaned by <ScentLensLink />. Accord shows no
-          catalog photos, prices or ratings. Bottle recognition by{" "}
+          Catalog from <span className="text-ink-2">doevent/perfume</span>, cleaned by <ScentLensLink />, with sourced research by Accord.
+          Your collection and taste stay personal. Bottle recognition by{" "}
           <ScentLensLink />
           .
         </p>

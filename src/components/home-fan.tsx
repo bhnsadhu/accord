@@ -48,6 +48,8 @@ export function HomeFan({ fragrances }: { fragrances: FragranceSummary[] }) {
     // A stalled animation must never leave the site locked.
     const timeout = setTimeout(finish, 1800);
     const onMotionChange = () => { if (motion.matches) finish(); };
+    // A cleanup close can be queued until after Strict Mode reopens the dialog.
+    const onGateClose = () => { if (!gate.open) finish(); };
     const onVisibilityChange = () => { if (document.hidden) finish(); };
     const containShortcut = (event: KeyboardEvent) => {
       event.stopPropagation();
@@ -66,7 +68,7 @@ export function HomeFan({ fragrances }: { fragrances: FragranceSummary[] }) {
     gate.focus({ preventScroll: true });
     bench.dataset.intro = "playing";
     document.documentElement.classList.add("accord-intro-active");
-    gate.addEventListener("close", finish);
+    gate.addEventListener("close", onGateClose);
     gate.addEventListener("keydown", containShortcut);
     motion.addEventListener("change", onMotionChange);
     document.addEventListener("visibilitychange", onVisibilityChange);
@@ -77,7 +79,7 @@ export function HomeFan({ fragrances }: { fragrances: FragranceSummary[] }) {
     return () => {
       disposed = true;
       clearTimeout(timeout);
-      gate.removeEventListener("close", finish);
+      gate.removeEventListener("close", onGateClose);
       gate.removeEventListener("keydown", containShortcut);
       motion.removeEventListener("change", onMotionChange);
       document.removeEventListener("visibilitychange", onVisibilityChange);

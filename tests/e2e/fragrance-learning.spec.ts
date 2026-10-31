@@ -5,7 +5,7 @@ const santal = "/fragrance/le-labo-santal-33-p14487";
 test("a fragrance teaches a note, then follows it into the catalog", async ({ page }) => {
   await page.goto(santal);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Santal 33");
-  await expect(page.locator("main .reference-introduction")).toContainText("Woods family");
+  await expect(page.locator("main .reference-introduction")).toContainText("Sandalwood");
   const sandalwood = page.locator("main .reference-note").filter({ has: page.locator("summary", { hasText: "Sandalwood" }) });
   await sandalwood.locator("summary").focus();
   await page.keyboard.press("Enter");
@@ -36,7 +36,7 @@ test("note search, empty search, and an unannotated note remain useful", async (
   await page.goto("/notes?q=no-such-material-abc");
   await expect(page.getByRole("main").getByText(/No notes match/)).toBeVisible();
   await page.getByRole("link", { name: "Browse all notes" }).click();
-  await expect(page.locator(".knowledge-index li")).toHaveCount(285);
+  await expect.poll(() => page.locator(".knowledge-index li").count()).toBeGreaterThanOrEqual(285);
   await page.goto("/notes/genmai-cha-tea-accord");
   await expect(page.getByRole("main").getByText("A scent description is not yet included", { exact: false })).toBeVisible();
   await expect(page.locator("main .note-fragrance-list article").first()).toBeVisible();
@@ -64,13 +64,14 @@ test("note explanations and examples remain usable on a touch screen", async ({ 
 
 test("house browsing uses the exact brand and survives note filters", async ({ page }) => {
   await page.goto(santal);
-  await page.getByRole("link", { name: "Le Labo", exact: true }).click();
+  await page.locator('a[href="/discover?brand=le-labo"]').first().click();
   await expect(page).toHaveURL(/\/discover\?brand=le-labo$/);
   await expect(page.getByRole("link", { name: "Remove filter: Le Labo" })).toBeVisible();
   const names = await page.locator(".archive-choice").allTextContents();
   expect(names.length).toBeGreaterThan(0);
   expect(names.every(name => name.includes("Le Labo"))).toBe(true);
-  await page.locator('select[name="note"]').selectOption("sandalwood");
+  await page.getByRole("combobox", { name: "Add a note to has every note" }).selectOption("sandalwood");
+  await page.getByRole("button", { name: "Apply filters" }).click();
   await expect(page).toHaveURL(/brand=le-labo/);
   await expect(page).toHaveURL(/note=sandalwood/);
   await page.getByRole("link", { name: "Remove filter: Le Labo" }).click();

@@ -41,7 +41,7 @@ test("empty matches and failed search retain a working catalog path", async ({ p
   const dialog = page.getByRole("dialog", { name: "Find a fragrance" });
   const input = dialog.getByRole("combobox");
   await input.fill("zzznosuchfragrance");
-  await expect(dialog.getByRole("status")).toContainText("No name or brand matches");
+  await expect(dialog.getByRole("status")).toContainText("No matching fragrance yet");
   await expect(dialog.getByRole("option")).toHaveCount(1);
   await expect(input).toHaveAttribute("aria-activedescendant", (await dialog.getByRole("option").getAttribute("id"))!);
   await input.fill("");

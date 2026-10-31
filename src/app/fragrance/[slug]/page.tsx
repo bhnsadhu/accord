@@ -4,13 +4,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties } from "react";
 import { CollectionControls } from "@/components/collection-controls";
+import Image from "next/image";
+import { FragranceSources, SourceLinks, WearGuidance } from "@/components/fragrance-research";
 import { FragranceNotes } from "@/components/fragrance-notes";
-import { ArrowIcon, PlusIcon } from "@/components/icons";
+import { FragranceTaste } from "@/components/fragrance-taste";
+import { ArrowIcon } from "@/components/icons";
 import { StripRow, StripSpecimen } from "@/components/strip";
 import { VisitTracker } from "@/components/visit-tracker";
-import { cachedFragrance, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
+import { ReferenceAnchors } from "@/components/reference-anchors";
+import { cachedEditions, cachedFragrance, cachedNotes, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
 import { productIdFromSlug } from "@/lib/catalog/text";
-import { FAMILY_GUIDE, fragranceIntroduction, namedConcentration } from "@/lib/fragrance-guide";
+import { FAMILY_GUIDE, fragranceIntroduction } from "@/lib/fragrance-guide";
 import { GENDER_LABEL, hueFor } from "@/lib/hues";
 
 // Prerender the homepage fan; every other fragrance renders on first visit and is then cached.
@@ -24,7 +28,7 @@ export async function generateMetadata({ params }: PageProps<"/fragrance/[slug]"
   if (!f) return { title: "Fragrance not found" };
   return {
     title: `${f.name} by ${f.brand}`,
-    description: `${f.name} by ${f.brand}. ${fragranceIntroduction(f)}`,
+    description: `${f.name} by ${f.brand}. ${f.research?.summary ?? fragranceIntroduction(f)}`,
     alternates: { canonical: `/fragrance/${f.slug}` },
   };
 }
@@ -43,14 +47,16 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
   const id = productIdFromSlug((await params).slug);
   const f = id ? await cachedFragrance(id) : null;
   if (!f) notFound();
-  const [similar, house] = await Promise.all([cachedSimilar(f.productId, 10), cachedSearch({ brand: f.brandSlug, pageSize: 5 })]);
+  const [similar, house, editions, library] = await Promise.all([cachedSimilar(f.productId, 8), cachedSearch({ brand: f.brandSlug, pageSize: 5 }), f.editionGroup ? cachedEditions(f.editionGroup) : [], cachedNotes()]);
   const hue = hueFor(f.wheel);
-  const concentration = namedConcentration(f.name);
+  const research = f.research;
+  const otherEditions = editions.filter(item => item.productId !== f.productId);
   const siblings = house.items.filter(item => item.productId !== f.productId).slice(0, 4);
 
   return (
     <>
       <VisitTracker productId={f.productId} />
+      <ReferenceAnchors identity={f.productId} />
       <nav className="reference-wayfinding" aria-label="Fragrance navigation">
         <Link href="/discover">Discover</Link>
         <Link href="/notes">Note library</Link>
@@ -74,26 +80,33 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
             {f.brand}
           </Link>
           <h1 className="mt-1 text-[clamp(40px,5vw,72px)] font-semibold leading-[1] tracking-[-0.035em] text-balance">{f.name}</h1>
-          <p className="reference-introduction">{fragranceIntroduction(f)}</p>
+          <p className="reference-introduction">{research?.summary ?? fragranceIntroduction(f)}</p>
+          {research?.summary && <SourceLinks research={research} field="summary" />}
+          {otherEditions.length > 0 && <nav className="research-edition-nav" aria-label="Fragrance editions">{editions.map(edition => <Link key={edition.productId} href={`/fragrance/${edition.slug}`} aria-current={edition.productId === f.productId ? "page" : undefined}>{edition.editionLabel ?? edition.concentration ?? edition.name}</Link>)}</nav>}
 
-          <dl className="reference-facts">
-            <Fact term="Accord family">
+          <dl className="reference-facts research-facts">
+            <Fact term="Concentration">{f.concentration ? <Link href="/learn#concentration">{f.concentration}</Link> : "Not listed"}</Fact>
+            <Fact term={f.wheel ? "Accord family" : "Fragrance family"}>
               <span className="flex items-center gap-2">
                 <i className="inline-block size-2.5 rounded-full" style={{ background: hue }} />
-                {f.wheel ? <Link href={`/discover?wheel=${encodeURIComponent(f.wheel)}`}>{f.wheel}</Link> : "Not listed"}
+                {f.wheel ? <Link href={`/discover?wheel=${encodeURIComponent(f.wheel)}`}>{f.wheel}</Link> : f.family ? <Link href={`/discover?family=${encodeURIComponent(f.family)}`}>{f.family}</Link> : "Not listed"}
               </span>
             </Fact>
-            <Fact term="Character">{f.character ?? "Not listed"}</Fact>
             <Fact term="Released">{f.year ?? "Not listed"}</Fact>
+            <Fact term="Perfumer">{f.perfumers?.length ? f.perfumers.map((name, i) => <span key={name}>{i > 0 && ", "}<Link href={`/discover?perfumer=${encodeURIComponent(name)}`}>{name}</Link></span>) : "Not listed"}</Fact>
+            <Fact term="Character">{f.character ?? "Not listed"}</Fact>
             <Fact term="Marketed as">{f.gender ? GENDER_LABEL[f.gender] : "Not listed"}</Fact>
           </dl>
-          <p className="reference-caption mt-3">Catalog labels describe the fragrance. Anyone can wear it.{concentration && <> Format named in the catalog: <Link href="/learn#concentration">{concentration}</Link>.</>}</p>
+          <p className="reference-caption mt-3">Anyone can wear it. <a href="#sources">See the sources behind these details.</a></p>
 
           <section className="reference-collection" aria-label="Your collection">
             <CollectionControls productId={f.productId} />
+            <FragranceTaste notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} family={f.wheel} />
           </section>
 
-          <FragranceNotes notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} />
+          <nav className="research-section-nav" aria-label="On this fragrance page"><a href="#notes">Notes</a><a href="#wear">Wearing it</a>{otherEditions.length > 0 && <a href="#editions">Versions</a>}<a href="#similar-h">Similar fragrances</a><a href="#sources">Sources</a></nav>
+          {research?.image && <figure className="research-bottle"><Image src={research.image.path} alt={research.image.alt} width={600} height={600} /><figcaption>{research.image.credit}</figcaption></figure>}
+          <FragranceNotes notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} research={research} library={library} />
 
           <section className="reference-section" aria-labelledby="profile-h">
             <div className="reference-section-heading"><h2 id="profile-h">Read its profile</h2><Link href="/learn">Learn the language <ArrowIcon /></Link></div>
@@ -108,16 +121,15 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
                 {f.facets.length ? <><p>Other qualities named in this fragrance’s catalog profile.</p><div className="reference-facet-links">{f.facets.map(facet => <Link key={facet} href={`/discover?facet=${encodeURIComponent(facet)}`}>{facet}<ArrowIcon /></Link>)}</div></> : <p>Try it on a blotter first, then revisit it on your skin. Notice which notes you recognise and what changes as it settles.</p>}
               </div>
             </div>
-            <details className="reference-provenance">
-              <summary>About this fragrance’s data <PlusIcon /></summary>
-              <div>
-                <p>Source accord phrase: “{f.accordsRaw || "Not listed"}”. Catalog family: {[...new Set([f.family, f.subfamily].filter(Boolean))].join(" · ") || "Not listed"}.</p>
-                <p>Product facts come from the doevent/perfume catalog, cleaned by ScentLens. Note descriptions are general reference material, separate from the product’s listed notes.</p>
-                <p>Note layers, perfumer, measured longevity and projection are not supplied for this entry. The profile does not assign wear times, seasons or occasions.</p>
-                <Link href="/how-it-works">How Accord uses its sources <ArrowIcon /></Link>
-              </div>
-            </details>
           </section>
+
+          <WearGuidance research={research} />
+          <FragranceSources fragrance={f} />
+          {otherEditions.length > 0 && <section id="editions" className="reference-section section-divider" aria-labelledby="editions-h">
+            <div className="reference-section-heading"><h2 id="editions-h">Other versions</h2><Link href="/learn#concentration">Understanding concentration <ArrowIcon /></Link></div>
+            <p className="reference-caption">Related editions can change the composition as well as its concentration. Compare the exact versions.</p>
+            <div className="mt-6 grid gap-3">{otherEditions.map(edition => <StripRow key={edition.productId} fragrance={edition} aside={<Link className="relative z-10 text-sm" href={`/compare?a=${f.productId}&b=${edition.productId}`}>Compare</Link>}><p className="mt-1 text-sm text-ink-2">{[edition.concentration, edition.year].filter(Boolean).join(" · ") || "Format and year not listed"}</p></StripRow>)}</div>
+          </section>}
 
           <section className="reference-section section-divider" aria-labelledby="similar-h">
             <div className="flex flex-wrap items-end justify-between gap-4">

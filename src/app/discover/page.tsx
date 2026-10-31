@@ -2,18 +2,21 @@ import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { AutoSubmit } from "@/components/auto-submit";
+import { CatalogRequest } from "@/components/catalog-request";
+import { NoteFilter } from "@/components/note-filter";
 import { Bench } from "@/components/bench";
 import { ArchiveFilters, DiscoverResults } from "@/components/discover-results";
 import { CloseIcon, SearchIcon } from "@/components/icons";
 import { cachedFacets, cachedNotes, cachedSearch } from "@/lib/catalog/cached";
 import type { SearchParams } from "@/lib/catalog/queries";
+import { CONCENTRATIONS } from "@/lib/catalog/research-schema";
 import { GENDER_LABEL, hueFor } from "@/lib/hues";
 
 export const metadata: Metadata = { title: "Discover" };
 
 type Raw = Record<string, string | string[] | undefined>;
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) || undefined;
+const many = (v: string | string[] | undefined) => [...new Set((Array.isArray(v) ? v : v ? [v] : []).filter(Boolean))].slice(0, 12);
 
 function parse(raw: Raw): SearchParams {
   const gender = one(raw.gender);
@@ -24,24 +27,25 @@ function parse(raw: Raw): SearchParams {
     wheel: one(raw.wheel),
     facet: one(raw.facet),
     family: one(raw.family),
-    notes: one(raw.note) ? [one(raw.note)!] : undefined,
-    excludeNotes: one(raw.without) ? [one(raw.without)!] : undefined,
+    notes: many(raw.note),
+    excludeNotes: many(raw.without),
+    concentration: CONCENTRATIONS.find(c => c === one(raw.concentration)),
+    perfumer: one(raw.perfumer)?.slice(0, 100),
     gender: gender === "feminine" || gender === "masculine" || gender === "unisex" ? gender : undefined,
     sort: sort === "name" || sort === "newest" || sort === "oldest" || sort === "relevance" ? sort : undefined,
-    page: Math.min(Math.max(Number.parseInt(one(raw.page) ?? "1", 10) || 1, 1), 400),
+    page: Math.min(Math.max(Number.parseInt(one(raw.page) ?? "1", 10) || 1, 1), 2000),
     pageSize: 24,
   };
 }
 
-function href(raw: Raw, patch: Record<string, string | undefined>) {
+function href(raw: Raw, patch: Raw) {
   const params = new URLSearchParams();
   for (const [k, v] of Object.entries(raw)) {
-    const value = one(v);
-    if (value && k !== "page") params.set(k, value);
+    if (k !== "page") for (const value of many(v)) params.append(k, value);
   }
   for (const [k, v] of Object.entries(patch)) {
-    if (v === undefined) params.delete(k);
-    else params.set(k, v);
+    params.delete(k);
+    for (const value of many(v)) params.append(k, value);
   }
   const s = params.toString();
   return s ? `/discover?${s}` : "/discover";
@@ -71,10 +75,12 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
     params.wheel && { label: params.wheel, clear: "wheel" },
     params.facet && { label: params.facet, clear: "facet" },
     params.family && { label: `${params.family} family`, clear: "family" },
-    params.notes?.[0] && { label: `with ${noteLabel.get(params.notes[0]) ?? params.notes[0]}`, clear: "note" },
-    params.excludeNotes?.[0] && { label: `without ${noteLabel.get(params.excludeNotes[0]) ?? params.excludeNotes[0]}`, clear: "without" },
+    ...(params.notes ?? []).map(value => ({ label: `with ${noteLabel.get(value) ?? value}`, clear: "note", value })),
+    ...(params.excludeNotes ?? []).map(value => ({ label: `without ${noteLabel.get(value) ?? value}`, clear: "without", value })),
+    params.concentration && { label: params.concentration, clear: "concentration" },
+    params.perfumer && { label: params.perfumer, clear: "perfumer" },
     params.gender && { label: GENDER_LABEL[params.gender], clear: "gender" },
-  ].filter(Boolean) as { label: string; clear: string }[];
+  ].filter(Boolean) as { label: string; clear: string; value?: string }[];
 
   return (
     <div className="archive-layout mt-8 grid gap-8">
@@ -90,25 +96,23 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
           </FilterGroup>
 
           <form action="/discover" className="archive-filter-form mt-8 grid gap-6">
-            <AutoSubmit />
             {params.q && <input type="hidden" name="q" value={params.q} />}
             {params.brand && <input type="hidden" name="brand" value={params.brand} />}
             {params.wheel && <input type="hidden" name="wheel" value={params.wheel} />}
             {params.facet && <input type="hidden" name="facet" value={params.facet} />}
             {params.family && <input type="hidden" name="family" value={params.family} />}
-            <FilterSelect label="Has note" name="note" value={params.notes?.[0]} options={notes.map((n) => [n.key, n.label])} />
-            <FilterSelect label="Without note" name="without" value={params.excludeNotes?.[0]} options={notes.map((n) => [n.key, n.label])} />
+            {params.perfumer && <input type="hidden" name="perfumer" value={params.perfumer} />}
+            {params.sort && <input type="hidden" name="sort" value={params.sort} />}
+            <NoteFilter key={`note-${params.notes?.join(",")}`} label="Has every note" name="note" selected={params.notes ?? []} options={notes} />
+            <NoteFilter key={`without-${params.excludeNotes?.join(",")}`} label="Without these notes" name="without" selected={params.excludeNotes ?? []} options={notes} />
+            <FilterSelect label="Concentration" name="concentration" value={params.concentration} options={CONCENTRATIONS.map(c => [c, c])} />
             <FilterSelect
               label="Worn as"
               name="gender"
               value={params.gender}
               options={Object.entries(GENDER_LABEL)}
             />
-            <noscript>
-              <button type="submit" className="h-10 bg-ink px-4 text-paper" style={{ borderRadius: 4 }}>
-                Apply
-              </button>
-            </noscript>
+            <button type="submit" className="archive-apply-filters">Apply filters</button>
           </form>
 
           <FilterGroup title="Facet">
@@ -139,9 +143,8 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             aria-label="Search fragrances"
             className="min-w-0 flex-1 bg-transparent text-lg outline-none placeholder:text-ink-3"
           />
-          {Object.entries(raw).map(([k, v]) =>
-            k !== "q" && k !== "page" && one(v) ? <input key={k} type="hidden" name={k} value={one(v)} /> : null,
-          )}
+          {Object.entries(raw).flatMap(([k, v]) => k !== "q" && k !== "page" ? many(v).map((value, i) => <input key={`${k}-${i}`} type="hidden" name={k} value={value} />) : [])}
+          <button type="submit" className="archive-search-submit">Search</button>
         </form>
 
         <div className="archive-status mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
@@ -151,8 +154,8 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
           {params.notes?.[0] && noteLabel.has(params.notes[0]) && <Link className="text-sm font-medium" href={`/notes/${encodeURIComponent(params.notes[0])}`}>About {noteLabel.get(params.notes[0])?.toLowerCase()}</Link>}
           {active.map((a) => (
             <Link
-              key={a.clear}
-              href={href(raw, { [a.clear]: undefined })}
+              key={`${a.clear}-${a.value ?? ""}`}
+              href={href(raw, { [a.clear]: a.value ? many(raw[a.clear]).filter(v => v !== a.value) : undefined })}
               className="flex items-center gap-1.5 bg-paper py-1 pl-3 pr-2 text-sm shadow-[var(--shadow-paper)] hover:text-ink"
               style={{ borderRadius: 2 }}
               aria-label={`Remove filter: ${a.label}`}
@@ -174,8 +177,9 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
 
         {result.items.length === 0 ? (
           <div className="archive-empty mt-10 bg-paper p-8" style={{ borderRadius: 4 }}>
-            <p className="text-lg font-medium">No fragrance matches all of that.</p>
-            <p className="mt-2 text-ink-2">Remove a filter, or search with fewer letters. Notes are filters on the left, not search words.</p>
+            <p className="text-lg font-medium">{result.total > 0 ? "This page is past the last result." : "No fragrance matches all of that."}</p>
+            <p className="mt-2 text-ink-2">Try the fragrance or brand name, or relax a note filter. Requested concentrations stay exact.</p>
+            <div className="archive-empty-actions">{result.total > 0 && <Link href={href(raw, { page: "1" })}>Back to the first page</Link>}{active.length > 0 && <Link href={params.q ? `/discover?q=${encodeURIComponent(params.q)}` : "/discover"}>Clear filters</Link>}<Link href="/notes">Explore by note</Link></div>
           </div>
         ) : (
           <DiscoverResults key={result.items.map((f) => f.productId).join(",")} fragrances={result.items} />
@@ -202,6 +206,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             )}
           </nav>
         )}
+        <CatalogRequest initialName={params.q ?? ""} />
       </section>
     </div>
   );

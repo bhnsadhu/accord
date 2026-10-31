@@ -6,7 +6,7 @@ import { createContext, useCallback, useContext, useEffect, useId, useRef, useSt
 import { hueFor } from "@/lib/hues";
 import { ArrowIcon, CloseIcon, SearchIcon } from "./icons";
 
-type Hit = { productId: string; slug: string; name: string; brand: string; wheel: string | null };
+type Hit = { productId: string; slug: string; name: string; brand: string; wheel: string | null; concentration?: string | null; year?: number | null };
 // The four catalog examples shown in the approved search study. Not a ranking.
 const STARTING_IDS = ["p14478", "p14483", "p14463", "p14470"];
 const PaletteContext = createContext<{ open: (initial?: string) => void } | null>(null);
@@ -91,7 +91,7 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
   const error = query ? current && response.error : starterError;
   const message = error ? "Search is unavailable. You can continue in Discover." :
     loading ? (query ? "Searching fragrances." : "Loading a few fragrances to explore.") :
-      query && !shownHits.length ? "No name or brand matches. Try fewer letters." : "";
+      query && !shownHits.length ? "No matching fragrance yet. Explore all results to adjust the search or request an entry." : "";
   const seeAll = query ? `/discover?q=${encodeURIComponent(query)}` : "/discover";
   const go = (href: string) => { close(); router.push(href); };
   const moveActive = (next: number) => {
@@ -139,7 +139,7 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
                 <li key={hit.productId} id={`${listId}-${i}`} data-option-index={i} role="option" aria-selected={i === active}
                   onPointerMove={(e) => { if (e.pointerType === "mouse") setActive(i); }} onClick={() => go(`/fragrance/${hit.slug}`)} className="quick-find-result">
                   <span className="quick-find-blotter" aria-hidden="true" style={{ "--hue": hueFor(hit.wheel) } as CSSProperties} />
-                  <span className="quick-find-result-copy"><span className="quick-find-result-name">{hit.name}</span><span className="quick-find-result-brand">{hit.brand}</span></span>
+                  <span className="quick-find-result-copy"><span className="quick-find-result-name">{hit.name}</span><span className="quick-find-result-brand">{[hit.brand, hit.concentration, hit.year].filter(Boolean).join(" · ")}</span></span>
                 </li>
               ))}
               <li id={`${listId}-${shownHits.length}`} data-option-index={shownHits.length} role="option" aria-selected={active === shownHits.length}

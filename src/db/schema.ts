@@ -15,6 +15,7 @@ import {
   timestamp,
 } from "drizzle-orm/pg-core";
 import { user } from "./auth-schema";
+import type { FragranceResearch } from "../lib/catalog/research-schema";
 
 export * from "./auth-schema";
 
@@ -86,6 +87,28 @@ export const fragranceNotes = pgTable(
   },
   (t) => [primaryKey({ columns: [t.productId, t.noteId] }), index("fragrance_notes_note_idx").on(t.noteId)],
 );
+
+/** Reviewed enrichment is separate from the original catalog and survives re-seeding. */
+export const fragranceResearch = pgTable("fragrance_research", {
+  productId: text("product_id").primaryKey().references(() => fragrances.productId, { onDelete: "cascade" }),
+  concentration: text("concentration"),
+  perfumers: text("perfumers").array().notNull().default(sql`'{}'::text[]`),
+  editionGroup: text("edition_group"),
+  aliasesText: text("aliases_text").notNull().default(""),
+  data: jsonb("data").$type<FragranceResearch>().notNull(),
+  verifiedAt: date("verified_at").notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+}, t => [index("research_edition_idx").on(t.editionGroup), index("research_alias_trgm").using("gin", sql`${t.aliasesText} gin_trgm_ops`)]);
+
+/** A private catalog suggestion inbox. No public submission endpoint reads it. */
+export const catalogRequests = pgTable("catalog_requests", {
+  id: serial("id").primaryKey(),
+  fragrance: text("fragrance").notNull(),
+  brand: text("brand").notNull(),
+  sourceUrl: text("source_url"),
+  fingerprint: text("fingerprint").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, t => [index("catalog_requests_fingerprint_idx").on(t.fingerprint, t.createdAt)]);
 
 // ---------------------------------------------------------------------------
 // User data

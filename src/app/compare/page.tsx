@@ -6,6 +6,7 @@ import { cachedCompare } from "@/lib/catalog/cached";
 import { isProductId } from "@/lib/catalog/text";
 import { hueFor } from "@/lib/hues";
 import { SIMILARITY_WEIGHTS } from "@/lib/reco/similarity";
+import type { FragranceDetail } from "@/lib/catalog/queries";
 
 export const metadata: Metadata = { title: "Compare" };
 
@@ -77,6 +78,8 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
         <Side f={data.b} only={data.onlyB} />
       </div>
 
+      <ReferenceComparison a={data.a} b={data.b} />
+      {!breakdown && <p className="reference-caption mt-6">A full similarity score is not shown because family or character details are incomplete. The shared catalog notes above are still useful for comparison.</p>}
       {breakdown && (
         <section className="mt-14 max-w-3xl" aria-labelledby="why-h">
           <h2 id="why-h" className="text-2xl font-semibold tracking-[-0.02em]">
@@ -104,6 +107,24 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
   );
 }
 
+function ReferenceComparison({ a, b }: { a: FragranceDetail; b: FragranceDetail }) {
+  const rows: { label: string; value: (f: FragranceDetail) => React.ReactNode }[] = [
+    { label: "Concentration", value: f => f.concentration ?? "Not listed" },
+    { label: "Released", value: f => f.year ?? "Not listed" },
+    { label: "Perfumer", value: f => f.perfumers?.join(", ") || "Not listed" },
+    { label: "Scent profile", value: f => f.research?.summary ?? "Researched description not listed" },
+    ...(["opening", "heart", "base"] as const).map(stage => ({ label: `${stage[0].toUpperCase()}${stage.slice(1)} notes`, value: (f: FragranceDetail) => f.research?.noteStages?.[stage].join(", ") || "Documented stage not listed" })),
+    { label: "Wearing it", value: f => f.research?.wear.length ? f.research.wear.map((wear, i) => <p key={i}><strong>{wear.aspect}:</strong> {wear.text} <a href={f.research!.sources.find(s => s.id === wear.sourceId)!.url} className="research-attribution">Source</a></p>) : "Verified wear guidance not listed" },
+  ];
+  return <section className="reference-section research-comparison" aria-labelledby="reference-compare-h">
+    <h2 id="reference-compare-h">The details, side by side</h2>
+    <div className="research-comparison-heading"><span aria-hidden /><h3>{a.name}</h3><h3>{b.name}</h3></div>
+    <dl>{rows.map(row => <div className="research-comparison-row" key={row.label}><dt>{row.label}</dt>{[a, b].map(f => <dd key={f.productId}><span className="sr-only">{f.name}: </span>{row.value(f)}</dd>)}</div>)}</dl>
+    <div className="research-comparison-row"><span>Sources</span>{[a, b].map(f => <Link key={f.productId} href={`/fragrance/${f.slug}#sources`}>View sources for {f.name}</Link>)}</div>
+    <p className="reference-caption mt-4">Notes and wear descriptions come from the sources on each fragrance page. Unlisted details stay unlisted. The similarity score uses catalog notes, family and character.</p>
+  </section>;
+}
+
 function Side({ f, only }: { f: NonNullable<Awaited<ReturnType<typeof cachedCompare>>>["a"]; only: string[] }) {
   return (
     <article className="comparison-fragrance lift" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
@@ -111,7 +132,7 @@ function Side({ f, only }: { f: NonNullable<Awaited<ReturnType<typeof cachedComp
         <span className="stain-h" />
         <div className="strip-text relative py-6">
           <p className="text-[13px] text-ink-3">
-            {f.brand} · {f.wheel ?? "Unclassified"}
+            {f.brand} · {f.wheel ?? f.family ?? "Family not listed"}
           </p>
           <h2 className="mt-1 text-2xl font-semibold tracking-[-0.02em]">
             <Link href={`/fragrance/${f.slug}`} className="hover:underline">

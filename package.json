@@ -13,7 +13,9 @@
     "db:server": "tsx scripts/db-server.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx scripts/migrate.ts",
-    "db:seed": "tsx scripts/seed-catalog.ts"
+    "db:seed": "tsx scripts/seed-catalog.ts",
+    "catalog:research": "tsx scripts/import-research.ts",
+    "catalog:requests": "tsx scripts/catalog-requests.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.13",

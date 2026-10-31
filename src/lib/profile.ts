@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const productId = z.string().regex(/^p\d{5}$/);
+const productId = z.string().regex(/^(p\d{5}|a[0-9a-f]{12})$/);
 const key = z.string().min(1).max(60).regex(/^[a-z0-9-]+$/);
 const label = z.string().min(1).max(40);
 

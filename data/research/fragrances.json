@@ -1,0 +1,1097 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "productId": "p14487",
+      "brand": "Le Labo",
+      "name": "Santal 33",
+      "research": {
+        "summary": "Sandalwood and cedar give this composition its woody center. Cardamom, iris and violet sit alongside leathery and musky impressions, with a smoky character in the brand’s description.",
+        "featuredNotes": [
+          "Sandalwood",
+          "Cedarwood",
+          "Cardamom",
+          "Iris / Orris",
+          "Violet",
+          "Leather",
+          "Musk"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Santal 33 product reference",
+            "publisher": "Le Labo",
+            "url": "https://www.lelabofragrances.com/santal-33-147.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          },
+          {
+            "id": "perfumer",
+            "title": "Frank Voelkl: master perfumer appointment",
+            "publisher": "dsm-firmenich",
+            "url": "https://our-company.dsm-firmenich.com/en/our-company/news/trade-news/2026/dsm-firmenich-appoints-marie-salamagne-and-frank-voelkl-as-master-perfumers.html",
+            "kind": "perfumer",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "perfumers"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "perfumers": [
+          "Frank Voelkl"
+        ]
+      }
+    },
+    {
+      "productId": "p14462",
+      "brand": "Le Labo",
+      "name": "Another 13",
+      "research": {
+        "summary": "A composition centered on ambroxyde, with jasmine and moss adding contrast. Le Labo describes an animalic musk impression with a bright edge.",
+        "featuredNotes": [
+          "Ambroxyde",
+          "Jasmine",
+          "Moss"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Another 13 product reference",
+            "publisher": "Le Labo",
+            "url": "https://www.lelabofragrances.com/another-13-463.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "year"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "year": 2010
+      }
+    },
+    {
+      "productId": "p14486",
+      "brand": "Le Labo",
+      "name": "Rose 31",
+      "research": {
+        "summary": "Rose shares the foreground with cumin and woods. Cedar, incense and amber give the floral character warmth, while guaiac wood, cistus and musky notes add depth.",
+        "featuredNotes": [
+          "Rose",
+          "Cumin",
+          "Incense / Olibanum",
+          "Cedarwood",
+          "Amber",
+          "Guaiac Wood",
+          "Cistus",
+          "Musk"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Rose 31 product reference",
+            "publisher": "Le Labo",
+            "url": "https://www.lelabofragrances.com/rose-31-146.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum"
+      }
+    },
+    {
+      "productId": "p14490",
+      "brand": "Le Labo",
+      "name": "Thé Noir 29",
+      "research": {
+        "summary": "Bright bergamot and fig meet cedar, vetiver and musk. Black tea brings a dry, leafy impression with hay and tobacco associations as the fragrance settles.",
+        "featuredNotes": [
+          "Bergamot",
+          "Fig",
+          "Bay Leaf",
+          "Cedarwood",
+          "Vetiver",
+          "Musk",
+          "Black Tea"
+        ],
+        "aliases": [
+          "The Noir 29",
+          "Noir 29"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Thé Noir 29 product reference",
+            "publisher": "Le Labo",
+            "url": "https://www.lelabofragrances.com/th-noir-29-148.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          },
+          {
+            "id": "perfumer",
+            "title": "Frank Voelkl: master perfumer appointment",
+            "publisher": "dsm-firmenich",
+            "url": "https://our-company.dsm-firmenich.com/en/our-company/news/trade-news/2026/dsm-firmenich-appoints-marie-salamagne-and-frank-voelkl-as-master-perfumers.html",
+            "kind": "perfumer",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "perfumers"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "perfumers": [
+          "Frank Voelkl"
+        ]
+      }
+    },
+    {
+      "productId": "p14489",
+      "brand": "Le Labo",
+      "name": "Thé Matcha 26",
+      "research": {
+        "summary": "A tea accord meets creamy fig, with bitter orange providing contrast. Cedar and vetiver give the composition a soft woody foundation.",
+        "featuredNotes": [
+          "Matcha Tea",
+          "Fig",
+          "Vetiver",
+          "Cedarwood",
+          "Bitter Orange"
+        ],
+        "aliases": [
+          "The Matcha 26",
+          "Matcha 26"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Thé Matcha 26 product reference",
+            "publisher": "Le Labo",
+            "url": "https://www.lelabofragrances.com/th-matcha-26-911.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "wear"
+            ]
+          },
+          {
+            "id": "perfumer",
+            "title": "Frank Voelkl: master perfumer appointment",
+            "publisher": "dsm-firmenich",
+            "url": "https://our-company.dsm-firmenich.com/en/our-company/news/trade-news/2026/dsm-firmenich-appoints-marie-salamagne-and-frank-voelkl-as-master-perfumers.html",
+            "kind": "perfumer",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "perfumers"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "wear": [
+          {
+            "aspect": "Projection",
+            "text": "Le Labo presents it as a scent intended to be noticed close to the wearer.",
+            "sourceId": "brand"
+          }
+        ],
+        "perfumers": [
+          "Frank Voelkl"
+        ]
+      }
+    },
+    {
+      "productId": "p14466",
+      "brand": "Le Labo",
+      "name": "Bergamote 22",
+      "research": {
+        "summary": "Bergamot and grapefruit give a bright, bitter citrus impression. Petitgrain brings a floral edge, while amber, musk and vetiver add warmth and structure.",
+        "featuredNotes": [
+          "Bergamot",
+          "Grapefruit",
+          "Petitgrain",
+          "Amber",
+          "Musk",
+          "Vetiver"
+        ],
+        "aliases": [
+          "Bergamot 22"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Bergamote 22 product reference",
+            "publisher": "Le Labo",
+            "url": "https://www.lelabofragrances.com/bergamote-22-131.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum"
+      }
+    },
+    {
+      "productId": "p07571",
+      "brand": "Dior",
+      "name": "Sauvage Eau De Toilette",
+      "research": {
+        "summary": "A bright bergamot opening meets a woody, ambery Ambroxan character. Dior describes this version as the citrus-led expression of Sauvage, with elemi adding a resinous facet.",
+        "featuredNotes": [
+          "Bergamot",
+          "Ambroxan",
+          "Elemi"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Sauvage Eau De Toilette product reference",
+            "publisher": "Dior",
+            "url": "https://www.dior.com/en_us/beauty/products/sauvage-eau-de-toilette-Y0685240.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition",
+              "wear",
+              "perfumers"
+            ]
+          }
+        ],
+        "concentration": "Eau de toilette",
+        "editionGroup": "dior-sauvage",
+        "editionLabel": "Eau de toilette",
+        "wear": [
+          {
+            "aspect": "Longevity",
+            "text": "Dior states 6 to 8 hours on skin. This is the brand’s estimate, not a result measured by Accord.",
+            "sourceId": "brand"
+          },
+          {
+            "aspect": "When to wear",
+            "text": "Dior suggests everyday use and warmer seasons for this version.",
+            "sourceId": "brand"
+          }
+        ],
+        "perfumers": [
+          "François Demachy"
+        ]
+      }
+    },
+    {
+      "productId": "a7782dc120305",
+      "brand": "Dior",
+      "name": "Sauvage Eau de Parfum",
+      "research": {
+        "summary": "Bergamot opens into lavender and spices before a vanilla and Ambroxan base. The brand describes a warmer, more enveloping interpretation than the eau de toilette.",
+        "featuredNotes": [
+          "Bergamot",
+          "Sichuan Pepper",
+          "Lavender",
+          "Star Anise",
+          "Nutmeg",
+          "Vanilla",
+          "Ambroxan"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Sauvage Eau de Parfum product reference",
+            "publisher": "Dior",
+            "url": "https://www.dior.com/en_us/beauty/products/sauvage-eau-de-parfum-Y0785220.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition",
+              "noteStages",
+              "wear"
+            ]
+          },
+          {
+            "id": "history",
+            "title": "Sauvage Eau de Parfum release reference",
+            "publisher": "Fragrantica",
+            "url": "https://www.fragrantica.com/perfume/Dior/Sauvage-Eau-de-Parfum-48100.html",
+            "kind": "reference",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "year",
+              "perfumers",
+              "identity"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "editionGroup": "dior-sauvage",
+        "editionLabel": "Eau de parfum",
+        "noteStages": {
+          "opening": [
+            "Bergamot"
+          ],
+          "heart": [
+            "Sichuan Pepper",
+            "Lavender",
+            "Star Anise",
+            "Nutmeg"
+          ],
+          "base": [
+            "Vanilla",
+            "Ambroxan"
+          ]
+        },
+        "wear": [
+          {
+            "aspect": "Longevity",
+            "text": "Dior states 8 to 10 hours on skin. This is a brand claim and individual wear can differ.",
+            "sourceId": "brand"
+          }
+        ],
+        "year": 2018,
+        "perfumers": [
+          "François Demachy"
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Bergamot",
+          "Sichuan Pepper",
+          "Lavender",
+          "Star Anise",
+          "Nutmeg",
+          "Vanilla",
+          "Ambroxan"
+        ],
+        "family": "Woody",
+        "gender": "masculine"
+      }
+    },
+    {
+      "productId": "a8b0937dbc0cb",
+      "brand": "Dior",
+      "name": "Sauvage Parfum",
+      "research": {
+        "summary": "Mandarin and bergamot meet creamy sandalwood and cedar. Tonka bean and vanilla bring a rounded, warm base to this woody interpretation of Sauvage.",
+        "featuredNotes": [
+          "Mandarin",
+          "Bergamot",
+          "Sandalwood",
+          "Cedarwood",
+          "Vanilla",
+          "Tonka Bean"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Sauvage Parfum product reference",
+            "publisher": "Dior",
+            "url": "https://www.dior.com/en_us/beauty/products/sauvage-parfum-Y0998004.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition",
+              "wear"
+            ]
+          }
+        ],
+        "concentration": "Parfum",
+        "editionGroup": "dior-sauvage",
+        "editionLabel": "Parfum",
+        "wear": [
+          {
+            "aspect": "Longevity",
+            "text": "Dior describes 8 to 10 hours of wear, with the scent becoming closer to the skin as projection fades.",
+            "sourceId": "brand"
+          },
+          {
+            "aspect": "When to wear",
+            "text": "Dior suggests cooler seasons, evenings and formal settings. These are the brand’s suggestions, not restrictions.",
+            "sourceId": "brand"
+          }
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Mandarin",
+          "Bergamot",
+          "Sandalwood",
+          "Cedarwood",
+          "Vanilla",
+          "Tonka Bean"
+        ],
+        "family": "Woody"
+      }
+    },
+    {
+      "productId": "p07572",
+      "brand": "Dior",
+      "name": "Sauvage Elixir",
+      "research": {
+        "summary": "Grapefruit and warm spices lead into lavender, followed by rich woods. Licorice, vetiver and patchouli support the ambery base in Dior’s account of the composition.",
+        "featuredNotes": [
+          "Grapefruit",
+          "Cinnamon",
+          "Nutmeg",
+          "Cardamom",
+          "Lavender",
+          "Licorice",
+          "Vetiver",
+          "Patchouli"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Sauvage Elixir product reference",
+            "publisher": "Dior",
+            "url": "https://www.dior.com/en_us/beauty/products/sauvage-elixir-Y0996460.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "edition",
+              "noteStages",
+              "wear"
+            ]
+          }
+        ],
+        "editionGroup": "dior-sauvage",
+        "editionLabel": "Elixir",
+        "noteStages": {
+          "opening": [
+            "Grapefruit",
+            "Cinnamon",
+            "Nutmeg",
+            "Cardamom"
+          ],
+          "heart": [
+            "Lavender"
+          ],
+          "base": [
+            "Licorice",
+            "Vetiver",
+            "Patchouli"
+          ]
+        },
+        "wear": [
+          {
+            "aspect": "Scent trail",
+            "text": "Dior describes a powerful trail from an unusually concentrated composition. No numeric concentration is supplied here.",
+            "sourceId": "brand"
+          }
+        ]
+      }
+    },
+    {
+      "productId": "p05816",
+      "brand": "Chanel",
+      "name": "Bleu De Chanel Parfum",
+      "research": {
+        "summary": "A fresh opening gives way to cedar and sandalwood. Chanel emphasizes the rounded warmth of the woods within this aromatic composition.",
+        "featuredNotes": [
+          "Cedarwood",
+          "Sandalwood"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Bleu De Chanel Parfum product reference",
+            "publisher": "Chanel",
+            "url": "https://www.chanel.com/us/fragrance/p/107180/bleu-de-chanel-parfum-spray/",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition"
+            ]
+          }
+        ],
+        "concentration": "Parfum",
+        "editionGroup": "chanel-bleu-de-chanel",
+        "editionLabel": "Parfum"
+      }
+    },
+    {
+      "productId": "a0549a9bac3f8",
+      "brand": "Chanel",
+      "name": "Bleu de Chanel Eau de Parfum",
+      "research": {
+        "summary": "Cedar and sandalwood shape an aromatic woody composition, supported by ambery and musky notes. This version emphasizes warmth and depth within the Bleu de Chanel family.",
+        "featuredNotes": [
+          "Cedarwood",
+          "Sandalwood",
+          "Amber",
+          "Musk"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Bleu de Chanel Eau de Parfum product reference",
+            "publisher": "Chanel",
+            "url": "https://www.chanel.com/us/fragrance/p/107360/bleu-de-chanel-eau-de-parfum-spray/",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "editionGroup": "chanel-bleu-de-chanel",
+        "editionLabel": "Eau de parfum"
+      },
+      "catalog": {
+        "notes": [
+          "Cedarwood",
+          "Sandalwood",
+          "Amber",
+          "Musk"
+        ],
+        "family": "Aromatic woody"
+      }
+    },
+    {
+      "productId": "a3d47477618c9",
+      "brand": "Chanel",
+      "name": "Bleu de Chanel Eau de Toilette",
+      "research": {
+        "summary": "Citrus brightness meets an aromatic accord and dry cedar. Sandalwood brings warmth to the trail of this fresh woody version.",
+        "featuredNotes": [
+          "Citrus",
+          "Cedarwood",
+          "Sandalwood"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Bleu de Chanel Eau de Toilette product reference",
+            "publisher": "Chanel",
+            "url": "https://www.chanel.com/us/fragrance/p/107460/bleu-de-chanel-eau-de-toilette-spray/",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition"
+            ]
+          }
+        ],
+        "concentration": "Eau de toilette",
+        "editionGroup": "chanel-bleu-de-chanel",
+        "editionLabel": "Eau de toilette"
+      },
+      "catalog": {
+        "notes": [
+          "Citrus",
+          "Cedarwood",
+          "Sandalwood"
+        ],
+        "family": "Aromatic woody"
+      }
+    },
+    {
+      "productId": "p05819",
+      "brand": "Chanel",
+      "name": "Chance Eau De Parfum",
+      "research": {
+        "summary": "Jasmine and pink pepper sit within an ambery patchouli composition. White musk and vanilla give this floral fragrance a soft, enveloping quality.",
+        "featuredNotes": [
+          "Jasmine",
+          "Pink Pepper",
+          "Patchouli",
+          "Amber",
+          "Musk",
+          "Vanilla"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Chance Eau De Parfum product reference",
+            "publisher": "Chanel",
+            "url": "https://www.chanel.com/us/fragrance/p/126520/chance-eau-de-parfum-spray/",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum"
+      }
+    },
+    {
+      "productId": "p15249",
+      "brand": "Maison Francis Kurkdjian",
+      "name": "Baccarat Rouge 540",
+      "research": {
+        "summary": "Jasmine and saffron meet dry woody tones and an ambergris accord. A sweet ethyl maltol facet contrasts with the airy floral and mineral impressions.",
+        "featuredNotes": [
+          "Jasmine",
+          "Saffron",
+          "Ambergris",
+          "Ethyl Maltol"
+        ],
+        "aliases": [
+          "BR540",
+          "Baccarat Rouge 540 EDP"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Baccarat Rouge 540 product reference",
+            "publisher": "Maison Francis Kurkdjian",
+            "url": "https://www.franciskurkdjian.com/int-en/landing-baccaratrouge540-eau-de-parfum.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition",
+              "perfumers"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "editionGroup": "mfk-baccarat-rouge-540",
+        "editionLabel": "Eau de parfum",
+        "perfumers": [
+          "Francis Kurkdjian"
+        ]
+      }
+    },
+    {
+      "productId": "a652fec522c98",
+      "brand": "Maison Francis Kurkdjian",
+      "name": "Baccarat Rouge 540 Extrait de Parfum",
+      "research": {
+        "summary": "Bitter almond adds a new facet to the jasmine, gourmand sweetness and ambergris accord. Woody, ambery and musky tones give this extrait its fuller interpretation of Baccarat Rouge 540.",
+        "featuredNotes": [
+          "Bitter Almond",
+          "Jasmine",
+          "Ethyl Maltol",
+          "Ambergris",
+          "Musk"
+        ],
+        "aliases": [
+          "BR540 Extrait"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Baccarat Rouge 540 Extrait de Parfum product reference",
+            "publisher": "Maison Francis Kurkdjian",
+            "url": "https://www.franciskurkdjian.com/int-en/landing-baccaratrouge540-extrait-de-parfum.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition",
+              "perfumers"
+            ]
+          }
+        ],
+        "concentration": "Extrait de parfum",
+        "editionGroup": "mfk-baccarat-rouge-540",
+        "editionLabel": "Extrait de parfum",
+        "perfumers": [
+          "Francis Kurkdjian"
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Bitter Almond",
+          "Jasmine",
+          "Ethyl Maltol",
+          "Ambergris",
+          "Musk"
+        ],
+        "family": "Woody ambery floral"
+      }
+    },
+    {
+      "productId": "p22724",
+      "brand": "Tom Ford",
+      "name": "Tobacco Vanille",
+      "research": {
+        "summary": "Tobacco meets vanilla and tonka bean in a warm, sweet composition. Cocoa, dried fruit and woody impressions add richness to its gourmand character.",
+        "featuredNotes": [
+          "Tobacco Leaf",
+          "Vanilla",
+          "Tonka Bean",
+          "Cocoa",
+          "Dried Fruits"
+        ],
+        "aliases": [
+          "TF Tobacco Vanille"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Tobacco Vanille product reference",
+            "publisher": "Tom Ford",
+            "url": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "editionGroup": "tom-ford-tobacco-vanille",
+        "editionLabel": "Eau de parfum"
+      }
+    },
+    {
+      "productId": "ab59dcd94f698",
+      "brand": "Tom Ford",
+      "name": "Tobacco Vanille Parfum",
+      "research": {
+        "summary": "Tobacco and vanilla are joined by a whiskey-cask accord and oakwood. Bitter orange adds contrast to the woody character of this parfum interpretation.",
+        "featuredNotes": [
+          "Tobacco Leaf",
+          "Vanilla",
+          "Whiskey",
+          "Oakwood",
+          "Bitter Orange"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Tobacco Vanille Parfum product reference",
+            "publisher": "Tom Ford",
+            "url": "https://www.tomfordbeauty.com/products/tobacco-vanille-parfum",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition"
+            ]
+          }
+        ],
+        "concentration": "Parfum",
+        "editionGroup": "tom-ford-tobacco-vanille",
+        "editionLabel": "Parfum"
+      },
+      "catalog": {
+        "notes": [
+          "Tobacco Leaf",
+          "Vanilla",
+          "Whiskey",
+          "Oakwood",
+          "Bitter Orange"
+        ],
+        "family": "Woody"
+      }
+    },
+    {
+      "productId": "p14968",
+      "brand": "Louis Vuitton",
+      "name": "Imagination",
+      "research": {
+        "summary": "An ambery Ambrox character meets black tea and bright citrus. The tea adds a smoky contrast to the composition’s fresh, luminous side.",
+        "featuredNotes": [
+          "Ambrox",
+          "Black Tea",
+          "Bergamot"
+        ],
+        "aliases": [
+          "LV Imagination"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Imagination product reference",
+            "publisher": "Louis Vuitton",
+            "url": "https://us.louisvuitton.com/eng-us/products/Imagination-nvprod7340011v/LP0476",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "perfumers"
+            ]
+          }
+        ],
+        "perfumers": [
+          "Jacques Cavallier Belletrud"
+        ]
+      }
+    },
+    {
+      "productId": "p24471",
+      "brand": "Yves Saint Laurent",
+      "name": "Myslf",
+      "research": {
+        "summary": "Bergamot leads into orange blossom, followed by patchouli and musky Ambrofix. The floral heart gives a softer contrast to its warm woody foundation.",
+        "featuredNotes": [
+          "Bergamot",
+          "Orange Blossom",
+          "Patchouli",
+          "Ambrofix"
+        ],
+        "aliases": [
+          "YSL Myself",
+          "Yves Saint Laurent Myself"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Myslf product reference",
+            "publisher": "Yves Saint Laurent",
+            "url": "https://www.yslbeautyus.com/fragrance/mens-fragrances/myslf/myslf-eau-de-parfum/3614273852838.html",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "noteStages",
+              "wear"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "noteStages": {
+          "opening": [
+            "Bergamot"
+          ],
+          "heart": [
+            "Orange Blossom"
+          ],
+          "base": [
+            "Patchouli",
+            "Ambrofix"
+          ]
+        },
+        "wear": [
+          {
+            "aspect": "Scent trail",
+            "text": "Yves Saint Laurent describes a lasting woody floral trail, without a measured duration.",
+            "sourceId": "brand"
+          }
+        ]
+      }
+    },
+    {
+      "productId": "a7fdcb61f966d",
+      "brand": "Creed",
+      "name": "Aventus",
+      "research": {
+        "summary": "Bright citrus and blackcurrant leaf introduce pineapple, pink pepper and jasmine. Birch, patchouli and musk add a woody, smoky contrast to the fruit.",
+        "featuredNotes": [
+          "Bergamot",
+          "Lemon",
+          "Blackcurrant Leaf",
+          "Pineapple",
+          "Pink Pepper",
+          "Jasmine",
+          "Birch",
+          "Patchouli",
+          "Musk"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Aventus product reference",
+            "publisher": "Creed",
+            "url": "https://www.creedfragrances.co.uk/products/aventus",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition",
+              "noteStages",
+              "year"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "editionGroup": "creed-aventus",
+        "editionLabel": "Aventus",
+        "noteStages": {
+          "opening": [
+            "Bergamot",
+            "Lemon",
+            "Blackcurrant Leaf"
+          ],
+          "heart": [
+            "Pineapple",
+            "Pink Pepper",
+            "Jasmine"
+          ],
+          "base": [
+            "Birch",
+            "Patchouli",
+            "Musk"
+          ]
+        },
+        "year": 2010
+      },
+      "catalog": {
+        "notes": [
+          "Bergamot",
+          "Lemon",
+          "Blackcurrant Leaf",
+          "Pineapple",
+          "Pink Pepper",
+          "Jasmine",
+          "Birch",
+          "Patchouli",
+          "Musk"
+        ],
+        "family": "Woody"
+      }
+    },
+    {
+      "productId": "p06737",
+      "brand": "Creed",
+      "name": "Aventus Cologne",
+      "research": {
+        "summary": "Bergamot and mandarin introduce a fresh marine impression. Ginger, pineapple and pink pepper develop over musk, patchouli and birch in Creed’s current description.",
+        "featuredNotes": [
+          "Bergamot",
+          "Mandarin",
+          "Marine Accord",
+          "Ginger",
+          "Pineapple",
+          "Pink Pepper",
+          "Musk",
+          "Patchouli",
+          "Birch"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Aventus Cologne product reference",
+            "publisher": "Creed",
+            "url": "https://www.creedfragrances.co.uk/products/aventus-cologne",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition",
+              "noteStages",
+              "wear"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "editionGroup": "creed-aventus",
+        "editionLabel": "Aventus Cologne",
+        "noteStages": {
+          "opening": [
+            "Bergamot",
+            "Mandarin",
+            "Marine Accord"
+          ],
+          "heart": [
+            "Ginger",
+            "Pineapple",
+            "Pink Pepper"
+          ],
+          "base": [
+            "Musk",
+            "Patchouli",
+            "Birch"
+          ]
+        },
+        "wear": [
+          {
+            "aspect": "Scent trail",
+            "text": "Creed describes a light trail supported by a smooth musk accord.",
+            "sourceId": "brand"
+          }
+        ]
+      }
+    }
+  ]
+}

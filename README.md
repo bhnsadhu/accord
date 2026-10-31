@@ -16,9 +16,9 @@ It works without an account; signing in keeps your collection on every device.
 
 | Area | What it does |
 |---|---|
-| Catalog | 24,642 fragrances, 1,255 brands, 285 notes. Text metadata only (see [Data](#data)). |
-| Reference | Fragrance profiles, a searchable note library, 24 concise note definitions, family context and a guide to fragrance terminology. Sources and scope: [docs/FRAGRANCE-REFERENCE.md](docs/FRAGRANCE-REFERENCE.md). |
-| Search | Postgres `pg_trgm` fuzzy search on brand and name (typos, word order, accents) with filters for accord family, facet, catalog family, notes to include or exclude, and gender label. |
+| Catalog | 24,649 fragrances, including 7 researched additions to the original ScentLens catalog. Text metadata only (see [Data](#data)). |
+| Reference | 22 sourced fragrance profiles, documented note stages and wear guidance where available, related editions, 42 concise note definitions, and a searchable note library. Sources and scope: [docs/FRAGRANCE-REFERENCE.md](docs/FRAGRANCE-REFERENCE.md). |
+| Search | Postgres `pg_trgm` search with typos, accents, aliases and exact formats. Filter by multiple included/excluded notes, family, concentration, perfumer and gender label. Missing fragrances can be requested privately. |
 | Recommendations | Explainable content-based engine in TypeScript: IDF-weighted note vectors, accord and family overlap, similarity to your nearest favourite, and a personalized PageRank walk over the fragrance-note graph. Diversified with MMR. Evaluated offline against ablations ([docs/EVALUATION.md](docs/EVALUATION.md)). |
 | Collections | Shelves, 1 to 5 ratings, favourites. Guests keep them in local storage; on sign-in they merge into the account. Ratings change later recommendations. |
 | Scanner | Server-side client for the ScentLens `/identify` API with image validation, Postgres-backed daily quotas, concurrency leases and a result cache. Live, with daily caps sized to a $1/month compute budget ([COSTS.md](COSTS.md)). |
@@ -79,7 +79,7 @@ Vercel Hobby (Git-connected: every push to `main` deploys production) with Neon 
 
 ## Known limitations
 
-- Notes are listed as the catalog gives them, without top/heart/base layers.
+- Most entries still have catalog facts only. Research coverage is shown on `/learn`; note stages and wear guidance appear only where sourced.
 - Recommendation quality is evaluated offline on a proxy task; there is no real-user data yet.
 - Scanning is capped at a few scans a day to stay within a $1/month free compute budget; a cold ScentLens container takes up to a minute.
 - Flankers missing from the catalog can be identified as a catalog sibling (a documented ScentLens limit).

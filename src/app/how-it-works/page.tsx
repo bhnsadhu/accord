@@ -13,10 +13,11 @@ export default function HowItWorksPage() {
         <section>
           <h2>The catalog</h2>
           <p className="mt-3">
-            24,642 fragrances from 1,255 brands, cleaned by <ScentLensLink /> from the public <strong>doevent/perfume</strong> dataset. Accord
-            uses only the text: brand, name, notes, family, the accord phrase, gender label and year. It shows no catalog photos or
-            descriptions because their rights are unverified, and it has no prices, reviews or ratings to show, so it invents none.
+            The original 24,642 fragrances from 1,255 brands were cleaned by <ScentLensLink /> from the public <strong>doevent/perfume</strong> dataset.
+            Separately researched entries add original descriptions, verified facts and related versions, with sources on each page.
+            Catalog photos and descriptions are not reused because their rights are unverified. Public reviews, ratings and prices are not part of Accord.
           </p>
+          <p className="mt-3"><Link href="/learn#catalog" className="font-medium text-ink">See current coverage and sources.</Link></p>
         </section>
         <section>
           <h2>Reading a fragrance</h2>

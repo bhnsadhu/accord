@@ -53,7 +53,7 @@ test("mobile: filters are available in a disclosure without crowding the results
   await expect(disclosure).not.toHaveAttribute("open");
   await disclosure.locator("summary").tap();
   await expect(disclosure).toHaveAttribute("open", "");
-  await expect(disclosure.getByLabel("Has note")).toBeVisible();
+  await expect(disclosure.getByRole("combobox", { name: "Add a note to has every note" })).toBeVisible();
   await disclosure.locator("summary").tap();
   await expect(disclosure).not.toHaveAttribute("open");
   await expect(page.getByRole("list", { name: "Fragrance results" })).toBeVisible();

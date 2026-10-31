@@ -146,7 +146,7 @@ export function DiscoverResults({ fragrances }: { fragrances: FragranceSummary[]
                   <span className="sr-only">Preview </span>
                   <span className="archive-choice-copy">
                     <span className="archive-choice-name">{fragrance.name}</span>
-                    <span className="archive-choice-brand">{fragrance.brand}</span>
+                    <span className="archive-choice-brand">{[fragrance.brand, fragrance.concentration, fragrance.year].filter(Boolean).join(" · ")}</span>
                   </span>
                   <span className="archive-choice-meta">
                     {isComparison ? "To compare" : fragrance.wheel ?? "Unclassified"}
@@ -217,6 +217,8 @@ export function DiscoverResults({ fragrances }: { fragrances: FragranceSummary[]
           </header>
 
           <dl className="archive-preview-facts">
+            {selected.concentration && <div><dt>Concentration</dt><dd>{selected.concentration}</dd></div>}
+            {selected.year && <div><dt>Released</dt><dd>{selected.year}</dd></div>}
             <div>
               <dt>Accord family</dt>
               <dd>

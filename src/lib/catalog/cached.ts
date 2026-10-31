@@ -1,9 +1,23 @@
 import { cacheLife, cacheTag } from "next/cache";
 import { db } from "@/db";
 import { similarFragrances } from "@/lib/reco/service";
-import { facetCounts, getFragrance, getFragrancesByIds, getNote, listNotes, searchFragrances, type SearchParams } from "./queries";
+import { catalogCoverage, facetCounts, getEditions, getFragrance, getFragrancesByIds, getNote, listNotes, searchFragrances, type SearchParams } from "./queries";
 
 // The catalog only changes when it is re-seeded; tag "catalog" invalidates it.
+
+export async function cachedEditions(group: string) {
+  "use cache";
+  cacheLife("days");
+  cacheTag("catalog");
+  return getEditions(db, group);
+}
+
+export async function cachedCoverage() {
+  "use cache";
+  cacheLife("days");
+  cacheTag("catalog");
+  return catalogCoverage(db);
+}
 
 export async function cachedFragrance(productId: string) {
   "use cache";
@@ -129,7 +143,7 @@ export async function cachedCompare(a: string, b: string) {
   if (!fa || !fb) return null;
   const ia = index.byId.get(a);
   const ib = index.byId.get(b);
-  const breakdown = ia && ib ? similarityBreakdown(ia, ib) : null;
+  const breakdown = ia?.wheel && ib?.wheel && ia.character && ib.character ? similarityBreakdown(ia, ib) : null;
   const bKeys = new Set(fb.noteKeys);
   const aKeys = new Set(fa.noteKeys);
   return {

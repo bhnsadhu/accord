@@ -7,7 +7,7 @@ import { FamilyExplorer } from "@/components/family-explorer";
 import { ScentLensLink } from "@/components/scentlens-link";
 import { ArrowIcon, CameraIcon, SearchIcon } from "@/components/icons";
 import { MatchFigure, StripRow } from "@/components/strip";
-import { cachedArchetypes, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
+import { cachedArchetypes, cachedCoverage, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
 import { hueFor, WHEEL_ORDER } from "@/lib/hues";
 
 // Well-known fragrances for the opening fan, by ScentLens product id.
@@ -18,13 +18,14 @@ const SURE = "p05819";
 const UNSURE = ["p05820", "p05821"];
 
 export default async function Home() {
-  const [fan, example, dissect, similar, tour, illustration] = await Promise.all([
+  const [fan, example, dissect, similar, tour, illustration, coverage] = await Promise.all([
     cachedFragrancesByIds(FAN),
     cachedExample(FAN),
     cachedFragrance(DISSECT),
     cachedSimilar(DISSECT, 24),
     cachedArchetypes(),
     cachedFragrancesByIds([SURE, ...UNSURE]),
+    cachedCoverage(),
   ]);
   const wheelTour = [...tour].sort((a, b) => WHEEL_ORDER.indexOf(a.wheel ?? "") - WHEEL_ORDER.indexOf(b.wheel ?? ""));
   const sure = illustration.find((f) => f.productId === SURE);
@@ -62,7 +63,7 @@ export default async function Home() {
       </section>
 
       <section className="home-evidence" aria-label="How Accord connects fragrances">
-        <div><h2>Every suggestion has a reason.</h2><p>Explore 24,642 fragrances through their notes, accord family, and character.</p></div>
+        <div><h2>Every suggestion has a reason.</h2><p>Explore {coverage.total.toLocaleString("en-US")} fragrances through their notes, accord family, and character.</p></div>
         {example && <Link href={`/fragrance/${example.fragrance.slug}`} className="home-evidence-example">
           <div><span>If you love {example.source.name}</span><h3>{example.fragrance.name}</h3><p>{example.fragrance.brand} · Shares {example.sharedNotes.slice(0, 3).join(", ").toLowerCase()}</p></div>
           {example.similarity !== null && <MatchFigure value={example.similarity} label="similarity" />}

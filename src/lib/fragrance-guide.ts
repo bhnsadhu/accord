@@ -39,7 +39,30 @@ export const NOTE_GUIDE: Readonly<Record<string, string>> = {
   violet: "Soft, powdery flowers with a green edge.",
   "oud-agarwood": "Deep resinous wood, sometimes smoky or animalic.",
   neroli: "Fresh, green citrus flowers.",
+  saffron: "Soft, bittersweet spice with leathery and haylike facets.",
+  benzoin: "Rounded resin sweetness, recalling vanilla and gentle cinnamon.",
+  osmanthus: "Creamy flowers with apricot, plum and soft suede associations.",
+  galbanum: "Bitter green resin with earthy, woody depth.",
+  tuberose: "Dense white flowers, with creamy and sometimes camphorlike facets.",
+  "ylang-ylang": "Rich, buttery flowers with fruity and softly spicy nuances.",
+  geranium: "Green rosiness, sometimes with lemon and mint accents.",
+  oakmoss: "Earthy woods and the damp impression of a forest floor.",
+  heliotrope: "Powdery floral sweetness, recalling almond and vanilla.",
+  ginger: "Lively, sharp spice with a tingling freshness.",
+  "ciste-labdanum": "Warm resin with leathery, honeyed and sometimes plumlike facets.",
+  myrrh: "Earthy resin with a bitter edge.",
+  petitgrain: "Fresh green wood with bitter citrus and orange-flower accents.",
+  fig: "Juicy fruit and milky sweetness, sometimes with bitter green leaves.",
+  blackcurrant: "Tart, sweet fruit; bud notes can be greener and more animalic.",
+  "blackcurrant-bud": "Green, fruity wood with a slightly animalic edge.",
+  cashmeran: "Soft woody musk with powdery and gently spicy facets.",
+  aldehyde: "A varied group of impressions, from sparkling citrus to waxy cleanliness.",
 };
+
+// Individual references for the expanded entries; original definitions use the ingredient index.
+export const NOTE_REFERENCES: Readonly<Record<string, string>> = Object.fromEntries(
+  ["saffron", "benzoin", "osmanthus", "galbanum", "tuberose", "ylang-ylang", "geranium", "oakmoss", "heliotrope", "ginger", "ciste-labdanum", "myrrh", "petitgrain", "fig", "blackcurrant", "blackcurrant-bud", "cashmeran", "aldehyde"].map(key => [key, `https://perfumesociety.org/ingredients-post/${({ "ciste-labdanum": "labdanum", "blackcurrant-bud": "blackcurrant", aldehyde: "aldehydes" } as Record<string, string>)[key] ?? key}/`]),
+);
 
 export const FAMILY_GUIDE: Readonly<Record<string, string>> = {
   Floral: "Flowers lead, from a single bloom to a layered bouquet.",

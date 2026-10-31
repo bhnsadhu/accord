@@ -14,7 +14,7 @@ Secondary audience: recruiters and hiring managers evaluating Bhanu Sadhu's prod
 ## Product Purpose
 Accord identifies, recommends, compares and collects fragrances. It is useful on the first visit without an account (browse, search, explain, recommend from a few taste choices) and becomes more personal as people rate and collect. Success: a visitor finds a fragrance they want to try and understands why it was suggested.
 
-It also serves as a fragrance reference: start with a named fragrance, understand its listed facts and scent vocabulary, then follow a note, family or house into the catalog. General educational explanations stay distinct from verified facts about an individual fragrance.
+It also serves as a fragrance reference: find an exact edition or familiar alias, understand its sourced facts and scent vocabulary, compare editions, then follow a note, family or house into the catalog. General educational explanations, published wear guidance and private preference overlap stay distinct from verified facts about an individual fragrance.
 
 ## Positioning
 Accord pairs a real bottle-recognition engine (ScentLens: detection, fine-tuned visual embeddings, label reading, calibrated abstention over 24,642 catalog fragrances) with an explainable recommender that shows its evidence (shared notes, named fragrances, accords). It never pretends to know: uncertain scans say so, match scores are relative percentiles, and nothing about a fragrance is invented.
@@ -25,9 +25,11 @@ Accord pairs a real bottle-recognition engine (ScentLens: detection, fine-tuned 
 - Not a store: no prices, checkout, or retailer links.
 
 ## Capabilities and Constraints
-- Catalog: 24,642 fragrances, 1,255 brands, 285 notes, Edwards-wheel accord families and facets, family/subfamily, gender label, year. Text metadata only.
-- No catalog images or descriptions may be shown (rights unverified). Bottles need an original visual presentation.
-- No prices, community ratings, reviews, or popularity data exist; none may be implied.
+- Catalog: 24,649 fragrances, including 7 editions added through the research workflow. Includes brands, notes, Edwards-wheel accord families and facets, family/subfamily, marketed-as label and year. Coverage counts come from the live catalog.
+- Reference coverage: 22 researched fragrance profiles and 42 note definitions. Sources support original summaries, edition identity, available perfumers, documented note stages and attributed wear guidance. Missing facts remain "Not listed". See [CATALOG-RESEARCH.md](docs/CATALOG-RESEARCH.md) for coverage and maintenance.
+- Search supports exact editions, aliases and multiple included or excluded notes. Comparison and private taste overlap use the user's actual choices. A private catalog request can flag a missing fragrance for review.
+- No catalog bottle images or copied product descriptions may be shown without verified rights. This release uses the established paper-strip presentation and adds no bottle photos.
+- No prices, community ratings, reviews, comments, public votes or popularity data exist; none may be implied.
 - Scanner: ScentLens on Modal free tier, ~6 s warm, ~1 min cold start; can abstain. Gated until cost protections are verified.
 - $0 infrastructure: Vercel Hobby, Neon Free.
 - Guest use with local storage; accounts (Better Auth) for persistence.

@@ -2,7 +2,7 @@ import { sql } from "drizzle-orm";
 import type { Database } from "@/db";
 import { brands, fragranceNotes, fragrances, notes } from "@/db/schema";
 import { familyLabel, parseAccords, parseGender, parseNotes, parseYear } from "./parse";
-import { foldText, fragranceSlug, isProductId, slugify } from "./text";
+import { foldText, fragranceSlug, slugify } from "./text";
 
 /** One row of ScentLens artifacts/export/products.csv. */
 export type CatalogRow = {
@@ -30,7 +30,7 @@ function chunks<T>(items: T[], size = BATCH): T[][] {
  * re-seed updates metadata in place without touching user collections.
  */
 export async function seedCatalog(db: Database, rows: CatalogRow[]) {
-  const valid = rows.filter((r) => isProductId(r.product_id) && r.brand.trim() && r.name.trim());
+  const valid = rows.filter((r) => /^p\d{5}$/.test(r.product_id) && r.brand.trim() && r.name.trim());
 
   // Brands: first spelling of each slug wins.
   const brandNames = new Map<string, string>();

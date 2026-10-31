@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
   if (!q.trim()) return Response.json({ items: [] });
   const result = await cachedSearch({ q, pageSize: 8 });
   return Response.json(
-    { items: result.items.map(({ productId, slug, name, brand, wheel }) => ({ productId, slug, name, brand, wheel })) },
+    { items: result.items.map(({ productId, slug, name, brand, wheel, concentration, year }) => ({ productId, slug, name, brand, wheel, concentration, year })) },
     { headers: { "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400" } },
   );
 }

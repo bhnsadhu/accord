@@ -13,7 +13,8 @@ export function slugify(input: string): string {
   return foldText(input).replace(/ /g, "-");
 }
 
-const PRODUCT_ID = /^p\d{5}$/;
+// ScentLens owns p IDs. New researched entries use a separate immutable namespace.
+const PRODUCT_ID = /^(p\d{5}|a[0-9a-f]{12})$/;
 
 export function isProductId(value: string): boolean {
   return PRODUCT_ID.test(value);
@@ -27,6 +28,6 @@ export function fragranceSlug(brand: string, name: string, productId: string): s
 
 /** Extract the product id from a slug produced by fragranceSlug, or a bare id. */
 export function productIdFromSlug(slug: string): string | null {
-  const match = /(?:^|-)(p\d{5})$/.exec(slug);
+  const match = /(?:^|-)(p\d{5}|a[0-9a-f]{12})$/.exec(slug);
   return match ? match[1] : null;
 }

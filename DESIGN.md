@@ -111,6 +111,8 @@ Vertical specimens use a short stained end, about 14% of the paper by default. H
 
 Gradients describe absorption, brushed metal, or directional light. The owner selected **option C: loose blotters with no visible holder**. Keep the original silver background, lighting, resting fan geometry, and selection movement. Do not restore the rail or oval stand. Do not use decorative rules merely to fill space. Avoid decorative color washes, prominent tide-line rings, pointed clip-path silhouettes, glass vessels, glowing interfaces, and oversized wet stains. Paper should read as a plausible premium blotter before it reads as an illustration.
 
+Horizontal section dividers are approved wherever they clarify a meaningful boundary. Match the hero's straight, uninterrupted `1px solid #aeb4bd` rule, align it with the section edges, and use it sparingly and consistently across the product.
+
 Unconfirmed scanner candidates remain rectangular **ghost strips**: no family stain, no material shadow, and a dashed neutral edge. Their uncertainty must also be stated in text. A blank candidate is not an answer.
 
 ## Home: Precision Bench

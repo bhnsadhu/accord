@@ -55,3 +55,20 @@ The expanded reference follows the current `DESIGN.md`: silver bench, rectangula
 Visual review covered the desktop, tablet and phone captures in `.impeccable/review`, including 320px, 1470px and 1920px detail views, source disclosure, quick find and a long edition name. The final request and note-search captures at 1440px and 390px confirm the repaired placeholders. Their recorded computed colors produce contrast ratios of 5.34:1 on paper and 4.89:1 on the bench, with full opacity. Visible focus retains the existing blue outline.
 
 Release validation passed 80 automated tests and 49 browser tests, with no horizontal overflow in 96 route-and-width checks. The final visual review approved shipping after the placeholder contrast finding was resolved. Catalog research coverage and operational boundaries are documented separately in [CATALOG-RESEARCH.md](CATALOG-RESEARCH.md).
+
+## Visual reference extension, 2026-10-31
+
+A second review of [Fragrantica's Santal 33 page](https://www.fragrantica.com/perfume/Le-Labo/Santal-33-12201.html) focused on bottle recognition, visual note learning, factual identity and onward exploration. Accord adopts those useful reference patterns in its existing interface, without importing community content, photos or strength scores.
+
+Exact-edition bottle photographs now accompany six profiles and their Quick Find results. Enlargement shows the full image, edition and attribution. Sixteen note photographs connect visual recognition to definitions and real catalog examples. The note library offers six familiar visual starting points. Fragrance facts, descriptions and notes precede private collection controls so a first-time visitor can learn without signing up.
+
+Two missing editions were added from official sources to match verified images correctly: Chanel N°5 Eau de Parfum and Tom Ford Ombré Leather Eau de Parfum. Green Irish Tweed received a sourced summary, release year and documented stages. The reference layer now has 25 researched profiles across a catalog of 24,651 fragrances. Missing facts and images retain honest fallbacks. See [IMAGERY.md](IMAGERY.md) for coverage, rights and maintenance.
+
+
+## Visual extension verification, 2026-10-31
+
+The imagery release extends the earlier text-only reference baseline while preserving the incumbent silver bench, cotton-paper strips, family hues, Schibsted Grotesk typography and shared gutters. Detail photographs retain a paper identity label; note photographs sit within existing disclosures, and Quick Find uses compact exact-edition thumbnails. The source diff contains no Home composition or shared frame redesign.
+
+Review sampled `.impeccable/review/imagery/santal-1440-top.png`, `final-santal-phone.png`, `library-1440-top.png`, `library-390-top.png`, `notes-fixed-390.png`, `bottle-open-390.png` and `search-bottle-1440.png`. The final note and library captures show the corrected Atlas cedar grain photograph. The scoped visual review approved shipping after that sole material-image finding was resolved. Missing bottle and note images retain their documented fallbacks; these samples do not establish universal image coverage.
+
+Recorded release checks passed 90 unit tests, 17 targeted browser cases, typecheck, lint and the production build. Sixteen route-and-width checks found no horizontal overflow or broken images. The local provenance audit found adjacent sidecars for all 28 raster assets. `DESIGN.md` and `.impeccable/design.json` remain unchanged. The design document's older catalog totals and text-only baseline, and the historical sidecar's older tokens, are pre-existing drift outside this extension's write scope.

@@ -1092,6 +1092,180 @@
           }
         ]
       }
+    },
+    {
+      "productId": "aa271d375a3ad",
+      "brand": "Chanel",
+      "name": "N°5 Eau de Parfum",
+      "catalog": {
+        "notes": [
+          "Citrus",
+          "Rose",
+          "Jasmine",
+          "Aldehyde",
+          "Vanilla"
+        ],
+        "family": "Floral aldehydic",
+        "gender": "feminine"
+      },
+      "research": {
+        "perfumers": [
+          "Jacques Polge"
+        ],
+        "featuredNotes": [
+          "Citrus",
+          "Rose",
+          "Jasmine",
+          "Aldehyde",
+          "Vanilla"
+        ],
+        "aliases": [
+          "Chanel No 5",
+          "Chanel Number 5",
+          "Chanel No5 EDP",
+          "N5 Eau de Parfum"
+        ],
+        "wear": [],
+        "summary": "An abstract floral composition with bright citrus, rose and jasmine, shaped by aldehydes and softened by vanilla. This is Jacques Polge’s eau de parfum interpretation, introduced in 1986.",
+        "concentration": "Eau de parfum",
+        "year": 1986,
+        "sources": [
+          {
+            "id": "chanel-no5",
+            "title": "N°5 Eau de Parfum",
+            "publisher": "Chanel",
+            "url": "https://www.chanel.com/us/fragrance/p/125530/n5-eau-de-parfum-spray/",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "concentration",
+              "year",
+              "perfumers",
+              "featuredNotes"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productId": "a09e1f2c0fabb",
+      "brand": "Tom Ford",
+      "name": "Ombré Leather Eau de Parfum",
+      "catalog": {
+        "notes": [
+          "Leather",
+          "Cardamom",
+          "Jasmine",
+          "Patchouli",
+          "White moss",
+          "Amber"
+        ],
+        "family": "Floral leather"
+      },
+      "research": {
+        "perfumers": [],
+        "featuredNotes": [
+          "Leather",
+          "Cardamom",
+          "Jasmine",
+          "Patchouli",
+          "White moss",
+          "Amber"
+        ],
+        "aliases": [
+          "Ombre Leather EDP",
+          "Ombré Leather 2018"
+        ],
+        "wear": [],
+        "summary": "Leather is the central impression, with cardamom, jasmine and earthy patchouli around it. Amber and moss add warmth to the floral leather composition.",
+        "concentration": "Eau de parfum",
+        "sources": [
+          {
+            "id": "tom-ford-ombre",
+            "title": "Ombré Leather Eau de Parfum",
+            "publisher": "Tom Ford",
+            "url": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "concentration",
+              "featuredNotes"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productId": "p06755",
+      "brand": "Creed",
+      "name": "Green Irish Tweed",
+      "research": {
+        "perfumers": [],
+        "featuredNotes": [
+          "Bergamot",
+          "Lemon",
+          "Peppermint",
+          "Lavender",
+          "Geranium",
+          "Oakmoss",
+          "Woods"
+        ],
+        "aliases": [
+          "GIT",
+          "Green Irish Tweed EDP"
+        ],
+        "wear": [],
+        "summary": "A fresh aromatic fragrance with bergamot, lemon and peppermint, followed by lavender and geranium. Oakmoss and woods ground the green impression.",
+        "concentration": "Eau de parfum",
+        "year": 1985,
+        "noteStages": {
+          "opening": [
+            "Bergamot",
+            "Lemon",
+            "Peppermint"
+          ],
+          "heart": [
+            "Lavender",
+            "Geranium"
+          ],
+          "base": [
+            "Oakmoss",
+            "Woods"
+          ]
+        },
+        "sources": [
+          {
+            "id": "creed-git",
+            "title": "Green Irish Tweed",
+            "publisher": "Creed",
+            "url": "https://www.creedfragrance.com/p/green-irish-tweed/12870035/",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "identity",
+              "summary",
+              "concentration",
+              "featuredNotes",
+              "noteStages"
+            ]
+          },
+          {
+            "id": "creed-classics",
+            "title": "Creed Classics: A Closer Look",
+            "publisher": "Creed",
+            "url": "https://www.creedfragrance.com/c/journal/creed-classics/",
+            "kind": "brand",
+            "checkedAt": "2026-10-31",
+            "fields": [
+              "year"
+            ]
+          }
+        ]
+      }
     }
   ]
 }

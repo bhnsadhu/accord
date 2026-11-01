@@ -25,10 +25,10 @@ Accord pairs a real bottle-recognition engine (ScentLens: detection, fine-tuned 
 - Not a store: no prices, checkout, or retailer links.
 
 ## Capabilities and Constraints
-- Catalog: 24,649 fragrances, including 7 editions added through the research workflow. Includes brands, notes, Edwards-wheel accord families and facets, family/subfamily, marketed-as label and year. Coverage counts come from the live catalog.
-- Reference coverage: 22 researched fragrance profiles and 42 note definitions. Sources support original summaries, edition identity, available perfumers, documented note stages and attributed wear guidance. Missing facts remain "Not listed". See [CATALOG-RESEARCH.md](docs/CATALOG-RESEARCH.md) for coverage and maintenance.
+- Catalog: 24,651 fragrances, including 9 editions added through the research workflow. Includes brands, notes, Edwards-wheel accord families and facets, family/subfamily, marketed-as label and year. Coverage counts come from the live catalog.
+- Reference coverage: 25 researched fragrance profiles and 42 note definitions. Sources support original summaries, edition identity, available perfumers, documented note stages and attributed wear guidance. Missing facts remain "Not listed". See [CATALOG-RESEARCH.md](docs/CATALOG-RESEARCH.md) for coverage and maintenance.
 - Search supports exact editions, aliases and multiple included or excluded notes. Comparison and private taste overlap use the user's actual choices. A private catalog request can flag a missing fragrance for review.
-- No catalog bottle images or copied product descriptions may be shown without verified rights. This release uses the established paper-strip presentation and adds no bottle photos.
+- No catalog bottle images or copied product descriptions may be shown without verified rights. The reference layer includes 6 exact-edition bottle photographs and 16 note photographs, each with a verified free-use license, credit and local optimized asset. Unpictured entries retain the established paper strips.
 - No prices, community ratings, reviews, comments, public votes or popularity data exist; none may be implied.
 - Scanner: ScentLens on Modal free tier, ~6 s warm, ~1 min cold start; can abstain. Gated until cost protections are verified.
 - $0 infrastructure: Vercel Hobby, Neon Free.
@@ -40,10 +40,10 @@ Accord pairs a real bottle-recognition engine (ScentLens: detection, fine-tuned 
 - Bhanu directs colors, fonts, logo, homepage composition, navigation, layouts, and motion. As of 2026-10-30, requested changes may be pushed and deployed after checks without a separate preview approval; he will review them on the live site.
 
 ## Evidence on Hand
-- Real catalog metadata (local seed from ScentLens export).
+- Real catalog metadata (local seed from ScentLens export), sourced research and licensed reference photographs.
 - Real offline recommender evaluation (docs/EVALUATION.md).
 - ScentLens public repo and documented accuracy work (github.com/bhnsadhu/scent-lens).
-- Absent, never to be fabricated: user counts, testimonials, reviews, ratings, prices, bottle photos, press.
+- Absent, never to be fabricated: user counts, testimonials, reviews, ratings, prices, press.
 
 ## Product Principles
 1. Honest by construction: show evidence, admit uncertainty, invent nothing.

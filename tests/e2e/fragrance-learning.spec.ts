@@ -6,12 +6,12 @@ test("a fragrance teaches a note, then follows it into the catalog", async ({ pa
   await page.goto(santal);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Santal 33");
   await expect(page.locator("main .reference-introduction")).toContainText("Sandalwood");
-  const sandalwood = page.locator("main .reference-note").filter({ has: page.locator("summary", { hasText: "Sandalwood" }) });
+  const sandalwood = page.locator("#notes > .visual-notes > .reference-note").filter({ has: page.locator("summary", { hasText: "Sandalwood" }) });
   await sandalwood.locator("summary").focus();
   await page.keyboard.press("Enter");
   await expect(sandalwood).toHaveAttribute("open", "");
   await expect(sandalwood).toContainText("creamy wood");
-  const iris = page.locator("main .reference-note").filter({ has: page.locator("summary", { hasText: "Iris / Orris" }) });
+  const iris = page.locator("#notes > .visual-notes > .reference-note").filter({ has: page.locator("summary", { hasText: "Iris" }) });
   await iris.locator("summary").click();
   await expect(sandalwood).not.toHaveAttribute("open", "");
   await expect(iris).toHaveAttribute("open", "");
@@ -50,7 +50,7 @@ test("note explanations and examples remain usable on a touch screen", async ({ 
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const page = await context.newPage();
   await page.goto(santal);
-  const note = page.locator("main .reference-note").filter({ has: page.locator("summary", { hasText: "Sandalwood" }) });
+  const note = page.locator("#notes > .visual-notes > .reference-note").filter({ has: page.locator("summary", { hasText: "Sandalwood" }) });
   await note.locator("summary").tap();
   await expect(note).toHaveAttribute("open", "");
   await note.getByRole("link", { name: "Explore sandalwood" }).tap();

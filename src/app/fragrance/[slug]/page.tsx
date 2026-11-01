@@ -4,7 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties } from "react";
 import { CollectionControls } from "@/components/collection-controls";
+import { BottlePhoto } from "@/components/bottle-photo";
 import Image from "next/image";
+import { bottleImage } from "@/lib/catalog/media";
 import { FragranceSources, SourceLinks, WearGuidance } from "@/components/fragrance-research";
 import { FragranceNotes } from "@/components/fragrance-notes";
 import { FragranceTaste } from "@/components/fragrance-taste";
@@ -26,10 +28,12 @@ export async function generateMetadata({ params }: PageProps<"/fragrance/[slug]"
   const id = productIdFromSlug((await params).slug);
   const f = id ? await cachedFragrance(id) : null;
   if (!f) return { title: "Fragrance not found" };
+  const photo = bottleImage(f.productId);
   return {
     title: `${f.name} by ${f.brand}`,
     description: `${f.name} by ${f.brand}. ${f.research?.summary ?? fragranceIntroduction(f)}`,
     alternates: { canonical: `/fragrance/${f.slug}` },
+    ...(photo ? { openGraph: { images: [{ url: photo.path, width: photo.width, height: photo.height, alt: photo.alt }] } } : {}),
   };
 }
 
@@ -50,6 +54,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
   const [similar, house, editions, library] = await Promise.all([cachedSimilar(f.productId, 8), cachedSearch({ brand: f.brandSlug, pageSize: 5 }), f.editionGroup ? cachedEditions(f.editionGroup) : [], cachedNotes()]);
   const hue = hueFor(f.wheel);
   const research = f.research;
+  const photo = bottleImage(f.productId);
   const otherEditions = editions.filter(item => item.productId !== f.productId);
   const siblings = house.items.filter(item => item.productId !== f.productId).slice(0, 4);
 
@@ -62,12 +67,11 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
         <Link href="/notes">Note library</Link>
         <Link href="/learn">Fragrance guide</Link>
       </nav>
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,180px)_minmax(0,1fr)] lg:gap-20">
-        {/* The strip itself, standing. */}
-        <div className="hidden lg:block" style={{ "--hue": hue } as CSSProperties}>
-          <div className="lift sticky top-8">
-            <StripSpecimen fragrance={f} className="detail-paper" />
-        </div>
+      <div className={`reference-layout ${photo ? "reference-layout-photographed" : ""}`}>
+        <div className="reference-specimen" style={{ "--hue": hue } as CSSProperties}>
+          <div className="sticky top-8">
+            {photo ? <><BottlePhoto image={photo} /><div className="bottle-paper-label strip-h"><span className="stain-h" /><span>{f.name}</span><small>{f.brand}</small></div></> : <div className="lift"><StripSpecimen fragrance={f} className="detail-paper" /></div>}
+          </div>
         </div>
 
         <div className="min-w-0">
@@ -76,10 +80,14 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
               <span className="stain-h" />
             </div>
           </div>
+          <div className={`reference-identity ${photo ? "reference-identity-photographed" : ""}`}><div className="min-w-0">
           <Link href={`/discover?brand=${encodeURIComponent(f.brandSlug)}`} className="mt-4 inline-block text-lg text-ink-2 lg:mt-0">
             {f.brand}
           </Link>
           <h1 className="mt-1 text-[clamp(40px,5vw,72px)] font-semibold leading-[1] tracking-[-0.035em] text-balance">{f.name}</h1>
+          </div>
+          {photo && <div className="reference-mobile-photo"><BottlePhoto image={photo} /></div>}
+          </div>
           <p className="reference-introduction">{research?.summary ?? fragranceIntroduction(f)}</p>
           {research?.summary && <SourceLinks research={research} field="summary" />}
           {otherEditions.length > 0 && <nav className="research-edition-nav" aria-label="Fragrance editions">{editions.map(edition => <Link key={edition.productId} href={`/fragrance/${edition.slug}`} aria-current={edition.productId === f.productId ? "page" : undefined}>{edition.editionLabel ?? edition.concentration ?? edition.name}</Link>)}</nav>}
@@ -99,13 +107,8 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
           </dl>
           <p className="reference-caption mt-3">Anyone can wear it. <a href="#sources">See the sources behind these details.</a></p>
 
-          <section className="reference-collection" aria-label="Your collection">
-            <CollectionControls productId={f.productId} />
-            <FragranceTaste notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} family={f.wheel} />
-          </section>
-
-          <nav className="research-section-nav" aria-label="On this fragrance page"><a href="#notes">Notes</a><a href="#wear">Wearing it</a>{otherEditions.length > 0 && <a href="#editions">Versions</a>}<a href="#similar-h">Similar fragrances</a><a href="#sources">Sources</a></nav>
-          {research?.image && <figure className="research-bottle"><Image src={research.image.path} alt={research.image.alt} width={600} height={600} /><figcaption>{research.image.credit}</figcaption></figure>}
+          <nav className="research-section-nav" aria-label="On this fragrance page"><a href="#notes">Notes</a><a href="#wear">Wearing it</a>{otherEditions.length > 0 && <a href="#editions">Versions</a>}<a href="#similar-h">Similar fragrances</a><a href="#collection">Your collection</a><a href="#sources">Sources</a></nav>
+          {!photo && research?.image && <figure className="research-bottle"><Image src={research.image.path} alt={research.image.alt} width={600} height={600} /><figcaption>{research.image.credit}</figcaption></figure>}
           <FragranceNotes notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} research={research} library={library} />
 
           <section className="reference-section" aria-labelledby="profile-h">
@@ -123,6 +126,10 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
             </div>
           </section>
 
+          <section id="collection" className="reference-collection" aria-label="Your collection">
+            <CollectionControls productId={f.productId} />
+            <FragranceTaste notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} family={f.wheel} />
+          </section>
           <WearGuidance research={research} />
           <FragranceSources fragrance={f} />
           {otherEditions.length > 0 && <section id="editions" className="reference-section section-divider" aria-labelledby="editions-h">

@@ -7,6 +7,8 @@ import { ArrowIcon } from "@/components/icons";
 import { StripRow } from "@/components/strip";
 import { cachedNote, cachedSearch } from "@/lib/catalog/cached";
 import { GUIDE_SOURCES, NOTE_GUIDE, NOTE_REFERENCES } from "@/lib/fragrance-guide";
+import { ImageCredit, NotePhoto } from "@/components/reference-image";
+import { noteImage } from "@/lib/catalog/media";
 
 export function generateStaticParams() { return ["sandalwood", "bergamot", "musk"].map(key => ({ key })); }
 
@@ -24,10 +26,12 @@ async function NoteDetail({ params }: { params: Promise<{ key: string }> }) {
   if (!note) notFound();
   const examples = await cachedSearch({ notes: [note.key], pageSize: 8 });
   const definition = NOTE_GUIDE[note.key];
+  const photo = noteImage(note.key);
   return <>
     <nav className="reference-wayfinding" aria-label="Note navigation"><Link href="/notes">Note library</Link><Link href="/learn">Fragrance guide</Link></nav>
     <PageTitle>{note.label}</PageTitle>
     <p className="page-intro knowledge-lead">{definition ?? "Explore the fragrances that list this note, and the other notes they bring together."}</p>
+    {photo && <figure className="note-photo-reference"><NotePhoto noteKey={note.key} full /><figcaption><p className="reference-caption">{photo.alt}</p><ImageCredit image={photo} /></figcaption></figure>}
     <div className="note-reference-intro">
       <p>{definition ? "This describes the note in general. Its impression changes with the composition, and a listed note does not tell you how much is used." : "A scent description is not yet included for this note. The fragrances below come directly from its catalog listings."}</p>
       {definition && <a href={NOTE_REFERENCES[note.key] ?? GUIDE_SOURCES.ingredients.href}>Reference: The Perfume Society <ArrowIcon /></a>}

@@ -11,7 +11,7 @@ test("exact edition lookup leads to sourced notes, versions, comparison and coll
   await expect(page).toHaveURL(new RegExp(edp+"$"));
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Sauvage Eau de Parfum");
   await expect(page.locator(".research-facts")).toContainText("Eau de parfum");
-  await expect(page.locator(".research-note-stages")).toContainText("Opening");
+  await expect(page.locator(".visual-note-stages")).toContainText("Opening");
   await expect(page.locator(".research-wear")).toContainText("Brand guidance");
   await page.getByRole("button", { name: "Owned", exact: true }).click();
   await page.reload();

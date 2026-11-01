@@ -6,6 +6,7 @@ import { ArrowIcon, SearchIcon } from "@/components/icons";
 import { cachedNotes } from "@/lib/catalog/cached";
 import { foldText } from "@/lib/catalog/text";
 import { NOTE_GUIDE } from "@/lib/fragrance-guide";
+import { NotePhoto } from "@/components/reference-image";
 
 export const metadata: Metadata = { title: "Fragrance notes", description: "Get to know fragrance notes and find the perfumes that list them in Accord’s catalog." };
 
@@ -23,6 +24,7 @@ async function NoteIndex({ searchParams }: { searchParams: Promise<{ q?: string 
   const q = (Array.isArray(raw.q) ? raw.q[0] : raw.q ?? "").trim().slice(0, 80);
   const matches = notes.filter(note => foldText(note.label).includes(foldText(q))).sort((a, b) => a.label.localeCompare(b.label, "en"));
   return <>
+    {!q && <section className="note-library-starters" aria-labelledby="familiar-notes-h"><h2 id="familiar-notes-h">Start with a note you know</h2><ul>{["bergamot", "rose", "cedarwood", "vanilla", "vetiver", "jasmine"].map(key => <li key={key}><Link href={`/notes/${key}`}><NotePhoto noteKey={key} /><span>{notes.find(n => n.key === key)?.label ?? key}</span></Link></li>)}</ul></section>}
     <form action="/notes" role="search" className="knowledge-search">
       <label><SearchIcon /><span className="sr-only">Search notes</span><input name="q" type="search" defaultValue={q} placeholder="Search a note, like sandalwood" maxLength={80} /></label>
       <button type="submit">Search</button>
@@ -30,7 +32,7 @@ async function NoteIndex({ searchParams }: { searchParams: Promise<{ q?: string 
     <div className="knowledge-index-heading"><p>{matches.length.toLocaleString("en-US")} {matches.length === 1 ? "note" : "notes"}{q ? ` matching “${q}”` : " in the catalog"}</p>{q && <Link href="/notes">Clear search</Link>}</div>
     {!matches.length ? <div className="reference-empty"><p>No notes match “{q}”. Try a shorter name.</p><Link href="/notes">Browse all notes <ArrowIcon /></Link></div> :
       <ul className="knowledge-index">{matches.map(note => <li key={note.key}>
-        <Link href={`/notes/${note.key}`}><span><strong>{note.label}</strong><span>{NOTE_GUIDE[note.key] ?? `${note.fragranceCount.toLocaleString("en-US")} fragrances list this note`}</span></span><ArrowIcon /></Link>
+        <Link href={`/notes/${note.key}`}><NotePhoto noteKey={note.key} /><span className="note-index-copy"><strong>{note.label}</strong><span>{NOTE_GUIDE[note.key] ?? `${note.fragranceCount.toLocaleString("en-US")} fragrances list this note`}</span></span><ArrowIcon /></Link>
       </li>)}</ul>}
     <p className="reference-caption mt-8">Notes describe scent impressions, not a full ingredient list. Short reference descriptions are available for selected notes.</p>
   </>;

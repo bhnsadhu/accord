@@ -16,8 +16,8 @@ It works without an account; signing in keeps your collection on every device.
 
 | Area | What it does |
 |---|---|
-| Catalog | 24,649 fragrances, including 7 researched additions to the original ScentLens catalog. Text metadata only (see [Data](#data)). |
-| Reference | 22 sourced fragrance profiles, documented note stages and wear guidance where available, related editions, 42 concise note definitions, and a searchable note library. Sources and scope: [docs/FRAGRANCE-REFERENCE.md](docs/FRAGRANCE-REFERENCE.md). |
+| Catalog | 24,651 fragrances, including 9 researched additions to the original ScentLens catalog. Original metadata plus a licensed image reference layer (see [Data](#data) and [Imagery](docs/IMAGERY.md)). |
+| Reference | 25 sourced fragrance profiles, documented note stages and wear guidance where available, related editions, 42 concise note definitions, 6 exact-edition bottle photos with enlargement, 16 note photographs, and a searchable note library. Sources and scope: [docs/FRAGRANCE-REFERENCE.md](docs/FRAGRANCE-REFERENCE.md). |
 | Search | Postgres `pg_trgm` search with typos, accents, aliases and exact formats. Filter by multiple included/excluded notes, family, concentration, perfumer and gender label. Missing fragrances can be requested privately. |
 | Recommendations | Explainable content-based engine in TypeScript: IDF-weighted note vectors, accord and family overlap, similarity to your nearest favourite, and a personalized PageRank walk over the fragrance-note graph. Diversified with MMR. Evaluated offline against ablations ([docs/EVALUATION.md](docs/EVALUATION.md)). |
 | Collections | Shelves, 1 to 5 ratings, favourites. Guests keep them in local storage; on sign-in they merge into the account. Ratings change later recommendations. |
@@ -71,7 +71,7 @@ npx tsx scripts/evaluate-reco.ts   # offline recommender evaluation
 
 ## Data
 
-The catalog is the Hugging Face dataset `doevent/perfume`, cleaned by ScentLens. Its image and description rights are not verified, so Accord uses only text metadata and shows no catalog photos or descriptions; bottles are drawn as smelling strips coloured by accord family. There are no prices, reviews, popularity or ratings beyond your own, and none are implied.
+The original catalog is the Hugging Face dataset `doevent/perfume`, cleaned by ScentLens. Its image and description rights are not verified, so Accord imports only its text metadata. A separate sourced research layer supplies original summaries and selected, independently licensed photographs. Unpictured fragrances remain smelling strips coloured by accord family. Image sources, credits and licenses are recorded in [the media manifests](data/media) and explained in [IMAGERY.md](docs/IMAGERY.md). There are no prices, reviews, popularity or ratings beyond your own, and none are implied.
 
 ## Deployment
 

@@ -4,9 +4,9 @@ Accord is a searchable reference, not a public review platform. The original Sce
 
 ## Current coverage
 
-The initial research release includes 22 profiles, 7 new fragrance editions, 8 entries with perfumers, 5 with documented note stages, and 7 with attributed wear guidance. The combined catalog has 24,649 fragrances. `/learn#catalog` reads live database coverage so these counts are not a promise of universal enrichment. The note dictionary has 42 concise definitions, including 18 added definitions linked to individual ingredient references.
+The current research release includes 25 profiles, 9 new fragrance editions, 9 entries with perfumers, 6 with documented note stages, and 7 with attributed wear guidance. The combined catalog has 24,651 fragrances. `/learn#catalog` reads live database coverage so these counts are not a promise of universal enrichment. The note dictionary has 42 concise definitions, including 18 added definitions linked to individual ingredient references.
 
-There are no new paid services, subscriptions, scheduled jobs, runtime AI generation, photo downloads, reviews, comments or public voting. Browsing uses the existing database and caches.
+There are no new paid services, subscriptions, scheduled jobs, runtime AI generation, third-party image fetches, reviews, comments or public voting. Browsing uses the existing database and caches.
 
 ## Research and rights
 
@@ -15,7 +15,7 @@ There are no new paid services, subscriptions, scheduled jobs, runtime AI genera
 3. Write a short original summary. Do not copy marketing paragraphs, community reviews or user ratings. Published facts can differ across editions or reformulations; keep the edition and source explicit.
 4. Record top, heart and base only when the source explicitly assigns those stages. Keep the original catalog note list for comparisons. A flat list is not a pyramid.
 5. Attribute wear descriptions to the source. Brand hours are claims, not Accord measurements. Do not infer projection, longevity, season or occasion from a family, format or ingredient list.
-6. Photos require confirmed reuse permission and a locally stored file. The manifest requires credit, permission and a source reference. This release adds no bottle photos.
+6. Photos require confirmed reuse permission and a locally stored file. The manifest requires credit, permission and a source reference. The separate media manifests now provide 6 verified bottle photographs and 16 note photographs. See [IMAGERY.md](IMAGERY.md) for exact-edition matching, licenses, credits and the local asset workflow.
 
 ## Stable identifiers
 

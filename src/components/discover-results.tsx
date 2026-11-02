@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useId, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from "react";
 import type { FragranceSummary } from "@/lib/catalog/queries";
 import { hueFor } from "@/lib/hues";
@@ -54,7 +55,7 @@ export function ArchiveFilters({ children, activeCount = 0 }: { children: ReactN
  * keys this component by the ordered result ids, so new results start with the
  * first fragrance and cannot retain a comparison from a different page.
  */
-export function DiscoverResults({ fragrances }: { fragrances: FragranceSummary[] }) {
+export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary & { bottleThumbnail?: string })[] }) {
   const [selectedId, setSelectedId] = useState(fragrances[0]?.productId ?? "");
   const [comparisonId, setComparisonId] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -182,6 +183,7 @@ export function DiscoverResults({ fragrances }: { fragrances: FragranceSummary[]
                         <span>Close</span>
                       </button>
                     </div>
+                    {selected.bottleThumbnail && <Link href={detailHref} className="archive-mobile-bottle"><Image src={selected.bottleThumbnail} width={80} height={100} alt={`${selected.name} bottle`} unoptimized /></Link>}
                     <h3>Notes</h3>
                     {selected.notes.length ? (
                       <ul className="archive-mobile-preview-notes">
@@ -212,6 +214,7 @@ export function DiscoverResults({ fragrances }: { fragrances: FragranceSummary[]
 
         <div className="archive-preview-content">
           <header className="archive-preview-heading selection-change" key={`heading-${selected.productId}`}>
+            {selected.bottleThumbnail && <Link href={detailHref} className="archive-bottle"><Image src={selected.bottleThumbnail} width={96} height={120} alt={`${selected.name} bottle`} unoptimized /></Link>}
             <h2 id={titleId}>{selected.name}</h2>
             <p>{selected.brand}</p>
           </header>

@@ -1,5 +1,6 @@
 import type { NextRequest } from "next/server";
 import { cachedSearch } from "@/lib/catalog/cached";
+import { withBottleThumbnail } from "@/lib/catalog/bottle-media";
 
 /** Quick-find for the command palette: top matches by name or brand. */
 export async function GET(request: NextRequest) {
@@ -7,7 +8,7 @@ export async function GET(request: NextRequest) {
   if (!q.trim()) return Response.json({ items: [] });
   const result = await cachedSearch({ q, pageSize: 8 });
   return Response.json(
-    { items: result.items.map(({ productId, slug, name, brand, wheel, concentration, year }) => ({ productId, slug, name, brand, wheel, concentration, year })) },
+    { items: result.items.map(({ productId, slug, name, brand, wheel, concentration, year }) => withBottleThumbnail({ productId, slug, name, brand, wheel, concentration, year })) },
     { headers: { "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400" } },
   );
 }

@@ -1,20 +1,16 @@
-import bottleManifest from "../../../data/media/bottles.json";
 import noteManifest from "../../../data/media/notes.json";
 
 export type ReferenceImage = {
   path: string; width: number; height: number; alt: string;
   author: string; source: string; license: string; licenseUrl: string;
-  checkedAt: string; changes: string;
+  checkedAt: string; changes: string; provenanceNote?: string;
 };
 export type BottleImage = ReferenceImage & {
   productId: string; name: string; brand: string; concentration: string;
-  thumbnail: string; position: string; caption: string; fit?: string;
+  thumbnail: string; position: string; caption: string; fit?: string; catalogPhoto?: boolean;
 };
 
-// Exact catalog IDs only. Never reuse a sibling edition's bottle by name or brand.
-const bottles: Readonly<Record<string, BottleImage>> = bottleManifest;
 const notes: Readonly<Record<string, ReferenceImage>> = noteManifest;
-export const bottleImage = (id: string): BottleImage | undefined => bottles[id];
 export const noteImage = (key: string): ReferenceImage | undefined => notes[key];
 
 /** Reference aliases do not change the listed note or the catalog's similarity data. */

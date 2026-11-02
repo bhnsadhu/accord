@@ -1,0 +1,10 @@
+{
+  "status": "published",
+  "revision": "9d2db452d8f0d649c4bfb0189a2fcc5282028a3c",
+  "entries": 24647,
+  "files": 98588,
+  "bytes": 606853120,
+  "sha256": "93860b1ddd5cfacd5b636cf4f311170afdb3dcfbe619f91ff5e10e5f9e4706dd",
+  "url": "https://github.com/bhnsadhu/accord/releases/download/catalog-photos-2026-11-01/catalog-photos.tar",
+  "source": "https://huggingface.co/datasets/doevent/perfume/tree/9d2db452d8f0d649c4bfb0189a2fcc5282028a3c"
+}

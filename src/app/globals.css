@@ -776,6 +776,18 @@ body:has(.signature-hero) > header { background: #f6f7f9; }
 .bottle-dialog > img { width: 100%; height: min(62dvh, 680px); object-fit: contain; }
 .bottle-dialog footer { margin-top: 16px; font-size: 13px; color: var(--color-ink-2); }
 .quick-find-bottle { width: 40px; height: 50px; object-fit: contain; border-radius: 2px; flex: none; }
+.quick-find-bottle, .archive-bottle img, .archive-mobile-bottle img, .comparison-bottle img { mix-blend-mode: multiply; object-fit: contain; }
+.bottle-photo-catalog .bottle-photo-trigger { background: var(--color-bench); }
+.bottle-photo-catalog .bottle-photo-trigger > img { mix-blend-mode: multiply; padding: 16px 12px 44px; }
+.bottle-photo-catalog .bottle-dialog > img { background: white; }
+.image-provenance-note { margin-top: 8px; }
+.archive-bottle { display: grid; place-items: center; width: 96px; height: 120px; margin: 0 auto 20px; background: var(--color-bench); }
+.archive-bottle img { width: 96px; height: 120px; }
+.archive-mobile-bottle { float: right; margin: 0 0 12px 16px; }
+.archive-mobile-bottle img { width: 64px; height: 80px; }
+.archive-mobile-preview-actions { clear: both; }
+.comparison-bottle { float: right; margin: 0 0 12px 20px; }
+.comparison-bottle img { width: 64px; height: 80px; }
 .visual-notes { gap: 0 28px; }
 .visual-notes .reference-note summary { min-height: 90px; justify-content: flex-start; gap: 16px; padding-block: 12px; }
 .visual-notes .reference-note summary > span { min-width: 0; overflow-wrap: anywhere; }

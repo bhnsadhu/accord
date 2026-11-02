@@ -3,7 +3,8 @@ import { readFileSync, statSync } from "node:fs";
 import bottles from "../../../data/media/bottles.json";
 import notes from "../../../data/media/notes.json";
 import research from "../../../data/research/fragrances.json";
-import { bottleImage, noteReferenceKey } from "./media";
+import { noteReferenceKey } from "./media";
+import { bottleImage } from "./bottle-media";
 
 describe("reference image identity and provenance", () => {
   it("matches each pictured bottle to an exact researched edition", () => {
@@ -14,9 +15,9 @@ describe("reference image identity and provenance", () => {
       expect(entry.name.toLocaleLowerCase()).toBe(photo.name.toLocaleLowerCase());
       expect(entry.research.concentration).toBe(photo.concentration);
     }
-    expect(bottleImage("p07571")).toBeUndefined(); // Sauvage EDT cannot borrow the EDP photo.
-    expect(bottleImage("p05816")).toBeUndefined(); // Bleu Parfum cannot borrow the EDP photo.
-    expect(bottleImage("p22702")).toBeUndefined(); // Ombré Leather Parfum is a different bottle.
+    expect(bottleImage("p07571")?.name).not.toBe("Sauvage Eau de Parfum");
+    expect(bottleImage("p05816")?.name).not.toBe("Bleu De Chanel Eau De Parfum");
+    expect(bottleImage("p22702")?.name).not.toBe("Ombré Leather");
   });
   it("ships local, bounded WebP assets with credit, source and explicit reuse terms", () => {
     for (const photo of [...Object.values(bottles), ...Object.values(notes)]) {

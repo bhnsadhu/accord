@@ -6,7 +6,7 @@ import { Suspense, type CSSProperties } from "react";
 import { CollectionControls } from "@/components/collection-controls";
 import { BottlePhoto } from "@/components/bottle-photo";
 import Image from "next/image";
-import { bottleImage } from "@/lib/catalog/media";
+import { bottleImage } from "@/lib/catalog/bottle-media";
 import { FragranceSources, SourceLinks, WearGuidance } from "@/components/fragrance-research";
 import { FragranceNotes } from "@/components/fragrance-notes";
 import { FragranceTaste } from "@/components/fragrance-taste";

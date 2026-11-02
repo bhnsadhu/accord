@@ -62,3 +62,6 @@ next-env.d.ts
 # local Python deployment bytecode
 __pycache__/
 *.pyc
+
+# Reproducible catalog photos are restored from the pinned release at build time.
+/public/images/catalog/

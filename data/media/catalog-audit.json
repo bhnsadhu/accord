@@ -1,0 +1,48 @@
+{
+  "catalogEntries": 24651,
+  "sourceImageRows": 25748,
+  "matchedEntries": 24647,
+  "unmatchedEntries": [
+    {
+      "productId": "a7782dc120305",
+      "brand": "Dior",
+      "name": "Sauvage Eau de Parfum"
+    },
+    {
+      "productId": "a8b0937dbc0cb",
+      "brand": "Dior",
+      "name": "Sauvage Parfum"
+    },
+    {
+      "productId": "ab59dcd94f698",
+      "brand": "Tom Ford",
+      "name": "Tobacco Vanille Parfum"
+    },
+    {
+      "productId": "aa271d375a3ad",
+      "brand": "Chanel",
+      "name": "N°5 Eau de Parfum"
+    }
+  ],
+  "decodedImages": 24722,
+  "invalidImages": 0,
+  "recognitionGroupsWithMultipleNames": 832,
+  "identityMethod": "Exact brand and full name, retaining concentration, flanker and year.",
+  "rights": "Dataset declares MIT. Original photo permissions are not independently documented.",
+  "scope": "Source identity and file integrity audit, not visual verification of every bottle label.",
+  "publishedPhotoCount": 24649,
+  "licensedFallbackCount": 2,
+  "withoutPhotographs": [
+    {
+      "productId": "a8b0937dbc0cb",
+      "brand": "Dior",
+      "name": "Sauvage Parfum"
+    },
+    {
+      "productId": "ab59dcd94f698",
+      "brand": "Tom Ford",
+      "name": "Tobacco Vanille Parfum"
+    }
+  ],
+  "reviewedAt": "2026-11-01"
+}

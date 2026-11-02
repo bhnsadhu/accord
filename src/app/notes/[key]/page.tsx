@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import { ArrowIcon } from "@/components/icons";
 import { StripRow } from "@/components/strip";
 import { cachedNote, cachedSearch } from "@/lib/catalog/cached";
-import { GUIDE_SOURCES, NOTE_GUIDE, NOTE_REFERENCES } from "@/lib/fragrance-guide";
+import { GUIDE_SOURCES, NOTE_GUIDE, NOTE_REFERENCES, NOTE_REFERENCE_LABELS } from "@/lib/fragrance-guide";
 import { ImageCredit, NotePhoto } from "@/components/reference-image";
 import { noteImage } from "@/lib/catalog/media";
 
@@ -34,7 +34,7 @@ async function NoteDetail({ params }: { params: Promise<{ key: string }> }) {
     {photo && <figure className="note-photo-reference"><NotePhoto noteKey={note.key} full /><figcaption><p className="reference-caption">{photo.alt}</p><ImageCredit image={photo} /></figcaption></figure>}
     <div className="note-reference-intro">
       <p>{definition ? "This describes the note in general. Its impression changes with the composition, and a listed note does not tell you how much is used." : "A scent description is not yet included for this note. The fragrances below come directly from its catalog listings."}</p>
-      {definition && <a href={NOTE_REFERENCES[note.key] ?? GUIDE_SOURCES.ingredients.href}>Reference: The Perfume Society <ArrowIcon /></a>}
+      {definition && <a href={NOTE_REFERENCES[note.key] ?? GUIDE_SOURCES.ingredients.href}>Reference: {NOTE_REFERENCE_LABELS[note.key] ?? "The Perfume Society"} <ArrowIcon /></a>}
     </div>
     <section className="reference-section" aria-labelledby="note-fragrances-h">
       <div className="reference-section-heading"><div><h2 id="note-fragrances-h">Find it in a fragrance</h2><p className="reference-caption mt-2">{examples.total.toLocaleString("en-US")} {examples.total === 1 ? "fragrance lists" : "fragrances list"} {note.label.toLowerCase()}. An alphabetical starting point.</p></div><Link href={`/discover?note=${encodeURIComponent(note.key)}`}>Explore all <ArrowIcon /></Link></div>

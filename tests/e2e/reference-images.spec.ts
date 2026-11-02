@@ -9,9 +9,9 @@ test("the bottle enlarges with credits, traps focus, and returns it on Escape", 
   await trigger.focus(); await page.keyboard.press("Enter");
   const viewer = page.getByRole("dialog", { name: /Santal 33/ });
   await expect(viewer).toBeVisible();
-  await expect(viewer.getByRole("img")).toHaveAttribute("src", "/images/fragrances/p14487.webp");
-  await expect(viewer.getByRole("link", { name: "Marie G." })).toHaveAttribute("href", /unsplash.com\/photos/);
-  await expect(viewer.getByRole("link", { name: "Unsplash License" })).toHaveAttribute("href", "https://unsplash.com/license");
+  await expect(viewer.getByRole("img")).toHaveAttribute("src", /\/images\/catalog\/[a-f0-9]+\/p14487.webp/);
+  await expect(viewer.getByRole("link", { name: "doevent/perfume catalog" })).toHaveAttribute("href", /huggingface.co\/datasets\/doevent\/perfume/);
+  await expect(viewer.getByRole("link", { name: "Source details" })).toHaveAttribute("href", "/learn#catalog-images");
   expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze()).violations).toEqual([]);
   await page.keyboard.press("Escape"); await expect(viewer).not.toBeVisible(); await expect(trigger).toBeFocused();
   expect(await page.evaluate(() => document.documentElement.style.overflow)).not.toBe("hidden");
@@ -26,6 +26,8 @@ test("search identifies the exact photographed edition and retains unpictured en
   await expect(hit.locator("img")).toHaveAttribute("src", "/images/fragrances/a7782dc120305-thumb.webp");
   await page.keyboard.press("Escape");
   await page.goto("/fragrance/dior-sauvage-eau-de-toilette-p07571");
+  await expect(page.locator(".reference-specimen .bottle-photo-trigger img")).toHaveAttribute("src", /\/p07571.webp/);
+  await page.goto("/fragrance/dior-sauvage-parfum-a8b0937dbc0cb");
   await expect(page.locator("main .bottle-photo")).toHaveCount(0);
   await expect(page.locator("main .detail-paper")).toBeVisible();
 });

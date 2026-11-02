@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { bottleImage } from "@/lib/catalog/media";
 import { useRouter } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { hueFor } from "@/lib/hues";
 import { ArrowIcon, CloseIcon, SearchIcon } from "./icons";
 
-type Hit = { productId: string; slug: string; name: string; brand: string; wheel: string | null; concentration?: string | null; year?: number | null };
+type Hit = { productId: string; slug: string; name: string; brand: string; wheel: string | null; concentration?: string | null; year?: number | null; bottleThumbnail?: string };
 // The four catalog examples shown in the approved search study. Not a ranking.
 const STARTING_IDS = ["p14478", "p14483", "p14463", "p14470"];
 const PaletteContext = createContext<{ open: (initial?: string) => void } | null>(null);
@@ -140,7 +139,7 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
               {shownHits.map((hit, i) => (
                 <li key={hit.productId} id={`${listId}-${i}`} data-option-index={i} role="option" aria-selected={i === active}
                   onPointerMove={(e) => { if (e.pointerType === "mouse") setActive(i); }} onClick={() => go(`/fragrance/${hit.slug}`)} className="quick-find-result">
-                  {bottleImage(hit.productId) ? <Image className="quick-find-bottle" src={bottleImage(hit.productId)!.thumbnail} width={40} height={50} alt="" unoptimized /> : <span className="quick-find-blotter" aria-hidden="true" style={{ "--hue": hueFor(hit.wheel) } as CSSProperties} />}
+                  {hit.bottleThumbnail ? <Image className="quick-find-bottle" src={hit.bottleThumbnail} width={40} height={50} alt="" unoptimized /> : <span className="quick-find-blotter" aria-hidden="true" style={{ "--hue": hueFor(hit.wheel) } as CSSProperties} />}
                   <span className="quick-find-result-copy"><span className="quick-find-result-name">{hit.name}</span><span className="quick-find-result-brand">{[hit.brand, hit.concentration, hit.year].filter(Boolean).join(" · ")}</span></span>
                 </li>
               ))}

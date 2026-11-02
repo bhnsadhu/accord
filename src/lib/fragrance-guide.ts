@@ -1,4 +1,5 @@
 import type { FragranceSummary } from "@/lib/catalog/queries";
+import expandedNotes from "../../data/research/note-definitions.json";
 
 /** Short editorial definitions, separate from the catalog's product facts.
  * Sources and scope are recorded in docs/FRAGRANCE-REFERENCE.md.
@@ -15,6 +16,7 @@ export const GUIDE_SOURCES = {
 
 // Unknown notes retain their catalog identity without a guessed description.
 export const NOTE_GUIDE: Readonly<Record<string, string>> = {
+  ...Object.fromEntries(Object.entries(expandedNotes).map(([key, entry]) => [key, entry[0]])),
   musk: "Soft, skinlike warmth; sometimes clean or powdery.",
   bergamot: "Bitter citrus peel with a delicate floral edge.",
   jasmine: "Rich white flowers, sometimes with an animalic undertone.",
@@ -60,9 +62,13 @@ export const NOTE_GUIDE: Readonly<Record<string, string>> = {
 };
 
 // Individual references for the expanded entries; original definitions use the ingredient index.
-export const NOTE_REFERENCES: Readonly<Record<string, string>> = Object.fromEntries(
+export const NOTE_REFERENCES: Readonly<Record<string, string>> = {
+  ...Object.fromEntries(Object.entries(expandedNotes).map(([key, entry]) => [key, entry[1].startsWith("https://") ? entry[1] : `https://perfumesociety.org/ingredients-post/${entry[1]}/`])),
+  ...Object.fromEntries(
   ["saffron", "benzoin", "osmanthus", "galbanum", "tuberose", "ylang-ylang", "geranium", "oakmoss", "heliotrope", "ginger", "ciste-labdanum", "myrrh", "petitgrain", "fig", "blackcurrant", "blackcurrant-bud", "cashmeran", "aldehyde"].map(key => [key, `https://perfumesociety.org/ingredients-post/${({ "ciste-labdanum": "labdanum", "blackcurrant-bud": "blackcurrant", aldehyde: "aldehydes" } as Record<string, string>)[key] ?? key}/`]),
-);
+  ),
+};
+export const NOTE_REFERENCE_LABELS: Readonly<Record<string, string>> = Object.fromEntries(Object.entries(expandedNotes).map(([key, entry]) => [key, entry[2] ?? "The Perfume Society"]));
 
 export const FAMILY_GUIDE: Readonly<Record<string, string>> = {
   Floral: "Flowers lead, from a single bloom to a layered bouquet.",

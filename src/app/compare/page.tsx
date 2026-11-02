@@ -1,6 +1,8 @@
 import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { bottleImage } from "@/lib/catalog/bottle-media";
 import { Suspense, type CSSProperties } from "react";
 import { cachedCompare } from "@/lib/catalog/cached";
 import { isProductId } from "@/lib/catalog/text";
@@ -126,11 +128,13 @@ function ReferenceComparison({ a, b }: { a: FragranceDetail; b: FragranceDetail 
 }
 
 function Side({ f, only }: { f: NonNullable<Awaited<ReturnType<typeof cachedCompare>>>["a"]; only: string[] }) {
+  const photo = bottleImage(f.productId);
   return (
     <article className="comparison-fragrance lift" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
       <div className="strip-h h-full">
         <span className="stain-h" />
         <div className="strip-text relative py-6">
+          {photo && <span className="comparison-bottle"><Image src={photo.thumbnail} width={72} height={90} alt={`${f.name} bottle`} unoptimized /></span>}
           <p className="text-[13px] text-ink-3">
             {f.brand} · {f.wheel ?? f.family ?? "Family not listed"}
           </p>

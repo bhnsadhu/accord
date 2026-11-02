@@ -6,6 +6,7 @@ import { CatalogRequest } from "@/components/catalog-request";
 import { NoteFilter } from "@/components/note-filter";
 import { Bench } from "@/components/bench";
 import { ArchiveFilters, DiscoverResults } from "@/components/discover-results";
+import { withBottleThumbnail } from "@/lib/catalog/bottle-media";
 import { CloseIcon, SearchIcon } from "@/components/icons";
 import { cachedFacets, cachedNotes, cachedSearch } from "@/lib/catalog/cached";
 import type { SearchParams } from "@/lib/catalog/queries";
@@ -182,7 +183,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             <div className="archive-empty-actions">{result.total > 0 && <Link href={href(raw, { page: "1" })}>Back to the first page</Link>}{active.length > 0 && <Link href={params.q ? `/discover?q=${encodeURIComponent(params.q)}` : "/discover"}>Clear filters</Link>}<Link href="/notes">Explore by note</Link></div>
           </div>
         ) : (
-          <DiscoverResults key={result.items.map((f) => f.productId).join(",")} fragrances={result.items} />
+          <DiscoverResults key={result.items.map((f) => f.productId).join(",")} fragrances={result.items.map(withBottleThumbnail)} />
         )}
 
         {pages > 1 && (

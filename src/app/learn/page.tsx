@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense, type CSSProperties } from "react";
 import { cachedCoverage } from "@/lib/catalog/cached";
+import { bottleCoverage } from "@/lib/catalog/bottle-media";
 import { CatalogRequest } from "@/components/catalog-request";
 import { ReferenceAnchors } from "@/components/reference-anchors";
 import { ArrowIcon, PlusIcon } from "@/components/icons";
@@ -56,11 +57,12 @@ export default function LearnPage() {
     </section>
 
     <section id="catalog" className="reference-section guide-copy" aria-labelledby="catalog-h"><h2 id="catalog-h">A growing fragrance reference.</h2><p>Accord starts with the public doevent/perfume catalog cleaned by ScentLens. We add original descriptions, perfumers, note stages and related editions from identified sources, with a checked date on each page.</p><p>Details are shown where supported. Brand wear claims are attributed, and a list of notes is never turned into invented top, heart or base notes. Your collection and taste are personal; Accord does not publish user reviews or ratings.</p><Suspense fallback={<p className="reference-caption">Loading catalog coverage…</p>}><Coverage /></Suspense><CatalogRequest /></section>
+    <section id="catalog-images" className="reference-section guide-copy" aria-labelledby="catalog-images-h"><h2 id="catalog-images-h">About the bottle photographs</h2><p>Most bottle photographs come from the <a href="https://huggingface.co/datasets/doevent/perfume">doevent/perfume dataset</a>. They are matched to the full brand and fragrance name, including the edition. The dataset is labelled MIT; it does not document permissions from the original photographers. That label is not a separate verification of each photograph’s rights.</p><p>Other photographs carry their individual license and credit. Images are resized for Accord, with no generated bottles or labels. Packaging can vary by market and production year. Source-name matching does not independently verify every photographed label.</p></section>
     <aside className="knowledge-next"><div><h2>Start with a fragrance you know.</h2><p>Read its notes, compare a few neighbours, and save what you want to try.</p></div><Link href="/discover">Find a fragrance <ArrowIcon /></Link></aside>
   </PageShell>;
 }
 
 async function Coverage() {
   const coverage = await cachedCoverage();
-  return <div className="research-coverage"><p><strong>{coverage.total.toLocaleString("en-US")} searchable fragrances.</strong> {coverage.researched.toLocaleString("en-US")} entries have additional sourced research so far.</p><dl><div><dt>With perfumers</dt><dd>{coverage.withPerfumers}</dd></div><div><dt>With note stages</dt><dd>{coverage.withStages}</dd></div><div><dt>With wear guidance</dt><dd>{coverage.withWear}</dd></div></dl>{coverage.lastVerified && <p className="reference-caption">Latest source check: {coverage.lastVerified}. Coverage grows as entries are researched.</p>}</div>;
+  return <div className="research-coverage"><p><strong>{coverage.total.toLocaleString("en-US")} searchable fragrances.</strong> {coverage.researched.toLocaleString("en-US")} entries have additional sourced research so far.</p><dl><div><dt>With bottle photos</dt><dd>{bottleCoverage.toLocaleString("en-US")}</dd></div><div><dt>With perfumers</dt><dd>{coverage.withPerfumers}</dd></div><div><dt>With note stages</dt><dd>{coverage.withStages}</dd></div><div><dt>With wear guidance</dt><dd>{coverage.withWear}</dd></div></dl>{coverage.lastVerified && <p className="reference-caption">Latest source check: {coverage.lastVerified}. Coverage grows as entries are researched.</p>}</div>;
 }

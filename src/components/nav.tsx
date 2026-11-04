@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useAccord } from "@/lib/store";
 import { usePalette } from "./command-palette";
-import { SearchIcon } from "./icons";
+import { GitHubIcon, SearchIcon } from "./icons";
 
 const LINKS = [
   { href: "/discover", label: "Discover" },
@@ -42,6 +42,16 @@ export function Nav() {
           })}
         </ul>
         <div className="ml-auto flex items-center gap-3 text-[15px]">
+          <a
+            href="https://github.com/bhnsadhu/accord"
+            target="_blank"
+            rel="noreferrer"
+            className="flex h-9 items-center gap-2 px-2 text-ink-2 transition-colors hover:text-ink"
+          >
+            <GitHubIcon />
+            <span className="hidden lg:inline">Repository</span>
+            <span className="sr-only lg:hidden">Repository on GitHub</span>
+          </a>
           <button
             type="button"
             onClick={() => palette.open()}

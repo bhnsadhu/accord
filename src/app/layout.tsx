@@ -16,6 +16,18 @@ export const metadata: Metadata = {
   title: { default: "Accord: know the bottle, find the next one", template: "%s · Accord" },
   description:
     "Identify fragrances from a photo, explore perfumes by note and accord, and get recommendations that show their evidence.",
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Accord",
+    title: "Accord: know the bottle, find the next one",
+    description: "Scan a bottle, learn its notes, and get fragrance recommendations that show their evidence.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Accord: know the bottle, find the next one",
+    description: "Scan a bottle, learn its notes, and get fragrance recommendations that show their evidence.",
+  },
 };
 
 export const viewport: Viewport = { themeColor: "#f0f1f3" };

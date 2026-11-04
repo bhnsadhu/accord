@@ -1,8 +1,14 @@
 # Accord
 
-**Know the bottle. Find the next one.** · Live at **[accord.bhanusadhu.com](https://accord.bhanusadhu.com)**
+**Know the bottle. Find the next one.** A fragrance discovery app that names a bottle from a photo, explains what is in it, and recommends what to try next, with the evidence behind every suggestion.
 
-Accord is a fragrance discovery, reference, recognition and collection app. It answers five questions people who love perfume actually ask:
+**[Try it → accord.bhanusadhu.com](https://accord.bhanusadhu.com)** · free, no sign-up needed
+
+![Accord home page: "Find your next signature." over a fan of paper smelling strips, with search and a Scan a bottle button](docs/screenshots/home.jpg)
+
+## The problem
+
+People who love perfume research constantly: they see a bottle at a friend's place and want to know what it is, they want something like the one they love, and they want to understand the notes. The tools they use either sell bottles, rank by popularity, or hand out recommendations with no reason given. Accord answers five questions in one place:
 
 - *What fragrance is this?* Photograph a bottle; [ScentLens](https://github.com/bhnsadhu/scent-lens) identifies it, or says it isn't sure.
 - *What can I learn about it?* Read its catalog profile, open note explanations, follow a note into other fragrances, and use the fragrance guide to understand the terminology.
@@ -23,6 +29,52 @@ It works without an account; signing in keeps your collection on every device.
 | Collections | Shelves, 1 to 5 ratings, favourites. Guests keep them in local storage; on sign-in they merge into the account. Ratings change later recommendations. |
 | Scanner | Server-side client for the ScentLens `/identify` API with image validation, Postgres-backed daily quotas, concurrency leases and a result cache. Live, with daily caps sized to a $1/month compute budget ([COSTS.md](COSTS.md)). |
 | Accounts | Better Auth (email and password, optional GitHub), rate limited, with full account deletion. |
+
+## Product decisions
+
+| Decision | Trade-off |
+| --- | --- |
+| **Explainable, content-based recommendations; no collaborative filtering** | There is no real interaction data, and faking users would fake the personalization. Content signals work from the first visit and can always say why: shared notes, a named favourite, an accord. |
+| **Match scores are percentiles, never probabilities** | "Top 3% for you" is honest about what the model knows. A "92% you'll love it" would claim a calibration nobody has measured. |
+| **An unsure scan is never shown as a match** | ScentLens can abstain, and Accord shows its candidates as unconfirmed "ghost" strips. A wrong name costs more trust than "not sure". |
+| **Useful before sign-up** | Guests keep shelves and ratings on the device, merged into the account on sign-in, with the account winning conflicts. |
+| **No prices, reviews or popularity** | None exist in the data, so none are implied. Accord is a reference, not a store. |
+| **Scanner capped to a $1 a month budget** | A few scans per visitor per day keep a free project free. The page explains the shared limit instead of failing silently. |
+| **A recognizable visual world** | Fragrances appear as paper smelling strips on an evaluation bench, stained by accord family, so the interface reads like a perfumer's desk rather than a dashboard. |
+
+## How ScentLens powers the scanner
+
+Accord and ScentLens are separate projects on purpose. ScentLens is the recognition model, with its own data, evaluation and hosting on Modal. Accord is the product around it: it owns the photo, the limits, and what the result means on screen.
+
+```mermaid
+sequenceDiagram
+  participant U as You
+  participant A as Accord (/api/scan)
+  participant S as ScentLens (/identify on Modal)
+  U->>A: photo of a bottle
+  A->>A: validate image, check cache, take a slot lease, check daily quota
+  A->>S: image
+  S->>S: crop the bottle, match 24,642 fragrances, read the label
+  S-->>A: a match, or "not sure" with candidates
+  A-->>U: the fragrance's page, or unconfirmed candidates
+```
+
+Keeping the model behind an HTTP contract means each side can change on its own: ScentLens can retrain without touching Accord, and Accord can change limits or the interface without redeploying a model. The contract was verified live against production ([docs/EVALUATION.md](docs/EVALUATION.md#scentlens-integration)); accuracy figures belong to ScentLens and live in its repository.
+
+<p align="center"><img src="docs/screenshots/scan.jpg" width="80%" alt="The Scan a bottle page, explaining that ScentLens finds the bottle, compares it with 24,642 fragrances, reads the label, and decides or abstains" /></p>
+
+## Results
+
+The recommender was evaluated offline over 300 trials: a simulated person likes four fragrances from one product line, a fifth is hidden, and the test records where it ranks among about 24,600 fragrances. Brand and name are never inputs, so the task cannot be won by reading the label ([docs/EVALUATION.md](docs/EVALUATION.md)).
+
+| Variant | Hit@24 | Median rank |
+| --- | --- | --- |
+| Random order | 0.3% | 12,713 |
+| Notes only (IDF cosine) | 9.7% | 3,776 |
+| First blend I wrote | 9.0% | 3,549 |
+| **Shipped blend** (plus nearest favourite and a small graph walk) | **12.0%** | **2,717** |
+
+The first blend did worse than notes alone at the top of the list. Adding similarity to the single closest favourite gave the biggest gain, so that version shipped. Product lines are only a proxy for taste, so absolute hit rates are low and are read comparatively; nothing here measures enjoyment.
 
 ## Stack
 
@@ -63,6 +115,9 @@ The seed reads `products.csv` from a local ScentLens checkout (`artifacts/export
 Catalog photographs are stored in a pinned GitHub release rather than Git source history. `npm run catalog:images` downloads and verifies the archive once; `npm run build` restores it automatically. See [Catalog photographs](docs/CATALOG-IMAGES.md) for provenance and maintenance.
 
 ## Tests
+
+* **93 Vitest tests** (unit and integration) against an in-memory Postgres per run: similarity properties, IDF weighting, cold start, disliked-note exclusion, rating-driven re-ranking, evidence-based explanations, search parsing, catalog and collection writes, scanning and quotas, and security.
+* **44 Playwright tests across 12 specs**, on desktop and mobile, with axe accessibility checks. The scanner is mocked, so the suite never calls ScentLens.
 
 ```bash
 npm run typecheck && npm run lint

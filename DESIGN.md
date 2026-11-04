@@ -54,10 +54,32 @@ typography:
   body:
     fontSize: "16px"
     lineHeight: 1.5
+  # The UI tiers as shipped (documented 2026-11-04 from the code), smallest to largest.
+  micro:
+    fontSize: "11px"
+  mono-meta:
+    fontSize: "12px"
+  caption:
+    fontSize: "13px"
+  ui-small:
+    fontSize: "14px"
+  ui:
+    fontSize: "15px"
+  lead:
+    fontSize: "17px"
+  subtitle:
+    fontSize: "18px"
+  title-small:
+    fontSize: "20px"
+  title:
+    fontSize: "21px"
 rounded:
   strip: "3px"
   tag: "2px"
-  control: "4px to 6px"
+  control: "6px"
+  control-tight: "5px"
+  control-small: "4px"
+  panel: "8px"
 layout:
   signature-max: "1600px"
   content-max: "1600px"

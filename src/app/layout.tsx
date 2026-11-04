@@ -61,12 +61,21 @@ function Footer() {
   return (
     <footer className="mt-24 border-t border-section-rule">
       <div className="site-frame grid gap-6 py-10 text-sm text-ink-3 md:grid-cols-[1fr_auto]">
-        <p className="max-w-2xl leading-relaxed">
-          Catalog from <span className="text-ink-2">doevent/perfume</span>, cleaned by <ScentLensLink />, with sourced research by Accord.
-          Your collection and taste stay personal. Bottle recognition by{" "}
-          <ScentLensLink />
-          .
-        </p>
+        <div className="grid max-w-2xl gap-3 leading-relaxed">
+          <p>
+            Catalog from <span className="text-ink-2">doevent/perfume</span>, cleaned by <ScentLensLink />, with sourced research by Accord.
+            Your collection and taste stay personal. Bottle recognition by{" "}
+            <ScentLensLink />
+            .
+          </p>
+          <p>
+            Designed and built by{" "}
+            <a href="https://bhanusadhu.com" className="project-link">
+              Bhanu Sadhu
+            </a>
+            .
+          </p>
+        </div>
         <ul className="flex flex-wrap gap-x-6 gap-y-3">
           <li><Link href="/privacy" className="hover:text-ink">Privacy</Link></li>
           <li><Link href="/learn" className="hover:text-ink">Fragrance guide</Link></li>

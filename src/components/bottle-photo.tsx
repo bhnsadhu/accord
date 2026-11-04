@@ -18,7 +18,7 @@ export function BottlePhoto({ image }: { image: BottleImage }) {
   }, [open]);
   const close = () => dialog.current?.close();
   return <figure className={`bottle-photo${image.catalogPhoto ? " bottle-photo-catalog" : ""}`}>
-    <button type="button" className="bottle-photo-trigger" aria-label={`Enlarge ${image.name} bottle photo`} onClick={() => { dialog.current?.showModal(); setOpen(true); }}>
+    <button type="button" className="bottle-photo-trigger" aria-label={`View bottle photo of ${image.name}`} onClick={() => { dialog.current?.showModal(); setOpen(true); }}>
       <Image src={image.path} alt={image.alt} width={image.width} height={image.height} unoptimized loading="eager" style={{ objectPosition: image.position, objectFit: image.fit === "contain" ? "contain" : "cover" }} />
       <span className="bottle-photo-zoom"><SearchIcon width={16} height={16} /> View bottle</span>
     </button>

@@ -5,7 +5,7 @@ const santal = "/fragrance/le-labo-santal-33-p14487";
 
 test("the bottle enlarges with credits, traps focus, and returns it on Escape", async ({ page }) => {
   await page.goto(santal);
-  const trigger = page.getByRole("button", { name: "Enlarge Santal 33 bottle photo" });
+  const trigger = page.getByRole("button", { name: "View bottle photo of Santal 33" });
   await trigger.focus(); await page.keyboard.press("Enter");
   const viewer = page.getByRole("dialog", { name: /Santal 33/ });
   await expect(viewer).toBeVisible();
@@ -53,7 +53,7 @@ test("new editions are searchable, sourced and pictured without public reviews",
     const found = result.items.find((item: { productId: string }) => item.productId === id);
     expect(found).toBeTruthy(); await page.goto(`/fragrance/${found.slug}`);
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(name);
-    await expect(page.getByRole("button", { name: `Enlarge ${name} bottle photo`, exact: true })).toBeVisible();
+    await expect(page.getByRole("button", { name: `View bottle photo of ${name}`, exact: true })).toBeVisible();
     await expect(page.locator("#sources .research-source-list")).toContainText(/Chanel|Tom Ford/);
     await expect(page.getByRole("button", { name: /Write a review|Post a review/ })).toHaveCount(0);
   }

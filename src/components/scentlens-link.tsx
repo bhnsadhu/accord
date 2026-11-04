@@ -1,7 +1,7 @@
 export function ScentLensLink() {
   return (
     <a
-      href="https://github.com/bhnsadhu/scent-lens"
+      href="https://scentlens.bhanusadhu.com"
       className="scentlens-link"
       target="_blank"
       rel="noreferrer"

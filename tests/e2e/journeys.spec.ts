@@ -15,7 +15,8 @@ test("search from the homepage, open a fragrance, see why others are similar", a
   await expect(page).toHaveURL(/\/discover\?q=santal\+33/);
   await page.getByRole("link", { name: "View fragrance: Santal 33 by Le Labo", exact: true }).click();
   await expect(page.getByRole("heading", { level: 1, name: "Santal 33" })).toBeVisible();
-  await expect(page.locator(".reference-note summary").filter({ hasText: "Sandalwood" })).toBeVisible();
+  // The notes render once per layout and one copy is hidden, so match the visible one.
+  await expect(page.locator(".reference-note summary:visible").filter({ hasText: "Sandalwood" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Smells similar" })).toBeVisible();
   await expect(page.getByText(/^Shares /).first()).toBeVisible();
 });

@@ -1,6 +1,6 @@
 # Catalog photographs
 
-Accord's bottle reference covers 24,649 of 24,651 catalog entries as of 2026-11-01. The source dataset supplies 24,647 exact brand and full-name image matches. Two existing, individually licensed photos fill gaps for Sauvage Eau de Parfum and N°5 Eau de Parfum. Sauvage Parfum and Tobacco Vanille Parfum retain paper specimens until the correct photographs are sourced.
+Accord's bottle reference covers 24,649 of 24,652 catalog entries as of 2026-11-04. The source dataset supplies 24,647 exact brand and full-name image matches. Two existing, individually licensed photos fill gaps for Sauvage Eau de Parfum and N°5 Eau de Parfum. Sauvage Parfum, Tobacco Vanille Parfum and Moroccanoil Lumière du Jour retain paper specimens until correctly licensed photographs are sourced.
 
 This is an identity and file-integrity audit across the whole catalog, with visual spot checks. It is not independent visual verification of every bottle label. Packaging can differ by market and production year. Counts and exceptions are recorded in `data/media/catalog-audit.json`.
 

@@ -19,6 +19,8 @@ All phases complete. Live at https://accord.bhanusadhu.com (Vercel Hobby + Neon 
 ## Open items
 Latest UI update (2026-10-30): renamed the footer source link to “Repository” and linked every visible ScentLens mention, including scanner messages, using semibold ink on a subtle silver highlight with no underline. Checks skipped at the owner's request; committed and pushed through the existing workflow.
 
+Catalog request (2026-11-04): added Moroccanoil Lumière du Jour (aa40926b1201b) and the Moroccanoil brand from the private request inbox, sourced from the official brand page (notes, stages, concentration) and a launch release (2026). Applied locally. Production import (`npm run catalog:research -- --apply` against DATABASE_URL_UNPOOLED) and a fresh deployment still pending owner approval.
+
 1. **Logo**: placeholder strip mark; options being explored.
 2. **More scans**: needs Modal budget (card + spend limit): Bhanu deciding later. Caps: 3/day global, 2 per account, 1 per guest.
 

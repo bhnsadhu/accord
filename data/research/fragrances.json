@@ -1266,6 +1266,90 @@
           }
         ]
       }
+    },
+    {
+      "productId": "aa40926b1201b",
+      "brand": "Moroccanoil",
+      "name": "Lumière du Jour",
+      "research": {
+        "summary": "Rock salt, fig leaf and juniper open onto a floral heart of orange flower, jasmine buds and tuberose. White amber, musks and blonde woods form the base. Moroccanoil presents it as the floral addition to its Signature Collection, inspired by a Mediterranean coastal garden at first light.",
+        "featuredNotes": [
+          "Rock Salt",
+          "Fig Leaf",
+          "Juniper Berries",
+          "Orange Blossom",
+          "Jasmine",
+          "Tuberose",
+          "Amber",
+          "Musk",
+          "Woody Notes"
+        ],
+        "aliases": [
+          "Lumière du Jour Eau de Parfum"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Lumière du Jour Eau de Parfum product reference",
+            "publisher": "Moroccanoil",
+            "url": "https://www.moroccanoil.com/pages/eau-de-parfum-lumiere-du-jour",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "noteStages"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Moroccanoil unveils Lumière du Jour Eau de Parfum",
+            "publisher": "Mann Publications",
+            "url": "https://www.mannpublications.com/mannabouttown/2026/02/17/moroccanoil-unveils-lumiere-du-jour-eau-de-parfum-a-radiant-new-chapter-in-their-fragrance-journey/",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "noteStages": {
+          "opening": [
+            "Rock Salt",
+            "Fig Leaf",
+            "Juniper Berries"
+          ],
+          "heart": [
+            "Orange Blossom",
+            "Jasmine",
+            "Tuberose"
+          ],
+          "base": [
+            "Amber",
+            "Musk",
+            "Woody Notes"
+          ]
+        },
+        "year": 2026
+      },
+      "catalog": {
+        "notes": [
+          "Rock Salt",
+          "Fig Leaf",
+          "Juniper Berries",
+          "Orange Blossom",
+          "Jasmine",
+          "Tuberose",
+          "Amber",
+          "Musk",
+          "Woody Notes"
+        ],
+        "family": "Floral"
+      }
     }
   ]
 }

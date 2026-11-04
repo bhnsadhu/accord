@@ -1,3 +1,5 @@
+<p align="center"><img src="src/app/apple-icon.png" width="96" height="96" alt="Accord's A on the silver bench"></p>
+
 # Accord
 
 **Know the bottle. Find the next one.** A fragrance discovery app that names a bottle from a photo, explains what is in it, and recommends what to try next, with the evidence behind every suggestion.
@@ -10,7 +12,7 @@
 
 People who love perfume research constantly: they see a bottle at a friend's place and want to know what it is, they want something like the one they love, and they want to understand the notes. The tools they use either sell bottles, rank by popularity, or hand out recommendations with no reason given. Accord answers five questions in one place:
 
-- *What fragrance is this?* Photograph a bottle; [ScentLens](https://github.com/bhnsadhu/scent-lens) identifies it, or says it isn't sure.
+- *What fragrance is this?* Photograph a bottle; [ScentLens](https://scentlens.bhanusadhu.com) identifies it, or says it isn't sure.
 - *What can I learn about it?* Read its catalog profile, open note explanations, follow a note into other fragrances, and use the fragrance guide to understand the terminology.
 - *What would I like?* Recommendations from your favourites, ratings and notes, each with the evidence behind it.
 - *What smells like my favourite?* Similar fragrances by shared notes, accord family and character, with a side-by-side comparison.
@@ -96,7 +98,7 @@ Browser ──► Next.js on Vercel
 
 More in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-## Running it locally
+## Run it locally
 
 Requirements: Node 22+. No Docker or cloud accounts.
 
@@ -114,7 +116,7 @@ The seed reads `products.csv` from a local ScentLens checkout (`artifacts/export
 
 Catalog photographs are stored in a pinned GitHub release rather than Git source history. `npm run catalog:images` downloads and verifies the archive once; `npm run build` restores it automatically. See [Catalog photographs](docs/CATALOG-IMAGES.md) for provenance and maintenance.
 
-## Tests
+## Quality
 
 * **93 Vitest tests** (unit and integration) against an in-memory Postgres per run: similarity properties, IDF weighting, cold start, disliked-note exclusion, rating-driven re-ranking, evidence-based explanations, search parsing, catalog and collection writes, scanning and quotas, and security.
 * **44 Playwright tests across 12 specs**, on desktop and mobile, with axe accessibility checks. The scanner is mocked, so the suite never calls ScentLens.
@@ -137,7 +139,7 @@ A separate sourced research layer supplies original summaries and independently 
 
 Vercel Hobby (Git-connected: every push to `main` deploys production) with Neon Free provisioned through the Vercel Marketplace, served at `accord.bhanusadhu.com`. Migrations and the catalog seed run from a local machine against the unpooled Neon URL (`vercel env pull`). Costs and limits: [COSTS.md](COSTS.md).
 
-## Known limitations
+## Known limits
 
 - Most entries still have catalog facts only. Research coverage is shown on `/learn`; note stages and wear guidance appear only where sourced.
 - Recommendation quality is evaluated offline on a proxy task; there is no real-user data yet.
@@ -146,5 +148,9 @@ Vercel Hobby (Git-connected: every push to `main` deploys production) with Neon 
 
 ## Credits
 
-- Recognition: [ScentLens](https://github.com/bhnsadhu/scent-lens), a separate project.
-- Similarity and graph recommendation methods adapted from [Fragrance DNA](https://github.com/mikeyoknow/fragrance-dna) (MIT). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+- Recognition: [ScentLens](https://scentlens.bhanusadhu.com), a separate project.
+- Similarity and graph recommendation methods adapted from Fragrance DNA by mikeyoknow (MIT). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+---
+
+Designed and built by me, [Bhanu Sadhu](https://bhanusadhu.com).

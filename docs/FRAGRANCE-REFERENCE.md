@@ -62,7 +62,7 @@ A second review of [Fragrantica's Santal 33 page](https://www.fragrantica.com/pe
 
 Exact-edition bottle photographs now accompany six profiles and their Quick Find results. Enlargement shows the full image, edition and attribution. Sixteen note photographs connect visual recognition to definitions and real catalog examples. The note library offers six familiar visual starting points. Fragrance facts, descriptions and notes precede private collection controls so a first-time visitor can learn without signing up.
 
-Two missing editions were added from official sources to match verified images correctly: Chanel N°5 Eau de Parfum and Tom Ford Ombré Leather Eau de Parfum. Green Irish Tweed received a sourced summary, release year and documented stages. The reference layer now has 42 researched profiles across a catalog of 24,668 fragrances. On 2026-11-04, Moroccanoil Lumière du Jour was added from a catalog request, along with 16 recent launches from major houses. Missing facts and images retain honest fallbacks. See [IMAGERY.md](IMAGERY.md) for coverage, rights and maintenance.
+Two missing editions were added from official sources to match verified images correctly: Chanel N°5 Eau de Parfum and Tom Ford Ombré Leather Eau de Parfum. Green Irish Tweed received a sourced summary, release year and documented stages. The reference layer now has 35 researched profiles across a catalog of 24,661 fragrances. On 2026-11-04, Moroccanoil Lumière du Jour was added from a catalog request, along with 9 recent launches from major houses. Missing facts and images retain honest fallbacks. See [IMAGERY.md](IMAGERY.md) for coverage, rights and maintenance.
 
 
 ## Visual extension verification, 2026-10-31

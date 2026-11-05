@@ -42,7 +42,7 @@ Next.js 16 gotchas seen here: setState inside effects fails lint (react-compiler
 ## Git workflow
 - Commit + push completed, tested chunks to `main` (authorized). Conventional commits. Never force-push.
 - Author: `bhnsadhu <bhnsadhu@gmail.com>` (verified linked to GitHub login bhnsadhu).
-- No Vercel project is linked to the repo yet, so pushes do not deploy. Re-check before linking one.
+- The repo is linked to the Vercel project `accord`: pushing `main` deploys production (docs/OPERATIONS.md). Catalog imports write the database directly; redeploy after an import to refresh caches.
 - After a push, report briefly: what changed, tests, commit hash, push status, next item.
 
 ## Collaboration

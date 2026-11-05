@@ -4,7 +4,7 @@ Accord is a searchable reference, not a public review platform. The original Sce
 
 ## Current coverage
 
-The current research release includes 26 profiles, 10 new fragrance editions, 9 entries with perfumers, 7 with documented note stages, and 7 with attributed wear guidance. The combined catalog has 24,652 fragrances. The latest addition, Moroccanoil Lumière du Jour, came from the private request inbox on 2026-11-04. `/learn#catalog` reads live database coverage so these counts are not a promise of universal enrichment. The note dictionary has 42 concise definitions, including 18 added definitions linked to individual ingredient references.
+The current research release includes 42 profiles, 26 new fragrance editions, 15 entries with perfumers, 16 with documented note stages, and 7 with attributed wear guidance. The combined catalog has 24,668 fragrances. The 2026-11-04 release added Moroccanoil Lumière du Jour from the private request inbox and a first batch of 16 notable 2023 to 2026 launches missing from the source data, which ends in early 2024. `/learn#catalog` reads live database coverage so these counts are not a promise of universal enrichment. The note dictionary has 42 concise definitions, including 18 added definitions linked to individual ingredient references.
 
 There are no new paid services, subscriptions, scheduled jobs, runtime AI generation, third-party image fetches, reviews, comments or public voting. Browsing uses the existing database and caches.
 

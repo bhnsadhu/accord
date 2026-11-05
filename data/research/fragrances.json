@@ -1350,6 +1350,1132 @@
         ],
         "family": "Floral"
       }
+    },
+    {
+      "productId": "a734b7a8169dc",
+      "brand": "Yves Saint Laurent",
+      "name": "Libre Berry Crush",
+      "research": {
+        "summary": "A fruity floral take on Libre. Raspberry opens with juicy sweetness, coconut cream softens the heart, and the line's signature pairing of orange blossom and lavender grounds it, with vanilla in the brand's note list.",
+        "featuredNotes": [
+          "Raspberry",
+          "Coconut",
+          "Orange Blossom",
+          "Lavender",
+          "Vanilla"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Libre Berry Crush product reference",
+            "publisher": "YSL Beauty",
+            "url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/libre/libre-berry-crush/WW-51508YSL.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum"
+      },
+      "catalog": {
+        "notes": [
+          "Raspberry",
+          "Coconut",
+          "Orange Blossom",
+          "Lavender",
+          "Vanilla"
+        ],
+        "family": "Fruity floral",
+        "gender": "feminine"
+      }
+    },
+    {
+      "productId": "a01734a97a9e8",
+      "brand": "Prada",
+      "name": "Paradigme",
+      "research": {
+        "summary": "Prada describes an inverted structure for this ambery woody scent. Bergamot and airy musks lift the top, a rosy geranium forms the heart, and Peru balsam, benzoin and guaiac wood build the ambery woods beneath.",
+        "featuredNotes": [
+          "Bergamot",
+          "Musk",
+          "Geranium",
+          "Balsam (Peru)",
+          "Benzoin",
+          "Guaiac Wood"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Paradigme Eau de Parfum product reference",
+            "publisher": "Prada Beauty",
+            "url": "https://www.prada-beauty.com/fragrance/paradigme/paradigme-eau-de-parfum/MPL01826.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "noteStages"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Tom Holland fronts Prada's new men's fragrance",
+            "publisher": "The Impression",
+            "url": "https://theimpression.com/tom-holland-fronts-pradas-new-mens-fragrance/",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "noteStages": {
+          "opening": [
+            "Bergamot",
+            "Musk"
+          ],
+          "heart": [
+            "Geranium"
+          ],
+          "base": [
+            "Balsam (Peru)",
+            "Benzoin",
+            "Guaiac Wood"
+          ]
+        },
+        "year": 2025
+      },
+      "catalog": {
+        "notes": [
+          "Bergamot",
+          "Musk",
+          "Geranium",
+          "Balsam (Peru)",
+          "Benzoin",
+          "Guaiac Wood"
+        ],
+        "family": "Ambery woody",
+        "gender": "masculine"
+      }
+    },
+    {
+      "productId": "ab95056f027ce",
+      "brand": "Prada",
+      "name": "Paradoxe Sweet Chemistry",
+      "research": {
+        "summary": "A fruity floral addition to Paradoxe. A blackcurrant syrup accord opens it, orange blossom absolute brightens the heart, and the line's neroli is reworked as a creamy milk accord in the base.",
+        "featuredNotes": [
+          "Blackcurrant",
+          "Orange Blossom",
+          "Neroli",
+          "Milk"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Paradoxe Sweet Chemistry product reference",
+            "publisher": "Prada Beauty",
+            "url": "https://www.prada-beauty.com/fragrance/paradoxe/paradoxe-sweet-chemistry-eau-de-parfum/MPL01870.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "noteStages"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Prada Paradoxe Sweet Chemistry new perfume",
+            "publisher": "Now Smell This",
+            "url": "https://nstperfume.com/2026/07/24/prada-paradoxe-sweet-chemistry-new-perfume/",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "noteStages": {
+          "opening": [
+            "Blackcurrant"
+          ],
+          "heart": [
+            "Orange Blossom"
+          ],
+          "base": [
+            "Neroli",
+            "Milk"
+          ]
+        },
+        "year": 2026
+      },
+      "catalog": {
+        "notes": [
+          "Blackcurrant",
+          "Orange Blossom",
+          "Neroli",
+          "Milk"
+        ],
+        "family": "Fruity floral",
+        "gender": "feminine"
+      }
+    },
+    {
+      "productId": "ae3b875994b4a",
+      "brand": "Prada",
+      "name": "Infusion de Santal Chai",
+      "research": {
+        "summary": "A woody, spicy and musky entry in Les Infusions. A chai latte accord leads into a creamy sandalwood accord over musks, with cardamom and citrus named as bright accents.",
+        "featuredNotes": [
+          "Chai",
+          "Sandalwood",
+          "Musk",
+          "Cardamom",
+          "Citruses"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Infusion de Santal Chai product reference",
+            "publisher": "Prada Beauty",
+            "url": "https://www.prada-beauty.com/fragrance/infusion-de-santal-chai-eau-de-parfum/MPL01846.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "noteStages"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Prada launches chai latte scented perfume",
+            "publisher": "Business Today",
+            "url": "https://www.businesstoday.in/latest/trends/story/move-on-from-kolhapuris-prada-launches-chai-latte-scented-perfume-for-rs17000-details-here-509998-2026-01-08",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "noteStages": {
+          "opening": [
+            "Chai"
+          ],
+          "heart": [
+            "Sandalwood"
+          ],
+          "base": [
+            "Musk"
+          ]
+        },
+        "year": 2026
+      },
+      "catalog": {
+        "notes": [
+          "Chai",
+          "Sandalwood",
+          "Musk",
+          "Cardamom",
+          "Citruses"
+        ],
+        "family": "Woody spicy",
+        "gender": "unisex"
+      }
+    },
+    {
+      "productId": "aedfccb5e5ff7",
+      "brand": "Chanel",
+      "name": "Chance Eau Splendide",
+      "research": {
+        "summary": "A fruity floral member of the Chance line. A sparkling raspberry accord with rose and violet facets gives way to rose geranium from Chanel's Grasse fields, finished with powdery iris and a cedar and white musk accord.",
+        "featuredNotes": [
+          "Raspberry",
+          "Geranium",
+          "Iris / Orris",
+          "Cedarwood",
+          "Musk"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Chance Eau Splendide product reference",
+            "publisher": "Chanel",
+            "url": "https://www.chanel.com/us/fragrance/p/136200/chance-eau-splendide-eau-de-parfum-spray/",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Chanel launches Chance Eau Splendide",
+            "publisher": "The Impression",
+            "url": "https://theimpression.com/chanel-launches-chance-eau-splendide-fragrance/",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          },
+          {
+            "id": "perfumer",
+            "title": "Chanel's nose Olivier Polge takes another Chance",
+            "publisher": "Magazine C",
+            "url": "https://magazinec.com/beauty/chanels-nose-olivier-polge-takes-another-chance/",
+            "kind": "perfumer",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "perfumers"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "year": 2025,
+        "perfumers": [
+          "Olivier Polge"
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Raspberry",
+          "Geranium",
+          "Iris / Orris",
+          "Cedarwood",
+          "Musk"
+        ],
+        "family": "Fruity floral",
+        "gender": "feminine"
+      }
+    },
+    {
+      "productId": "af9a51e220187",
+      "brand": "Chanel",
+      "name": "Bleu de Chanel L'Exclusif",
+      "research": {
+        "summary": "The most concentrated Bleu de Chanel. Sandalwood moves to the front, while cistus labdanum adds a leathery, resinous depth against woody ambery notes. Chanel calls it an intense ambery aromatic fragrance.",
+        "featuredNotes": [
+          "Sandalwood",
+          "Ciste Labdanum",
+          "Woody Notes",
+          "Amber"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Bleu de Chanel L'Exclusif product reference",
+            "publisher": "Chanel",
+            "url": "https://www.chanel.com/us/fragrance/p/107220/bleu-de-chanel-lexclusif-parfum-spray/",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "edition"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Chanel Bleu de Chanel L'Exclusif new fragrance",
+            "publisher": "Now Smell This",
+            "url": "https://nstperfume.com/2025/08/12/chanel-bleu-de-chanel-lexclusif-new-fragrance/",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          },
+          {
+            "id": "perfumer",
+            "title": "Olivier Polge on Bleu de Chanel L'Exclusif",
+            "publisher": "Bustle",
+            "url": "https://www.bustle.com/beauty/chanel-blue-de-chanel-lexclusif-olivier-polge-launch",
+            "kind": "perfumer",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "perfumers"
+            ]
+          }
+        ],
+        "concentration": "Parfum",
+        "editionGroup": "chanel-bleu-de-chanel",
+        "editionLabel": "L'Exclusif",
+        "year": 2025,
+        "perfumers": [
+          "Olivier Polge"
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Sandalwood",
+          "Ciste Labdanum",
+          "Woody Notes",
+          "Amber"
+        ],
+        "family": "Ambery aromatic",
+        "gender": "masculine"
+      }
+    },
+    {
+      "productId": "aff991f8cf9b5",
+      "brand": "Estée Lauder",
+      "name": "Glimmer",
+      "research": {
+        "summary": "An amber floral with a gourmand twist. A raspberry mousse accord, orange flower and mandarin open onto a macaron rose accord with vanilla bean and cashmeran, settling into patchouli, amber, sandalwood, cedar and tonka bean.",
+        "featuredNotes": [
+          "Raspberry",
+          "Orange Blossom",
+          "Mandarin",
+          "Rose",
+          "Vanilla",
+          "Cashmeran (Woody musky)",
+          "Patchouli",
+          "Amber",
+          "Sandalwood",
+          "Cedarwood",
+          "Tonka Bean"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Glimmer Eau de Parfum product reference",
+            "publisher": "Estée Lauder",
+            "url": "https://www.esteelauder.com/product/56469/147017/product-catalog/fragrance/fragrance-collections/glimmer-collection/glimmer/eau-de-parfum-spray",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "noteStages"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Estée Lauder announces new fragrance Glimmer",
+            "publisher": "The Estée Lauder Companies",
+            "url": "https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/07-28-2026-150028287",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity",
+              "concentration"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "noteStages": {
+          "opening": [
+            "Raspberry",
+            "Orange Blossom",
+            "Mandarin"
+          ],
+          "heart": [
+            "Rose",
+            "Vanilla",
+            "Cashmeran (Woody musky)"
+          ],
+          "base": [
+            "Patchouli",
+            "Amber",
+            "Sandalwood",
+            "Cedarwood",
+            "Tonka Bean"
+          ]
+        },
+        "year": 2026
+      },
+      "catalog": {
+        "notes": [
+          "Raspberry",
+          "Orange Blossom",
+          "Mandarin",
+          "Rose",
+          "Vanilla",
+          "Cashmeran (Woody musky)",
+          "Patchouli",
+          "Amber",
+          "Sandalwood",
+          "Cedarwood",
+          "Tonka Bean"
+        ],
+        "family": "Amber floral",
+        "gender": "feminine"
+      }
+    },
+    {
+      "productId": "a3ad5f4d9ba29",
+      "brand": "Dior",
+      "name": "J'adore Intense",
+      "research": {
+        "summary": "A honeyed floral interpretation of J'adore. Ylang-ylang, Damascus rose and jasmine grandiflorum are made fuller, with apricot and honey accents, over soft sandalwood and generous vanilla.",
+        "featuredNotes": [
+          "Ylang-ylang",
+          "Rose",
+          "Jasmine",
+          "Apricot",
+          "Honey",
+          "Sandalwood",
+          "Vanilla"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "J'adore Intense product reference",
+            "publisher": "Dior",
+            "url": "https://www.dior.com/en_us/beauty/products/jadore-intense-Y0000179.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes"
+            ]
+          },
+          {
+            "id": "stages",
+            "title": "J'adore Intense limited edition reference",
+            "publisher": "Dior",
+            "url": "https://www.dior.com/en_id/beauty/products/j%E2%80%99adore-intense---limited-edition-Y1000107.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "noteStages"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Dior Beauty launches new J'adore Intense",
+            "publisher": "Asia Economy",
+            "url": "https://www.asiae.co.kr/en/article/2026022610173298004",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "perfumers",
+              "identity"
+            ]
+          }
+        ],
+        "noteStages": {
+          "opening": [
+            "Ylang-ylang"
+          ],
+          "heart": [
+            "Rose",
+            "Jasmine"
+          ],
+          "base": [
+            "Sandalwood",
+            "Vanilla"
+          ]
+        },
+        "year": 2026,
+        "perfumers": [
+          "Francis Kurkdjian"
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Ylang-ylang",
+          "Rose",
+          "Jasmine",
+          "Apricot",
+          "Honey",
+          "Sandalwood",
+          "Vanilla"
+        ],
+        "family": "Floral",
+        "gender": "feminine"
+      }
+    },
+    {
+      "productId": "aa0a47f9558b9",
+      "brand": "Balmain",
+      "name": "Destin de Balmain",
+      "research": {
+        "summary": "Balmain Beauty's first prestige fragrance, a floral fruity scent. Ripe strawberry opens onto peony with creamy lychee facets and a lily accord, then pink pepper, Akigalawood, sandalwood and patchouli over musky Ambrexolide.",
+        "featuredNotes": [
+          "Strawberry",
+          "Peony",
+          "Lychee",
+          "Lily",
+          "Pink Pepper",
+          "Akigalawood",
+          "Sandalwood",
+          "Patchouli",
+          "Ambrexolide (Musk)"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Destin de Balmain Eau de Parfum product reference",
+            "publisher": "Balmain Beauty",
+            "url": "https://www.balmainbeauty.com/product/39323/143512/fragrance/destin-de-balmain-eau-de-parfum",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Balmain Beauty introduces Destin de Balmain",
+            "publisher": "The Estée Lauder Companies",
+            "url": "https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/02-20-2026-073007790",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "perfumers",
+              "identity",
+              "featuredNotes"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "year": 2026,
+        "perfumers": [
+          "Quentin Bisch"
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Strawberry",
+          "Peony",
+          "Lychee",
+          "Lily",
+          "Pink Pepper",
+          "Akigalawood",
+          "Sandalwood",
+          "Patchouli",
+          "Ambrexolide (Musk)"
+        ],
+        "family": "Floral fruity",
+        "gender": "feminine"
+      }
+    },
+    {
+      "productId": "accb0fa9dcd75",
+      "brand": "Tom Ford",
+      "name": "Tobacco Chocolat",
+      "research": {
+        "summary": "An amber gourmand in the Private Blend line, built on Tom Ford's Cocoa Smoke co-distillation of cocoa and tobacco. Orange essence lifts it, while dark chocolate, Peru balsam, patchouli and Ambrofix add depth.",
+        "featuredNotes": [
+          "Cocoa",
+          "Tobacco Leaf",
+          "Orange",
+          "Chocolate",
+          "Balsam (Peru)",
+          "Patchouli",
+          "Ambrofix (Ambergris)"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Tobacco Chocolat Eau de Parfum product reference",
+            "publisher": "Tom Ford Beauty",
+            "url": "https://www.tomfordbeauty.com/products/tobacco-chocolat-eau-de-parfum",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Tom Ford Tobacco Chocolat new fragrance",
+            "publisher": "Now Smell This",
+            "url": "https://nstperfume.com/2026/07/22/tom-ford-tobacco-chocolat-new-fragrance/",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "year": 2026
+      },
+      "catalog": {
+        "notes": [
+          "Cocoa",
+          "Tobacco Leaf",
+          "Orange",
+          "Chocolate",
+          "Balsam (Peru)",
+          "Patchouli",
+          "Ambrofix (Ambergris)"
+        ],
+        "family": "Amber gourmand"
+      }
+    },
+    {
+      "productId": "a0ed83b70818e",
+      "brand": "Valentino",
+      "name": "Born in Roma Uomo Extradose",
+      "research": {
+        "summary": "A fougère woody ambery Extradose of Born in Roma Uomo. A spice blend balanced with bergamot and mandarin opens it, with lavandin, an amplified dose of vetiver and guaiac wood for a warm, leathery feel.",
+        "featuredNotes": [
+          "Spicy Notes",
+          "Bergamot",
+          "Mandarin",
+          "Lavandin",
+          "Vetiver",
+          "Guaiac Wood"
+        ],
+        "aliases": [
+          "Valentino Uomo Born In Roma Extradose"
+        ],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Born in Roma Uomo Extradose product reference",
+            "publisher": "Valentino Beauty",
+            "url": "https://www.valentino-beauty.us/fragrances/fragrances-men/born-in-roma-uomo-extradose-eau-de-parfum-MPL02809.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Valentino Born in Roma Extradose new fragrances",
+            "publisher": "Now Smell This",
+            "url": "https://nstperfume.com/2025/01/09/valentino-born-in-roma-extradose-new-fragrances",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "year": 2025
+      },
+      "catalog": {
+        "notes": [
+          "Spicy Notes",
+          "Bergamot",
+          "Mandarin",
+          "Lavandin",
+          "Vetiver",
+          "Guaiac Wood"
+        ],
+        "family": "Fougère woody ambery",
+        "gender": "masculine"
+      }
+    },
+    {
+      "productId": "ad64733e12ea1",
+      "brand": "Dior",
+      "name": "Miss Dior Essence",
+      "research": {
+        "summary": "Dior calls it jammy, floral and woody. A syrupy blackberry and elderflower accord lifts jasmine sambac, over dense oak notes. Its concentration sits between an eau de parfum and a parfum.",
+        "featuredNotes": [
+          "Blackberry",
+          "Elderflower",
+          "Jasmine",
+          "Oak"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Miss Dior Essence product reference",
+            "publisher": "Dior",
+            "url": "https://www.dior.com/en_us/beauty/products/miss-dior-essence-Y0000088.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "noteStages",
+              "perfumers"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Miss Dior se réinvente",
+            "publisher": "Paris Match",
+            "url": "https://www.parismatch.be/lifestyle/beaute/2025/09/02/fruite-pulpeux-et-sensuel-liconique-parfum-miss-dior-se-reinvente-VJKU5GXTVNEVTESQGY3UWZKY3A/",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "noteStages": {
+          "opening": [
+            "Blackberry",
+            "Elderflower"
+          ],
+          "heart": [
+            "Jasmine"
+          ],
+          "base": [
+            "Oak"
+          ]
+        },
+        "year": 2025,
+        "perfumers": [
+          "Francis Kurkdjian"
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Blackberry",
+          "Elderflower",
+          "Jasmine",
+          "Oak"
+        ],
+        "family": "Fruity floral woody",
+        "gender": "feminine"
+      }
+    },
+    {
+      "productId": "a304659579d2d",
+      "brand": "Rabanne",
+      "name": "Phantom Elixir",
+      "research": {
+        "summary": "An eau de parfum intense in the Phantom line. Rabanne lists a marine accord at the top, mineral oud in the heart and vanilla bean in the base.",
+        "featuredNotes": [
+          "Marine",
+          "Oud / Agarwood",
+          "Vanilla"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Phantom Elixir product reference",
+            "publisher": "Rabanne",
+            "url": "https://www.rabanne.com/ww/en/fragrance/p/phantom-elixir--000000000065215598",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "noteStages"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Paco Rabanne Phantom Elixir new fragrance",
+            "publisher": "Now Smell This",
+            "url": "https://nstperfume.com/2025/01/07/paco-rabanne-phantom-elixir-new-fragrance",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "noteStages": {
+          "opening": [
+            "Marine"
+          ],
+          "heart": [
+            "Oud / Agarwood"
+          ],
+          "base": [
+            "Vanilla"
+          ]
+        },
+        "year": 2025
+      },
+      "catalog": {
+        "notes": [
+          "Marine",
+          "Oud / Agarwood",
+          "Vanilla"
+        ],
+        "gender": "masculine"
+      }
+    },
+    {
+      "productId": "aa149ac4a6a13",
+      "brand": "Carolina Herrera",
+      "name": "Bad Boy Elixir",
+      "research": {
+        "summary": "The most concentrated Bad Boy, inspired by the house's leatherwork. Sage, lavender and mandarin lead into a leather accord with iris, over cedarwood and olibanum.",
+        "featuredNotes": [
+          "Sage",
+          "Lavender",
+          "Mandarin",
+          "Leather",
+          "Iris / Orris",
+          "Cedarwood",
+          "Incense / Olibanum"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Bad Boy Elixir product reference",
+            "publisher": "Carolina Herrera",
+            "url": "https://www.carolinaherrera.com/us/en/p-fragrance/badboy-elixir",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration"
+            ]
+          },
+          {
+            "id": "perfumer",
+            "title": "Bad Boy Elixir editorial",
+            "publisher": "Carolina Herrera",
+            "url": "https://www.carolinaherrera.com/us/en/editorial/fragrance-bad-boy-elixir",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "perfumers"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Carolina Herrera's Bad Boy Elixir: a storm reignited in scent",
+            "publisher": "Signé Magazine",
+            "url": "https://signemagazine.com/style/grooming/carolina-herreras-bad-boy-elixir-a-storm-reignited-in-scent",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "year": 2025,
+        "perfumers": [
+          "Quentin Bisch",
+          "Louise Turner"
+        ]
+      },
+      "catalog": {
+        "notes": [
+          "Sage",
+          "Lavender",
+          "Mandarin",
+          "Leather",
+          "Iris / Orris",
+          "Cedarwood",
+          "Incense / Olibanum"
+        ],
+        "gender": "masculine"
+      }
+    },
+    {
+      "productId": "a6db3b2086624",
+      "brand": "Giorgio Armani",
+      "name": "Stronger With You Powerfully",
+      "research": {
+        "summary": "A smoky take on Stronger With You. Mandarin and a cherry accord open onto lavender and a woody spice accord, over the line's sugared chestnut accord with vanilla and amberwood.",
+        "featuredNotes": [
+          "Mandarin",
+          "Cherry",
+          "Lavender",
+          "Spicy Notes",
+          "Chestnut",
+          "Vanilla",
+          "Amberwood"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Stronger With You Powerfully product reference",
+            "publisher": "Armani Beauty",
+            "url": "https://www.giorgioarmanibeauty-usa.com/fragrances/mens-cologne/stronger-with-you/stronger-with-you-powerfully-eau-de-parfum/ww-01048-arm.html",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "concentration",
+              "noteStages"
+            ]
+          }
+        ],
+        "concentration": "Eau de parfum",
+        "noteStages": {
+          "opening": [
+            "Mandarin",
+            "Cherry"
+          ],
+          "heart": [
+            "Lavender",
+            "Spicy Notes"
+          ],
+          "base": [
+            "Chestnut",
+            "Vanilla",
+            "Amberwood"
+          ]
+        }
+      },
+      "catalog": {
+        "notes": [
+          "Mandarin",
+          "Cherry",
+          "Lavender",
+          "Spicy Notes",
+          "Chestnut",
+          "Vanilla",
+          "Amberwood"
+        ],
+        "family": "Warm spicy",
+        "gender": "masculine"
+      }
+    },
+    {
+      "productId": "a0c4b1f3a886a",
+      "brand": "Lattafa",
+      "name": "Khamrah Dukhan",
+      "research": {
+        "summary": "A smoky addition to the Khamrah line. Mandarin, pimento and smoked spices open onto cistus, orange flower, incense and patchouli, over tobacco, praline, amber, tonka bean and benzoin.",
+        "featuredNotes": [
+          "Mandarin",
+          "Pimento",
+          "Spicy Notes",
+          "Ciste Labdanum",
+          "Orange Blossom",
+          "Incense / Olibanum",
+          "Patchouli",
+          "Tobacco Leaf",
+          "Praline",
+          "Amber",
+          "Tonka Bean",
+          "Benzoin"
+        ],
+        "aliases": [],
+        "sources": [
+          {
+            "id": "brand",
+            "title": "Khamrah Dukhan product reference",
+            "publisher": "Lattafa",
+            "url": "https://lattafa.com/product/khamrah-dukhan/",
+            "kind": "brand",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "identity",
+              "summary",
+              "featuredNotes",
+              "noteStages"
+            ]
+          },
+          {
+            "id": "launch",
+            "title": "Khamrah Dukhan reference",
+            "publisher": "Parfumo",
+            "url": "https://www.parfumo.com/Perfumes/Lattafa/khamrah-dukhan",
+            "kind": "reference",
+            "checkedAt": "2026-11-04",
+            "fields": [
+              "year",
+              "identity"
+            ]
+          }
+        ],
+        "noteStages": {
+          "opening": [
+            "Mandarin",
+            "Pimento",
+            "Spicy Notes"
+          ],
+          "heart": [
+            "Ciste Labdanum",
+            "Orange Blossom",
+            "Incense / Olibanum",
+            "Patchouli"
+          ],
+          "base": [
+            "Tobacco Leaf",
+            "Praline",
+            "Amber",
+            "Tonka Bean",
+            "Benzoin"
+          ]
+        },
+        "year": 2025
+      },
+      "catalog": {
+        "notes": [
+          "Mandarin",
+          "Pimento",
+          "Spicy Notes",
+          "Ciste Labdanum",
+          "Orange Blossom",
+          "Incense / Olibanum",
+          "Patchouli",
+          "Tobacco Leaf",
+          "Praline",
+          "Amber",
+          "Tonka Bean",
+          "Benzoin"
+        ],
+        "gender": "unisex"
+      }
     }
   ]
 }

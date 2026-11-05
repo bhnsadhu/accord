@@ -68,13 +68,6 @@ function Footer() {
             <ScentLensLink />
             .
           </p>
-          <p>
-            Designed and built by{" "}
-            <a href="https://bhanusadhu.com" className="project-link">
-              Bhanu Sadhu
-            </a>
-            .
-          </p>
         </div>
         <ul className="flex flex-wrap gap-x-6 gap-y-3">
           <li><Link href="/privacy" className="hover:text-ink">Privacy</Link></li>

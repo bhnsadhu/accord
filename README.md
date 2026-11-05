@@ -152,7 +152,3 @@ Vercel Hobby (Git-connected: every push to `main` deploys production) with Neon 
 
 - Recognition: [ScentLens](https://scentlens.bhanusadhu.com), a separate project.
 - Similarity and graph recommendation methods adapted from Fragrance DNA by mikeyoknow (MIT). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
----
-
-Designed and built by me, [Bhanu Sadhu](https://bhanusadhu.com).

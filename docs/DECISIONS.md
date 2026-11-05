@@ -34,4 +34,5 @@
 | Reviews: signed-in and (when email is on) verified members, 30 to 3,000 characters, no links, one per fragrance, per-member daily budgets | Keeps spam and drive-by abuse out without paid moderation services |
 | Three reports from different members hide a review until the owner restores it (`npm run community:moderate`) | Free, local moderation; no public admin route to attack |
 | Member pages list published reviews only; collections stay private | Reviews are already public; shelves and taste were promised private |
+| Production builds apply pending migrations before `next build` (`scripts/deploy-migrate.mjs`, production only) | The agent environment cannot read production secrets; the build already has them and already needs the schema to prerender. A failed migration fails the build, so the live site never runs ahead of its schema. |
 | Community caches tagged per fragrance, lifetime in days, refreshed by `updateTag` on every write and by `revalidateTag` on account deletion | Fragrance pages stay static and cheap on Vercel Hobby and Neon Free, yet show a member's own change immediately |

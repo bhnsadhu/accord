@@ -24,7 +24,7 @@ Owner asked for Accord to become a complete everyday fragrance reference, adapte
 - **New pages:** `/brands`, `/brands/[slug]`, `/perfumers`, `/perfumers/[slug]`, `/charts`, `/members/[id]`. Discover gains a release-year filter. Header gains Houses and Charts.
 - **Safety:** verified members only (when email is on), per-member budgets, no links in reviews, three distinct reports hide a review, owner tool `npm run community:moderate`. Account deletion removes contributions and refreshes cached pages. Privacy and guide copy updated.
 - **Checks:** typecheck, lint, 107 Vitest (11 new community integration + 3 accord profile unit), production build. New e2e `community.spec.ts` (guest view, full member flow, directory navigation) and axe on 5 new pages pass against a local fixture catalog; tests that assume the full production catalog were not runnable here (the ScentLens CSV is not in this environment).
-- **Before deploying:** run `npm run db:migrate` against Neon (migration `0005_community`), then merge and redeploy.
+- **Deploy:** merged to `main` on the owner's instruction. The production build applies migration `0005_community` itself (`scripts/deploy-migrate.mjs`).
 
 ## Open items
 Latest UI update (2026-10-30): renamed the footer source link to “Repository” and linked every visible ScentLens mention, including scanner messages, using semibold ink on a subtle silver highlight with no underline. Checks skipped at the owner's request; committed and pushed through the existing workflow.

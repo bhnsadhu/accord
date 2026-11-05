@@ -52,6 +52,6 @@ Default allowance: three global scans/day, 60/calendar month, two/user/day, one/
 
 ## Deploy and rollback
 
-Run lint, typecheck, unit/integration tests, browser journeys and production build. Apply additive migrations before deployment, after a verified backup. Push main to trigger Vercel. Check health, search, account recovery pages, headers and scanner status on the live domain. Never load-test live scan inference.
+Run lint, typecheck, unit/integration tests, browser journeys and production build. Migrations must be additive. Since November 5, 2026, the Vercel production build applies pending migrations itself (`scripts/deploy-migrate.mjs`, run before `next build` only when `VERCEL_ENV` is `production`); if a migration fails, the build fails and the previous deployment stays live. Push main to trigger Vercel. For anything beyond an additive change, run the migration by hand after a verified backup instead. Check health, search, account recovery pages, headers and scanner status on the live domain. Never load-test live scan inference.
 
 For an application regression, roll Vercel back to the previous ready deployment. The request-budget migration is additive and may remain. For email incidents, inspect Resend and Vercel delivery events; disabling email verification also reopens unverified signup, so prefer fixing delivery or temporarily disabling signup instead of silently relaxing verification.

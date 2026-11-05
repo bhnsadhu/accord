@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { Review, formatDate } from "@/components/community-section";
+import { Review } from "@/components/community-review";
+import { formatDate } from "@/lib/community/rules";
 import { cachedMember } from "@/lib/community/cached";
 
 // Member pages are rare and never prerendered; navigation may wait for the server.

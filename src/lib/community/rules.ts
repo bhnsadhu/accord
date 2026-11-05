@@ -15,6 +15,13 @@ export const OCCASIONS = ["day", "night"] as const;
 export const SEASON_LABEL: Record<(typeof SEASONS)[number], string> = { winter: "Winter", spring: "Spring", summer: "Summer", autumn: "Autumn" };
 export const OCCASION_LABEL: Record<(typeof OCCASIONS)[number], string> = { day: "Day", night: "Night" };
 
+export const SHELF_LABEL = { owned: "Owns it", tried: "Tried it", wishlist: "Wants to try it" } as const;
+
+/** A review or join date, the same on server and client. */
+export function formatDate(value: string) {
+  return new Date(value).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+}
+
 /** Cache tag for one fragrance's member data. */
 export const communityTag = (productId: string) => `community:${productId}`;
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useId, useState, useSyncExternalStore, type CSSProperties, type ReactNode } from "react";
 import type { FragranceSummary } from "@/lib/catalog/queries";
 import { hueFor } from "@/lib/hues";
-import { ArrowIcon, CloseIcon } from "./icons";
+import { ArrowIcon, CloseIcon, StarIcon } from "./icons";
 import { StripSpecimen } from "./strip";
 
 const FILTER_DESKTOP_QUERY = "(min-width: 1100px)";
@@ -55,7 +55,7 @@ export function ArchiveFilters({ children, activeCount = 0 }: { children: ReactN
  * keys this component by the ordered result ids, so new results start with the
  * first fragrance and cannot retain a comparison from a different page.
  */
-export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary & { bottleThumbnail?: string })[] }) {
+export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary & { bottleThumbnail?: string; rating?: { average: number; count: number } })[] }) {
   const [selectedId, setSelectedId] = useState(fragrances[0]?.productId ?? "");
   const [comparisonId, setComparisonId] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -147,7 +147,7 @@ export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary 
                   <span className="sr-only">Preview </span>
                   <span className="archive-choice-copy">
                     <span className="archive-choice-name">{fragrance.name}</span>
-                    <span className="archive-choice-brand">{[fragrance.brand, fragrance.concentration, fragrance.year].filter(Boolean).join(" · ")}</span>
+                    <span className="archive-choice-brand">{[fragrance.brand, fragrance.concentration, fragrance.year].filter(Boolean).join(" · ")}{fragrance.rating && <span className="archive-choice-rating"> · <StarIcon filled width={12} height={12} aria-hidden /> {fragrance.rating.average.toFixed(1)}<span className="sr-only"> member rating from {fragrance.rating.count}</span><span aria-hidden> ({fragrance.rating.count})</span></span>}</span>
                   </span>
                   <span className="archive-choice-meta">
                     {isComparison ? "To compare" : fragrance.wheel ?? "Unclassified"}
@@ -222,6 +222,7 @@ export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary 
           <dl className="archive-preview-facts">
             {selected.concentration && <div><dt>Concentration</dt><dd>{selected.concentration}</dd></div>}
             {selected.year && <div><dt>Released</dt><dd>{selected.year}</dd></div>}
+            <div><dt>Member rating</dt><dd>{selected.rating ? `${selected.rating.average.toFixed(1)} from ${selected.rating.count} ${selected.rating.count === 1 ? "rating" : "ratings"}` : "Not rated yet"}</dd></div>
             <div>
               <dt>Accord family</dt>
               <dd>

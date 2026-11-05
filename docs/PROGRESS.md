@@ -26,6 +26,14 @@ Owner asked for Accord to become a complete everyday fragrance reference, adapte
 - **Checks:** typecheck, lint, 107 Vitest (11 new community integration + 3 accord profile unit), production build. New e2e `community.spec.ts` (guest view, full member flow, directory navigation) and axe on 5 new pages pass against a local fixture catalog; tests that assume the full production catalog were not runnable here (the ScentLens CSV is not in this environment).
 - **Deploy:** merged to `main` on the owner's instruction. The production build applies migration `0005_community` itself (`scripts/deploy-migrate.mjs`).
 
+## Final community round (2026-11-05)
+
+- Member rating with its count on Discover results, the Discover preview and quick find. Discover gains a weighted "Top rated" sort.
+- Reviews sort by most helpful, newest or highest rated (up to 100 per fragrance on the page).
+- Fragrance page: "Members who have this also have" (pairs shared by two or more members) and "More by" the credited perfumer.
+- Not done, and why: more sourced note stages and perfumer credits need brand and reference sites, which this environment cannot reach. They stay a manual research task (docs/CATALOG-RESEARCH.md).
+- Checks: typecheck, lint, 109 Vitest, production build; e2e community, journeys and axe (19 pages) pass on the local fixture catalog.
+
 ## Open items
 Latest UI update (2026-10-30): renamed the footer source link to “Repository” and linked every visible ScentLens mention, including scanner messages, using semibold ink on a subtle silver highlight with no underline. Checks skipped at the owner's request; committed and pushed through the existing workflow.
 

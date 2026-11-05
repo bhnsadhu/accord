@@ -1,7 +1,7 @@
 import { cacheLife, cacheTag } from "next/cache";
 import { db } from "@/db";
 import { getFragrancesByIds } from "@/lib/catalog/queries";
-import { communityTotals, getCommunity, getMember, mostOnShelf, mostReviewed, recentReviews, topRated } from "./repo";
+import { alsoOnShelves, communityTotals, getCommunity, getMember, mostOnShelf, mostReviewed, ratingSummaries, recentReviews, topRated } from "./repo";
 
 // Every member write calls updateTag on the fragrance's own tag (and on
 // "community" for charts and member pages), so cached entries can live long:
@@ -14,7 +14,7 @@ export async function cachedCommunity(productId: string, sort: "helpful" | "newe
   "use cache";
   cacheLife("days");
   cacheTag(communityTag(productId));
-  return getCommunity(db, productId, { sort, limit: 30 });
+  return getCommunity(db, productId, { sort, limit: 100 });
 }
 
 async function withFragrances<T extends { productId: string }>(entries: T[]) {
@@ -64,4 +64,24 @@ export async function cachedMember(userId: string) {
   const member = await getMember(db, userId);
   if (!member) return null;
   return { ...member, reviews: await withFragrances(member.reviews) };
+}
+
+/** Member ratings for a page of results. Refreshed whenever any member writes. */
+export async function cachedRatings(productIds: string[]) {
+  "use cache";
+  cacheLife("hours");
+  cacheTag("community");
+  return ratingSummaries(db, productIds);
+}
+
+/**
+ * "Members who have this also have". Part of the fragrance page shell, so it
+ * refreshes with that fragrance's own tag rather than every member write;
+ * a few days of lag on other shelves is acceptable for a co-occurrence list.
+ */
+export async function cachedAlsoOnShelves(productId: string) {
+  "use cache";
+  cacheLife("days");
+  cacheTag(communityTag(productId), "catalog");
+  return withFragrances(await alsoOnShelves(db, productId));
 }

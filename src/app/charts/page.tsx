@@ -2,7 +2,7 @@ import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { Review } from "@/components/community-section";
+import { Review } from "@/components/community-review";
 import { ArrowIcon } from "@/components/icons";
 import { MatchFigure, StripRow } from "@/components/strip";
 import { cachedSearch, cachedYears } from "@/lib/catalog/cached";

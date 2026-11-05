@@ -17,6 +17,7 @@ import { ReferenceAnchors } from "@/components/reference-anchors";
 import { cachedAccordProfile, cachedEditions, cachedFragrance, cachedNotes, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
 import { AccordProfile } from "@/components/accord-profile";
 import { CommunityGlance, CommunitySection } from "@/components/community-section";
+import { cachedAlsoOnShelves } from "@/lib/community/cached";
 import { slugify } from "@/lib/catalog/text";
 import { productIdFromSlug } from "@/lib/catalog/text";
 import { FAMILY_GUIDE, fragranceIntroduction } from "@/lib/fragrance-guide";
@@ -55,6 +56,8 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
   const f = id ? await cachedFragrance(id) : null;
   if (!f) notFound();
   const [similar, house, editions, library, accords] = await Promise.all([cachedSimilar(f.productId, 8), cachedSearch({ brand: f.brandSlug, pageSize: 5 }), f.editionGroup ? cachedEditions(f.editionGroup) : [], cachedNotes(), cachedAccordProfile(f.noteKeys, f.wheel)]);
+  const [byPerfumer, alsoOwned] = await Promise.all([f.perfumers?.[0] ? cachedSearch({ perfumer: f.perfumers[0], sort: "newest", pageSize: 6 }) : null, cachedAlsoOnShelves(f.productId)]);
+  const perfumerWorks = byPerfumer?.items.filter(item => item.productId !== f.productId).slice(0, 4) ?? [];
   const hue = hueFor(f.wheel);
   const research = f.research;
   const photo = bottleImage(f.productId);
@@ -181,6 +184,15 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
               Personal recommendations <ArrowIcon />
             </Link>
           </section>
+          {alsoOwned.length > 0 && <section className="reference-section section-divider" aria-labelledby="also-h">
+            <div className="reference-section-heading"><h2 id="also-h">Members who have this also have</h2><Link href="/charts">Member charts <ArrowIcon /></Link></div>
+            <p className="reference-caption">From members’ owned and tried shelves. Shown only when at least two members share the pair.</p>
+            <div className="mt-6 grid gap-3">{alsoOwned.map(a => <StripRow key={a.productId} fragrance={a.fragrance} aside={<div><div className="font-mono text-2xl font-medium tabular">{a.members}</div><div className="text-xs text-ink-3">members</div></div>} />)}</div>
+          </section>}
+          {perfumerWorks.length > 0 && f.perfumers?.[0] && <section className="reference-section section-divider" aria-labelledby="perfumer-h">
+            <div className="reference-section-heading"><h2 id="perfumer-h">More by {f.perfumers[0]}</h2><Link href={`/perfumers/${slugify(f.perfumers[0])}`}>All their fragrances <ArrowIcon /></Link></div>
+            <div className="mt-6 grid gap-3">{perfumerWorks.map(work => <StripRow key={work.productId} fragrance={work} meta={<>{work.year ? <> · {work.year}</> : null}{work.wheel ? <> · {work.wheel}</> : null}</>} />)}</div>
+          </section>}
           {siblings.length > 0 && <section className="reference-section section-divider" aria-labelledby="house-h">
             <div className="reference-section-heading"><h2 id="house-h">More from {f.brand}</h2><Link href={`/brands/${encodeURIComponent(f.brandSlug)}`}>Explore the house <ArrowIcon /></Link></div>
             <div className="mt-6 grid gap-3">{siblings.map(sibling => <StripRow key={sibling.productId} fragrance={sibling} />)}</div>

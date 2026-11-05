@@ -1,16 +1,13 @@
 import Link from "next/link";
 import { ArrowIcon, StarIcon } from "./icons";
 import { StripRow } from "./strip";
-import { CommunityProvider, ContributePanel, ReviewActions } from "./community-contribute";
+import { CommunityProvider, ContributePanel } from "./community-contribute";
+import { ReviewList } from "./community-review";
 import { cachedCommunity, cachedReminders } from "@/lib/community/cached";
-import type { CommunitySummary, ReviewItem } from "@/lib/community/repo";
-import { LONGEVITY, OCCASIONS, OCCASION_LABEL, READS, SEASONS, SEASON_LABEL, SILLAGE, VALUE, leading, percent } from "@/lib/community/rules";
+import type { CommunitySummary } from "@/lib/community/repo";
+import { LONGEVITY, OCCASIONS, OCCASION_LABEL, READS, SEASONS, SEASON_LABEL, SHELF_LABEL, SILLAGE, VALUE, leading, percent } from "@/lib/community/rules";
 
-const SHELF_LABEL = { owned: "Owns it", tried: "Tried it", wishlist: "Wants to try it" } as const;
 
-export function formatDate(value: string) {
-  return new Date(value).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
-}
 
 /** A compact line for the top of the fragrance page. */
 export async function CommunityGlance({ productId }: { productId: string }) {
@@ -61,11 +58,11 @@ export async function CommunitySection({ productId, name, hue }: { productId: st
           <h3 className="community-heading">Reviews <span className="font-mono text-ink-3 tabular">{c.reviewCount}</span></h3>
         </div>
         {c.reviews.length ? (
-          <ol className="community-reviews">{c.reviews.map(r => <li key={r.id}><Review review={r} /></li>)}</ol>
+          <ReviewList reviews={c.reviews} />
         ) : (
           <p className="research-unlisted">No reviews yet. Reviews come from Accord members and appear here as soon as they are written.</p>
         )}
-        {c.reviewCount > c.reviews.length && <p className="reference-caption mt-4">Showing the {c.reviews.length} most helpful of {c.reviewCount} reviews.</p>}
+        {c.reviewCount > c.reviews.length && <p className="reference-caption mt-4">Showing {c.reviews.length} of {c.reviewCount} reviews: the most helpful first.</p>}
       </div>
     </CommunityProvider>
   );
@@ -147,27 +144,6 @@ function WearVotes({ c }: { c: CommunitySummary }) {
         <Scale title="Value" labels={VALUE} counts={w.value} />
       </div>
     </div>
-  );
-}
-
-export function Review({ review: r, fragrance }: { review: ReviewItem; fragrance?: { name: string; brand: string; slug: string } }) {
-  return (
-    <article className="community-review">
-      <header>
-        <div className="min-w-0">
-          {fragrance && <Link href={`/fragrance/${fragrance.slug}#reviews`} className="community-review-subject">{fragrance.brand} · <strong>{fragrance.name}</strong></Link>}
-          <p><Link href={`/members/${encodeURIComponent(r.authorId)}`} className="font-medium text-ink">{r.author}</Link>{r.shelf && <span> · {SHELF_LABEL[r.shelf]}</span>}</p>
-          <p className="text-[13px] text-ink-3"><time dateTime={r.createdAt}>{formatDate(r.createdAt)}</time>{r.edited && " · Edited"}</p>
-        </div>
-        {r.rating !== null && (
-          <span className="community-stars" role="img" aria-label={`Rated ${r.rating} of 5`}>
-            {[1, 2, 3, 4, 5].map(n => <StarIcon key={n} filled={n <= r.rating!} aria-hidden />)}
-          </span>
-        )}
-      </header>
-      <div className="community-review-body">{r.body.split("\n\n").map((p, i) => <p key={i}>{p}</p>)}</div>
-      {!fragrance && <ReviewActions reviewId={r.id} authorId={r.authorId} helpful={r.helpful} />}
-    </article>
   );
 }
 

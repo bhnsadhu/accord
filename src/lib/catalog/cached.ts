@@ -36,8 +36,11 @@ export async function cachedFragrancesByIds(ids: string[]) {
 
 export async function cachedSearch(params: SearchParams) {
   "use cache";
-  cacheLife("days");
+  // Ordering by member rating changes with every rating; everything else only with the catalog.
+  if (params.sort === "rated") cacheLife("hours");
+  else cacheLife("days");
   cacheTag("catalog");
+  if (params.sort === "rated") cacheTag("community");
   return searchFragrances(db, params);
 }
 

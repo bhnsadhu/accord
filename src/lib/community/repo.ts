@@ -344,3 +344,34 @@ export async function memberFootprint(db: Database, userId: string): Promise<str
     union select product_id from ${remindsOf} where user_id = ${userId}`);
   return result.rows.map(r => r.product_id);
 }
+
+export type RatingSummary = { average: number; count: number };
+
+/** Member rating per fragrance, for result lists. Fragrances without ratings are absent. */
+export async function ratingSummaries(db: Database, productIds: string[]): Promise<Record<string, RatingSummary>> {
+  const ids = [...new Set(productIds.filter(id => productIdSchema.safeParse(id).success))].slice(0, 200);
+  if (!ids.length) return {};
+  const rows = await db
+    .select({ productId: collectionItems.productId, average: sql<number>`round(avg(${collectionItems.rating})::numeric, 1)::float`, count: sql<number>`count(*)`.mapWith(Number) })
+    .from(collectionItems)
+    .where(and(sql`${collectionItems.productId} = any(${sql.param(ids)}::text[])`, sql`${collectionItems.rating} is not null`))
+    .groupBy(collectionItems.productId);
+  return Object.fromEntries(rows.map(r => [r.productId, { average: Number(r.average), count: r.count }]));
+}
+
+/**
+ * Fragrances most often on the same members' owned or tried shelves as this
+ * one. Only pairs shared by at least `minMembers` members are returned, so a
+ * single collection never shows up as a public pattern.
+ */
+export async function alsoOnShelves(db: Database, productId: string, opts: { limit?: number; minMembers?: number } = {}) {
+  const min = opts.minMembers ?? 2;
+  const result = await db.execute<{ product_id: string; members: number }>(sql`
+    select other.product_id, count(distinct other.user_id)::int as members
+    from ${collectionItems} mine
+    join ${collectionItems} other on other.user_id = mine.user_id and other.product_id <> mine.product_id and other.shelf in ('owned', 'tried')
+    where mine.product_id = ${productId} and mine.shelf in ('owned', 'tried') and coalesce(other.rating, 3) >= 3
+    group by other.product_id having count(distinct other.user_id) >= ${min}
+    order by 2 desc, 1 limit ${opts.limit ?? 6}`);
+  return result.rows.map(r => ({ productId: r.product_id, members: r.members }));
+}

@@ -84,11 +84,6 @@ function Footer() {
               How it works
             </Link>
           </li>
-          <li>
-            <a href="https://github.com/bhnsadhu/accord" className="project-link">
-              Repository
-            </a>
-          </li>
         </ul>
       </div>
     </footer>

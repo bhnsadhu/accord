@@ -32,6 +32,7 @@ function parse(raw: Raw): SearchParams {
     excludeNotes: many(raw.without),
     concentration: CONCENTRATIONS.find(c => c === one(raw.concentration)),
     perfumer: one(raw.perfumer)?.slice(0, 100),
+    year: (() => { const y = Number.parseInt(one(raw.year) ?? "", 10); return y >= 1700 && y <= 2100 ? y : undefined; })(),
     gender: gender === "feminine" || gender === "masculine" || gender === "unisex" ? gender : undefined,
     sort: sort === "name" || sort === "newest" || sort === "oldest" || sort === "relevance" ? sort : undefined,
     page: Math.min(Math.max(Number.parseInt(one(raw.page) ?? "1", 10) || 1, 1), 2000),
@@ -56,7 +57,7 @@ export default function DiscoverPage({ searchParams }: PageProps<"/discover">) {
   return (
     <PageShell className="archive-page">
       <PageTitle>Discover</PageTitle>
-      <nav className="reference-wayfinding archive-learning-links" aria-label="Explore fragrance knowledge"><Link href="/notes">Browse notes</Link><Link href="/learn">Fragrance guide</Link></nav>
+      <nav className="reference-wayfinding archive-learning-links" aria-label="Explore fragrance knowledge"><Link href="/brands">Browse houses</Link><Link href="/notes">Browse notes</Link><Link href="/perfumers">Perfumers</Link><Link href="/charts">Member charts</Link><Link href="/learn">Fragrance guide</Link></nav>
       <Bench />
       <Suspense fallback={<ResultsSkeleton />}>
         <Results searchParams={searchParams} />
@@ -80,6 +81,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
     ...(params.excludeNotes ?? []).map(value => ({ label: `without ${noteLabel.get(value) ?? value}`, clear: "without", value })),
     params.concentration && { label: params.concentration, clear: "concentration" },
     params.perfumer && { label: params.perfumer, clear: "perfumer" },
+    params.year && { label: `Released ${params.year}`, clear: "year" },
     params.gender && { label: GENDER_LABEL[params.gender], clear: "gender" },
   ].filter(Boolean) as { label: string; clear: string; value?: string }[];
 
@@ -103,6 +105,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             {params.facet && <input type="hidden" name="facet" value={params.facet} />}
             {params.family && <input type="hidden" name="family" value={params.family} />}
             {params.perfumer && <input type="hidden" name="perfumer" value={params.perfumer} />}
+            {params.year && <input type="hidden" name="year" value={params.year} />}
             {params.sort && <input type="hidden" name="sort" value={params.sort} />}
             <NoteFilter key={`note-${params.notes?.join(",")}`} label="Has every note" name="note" selected={params.notes ?? []} options={notes} />
             <NoteFilter key={`without-${params.excludeNotes?.join(",")}`} label="Without these notes" name="without" selected={params.excludeNotes ?? []} options={notes} />

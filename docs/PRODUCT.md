@@ -7,7 +7,8 @@ Product truth lives in [/PRODUCT.md](../PRODUCT.md). This page covers journeys, 
 1. **Visit.** The first viewport states the promise, offers a working search and Scan, and shows one real recommendation with its evidence. No sign-up wall.
 2. **Profile (optional).** `/profile`: favourites by search, notes to like and avoid, accord families, catalog families, worn-as. Everything optional.
 3. **Browse and search.** `/discover`: fuzzy name/brand search, filters, strip list; ⌘K palette anywhere; a trail of recently opened strips.
-4. **Inspect.** `/fragrance/[slug]`: family, character, facets, notes in catalog order, the source accord phrase, shelf controls, similar fragrances with shared notes, compare.
+4. **Inspect.** `/fragrance/[slug]`: member rating at a glance, facts, shelf and rating controls, an accord profile estimated from the notes, notes (with stages where sourced), member votes (longevity, sillage, season, time of day, how it reads, value), "reminds members of", reviews, published wear guidance, editions, similar fragrances, more from the house, sources.
+4b. **Browse the reference.** `/brands` and `/brands/[slug]` (family mix, signature notes, perfumers, member favourites, the full line by year), `/perfumers`, `/charts` (top rated, most owned, most wanted, most reviewed, latest reviews, newest releases, release years), `/members/[id]` (published reviews only).
 5. **Recommendations.** `/for-you`: ranked with reasons; "Want to try" and "Tried it, not for me" feed back immediately and re-rank.
 6. **Collect.** `/collection`: owned, tried, wishlist, favourites; ratings; a summary of accord families and recurring notes.
 7. **Scan.** `/scan`: photo → identified fragrance with honest confidence, or "Not sure" with candidates, tips and a search fallback.
@@ -20,7 +21,7 @@ Product truth lives in [/PRODUCT.md](../PRODUCT.md). This page covers journeys, 
 3. Honest recognition; never a guess presented as an answer.
 4. Polished, fast, accessible UI in one consistent visual language.
 
-Out of scope by decision: social features, public reviews, retail links, prices.
+Out of scope by decision: retail links, prices, forums and messaging. Member reviews and votes were added on 2026-11-05 (see DECISIONS.md); they start empty and are never seeded.
 
 ## Product decisions
 

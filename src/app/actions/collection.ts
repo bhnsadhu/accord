@@ -1,6 +1,8 @@
 "use server";
 
+import { updateTag } from "next/cache";
 import { db } from "@/db";
+import { communityTag } from "@/lib/community/cached";
 import { getCollection, mergeGuestState, removeEntry, saveProfile, upsertEntry } from "@/lib/collection/repo";
 import { guestStateSchema, type CollectionEntry, type TasteProfile } from "@/lib/profile";
 import { currentUser } from "@/lib/session";
@@ -23,12 +25,20 @@ async function run<T>(fn: () => Promise<T>): Promise<ActionResult<T>> {
 }
 
 export async function saveEntryAction(entry: CollectionEntry): Promise<ActionResult<CollectionEntry>> {
-  return run(async () => upsertEntry(db, (await requireUser()).id, entry));
+  return run(async () => {
+    const saved = await upsertEntry(db, (await requireUser()).id, entry);
+    // Ratings and shelves feed each fragrance's anonymous member totals.
+    updateTag(communityTag(saved.productId));
+    updateTag("community");
+    return saved;
+  });
 }
 
 export async function removeEntryAction(productId: string): Promise<ActionResult<null>> {
   return run(async () => {
     await removeEntry(db, (await requireUser()).id, String(productId));
+    updateTag(communityTag(String(productId)));
+    updateTag("community");
     return null;
   });
 }
@@ -42,6 +52,10 @@ export async function mergeGuestAction(state: unknown): Promise<ActionResult<{ a
     const user = await requireUser();
     const parsed = guestStateSchema.parse(state);
     const { added } = await mergeGuestState(db, user.id, parsed);
+    if (added) {
+      for (const entry of parsed.collection) updateTag(communityTag(entry.productId));
+      updateTag("community");
+    }
     return { added, collection: await getCollection(db, user.id) };
   });
 }

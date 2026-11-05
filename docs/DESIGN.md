@@ -17,7 +17,8 @@ Discover places filters, result strips, and a sticky selected-fragrance preview 
 - **Paper remains plausible.** Rectangular textured white strips, restrained absorption at the end, and soft shadows. Gradients describe material and light.
 - **Uncertainty is explicit.** Unconfirmed scan candidates are labelled, dashed, and unstained. Examples are labelled illustrations.
 - **Interactions remain usable.** Native buttons and links, accessible names that include visible labels, keyboard focus, preview state announcements, responsive filters, and reduced-motion support.
-- **Catalog truth is preserved.** No invented note layers, commercial data, public reviews, or unsupported imagery. Collection ratings belong to the user.
+- **Catalog truth is preserved.** No invented note layers, commercial data, reviews, ratings or unsupported imagery. Member numbers are live counts with their totals shown; an individual's collection stays private and only counts anonymously.
+- **Member data uses the bench.** Accord profile bars are strips stained by family hue; vote bars and rating bars use the fragrance's hue; reviews are paper cards. Empty states invite contribution instead of showing rows of zeros.
 
 ## Approval and source status
 

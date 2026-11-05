@@ -6,6 +6,12 @@ import * as schema from "@/db/schema";
 import { waitUntil } from "@vercel/functions";
 import { authEmailEnabled, sendAuthMail } from "@/lib/email";
 import { reportFailure } from "@/lib/observability";
+import { revalidateTag } from "next/cache";
+import { memberFootprint } from "@/lib/community/repo";
+import { communityTag } from "@/lib/community/rules";
+
+// Fragrances a member contributed to, captured just before their account is deleted.
+const footprints = new Map<string, string[]>();
 
 const github =
   process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET
@@ -35,7 +41,20 @@ export const auth = betterAuth({
   socialProviders: github ? { github } : {},
   user: {
     // Cascading foreign keys remove the profile and collection with the user.
-    deleteUser: { enabled: true },
+    deleteUser: {
+      enabled: true,
+      beforeDelete: async (user) => {
+        footprints.set(user.id, await memberFootprint(db, user.id));
+      },
+      // Reviews, votes and ratings vanish with the account; cached public pages must not keep showing them.
+      afterDelete: async (user) => {
+        const ids = footprints.get(user.id) ?? [];
+        footprints.delete(user.id);
+        for (const id of ids) revalidateTag(communityTag(id), { expire: 0 });
+        revalidateTag("community", { expire: 0 });
+        revalidateTag(`member:${user.id}`, { expire: 0 });
+      },
+    },
   },
   session: {
     cookieCache: { enabled: true, maxAge: 5 * 60 },

@@ -16,6 +16,16 @@ All phases complete. Live at https://accord.bhanusadhu.com (Vercel Hobby + Neon 
 - **Tests**: 66 Vitest (unit + integration on PGlite); 19 Playwright tests (9 journeys desktop + mobile, mocked scanner; axe WCAG 2.2 AA on 10 pages); typecheck, lint, production build pass.
 - **Docs**: README, CLAUDE.md, PRODUCT.md, docs/{ARCHITECTURE,PRODUCT,DECISIONS,EVALUATION,PROGRESS}.md, COSTS.md, THIRD_PARTY_NOTICES.md, .env.example.
 
+## Community and reference expansion (2026-11-05)
+
+Owner asked for Accord to become a complete everyday fragrance reference, adapted to Accord rather than copied. Built on branch `claude/beautiful-gates-p2u2ti` (not `main`, so nothing is deployed yet):
+
+- **Fragrance page** reordered around what people look for first: member rating at a glance, your shelf and rating, an accord profile (stained bars estimated from listed notes, with the method disclosed), notes, member votes (longevity, sillage, season, time of day, reads as, value) with counts per answer, your own vote, reviews with helpful and report, "reminds members of", then published wear guidance, versions, similar, the house and sources.
+- **New pages:** `/brands`, `/brands/[slug]`, `/perfumers`, `/perfumers/[slug]`, `/charts`, `/members/[id]`. Discover gains a release-year filter. Header gains Houses and Charts.
+- **Safety:** verified members only (when email is on), per-member budgets, no links in reviews, three distinct reports hide a review, owner tool `npm run community:moderate`. Account deletion removes contributions and refreshes cached pages. Privacy and guide copy updated.
+- **Checks:** typecheck, lint, 107 Vitest (11 new community integration + 3 accord profile unit), production build. New e2e `community.spec.ts` (guest view, full member flow, directory navigation) and axe on 5 new pages pass against a local fixture catalog; tests that assume the full production catalog were not runnable here (the ScentLens CSV is not in this environment).
+- **Before deploying:** run `npm run db:migrate` against Neon (migration `0005_community`), then merge and redeploy.
+
 ## Open items
 Latest UI update (2026-10-30): renamed the footer source link to “Repository” and linked every visible ScentLens mention, including scanner messages, using semibold ink on a subtle silver highlight with no underline. Checks skipped at the owner's request; committed and pushed through the existing workflow.
 

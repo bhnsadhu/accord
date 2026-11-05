@@ -14,7 +14,10 @@ import { ArrowIcon } from "@/components/icons";
 import { StripRow, StripSpecimen } from "@/components/strip";
 import { VisitTracker } from "@/components/visit-tracker";
 import { ReferenceAnchors } from "@/components/reference-anchors";
-import { cachedEditions, cachedFragrance, cachedNotes, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
+import { cachedAccordProfile, cachedEditions, cachedFragrance, cachedNotes, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
+import { AccordProfile } from "@/components/accord-profile";
+import { CommunityGlance, CommunitySection } from "@/components/community-section";
+import { slugify } from "@/lib/catalog/text";
 import { productIdFromSlug } from "@/lib/catalog/text";
 import { FAMILY_GUIDE, fragranceIntroduction } from "@/lib/fragrance-guide";
 import { GENDER_LABEL, hueFor } from "@/lib/hues";
@@ -51,7 +54,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
   const id = productIdFromSlug((await params).slug);
   const f = id ? await cachedFragrance(id) : null;
   if (!f) notFound();
-  const [similar, house, editions, library] = await Promise.all([cachedSimilar(f.productId, 8), cachedSearch({ brand: f.brandSlug, pageSize: 5 }), f.editionGroup ? cachedEditions(f.editionGroup) : [], cachedNotes()]);
+  const [similar, house, editions, library, accords] = await Promise.all([cachedSimilar(f.productId, 8), cachedSearch({ brand: f.brandSlug, pageSize: 5 }), f.editionGroup ? cachedEditions(f.editionGroup) : [], cachedNotes(), cachedAccordProfile(f.noteKeys, f.wheel)]);
   const hue = hueFor(f.wheel);
   const research = f.research;
   const photo = bottleImage(f.productId);
@@ -81,10 +84,11 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
             </div>
           </div>
           <div className={`reference-identity ${photo ? "reference-identity-photographed" : ""}`}><div className="min-w-0">
-          <Link href={`/discover?brand=${encodeURIComponent(f.brandSlug)}`} className="mt-4 inline-block text-lg text-ink-2 lg:mt-0">
+          <Link href={`/brands/${encodeURIComponent(f.brandSlug)}`} className="mt-4 inline-block text-lg text-ink-2 lg:mt-0">
             {f.brand}
           </Link>
           <h1 className="mt-1 text-[clamp(40px,5vw,72px)] font-semibold leading-[1] tracking-[-0.035em] text-balance">{f.name}</h1>
+          <Suspense fallback={<span className="community-glance" aria-hidden>&nbsp;</span>}><CommunityGlance productId={f.productId} /></Suspense>
           </div>
           {photo && <div className="reference-mobile-photo"><BottlePhoto image={photo} /></div>}
           </div>
@@ -101,34 +105,28 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
               </span>
             </Fact>
             <Fact term="Released">{f.year ?? "Not listed"}</Fact>
-            <Fact term="Perfumer">{f.perfumers?.length ? f.perfumers.map((name, i) => <span key={name}>{i > 0 && ", "}<Link href={`/discover?perfumer=${encodeURIComponent(name)}`}>{name}</Link></span>) : "Not listed"}</Fact>
+            <Fact term="Perfumer">{f.perfumers?.length ? f.perfumers.map((name, i) => <span key={name}>{i > 0 && ", "}<Link href={`/perfumers/${slugify(name)}`}>{name}</Link></span>) : "Not listed"}</Fact>
             <Fact term="Character">{f.character ?? "Not listed"}</Fact>
             <Fact term="Marketed as">{f.gender ? GENDER_LABEL[f.gender] : "Not listed"}</Fact>
           </dl>
           <p className="reference-caption mt-3">Anyone can wear it. <a href="#sources">See the sources behind these details.</a></p>
 
-          <nav className="research-section-nav" aria-label="On this fragrance page"><a href="#notes">Notes</a><a href="#wear">Wearing it</a>{otherEditions.length > 0 && <a href="#editions">Versions</a>}<a href="#similar-h">Similar fragrances</a><a href="#collection">Your collection</a><a href="#sources">Sources</a></nav>
-          {!photo && research?.image && <figure className="research-bottle"><Image src={research.image.path} alt={research.image.alt} width={600} height={600} /><figcaption>{research.image.credit}</figcaption></figure>}
-          <FragranceNotes notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} research={research} library={library} />
-
-          <section className="reference-section" aria-labelledby="profile-h">
-            <div className="reference-section-heading"><h2 id="profile-h">Read its profile</h2><Link href="/learn">Learn the language <ArrowIcon /></Link></div>
-            <div className="reference-profile">
-              <div>
-                <h3>{f.wheel ?? f.family ?? "Fragrance family"}</h3>
-                <p>{(f.wheel && FAMILY_GUIDE[f.wheel]) || "A fragrance family groups scents by their overall impression. This catalog entry has no further family description."}</p>
-                {f.wheel && <Link href={`/discover?wheel=${encodeURIComponent(f.wheel)}`}>Explore the {f.wheel.toLowerCase()} family <ArrowIcon /></Link>}
-              </div>
-              <div>
-                <h3>{f.facets.length ? "Other facets" : "From paper to skin"}</h3>
-                {f.facets.length ? <><p>Other qualities named in this fragrance’s catalog profile.</p><div className="reference-facet-links">{f.facets.map(facet => <Link key={facet} href={`/discover?facet=${encodeURIComponent(facet)}`}>{facet}<ArrowIcon /></Link>)}</div></> : <p>Try it on a blotter first, then revisit it on your skin. Notice which notes you recognise and what changes as it settles.</p>}
-              </div>
-            </div>
-          </section>
-
           <section id="collection" className="reference-collection" aria-label="Your collection">
             <CollectionControls productId={f.productId} />
             <FragranceTaste notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} family={f.wheel} />
+          </section>
+
+          <nav className="research-section-nav" aria-label="On this fragrance page"><a href="#accords">Accords</a><a href="#notes">Notes</a><a href="#community">Member votes</a><a href="#reviews">Reviews</a><a href="#wear">Wearing it</a>{otherEditions.length > 0 && <a href="#editions">Versions</a>}<a href="#similar-h">Similar fragrances</a><a href="#sources">Sources</a></nav>
+          <AccordProfile accords={accords} catalogFamily={f.wheel} labels={Object.fromEntries(f.noteKeys.map((k, i) => [k, f.notes[i]]))} description={(f.wheel && FAMILY_GUIDE[f.wheel]) || null} facets={f.facets} />
+          {!photo && research?.image && <figure className="research-bottle"><Image src={research.image.path} alt={research.image.alt} width={600} height={600} /><figcaption>{research.image.credit}</figcaption></figure>}
+          <FragranceNotes notes={f.notes.map((label, i) => ({ label, key: f.noteKeys[i] }))} research={research} library={library} />
+
+
+          <section id="community" className="reference-section section-divider" aria-labelledby="community-h">
+            <div className="reference-section-heading"><h2 id="community-h">What members say</h2><Link href="/charts">Member charts <ArrowIcon /></Link></div>
+            <Suspense fallback={<div className="reference-empty" aria-busy="true">Loading member votes</div>}>
+              <CommunitySection productId={f.productId} name={f.name} hue={hue} />
+            </Suspense>
           </section>
           <WearGuidance research={research} />
           <FragranceSources fragrance={f} />
@@ -184,7 +182,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
             </Link>
           </section>
           {siblings.length > 0 && <section className="reference-section section-divider" aria-labelledby="house-h">
-            <div className="reference-section-heading"><h2 id="house-h">More from {f.brand}</h2><Link href={`/discover?brand=${encodeURIComponent(f.brandSlug)}`}>Explore the house <ArrowIcon /></Link></div>
+            <div className="reference-section-heading"><h2 id="house-h">More from {f.brand}</h2><Link href={`/brands/${encodeURIComponent(f.brandSlug)}`}>Explore the house <ArrowIcon /></Link></div>
             <div className="mt-6 grid gap-3">{siblings.map(sibling => <StripRow key={sibling.productId} fragrance={sibling} />)}</div>
           </section>}
         </div>

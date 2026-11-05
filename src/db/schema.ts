@@ -13,6 +13,7 @@ import {
   smallint,
   text,
   timestamp,
+  uniqueIndex,
 } from "drizzle-orm/pg-core";
 import { user } from "./auth-schema";
 import type { FragranceResearch } from "../lib/catalog/research-schema";
@@ -149,6 +150,7 @@ export const collectionItems = pgTable(
   (t) => [
     primaryKey({ columns: [t.userId, t.productId] }),
     index("collection_items_user_shelf_idx").on(t.userId, t.shelf),
+    index("collection_items_product_idx").on(t.productId, t.shelf),
     check("collection_items_rating_range", sql`${t.rating} is null or ${t.rating} between 1 and 5`),
   ],
 );
@@ -185,4 +187,98 @@ export const scanCache = pgTable(
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("scan_cache_created_idx").on(t.createdAt)],
+);
+
+// ---------------------------------------------------------------------------
+// Community. Everything here is written by signed-in members; nothing is
+// seeded or imported. Public pages show aggregates and published reviews only.
+// ---------------------------------------------------------------------------
+
+export const reviewStatusEnum = pgEnum("review_status", ["published", "hidden"]);
+
+/** One wear vote per member and fragrance. Every field is optional. */
+export const wearVotes = pgTable(
+  "wear_votes",
+  {
+    userId: text("user_id").notNull().references(() => user.id, { onDelete: "cascade" }),
+    productId: text("product_id").notNull().references(() => fragrances.productId, { onDelete: "cascade" }),
+    /** 1 under an hour, 2 one to three, 3 three to six, 4 six to twelve, 5 over twelve hours. */
+    longevity: smallint("longevity"),
+    /** 1 close to skin, 2 arm's length, 3 fills a room, 4 leaves a trail. */
+    sillage: smallint("sillage"),
+    /** 1 reads feminine to 5 reads masculine, 3 reads shared. */
+    reads: smallint("reads"),
+    /** 1 overpriced to 5 great value. */
+    value: smallint("value"),
+    seasons: text("seasons").array().notNull().default(sql`'{}'::text[]`),
+    occasions: text("occasions").array().notNull().default(sql`'{}'::text[]`),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.userId, t.productId] }),
+    index("wear_votes_product_idx").on(t.productId),
+    check("wear_votes_longevity_range", sql`${t.longevity} is null or ${t.longevity} between 1 and 5`),
+    check("wear_votes_sillage_range", sql`${t.sillage} is null or ${t.sillage} between 1 and 4`),
+    check("wear_votes_reads_range", sql`${t.reads} is null or ${t.reads} between 1 and 5`),
+    check("wear_votes_value_range", sql`${t.value} is null or ${t.value} between 1 and 5`),
+  ],
+);
+
+/** One written review per member and fragrance. The star rating lives in the member's collection. */
+export const reviews = pgTable(
+  "reviews",
+  {
+    id: serial("id").primaryKey(),
+    userId: text("user_id").notNull().references(() => user.id, { onDelete: "cascade" }),
+    productId: text("product_id").notNull().references(() => fragrances.productId, { onDelete: "cascade" }),
+    body: text("body").notNull(),
+    status: reviewStatusEnum("status").notNull().default("published"),
+    helpful: integer("helpful").notNull().default(0),
+    reports: integer("reports").notNull().default(0),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("reviews_user_product_idx").on(t.userId, t.productId),
+    index("reviews_product_idx").on(t.productId, t.status, t.createdAt),
+    index("reviews_recent_idx").on(t.status, t.createdAt),
+  ],
+);
+
+/** A member marks another member's review as helpful, once. */
+export const reviewHelpful = pgTable(
+  "review_helpful",
+  {
+    reviewId: integer("review_id").notNull().references(() => reviews.id, { onDelete: "cascade" }),
+    userId: text("user_id").notNull().references(() => user.id, { onDelete: "cascade" }),
+  },
+  (t) => [primaryKey({ columns: [t.reviewId, t.userId] })],
+);
+
+/** A member reports a review, once. Enough reports hide it until the owner reviews it. */
+export const reviewReports = pgTable(
+  "review_reports",
+  {
+    reviewId: integer("review_id").notNull().references(() => reviews.id, { onDelete: "cascade" }),
+    userId: text("user_id").notNull().references(() => user.id, { onDelete: "cascade" }),
+    reason: text("reason").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.reviewId, t.userId] })],
+);
+
+/** "This reminds me of": a member links one fragrance to another. */
+export const remindsOf = pgTable(
+  "reminds_of",
+  {
+    userId: text("user_id").notNull().references(() => user.id, { onDelete: "cascade" }),
+    productId: text("product_id").notNull().references(() => fragrances.productId, { onDelete: "cascade" }),
+    otherId: text("other_id").notNull().references(() => fragrances.productId, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.userId, t.productId, t.otherId] }),
+    index("reminds_of_product_idx").on(t.productId),
+    check("reminds_of_distinct", sql`${t.productId} <> ${t.otherId}`),
+  ],
 );

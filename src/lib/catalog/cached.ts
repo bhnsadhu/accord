@@ -1,7 +1,8 @@
 import { cacheLife, cacheTag } from "next/cache";
 import { db } from "@/db";
 import { similarFragrances } from "@/lib/reco/service";
-import { catalogCoverage, facetCounts, getEditions, getFragrance, getFragrancesByIds, getNote, listNotes, searchFragrances, type SearchParams } from "./queries";
+import { brandOverview, catalogCoverage, facetCounts, getEditions, getFragrance, getFragrancesByIds, getNote, listBrands, listNotes, listPerfumers, noteFamilyStats, searchFragrances, yearCounts, type SearchParams } from "./queries";
+import { accordProfile } from "./accord-profile";
 
 // The catalog only changes when it is re-seeded; tag "catalog" invalidates it.
 
@@ -154,4 +155,40 @@ export async function cachedCompare(a: string, b: string) {
     onlyA: fa.notes.filter((_, i) => !bKeys.has(fa.noteKeys[i])),
     onlyB: fb.notes.filter((_, i) => !aKeys.has(fb.noteKeys[i])),
   };
+}
+
+/** The estimated accord profile for one fragrance (see accord-profile.ts). */
+export async function cachedAccordProfile(noteKeys: string[], primary: string | null) {
+  "use cache";
+  cacheLife("weeks");
+  cacheTag("catalog");
+  return accordProfile(noteKeys, await noteFamilyStats(db), { primary });
+}
+
+export async function cachedBrands() {
+  "use cache";
+  cacheLife("weeks");
+  cacheTag("catalog");
+  return listBrands(db, 5000);
+}
+
+export async function cachedBrandOverview(slug: string) {
+  "use cache";
+  cacheLife("weeks");
+  cacheTag("catalog");
+  return brandOverview(db, slug);
+}
+
+export async function cachedPerfumers() {
+  "use cache";
+  cacheLife("weeks");
+  cacheTag("catalog");
+  return listPerfumers(db);
+}
+
+export async function cachedYears() {
+  "use cache";
+  cacheLife("weeks");
+  cacheTag("catalog");
+  return yearCounts(db);
 }

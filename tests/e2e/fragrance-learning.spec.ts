@@ -64,7 +64,10 @@ test("note explanations and examples remain usable on a touch screen", async ({ 
 
 test("house browsing uses the exact brand and survives note filters", async ({ page }) => {
   await page.goto(santal);
-  await page.locator('a[href="/discover?brand=le-labo"]').first().click();
+  await page.locator('a[href="/brands/le-labo"]').first().click();
+  await expect(page).toHaveURL(/\/brands\/le-labo$/);
+  await expect(page.getByRole("heading", { level: 1, name: "Le Labo" })).toBeVisible();
+  await page.getByRole("link", { name: "Filter this house by notes and family" }).click();
   await expect(page).toHaveURL(/\/discover\?brand=le-labo$/);
   await expect(page.getByRole("link", { name: "Remove filter: Le Labo" })).toBeVisible();
   const names = await page.locator(".archive-choice").allTextContents();

@@ -42,6 +42,7 @@ export type SearchParams = {
   brand?: string;
   concentration?: string;
   perfumer?: string;
+  year?: number;
   sort?: "relevance" | "name" | "newest" | "oldest";
   page?: number;
   pageSize?: number;
@@ -112,6 +113,7 @@ export async function searchFragrances(db: Database, params: SearchParams): Prom
   if (params.gender) filters.push(eq(fragrances.gender, params.gender));
   if (params.brand) filters.push(eq(brands.slug, params.brand));
   if (params.concentration || parsed.concentration) filters.push(sql`${concentrationColumn} = ${params.concentration || parsed.concentration}`);
+  if (params.year && Number.isInteger(params.year)) filters.push(sql`${summaryColumns.year} = ${params.year}`);
   if (params.perfumer) filters.push(sql`${fragranceResearch.perfumers} @> array[${params.perfumer}]::text[]`);
   for (const key of [...new Set(params.notes ?? [])].slice(0, 12)) filters.push(hasNote(key));
   for (const key of [...new Set(params.excludeNotes ?? [])].slice(0, 12)) filters.push(sql`not ${hasNote(key)}`);
@@ -247,4 +249,54 @@ export async function facetCounts(db: Database) {
     wheels: wheels as { value: string; count: number }[],
     facets: facets.rows,
   };
+}
+
+/** Which accord families each note appears in, across the whole catalog. */
+export async function noteFamilyStats(db: Database) {
+  const [rows, families] = await Promise.all([
+    db.execute<{ key: string; wheel: string; n: number }>(sql`
+      select n.key, f.wheel, count(*)::int as n
+      from ${fragranceNotes} fn join ${notes} n on n.id = fn.note_id join ${fragrances} f on f.product_id = fn.product_id
+      where f.wheel is not null group by n.key, f.wheel`),
+    db.execute<{ wheel: string; n: number }>(sql`select wheel, count(*)::int as n from ${fragrances} where wheel is not null group by wheel`),
+  ]);
+  const byNote: Record<string, Record<string, number>> = {};
+  for (const r of rows.rows) (byNote[r.key] ??= {})[r.wheel] = r.n;
+  const familyCounts = Object.fromEntries(families.rows.map(r => [r.wheel, r.n]));
+  return { byNote, families: familyCounts, total: families.rows.reduce((a, r) => a + r.n, 0) };
+}
+
+/** A house at a glance: span of years, family mix, perfumers and most-used notes. */
+export async function brandOverview(db: Database, slug: string) {
+  const brand = await getBrand(db, slug);
+  if (!brand) return null;
+  const [span, families, perfumers, topNotes, genders] = await Promise.all([
+    db.execute<{ first: number | null; last: number | null; dated: number }>(sql`
+      select min(coalesce((r.data->>'year')::int, f.year))::int as first, max(coalesce((r.data->>'year')::int, f.year))::int as last,
+        count(coalesce((r.data->>'year')::int, f.year))::int as dated
+      from ${fragrances} f left join ${fragranceResearch} r on r.product_id = f.product_id where f.brand_id = ${brand.id}`),
+    db.execute<{ wheel: string; n: number }>(sql`select wheel, count(*)::int as n from ${fragrances} where brand_id = ${brand.id} and wheel is not null group by wheel order by 2 desc, 1`),
+    db.execute<{ name: string; n: number }>(sql`select p as name, count(*)::int as n from ${fragrances} f join ${fragranceResearch} r on r.product_id = f.product_id, unnest(r.perfumers) p where f.brand_id = ${brand.id} group by p order by 2 desc, 1`),
+    db.execute<{ key: string; label: string; n: number }>(sql`select n.key, n.label, count(*)::int as n from ${fragranceNotes} fn join ${notes} n on n.id = fn.note_id join ${fragrances} f on f.product_id = fn.product_id where f.brand_id = ${brand.id} group by n.key, n.label order by 3 desc, 2 limit 12`),
+    db.execute<{ gender: string; n: number }>(sql`select gender::text, count(*)::int as n from ${fragrances} where brand_id = ${brand.id} and gender is not null group by gender order by 2 desc`),
+  ]);
+  return { brand, span: span.rows[0], families: families.rows, perfumers: perfumers.rows, topNotes: topNotes.rows, genders: genders.rows };
+}
+
+/** Every credited perfumer in reviewed research, with how many catalog entries credit them. */
+export async function listPerfumers(db: Database) {
+  const result = await db.execute<{ name: string; n: number; houses: string[] }>(sql`
+    select p as name, count(*)::int as n, array_agg(distinct b.name order by b.name) as houses
+    from ${fragranceResearch} r join ${fragrances} f on f.product_id = r.product_id join ${brands} b on b.id = f.brand_id, unnest(r.perfumers) p
+    group by p order by 2 desc, 1`);
+  return result.rows;
+}
+
+/** Catalog entries released in each year, newest first, for the release index. */
+export async function yearCounts(db: Database) {
+  const result = await db.execute<{ year: number; n: number }>(sql`
+    select coalesce((r.data->>'year')::int, f.year)::int as year, count(*)::int as n
+    from ${fragrances} f left join ${fragranceResearch} r on r.product_id = f.product_id
+    where coalesce((r.data->>'year')::int, f.year) is not null group by 1 order by 1 desc`);
+  return result.rows;
 }

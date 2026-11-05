@@ -30,6 +30,9 @@ Postgres via Drizzle and node-postgres. Neon in production (pooled URL, `attachD
 | `user`, `session`, `account`, `verification`, `rate_limit` | Better Auth | Generated schema. Rate limits stored in Postgres because serverless instances share no memory. |
 | `taste_profiles` | Explicit preferences | One JSONB row per user, validated by zod on read and write. Cascades on user delete. |
 | `collection_items` | Shelves, ratings, favourites | PK `(user_id, product_id)`; rating CHECK 1 to 5; cascades on user delete. |
+| `wear_votes` | Member wear votes | PK `(user_id, product_id)`; CHECKed scales for longevity, sillage, reads and value; `seasons[]`, `occasions[]`. Clearing every answer deletes the row. |
+| `reviews`, `review_helpful`, `review_reports` | Member reviews | One review per member and fragrance; `published` or `hidden`; denormalised `helpful` and `reports` counters updated in the same transaction as the vote or report. |
+| `reminds_of` | "Reminds me of" links | PK `(user_id, product_id, other_id)`, at most six per member and fragrance. |
 | `scan_quota`, `scan_slots`, `scan_cache` | Scanner protection | See below. No photos stored. |
 
 Authorization: every write path takes the user id from the verified session (`currentUser()`), never from input, and every query on user data is scoped by it. Integration tests cover cross-user isolation and cascade deletion.
@@ -39,6 +42,12 @@ Authorization: every write path takes the user id from the verified session (`cu
 `scripts/seed-catalog.ts` reads ScentLens `products.csv` and upserts by `product_id`, so re-seeding never disturbs collections. The accord phrase (`"Woody Amber Fresher Citrus"`) is parsed into an Edwards-wheel family, a character modifier and facets (`src/lib/catalog/parse.ts`); legacy "Oriental" maps to "Amber"; stray tokens (perfumer names) are dropped. Notes drop parenthetical origins so variants compare equal.
 
 Catalog reads go through `"use cache"` wrappers (`src/lib/catalog/cached.ts`) with `cacheTag("catalog")`, so pages prerender into the static shell and per-fragrance pages are generated on first visit.
+
+## Community (`src/lib/community`)
+
+`rules.ts` holds the vote scales, review validation and chart weighting (a Bayesian average with a three-rating prior). `repo.ts` reads aggregates and writes votes, reviews, helpful marks, reports and links; every write takes the member id from the session. Server actions in `src/app/actions/community.ts` add verified-email checks and per-member budgets (`request_budgets`). Cached readers in `cached.ts` are tagged `community:<productId>` and refreshed with `updateTag` after each write; account deletion revalidates every fragrance the member touched. The member's own votes load through `myCommunityAction` after hydration, so fragrance pages stay prerendered.
+
+The accord profile (`src/lib/catalog/accord-profile.ts`) estimates relative family strengths from listed notes: for each note, how much more often it appears in each accord family than that family's catalog share. It is cached for weeks with the catalog.
 
 ## Recommendation engine (`src/lib/reco`)
 

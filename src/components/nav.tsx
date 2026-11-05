@@ -14,6 +14,12 @@ const LINKS = [
   { href: "/scan", label: "Scan" },
 ];
 
+/** Reference directories: on desktop beside the main sections, on phones reached from Discover. */
+const DIRECTORIES = [
+  { href: "/brands", label: "Houses" },
+  { href: "/charts", label: "Charts" },
+];
+
 export function Nav() {
   const pathname = usePathname();
   const { account, ready } = useAccord();
@@ -26,7 +32,7 @@ export function Nav() {
           <Image src="/brand/accord-wordmark.svg" alt="Accord" width={111} height={30} unoptimized />
         </Link>
         <ul className="desktop-sections hidden items-center gap-7 pl-6 text-[15px] md:flex">
-          {LINKS.map((l) => {
+          {[...LINKS.slice(0, 1), ...DIRECTORIES, ...LINKS.slice(1)].map((l) => {
             const current = pathname === l.href || pathname.startsWith(`${l.href}/`);
             return (
               <li key={l.href}>

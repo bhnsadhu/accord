@@ -29,6 +29,9 @@ Fragrances are smelling strips on a neutral evaluation bench; one fixed stain hu
 ## Stack
 Next.js 16 App Router (cacheComponents + partialPrefetching ON: read node_modules/next/dist/docs before using caching/params APIs), React 19, TS strict, Tailwind 4, Drizzle + node-postgres, Neon in prod, PGlite locally, Better Auth, Vitest, Playwright.
 
+## Smooth scroll
+`src/components/smooth-scroll.tsx` runs Lenis (eased wheel scrolling, `lerp` 0.12) from the root layout. Touch stays native and Reduce Motion skips it. It ignores anything inside a `<dialog>` (quick find, bottle photos, the entrance gate scroll themselves) and pauses while `html.accord-intro-active` is set. Code that jumps the page by hand (`ReferenceAnchors` uses an instant `scrollIntoView`) works unchanged, because Lenis reads the new position from the scroll event. Lenis turns off CSS `scroll-behavior: smooth`, so do not rely on it. Covered by `tests/e2e/smooth-scroll.spec.ts`.
+
 ## Local dev
 ```
 npm run db:server      # PGlite on 127.0.0.1:5433, data in .data/pglite (keep running)

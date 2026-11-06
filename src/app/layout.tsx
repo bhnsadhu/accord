@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PaletteProvider } from "@/components/command-palette";
 import { Nav } from "@/components/nav";
 import { ScentLensLink } from "@/components/scentlens-link";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { Toaster } from "@/components/toaster";
 import { AccordProvider } from "@/lib/store";
 import "./globals.css";
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
+        <SmoothScroll />
         <AccordProvider>
           <PaletteProvider>
             <Nav />

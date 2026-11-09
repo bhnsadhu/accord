@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/lavandin.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Lavandin foliage and flowers.",
+  "author": "Victor M. Vicente Selvas",
+  "source": "https://commons.wikimedia.org/wiki/File:Lavand%C3%AD_2012.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Lavandí 2012.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Lavand%C3%AD_2012.JPG/960px-Lavand%C3%AD_2012.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "da96697cfc8ae0d0877f1116ce4c07092ed68e2d4735b996d3839629e6256d89"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/balsam.webp",
+  "width": 576,
+  "height": 720,
+  "alt": "Balsam fir foliage.",
+  "author": "U.S. Fish and Wildlife Service",
+  "source": "https://commons.wikimedia.org/wiki/File:Abies_balsamea.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Abies_balsamea.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Abies_balsamea.jpg/960px-Abies_balsamea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "9fc9e073cb69f043621f97020e5a630624d76ad9364e09a49aabed133be30f01"
+}

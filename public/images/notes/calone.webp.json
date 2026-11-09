@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/calone.webp",
+  "width": 720,
+  "height": 296,
+  "alt": "Chemical structure of calone.",
+  "author": "Jü",
+  "source": "https://commons.wikimedia.org/wiki/File:Calone_V1.svg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "kind": "structure",
+  "sourceFile": "Calone_V1.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Calone_V1.svg/960px-Calone_V1.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "bef600d8300aeec227e9a5c03f2ec9d6b954d80d21f9d9d3a722098a30e0a7ec"
+}

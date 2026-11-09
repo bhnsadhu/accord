@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/clementine.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Clementine fruit.",
+  "author": "carol",
+  "source": "https://commons.wikimedia.org/wiki/File:Clementines_whole,_peeled,_half_and_sectioned.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Clementines_whole,_peeled,_half_and_sectioned.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Clementines_whole%2C_peeled%2C_half_and_sectioned.jpg/960px-Clementines_whole%2C_peeled%2C_half_and_sectioned.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "6d5923e2a36023e0f843898601a574cf4a217993c3972d23cdcb097679f49cac"
+}

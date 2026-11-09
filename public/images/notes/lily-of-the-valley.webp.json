@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/lily-of-the-valley.webp",
+  "width": 480,
+  "height": 720,
+  "alt": "Lily of the valley flowers.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Convallaria_majalis_inflorescence_-_Keila.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Convallaria_majalis_inflorescence_-_Keila.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Convallaria_majalis_inflorescence_-_Keila.jpg/960px-Convallaria_majalis_inflorescence_-_Keila.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "59425a69154bc74b85a1a7ccc16e050885ea4259ff82345315223b5b331336eb"
+}

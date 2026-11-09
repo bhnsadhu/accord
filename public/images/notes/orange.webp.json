@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/orange.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Oranges.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Oranges_-_whole-halved-segment.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Oranges_-_whole-halved-segment.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Oranges_-_whole-halved-segment.jpg/960px-Oranges_-_whole-halved-segment.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "d8883212ff519707985236f5e98266c50eb72d0662bac5b278cb3ac877e95662"
+}

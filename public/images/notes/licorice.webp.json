@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/licorice.webp",
+  "width": 720,
+  "height": 533,
+  "alt": "Liquorice roots.",
+  "author": "Salil Kumar Mukherjee",
+  "source": "https://commons.wikimedia.org/wiki/File:Sections_of_liquorice_root.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Sections of liquorice root.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Sections_of_liquorice_root.jpg/960px-Sections_of_liquorice_root.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "b66003e6c62fae818f85ebb43317542968bf11b948bbd57b34a094dbe844d4d9"
+}

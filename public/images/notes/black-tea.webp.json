@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/black-tea.webp",
+  "width": 720,
+  "height": 671,
+  "alt": "Black tea leaves.",
+  "author": "AntanO",
+  "source": "https://commons.wikimedia.org/wiki/File:Cup_of_black_tea.JPG",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Cup_of_black_tea.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Cup_of_black_tea.JPG/960px-Cup_of_black_tea.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "d10f9bbfaf970f5f66c044c7e1033a09835a6d4f28fe7f4e7d3e58c20a107470"
+}

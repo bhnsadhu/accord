@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/gardenia.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Gardenia flowers.",
+  "author": "Adriel anv00",
+  "source": "https://commons.wikimedia.org/wiki/File:Gardenia_jasminoides_flower_Argentina.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Gardenia_jasminoides_flower_Argentina.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Gardenia_jasminoides_flower_Argentina.jpg/960px-Gardenia_jasminoides_flower_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "9608deb0da49cf0598e42f40048f932050469691d69904e931a7bd6f4b9c4f71"
+}

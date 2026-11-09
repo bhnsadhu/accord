@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/black-pepper.webp",
+  "width": 720,
+  "height": 720,
+  "alt": "Black peppercorns.",
+  "author": "Misterneedlemouse",
+  "source": "https://commons.wikimedia.org/wiki/File:Tellicherry_Black_Peppercorns.jpg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Tellicherry Black Peppercorns.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Tellicherry_Black_Peppercorns.jpg/960px-Tellicherry_Black_Peppercorns.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "725b2a1febc5f710fd5065431d99a9df00522b59b49ec47bb2a64da0d1d93e17"
+}

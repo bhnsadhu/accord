@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/candy.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Confectionery as a visual reference for a candy note.",
+  "author": "Elisa Azzali",
+  "source": "https://commons.wikimedia.org/wiki/File:Candy_in_Damascus.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Candy_in_Damascus.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Candy_in_Damascus.jpg/960px-Candy_in_Damascus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "9b9c7f6df27ba67fe3527de6382c3fd9da5523647b8130fc0312e170da2ab5dc"
+}

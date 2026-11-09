@@ -20,6 +20,7 @@ function NoteTiles({ notes, name }: { notes: Note[]; name: string }) {
       <div className="reference-note-body"><p>{description ?? "This note is listed for the fragrance. Explore other compositions that include it."}</p>
         {description && <p className="reference-caption">The note’s general character, not its strength in this fragrance. Notes describe impressions, not an ingredient formula.</p>}
         {note.available === false ? <Link href="/notes">Explore the note library <ArrowIcon /></Link> : <Link href={`/notes/${encodeURIComponent(key)}`}>Explore {note.label.toLowerCase()} <ArrowIcon /></Link>}
+        {photo?.referenceNote && <p className="reference-caption">{photo.referenceNote}</p>}
         {photo && <ImageCredit image={photo} />}
       </div>
     </details>;
@@ -37,7 +38,7 @@ export function FragranceNotes({ notes, research, library = notes }: { notes: No
   const catalogList = notes.length ? <NoteTiles notes={notes} name="catalog-note" /> : <p className="reference-empty">Notes are not listed for this fragrance. Its family and related fragrances can still give you a starting point.</p>;
   return <section id="notes" className="reference-section" aria-labelledby="notes-h">
     <div className="reference-section-heading"><h2 id="notes-h">The notes</h2><Link href="/notes">Browse the note library <ArrowIcon /></Link></div>
-    <p className="reference-caption">Get to know what you smell. Open a note for its character and fragrances that share it. Photographs show the material or plant, not the formula in the bottle.</p>
+    <p className="reference-caption">Get to know what you smell. Open a note for its character and fragrances that share it. Pictures show materials, scent references or molecular structures, not the formula in the bottle.</p>
     {stages ? <>
       <div className="visual-note-stages">{([ ["opening", "Top notes", "The first impression"], ["heart", "Heart notes", "The central character"], ["base", "Base notes", "The lasting foundation"] ] as const).map(([key, label, description]) => <div key={key}><div className="visual-stage-heading"><h3>{label}</h3><p>{description}</p></div>{stages[key].length ? <NoteTiles notes={stages[key].map(resolve)} name={`stage-${key}`} /> : <p className="reference-caption">Not listed</p>}</div>)}</div>
       <p className="reference-caption mt-4">The source’s note stages describe how the composition is presented. They are not a timed schedule.</p><SourceLinks research={research!} field="noteStages" />

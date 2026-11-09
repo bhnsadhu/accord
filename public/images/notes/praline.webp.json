@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/praline.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Praline confectionery.",
+  "author": "Willis Lam",
+  "source": "https://commons.wikimedia.org/wiki/File:Almond_Pralines_in_Mason_Jar_(27271379954).jpg",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Almond Pralines in Mason Jar (27271379954).jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Almond_Pralines_in_Mason_Jar_%2827271379954%29.jpg/960px-Almond_Pralines_in_Mason_Jar_%2827271379954%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "89385d642da91032a8b6dda639aea07d18c8e95d357b7767b4a5f73269ccf987"
+}

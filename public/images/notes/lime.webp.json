@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/lime.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Lime fruit.",
+  "author": "Prosthetic Head",
+  "source": "https://commons.wikimedia.org/wiki/File:Lime_Blossom.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Lime_Blossom.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Lime_Blossom.jpg/960px-Lime_Blossom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "3274cae848e9ab6ee48cef14ba3ddc721e5364797c1c2274a2eec8234cc88fff"
+}

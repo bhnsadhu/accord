@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/tuberose.webp",
+  "width": 479,
+  "height": 720,
+  "alt": "Tuberose flowers.",
+  "author": "SKsiddhartthan",
+  "source": "https://commons.wikimedia.org/wiki/File:Tuberose_flower.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Tuberose_flower.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Tuberose_flower.jpg/960px-Tuberose_flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "dfab5669cacde209c9e9469dc93a73065d264b77515aca4be1be36d89b9630e4"
+}

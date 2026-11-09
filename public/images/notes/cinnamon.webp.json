@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/cinnamon.webp",
+  "width": 720,
+  "height": 413,
+  "alt": "Cinnamon bark.",
+  "author": "Simon A. Eugster",
+  "source": "https://commons.wikimedia.org/wiki/File:Cinnamomum_verum_spices.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Cinnamomum_verum_spices.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Cinnamomum_verum_spices.jpg/960px-Cinnamomum_verum_spices.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "56c3e2cafa1767627c43ce60f4d53124a6cfbd6e36f53d6e7d068deb1f556b3d"
+}

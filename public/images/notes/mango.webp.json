@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/mango.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Mango fruit.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Mangos_-_single_and_halved.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Mangos_-_single_and_halved.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Mangos_-_single_and_halved.jpg/960px-Mangos_-_single_and_halved.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "f164d471ea9f91c4e71a65b2771c0250c061c93f43012a4b98cc367366e4c8bb"
+}

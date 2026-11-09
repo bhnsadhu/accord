@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/hyacinth.webp",
+  "width": 542,
+  "height": 720,
+  "alt": "Hyacinth flowers.",
+  "author": "Plantman",
+  "source": "https://commons.wikimedia.org/wiki/File:Hyacinth_flower.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Hyacinth_flower.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Hyacinth_flower.jpg/960px-Hyacinth_flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "825bc2647bf24fec6811df7f0074365f96554d641a24e155880b2c4bc5038b13"
+}

@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/safraleine.webp",
+  "width": 600,
+  "height": 600,
+  "alt": "Molecular structure associated with Safraleine in PubChem.",
+  "author": "PubChem, National Library of Medicine",
+  "source": "https://pubchem.ncbi.nlm.nih.gov/compound/10149036#section=2D-Structure",
+  "license": "PubChem reuse permitted",
+  "licenseUrl": "https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "kind": "structure",
+  "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
+  "sourceFile": "PubChem-CID-10149036.png",
+  "sourceDownload": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10149036/PNG?image_size=600x600",
+  "sourceSha256": "8f6429ea16c2c6e0af0be9933b85378273dffbca22a6dd099dddd9ee39433f32"
+}

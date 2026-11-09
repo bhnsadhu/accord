@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/ivy.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Ivy foliage.",
+  "author": "kallerna",
+  "source": "https://commons.wikimedia.org/wiki/File:Hedera_helix_Dover.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Hedera_helix_Dover.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Hedera_helix_Dover.jpg/960px-Hedera_helix_Dover.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "a387d5bf7a7bd58bfa49921e4073ecda5843eb931b989c929fb8ffc183d658ef"
+}

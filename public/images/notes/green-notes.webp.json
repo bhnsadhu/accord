@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/green-notes.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Green leaves, a visual reference for a green accord.",
+  "author": "Bijaya2043",
+  "source": "https://commons.wikimedia.org/wiki/File:Green_leaves_of_Chayote.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Green leaves of Chayote.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Green_leaves_of_Chayote.jpg/960px-Green_leaves_of_Chayote.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "ed43ab1ba896db2ea51c594f6eabc505128aed1165d2e8b58085fa0a5189d3e4"
+}

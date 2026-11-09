@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/curcuma.webp",
+  "width": 720,
+  "height": 296,
+  "alt": "Turmeric rhizomes and powder.",
+  "author": "Simon A. Eugster",
+  "source": "https://commons.wikimedia.org/wiki/File:Curcuma_longa_roots.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Curcuma longa roots.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Curcuma_longa_roots.jpg/960px-Curcuma_longa_roots.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "0bc248d633d2d27e146b94ba19d2b2f061988cbaa96ed3bcdbd0625db6946164"
+}

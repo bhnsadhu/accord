@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/coffee.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Coffee beans.",
+  "author": "MarkSweep",
+  "source": "https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Roasted_coffee_beans.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/960px-Roasted_coffee_beans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "516b32599516d126e04c65205ecfb773b95a1584d6902b4e0328e00b21f86fb1"
+}

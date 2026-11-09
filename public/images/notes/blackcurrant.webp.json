@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/blackcurrant.webp",
+  "width": 720,
+  "height": 539,
+  "alt": "Blackcurrant berries and foliage.",
+  "author": "Jerzy Opioła",
+  "source": "https://commons.wikimedia.org/wiki/File:Ribes_nigrum_a1.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Ribes_nigrum_a1.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Ribes_nigrum_a1.JPG/960px-Ribes_nigrum_a1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "2ee4b9ec665f047a391da1576f608f5912667539e5f150fe4aba4f01d18858ea"
+}

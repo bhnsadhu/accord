@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/tiare.webp",
+  "width": 700,
+  "height": 525,
+  "alt": "A tiare flower.",
+  "author": "FRED",
+  "source": "https://commons.wikimedia.org/wiki/File:Tiar%C3%A9_tahiti.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Tiaré_tahiti.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Tiar%C3%A9_tahiti.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "e8bda46d0783e14ed61f17735192b4e6e5a1b94a9d6f3c211f86400ec7ac238d"
+}

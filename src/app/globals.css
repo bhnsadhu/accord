@@ -811,6 +811,7 @@ body:has(.signature-hero) > header { background: #f6f7f9; }
 .note-library-starters ul { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px; margin-top: 18px; }
 .note-library-starters a { display: block; min-height: 44px; font-size: 15px; }
 .note-library-starters .note-photo { width: 100%; height: auto; aspect-ratio: 1; margin-bottom: 10px; }
+.note-photo.note-photo-structure { object-fit: contain; padding: 5px; background: white; }
 @media (max-width: 700px) { .note-library-starters ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 16px; } }
 @media (max-width: 1099px) {
   .reference-identity-photographed { display: grid; grid-template-columns: minmax(0, 1fr) 180px; align-items: center; gap: 24px; }

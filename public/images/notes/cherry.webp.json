@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/cherry.webp",
+  "width": 497,
+  "height": 720,
+  "alt": "Cherries.",
+  "author": "spurekar",
+  "source": "https://commons.wikimedia.org/wiki/File:Cherry_season_(48216568227).jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Cherry_season_(48216568227).jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Cherry_season_%2848216568227%29.jpg/960px-Cherry_season_%2848216568227%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "51d874cd9bdca1304512a503dabb5779e2c8077b014bc4c9a0172ab16062f8b2"
+}

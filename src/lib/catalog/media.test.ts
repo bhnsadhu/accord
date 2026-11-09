@@ -3,8 +3,9 @@ import { readFileSync, statSync } from "node:fs";
 import bottles from "../../../data/media/bottles.json";
 import notes from "../../../data/media/notes.json";
 import research from "../../../data/research/fragrances.json";
-import { noteReferenceKey } from "./media";
+import { noteImage, noteReferenceKey } from "./media";
 import { bottleImage } from "./bottle-media";
+import { slugify } from "./text";
 
 describe("reference image identity and provenance", () => {
   it("matches each pictured bottle to an exact researched edition", () => {
@@ -24,7 +25,7 @@ describe("reference image identity and provenance", () => {
       expect(photo.author.trim().length).toBeGreaterThan(0);
       expect(photo.source).toMatch(/^https:\/\//);
       expect(photo.licenseUrl).toMatch(/^https:\/\//);
-      expect(photo.license).toMatch(/^(CC BY|CC0|Public domain|Unsplash License)/);
+      expect(photo.license).toMatch(/^(CC BY|CC0|Public domain|Unsplash License|PubChem reuse permitted)/);
       expect(photo.checkedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(photo.path).toMatch(/^\/images\/(fragrances|notes)\/[a-z0-9-]+\.webp$/);
       const path = `public${photo.path}`;
@@ -34,10 +35,19 @@ describe("reference image identity and provenance", () => {
       expect(photo.height).toBeGreaterThan(0);
     }
   });
-  it("does not invent photographs for abstract accords or unknown notes", () => {
-    expect(notes).not.toHaveProperty("amber");
-    expect(notes).not.toHaveProperty("musk");
+  it("labels abstract references and keeps molecular structures distinct from photographs", () => {
+    expect(noteImage("amber")?.referenceNote).toContain("scent reference");
+    expect(noteImage("musk")?.referenceNote).toContain("evocative reference");
+    expect(noteImage("ambroxan")?.kind).toBe("structure");
+    expect(noteImage("iris")).toEqual(noteImage("iris-orris"));
+    expect(noteImage("unknown-material")).toBeUndefined();
     expect(noteReferenceKey("iris")).toBe("iris-orris");
     expect(noteReferenceKey("unknown-material")).toBe("unknown-material");
+  });
+  it("pictures every featured and staged research note, including names outside the catalog", () => {
+    for (const { research: entry } of research.entries) {
+      const labels = [...entry.featuredNotes, ...Object.values(entry.noteStages ?? {}).flat()];
+      for (const label of labels) expect(noteImage(slugify(label)), label).toBeDefined();
+    }
   });
 });

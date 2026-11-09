@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/juniper-berries.webp",
+  "width": 576,
+  "height": 720,
+  "alt": "Juniper berries.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Juniperus_communis_fruits_-_Keila.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Juniperus_communis_fruits_-_Keila.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Juniperus_communis_fruits_-_Keila.jpg/960px-Juniperus_communis_fruits_-_Keila.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "12a05a9d27ef1d72e5a6acc3653cc077a10abcf013f79b1c8362eee0f27717f3"
+}

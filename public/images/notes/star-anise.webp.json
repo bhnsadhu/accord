@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/star-anise.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Star anise fruit.",
+  "author": "Sanjay Acharya",
+  "source": "https://commons.wikimedia.org/wiki/File:Dried_Star_Anise_Fruit_Seeds.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Dried Star Anise Fruit Seeds.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Dried_Star_Anise_Fruit_Seeds.jpg/960px-Dried_Star_Anise_Fruit_Seeds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "ea31b27d09d2aece1bbf662a8253c91139c8bd86d426747568fa3dae4f61ca66"
+}

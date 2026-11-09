@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/peony.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Peony flowers.",
+  "author": "Taken by Fanghong",
+  "source": "https://commons.wikimedia.org/wiki/File:PaeoniaSuffruticosa7.jpg",
+  "license": "CC BY 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "PaeoniaSuffruticosa7.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/PaeoniaSuffruticosa7.jpg/960px-PaeoniaSuffruticosa7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "6b0d54ecae9c48a143759d261da974339c3240981bac4ad351b25564ad1ca4d5"
+}

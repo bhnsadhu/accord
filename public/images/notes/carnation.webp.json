@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/carnation.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Carnation flowers.",
+  "author": "草花写真館",
+  "source": "https://commons.wikimedia.org/wiki/File:W_carnation4051.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "W_carnation4051.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/3/3b/W_carnation4051.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "38031dc85f9e3d7840aac1e3bb02692c2654e66e832dc067616d50131fbbc952"
+}

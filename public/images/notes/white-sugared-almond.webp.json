@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/white-sugared-almond.webp",
+  "width": 293,
+  "height": 197,
+  "alt": "Sugar coated almonds.",
+  "author": "smandagout",
+  "source": "https://commons.wikimedia.org/wiki/File:Amande-avolas-blanche.png",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Amande-avolas-blanche.png",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/3/32/Amande-avolas-blanche.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "9268d4d6d6d0a294812577ca7928857b290cbe4ebcaa61da428747aa004cf6eb"
+}

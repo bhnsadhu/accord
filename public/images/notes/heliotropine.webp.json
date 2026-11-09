@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/heliotropine.webp",
+  "width": 720,
+  "height": 295,
+  "alt": "Chemical structure of piperonal.",
+  "author": "Edgar181",
+  "source": "https://commons.wikimedia.org/wiki/File:Piperonal_structure.png",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "kind": "structure",
+  "sourceFile": "Piperonal_structure.png",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Piperonal_structure.png/960px-Piperonal_structure.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "f56554703f601144ac352a6482c6485172b7058de782efda9b0b1a51627a9baf"
+}

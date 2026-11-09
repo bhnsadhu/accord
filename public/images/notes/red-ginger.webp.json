@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/red-ginger.webp",
+  "width": 720,
+  "height": 576,
+  "alt": "Red ginger flowers.",
+  "author": "Octave Fargier",
+  "source": "https://commons.wikimedia.org/wiki/File:Red_ginger_(Alpinia_purpurata)_in_the_Water_Gardens_of_Vaipahi_on_Tahiti.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Red_ginger_(Alpinia_purpurata)_in_the_Water_Gardens_of_Vaipahi_on_Tahiti.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Red_ginger_%28Alpinia_purpurata%29_in_the_Water_Gardens_of_Vaipahi_on_Tahiti.jpg/960px-Red_ginger_%28Alpinia_purpurata%29_in_the_Water_Gardens_of_Vaipahi_on_Tahiti.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "f337e815d7cf0a692c3a96c56d3be24e71f9806d5138f7c2b4c814d3e561e2b6"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/grapefruit.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Grapefruit fruit.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Grapefruits_-_whole-halved-segments.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Grapefruits_-_whole-halved-segments.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Grapefruits_-_whole-halved-segments.jpg/960px-Grapefruits_-_whole-halved-segments.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "85fd1f0db77c40ba1ea010e9cd9d90409ca2c97d2773eadc554421fc407451ad"
+}

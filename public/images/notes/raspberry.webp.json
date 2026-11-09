@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/raspberry.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Raspberries.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Raspberries_(Rubus_idaeus).jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Raspberries_(Rubus_idaeus).jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Raspberries_%28Rubus_idaeus%29.jpg/960px-Raspberries_%28Rubus_idaeus%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "e6528550bad37e78b6747d39af0f3b7b7c9b21365391760c534d7df7a02994ee"
+}

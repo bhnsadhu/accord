@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/sichuan-pepper.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Sichuan pepper husks.",
+  "author": "Matt K",
+  "source": "https://commons.wikimedia.org/wiki/File:Sichuan_pepper.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Sichuan_pepper.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Sichuan_pepper.jpg/960px-Sichuan_pepper.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "56bb27950b7d15209d28c818ad2b6e5c977db2f3a4919e0cfff7ae49f201655b"
+}

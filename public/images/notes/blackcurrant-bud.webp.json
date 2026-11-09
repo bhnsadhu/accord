@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/blackcurrant-bud.webp",
+  "width": 478,
+  "height": 720,
+  "alt": "Blackcurrant buds.",
+  "author": "Sten Porse",
+  "source": "https://commons.wikimedia.org/wiki/File:Ribes-nigrum-buds.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Ribes-nigrum-buds.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/6/63/Ribes-nigrum-buds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "d7ec595955e3988b179e300b6bf47bdc6fd6f92baa21e185b615b2d3e7021067"
+}

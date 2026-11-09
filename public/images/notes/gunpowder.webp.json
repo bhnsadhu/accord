@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/gunpowder.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Black powder as a visual reference for a gunpowder accord.",
+  "author": "Lord Mountbatten",
+  "source": "https://commons.wikimedia.org/wiki/File:Black_Powder-1.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Black_Powder-1.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Black_Powder-1.JPG/960px-Black_Powder-1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "6443a4de69519b4176fa92f5eee13b7208ffe38c2b16f358869c38744905284f"
+}

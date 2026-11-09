@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/rose-centifolia.webp",
+  "width": 491,
+  "height": 709,
+  "alt": "A botanical illustration of Rosa centifolia.",
+  "author": "Pierre-Joseph Redouté",
+  "source": "https://commons.wikimedia.org/wiki/File:Rosa_centifolia_foliacea_17.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "kind": "illustration",
+  "sourceFile": "Rosa_centifolia_foliacea_17.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/2/21/Rosa_centifolia_foliacea_17.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "bf222fe73fd2f97fdbc8d2e038152bc2b34a362b53e4336ead2175dd87c6aee1"
+}

@@ -4,15 +4,19 @@ Accord uses real photographs to help people recognize an exact bottle and connec
 
 ## Coverage
 
-The first image release includes six exact-edition bottle photographs: Santal 33, Bleu de Chanel Eau de Parfum, Sauvage Eau de Parfum, Green Irish Tweed, Ombré Leather Eau de Parfum and Chanel N°5 Eau de Parfum. Sixteen note photographs cover bergamot, cardamom, cedarwood, iris/orris, jasmine, lavender, lemon, orange blossom, patchouli, pink pepper, rose, saffron, sandalwood, vanilla, vetiver and violet.
+The first image release included six exact-edition bottle photographs and sixteen note photographs. The note collection now covers all 304 catalog notes, plus the additional names and aliases used in researched fragrance descriptions. The original sixteen photographs are retained.
 
-These are selected reference images, not universal catalog coverage. Unpictured fragrances retain their paper specimen. Unpictured notes remain readable, expandable text. Abstract accords such as amber and musk are not illustrated with a misleading literal ingredient.
+Note images include material and botanical photographs, one botanical illustration, chemical structure diagrams, and clearly labeled scent references. Abstract accords such as amber and musk have evocative pictures with explanatory captions. Unverified or ambiguous material names use a labeled photograph of a perfumer's palette. That context photograph does not claim to depict the specific material. Unknown future note keys still require a reviewed image assignment; they do not silently inherit a guessed ingredient.
+
+Top notes, Heart notes and Base notes appear on fragrance pages when the research source gives those stages. The same note can occupy different stages in different compositions, so image assignments do not create a universal note pyramid.
 
 ## Identity and rights
 
 - [Bottle manifest](../data/media/bottles.json): exact catalog ID, brand, edition, concentration, caption, alternative text, photographer, original source page, license link, checked date and changes.
 - [Note manifest](../data/media/notes.json): exact note reference, alternative text, photographer, original source page, license link, checked date and changes.
 - Unsplash photographs use its free [Unsplash License](https://unsplash.com/license), not Unsplash Plus. Commons photographs retain the public-domain or Creative Commons terms recorded per file. Attribution and applicable license links appear with the reference image or its expanded note.
+- PubChem structure images use its explicit [image reuse permission](https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines), with the compound ID and structure section linked in the credit. Exact name matches are reviewed before use. Ambiguous names such as aldehyde, Cyclosal and Prunol are not assigned a compound merely because a search returns one.
+- Olfactive references for selected aroma materials were checked against the [Firmenich ingredient catalog](https://www.firmenich.com/sites/default/files/Catalogue_leaflet_Perfumery_Ingredients_2020.pdf) and Givaudan's pages for [Ambrofix](https://www.givaudan.com/fragrance-beauty/fragrance-ingredients-business/fragrance-molecules/ambrofix), [Javanol](https://www.givaudan.com/fragrance-beauty/fragrance-ingredients-business/fragrance-molecules/javanol) and [Kephalis](https://www.givaudan.com/fragrance-beauty/fragrance-ingredients-business/fragrance-molecules/kephalis). These support scent associations, not claims that a photographed natural material is used to manufacture the molecule.
 - The original photographers retain their rights. The application's code license does not relicense these images. Preserve the recorded image license, including ShareAlike where applicable, when distributing changed copies.
 - No Fragrantica photographs, descriptions, user reviews or rating data are redistributed. No generated bottle or invented packaging substitutes for a real edition.
 
@@ -24,7 +28,7 @@ Bottle photographs appear on the detail page and as small Quick Find thumbnails.
 
 Visual note disclosures reveal a concise description, attribution and a link into the note library. Documented opening, heart and base stages appear only when supported by a source. Original catalog notes remain separately accessible and continue to drive similarity. Reference aliases help navigation without rewriting catalog data. A source note with no matching catalog article links to the library rather than a missing page.
 
-All 28 files (six bottle photos, six search thumbnails and sixteen note photos) are optimized local WebP assets, totaling about 0.97 MB. No runtime third-party image fetch, image API subscription or generated-image service is required. Next Image serves the preoptimized files without paid image transformations. Each asset has an adjacent `.webp.json` provenance sidecar with its source and license details. This is fallback file metadata, not metadata embedded inside the WebP.
+All reference images are optimized local WebP assets. Note images have a maximum edge of 720 pixels and stay below 300 KB each. Shared pictures are stored once even when several notes use them. No runtime third-party image fetch, image API subscription or generated-image service is required. Next Image serves the preoptimized files without paid image transformations. Thumbnails load lazily, full note images load eagerly, and chemical structures fit inside their frame without cropping. Each asset has an adjacent `.webp.json` provenance sidecar with its source and license details. New sidecars also record the original download and SHA-256 hash. This is fallback file metadata, not metadata embedded inside the WebP.
 
 ## Adding another image
 

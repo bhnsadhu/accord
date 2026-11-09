@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/galbanum.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Galbanum resin.",
+  "author": "Maša Sinreih in Valentina Vivod",
+  "source": "https://commons.wikimedia.org/wiki/File:Galbanum1.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Galbanum1.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Galbanum1.JPG/960px-Galbanum1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "678097e220a7a48948e713f59f8239f9de870a05cad1a9b465e2aaee2726c42a"
+}

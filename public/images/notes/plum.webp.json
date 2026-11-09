@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/plum.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Plums.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Plums_African_Rose_-_whole,_halved_and_slice.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Plums_African_Rose_-_whole,_halved_and_slice.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Plums_African_Rose_-_whole%2C_halved_and_slice.jpg/960px-Plums_African_Rose_-_whole%2C_halved_and_slice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "4989db52d9230684be3295c35ef7a2d02d51aa9945cf48b37066926bbc7a43fb"
+}

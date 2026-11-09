@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/clove.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Clove flower buds used as a spice.",
+  "author": "Sanjay Acharya",
+  "source": "https://commons.wikimedia.org/wiki/File:Clove_close_up.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Clove close up.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Clove_close_up.jpg/960px-Clove_close_up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "f92b1aae7fe08ff3b0e0b4dbc6002d4d00d47694d0d3eb0fec382e05ca32bf5c"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/apricot.webp",
+  "width": 720,
+  "height": 543,
+  "alt": "Apricot fruit.",
+  "author": "Fir0002",
+  "source": "https://commons.wikimedia.org/wiki/File:Apricots.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Apricots.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Apricots.jpg/960px-Apricots.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "7850c91331ad89eb22c1f1e0fa3e9d666155373307f6320842b821b503747740"
+}

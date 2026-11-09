@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/orchid.webp",
+  "width": 720,
+  "height": 720,
+  "alt": "Orchid flowers.",
+  "author": "Rohit Naniwadekar",
+  "source": "https://commons.wikimedia.org/wiki/File:Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg/960px-Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "ac4c8c3191f840f1bb2d4657768ffe1e4aa60a3691044c7f6ce626aa44b40fb2"
+}

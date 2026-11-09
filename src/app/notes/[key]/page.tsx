@@ -31,7 +31,7 @@ async function NoteDetail({ params }: { params: Promise<{ key: string }> }) {
     <nav className="reference-wayfinding" aria-label="Note navigation"><Link href="/notes">Note library</Link><Link href="/learn">Fragrance guide</Link></nav>
     <PageTitle>{note.label}</PageTitle>
     <p className="page-intro knowledge-lead">{definition ?? "Explore the fragrances that list this note, and the other notes they bring together."}</p>
-    {photo && <figure className="note-photo-reference"><NotePhoto noteKey={note.key} full /><figcaption><p className="reference-caption">{photo.alt}</p><ImageCredit image={photo} /></figcaption></figure>}
+    {photo && <figure className="note-photo-reference"><NotePhoto noteKey={note.key} full /><figcaption><p className="reference-caption">{photo.alt}</p>{photo.referenceNote && <p className="reference-caption">{photo.referenceNote}</p>}<ImageCredit image={photo} /></figcaption></figure>}
     <div className="note-reference-intro">
       <p>{definition ? "This describes the note in general. Its impression changes with the composition, and a listed note does not tell you how much is used." : "A scent description is not yet included for this note. The fragrances below come directly from its catalog listings."}</p>
       {definition && <a href={NOTE_REFERENCES[note.key] ?? GUIDE_SOURCES.ingredients.href}>Reference: {NOTE_REFERENCE_LABELS[note.key] ?? "The Perfume Society"} <ArrowIcon /></a>}

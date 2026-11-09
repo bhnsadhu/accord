@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/pear.webp",
+  "width": 473,
+  "height": 720,
+  "alt": "Pears on a tree.",
+  "author": "Keith Weller",
+  "source": "https://commons.wikimedia.org/wiki/File:Pears.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Pears.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Pears.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "8f1549b1cd91fcfcb812fff72d16b869d66470290b60133edead23d6a187fe53"
+}

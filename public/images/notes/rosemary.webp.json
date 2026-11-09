@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/rosemary.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Rosemary foliage and flowers.",
+  "author": "Margalob",
+  "source": "https://commons.wikimedia.org/wiki/File:Rosemary_in_bloom.JPG",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Rosemary_in_bloom.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Rosemary_in_bloom.JPG/960px-Rosemary_in_bloom.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "4f07fe9d910022b9500e9c58be3d3b7d7a42a521bd62a5dd854fca4e5645e847"
+}

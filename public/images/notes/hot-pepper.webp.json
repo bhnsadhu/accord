@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/hot-pepper.webp",
+  "width": 720,
+  "height": 576,
+  "alt": "Chili peppers.",
+  "author": "Takeaway",
+  "source": "https://commons.wikimedia.org/wiki/File:Madame_Jeanette_and_other_chillies.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Madame_Jeanette_and_other_chillies.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Madame_Jeanette_and_other_chillies.jpg/960px-Madame_Jeanette_and_other_chillies.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "4aeec95432bf84e96df9cf558ea7a99065ab0db28223ea26195926316c06112e"
+}

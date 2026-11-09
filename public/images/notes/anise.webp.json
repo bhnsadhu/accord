@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/anise.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Anise seeds.",
+  "author": "OttawaAC",
+  "source": "https://commons.wikimedia.org/wiki/File:Anise_Seed.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Anise Seed.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/3/30/Anise_Seed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "3c1405faa86fc8b96dbc4e9ad72f53458100654f98b41b9630f18e23fad94789"
+}

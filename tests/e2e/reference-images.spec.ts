@@ -3,6 +3,29 @@ import AxeBuilder from "@axe-core/playwright";
 
 const santal = "/fragrance/le-labo-santal-33-p14487";
 
+test("every library note has a local image and representative images load with honest captions", async ({ page }) => {
+  await page.goto("/notes");
+  const entries = page.locator(".knowledge-index:visible > li");
+  await expect(entries.first()).toBeVisible();
+  const count = await entries.count();
+  expect(count).toBeGreaterThan(300);
+  await expect(entries.locator("img")).toHaveCount(count);
+  const sources = await entries.locator("img").evaluateAll(images => images.map(image => image.getAttribute("src")));
+  expect(sources.every(src => src?.startsWith("/images/notes/") && src.endsWith(".webp"))).toBe(true);
+  for (const key of ["musk", "tonka-bean", "ambroxan", "yodanol"]) {
+    await page.goto(`/notes/${key}`);
+    const figure = page.locator(".note-photo-reference:visible");
+    const image = figure.locator("img");
+    await expect(image).toBeVisible();
+    await expect.poll(() => image.evaluate(img => (img as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    await expect(figure.locator(".image-credit a")).toHaveCount(2);
+    if (key === "musk") await expect(figure).toContainText("evocative reference");
+    if (key === "ambroxan") await expect(image).toHaveClass(/note-photo-structure/);
+    if (key === "yodanol") await expect(figure).toContainText("context image");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+});
+
 test("the bottle enlarges with credits, traps focus, and returns it on Escape", async ({ page }) => {
   await page.goto(santal);
   const trigger = page.getByRole("button", { name: "View bottle photo of Santal 33" });
@@ -14,7 +37,7 @@ test("the bottle enlarges with credits, traps focus, and returns it on Escape", 
   await expect(viewer.getByRole("link", { name: "Source details" })).toHaveAttribute("href", "/learn#catalog-images");
   expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze()).violations).toEqual([]);
   await page.keyboard.press("Escape"); await expect(viewer).not.toBeVisible(); await expect(trigger).toBeFocused();
-  expect(await page.evaluate(() => document.documentElement.style.overflow)).not.toBe("hidden");
+  await expect.poll(() => page.evaluate(() => document.documentElement.style.overflow)).not.toBe("hidden");
 });
 
 test("search identifies the exact photographed edition and retains unpictured entries", async ({ page }) => {

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import type { BottleImage } from "@/lib/catalog/media";
 import { CloseIcon, SearchIcon } from "./icons";
-import { ImageCredit } from "./reference-image";
+import { ImageCredit } from "./image-credit";
 
 export function BottlePhoto({ image }: { image: BottleImage }) {
   const dialog = useRef<HTMLDialogElement>(null);

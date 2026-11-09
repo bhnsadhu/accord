@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/osmanthus.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Osmanthus flowers.",
+  "author": "Laitr Keiows",
+  "source": "https://commons.wikimedia.org/wiki/File:Osmanthus_fragrans_(orange_flowers).jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Osmanthus_fragrans_(orange_flowers).jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Osmanthus_fragrans_%28orange_flowers%29.jpg/960px-Osmanthus_fragrans_%28orange_flowers%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "79e1a9cdf6ccad1ff6f4b8ac3edd5315b4c2fee2a712412fac6a8ef737dc75d6"
+}

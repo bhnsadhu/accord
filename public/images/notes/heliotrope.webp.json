@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/heliotrope.webp",
+  "width": 720,
+  "height": 461,
+  "alt": "Heliotrope flowers.",
+  "author": "Photo (c)2006 Derek Ramsey (Ram-Man)",
+  "source": "https://commons.wikimedia.org/wiki/File:Heliotropium_arborescens_%27Mini_Marine%27_Heliotrope_Flower_2500px.jpg",
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Heliotropium_arborescens_'Mini_Marine'_Heliotrope_Flower_2500px.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Heliotropium_arborescens_%27Mini_Marine%27_Heliotrope_Flower_2500px.jpg/960px-Heliotropium_arborescens_%27Mini_Marine%27_Heliotrope_Flower_2500px.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "2a5380db8d73b3fe53b7c4fc899ec76cfbcbe584c80a727b4ca7b658df0f1555"
+}

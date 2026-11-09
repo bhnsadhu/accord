@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/passion-fruit.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Passion fruit.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Passion_fruits_-_whole_and_halved.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Passion_fruits_-_whole_and_halved.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Passion_fruits_-_whole_and_halved.jpg/960px-Passion_fruits_-_whole_and_halved.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "ceb773df3c3269c433869205c1ac8a39f1925f51d9cadb96c4b117b93e66ef89"
+}

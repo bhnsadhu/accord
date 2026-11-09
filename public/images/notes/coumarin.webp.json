@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/coumarin.webp",
+  "width": 720,
+  "height": 410,
+  "alt": "Chemical structure of coumarin.",
+  "author": "Calvero.",
+  "source": "https://commons.wikimedia.org/wiki/File:Coumarin_acsv.svg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "kind": "structure",
+  "sourceFile": "Coumarin_acsv.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Coumarin_acsv.svg/960px-Coumarin_acsv.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "8ed1ea57d680ee2e8649efc58477ab94d6e726a34ffeb4973cea9ed0a87a3fce"
+}

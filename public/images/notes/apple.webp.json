@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/apple.webp",
+  "width": 720,
+  "height": 653,
+  "alt": "Apples.",
+  "author": "Abhijit Tembhekar from Mumbai, India",
+  "source": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Red Apple.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/960px-Red_Apple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "60baaee8cff7502bc7cde3cefaf940247a8a9ee5bff7522efc515710b54f36ce"
+}

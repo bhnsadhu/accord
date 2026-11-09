@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/woody-notes.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Wood chips, a visual reference for woody notes.",
+  "author": "Moinats",
+  "source": "https://commons.wikimedia.org/wiki/File:Plaquettes_foresti%C3%A8res.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Plaquettes forestières.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Plaquettes_foresti%C3%A8res.jpg/960px-Plaquettes_foresti%C3%A8res.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "1286c74f9c7f6d8e40ea1c3bc8794d898339818e81fd0c00e8b6a74b60c0bcd2"
+}

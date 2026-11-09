@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/tonka-bean.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Tonka beans.",
+  "author": "Mecredis / Fred Benenson",
+  "source": "https://commons.wikimedia.org/wiki/File:Tonka_Beans.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Tonka Beans.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tonka_Beans.jpg/960px-Tonka_Beans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "af3b9b06099eb394059fe23fd99219b56ae2d1f91cdf23b5c419fc2e4118d1e6"
+}

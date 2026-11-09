@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/whiskey.webp",
+  "width": 205,
+  "height": 350,
+  "alt": "Whisky as a visual reference for a boozy note.",
+  "author": "Culligan1984 at English Wikipedia",
+  "source": "https://commons.wikimedia.org/wiki/File:Glencairn_Whisky_Glass.jpg",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Glencairn Whisky Glass.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/7/75/Glencairn_Whisky_Glass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "7da746afa788108cf93de48c8451bc5bcda28e8f65049bfb2768847a7cb6dd9e"
+}

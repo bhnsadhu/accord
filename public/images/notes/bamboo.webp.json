@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/bamboo.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Bamboo stems and foliage.",
+  "author": "Kamakura",
+  "source": "https://commons.wikimedia.org/wiki/File:Bamboo_forest.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Bamboo_forest.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Bamboo_forest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "666434a9875877cabff63a69880a15e72e4e413709f7f57ea5e332d75d24dfdb"
+}

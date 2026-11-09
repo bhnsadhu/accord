@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/lemon-zest.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Fresh lemon zest.",
+  "author": "Rebecca Siegel",
+  "source": "https://commons.wikimedia.org/wiki/File:Lemon_zest.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Lemon zest.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Lemon_zest.jpg/960px-Lemon_zest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "1108afbffed1e191f49ce24b09bf15d0818084dd47efa975624ded9049d6da88"
+}

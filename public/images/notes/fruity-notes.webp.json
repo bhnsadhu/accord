@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/fruity-notes.webp",
+  "width": 720,
+  "height": 686,
+  "alt": "Fruit as a visual reference for a fruity accord.",
+  "author": "روتانا",
+  "source": "https://commons.wikimedia.org/wiki/File:Fruit_Platter-_Seasonal_Fruits.jpg",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Fruit_Platter-_Seasonal_Fruits.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/3/35/Fruit_Platter-_Seasonal_Fruits.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "74a05a4727392cb8dc2521b99bb4d60f15d59951df37a7438d8d40c43e29c2b5"
+}

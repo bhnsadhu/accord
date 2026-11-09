@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/milk.webp",
+  "width": 719,
+  "height": 720,
+  "alt": "Milk as a visual reference for a milky note.",
+  "author": "NIAID",
+  "source": "https://commons.wikimedia.org/wiki/File:Glass_of_Milk_(33657535532).jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Glass_of_Milk_(33657535532).jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Glass_of_Milk_%2833657535532%29.jpg/960px-Glass_of_Milk_%2833657535532%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "23898fd4bd889da3745ca6cbf18b2e54065362c09ed81cd85be2e079d348df95"
+}

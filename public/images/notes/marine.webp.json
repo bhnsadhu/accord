@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/marine.webp",
+  "width": 720,
+  "height": 420,
+  "alt": "Ocean waves, a visual reference for marine notes.",
+  "author": "Frantzou Fleurine",
+  "source": "https://commons.wikimedia.org/wiki/File:Waves_Shore_Ocean.jpg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Waves Shore Ocean.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Waves_Shore_Ocean.jpg/960px-Waves_Shore_Ocean.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "c346dfd1014fb01b4cb81b630904612454be5f5111fb9ec774c5d831380bc8d4"
+}

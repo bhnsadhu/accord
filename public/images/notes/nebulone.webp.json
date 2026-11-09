@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/nebulone.webp",
+  "width": 600,
+  "height": 600,
+  "alt": "Molecular structure associated with Nebulone in PubChem.",
+  "author": "PubChem, National Library of Medicine",
+  "source": "https://pubchem.ncbi.nlm.nih.gov/compound/15552386#section=2D-Structure",
+  "license": "PubChem reuse permitted",
+  "licenseUrl": "https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "kind": "structure",
+  "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
+  "sourceFile": "PubChem-CID-15552386.png",
+  "sourceDownload": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/15552386/PNG?image_size=600x600",
+  "sourceSha256": "ba326004b5dc4427cdc507c2129df1d64200663cf9a2d4f37405d6a7a4974233"
+}

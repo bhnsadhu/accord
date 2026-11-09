@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/arum-lily.webp",
+  "width": 479,
+  "height": 720,
+  "alt": "Arum lily flowers.",
+  "author": "Eric Hunt",
+  "source": "https://commons.wikimedia.org/wiki/File:Zantedeschia_aethiopica_-1.jpg",
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Zantedeschia_aethiopica_-1.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Zantedeschia_aethiopica_-1.jpg/960px-Zantedeschia_aethiopica_-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "2bf641bb213a7f0f21dadee07e117d138941328538f209e7066b4f4439bad09f"
+}

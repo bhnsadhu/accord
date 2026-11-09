@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/ylang-ylang.webp",
+  "width": 720,
+  "height": 548,
+  "alt": "Ylang-ylang flowers.",
+  "author": "Vinayaraj",
+  "source": "https://commons.wikimedia.org/wiki/File:Cananga_odorata_01.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+  "sourceFile": "Cananga_odorata_01.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Cananga_odorata_01.JPG/960px-Cananga_odorata_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "2aa49e449f22d47a3909edf70bedc5c4d3f78a01c310c7071409f48dccdb80f8"
+}

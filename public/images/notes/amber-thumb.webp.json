@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/amber-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Labdanum resin, one possible facet of an amber accord. Amber is a scent accord, not amber gemstone.",
+  "author": "Aroma2",
+  "source": "https://commons.wikimedia.org/wiki/File:Labdanum_fest.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Labdanum fest.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/5/53/Labdanum_fest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "a30db04a7e3251348711985e34c5420a02761c3974ebe837a65605189fb6382d",
+  "derivedFrom": "/images/notes/amber.webp"
+}

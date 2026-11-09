@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/ozonic-notes-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Open sky, a visual reference for an airy accord.",
+  "author": "ADARSHluck",
+  "source": "https://commons.wikimedia.org/wiki/File:Cirrus_uncinus_clouds_in_the_morning_sky.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Cirrus uncinus clouds in the morning sky.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Cirrus_uncinus_clouds_in_the_morning_sky.jpg/960px-Cirrus_uncinus_clouds_in_the_morning_sky.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "dccae632271f86f9516ffcc6352f80c5481035b1fff08b2e3a69105322401fff",
+  "derivedFrom": "/images/notes/ozonic-notes.webp"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/rhubarb-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Rhubarb stalks.",
+  "author": "Dieter Weber (User:Uellue)",
+  "source": "https://commons.wikimedia.org/wiki/File:Rheum_rhabarbarum.2006-04-27.uellue.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Rheum_rhabarbarum.2006-04-27.uellue.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Rheum_rhabarbarum.2006-04-27.uellue.jpg/960px-Rheum_rhabarbarum.2006-04-27.uellue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "4b9e3497067626bd941bd24e5fb43cdc09a93e94a32f663889028e15da0ba840",
+  "derivedFrom": "/images/notes/rhubarb.webp"
+}

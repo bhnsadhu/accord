@@ -26,9 +26,11 @@ Visual inspection checks the bottle label and concentration before matching a ph
 
 Bottle photographs appear on the detail page and as small Quick Find thumbnails. A native dialog enlarges the photograph with its edition, caption, photographer and license. Escape closes it, focus returns to its trigger, and scrolling is restored. On phones the full photograph fits beside the fragrance name rather than cropping the bottle to a wide banner.
 
-Visual note disclosures reveal a concise description, attribution and a link into the note library. Documented opening, heart and base stages appear only when supported by a source. Original catalog notes remain separately accessible and continue to drive similarity. Reference aliases help navigation without rewriting catalog data. A source note with no matching catalog article links to the library rather than a missing page.
+Visual note disclosures reveal a concise description, attribution and a link into the note library. Documented top, heart and base stages appear only when supported by a source. Original catalog notes remain separately accessible and continue to drive similarity. Reference aliases help navigation without rewriting catalog data. A source note with no matching catalog article links to the library rather than a missing page.
 
 All reference images are optimized local WebP assets. Note images have a maximum edge of 720 pixels and stay below 300 KB each. Shared pictures are stored once even when several notes use them. No runtime third-party image fetch, image API subscription or generated-image service is required. Next Image serves the preoptimized files without paid image transformations. Thumbnails load lazily, full note images load eagerly, and chemical structures fit inside their frame without cropping. Each asset has an adjacent `.webp.json` provenance sidecar with its source and license details. New sidecars also record the original download and SHA-256 hash. This is fallback file metadata, not metadata embedded inside the WebP.
+
+Library rows and fragrance note tiles use separate 192-pixel thumbnails, each under 50 KB. The six larger starter pictures and individual note articles retain the full images. The 323 note and alias assignments share 212 original images; 34 assignments show molecular structures and 52 use the explicitly labeled perfumer's-palette context picture.
 
 ## Adding another image
 

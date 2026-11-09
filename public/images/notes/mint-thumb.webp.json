@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/mint-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Mint foliage.",
+  "author": "C T Johansson",
+  "source": "https://commons.wikimedia.org/wiki/File:Mentha_spicata-IMG_6186.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Mentha_spicata-IMG_6186.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Mentha_spicata-IMG_6186.jpg/960px-Mentha_spicata-IMG_6186.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "cd36c809911a54eb62f4ed0e4e115fdbd4ad9ed88e2b6e1174e466f8351385e9",
+  "derivedFrom": "/images/notes/mint.webp"
+}

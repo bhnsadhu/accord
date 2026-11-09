@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/tarragon-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Tarragon foliage.",
+  "author": "No machine-readable author provided. Ies assumed (based on copyright claims).",
+  "source": "https://commons.wikimedia.org/wiki/File:Estragon_1511.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Estragon_1511.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Estragon_1511.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "08d9508e8bbd83deb5b3c5cd7a3fa33ee563e3573f5bdbea68fe25af56cb0e8d",
+  "derivedFrom": "/images/notes/tarragon.webp"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/perfume-materials-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "A perfumer’s organ with bottles of aroma materials.",
+  "author": "Mx. Granger",
+  "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Perfume Organ.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Perfume_Organ.jpg/960px-Perfume_Organ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "4c9ff331cd09f4ec8a5a7bdc09e3613233a99e8f2a119364d389331e9a6debf5",
+  "derivedFrom": "/images/notes/perfume-materials.webp"
+}

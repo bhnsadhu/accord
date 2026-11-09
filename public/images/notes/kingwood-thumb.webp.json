@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/kingwood-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Kingwood timber.",
+  "author": "Krensing",
+  "source": "https://commons.wikimedia.org/wiki/File:Dalbergia_cearensis,_Tangentialschnitt.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Dalbergia cearensis, Tangentialschnitt.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Dalbergia_cearensis%2C_Tangentialschnitt.jpg/960px-Dalbergia_cearensis%2C_Tangentialschnitt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "eb17b953b45ac10d2cf9a659bd26e7d16fccc1e10b84ce163ca148ca8b82ebd7",
+  "derivedFrom": "/images/notes/kingwood.webp"
+}

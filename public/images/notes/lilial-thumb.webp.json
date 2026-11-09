@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/lilial-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of the R enantiomer of lilial.",
+  "author": "Jü",
+  "source": "https://commons.wikimedia.org/wiki/File:R-Lilial.svg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "R-Lilial.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/R-Lilial.svg/960px-R-Lilial.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "5f33c7a2d38d393e17a6b26b5b1abaad1604de793f16ab613b6dafe2bd0c200f",
+  "derivedFrom": "/images/notes/lilial.webp"
+}

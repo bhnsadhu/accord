@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/rock-salt-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Rock salt crystals.",
+  "author": "Lech Darski",
+  "source": "https://commons.wikimedia.org/wiki/File:Halit_(NaCl)_-_Kopalnia_soli_Wieliczka,_Polska.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Halit_(NaCl)_-_Kopalnia_soli_Wieliczka,_Polska.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Halit_%28NaCl%29_-_Kopalnia_soli_Wieliczka%2C_Polska.jpg/960px-Halit_%28NaCl%29_-_Kopalnia_soli_Wieliczka%2C_Polska.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "e61195171e3ee30fa4b3dbe451517103757581f53dd4c2c6370cb9501cdd5ecb",
+  "derivedFrom": "/images/notes/rock-salt.webp"
+}

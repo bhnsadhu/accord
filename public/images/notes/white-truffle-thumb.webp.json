@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/white-truffle-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "White truffles.",
+  "author": "MatthiasKabel",
+  "source": "https://commons.wikimedia.org/wiki/File:Truffle_washed_and_cut.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Truffle_washed_and_cut.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Truffle_washed_and_cut.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "3bf4a07e00e9c7255785a18663d53fd0d4a75c90f6342aeb84ebfccc8d4abf2d",
+  "derivedFrom": "/images/notes/white-truffle.webp"
+}

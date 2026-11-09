@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/lentisk-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Lentisk foliage and fruit.",
+  "author": "Lumbar~commonswiki",
+  "source": "https://commons.wikimedia.org/wiki/File:Pistacia_lentiscus.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Pistacia_lentiscus.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Pistacia_lentiscus.jpg/960px-Pistacia_lentiscus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "064c1d5d2f18034db02564b1c7195b33096ddd3f66400110acb131cd61ad234f",
+  "derivedFrom": "/images/notes/lentisk.webp"
+}

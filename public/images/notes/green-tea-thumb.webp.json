@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/green-tea-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Green tea leaves.",
+  "author": "Alessandro Martini",
+  "source": "https://commons.wikimedia.org/wiki/File:Green_tea_3_appearances.jpg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Green_tea_3_appearances.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/3/36/Green_tea_3_appearances.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "da3602cd9072a624e4550d0e8f763145426e8ecf41ceb9cf3ee28bc0ca06b809",
+  "derivedFrom": "/images/notes/green-tea.webp"
+}

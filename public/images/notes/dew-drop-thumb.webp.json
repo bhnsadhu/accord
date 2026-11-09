@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/dew-drop-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Dew on a leaf.",
+  "author": "MilkyWay's Stars",
+  "source": "https://commons.wikimedia.org/wiki/File:A_drop_of_dew_on_a_clover.jpg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "A_drop_of_dew_on_a_clover.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/A_drop_of_dew_on_a_clover.jpg/960px-A_drop_of_dew_on_a_clover.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "769cdbe2f89cf59d19fa5aac77218e206724bf79b441819c6a49b40ef2eee1ac",
+  "derivedFrom": "/images/notes/dew-drop.webp"
+}

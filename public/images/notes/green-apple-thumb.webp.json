@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/green-apple-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Green apples.",
+  "author": "Maksym Kozlenko",
+  "source": "https://commons.wikimedia.org/wiki/File:2018-07-16_Green_apples_on_tree.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "2018-07-16 Green apples on tree.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/2018-07-16_Green_apples_on_tree.jpg/960px-2018-07-16_Green_apples_on_tree.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "bb1a680caa0844ddc08af9114e43c9b8cf99a7517f5b5eda9cca973109ad8975",
+  "derivedFrom": "/images/notes/green-apple.webp"
+}

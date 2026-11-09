@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/rum-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Rum, a visual reference for its boozy note.",
+  "author": "Linus Bohman from Malmö, Sweden",
+  "source": "https://commons.wikimedia.org/wiki/File:A_glass_of_rum.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "A_glass_of_rum.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/2/23/A_glass_of_rum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "9ed2ec2cb512382b8d8d4016a78c4eeceffd7bc7d16d238b5b8aed75b99c4bcd",
+  "derivedFrom": "/images/notes/rum.webp"
+}

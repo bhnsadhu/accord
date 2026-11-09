@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/caramel-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Caramel.",
+  "author": "No machine-readable author provided. Rainer Zenz assumed (based on copyright claims).",
+  "source": "https://commons.wikimedia.org/wiki/File:Caramel-2.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Caramel-2.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Caramel-2.jpg/960px-Caramel-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "b69bf6da76df8a93dc201e9dcebc2ae72dcbced374e46a4869c2ae3be3f348bb",
+  "derivedFrom": "/images/notes/caramel.webp"
+}

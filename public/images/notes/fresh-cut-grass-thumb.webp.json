@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/fresh-cut-grass-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Grass as a visual reference for a freshly cut grass note.",
+  "author": "Catarina Carvalho from Lisboa, Portugal",
+  "source": "https://commons.wikimedia.org/wiki/File:Blades_of_grass.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Blades of grass.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Blades_of_grass.jpg/960px-Blades_of_grass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "d0202ba6b135090f00cdf01fafbdab95c51b81174b08b090c6c823585909dd58",
+  "derivedFrom": "/images/notes/fresh-cut-grass.webp"
+}

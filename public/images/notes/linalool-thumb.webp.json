@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/linalool-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Molecular model of the S enantiomer of linalool.",
+  "author": "Jynto (talk)",
+  "source": "https://commons.wikimedia.org/wiki/File:(S)-Linalool_molecule_ball.png",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "(S)-Linalool_molecule_ball.png",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/%28S%29-Linalool_molecule_ball.png/960px-%28S%29-Linalool_molecule_ball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "93aa15f017a8072efa5cb417cae82610503c1a3f05b276da297cad9ea12e0874",
+  "derivedFrom": "/images/notes/linalool.webp"
+}

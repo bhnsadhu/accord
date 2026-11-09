@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/birch-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Silver birch bark and trunk.",
+  "author": "Percita at Flickr",
+  "source": "https://commons.wikimedia.org/wiki/File:Betula_pendula_Finland.jpg",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Betula_pendula_Finland.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Betula_pendula_Finland.jpg/960px-Betula_pendula_Finland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "66792a007f29436ade54e214c1e806e111f42691ad309b4e6e6f07f1b87c48b7",
+  "derivedFrom": "/images/notes/birch.webp"
+}

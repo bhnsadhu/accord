@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/ambroxan-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of ambroxide.",
+  "author": "Yikrazuul (talk)",
+  "source": "https://commons.wikimedia.org/wiki/File:Ambrox.svg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Ambrox.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Ambrox.svg/960px-Ambrox.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "e953d719ceaf29265e7dad34188c3ff380b8b2bfe4a55b097593bc457f27b8a6",
+  "derivedFrom": "/images/notes/ambroxan.webp"
+}

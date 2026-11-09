@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/rose-water-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Rose water.",
+  "author": "Hossein Khosravi",
+  "source": "https://commons.wikimedia.org/wiki/File:Golab_being_make_in_Meymand_-_Fars_21.jpg",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Golab_being_make_in_Meymand_-_Fars_21.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Golab_being_make_in_Meymand_-_Fars_21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "f654d470f39913cd76642b0c15ac53a1eba9470027382be75328a7822606d35e",
+  "derivedFrom": "/images/notes/rose-water.webp"
+}

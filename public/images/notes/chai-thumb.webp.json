@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/chai-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Spiced chai tea.",
+  "author": "Dadhichbittu007",
+  "source": "https://commons.wikimedia.org/wiki/File:Chai_In_Sakora.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Chai_In_Sakora.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/8/89/Chai_In_Sakora.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "d4a30e3dab774f92824516c8191a444347bf0bb6373f4f8dcff90b82f0b07eaf",
+  "derivedFrom": "/images/notes/chai.webp"
+}

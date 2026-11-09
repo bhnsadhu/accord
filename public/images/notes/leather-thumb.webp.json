@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/leather-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Leather as a visual reference for a leather accord.",
+  "author": "Gregory Schick aka leadgolem",
+  "source": "https://commons.wikimedia.org/wiki/File:Leather_brown.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Leather brown.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Leather_brown.jpg/960px-Leather_brown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "4dbf6152bff2e63cf1e50fff53c0c758143c5a979f9ffc8be975e1efabef9535",
+  "derivedFrom": "/images/notes/leather.webp"
+}

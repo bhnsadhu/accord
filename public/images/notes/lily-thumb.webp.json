@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/lily-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Lily flowers.",
+  "author": "Stan Shebs",
+  "source": "https://commons.wikimedia.org/wiki/File:Lilium_candidum_1.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Lilium_candidum_1.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Lilium_candidum_1.jpg/960px-Lilium_candidum_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "1663dc7df6273b0b2ef3d5d6cb0524a1714734a9c9c066df22212e93b6710b88",
+  "derivedFrom": "/images/notes/lily.webp"
+}

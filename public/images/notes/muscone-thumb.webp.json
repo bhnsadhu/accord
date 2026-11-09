@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/muscone-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of muscone.",
+  "author": "Hbf878",
+  "source": "https://commons.wikimedia.org/wiki/File:Muscone_horizontal.svg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Muscone_horizontal.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Muscone_horizontal.svg/960px-Muscone_horizontal.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "d5973c2ca4e1c20fd6cd55606f52f4f9d0e020379652b5218b26e38bce90438f",
+  "derivedFrom": "/images/notes/muscone.webp"
+}

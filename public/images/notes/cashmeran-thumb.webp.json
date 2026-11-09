@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/cashmeran-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of cashmeran.",
+  "author": "User:Edgar181",
+  "source": "https://commons.wikimedia.org/wiki/File:Musk_indanone.svg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Musk_indanone.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Musk_indanone.svg/960px-Musk_indanone.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "2a0e013cce6a0a6755e2b0f9b23afc5f46c1a20683373bff253c2fd0e95286f5",
+  "derivedFrom": "/images/notes/cashmeran.webp"
+}

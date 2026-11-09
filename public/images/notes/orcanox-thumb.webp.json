@@ -1,0 +1,18 @@
+{
+  "path": "/images/notes/orcanox-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Molecular structure associated with Orcanox in PubChem.",
+  "author": "PubChem, National Library of Medicine",
+  "source": "https://pubchem.ncbi.nlm.nih.gov/compound/10857465#section=2D-Structure",
+  "license": "PubChem reuse permitted",
+  "licenseUrl": "https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
+  "sourceFile": "PubChem-CID-10857465.png",
+  "sourceDownload": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10857465/PNG?image_size=600x600",
+  "sourceSha256": "882febb2e533e7123d452460ed19910ac212f91ed0d2e3bc696082a3587c2cfd",
+  "derivedFrom": "/images/notes/orcanox.webp"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/sweet-pea-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Sweet pea flowers.",
+  "author": "Aftabbanoori",
+  "source": "https://commons.wikimedia.org/wiki/File:Sweet_Pea-7.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Sweet_Pea-7.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Sweet_Pea-7.jpg/960px-Sweet_Pea-7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "162085313cf2b4cb125d2b476129470bc3ea11971ad7913012adbf1c7cfb4e87",
+  "derivedFrom": "/images/notes/sweet-pea.webp"
+}

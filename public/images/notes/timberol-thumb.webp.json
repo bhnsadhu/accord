@@ -1,0 +1,18 @@
+{
+  "path": "/images/notes/timberol-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Molecular structure associated with Timberol in PubChem.",
+  "author": "PubChem, National Library of Medicine",
+  "source": "https://pubchem.ncbi.nlm.nih.gov/compound/116699#section=2D-Structure",
+  "license": "PubChem reuse permitted",
+  "licenseUrl": "https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
+  "sourceFile": "PubChem-CID-116699.png",
+  "sourceDownload": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/116699/PNG?image_size=600x600",
+  "sourceSha256": "15d0bc27b8ad6bfb75b0c1c5c7a38e5d781a8a325140ba62497c4748cfc52972",
+  "derivedFrom": "/images/notes/timberol.webp"
+}

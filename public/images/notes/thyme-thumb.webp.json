@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/thyme-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Thyme foliage and flowers.",
+  "author": "Henry Brisse (upload by user:Abalg)",
+  "source": "https://commons.wikimedia.org/wiki/File:Thymus_vulgaris1.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Thymus_vulgaris1.JPG",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Thymus_vulgaris1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "b219028225e6b5be6ca27f7beb1b09c096fcc4faceea54c475c04c6bef8c90cd",
+  "derivedFrom": "/images/notes/thyme.webp"
+}

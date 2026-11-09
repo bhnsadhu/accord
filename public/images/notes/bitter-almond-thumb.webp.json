@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/bitter-almond-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Almond kernels, shown as a visual reference for a bitter almond note.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Almonds_-_in_shell,_shell_cracked_open,_shelled,_blanched.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Almonds_-_in_shell,_shell_cracked_open,_shelled,_blanched.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Almonds_-_in_shell%2C_shell_cracked_open%2C_shelled%2C_blanched.jpg/960px-Almonds_-_in_shell%2C_shell_cracked_open%2C_shelled%2C_blanched.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "ec0aee28265bce43892d89b55f4a896e87f458d2cd5e8157ae4093949bc73201",
+  "derivedFrom": "/images/notes/bitter-almond.webp"
+}

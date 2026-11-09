@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/cranberry-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Cranberries.",
+  "author": "Photo by Keith Weller",
+  "source": "https://commons.wikimedia.org/wiki/File:Cranberry_bog.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Cranberry_bog.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Cranberry_bog.jpg/960px-Cranberry_bog.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "23758d1ebd752d2b346ccca97b6fe324cc9ca93c1eb85698a31eb3e36747d29a",
+  "derivedFrom": "/images/notes/cranberry.webp"
+}

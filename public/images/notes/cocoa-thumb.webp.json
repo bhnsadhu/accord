@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/cocoa-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Cocoa beans.",
+  "author": "Roger Culos",
+  "source": "https://commons.wikimedia.org/wiki/File:Theobroma_cacao_MHNT.BOT.2004.0.204.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Theobroma cacao MHNT.BOT.2004.0.204.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Theobroma_cacao_MHNT.BOT.2004.0.204.jpg/960px-Theobroma_cacao_MHNT.BOT.2004.0.204.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "51315e639d564d2ca752a24fc015f9b0463522cebfc84197f91d28aed4b95c11",
+  "derivedFrom": "/images/notes/cocoa.webp"
+}

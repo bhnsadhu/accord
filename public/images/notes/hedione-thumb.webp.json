@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/hedione-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of methyl dihydrojasmonate.",
+  "author": "Jü",
+  "source": "https://commons.wikimedia.org/wiki/File:Methyl_dihydrojasmonate_Structural_Formula_V1.svg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Methyl_dihydrojasmonate_Structural_Formula_V1.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Methyl_dihydrojasmonate_Structural_Formula_V1.svg/960px-Methyl_dihydrojasmonate_Structural_Formula_V1.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "3afaf7bb8cefd2cd35a52db921a657b9590a391fd01eee66872bf4bdfb1287e1",
+  "derivedFrom": "/images/notes/hedione.webp"
+}

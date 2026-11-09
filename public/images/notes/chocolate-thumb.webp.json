@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/chocolate-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chocolate.",
+  "author": "Lynnereal",
+  "source": "https://commons.wikimedia.org/wiki/File:Three_Bars_(1).jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Three_Bars_(1).jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Three_Bars_%281%29.jpg/960px-Three_Bars_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "3cc3c5fceb93457577de5d371516f51fb4208ffa552e9dc3c37f1129d15db43b",
+  "derivedFrom": "/images/notes/chocolate.webp"
+}

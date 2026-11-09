@@ -44,6 +44,14 @@ describe("reference image identity and provenance", () => {
     expect(noteReferenceKey("iris")).toBe("iris-orris");
     expect(noteReferenceKey("unknown-material")).toBe("unknown-material");
   });
+  it("uses small local thumbnails so browsing the library does not download full images", () => {
+    for (const image of Object.values(notes)) {
+      expect(image.thumbnail).toMatch(/^\/images\/notes\/[a-z0-9-]+-thumb\.webp$/);
+      const file = `public${image.thumbnail}`;
+      expect(readFileSync(file).subarray(8, 12).toString()).toBe("WEBP");
+      expect(statSync(file).size).toBeLessThan(50_000);
+    }
+  });
   it("pictures every featured and staged research note, including names outside the catalog", () => {
     for (const { research: entry } of research.entries) {
       const labels = [...entry.featuredNotes, ...Object.values(entry.noteStages ?? {}).flat()];

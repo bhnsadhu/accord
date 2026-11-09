@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/limequat-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Limequat fruit.",
+  "author": "No machine-readable author provided. Bjwebb assumed (based on copyright claims).",
+  "source": "https://commons.wikimedia.org/wiki/File:Limequat.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Limequat.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Limequat.jpg/960px-Limequat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "a9417c718f72ed10fb7bd025bff9682951b464f7cdee8a0880a223f4f16834c4",
+  "derivedFrom": "/images/notes/limequat.webp"
+}

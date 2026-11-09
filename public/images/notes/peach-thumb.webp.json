@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/peach-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Peaches.",
+  "author": "Jack Dykinga, USDA",
+  "source": "https://commons.wikimedia.org/wiki/File:Autumn_Red_peaches.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Autumn Red peaches.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Autumn_Red_peaches.jpg/960px-Autumn_Red_peaches.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "3679b9da78d0dd67607d686f3f59477f0c672324d10d5167102263e2beb21680",
+  "derivedFrom": "/images/notes/peach.webp"
+}

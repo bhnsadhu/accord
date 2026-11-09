@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/ethyl-maltol-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of ethyl maltol.",
+  "author": "User:Innerstream",
+  "source": "https://commons.wikimedia.org/wiki/File:Ethyl_maltol.svg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Ethyl_maltol.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Ethyl_maltol.svg/960px-Ethyl_maltol.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "83996cb920a332825e173131883dba46ec99dab72eee9752c6701784c6ef6b93",
+  "derivedFrom": "/images/notes/ethyl-maltol.webp"
+}

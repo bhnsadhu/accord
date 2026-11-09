@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/iso-e-super-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of tetramethyl acetyloctahydronaphthalenes.",
+  "author": "Alchemist peter",
+  "source": "https://commons.wikimedia.org/wiki/File:OTNE.svg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "OTNE.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/OTNE.svg/960px-OTNE.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "319df3c7d5a6c8d53b072beddb69eea8c07df8556e09545cd765ca5bac30dbbb",
+  "derivedFrom": "/images/notes/iso-e-super.webp"
+}

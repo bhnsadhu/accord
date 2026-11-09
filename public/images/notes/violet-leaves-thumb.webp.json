@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/violet-leaves-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Violet flowers and foliage.",
+  "author": "Fritz Geller-Grimm",
+  "source": "https://commons.wikimedia.org/wiki/File:Viola_odorata_fg01.JPG",
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Viola_odorata_fg01.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Viola_odorata_fg01.JPG/960px-Viola_odorata_fg01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "d636c714137c5b4060ac1a6d047aab9d65da14a8cb3c8ff25637827ca7407def",
+  "derivedFrom": "/images/notes/violet-leaves.webp"
+}

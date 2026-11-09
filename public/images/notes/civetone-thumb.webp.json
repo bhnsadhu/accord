@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/civetone-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of civetone.",
+  "author": "Jynto (talk)",
+  "source": "https://commons.wikimedia.org/wiki/File:Civetone_3D_ball.png",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Civetone_3D_ball.png",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Civetone_3D_ball.png/960px-Civetone_3D_ball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "feb7f91b9501333fc7328419210d25d0da0b8fcda3cc82d79728f5f90941a5f5",
+  "derivedFrom": "/images/notes/civetone.webp"
+}

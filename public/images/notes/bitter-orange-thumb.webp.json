@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/bitter-orange-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Bitter orange fruit.",
+  "author": "A. Barra",
+  "source": "https://commons.wikimedia.org/wiki/File:Citrus_aurantium.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Citrus_aurantium.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrus_aurantium.jpg/960px-Citrus_aurantium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "a6f6c8c0ced49c32633e5a5645319634cdfdaccbe5d5e1c2e7e5d45b907f4ac2",
+  "derivedFrom": "/images/notes/bitter-orange.webp"
+}

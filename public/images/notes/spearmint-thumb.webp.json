@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/spearmint-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Spearmint foliage.",
+  "author": "Simon Eugster --Simon 13:07, 2 July 2006 (UTC)",
+  "source": "https://commons.wikimedia.org/wiki/File:Minze.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Minze.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Minze.jpg/960px-Minze.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "120b0776221ef0d7772683ec6790b47c4d72cb9b0b39df17bea7e3a8527c874e",
+  "derivedFrom": "/images/notes/spearmint.webp"
+}

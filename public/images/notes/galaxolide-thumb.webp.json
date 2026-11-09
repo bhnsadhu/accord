@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/galaxolide-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of galaxolide.",
+  "author": "Sjschen",
+  "source": "https://commons.wikimedia.org/wiki/File:Galaxolide.svg",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Galaxolide.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Galaxolide.svg/960px-Galaxolide.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "d518f3e35371cff624434f80a9be651a56ea5754fc39c14d394d4876a3984974",
+  "derivedFrom": "/images/notes/galaxolide.webp"
+}

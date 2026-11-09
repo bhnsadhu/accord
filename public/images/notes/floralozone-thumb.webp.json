@@ -1,0 +1,18 @@
+{
+  "path": "/images/notes/floralozone-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Molecular structure associated with Floralozone in PubChem.",
+  "author": "PubChem, National Library of Medicine",
+  "source": "https://pubchem.ncbi.nlm.nih.gov/compound/105513#section=2D-Structure",
+  "license": "PubChem reuse permitted",
+  "licenseUrl": "https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
+  "sourceFile": "PubChem-CID-105513.png",
+  "sourceDownload": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/105513/PNG?image_size=600x600",
+  "sourceSha256": "7b563a5f10c98183911535c240401acd58440d2ec8fe211224dd610925eb41c9",
+  "derivedFrom": "/images/notes/floralozone.webp"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/tobacco-leaf-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Tobacco leaves.",
+  "author": "Pollinator",
+  "source": "https://commons.wikimedia.org/wiki/File:Ripe_tobacco_leaf_3037.JPG",
+  "license": "CC BY 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Ripe_tobacco_leaf_3037.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Ripe_tobacco_leaf_3037.JPG/960px-Ripe_tobacco_leaf_3037.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "49472f403ede03fe6f163b78d9ce83bfeba1159b27d21fdf4dc655dfe0a4de27",
+  "derivedFrom": "/images/notes/tobacco-leaf.webp"
+}

@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/ethyl-acetate-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of ethyl acetate.",
+  "author": "ChemSim",
+  "source": "https://commons.wikimedia.org/wiki/File:Ethyl-acetate-2D-skeletal.svg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Ethyl-acetate-2D-skeletal.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Ethyl-acetate-2D-skeletal.svg/960px-Ethyl-acetate-2D-skeletal.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "2e90992a6f0bccd54938ae574e5bcda2724b158e539c8b50984e59204e48fe38",
+  "derivedFrom": "/images/notes/ethyl-acetate.webp"
+}

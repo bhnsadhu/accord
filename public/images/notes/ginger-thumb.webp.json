@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/ginger-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Fresh ginger rhizome.",
+  "author": "Friday musa",
+  "source": "https://commons.wikimedia.org/wiki/File:Fresh_ginger_rhizome_01.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Fresh ginger rhizome 01.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Fresh_ginger_rhizome_01.jpg/960px-Fresh_ginger_rhizome_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "7a7a6b5505767c2ddf776521ce6bafcb7ae8b7247856801fe0f8e4822c71517f",
+  "derivedFrom": "/images/notes/ginger.webp"
+}

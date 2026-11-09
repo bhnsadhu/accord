@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/fig-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Fig fruit.",
+  "author": "Jedesto",
+  "source": "https://commons.wikimedia.org/wiki/File:Cut_Fig_01.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Cut Fig 01.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Cut_Fig_01.jpg/960px-Cut_Fig_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "9e9662eb731e3173fd922c6de3d833ff039a0629288cd97da1d5f49f9b9aaf4f",
+  "derivedFrom": "/images/notes/fig.webp"
+}

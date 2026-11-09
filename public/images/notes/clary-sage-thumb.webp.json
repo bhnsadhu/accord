@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/clary-sage-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Clary sage flowers and foliage.",
+  "author": "Kurt Stueber",
+  "source": "https://commons.wikimedia.org/wiki/File:Salvia_sclarea3.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Salvia_sclarea3.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Salvia_sclarea3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "8a179de067bf9e8725b646869c2c6c8bb87e47e8d1c2fd6e502482d3e5e8d663",
+  "derivedFrom": "/images/notes/clary-sage.webp"
+}

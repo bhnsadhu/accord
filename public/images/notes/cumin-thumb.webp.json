@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/cumin-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Cumin seeds.",
+  "author": "Sanjay Acharya",
+  "source": "https://commons.wikimedia.org/wiki/File:Seeds_of_Cumin.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Seeds of Cumin.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Seeds_of_Cumin.jpg/960px-Seeds_of_Cumin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "a7ddb73ffb85f448eeadf15bc823bc455523757fe9a1039eccf19dbe7f61e14c",
+  "derivedFrom": "/images/notes/cumin.webp"
+}

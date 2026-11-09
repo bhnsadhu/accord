@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/freesia-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Freesia flowers.",
+  "author": "The original uploader was Jeantosti at English Wikipedia.",
+  "source": "https://commons.wikimedia.org/wiki/File:Freesia.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Freesia.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/4/42/Freesia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "100627d82f9e478ca48eb34e94df07f68321fa2f8ae1d1bc4152729e1d5ef392",
+  "derivedFrom": "/images/notes/freesia.webp"
+}

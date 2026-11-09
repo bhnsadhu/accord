@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/oakwood-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Oak leaves and acorns.",
+  "author": "MPF",
+  "source": "https://commons.wikimedia.org/wiki/File:Quercus_robur.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Quercus_robur.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/a/af/Quercus_robur.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "f06c36597c5a742011fdaff31bc265b1111222254578aeb80067062e0afe9bbe",
+  "derivedFrom": "/images/notes/oakwood.webp"
+}

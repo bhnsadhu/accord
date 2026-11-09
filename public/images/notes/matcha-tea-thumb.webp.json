@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/matcha-tea-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Matcha tea powder.",
+  "author": "Evanhoever",
+  "source": "https://commons.wikimedia.org/wiki/File:Matcha_Scoop.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Matcha_Scoop.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Matcha_Scoop.jpg/960px-Matcha_Scoop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "7afeb02dbbe9793ebd530d4622f8e678bc3aa9f1be1c6c85eb40251ab9575df8",
+  "derivedFrom": "/images/notes/matcha-tea.webp"
+}

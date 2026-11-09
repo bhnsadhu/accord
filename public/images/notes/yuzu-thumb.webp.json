@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/yuzu-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Yuzu fruit.",
+  "author": "Nikita from Russian Federation",
+  "source": "https://commons.wikimedia.org/wiki/File:Yuzu_oranges_(6459456959).jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Yuzu_oranges_(6459456959).jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Yuzu_oranges_%286459456959%29.jpg/960px-Yuzu_oranges_%286459456959%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "90f6fc0e8ffc0f50317584e3a607bcf8bfdb424789957efd47335f4e663475ab",
+  "derivedFrom": "/images/notes/yuzu.webp"
+}

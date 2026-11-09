@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/tea-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Tea leaves.",
+  "author": "Difference engine",
+  "source": "https://commons.wikimedia.org/wiki/File:Longjing_tea_steeping_in_gaiwan.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Longjing_tea_steeping_in_gaiwan.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Longjing_tea_steeping_in_gaiwan.jpg/960px-Longjing_tea_steeping_in_gaiwan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "24cb952d850fa859179a9d2dd8479492f70421c10486f5bae976ad19d27bd0f4",
+  "derivedFrom": "/images/notes/tea.webp"
+}

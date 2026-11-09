@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/blackcurrant-leaf-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Blackcurrant foliage.",
+  "author": "Sten",
+  "source": "https://commons.wikimedia.org/wiki/File:Ribes-nigrum.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Ribes-nigrum.JPG",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Ribes-nigrum.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "010054499a542e81be5653557ab9f27bc7e2953ff0b4473a947a81b94646d431",
+  "derivedFrom": "/images/notes/blackcurrant-leaf.webp"
+}

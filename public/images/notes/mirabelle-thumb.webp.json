@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/mirabelle-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Mirabelle plums.",
+  "author": "Giftzwerg 88",
+  "source": "https://commons.wikimedia.org/wiki/File:Georgische_Mirabellen_1.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Georgische Mirabellen 1.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Georgische_Mirabellen_1.jpg/960px-Georgische_Mirabellen_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "eed77ed79c3e10cbffedb41f635419250338a344d0b7493e0fe55c3a9e67fc76",
+  "derivedFrom": "/images/notes/mirabelle.webp"
+}

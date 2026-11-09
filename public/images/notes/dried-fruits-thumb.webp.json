@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/dried-fruits-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Dried fruit.",
+  "author": "Gilabrand (talk)",
+  "source": "https://commons.wikimedia.org/wiki/File:DriedfruitS.jpg",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "DriedfruitS.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/b/b2/DriedfruitS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "abf23473c74bdac793bc6b2483e845734c52e1e99fea9bd4b4cc39f373f66868",
+  "derivedFrom": "/images/notes/dried-fruits.webp"
+}

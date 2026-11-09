@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/blackberry-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Blackberries.",
+  "author": "Ragesoss",
+  "source": "https://commons.wikimedia.org/wiki/File:Ripe,_ripening,_and_green_blackberries.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Ripe,_ripening,_and_green_blackberries.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Ripe%2C_ripening%2C_and_green_blackberries.jpg/960px-Ripe%2C_ripening%2C_and_green_blackberries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "63ea96e798540b4de7fc67e56dde074dc365fd83a97e68bafaf26e368281e055",
+  "derivedFrom": "/images/notes/blackberry.webp"
+}

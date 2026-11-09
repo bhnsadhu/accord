@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/elemi-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Elemi resin.",
+  "author": "Zinnmann",
+  "source": "https://commons.wikimedia.org/wiki/File:Deutsches_Apothekenmuseum_-_Elemi.jpg",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Deutsches Apothekenmuseum - Elemi.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Deutsches_Apothekenmuseum_-_Elemi.jpg/960px-Deutsches_Apothekenmuseum_-_Elemi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "32536290fcdde90a2de7eea6d24e77cfa0961ed89d2c7ec2b871ab1dbb5d61b7",
+  "derivedFrom": "/images/notes/elemi.webp"
+}

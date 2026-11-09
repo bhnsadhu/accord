@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/fig-leaf-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Fig leaves.",
+  "author": "Jules Verne Times Two",
+  "source": "https://commons.wikimedia.org/wiki/File:Fig_(Ficus_carica)_leaves,_Parque_do_Monteiro-Mor,_Lisboa,_Portugal_julesvernex2.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Fig (Ficus carica) leaves, Parque do Monteiro-Mor, Lisboa, Portugal julesvernex2.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Fig_%28Ficus_carica%29_leaves%2C_Parque_do_Monteiro-Mor%2C_Lisboa%2C_Portugal_julesvernex2.jpg/960px-Fig_%28Ficus_carica%29_leaves%2C_Parque_do_Monteiro-Mor%2C_Lisboa%2C_Portugal_julesvernex2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "4bc2e4cbc92e6e9eb117e8a62cf95f5b129cfe11236f6a698f78245e14095301",
+  "derivedFrom": "/images/notes/fig-leaf.webp"
+}

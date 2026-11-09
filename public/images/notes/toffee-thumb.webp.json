@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/toffee-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Toffee confectionery.",
+  "author": "Stratford490",
+  "source": "https://commons.wikimedia.org/wiki/File:Thorntonstoffee.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Thorntonstoffee.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Thorntonstoffee.jpg/960px-Thorntonstoffee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "95d06590d793ce63a8a9069ddc7e09eb17539da77bb80e0e430dc53ee6361154",
+  "derivedFrom": "/images/notes/toffee.webp"
+}

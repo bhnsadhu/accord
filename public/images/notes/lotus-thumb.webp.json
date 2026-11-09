@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/lotus-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "A lotus flower.",
+  "author": "T.Voekler",
+  "source": "https://commons.wikimedia.org/wiki/File:Sacred_lotus_Nelumbo_nucifera.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Sacred_lotus_Nelumbo_nucifera.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Sacred_lotus_Nelumbo_nucifera.jpg/960px-Sacred_lotus_Nelumbo_nucifera.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "baa1a67076fe208ad3b984984bd021210b4a45420e228743bd7c6db0ab0b2f89",
+  "derivedFrom": "/images/notes/lotus.webp"
+}

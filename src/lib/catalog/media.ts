@@ -1,7 +1,7 @@
 import noteManifest from "../../../data/media/notes.json";
 
 export type ReferenceImage = {
-  path: string; width: number; height: number; alt: string;
+  path: string; width: number; height: number; alt: string; thumbnail?: string;
   author: string; source: string; license: string; licenseUrl: string;
   checkedAt: string; changes: string; provenanceNote?: string;
   kind?: "photo" | "illustration" | "structure";

@@ -11,7 +11,7 @@ test("every library note has a local image and representative images load with h
   expect(count).toBeGreaterThan(300);
   await expect(entries.locator("img")).toHaveCount(count);
   const sources = await entries.locator("img").evaluateAll(images => images.map(image => image.getAttribute("src")));
-  expect(sources.every(src => src?.startsWith("/images/notes/") && src.endsWith(".webp"))).toBe(true);
+  expect(sources.every(src => src?.startsWith("/images/notes/") && src.endsWith("-thumb.webp"))).toBe(true);
   for (const key of ["musk", "tonka-bean", "ambroxan", "yodanol"]) {
     await page.goto(`/notes/${key}`);
     const figure = page.locator(".note-photo-reference:visible");
@@ -63,7 +63,7 @@ test("photographs and note routes fit a phone and unknown notes have a valid way
   expect(await photo.evaluate(im => getComputedStyle(im).objectFit)).toBe("contain");
   const note = page.locator("#notes > .visual-notes > .reference-note").filter({ hasText: "Sandalwood" });
   await note.locator("summary").click();
-  await expect(note.locator("summary img")).toHaveAttribute("src", "/images/notes/sandalwood.webp");
+  await expect(note.locator("summary img")).toHaveAttribute("src", "/images/notes/sandalwood-thumb.webp");
   await note.getByRole("link", { name: "Explore sandalwood", exact: true }).click();
   await expect(page.locator(".note-photo-reference img")).toBeVisible();
   await expect(page.getByRole("link", { name: "Sandalwood Australia", exact: true })).toBeVisible();

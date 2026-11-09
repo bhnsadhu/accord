@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/beeswax-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Beeswax.",
+  "author": "Mauro Cateb",
+  "source": "https://commons.wikimedia.org/wiki/File:Beeswax_blocks.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Beeswax blocks.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Beeswax_blocks.JPG/960px-Beeswax_blocks.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "451b1e153745959fb81cf8c75738430ad61488f0284453b230e3e2d449c1b1de",
+  "derivedFrom": "/images/notes/beeswax.webp"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/magnolia-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "A magnolia flower.",
+  "author": "Josep Renalias Lohen11",
+  "source": "https://commons.wikimedia.org/wiki/File:Magn%C3%B2lia_a_Verbania.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Magnòlia_a_Verbania.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Magn%C3%B2lia_a_Verbania.JPG/960px-Magn%C3%B2lia_a_Verbania.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "545cf3e17efafafb9be0344dd3c34fcb3226849f24a81a6c05ee2aa5db60da70",
+  "derivedFrom": "/images/notes/magnolia.webp"
+}

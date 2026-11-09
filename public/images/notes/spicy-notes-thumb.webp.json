@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/spicy-notes-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Spices as a visual reference for a spice accord.",
+  "author": "Photo taken by Bertrand Devouard",
+  "source": "https://commons.wikimedia.org/wiki/File:Spices1.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Spices1.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Spices1.jpg/960px-Spices1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "b48af3717cb075b38d7eb21bce5e9736f735b4c2351cb5a2bef95b85c0d151b3",
+  "derivedFrom": "/images/notes/spicy-notes.webp"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/narcissus-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Narcissus flowers.",
+  "author": "Tigerente, improved by Olei",
+  "source": "https://commons.wikimedia.org/wiki/File:Narcissus_poeticus_subsp._radiiflorus.1658.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Narcissus_poeticus_subsp._radiiflorus.1658.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Narcissus_poeticus_subsp._radiiflorus.1658.jpg/960px-Narcissus_poeticus_subsp._radiiflorus.1658.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "69a49108b8853674c9bbb5d43ba1f130a4932be44bbd87a0147cce8ce99e94c2",
+  "derivedFrom": "/images/notes/narcissus.webp"
+}

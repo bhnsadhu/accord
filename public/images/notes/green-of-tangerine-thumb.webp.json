@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/green-of-tangerine-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Green mandarin fruit.",
+  "author": "Joergens.mi",
+  "source": "https://commons.wikimedia.org/wiki/File:Mandarine_(fruit_green)_jm92182.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Mandarine (fruit green) jm92182.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Mandarine_%28fruit_green%29_jm92182.jpg/960px-Mandarine_%28fruit_green%29_jm92182.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "d116e1f93334d219b81a4b3a9c4c17964a073294431709596db51afc8b8f722c",
+  "derivedFrom": "/images/notes/green-of-tangerine.webp"
+}

@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/vanillin-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of vanillin.",
+  "author": "Jynto (talk)",
+  "source": "https://commons.wikimedia.org/wiki/File:Vanillin_3D_ball.png",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Vanillin_3D_ball.png",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Vanillin_3D_ball.png/960px-Vanillin_3D_ball.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "164eedda37e9517038c75b46ab9c4cb47e46a7adce111278165159974f94241c",
+  "derivedFrom": "/images/notes/vanillin.webp"
+}

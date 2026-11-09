@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/angelica-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Angelica flowers and stems.",
+  "author": "Deecodee",
+  "source": "https://commons.wikimedia.org/wiki/File:Angelica_archangelica_flower.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Angelica archangelica flower.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Angelica_archangelica_flower.JPG/960px-Angelica_archangelica_flower.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "1ebec18cb0477c46bcfea0e0a9a5fc82741f9ab510799c69d29682097dea6085",
+  "derivedFrom": "/images/notes/angelica.webp"
+}

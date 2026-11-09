@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/cotton-candy-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Cotton candy.",
+  "author": "FocalPoint",
+  "source": "https://commons.wikimedia.org/wiki/File:Cotton_candy_%CE%9C%CE%B1%CE%BB%CE%BB%CE%AF_%CF%84%CE%B7%CF%82_%CE%B3%CF%81%CE%B9%CE%AC%CF%82.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Cotton_candy_Μαλλί_της_γριάς.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Cotton_candy_%CE%9C%CE%B1%CE%BB%CE%BB%CE%AF_%CF%84%CE%B7%CF%82_%CE%B3%CF%81%CE%B9%CE%AC%CF%82.JPG/960px-Cotton_candy_%CE%9C%CE%B1%CE%BB%CE%BB%CE%AF_%CF%84%CE%B7%CF%82_%CE%B3%CF%81%CE%B9%CE%AC%CF%82.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "53070ec1ac27f47d0dbf0fa2439dc448e854e1ea1cfc7c9dfe0f32656a516903",
+  "derivedFrom": "/images/notes/cotton-candy.webp"
+}

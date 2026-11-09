@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/maltol-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Chemical structure of maltol.",
+  "author": "Edgar181",
+  "source": "https://commons.wikimedia.org/wiki/File:Maltol.svg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "sourceFile": "Maltol.svg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Maltol.svg/960px-Maltol.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "75cb280b65095c41fe87ac1d3a2425c7ed4f10e9e3eff011fe8603918546b060",
+  "derivedFrom": "/images/notes/maltol.webp"
+}

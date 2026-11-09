@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/crinum-lily-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Crinum lily flowers.",
+  "author": "UpstateNYer",
+  "source": "https://commons.wikimedia.org/wiki/File:CrinumAugustumKeyWest.JPG",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "CrinumAugustumKeyWest.JPG",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/CrinumAugustumKeyWest.JPG/960px-CrinumAugustumKeyWest.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "9d8fb25fd69965b218ca32aebe28ff20b90afdd0bd9fa6822cf755c49979cf8b",
+  "derivedFrom": "/images/notes/crinum-lily.webp"
+}

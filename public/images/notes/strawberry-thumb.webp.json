@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/strawberry-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Strawberries.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Garden_strawberry_(Fragaria_%C3%97_ananassa)_single2.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Garden_strawberry_(Fragaria_×_ananassa)_single2.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg/960px-Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "df7cc0e53bb1038d7269fc3fa805edc3023a242ae286422043f8d3306b244474",
+  "derivedFrom": "/images/notes/strawberry.webp"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/clean-fabric-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Linen fabric, an evocative visual reference rather than a perfume ingredient.",
+  "author": "No machine-readable author provided. PKM assumed (based on copyright claims).",
+  "source": "https://commons.wikimedia.org/wiki/File:Handkerchief.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Handkerchief.jpg",
+  "sourceDownload": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Handkerchief.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "sourceSha256": "931d5299d355d2562b99ac697ec7153d0783b53b9af3d81fff35ff5c77652c36",
+  "derivedFrom": "/images/notes/clean-fabric.webp"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/balsam-peru-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "The bark of Myroxylon balsamum, a source of balsam resin.",
+  "author": "Photo by David J. Stang",
+  "source": "https://commons.wikimedia.org/wiki/File:Myroxylon_balsamum_0zz.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Myroxylon balsamum 0zz.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Myroxylon_balsamum_0zz.jpg/960px-Myroxylon_balsamum_0zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "c407c4caac0256be32fa7ff4a4cb49eef2939e287a9e3d3e326aebf3f6bddeea",
+  "derivedFrom": "/images/notes/balsam-peru.webp"
+}

@@ -1,0 +1,18 @@
+{
+  "path": "/images/notes/sandalore-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Molecular structure associated with Sandalore in PubChem.",
+  "author": "PubChem, National Library of Medicine",
+  "source": "https://pubchem.ncbi.nlm.nih.gov/compound/103212#section=2D-Structure",
+  "license": "PubChem reuse permitted",
+  "licenseUrl": "https://pubchem.ncbi.nlm.nih.gov/docs/citation-guidelines",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Full structure retained.",
+  "kind": "structure",
+  "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
+  "sourceFile": "PubChem-CID-103212.png",
+  "sourceDownload": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/103212/PNG?image_size=600x600",
+  "sourceSha256": "4ce467926797e5759273431e2c32241ac4f0082108190564b7b27273d7b42d4e",
+  "derivedFrom": "/images/notes/sandalore.webp"
+}

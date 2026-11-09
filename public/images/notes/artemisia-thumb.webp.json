@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/artemisia-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Artemisia foliage.",
+  "author": "David Monniaux",
+  "source": "https://commons.wikimedia.org/wiki/File:Artemisia_absinthium_P1210748.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels and encoded as WebP. Center-cropped to a square.",
+  "sourceFile": "Artemisia_absinthium_P1210748.jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Artemisia_absinthium_P1210748.jpg/960px-Artemisia_absinthium_P1210748.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "cd6212a7fe37589cad1254470f5b8d1afa098bc9881d73f8220a5526748f4a4b",
+  "derivedFrom": "/images/notes/artemisia.webp"
+}

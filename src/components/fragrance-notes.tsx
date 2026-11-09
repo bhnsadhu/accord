@@ -42,7 +42,7 @@ export function FragranceNotes({ notes, research, library = notes }: { notes: No
     {stages ? <>
       <div className="visual-note-stages">{([ ["opening", "Top notes", "The first impression"], ["heart", "Heart notes", "The central character"], ["base", "Base notes", "The lasting foundation"] ] as const).map(([key, label, description]) => <div key={key}><div className="visual-stage-heading"><h3>{label}</h3><p>{description}</p></div>{stages[key].length ? <NoteTiles notes={stages[key].map(resolve)} name={`stage-${key}`} /> : <p className="reference-caption">Not listed</p>}</div>)}</div>
       <p className="reference-caption mt-4">The source’s note stages describe how the composition is presented. They are not a timed schedule.</p><SourceLinks research={research!} field="noteStages" />
-    </> : featured.length ? <><NoteTiles notes={featured} name="featured-note" /><SourceLinks research={research!} field="featuredNotes" /></> : <><p className="reference-caption mt-3">Listed in catalog order, without top, heart or base assignments.</p>{catalogList}</>}
+    </> : <><p className="reference-caption mt-3">Top, heart and base stages: Not listed. The pictured notes are shown together.</p>{featured.length ? <><NoteTiles notes={featured} name="featured-note" /><SourceLinks research={research!} field="featuredNotes" /></> : catalogList}</>}
     {(stages || featured.length > 0) && <details className="reference-provenance"><summary>All catalog notes <PlusIcon /></summary><p className="reference-caption">Catalog listings and brand descriptions can differ. These are the original notes used in Accord’s similarity comparisons.</p>{catalogList}</details>}
   </section>;
 }

@@ -3,6 +3,16 @@ import AxeBuilder from "@axe-core/playwright";
 
 const santal = "/fragrance/le-labo-santal-33-p14487";
 
+test("fragrances without published stages keep their pictured notes together", async ({ page }) => {
+  await page.goto("/fragrance/le-labo-another-13-p14462");
+  const notes = page.locator("#notes:visible");
+  await expect(notes).toContainText("Top, heart and base stages: Not listed.");
+  await expect(notes.locator(".visual-note-stages")).toHaveCount(0);
+  const tiles = notes.locator(":scope > .visual-notes .reference-note");
+  await expect(tiles.first()).toBeVisible();
+  await expect(tiles.locator("summary img")).toHaveCount(await tiles.count());
+});
+
 test("Santal 33 displays the sourced pyramid with a picture for every staged note", async ({ page }) => {
   await page.goto(santal);
   const notes = page.locator("#notes:visible");

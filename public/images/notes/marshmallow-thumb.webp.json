@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/marshmallow.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Marshmallow, a visual reference for the note.",
+  "author": "John Morgan",
+  "source": "https://commons.wikimedia.org/wiki/File:White_Marshmallows.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/marshmallow-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/White_Marshmallows.jpg/960px-White_Marshmallows.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "8d524ea1b88a74f251aeb39fd8749eded965307cf597016a1cb45f6ca1277b25"
+}

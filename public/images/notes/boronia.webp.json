@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/boronia.webp",
+  "width": 473,
+  "height": 720,
+  "alt": "Boronia, a visual reference for the note.",
+  "author": "Murray Fagg",
+  "source": "https://commons.wikimedia.org/wiki/File:Boronia_megastigma_flowers.jpg",
+  "license": "CC BY 3.0 au",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/au/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/boronia-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Boronia_megastigma_flowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "73055b409483bd1f7184a82ebb9a1ab966d2b7e9c1b3ba75672e81026dec453e"
+}

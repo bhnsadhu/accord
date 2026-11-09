@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/satinwood.webp",
+  "width": 720,
+  "height": 537,
+  "alt": "Satinwood, a visual reference for the note.",
+  "author": "Forestowlet",
+  "source": "https://commons.wikimedia.org/wiki/File:Chloroxylon_swietenia_01.JPG",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/satinwood-thumb.webp",
+  "referenceNote": "The source plant is pictured as a visual reference for this note, not an ingredient claim about the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Chloroxylon_swietenia_01.JPG/960px-Chloroxylon_swietenia_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "c9025f7bbe0c9461ee9321fb57002a74cb8e3f1978c2df1cf63e366d03a8addb"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/persimmon.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Persimmon, a visual reference for the note.",
+  "author": "Frank Schulenburg",
+  "source": "https://commons.wikimedia.org/wiki/File:Fuyu_persimmon_fruits,_one_cut_open.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/persimmon-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Fuyu_persimmon_fruits%2C_one_cut_open.jpg/960px-Fuyu_persimmon_fruits%2C_one_cut_open.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "88ac7b30acbf1210aa5e88381af9cefd63f195538286ea70f835052686e68720"
+}

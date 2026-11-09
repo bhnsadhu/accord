@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/caraway.webp",
+  "width": 495,
+  "height": 590,
+  "alt": "Botanical illustration of caraway.",
+  "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-172.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/caraway-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/4/42/Carum_carvi_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-172.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "8e158db8ed2eb35ef656ead047d399dc7ddba74d3f1aa52b8f0f753b086ad629"
+}

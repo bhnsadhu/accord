@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/white-currant.webp",
+  "width": 568,
+  "height": 720,
+  "alt": "White currant, a visual reference for the note.",
+  "author": "Marie-Lan Nguyen",
+  "source": "https://commons.wikimedia.org/wiki/File:Groseilles_blanches.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/white-currant-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Groseilles_blanches.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "df7afd42a3ec67e7b999ee48f3c0710a91a8e7c8d3419f940bf16927a1afe6ef"
+}

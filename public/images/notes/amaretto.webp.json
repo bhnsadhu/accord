@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/amaretto.webp",
+  "width": 720,
+  "height": 566,
+  "alt": "Amaretto, a visual reference for the note.",
+  "author": "Infrogmation of New Orleans",
+  "source": "https://commons.wikimedia.org/wiki/File:Amaretto_Bottles_4.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/amaretto-thumb.webp",
+  "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Amaretto_Bottles_4.JPG/960px-Amaretto_Bottles_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "3b4d3d947e61a0eca13eca2cb7ce22d977fab5d31375cfcc5bd9f7b2ee1c893b"
+}

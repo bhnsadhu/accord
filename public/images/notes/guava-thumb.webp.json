@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/guava.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Guava, a visual reference for the note.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Guava_pink_fruit.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/guava-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Guava_pink_fruit.jpg/960px-Guava_pink_fruit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "28a1759ffca154909d80d7c57f1d5803fd6e7830acafc06389b71b03fa0c1c66"
+}

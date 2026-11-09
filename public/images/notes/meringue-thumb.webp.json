@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/meringue.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Meringue, a visual reference for the note.",
+  "author": "Mike Lehmann, Mike Switzerland 12:44, 27 January 2007 (UTC)",
+  "source": "https://commons.wikimedia.org/wiki/File:Meringues_9027.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/meringue-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Meringues_9027.jpg/960px-Meringues_9027.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "bfe14484437bb0690b7e268ea9cc5a4c7c0058f7903bc2d6f679695802a20b9b"
+}

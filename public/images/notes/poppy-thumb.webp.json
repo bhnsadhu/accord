@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/poppy.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Poppy, a visual reference for the note.",
+  "author": "Kieran Roy Powell",
+  "source": "https://commons.wikimedia.org/wiki/File:Papaver_rhoeas_Lincolnshire_2026.jpg",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/poppy-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Papaver_rhoeas_Lincolnshire_2026.jpg/960px-Papaver_rhoeas_Lincolnshire_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "0bafdca40bac1a60096c6fa8bccd5781ec7316620f05b422f7e8d290ebbdcbb3"
+}

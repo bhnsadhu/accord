@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/sesame.webp",
+  "width": 408,
+  "height": 594,
+  "alt": "Botanical illustration of sesame.",
+  "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "source": "https://commons.wikimedia.org/wiki/File:Sesamum_indicum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-129.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/sesame-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/7/70/Sesamum_indicum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-129.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "1862f73c31923d60882af2eef73b2c23b96bb9463a06317ba185c7efbc50cdd3"
+}

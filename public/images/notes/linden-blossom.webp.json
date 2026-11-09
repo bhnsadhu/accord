@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/linden-blossom.webp",
+  "width": 533,
+  "height": 430,
+  "alt": "Linden blossom, a visual reference for the note.",
+  "author": "Author not listed",
+  "source": "https://commons.wikimedia.org/wiki/File:Tilia-cordata2.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/linden-blossom-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/5/52/Tilia-cordata2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "9aa1a2c01448a4b9ba514cdd4fb8bda284214e70cd71c8990d918ca93f285ccf"
+}

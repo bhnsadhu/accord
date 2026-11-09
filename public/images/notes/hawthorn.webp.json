@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/hawthorn.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Hawthorn, a visual reference for the note.",
+  "author": "Elstro",
+  "source": "https://commons.wikimedia.org/wiki/File:Hawthorn_fruit.JPG",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/hawthorn-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Hawthorn_fruit.JPG/960px-Hawthorn_fruit.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "fceef05eb4914f888e679bd51c6e5bf3ca0ce6d8256567debebe553d5c584620"
+}

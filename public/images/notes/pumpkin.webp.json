@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/pumpkin.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Pumpkin, a visual reference for the note.",
+  "author": "Infrogmation of New Orleans",
+  "source": "https://commons.wikimedia.org/wiki/File:FrenchMarketPumpkinsB.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/pumpkin-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/FrenchMarketPumpkinsB.jpg/960px-FrenchMarketPumpkinsB.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "af7e3c5435aec3aaea6f70d4bcbd93b704393c9338141f68043c4ff02cba7d41"
+}

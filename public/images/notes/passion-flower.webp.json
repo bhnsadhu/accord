@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/passion-flower.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Passion flower, a visual reference for the note.",
+  "author": "Judy Gallagher",
+  "source": "https://commons.wikimedia.org/wiki/File:Passion_Flower_-_Passiflora_incarnata,_Meadowood_Farm_SRMA,_Mason_Neck,_Virginia.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/passion-flower-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Passion_Flower_-_Passiflora_incarnata%2C_Meadowood_Farm_SRMA%2C_Mason_Neck%2C_Virginia.jpg/960px-Passion_Flower_-_Passiflora_incarnata%2C_Meadowood_Farm_SRMA%2C_Mason_Neck%2C_Virginia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "6f50e195da06bbca6c68fdbf0ea4fbb005229f7073edb111be5b7a10b81a98b1"
+}

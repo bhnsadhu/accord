@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/lovage.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Lovage, a visual reference for the note.",
+  "author": "4028mdk09",
+  "source": "https://commons.wikimedia.org/wiki/File:Liebst%C3%B6ckel.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/lovage-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Liebst%C3%B6ckel.JPG/960px-Liebst%C3%B6ckel.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "69e345304ceae531d828900381f4948ab24deacc5f6ec1150c94fe38b94bb4f8"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/sage.webp",
+  "width": 640,
+  "height": 480,
+  "alt": "Sage, a visual reference for the note.",
+  "author": "Kurt Stüber [1]",
+  "source": "https://commons.wikimedia.org/wiki/File:Salvia_officinalis0.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/sage-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Salvia_officinalis0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "b2041267ad3d344ef02464ea16251be82b965eea7c45f36cbb66cfd527db019d"
+}

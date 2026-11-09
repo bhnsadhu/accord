@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/cactus.webp",
+  "width": 504,
+  "height": 720,
+  "alt": "Botanical illustration of cactus.",
+  "author": "G. Mütrel, Leipzig ; Berlin ; Wien : F.A. Brockhaus",
+  "source": "https://commons.wikimedia.org/wiki/File:Various_Cactaceae.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/cactus-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Various_Cactaceae.jpg/960px-Various_Cactaceae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "82cfd078a05dde525f09aa00688bc9ad6413b5ba39f800935c14cb0d605e02b4"
+}

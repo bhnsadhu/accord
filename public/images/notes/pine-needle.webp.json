@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/pine-needle.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Pine needle, a visual reference for the note.",
+  "author": "IM027",
+  "source": "https://commons.wikimedia.org/wiki/File:Green_needles_from_Pinus_halepensis_at_the_Mediterranean_coast_in_Catalonia.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/pine-needle-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Green_needles_from_Pinus_halepensis_at_the_Mediterranean_coast_in_Catalonia.jpg/960px-Green_needles_from_Pinus_halepensis_at_the_Mediterranean_coast_in_Catalonia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "9b02e09f4425468a695c94ba65a1df80d7937c0191755c67beef55b67c9e1200"
+}

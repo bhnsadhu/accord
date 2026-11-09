@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/coconut.webp",
+  "width": 542,
+  "height": 720,
+  "alt": "Coconut, a visual reference for the note.",
+  "author": "Fredericknoronha",
+  "source": "https://commons.wikimedia.org/wiki/File:Raw_and_freshly_cut_coconut.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/coconut-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Raw_and_freshly_cut_coconut.jpg/960px-Raw_and_freshly_cut_coconut.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "55fd6ee19824b49712d225862d6e38a29d3070768a002808a37c6a634e917d43"
+}

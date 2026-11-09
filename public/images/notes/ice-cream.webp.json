@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/ice-cream.webp",
+  "width": 427,
+  "height": 640,
+  "alt": "Ice cream, a visual reference for the note.",
+  "author": "Steven Depolo",
+  "source": "https://commons.wikimedia.org/wiki/File:Vanilla_Ice_Cream_Cone_at_Camp_Manitoulin.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/ice-cream-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Vanilla_Ice_Cream_Cone_at_Camp_Manitoulin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "9e0045566265ecf56d790b401a74b2a1e29899c068c88717d9d527f6c25d8320"
+}

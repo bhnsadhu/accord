@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/raspberry-blossom.webp",
+  "width": 720,
+  "height": 698,
+  "alt": "Raspberry blossom, a visual reference for the note.",
+  "author": "プクリンチョマン",
+  "source": "https://commons.wikimedia.org/wiki/File:Raspberry-Flower.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/raspberry-blossom-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Raspberry-Flower.jpg/960px-Raspberry-Flower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "3060d8db1e37234530b692d98b1fc74e2f3c0ba651b96a46e21ef54393a6fb16"
+}

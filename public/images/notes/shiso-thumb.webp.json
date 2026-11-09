@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/shiso.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Shiso, a visual reference for the note.",
+  "author": "Dalgial",
+  "source": "https://commons.wikimedia.org/wiki/File:Perilla_frutescens_var._acuta.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/shiso-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Perilla_frutescens_var._acuta.JPG/960px-Perilla_frutescens_var._acuta.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "5097b7364f08f307b5aa77d7848d1343410b66b6b4262089204d215787dd373b"
+}

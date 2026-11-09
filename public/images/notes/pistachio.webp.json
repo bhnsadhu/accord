@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/pistachio.webp",
+  "width": 720,
+  "height": 405,
+  "alt": "Pistachio, a visual reference for the note.",
+  "author": "THOR",
+  "source": "https://commons.wikimedia.org/wiki/File:Pistachio_vera.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/pistachio-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Pistachio_vera.jpg/960px-Pistachio_vera.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "2224cef4c407108279632924b1cdfc27d546a619e14a539f603cef7e4132a208"
+}

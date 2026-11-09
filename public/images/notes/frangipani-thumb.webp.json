@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/frangipani.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Frangipani, a visual reference for the note.",
+  "author": "Varun Pabrai",
+  "source": "https://commons.wikimedia.org/wiki/File:Plumeria_rubra-4.JPG",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/frangipani-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Plumeria_rubra-4.JPG/960px-Plumeria_rubra-4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "b808daa7fb189468d2f8eb9d1741d8ac0a80fe25042900ad04bc53c7fe8a0683"
+}

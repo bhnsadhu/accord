@@ -1,7 +1,30 @@
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import research from "../../data/research/fragrances.json" with { type: "json" };
 
 const santal = "/fragrance/le-labo-santal-33-p14487";
+
+test("sourced note groups work across houses and all their pictures load", async ({ page }) => {
+  for (const id of ["p05226", "p06779", "p07571", "p14490", "p22724"]) {
+    const entry = research.entries.find(entry => entry.productId === id)!;
+    await page.goto(`/fragrance/${id}`);
+    const notes = page.locator("#notes:visible");
+    const stages = notes.locator(".visual-note-stages > div");
+    await expect(stages).toHaveCount(3);
+    for (const [index, key] of (["opening", "heart", "base"] as const).entries()) {
+      const labels = entry.research.noteStages![key];
+      await expect(stages.nth(index).locator("summary > span")).toHaveText(labels);
+      const images = stages.nth(index).locator("summary img");
+      await expect(images).toHaveCount(labels.length);
+      for (const image of await images.all()) {
+        await image.scrollIntoViewIfNeeded();
+        await expect.poll(() => image.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+      }
+    }
+    await expect(notes.locator(":scope > .research-attribution a")).not.toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+});
 
 test("fragrances without published stages keep their pictured notes together", async ({ page }) => {
   await page.goto("/fragrance/le-labo-another-13-p14462");
@@ -80,10 +103,10 @@ test("search identifies the exact photographed edition and retains unpictured en
   await expect(hit.locator("img")).toHaveAttribute("src", "/images/fragrances/a7782dc120305-thumb.webp");
   await page.keyboard.press("Escape");
   await page.goto("/fragrance/dior-sauvage-eau-de-toilette-p07571");
-  await expect(page.locator(".reference-specimen .bottle-photo-trigger img")).toHaveAttribute("src", /\/p07571.webp/);
+  await expect(page.locator(".reference-specimen:visible .bottle-photo-trigger img")).toHaveAttribute("src", /\/p07571.webp/);
   await page.goto("/fragrance/dior-sauvage-parfum-a8b0937dbc0cb");
-  await expect(page.locator("main .bottle-photo")).toHaveCount(0);
-  await expect(page.locator("main .detail-paper")).toBeVisible();
+  await expect(page.locator("main .bottle-photo:visible")).toHaveCount(0);
+  await expect(page.locator("main .detail-paper:visible")).toBeVisible();
 });
 
 test("photographs and note routes fit a phone and unknown notes have a valid way onward", async ({ page }) => {

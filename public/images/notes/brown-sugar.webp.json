@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/brown-sugar.webp",
+  "width": 720,
+  "height": 669,
+  "alt": "Brown sugar, a visual reference for the note.",
+  "author": "Romain Behar",
+  "source": "https://commons.wikimedia.org/wiki/File:Sucre_blanc_cassonade_complet_rapadura.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/brown-sugar-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Sucre_blanc_cassonade_complet_rapadura.jpg/960px-Sucre_blanc_cassonade_complet_rapadura.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "795c02bb8cffe5b1b49931c238ce1511704b76c946b96a7518c519979931d74b"
+}

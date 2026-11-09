@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/quince.webp",
+  "width": 504,
+  "height": 720,
+  "alt": "Botanical illustration of quince.",
+  "author": "Pancrace Bessa",
+  "source": "https://commons.wikimedia.org/wiki/File:Pancrace_Bessa00.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/quince-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Pancrace_Bessa00.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "421e0c171c98e1916a8286ea3880ae3d72c2793e725915e2434c8774e1842302"
+}

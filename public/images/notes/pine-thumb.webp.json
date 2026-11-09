@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/pine.webp",
+  "width": 481,
+  "height": 720,
+  "alt": "Pine, a visual reference for the note.",
+  "author": "Vlad & Marina Butsky on Flickr",
+  "source": "https://commons.wikimedia.org/wiki/File:Pinus_jeffreyi_at_Lassen_Volcanic_National_Park.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/pine-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Pinus_jeffreyi_at_Lassen_Volcanic_National_Park.jpg/960px-Pinus_jeffreyi_at_Lassen_Volcanic_National_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "025b181fb7d9d4d33ffd9154f45b562e31dd2ea11ec117829610decaa69453bf"
+}

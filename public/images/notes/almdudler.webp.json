@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/almdudler.webp",
+  "width": 720,
+  "height": 716,
+  "alt": "Almdudler, a visual reference for the note.",
+  "author": "Loimo",
+  "source": "https://commons.wikimedia.org/wiki/File:Almdudlerflaschen.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/almdudler-thumb.webp",
+  "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Almdudlerflaschen.jpg/960px-Almdudlerflaschen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "5fd35f47d379016d715faba61044dea2596d0e7b7bc5c5b0100d4b9d5149bab2"
+}

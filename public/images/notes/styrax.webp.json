@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/styrax.webp",
+  "width": 720,
+  "height": 479,
+  "alt": "Styrax, a visual reference for the note.",
+  "author": "איתן פרמן",
+  "source": "https://commons.wikimedia.org/wiki/File:Styrax_officinalis_tree.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/styrax-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Styrax_officinalis_tree.JPG/960px-Styrax_officinalis_tree.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "646f7ac095c987325d275d9c9cac369c07a8d2075c8255e2a1c96d9ad0310f34"
+}

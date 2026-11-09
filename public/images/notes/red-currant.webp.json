@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/red-currant.webp",
+  "width": 720,
+  "height": 656,
+  "alt": "Red currant, a visual reference for the note.",
+  "author": "Author not listed",
+  "source": "https://commons.wikimedia.org/wiki/File:Ribes_rubrum_1.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/red-currant-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Ribes_rubrum_1.jpg/960px-Ribes_rubrum_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "0ec56c9030b9f8c4b1163020e7907e1f17655a2f737e9f1a883d86d16dbe3940"
+}

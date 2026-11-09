@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/cloudberry.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Cloudberry, a visual reference for the note.",
+  "author": "Moravice",
+  "source": "https://commons.wikimedia.org/wiki/File:Rubus_chamaemorus,_from_Troms%C3%B8,_August_2020.jpeg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/cloudberry-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Rubus_chamaemorus%2C_from_Troms%C3%B8%2C_August_2020.jpeg/960px-Rubus_chamaemorus%2C_from_Troms%C3%B8%2C_August_2020.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "b3d254fa2484d3c08b572f3891192f7a5797c67fe5b81e849878b48d7f7296dc"
+}

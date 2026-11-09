@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/tobacco-blossom.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Pink tobacco flowers.",
+  "author": "Sierraluisfer",
+  "source": "https://commons.wikimedia.org/wiki/File:Flor_de_tabaco_Colombia_Jardin_botanico_bogota_2017_11.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. The thumbnail crops to fit.",
+  "thumbnail": "/images/notes/tobacco-blossom-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Flor_de_tabaco_Colombia_Jardin_botanico_bogota_2017_11.jpg/960px-Flor_de_tabaco_Colombia_Jardin_botanico_bogota_2017_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "739088846919a9fcf9e46074d4655e39473fb335b87df0c9abf260062e948d68"
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/gurjum-balsam.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Gurjum balsam, a visual reference for the note.",
+  "author": "Afifa Afrin",
+  "source": "https://commons.wikimedia.org/wiki/File:Dipterocarpus_turbinatus_(Garjan)_seedling_in_RDA,_Bogra_03.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/gurjum-balsam-thumb.webp",
+  "referenceNote": "The source plant is pictured as a visual reference for this note, not an ingredient claim about the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Dipterocarpus_turbinatus_%28Garjan%29_seedling_in_RDA%2C_Bogra_03.jpg/960px-Dipterocarpus_turbinatus_%28Garjan%29_seedling_in_RDA%2C_Bogra_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "04f640b3dc054366f7cef2ad736c8a2f9be8a96a8921b2324da6c9f2859f077a"
+}

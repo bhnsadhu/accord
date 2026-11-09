@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/popcorn.webp",
+  "width": 720,
+  "height": 479,
+  "alt": "Unpopped popcorn kernels, a visual reference for a popcorn note.",
+  "author": "Bill Ebbesen",
+  "source": "https://commons.wikimedia.org/wiki/File:Popcorn_-_Studio_-_2011.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/popcorn-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Popcorn_-_Studio_-_2011.jpg/960px-Popcorn_-_Studio_-_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "8b1374fc9143db2c8d53718f5f247566313cac0b3d9b7f275e795ccc0d1e0e15"
+}

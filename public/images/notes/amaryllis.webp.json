@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/amaryllis.webp",
+  "width": 720,
+  "height": 689,
+  "alt": "Amaryllis, a visual reference for the note.",
+  "author": "Bureau of Land Management Oregon and Washington from Portland, America",
+  "source": "https://commons.wikimedia.org/wiki/File:Naked_Ladies,_Hinsdale_Rhododendron_Garden_(15022561349).jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/amaryllis-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Naked_Ladies%2C_Hinsdale_Rhododendron_Garden_%2815022561349%29.jpg/960px-Naked_Ladies%2C_Hinsdale_Rhododendron_Garden_%2815022561349%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "a9a85b4b4c8eeb45224f7f16ddef70f3052a2ee891af1586c2a2bd8be1d4802f"
+}

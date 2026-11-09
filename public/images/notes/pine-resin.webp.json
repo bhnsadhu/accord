@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/pine-resin.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Pine resin, a visual reference for the note.",
+  "author": "Tony Wills",
+  "source": "https://commons.wikimedia.org/wiki/File:Resin_from_Pinus_Radiata_Stump_3.jpg",
+  "license": "CC BY 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/pine-resin-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Resin_from_Pinus_Radiata_Stump_3.jpg/960px-Resin_from_Pinus_Radiata_Stump_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "800b6d7916a48d08dfe45e5d468d6ea661333db48730d36ca8efa224447f002c"
+}

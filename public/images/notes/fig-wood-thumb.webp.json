@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/fig-wood.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Fig wood, a visual reference for the note.",
+  "author": "Tangopaso",
+  "source": "https://commons.wikimedia.org/wiki/File:Ficus_carica_bonsai_A_D161215_trunk_%26_lawn.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/fig-wood-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Ficus_carica_bonsai_A_D161215_trunk_%26_lawn.jpg/960px-Ficus_carica_bonsai_A_D161215_trunk_%26_lawn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "843cfd967c3777c472a5e8236a3bc83cc536e2146367aaf19a802fa4f9a088da"
+}

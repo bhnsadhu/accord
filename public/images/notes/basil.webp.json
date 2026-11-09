@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/basil.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Basil, a visual reference for the note.",
+  "author": "Photo by David J. Stang",
+  "source": "https://commons.wikimedia.org/wiki/File:Ocimum_basilicum_8zz.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/basil-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Ocimum_basilicum_8zz.jpg/960px-Ocimum_basilicum_8zz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "1086b91d0c875364fc9a3afc8d910f854a20d47e328d98ef18c140f541013cdf"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/broom.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Broom, a visual reference for the note.",
+  "author": "Hans Hillewaert",
+  "source": "https://commons.wikimedia.org/wiki/File:Spartium_junceum_(habitus).jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/broom-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Spartium_junceum_%28habitus%29.jpg/960px-Spartium_junceum_%28habitus%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "9636ca268b670082c05d150e1e0315e484ad84e0b6ab2f14ba7a77d20cddb840"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/daisy.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Daisy, a visual reference for the note.",
+  "author": "Stefan.lefnaer",
+  "source": "https://commons.wikimedia.org/wiki/File:Bellis_perennis_sl1.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/daisy-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Bellis_perennis_sl1.jpg/960px-Bellis_perennis_sl1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "5ce5f8a35238ab85439be417793581f82e86e2e7b665d9716f433d8f1f93a32e"
+}

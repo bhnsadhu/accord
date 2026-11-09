@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/chantilly.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "A dessert topped with whipped cream, a visual reference for Chantilly.",
+  "author": "Arnaud 25",
+  "source": "https://commons.wikimedia.org/wiki/File:Tarte_au_citron_meringu%C3%A9e_cr%C3%A8me_chantilly.jpg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/chantilly-thumb.webp",
+  "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Tarte_au_citron_meringu%C3%A9e_cr%C3%A8me_chantilly.jpg/960px-Tarte_au_citron_meringu%C3%A9e_cr%C3%A8me_chantilly.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "4124ecd2109ff22556be686c37e3bc87eb2cf34aa7c3039fddc8e10887bf4fe4"
+}

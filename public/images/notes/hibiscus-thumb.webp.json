@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/hibiscus.webp",
+  "width": 720,
+  "height": 527,
+  "alt": "Hibiscus, a visual reference for the note.",
+  "author": "Andy / Andrew Fogg from near Cambridge, UK",
+  "source": "https://commons.wikimedia.org/wiki/File:Hibiscus_Brilliant.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/hibiscus-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Hibiscus_Brilliant.jpg/960px-Hibiscus_Brilliant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "5d6b2d9e2a868eaa4c3a89922c19cfd24d1badb7621c8e03024ee52a59b11079"
+}

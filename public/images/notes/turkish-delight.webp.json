@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/turkish-delight.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Turkish delight, a visual reference for the note.",
+  "author": "Quick fix",
+  "source": "https://commons.wikimedia.org/wiki/File:TurkishDelightDisplay.jpg",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/turkish-delight-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/TurkishDelightDisplay.jpg/960px-TurkishDelightDisplay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "8c2086d38f19a83da11ea67228dd33fae8e0a24127f6972034f814e61ba85dbe"
+}

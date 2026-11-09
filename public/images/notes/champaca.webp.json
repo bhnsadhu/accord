@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/champaca.webp",
+  "width": 647,
+  "height": 720,
+  "alt": "Botanical illustration of champaca.",
+  "author": "Francisco Manuel Blanco (O.S.A.)",
+  "source": "https://commons.wikimedia.org/wiki/File:Michelia_champaca_Blanco1.191-cropped.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/champaca-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Michelia_champaca_Blanco1.191-cropped.jpg/960px-Michelia_champaca_Blanco1.191-cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "90d91d160df6729b163479d6b733fa9cca938d81ab7c3c3a3995e831bb04c85d"
+}

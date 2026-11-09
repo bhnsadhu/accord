@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/dates.webp",
+  "width": 720,
+  "height": 482,
+  "alt": "Dates, a visual reference for the note.",
+  "author": "Nepenthes",
+  "source": "https://commons.wikimedia.org/wiki/File:Dates005.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/dates-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Dates005.jpg/960px-Dates005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "5ede4af43dbe76a0fd1549431d08a9158a3e1ede92fddef8543f6e665dfcc470"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/mahogany.webp",
+  "width": 377,
+  "height": 553,
+  "alt": "Mahogany, a visual reference for the note.",
+  "author": "G-Lignum",
+  "source": "https://commons.wikimedia.org/wiki/File:Genuine_Mahogany_veneer_with_ripple_marks.jpg",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/mahogany-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Genuine_Mahogany_veneer_with_ripple_marks.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "9b4002217b52e689dd4c6051bfea44d7e2dc08d3ffd9157c44a4183384539be9"
+}

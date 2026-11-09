@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/fresh-cotton.webp",
+  "width": 720,
+  "height": 515,
+  "alt": "Fresh cotton, a visual reference for the note.",
+  "author": "Author not listed",
+  "source": "https://commons.wikimedia.org/wiki/File:CottonPlant.JPG",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/fresh-cotton-thumb.webp",
+  "referenceNote": "The source plant is pictured as a visual reference for this note, not an ingredient claim about the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/CottonPlant.JPG/960px-CottonPlant.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "57598fd93f39717332754b2bad14bd48dd12a156acc6c39a89518f9614fdba13"
+}

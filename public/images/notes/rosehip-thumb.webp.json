@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/rosehip.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Rosehip, a visual reference for the note.",
+  "author": "Morn the Gorn",
+  "source": "https://commons.wikimedia.org/wiki/File:Rose_hips.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/rosehip-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Rose_hips.jpg/960px-Rose_hips.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "77f0443c5c1593192223bc152969dfcabe10c4a0c35cd2264cb8074457706327"
+}

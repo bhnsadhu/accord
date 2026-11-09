@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/speculoos.webp",
+  "width": 480,
+  "height": 720,
+  "alt": "Speculoos, a visual reference for the note.",
+  "author": "Turku Gingerbread from Finland",
+  "source": "https://commons.wikimedia.org/wiki/File:Saint_Nicholas_Speculaas_(6465422349).jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/speculoos-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Saint_Nicholas_Speculaas_%286465422349%29.jpg/960px-Saint_Nicholas_Speculaas_%286465422349%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "ea11c9b7fd4264177116e0b5be85673b574734b91645b159bc7a35f5e11c7f09"
+}

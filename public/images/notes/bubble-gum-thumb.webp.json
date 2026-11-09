@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/bubble-gum.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Bubble gum, a visual reference for the note.",
+  "author": "Alf van Beem",
+  "source": "https://commons.wikimedia.org/wiki/File:Roll_Up,_Bubble_Gum_Kaugummi.JPG",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/bubble-gum-thumb.webp",
+  "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Roll_Up%2C_Bubble_Gum_Kaugummi.JPG/960px-Roll_Up%2C_Bubble_Gum_Kaugummi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "a098931bf7516a8b93ef394e981cf0350ac26e3a9e1444ab70a4de13ee77041d"
+}

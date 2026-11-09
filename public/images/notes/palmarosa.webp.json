@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/palmarosa.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Palmarosa, a visual reference for the note.",
+  "author": "Yercaud-elango",
+  "source": "https://commons.wikimedia.org/wiki/File:Cymbopogon_martinii-1-sanyasimalai-yercaud-salem-India.JPG",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/palmarosa-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Cymbopogon_martinii-1-sanyasimalai-yercaud-salem-India.JPG/960px-Cymbopogon_martinii-1-sanyasimalai-yercaud-salem-India.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "80f72388975b80d86c18233e58119acebaea585b14ea43bad951e763093e061e"
+}

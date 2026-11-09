@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/curry.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Curry, a visual reference for the note.",
+  "author": "Thomas Steiner",
+  "source": "https://commons.wikimedia.org/wiki/File:Curry_powder_in_the_spice-bazaar_in_Istanbul.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/curry-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Curry_powder_in_the_spice-bazaar_in_Istanbul.jpg/960px-Curry_powder_in_the_spice-bazaar_in_Istanbul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "ccfe59a5652b153bffa5c2431581405790510d1e9d4b21d7331ffc3a12a0a8aa"
+}

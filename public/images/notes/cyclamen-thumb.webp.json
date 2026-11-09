@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/cyclamen.webp",
+  "width": 720,
+  "height": 720,
+  "alt": "Cyclamen, a visual reference for the note.",
+  "author": "Dominicus Johannes Bergsma",
+  "source": "https://commons.wikimedia.org/wiki/File:Cyclamen_hederifolium_05-08-2020_(d.j.b.)_01.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/cyclamen-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Cyclamen_hederifolium_05-08-2020_%28d.j.b.%29_01.jpg/960px-Cyclamen_hederifolium_05-08-2020_%28d.j.b.%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "5c48d2a0c841add82a049871007cea33358a066dcf5cd669ea8bb5f54fa8b32a"
+}

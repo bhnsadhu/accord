@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/chamomile.webp",
+  "width": 488,
+  "height": 720,
+  "alt": "Chamomile, a visual reference for the note.",
+  "author": "kallerna",
+  "source": "https://commons.wikimedia.org/wiki/File:Kamomillasaunio_(Matricaria_recutita).JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/chamomile-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Kamomillasaunio_%28Matricaria_recutita%29.JPG/960px-Kamomillasaunio_%28Matricaria_recutita%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "2180a17ea43635c8dadc6e35d14d4da0dc359e212340ecd3d34dad6f109c95f1"
+}

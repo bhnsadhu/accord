@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/vodka.webp",
+  "width": 480,
+  "height": 720,
+  "alt": "Vodka, a visual reference for the note.",
+  "author": "Ashley Pomeroy",
+  "source": "https://commons.wikimedia.org/wiki/File:Smirnoff_Red_Label_8213.jpg",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/vodka-thumb.webp",
+  "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Smirnoff_Red_Label_8213.jpg/960px-Smirnoff_Red_Label_8213.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "a56a0de7c6e816dff70e685695a568e7e6b4b30f22ea259d53fa5dceb60da81d"
+}

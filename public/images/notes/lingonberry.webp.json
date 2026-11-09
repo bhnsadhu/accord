@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/lingonberry.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Lingonberry, a visual reference for the note.",
+  "author": "Jonas Bergsten",
+  "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_vitis-idaea_20060824_003.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/lingonberry-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Vaccinium_vitis-idaea_20060824_003.jpg/960px-Vaccinium_vitis-idaea_20060824_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "af43a67021c44368896e8248a7ecd83f02b239e2b8fa42f2bc7b5d07517fee34"
+}

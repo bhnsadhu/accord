@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/olive-tree.webp",
+  "width": 720,
+  "height": 572,
+  "alt": "Olive tree, a visual reference for the note.",
+  "author": "Abu Shawka",
+  "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_Cape_Town.JPG",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/olive-tree-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Olea_europaea_cuspidata-africana_Cape_Town.JPG/960px-Olea_europaea_cuspidata-africana_Cape_Town.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "73aa8db96a75bae77550ac34ce6c594a568f68d5ad57273c8474ffd0535ee87e"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/black-hemlock.webp",
+  "width": 720,
+  "height": 491,
+  "alt": "Black hemlock, a visual reference for the note.",
+  "author": "Alex O'Neal",
+  "source": "https://commons.wikimedia.org/wiki/File:Tsuga_heterophylla_near_Rainier.jpg",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/black-hemlock-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Tsuga_heterophylla_near_Rainier.jpg/960px-Tsuga_heterophylla_near_Rainier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "e7b75aa92ada20be6063a354d9a76e5867fd910344d18c7d82885b01556708de"
+}

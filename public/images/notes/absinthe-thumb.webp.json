@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/absinthe.webp",
+  "width": 418,
+  "height": 600,
+  "alt": "Absinthe, a visual reference for the note.",
+  "author": "Eric Litton",
+  "source": "https://commons.wikimedia.org/wiki/File:Absinthe-glass.jpg",
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/absinthe-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Absinthe-glass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "364e5881470967cd5d98f45b0e02c17a15e4e3579df4c7bb7e88852b21ff627b"
+}

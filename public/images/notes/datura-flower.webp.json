@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/datura-flower.webp",
+  "width": 480,
+  "height": 720,
+  "alt": "Datura flower, a visual reference for the note.",
+  "author": "Joshua Tree National Park",
+  "source": "https://commons.wikimedia.org/wiki/File:Sacred_datura_(Datura_wrightii)_(14212557338).jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/datura-flower-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Sacred_datura_%28Datura_wrightii%29_%2814212557338%29.jpg/960px-Sacred_datura_%28Datura_wrightii%29_%2814212557338%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "d8b3911be0b328923f425853d0425a79fa83d2aa9e2316e37f0574008d95df44"
+}

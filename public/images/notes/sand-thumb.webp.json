@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/sand.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Sand, a visual reference for the note.",
+  "author": "Luca Galuzzi (Lucag)",
+  "source": "https://commons.wikimedia.org/wiki/File:Libya_4608_Idehan_Ubari_Dunes_Luca_Galuzzi_2007.jpg",
+  "license": "CC BY-SA 2.5",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/sand-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Libya_4608_Idehan_Ubari_Dunes_Luca_Galuzzi_2007.jpg/960px-Libya_4608_Idehan_Ubari_Dunes_Luca_Galuzzi_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "21a75e0ce3afee4d39fbb7c605f1f4239f4e15462306f46494315c01945f837a"
+}

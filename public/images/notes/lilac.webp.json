@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/lilac.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Lilac, a visual reference for the note.",
+  "author": "Jjron",
+  "source": "https://commons.wikimedia.org/wiki/File:Lilac_Flower%26Leaves,_SC,_Vic,_13.10.2007.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/lilac-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Lilac_Flower%26Leaves%2C_SC%2C_Vic%2C_13.10.2007.jpg/960px-Lilac_Flower%26Leaves%2C_SC%2C_Vic%2C_13.10.2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "c983195c3d24745898dffa07033e55909a69df2b4b85fe089f4d0d4ef0319f3f"
+}

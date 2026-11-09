@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/blood-orange.webp",
+  "width": 720,
+  "height": 519,
+  "alt": "Blood orange, a visual reference for the note.",
+  "author": "Silentcynic",
+  "source": "https://commons.wikimedia.org/wiki/File:BloodOrange.jpg",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/blood-orange-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/BloodOrange.jpg/960px-BloodOrange.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "75f9cb109e5b2e40ba815820f9b4dc0a38c52c95d96acaddd4ac4e5bc91adc37"
+}

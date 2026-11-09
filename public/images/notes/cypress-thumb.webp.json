@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/cypress.webp",
+  "width": 487,
+  "height": 720,
+  "alt": "Cypress, a visual reference for the note.",
+  "author": "Christian Ferrer",
+  "source": "https://commons.wikimedia.org/wiki/File:Cupressus_sempervirens,_Saint-R%C3%A9my-de-Provence_cf01.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/cypress-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Cupressus_sempervirens%2C_Saint-R%C3%A9my-de-Provence_cf01.jpg/960px-Cupressus_sempervirens%2C_Saint-R%C3%A9my-de-Provence_cf01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "f6dbe4da65118f61e01f6f250622354e4b20a078c19271c50d7de3c123b0fa3b"
+}

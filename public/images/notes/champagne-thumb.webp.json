@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/champagne.webp",
+  "width": 480,
+  "height": 720,
+  "alt": "Champagne, a visual reference for the note.",
+  "author": "bgvjpe",
+  "source": "https://commons.wikimedia.org/wiki/File:Glass_of_champagne.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/champagne-thumb.webp",
+  "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Glass_of_champagne.jpg/960px-Glass_of_champagne.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "7c5377446fc99a6bd632087efea783e20f8c4a62186e8cb55ee3b05514dd50e1"
+}

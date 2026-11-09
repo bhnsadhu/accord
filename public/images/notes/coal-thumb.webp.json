@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/coal.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Coal, a visual reference for the note.",
+  "author": "Amcyrus2012",
+  "source": "https://commons.wikimedia.org/wiki/File:Bituminous_Coal.JPG",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/coal-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Bituminous_Coal.JPG/960px-Bituminous_Coal.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "6aca5df86a0fd0ee2e70247e368b95e99cb80d002a561381f46870843d9de014"
+}

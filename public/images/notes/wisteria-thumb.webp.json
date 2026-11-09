@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/wisteria.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Wisteria, a visual reference for the note.",
+  "author": "3268zauber",
+  "source": "https://commons.wikimedia.org/wiki/File:Chinese_Wisteria_Bl%C3%BCtentrauben.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/wisteria-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Chinese_Wisteria_Bl%C3%BCtentrauben.JPG/960px-Chinese_Wisteria_Bl%C3%BCtentrauben.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "bee0788d35ce5d019f843801295b648060b4785f57aa5381965f3bd0ab270f06"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/flax-flower.webp",
+  "width": 699,
+  "height": 720,
+  "alt": "Flax flower, a visual reference for the note.",
+  "author": "Rosser1954",
+  "source": "https://commons.wikimedia.org/wiki/File:A_Common_Flax_or_Linseed_(Linum_usitatissimum)_flower._Chapeltoun_North_Ayrshire.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/flax-flower-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/A_Common_Flax_or_Linseed_%28Linum_usitatissimum%29_flower._Chapeltoun_North_Ayrshire.jpg/960px-A_Common_Flax_or_Linseed_%28Linum_usitatissimum%29_flower._Chapeltoun_North_Ayrshire.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "ae80fc7e9b91de7b67087534216f9635e12431f2b33c92b77845928dec5a9405"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/blueberry.webp",
+  "width": 640,
+  "height": 418,
+  "alt": "Blueberry, a visual reference for the note.",
+  "author": "The original Uploader was Oven Fresh at English Wikipedia",
+  "source": "https://commons.wikimedia.org/wiki/File:Blueberries.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/blueberry-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/1/15/Blueberries.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "3400b37d708dc4f799108b67f6b58897cff706267d9c37099e8a834ae63918fc"
+}

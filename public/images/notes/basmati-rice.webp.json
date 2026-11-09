@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/basmati-rice.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Basmati rice, a visual reference for the note.",
+  "author": "CNEcija12345",
+  "source": "https://commons.wikimedia.org/wiki/File:Basmati_rice_textureCNE_02.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/basmati-rice-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Basmati_rice_textureCNE_02.jpg/960px-Basmati_rice_textureCNE_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "f4eb70f2399c49f57ab899951f9eae59a008304b14dcdd48d6e1372df793c186"
+}

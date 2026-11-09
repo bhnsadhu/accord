@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/pear-blossom.webp",
+  "width": 720,
+  "height": 480,
+  "alt": "Pear blossom, a visual reference for the note.",
+  "author": "Anne Burgess",
+  "source": "https://commons.wikimedia.org/wiki/File:Pear_Blossom_-_geograph.org.uk_-_8290107.jpg",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/pear-blossom-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Pear_Blossom_-_geograph.org.uk_-_8290107.jpg/960px-Pear_Blossom_-_geograph.org.uk_-_8290107.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "fb2e3e34bbbd3b65abf049a8391fcf8a222f1b96ed67b7f56401e0420a8ed5b7"
+}

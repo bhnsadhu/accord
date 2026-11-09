@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/carrot-seed.webp",
+  "width": 720,
+  "height": 525,
+  "alt": "Carrot seed, a visual reference for the note.",
+  "author": "John Alan Elson",
+  "source": "https://commons.wikimedia.org/wiki/File:Carrot_seeds.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/carrot-seed-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/7/78/Carrot_seeds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "9aef4afccf10e55ef734dacffb23f262a984f02a6d55931ba2f78a0690bfa7d1"
+}

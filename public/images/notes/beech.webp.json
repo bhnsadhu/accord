@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/beech.webp",
+  "width": 480,
+  "height": 720,
+  "alt": "Beech, a visual reference for the note.",
+  "author": "Own",
+  "source": "https://commons.wikimedia.org/wiki/File:Beech-tree.JPG",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/beech-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Beech-tree.JPG/960px-Beech-tree.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "7d57b7fff2a28703fe2051b693a8074c49bdca465935e322c37ec90b3354fa2b"
+}

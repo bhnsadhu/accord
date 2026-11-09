@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/caviar.webp",
+  "width": 720,
+  "height": 720,
+  "alt": "Caviar, a visual reference for the note.",
+  "author": "THOR",
+  "source": "https://commons.wikimedia.org/wiki/File:Caviar_spoons.jpg",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/caviar-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Caviar_spoons.jpg/960px-Caviar_spoons.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "39759194340b4c074facdbbd3a28919fe36263599ee724801a63f6b46cb6e14d"
+}

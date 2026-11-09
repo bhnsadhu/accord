@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/carrot.webp",
+  "width": 720,
+  "height": 408,
+  "alt": "Carrot, a visual reference for the note.",
+  "author": "Evan-Amos",
+  "source": "https://commons.wikimedia.org/wiki/File:Vegetable-Carrot-Bundle-wStalks.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/carrot-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Vegetable-Carrot-Bundle-wStalks.jpg/960px-Vegetable-Carrot-Bundle-wStalks.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "a9df9bc9d8c941073bab60c1bf054d799b53f52e8a6428d1f98b9bd75e99fc49"
+}

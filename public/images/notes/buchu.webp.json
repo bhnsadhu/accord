@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/buchu.webp",
+  "width": 401,
+  "height": 594,
+  "alt": "Botanical illustration of buchu.",
+  "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "source": "https://commons.wikimedia.org/wiki/File:Agathosma_betulina_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-020.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/buchu-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/9/92/Agathosma_betulina_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "6b74877e5254516c442079f80af17085e4a540204f52c1adf31e768b62435e7b"
+}

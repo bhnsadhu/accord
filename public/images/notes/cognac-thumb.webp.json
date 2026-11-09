@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/cognac.webp",
+  "width": 720,
+  "height": 609,
+  "alt": "Cognac, a visual reference for the note.",
+  "author": "Didier Descouens",
+  "source": "https://commons.wikimedia.org/wiki/File:Cognac_glass.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/cognac-thumb.webp",
+  "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Cognac_glass.jpg/960px-Cognac_glass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "c501e274fb0afc14dc0387e53aabf088d3e31f18fa8e3848ac668623edd79e8d"
+}

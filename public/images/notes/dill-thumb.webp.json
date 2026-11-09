@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/dill.webp",
+  "width": 427,
+  "height": 720,
+  "alt": "Botanical illustration of dill.",
+  "author": "Illustration_Anethum_graveolens0.jpg: Prof. Dr. Otto Wilhelm Thomé derivative work: Aroche (talk)",
+  "source": "https://commons.wikimedia.org/wiki/File:Illustration_Anethum_graveolens_clean.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/dill-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Illustration_Anethum_graveolens_clean.jpg/960px-Illustration_Anethum_graveolens_clean.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "cc0dc9eca1ed8eeab0eb2e79cae079e5bdc69ba470b4bc79d4b7048d4763a08b"
+}

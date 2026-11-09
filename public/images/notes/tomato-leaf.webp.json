@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/tomato-leaf.webp",
+  "width": 720,
+  "height": 332,
+  "alt": "Tomato leaf, a visual reference for the note.",
+  "author": "Sabina Bajracharya",
+  "source": "https://commons.wikimedia.org/wiki/File:Tomato_Plant_Leaves_02.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/tomato-leaf-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Tomato_Plant_Leaves_02.jpg/960px-Tomato_Plant_Leaves_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "39b87fbab5ef8bbcbf6cf49054d47bd2836086b0f32397de2bd543936a8a236f"
+}

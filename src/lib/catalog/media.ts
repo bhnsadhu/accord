@@ -16,5 +16,17 @@ const notes = noteManifest as Readonly<Record<string, ReferenceImage>>;
 export const noteImage = (key: string): ReferenceImage | undefined => notes[key] ?? notes[noteReferenceKey(key)];
 
 /** Reference aliases do not change the listed note or the catalog's similarity data. */
-const noteAliases: Record<string, string> = { cedar: "cedarwood", iris: "iris-orris", orris: "iris-orris", "violet-accord": "violet", "jasmine-sambac": "jasmine", "may-rose": "rose", "bourbon-vanilla": "vanilla", "black-leather-accord": "leather", "sicilian-bergamot": "bergamot", "calabrian-bergamot": "bergamot" };
+const noteAliases: Record<string, string> = {
+  cedar: "cedarwood", "cedar-wood": "cedarwood", iris: "iris-orris", orris: "iris-orris",
+  "violet-accord": "violet", "violet-leaf": "violet-leaves", "jasmine-sambac": "jasmine",
+  "may-rose": "rose", "bourbon-vanilla": "vanilla", "black-leather-accord": "leather",
+  "sicilian-bergamot": "bergamot", "calabrian-bergamot": "bergamot", "reggio-di-calabria-bergamot": "bergamot",
+  aldehydes: "aldehyde", ambrette: "ambrette-seed", "balsam-of-peru": "balsam-peru",
+  "birch-woods": "birch", "cut-grass": "fresh-cut-grass", cypriol: "cypriol-nagarmota",
+  daffodil: "narcissus", "fir-balsam": "balsam", frankincense: "incense-olibanum",
+  fruit: "fruity-notes", immortelle: "everlasting-flower", labdanum: "ciste-labdanum",
+  "laurel-leaf": "bay-leaf", mastic: "lentisk", rosewood: "palisander-rosewood",
+  salt: "rock-salt", "sea-notes": "marine", spice: "spicy-notes", tobacco: "tobacco-leaf",
+  wood: "woody-notes", "woody-accords": "woody-notes", cacao: "cocoa",
+};
 export const noteReferenceKey = (key: string) => noteAliases[key] ?? key;

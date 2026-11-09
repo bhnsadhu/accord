@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/hazelnut.webp",
+  "width": 720,
+  "height": 506,
+  "alt": "Hazelnut, a visual reference for the note.",
+  "author": "Ivar Leidus",
+  "source": "https://commons.wikimedia.org/wiki/File:Hazelnuts_(Corylus_avellana)_-_whole_with_kernels_(cropped2).jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/hazelnut-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Hazelnuts_%28Corylus_avellana%29_-_whole_with_kernels_%28cropped2%29.jpg/960px-Hazelnuts_%28Corylus_avellana%29_-_whole_with_kernels_%28cropped2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "fc2647e815650625898df9c20cf8d8017e65591961dd51995037514d3a6add21"
+}

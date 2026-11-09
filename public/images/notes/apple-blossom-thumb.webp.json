@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/apple-blossom.webp",
+  "width": 720,
+  "height": 642,
+  "alt": "Apple blossom, a visual reference for the note.",
+  "author": "Ввласенко",
+  "source": "https://commons.wikimedia.org/wiki/File:Blossom_of_appletree.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/apple-blossom-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Blossom_of_appletree.jpg/960px-Blossom_of_appletree.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "62f9be1f5c181ab82a81458a2c6cf2eaae6a24e49a2fe343b1d2ad71fd895f6b"
+}

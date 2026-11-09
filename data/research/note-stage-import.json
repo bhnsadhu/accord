@@ -1,0 +1,20 @@
+{
+  "publisher": "Scento",
+  "url": "https://github.com/Scento-com/perfume-dataset",
+  "revision": "086769ecf1add770ea6646bd4d88d39f0e7cddeb",
+  "snapshotDate": "2026-10-29",
+  "checkedAt": "2026-11-08",
+  "downloadSha256": "695d9e7b5a61bb482ab84e04ae82806ca684bd26fab95b2c8e2931b6d561dfe2",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Scento, https://www.scento.com/perfume-database",
+  "sourceRows": 1479,
+  "catalogRows": 24661,
+  "matchedEntries": 598,
+  "skippedReasons": {
+    "Existing sourced stages retained": 12,
+    "No exact edition match": 24016,
+    "No complete published stages": 35
+  },
+  "changes": "Exact edition matches only. Imported factual note stages and source URLs. Original descriptions, rankings, wear guidance and other fields were not imported. Existing sourced stages take precedence."
+}

@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/papaya.webp",
+  "width": 509,
+  "height": 720,
+  "alt": "Botanical illustration of papaya.",
+  "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "source": "https://commons.wikimedia.org/wiki/File:Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/papaya-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg/960px-Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "878b55316b4733aca650d8e5f073dc0adcd355a7160c60b2eda7509d558ad81d"
+}

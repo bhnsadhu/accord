@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/honey.webp",
+  "width": 475,
+  "height": 720,
+  "alt": "Honey, a visual reference for the note.",
+  "author": "Scott Bauer, USDA ARS",
+  "source": "https://commons.wikimedia.org/wiki/File:Runny_hunny.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/honey-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Runny_hunny.jpg/960px-Runny_hunny.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "77d59057b41d6a501bab3d13b541d5d17ee01eb09940179f8e1c22c1cf995b34"
+}

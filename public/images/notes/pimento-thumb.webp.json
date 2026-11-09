@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/pimento.webp",
+  "width": 456,
+  "height": 592,
+  "alt": "Botanical illustration of pimento.",
+  "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+  "source": "https://commons.wikimedia.org/wiki/File:Pimenta_dioica_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-239.jpg",
+  "license": "Public domain",
+  "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/pimento-thumb.webp",
+  "kind": "illustration",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Pimenta_dioica_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-239.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "a466b89c68d96821e793a6bd21d9234b260193a2112505a11fb4854327377882"
+}

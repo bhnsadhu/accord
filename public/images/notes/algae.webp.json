@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/algae.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Algae, a visual reference for the note.",
+  "author": "Toby Hudson",
+  "source": "https://commons.wikimedia.org/wiki/File:NSW_seabed_1.JPG",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/algae-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/NSW_seabed_1.JPG/960px-NSW_seabed_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "14aeff6ee174edf42139fc4d10f48cd739fa7f2d684c2bb2e2f886183b8023f2"
+}

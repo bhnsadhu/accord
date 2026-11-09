@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/fennel.webp",
+  "width": 602,
+  "height": 720,
+  "alt": "Fennel, a visual reference for the note.",
+  "author": "Alvesgaspar",
+  "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_July_2011-1a.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/fennel-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Foeniculum_July_2011-1a.jpg/960px-Foeniculum_July_2011-1a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "96f6888a20068088a9ba343c7a4a1ea59e79761d0d3476c03363cf39b281b7eb"
+}

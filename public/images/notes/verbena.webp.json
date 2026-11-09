@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/verbena.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Verbena, a visual reference for the note.",
+  "author": "H. Zell",
+  "source": "https://commons.wikimedia.org/wiki/File:Aloysia_citriodora_002.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/verbena-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Aloysia_citriodora_002.jpg/960px-Aloysia_citriodora_002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "404adb71d017aa7fdeddada3583d09901f388e910cbdb97ccb0317d947f6f745"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/ebony-wood.webp",
+  "width": 450,
+  "height": 600,
+  "alt": "Ebony wood, a visual reference for the note.",
+  "author": "OboeCrack",
+  "source": "https://commons.wikimedia.org/wiki/File:%C3%89bano.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/ebony-wood-thumb.webp",
+  "originalDownload": "https://upload.wikimedia.org/wikipedia/commons/3/3e/%C3%89bano.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "originalSha256": "c67a95101513ea081f4eee5bdee474f5b950284cfa83a1068c36b3f635456c7c"
+}

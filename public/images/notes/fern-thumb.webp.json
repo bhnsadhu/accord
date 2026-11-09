@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/fern.webp",
+  "width": 480,
+  "height": 720,
+  "alt": "Fern, a visual reference for the note.",
+  "author": "Girela770",
+  "source": "https://commons.wikimedia.org/wiki/File:Close-up_of_Emerging_Fern_Frond_in_Spring.jpg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/fern-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Close-up_of_Emerging_Fern_Frond_in_Spring.jpg/960px-Close-up_of_Emerging_Fern_Frond_in_Spring.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "50911621d52447f7de73bcb8490aaaeb9c563b0f4fae583046eb934673b0b07a"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/coco-de-mer.webp",
+  "width": 540,
+  "height": 720,
+  "alt": "Coco de mer, a visual reference for the note.",
+  "author": "WL~commonswiki",
+  "source": "https://commons.wikimedia.org/wiki/File:Female_coco_de_mer_growth.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/coco-de-mer-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Female_coco_de_mer_growth.jpg/960px-Female_coco_de_mer_growth.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "60b1aff8461f1ac2e5530652fce67d981e03585c2a58c13c906b16b11c760949"
+}

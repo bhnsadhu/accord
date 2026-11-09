@@ -1,0 +1,16 @@
+{
+  "path": "/images/notes/teak-wood.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Teak wood, a visual reference for the note.",
+  "author": "Forest & Kim Starr",
+  "source": "https://commons.wikimedia.org/wiki/File:Starr_010304-0485_Tectona_grandis.jpg",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/teak-wood-thumb.webp",
+  "referenceNote": "The source plant is pictured as a visual reference for this note, not an ingredient claim about the fragrance.",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Starr_010304-0485_Tectona_grandis.jpg/960px-Starr_010304-0485_Tectona_grandis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "aef484083c0fc6edec04d5a83117864168768270b1171edd97a8daa8fbe5059b"
+}

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/papaya-blossom.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Papaya blossom, a visual reference for the note.",
+  "author": "Kalaivani Somiah",
+  "source": "https://commons.wikimedia.org/wiki/File:Flower_of_Carica_papaya.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/papaya-blossom-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Flower_of_Carica_papaya.jpg/960px-Flower_of_Carica_papaya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "4faafa60c2180aeccd1f19be7242951684a66ea6cd69648c141f35dccc5e7992"
+}

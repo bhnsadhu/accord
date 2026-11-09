@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/water-lily.webp",
+  "width": 720,
+  "height": 588,
+  "alt": "Water lily, a visual reference for the note.",
+  "author": "Jacek Halicki",
+  "source": "https://commons.wikimedia.org/wiki/File:2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/water-lily-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg/960px-2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "0ac3901d7998d7367c9c3cdd4ff4dc089a11ee27b16f9fcf59b96ca59e3dca98"
+}

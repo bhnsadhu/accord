@@ -1,4 +1,31 @@
 {
+  "absinthe": {
+    "path": "/images/notes/absinthe.webp",
+    "width": 418,
+    "height": 600,
+    "alt": "Absinthe, a visual reference for the note.",
+    "author": "Eric Litton",
+    "source": "https://commons.wikimedia.org/wiki/File:Absinthe-glass.jpg",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/absinthe-thumb.webp"
+  },
+  "african-marigold": {
+    "path": "/images/notes/marigold.webp",
+    "width": 480,
+    "height": 640,
+    "alt": "Marigold, a visual reference for the note.",
+    "author": "Author not listed",
+    "source": "https://commons.wikimedia.org/wiki/File:Tagetes_x_erecta1.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/marigold-thumb.webp",
+    "referenceNote": "Marigold flowers provide a botanical reference; the pictured species is not a claim about the fragrance formula."
+  },
   "akigalawood": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -27,6 +54,87 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Aldehyde. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "algae": {
+    "path": "/images/notes/algae.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Algae, a visual reference for the note.",
+    "author": "Toby Hudson",
+    "source": "https://commons.wikimedia.org/wiki/File:NSW_seabed_1.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/algae-thumb.webp"
+  },
+  "almdudler": {
+    "path": "/images/notes/almdudler.webp",
+    "width": 720,
+    "height": 716,
+    "alt": "Almdudler, a visual reference for the note.",
+    "author": "Loimo",
+    "source": "https://commons.wikimedia.org/wiki/File:Almdudlerflaschen.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/almdudler-thumb.webp",
+    "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance."
+  },
+  "almond": {
+    "path": "/images/notes/almond.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Almond, a visual reference for the note.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Almonds_-_in_shell,_shell_cracked_open,_shelled,_blanched.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/almond-thumb.webp"
+  },
+  "almond-milk": {
+    "path": "/images/notes/almond.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Almond, a visual reference for the note.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Almonds_-_in_shell,_shell_cracked_open,_shelled,_blanched.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/almond-thumb.webp",
+    "referenceNote": "Almonds are shown as a visual reference for an almond-milk impression."
+  },
+  "amaretto": {
+    "path": "/images/notes/amaretto.webp",
+    "width": 720,
+    "height": 566,
+    "alt": "Amaretto, a visual reference for the note.",
+    "author": "Infrogmation of New Orleans",
+    "source": "https://commons.wikimedia.org/wiki/File:Amaretto_Bottles_4.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/amaretto-thumb.webp",
+    "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance."
+  },
+  "amaryllis": {
+    "path": "/images/notes/amaryllis.webp",
+    "width": 720,
+    "height": 689,
+    "alt": "Amaryllis, a visual reference for the note.",
+    "author": "Bureau of Land Management Oregon and Washington from Portland, America",
+    "source": "https://commons.wikimedia.org/wiki/File:Naked_Ladies,_Hinsdale_Rhododendron_Garden_(15022561349).jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/amaryllis-thumb.webp"
+  },
   "amber": {
     "path": "/images/notes/amber.webp",
     "width": 600,
@@ -54,6 +162,48 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/ambergris-thumb.webp"
   },
+  "amberketal": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for amberketal. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "ambermax": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for ambermax. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "amberwood": {
+    "path": "/images/notes/woody-notes.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Wood chips, a visual reference for woody notes.",
+    "author": "Moinats",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaquettes_foresti%C3%A8res.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Wood is shown as an evocative reference for an amberwood accord, not a single ingredient.",
+    "thumbnail": "/images/notes/woody-notes-thumb.webp"
+  },
   "ambre-83-de-laire": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -80,6 +230,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/ambrette-seed-thumb.webp"
+  },
+  "ambrettolide": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for ambrettolide. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
   "ambrexolide": {
     "path": "/images/notes/perfume-materials.webp",
@@ -195,6 +359,20 @@
     "referenceNote": "Ambroxide is pictured as a molecular reference. A structure diagram does not specify the composition of a commercial product.",
     "thumbnail": "/images/notes/ambroxan-thumb.webp"
   },
+  "amyris": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for amyris. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
   "angelica": {
     "path": "/images/notes/angelica.webp",
     "width": 720,
@@ -262,6 +440,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/apple-thumb.webp"
   },
+  "apple-blossom": {
+    "path": "/images/notes/apple-blossom.webp",
+    "width": 720,
+    "height": 642,
+    "alt": "Apple blossom, a visual reference for the note.",
+    "author": "Ввласенко",
+    "source": "https://commons.wikimedia.org/wiki/File:Blossom_of_appletree.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/apple-blossom-thumb.webp"
+  },
   "apricot": {
     "path": "/images/notes/apricot.webp",
     "width": 720,
@@ -288,6 +479,34 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "A perfumer’s palette is shown as a context image for Aquaflora. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "aquatic-accord": {
+    "path": "/images/notes/marine.webp",
+    "width": 720,
+    "height": 420,
+    "alt": "Ocean waves, a visual reference for marine notes.",
+    "author": "Frantzou Fleurine",
+    "source": "https://commons.wikimedia.org/wiki/File:Waves_Shore_Ocean.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Ocean water is shown as an evocative reference for an aquatic accord.",
+    "thumbnail": "/images/notes/marine-thumb.webp"
+  },
+  "aquatic-flowers": {
+    "path": "/images/notes/water-lily.webp",
+    "width": 720,
+    "height": 588,
+    "alt": "Water lily, a visual reference for the note.",
+    "author": "Jacek Halicki",
+    "source": "https://commons.wikimedia.org/wiki/File:2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/water-lily-thumb.webp",
+    "referenceNote": "A water lily illustrates an aquatic floral impression, not a specific ingredient assignment."
   },
   "aquozone": {
     "path": "/images/notes/perfume-materials.webp",
@@ -411,6 +630,32 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/bamboo-thumb.webp"
   },
+  "basil": {
+    "path": "/images/notes/basil.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Basil, a visual reference for the note.",
+    "author": "Photo by David J. Stang",
+    "source": "https://commons.wikimedia.org/wiki/File:Ocimum_basilicum_8zz.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/basil-thumb.webp"
+  },
+  "basmati-rice": {
+    "path": "/images/notes/basmati-rice.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Basmati rice, a visual reference for the note.",
+    "author": "CNEcija12345",
+    "source": "https://commons.wikimedia.org/wiki/File:Basmati_rice_textureCNE_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/basmati-rice-thumb.webp"
+  },
   "bay": {
     "path": "/images/notes/bay.webp",
     "width": 540,
@@ -436,6 +681,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/bay-thumb.webp"
+  },
+  "beech": {
+    "path": "/images/notes/beech.webp",
+    "width": 480,
+    "height": 720,
+    "alt": "Beech, a visual reference for the note.",
+    "author": "Own",
+    "source": "https://commons.wikimedia.org/wiki/File:Beech-tree.JPG",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/beech-thumb.webp"
   },
   "beeswax": {
     "path": "/images/notes/beeswax.webp",
@@ -529,6 +787,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/bitter-orange-thumb.webp"
   },
+  "black-hemlock": {
+    "path": "/images/notes/black-hemlock.webp",
+    "width": 720,
+    "height": 491,
+    "alt": "Black hemlock, a visual reference for the note.",
+    "author": "Alex O'Neal",
+    "source": "https://commons.wikimedia.org/wiki/File:Tsuga_heterophylla_near_Rainier.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/black-hemlock-thumb.webp"
+  },
   "black-leather-accord": {
     "path": "/images/notes/leather.webp",
     "width": 720,
@@ -620,6 +891,86 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/blackcurrant-leaf-thumb.webp"
   },
+  "blonde-woods": {
+    "path": "/images/notes/woody-notes.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Wood chips, a visual reference for woody notes.",
+    "author": "Moinats",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaquettes_foresti%C3%A8res.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Wood is shown as a general visual reference for the named woody impression.",
+    "thumbnail": "/images/notes/woody-notes-thumb.webp"
+  },
+  "blood-orange": {
+    "path": "/images/notes/blood-orange.webp",
+    "width": 720,
+    "height": 519,
+    "alt": "Blood orange, a visual reference for the note.",
+    "author": "Silentcynic",
+    "source": "https://commons.wikimedia.org/wiki/File:BloodOrange.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/blood-orange-thumb.webp"
+  },
+  "blue-wisteria": {
+    "path": "/images/notes/wisteria.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Wisteria, a visual reference for the note.",
+    "author": "3268zauber",
+    "source": "https://commons.wikimedia.org/wiki/File:Chinese_Wisteria_Bl%C3%BCtentrauben.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/wisteria-thumb.webp",
+    "referenceNote": "Wisteria flowers are shown as a botanical reference for the named note."
+  },
+  "bluebell": {
+    "path": "/images/notes/bluebell.webp",
+    "width": 480,
+    "height": 720,
+    "alt": "Bluebell, a visual reference for the note.",
+    "author": "MichaelMaggs",
+    "source": "https://commons.wikimedia.org/wiki/File:Hyacinthoides_non-scripta_(Common_Bluebell).jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/bluebell-thumb.webp"
+  },
+  "blueberry": {
+    "path": "/images/notes/blueberry.webp",
+    "width": 640,
+    "height": 418,
+    "alt": "Blueberry, a visual reference for the note.",
+    "author": "The original Uploader was Oven Fresh at English Wikipedia",
+    "source": "https://commons.wikimedia.org/wiki/File:Blueberries.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/blueberry-thumb.webp"
+  },
+  "boronia": {
+    "path": "/images/notes/boronia.webp",
+    "width": 473,
+    "height": 720,
+    "alt": "Boronia, a visual reference for the note.",
+    "author": "Murray Fagg",
+    "source": "https://commons.wikimedia.org/wiki/File:Boronia_megastigma_flowers.jpg",
+    "license": "CC BY 3.0 au",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/au/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/boronia-thumb.webp"
+  },
   "bourbon-vanilla": {
     "path": "/images/notes/vanilla.webp",
     "width": 576,
@@ -632,6 +983,32 @@
     "checkedAt": "2026-10-31",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full photograph.",
     "thumbnail": "/images/notes/vanilla-thumb.webp"
+  },
+  "broom": {
+    "path": "/images/notes/broom.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Broom, a visual reference for the note.",
+    "author": "Hans Hillewaert",
+    "source": "https://commons.wikimedia.org/wiki/File:Spartium_junceum_(habitus).jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/broom-thumb.webp"
+  },
+  "brown-sugar": {
+    "path": "/images/notes/brown-sugar.webp",
+    "width": 720,
+    "height": 669,
+    "alt": "Brown sugar, a visual reference for the note.",
+    "author": "Romain Behar",
+    "source": "https://commons.wikimedia.org/wiki/File:Sucre_blanc_cassonade_complet_rapadura.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/brown-sugar-thumb.webp"
   },
   "buaya-laos": {
     "path": "/images/notes/perfume-materials.webp",
@@ -647,6 +1024,34 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Buaya Laos. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "bubble-gum": {
+    "path": "/images/notes/bubble-gum.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Bubble gum, a visual reference for the note.",
+    "author": "Alf van Beem",
+    "source": "https://commons.wikimedia.org/wiki/File:Roll_Up,_Bubble_Gum_Kaugummi.JPG",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/bubble-gum-thumb.webp",
+    "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance."
+  },
+  "buchu": {
+    "path": "/images/notes/buchu.webp",
+    "width": 401,
+    "height": 594,
+    "alt": "Botanical illustration of buchu.",
+    "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+    "source": "https://commons.wikimedia.org/wiki/File:Agathosma_betulina_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-020.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/buchu-thumb.webp",
+    "kind": "illustration"
+  },
   "cachalox": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -660,6 +1065,34 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "A perfumer’s palette is shown as a context image for Cachalox. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "cactus": {
+    "path": "/images/notes/cactus.webp",
+    "width": 504,
+    "height": 720,
+    "alt": "Botanical illustration of cactus.",
+    "author": "G. Mütrel, Leipzig ; Berlin ; Wien : F.A. Brockhaus",
+    "source": "https://commons.wikimedia.org/wiki/File:Various_Cactaceae.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/cactus-thumb.webp",
+    "kind": "illustration"
+  },
+  "cade": {
+    "path": "/images/notes/juniper.webp",
+    "width": 576,
+    "height": 720,
+    "alt": "Juniper, a visual reference for the note.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Juniperus_communis_fruits_-_Keila.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/juniper-thumb.webp",
+    "referenceNote": "Juniper is shown as a botanical context image; it is not a photograph of cade oil."
   },
   "calabrian-bergamot": {
     "path": "/images/notes/bergamot.webp",
@@ -688,6 +1121,19 @@
     "kind": "structure",
     "thumbnail": "/images/notes/calone-thumb.webp"
   },
+  "calophyllum": {
+    "path": "/images/notes/calophyllum.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Calophyllum, a visual reference for the note.",
+    "author": "Forest & Kim Starr",
+    "source": "https://commons.wikimedia.org/wiki/File:Starr_010309-0546_Calophyllum_inophyllum.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/calophyllum-thumb.webp"
+  },
   "calypsone": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -701,6 +1147,47 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "A perfumer’s palette is shown as a context image for Calypsone. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "campanula": {
+    "path": "/images/notes/campanula.webp",
+    "width": 720,
+    "height": 482,
+    "alt": "Campanula, a visual reference for the note.",
+    "author": "Wilson44691",
+    "source": "https://commons.wikimedia.org/wiki/File:Campanula_persicifolia_Tehumardi_Saaremaa.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/campanula-thumb.webp"
+  },
+  "candied-citrus": {
+    "path": "/images/notes/orange.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Oranges.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Oranges_-_whole-halved-segment.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Citrus fruit illustrates the fruity part of a candied-citrus impression.",
+    "thumbnail": "/images/notes/orange-thumb.webp"
+  },
+  "candied-fruits": {
+    "path": "/images/notes/fruity-notes.webp",
+    "width": 720,
+    "height": 686,
+    "alt": "Fruit as a visual reference for a fruity accord.",
+    "author": "روتانا",
+    "source": "https://commons.wikimedia.org/wiki/File:Fruit_Platter-_Seasonal_Fruits.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Fruit illustrates the fruity part of a candied-fruit impression.",
+    "thumbnail": "/images/notes/fruity-notes-thumb.webp"
   },
   "candy": {
     "path": "/images/notes/candy.webp",
@@ -728,6 +1215,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/caramel-thumb.webp"
   },
+  "caraway": {
+    "path": "/images/notes/caraway.webp",
+    "width": 495,
+    "height": 590,
+    "alt": "Botanical illustration of caraway.",
+    "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+    "source": "https://commons.wikimedia.org/wiki/File:Carum_carvi_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-172.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/caraway-thumb.webp",
+    "kind": "illustration"
+  },
   "cardamom": {
     "path": "/images/notes/cardamom.webp",
     "width": 720,
@@ -753,6 +1254,32 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/carnation-thumb.webp"
+  },
+  "carrot": {
+    "path": "/images/notes/carrot.webp",
+    "width": 720,
+    "height": 408,
+    "alt": "Carrot, a visual reference for the note.",
+    "author": "Evan-Amos",
+    "source": "https://commons.wikimedia.org/wiki/File:Vegetable-Carrot-Bundle-wStalks.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/carrot-thumb.webp"
+  },
+  "carrot-seed": {
+    "path": "/images/notes/carrot-seed.webp",
+    "width": 720,
+    "height": 525,
+    "alt": "Carrot seed, a visual reference for the note.",
+    "author": "John Alan Elson",
+    "source": "https://commons.wikimedia.org/wiki/File:Carrot_seeds.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/carrot-seed-thumb.webp"
   },
   "cascalone": {
     "path": "/images/notes/marine.webp",
@@ -824,6 +1351,19 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Castoreum. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "caviar": {
+    "path": "/images/notes/caviar.webp",
+    "width": 720,
+    "height": 720,
+    "alt": "Caviar, a visual reference for the note.",
+    "author": "THOR",
+    "source": "https://commons.wikimedia.org/wiki/File:Caviar_spoons.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/caviar-thumb.webp"
+  },
   "caviar-lime": {
     "path": "/images/notes/caviar-lime.webp",
     "width": 720,
@@ -890,6 +1430,47 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/chai-thumb.webp"
   },
+  "chamomile": {
+    "path": "/images/notes/chamomile.webp",
+    "width": 488,
+    "height": 720,
+    "alt": "Chamomile, a visual reference for the note.",
+    "author": "kallerna",
+    "source": "https://commons.wikimedia.org/wiki/File:Kamomillasaunio_(Matricaria_recutita).JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/chamomile-thumb.webp"
+  },
+  "champaca": {
+    "path": "/images/notes/champaca.webp",
+    "width": 647,
+    "height": 720,
+    "alt": "Botanical illustration of champaca.",
+    "author": "Francisco Manuel Blanco (O.S.A.)",
+    "source": "https://commons.wikimedia.org/wiki/File:Michelia_champaca_Blanco1.191-cropped.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/champaca-thumb.webp",
+    "kind": "illustration"
+  },
+  "champagne": {
+    "path": "/images/notes/champagne.webp",
+    "width": 480,
+    "height": 720,
+    "alt": "Champagne, a visual reference for the note.",
+    "author": "bgvjpe",
+    "source": "https://commons.wikimedia.org/wiki/File:Glass_of_champagne.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/champagne-thumb.webp",
+    "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance."
+  },
   "champagne-rose": {
     "path": "/images/notes/champagne-rose.webp",
     "width": 362,
@@ -903,6 +1484,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/champagne-rose-thumb.webp"
   },
+  "chantilly": {
+    "path": "/images/notes/chantilly.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "A dessert topped with whipped cream, a visual reference for Chantilly.",
+    "author": "Arnaud 25",
+    "source": "https://commons.wikimedia.org/wiki/File:Tarte_au_citron_meringu%C3%A9e_cr%C3%A8me_chantilly.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/chantilly-thumb.webp",
+    "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance."
+  },
   "cherry": {
     "path": "/images/notes/cherry.webp",
     "width": 497,
@@ -915,6 +1510,32 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/cherry-thumb.webp"
+  },
+  "cherry-blossom": {
+    "path": "/images/notes/cherry-blossom.webp",
+    "width": 480,
+    "height": 720,
+    "alt": "Cherry blossom, a visual reference for the note.",
+    "author": "TANAKA Juuyoh (田中十洋)",
+    "source": "https://commons.wikimedia.org/wiki/File:Sakura_and_Moss_Pink_-_%E6%A1%9C(%E3%81%95%E3%81%8F%E3%82%89)%E3%81%A8%E8%8A%9D%E6%A1%9C(%E3%81%97%E3%81%B0%E3%81%96%E3%81%8F%E3%82%89).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/cherry-blossom-thumb.webp"
+  },
+  "chestnut": {
+    "path": "/images/notes/chestnut.webp",
+    "width": 720,
+    "height": 550,
+    "alt": "Chestnut, a visual reference for the note.",
+    "author": "Vassil",
+    "source": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2taignier_120807_1.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/chestnut-thumb.webp"
   },
   "chilipepper": {
     "path": "/images/notes/hot-pepper.webp",
@@ -1077,6 +1698,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/clary-sage-thumb.webp"
   },
+  "clearwood": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for clearwood. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
   "clementine": {
     "path": "/images/notes/clementine.webp",
     "width": 720,
@@ -1089,6 +1724,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/clementine-thumb.webp"
+  },
+  "cloudberry": {
+    "path": "/images/notes/cloudberry.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Cloudberry, a visual reference for the note.",
+    "author": "Moravice",
+    "source": "https://commons.wikimedia.org/wiki/File:Rubus_chamaemorus,_from_Troms%C3%B8,_August_2020.jpeg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/cloudberry-thumb.webp"
   },
   "clove": {
     "path": "/images/notes/clove.webp",
@@ -1103,6 +1751,32 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/clove-thumb.webp"
   },
+  "coal": {
+    "path": "/images/notes/coal.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Coal, a visual reference for the note.",
+    "author": "Amcyrus2012",
+    "source": "https://commons.wikimedia.org/wiki/File:Bituminous_Coal.JPG",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/coal-thumb.webp"
+  },
+  "coco-de-mer": {
+    "path": "/images/notes/coco-de-mer.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Coco de mer, a visual reference for the note.",
+    "author": "WL~commonswiki",
+    "source": "https://commons.wikimedia.org/wiki/File:Female_coco_de_mer_growth.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/coco-de-mer-thumb.webp"
+  },
   "cocoa": {
     "path": "/images/notes/cocoa.webp",
     "width": 720,
@@ -1116,6 +1790,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/cocoa-thumb.webp"
   },
+  "coconut": {
+    "path": "/images/notes/coconut.webp",
+    "width": 542,
+    "height": 720,
+    "alt": "Coconut, a visual reference for the note.",
+    "author": "Fredericknoronha",
+    "source": "https://commons.wikimedia.org/wiki/File:Raw_and_freshly_cut_coconut.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/coconut-thumb.webp"
+  },
   "coffee": {
     "path": "/images/notes/coffee.webp",
     "width": 720,
@@ -1128,6 +1815,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/coffee-thumb.webp"
+  },
+  "cognac": {
+    "path": "/images/notes/cognac.webp",
+    "width": 720,
+    "height": 609,
+    "alt": "Cognac, a visual reference for the note.",
+    "author": "Didier Descouens",
+    "source": "https://commons.wikimedia.org/wiki/File:Cognac_glass.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/cognac-thumb.webp",
+    "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance."
   },
   "cologne-accord": {
     "path": "/images/notes/bergamot.webp",
@@ -1251,6 +1952,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/crinum-lily-thumb.webp"
   },
+  "cucumber": {
+    "path": "/images/notes/cucumber.webp",
+    "width": 502,
+    "height": 720,
+    "alt": "Cucumber, a visual reference for the note.",
+    "author": "Stephen Ausmus, USDA ARS",
+    "source": "https://commons.wikimedia.org/wiki/File:ARS_cucumber.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/cucumber-thumb.webp"
+  },
   "cumin": {
     "path": "/images/notes/cumin.webp",
     "width": 720,
@@ -1277,6 +1991,32 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/curcuma-thumb.webp"
   },
+  "curry": {
+    "path": "/images/notes/curry.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Curry, a visual reference for the note.",
+    "author": "Thomas Steiner",
+    "source": "https://commons.wikimedia.org/wiki/File:Curry_powder_in_the_spice-bazaar_in_Istanbul.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/curry-thumb.webp"
+  },
+  "cyclamen": {
+    "path": "/images/notes/cyclamen.webp",
+    "width": 720,
+    "height": 720,
+    "alt": "Cyclamen, a visual reference for the note.",
+    "author": "Dominicus Johannes Bergsma",
+    "source": "https://commons.wikimedia.org/wiki/File:Cyclamen_hederifolium_05-08-2020_(d.j.b.)_01.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/cyclamen-thumb.webp"
+  },
   "cyclosal": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -1291,6 +2031,19 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Cyclosal. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "cypress": {
+    "path": "/images/notes/cypress.webp",
+    "width": 487,
+    "height": 720,
+    "alt": "Cypress, a visual reference for the note.",
+    "author": "Christian Ferrer",
+    "source": "https://commons.wikimedia.org/wiki/File:Cupressus_sempervirens,_Saint-R%C3%A9my-de-Provence_cf01.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/cypress-thumb.webp"
+  },
   "cypriol-nagarmota": {
     "path": "/images/notes/cypriol-nagarmota.webp",
     "width": 720,
@@ -1304,6 +2057,58 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/cypriol-nagarmota-thumb.webp"
   },
+  "daisy": {
+    "path": "/images/notes/daisy.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Daisy, a visual reference for the note.",
+    "author": "Stefan.lefnaer",
+    "source": "https://commons.wikimedia.org/wiki/File:Bellis_perennis_sl1.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/daisy-thumb.webp"
+  },
+  "dates": {
+    "path": "/images/notes/dates.webp",
+    "width": 720,
+    "height": 482,
+    "alt": "Dates, a visual reference for the note.",
+    "author": "Nepenthes",
+    "source": "https://commons.wikimedia.org/wiki/File:Dates005.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/dates-thumb.webp"
+  },
+  "datura-flower": {
+    "path": "/images/notes/datura-flower.webp",
+    "width": 480,
+    "height": 720,
+    "alt": "Datura flower, a visual reference for the note.",
+    "author": "Joshua Tree National Park",
+    "source": "https://commons.wikimedia.org/wiki/File:Sacred_datura_(Datura_wrightii)_(14212557338).jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/datura-flower-thumb.webp"
+  },
+  "davana": {
+    "path": "/images/notes/davana.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Davana, a visual reference for the note.",
+    "author": "Yercaud-elango",
+    "source": "https://commons.wikimedia.org/wiki/File:Artemisia_pallens-1-xavier_cottage-yercaud-salem-India.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/davana-thumb.webp"
+  },
   "dew-drop": {
     "path": "/images/notes/dew-drop.webp",
     "width": 720,
@@ -1316,6 +2121,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/dew-drop-thumb.webp"
+  },
+  "dill": {
+    "path": "/images/notes/dill.webp",
+    "width": 427,
+    "height": 720,
+    "alt": "Botanical illustration of dill.",
+    "author": "Illustration_Anethum_graveolens0.jpg: Prof. Dr. Otto Wilhelm Thomé derivative work: Aroche (talk)",
+    "source": "https://commons.wikimedia.org/wiki/File:Illustration_Anethum_graveolens_clean.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/dill-thumb.webp",
+    "kind": "illustration"
   },
   "dreamwood": {
     "path": "/images/notes/perfume-materials.webp",
@@ -1344,6 +2163,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/dried-fruits-thumb.webp"
   },
+  "driftwood": {
+    "path": "/images/notes/driftwood.webp",
+    "width": 720,
+    "height": 538,
+    "alt": "Driftwood, a visual reference for the note.",
+    "author": "http://bois-flotte.net/bois_flotté.html",
+    "source": "https://commons.wikimedia.org/wiki/File:Bois_flott%C3%A9.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/driftwood-thumb.webp"
+  },
   "dry-amber": {
     "path": "/images/notes/amber.webp",
     "width": 600,
@@ -1357,6 +2189,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "Labdanum resin is shown as an ambery scent reference. The named accord is not pictured as a literal material.",
     "thumbnail": "/images/notes/amber-thumb.webp"
+  },
+  "dry-wood": {
+    "path": "/images/notes/woody-notes.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Wood chips, a visual reference for woody notes.",
+    "author": "Moinats",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaquettes_foresti%C3%A8res.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Wood is shown as a general visual reference for a dry woody impression.",
+    "thumbnail": "/images/notes/woody-notes-thumb.webp"
   },
   "ebanol": {
     "path": "/images/notes/ebanol.webp",
@@ -1372,6 +2218,19 @@
     "kind": "structure",
     "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
     "thumbnail": "/images/notes/ebanol-thumb.webp"
+  },
+  "ebony-wood": {
+    "path": "/images/notes/ebony-wood.webp",
+    "width": 450,
+    "height": 600,
+    "alt": "Ebony wood, a visual reference for the note.",
+    "author": "OboeCrack",
+    "source": "https://commons.wikimedia.org/wiki/File:%C3%89bano.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/ebony-wood-thumb.webp"
   },
   "edenolide": {
     "path": "/images/notes/perfume-materials.webp",
@@ -1399,6 +2258,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/elemi-thumb.webp"
+  },
+  "embers": {
+    "path": "/images/notes/embers.webp",
+    "width": 720,
+    "height": 481,
+    "alt": "Embers, a visual reference for the note.",
+    "author": "Jens Buurgaard Nielsen",
+    "source": "https://commons.wikimedia.org/wiki/File:Embers_01.JPG",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/embers-thumb.webp"
   },
   "ethyl-acetate": {
     "path": "/images/notes/ethyl-acetate.webp",
@@ -1455,6 +2327,46 @@
     "referenceNote": "Soft fabric is an evocative reference for a musky impression, not the aroma material itself.",
     "thumbnail": "/images/notes/clean-fabric-thumb.webp"
   },
+  "fennel": {
+    "path": "/images/notes/fennel.webp",
+    "width": 602,
+    "height": 720,
+    "alt": "Fennel, a visual reference for the note.",
+    "author": "Alvesgaspar",
+    "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_July_2011-1a.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/fennel-thumb.webp"
+  },
+  "fenugreek": {
+    "path": "/images/notes/fenugreek.webp",
+    "width": 437,
+    "height": 720,
+    "alt": "Botanical illustration of fenugreek.",
+    "author": "Prof. Dr. Otto Wilhelm Thomé derivative work: Ninjatacoshell (talk)",
+    "source": "https://commons.wikimedia.org/wiki/File:Illustration_Trigonella_foenum-graecum0_clean.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/fenugreek-thumb.webp",
+    "kind": "illustration"
+  },
+  "fern": {
+    "path": "/images/notes/fern.webp",
+    "width": 480,
+    "height": 720,
+    "alt": "Fern, a visual reference for the note.",
+    "author": "Girela770",
+    "source": "https://commons.wikimedia.org/wiki/File:Close-up_of_Emerging_Fern_Frond_in_Spring.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/fern-thumb.webp"
+  },
   "fig": {
     "path": "/images/notes/fig.webp",
     "width": 720,
@@ -1480,6 +2392,32 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/fig-leaf-thumb.webp"
+  },
+  "fig-wood": {
+    "path": "/images/notes/fig-wood.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Fig wood, a visual reference for the note.",
+    "author": "Tangopaso",
+    "source": "https://commons.wikimedia.org/wiki/File:Ficus_carica_bonsai_A_D161215_trunk_%26_lawn.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/fig-wood-thumb.webp"
+  },
+  "flax-flower": {
+    "path": "/images/notes/flax-flower.webp",
+    "width": 699,
+    "height": 720,
+    "alt": "Flax flower, a visual reference for the note.",
+    "author": "Rosser1954",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Common_Flax_or_Linseed_(Linum_usitatissimum)_flower._Chapeltoun_North_Ayrshire.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/flax-flower-thumb.webp"
   },
   "floral-notes": {
     "path": "/images/notes/floral-notes.webp",
@@ -1524,6 +2462,19 @@
     "referenceNote": "An illustrative scent reference. The pictured object is not a statement about the ingredients used in a fragrance.",
     "thumbnail": "/images/notes/fougere-accord-thumb.webp"
   },
+  "frangipani": {
+    "path": "/images/notes/frangipani.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Frangipani, a visual reference for the note.",
+    "author": "Varun Pabrai",
+    "source": "https://commons.wikimedia.org/wiki/File:Plumeria_rubra-4.JPG",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/frangipani-thumb.webp"
+  },
   "freesia": {
     "path": "/images/notes/freesia.webp",
     "width": 624,
@@ -1536,6 +2487,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/freesia-thumb.webp"
+  },
+  "fresh-cotton": {
+    "path": "/images/notes/fresh-cotton.webp",
+    "width": 720,
+    "height": 515,
+    "alt": "Fresh cotton, a visual reference for the note.",
+    "author": "Author not listed",
+    "source": "https://commons.wikimedia.org/wiki/File:CottonPlant.JPG",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/fresh-cotton-thumb.webp",
+    "referenceNote": "The source plant is pictured as a visual reference for this note, not an ingredient claim about the fragrance."
   },
   "fresh-cut-grass": {
     "path": "/images/notes/fresh-cut-grass.webp",
@@ -1563,6 +2528,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "Aromatic herbs are shown as a scent reference for this broad note.",
     "thumbnail": "/images/notes/rosemary-thumb.webp"
+  },
+  "fresh-wind": {
+    "path": "/images/notes/ozonic-notes.webp",
+    "width": 720,
+    "height": 481,
+    "alt": "Open sky, a visual reference for an airy accord.",
+    "author": "ADARSHluck",
+    "source": "https://commons.wikimedia.org/wiki/File:Cirrus_uncinus_clouds_in_the_morning_sky.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Open sky is an evocative reference for an airy impression.",
+    "thumbnail": "/images/notes/ozonic-notes-thumb.webp"
   },
   "fruity-notes": {
     "path": "/images/notes/fruity-notes.webp",
@@ -1659,6 +2638,20 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Georgywood. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "geraniol": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for geraniol. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
   "geranium": {
     "path": "/images/notes/geranium.webp",
     "width": 720,
@@ -1739,6 +2732,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/green-apple-thumb.webp"
   },
+  "green-leaves": {
+    "path": "/images/notes/green-notes.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Green leaves, a visual reference for a green accord.",
+    "author": "Bijaya2043",
+    "source": "https://commons.wikimedia.org/wiki/File:Green_leaves_of_Chayote.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Green leaves illustrate a green accord, not a particular botanical ingredient.",
+    "thumbnail": "/images/notes/green-notes-thumb.webp"
+  },
   "green-notes": {
     "path": "/images/notes/green-notes.webp",
     "width": 720,
@@ -1765,6 +2772,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/green-of-tangerine-thumb.webp"
+  },
+  "green-pear": {
+    "path": "/images/notes/pear.webp",
+    "width": 473,
+    "height": 720,
+    "alt": "Pears on a tree.",
+    "author": "Keith Weller",
+    "source": "https://commons.wikimedia.org/wiki/File:Pears.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Help:Public_domain",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/pear-thumb.webp",
+    "referenceNote": "Pear fruit is shown as a general visual reference for the note."
   },
   "green-tea": {
     "path": "/images/notes/green-tea.webp",
@@ -1805,6 +2826,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/guarana-thumb.webp"
   },
+  "guava": {
+    "path": "/images/notes/guava.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Guava, a visual reference for the note.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Guava_pink_fruit.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/guava-thumb.webp"
+  },
   "gunpowder": {
     "path": "/images/notes/gunpowder.webp",
     "width": 720,
@@ -1818,6 +2852,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "An illustrative scent reference. The pictured object is not a statement about the ingredients used in a fragrance.",
     "thumbnail": "/images/notes/gunpowder-thumb.webp"
+  },
+  "gurjum-balsam": {
+    "path": "/images/notes/gurjum-balsam.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Gurjum balsam, a visual reference for the note.",
+    "author": "Afifa Afrin",
+    "source": "https://commons.wikimedia.org/wiki/File:Dipterocarpus_turbinatus_(Garjan)_seedling_in_RDA,_Bogra_03.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/gurjum-balsam-thumb.webp",
+    "referenceNote": "The source plant is pictured as a visual reference for this note, not an ingredient claim about the fragrance."
   },
   "habanolide": {
     "path": "/images/notes/clean-fabric.webp",
@@ -1833,6 +2881,19 @@
     "referenceNote": "Soft fabric is an evocative reference for a musky impression, not the aroma material itself.",
     "thumbnail": "/images/notes/clean-fabric-thumb.webp"
   },
+  "hawthorn": {
+    "path": "/images/notes/hawthorn.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Hawthorn, a visual reference for the note.",
+    "author": "Elstro",
+    "source": "https://commons.wikimedia.org/wiki/File:Hawthorn_fruit.JPG",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/hawthorn-thumb.webp"
+  },
   "hay": {
     "path": "/images/notes/hay.webp",
     "width": 720,
@@ -1845,6 +2906,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/hay-thumb.webp"
+  },
+  "hazelnut": {
+    "path": "/images/notes/hazelnut.webp",
+    "width": 720,
+    "height": 506,
+    "alt": "Hazelnut, a visual reference for the note.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Hazelnuts_(Corylus_avellana)_-_whole_with_kernels_(cropped2).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/hazelnut-thumb.webp"
   },
   "hedione": {
     "path": "/images/notes/hedione.webp",
@@ -1914,6 +2988,19 @@
     "referenceNote": "Soft fabric is an evocative reference for a musky impression, not the aroma material itself.",
     "thumbnail": "/images/notes/clean-fabric-thumb.webp"
   },
+  "hibiscus": {
+    "path": "/images/notes/hibiscus.webp",
+    "width": 720,
+    "height": 527,
+    "alt": "Hibiscus, a visual reference for the note.",
+    "author": "Andy / Andrew Fogg from near Cambridge, UK",
+    "source": "https://commons.wikimedia.org/wiki/File:Hibiscus_Brilliant.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/hibiscus-thumb.webp"
+  },
   "hivernal": {
     "path": "/images/notes/floral-notes.webp",
     "width": 540,
@@ -1927,6 +3014,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "Flowers evoke a floral impression. The aroma material itself is not pictured.",
     "thumbnail": "/images/notes/floral-notes-thumb.webp"
+  },
+  "honey": {
+    "path": "/images/notes/honey.webp",
+    "width": 475,
+    "height": 720,
+    "alt": "Honey, a visual reference for the note.",
+    "author": "Scott Bauer, USDA ARS",
+    "source": "https://commons.wikimedia.org/wiki/File:Runny_hunny.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/honey-thumb.webp"
   },
   "honeysuckle": {
     "path": "/images/notes/honeysuckle.webp",
@@ -1981,6 +3081,32 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/hyacinth-thumb.webp"
   },
+  "hydrangea": {
+    "path": "/images/notes/hydrangea.webp",
+    "width": 720,
+    "height": 534,
+    "alt": "Hydrangea, a visual reference for the note.",
+    "author": "belvedere04",
+    "source": "https://commons.wikimedia.org/wiki/File:(Natural)_Hydrangea_macrophylla,_Iwafune,_Isumi,_Chiba,_Japan_2.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/hydrangea-thumb.webp"
+  },
+  "ice-cream": {
+    "path": "/images/notes/ice-cream.webp",
+    "width": 427,
+    "height": 640,
+    "alt": "Ice cream, a visual reference for the note.",
+    "author": "Steven Depolo",
+    "source": "https://commons.wikimedia.org/wiki/File:Vanilla_Ice_Cream_Cone_at_Camp_Manitoulin.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/ice-cream-thumb.webp"
+  },
   "incense": {
     "path": "/images/notes/incense-olibanum.webp",
     "width": 720,
@@ -2006,6 +3132,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/incense-olibanum-thumb.webp"
+  },
+  "indole": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for indole. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
   "ink": {
     "path": "/images/notes/ink.webp",
@@ -2114,6 +3254,19 @@
     "referenceNote": "Sandalwood is shown as a scent reference for Javanol, not as its source material.",
     "thumbnail": "/images/notes/sandalwood-thumb.webp"
   },
+  "juniper": {
+    "path": "/images/notes/juniper.webp",
+    "width": 576,
+    "height": 720,
+    "alt": "Juniper, a visual reference for the note.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Juniperus_communis_fruits_-_Keila.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/juniper-thumb.webp"
+  },
   "juniper-berries": {
     "path": "/images/notes/juniper-berries.webp",
     "width": 576,
@@ -2182,6 +3335,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/kingwood-thumb.webp"
+  },
+  "kumquat": {
+    "path": "/images/notes/kumquat.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Kumquat, a visual reference for the note.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Kumquat_from_Spain.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/kumquat-thumb.webp"
   },
   "kyphi-accord": {
     "path": "/images/notes/incense-olibanum.webp",
@@ -2276,6 +3442,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/lentisk-thumb.webp"
   },
+  "lichen": {
+    "path": "/images/notes/oakmoss.webp",
+    "width": 720,
+    "height": 473,
+    "alt": "Oakmoss lichen.",
+    "author": "Liondelyon",
+    "source": "https://commons.wikimedia.org/wiki/File:Lichen_foliac%C3%A92..JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/oakmoss-thumb.webp",
+    "referenceNote": "Oakmoss is shown as one lichen reference, not an exact species claim for this note."
+  },
   "licorice": {
     "path": "/images/notes/licorice.webp",
     "width": 720,
@@ -2288,6 +3468,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/licorice-thumb.webp"
+  },
+  "lilac": {
+    "path": "/images/notes/lilac.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Lilac, a visual reference for the note.",
+    "author": "Jjron",
+    "source": "https://commons.wikimedia.org/wiki/File:Lilac_Flower%26Leaves,_SC,_Vic,_13.10.2007.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/lilac-thumb.webp"
   },
   "lilial": {
     "path": "/images/notes/lilial.webp",
@@ -2369,6 +3562,46 @@
     "kind": "structure",
     "thumbnail": "/images/notes/linalool-thumb.webp"
   },
+  "linden-blossom": {
+    "path": "/images/notes/linden-blossom.webp",
+    "width": 533,
+    "height": 430,
+    "alt": "Linden blossom, a visual reference for the note.",
+    "author": "Author not listed",
+    "source": "https://commons.wikimedia.org/wiki/File:Tilia-cordata2.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/linden-blossom-thumb.webp"
+  },
+  "lingonberry": {
+    "path": "/images/notes/lingonberry.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Lingonberry, a visual reference for the note.",
+    "author": "Jonas Bergsten",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaccinium_vitis-idaea_20060824_003.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/lingonberry-thumb.webp"
+  },
+  "liqueur": {
+    "path": "/images/notes/amaretto.webp",
+    "width": 720,
+    "height": 566,
+    "alt": "Amaretto, a visual reference for the note.",
+    "author": "Infrogmation of New Orleans",
+    "source": "https://commons.wikimedia.org/wiki/File:Amaretto_Bottles_4.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/amaretto-thumb.webp",
+    "referenceNote": "Amaretto is shown as one visual reference for a liqueur impression, not a particular ingredient."
+  },
   "lisylang": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -2410,6 +3643,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/lotus-thumb.webp"
   },
+  "lovage": {
+    "path": "/images/notes/lovage.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Lovage, a visual reference for the note.",
+    "author": "4028mdk09",
+    "source": "https://commons.wikimedia.org/wiki/File:Liebst%C3%B6ckel.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/lovage-thumb.webp"
+  },
   "lychee": {
     "path": "/images/notes/lychee.webp",
     "width": 720,
@@ -2435,6 +3681,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/magnolia-thumb.webp"
+  },
+  "mahogany": {
+    "path": "/images/notes/mahogany.webp",
+    "width": 377,
+    "height": 553,
+    "alt": "Mahogany, a visual reference for the note.",
+    "author": "G-Lignum",
+    "source": "https://commons.wikimedia.org/wiki/File:Genuine_Mahogany_veneer_with_ripple_marks.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/mahogany-thumb.webp"
   },
   "mahonial": {
     "path": "/images/notes/perfume-materials.webp",
@@ -2504,6 +3763,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/mango-thumb.webp"
   },
+  "marigold": {
+    "path": "/images/notes/marigold.webp",
+    "width": 480,
+    "height": 640,
+    "alt": "Marigold, a visual reference for the note.",
+    "author": "Author not listed",
+    "source": "https://commons.wikimedia.org/wiki/File:Tagetes_x_erecta1.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/marigold-thumb.webp"
+  },
   "marine": {
     "path": "/images/notes/marine.webp",
     "width": 720,
@@ -2544,6 +3816,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/marjoram-thumb.webp"
+  },
+  "marshmallow": {
+    "path": "/images/notes/marshmallow.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Marshmallow, a visual reference for the note.",
+    "author": "John Morgan",
+    "source": "https://commons.wikimedia.org/wiki/File:White_Marshmallows.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/marshmallow-thumb.webp"
   },
   "massoia": {
     "path": "/images/notes/perfume-materials.webp",
@@ -2625,6 +3910,19 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Melozone. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "meringue": {
+    "path": "/images/notes/meringue.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Meringue, a visual reference for the note.",
+    "author": "Mike Lehmann, Mike Switzerland 12:44, 27 January 2007 (UTC)",
+    "source": "https://commons.wikimedia.org/wiki/File:Meringues_9027.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/meringue-thumb.webp"
+  },
   "milk": {
     "path": "/images/notes/milk.webp",
     "width": 719,
@@ -2638,6 +3936,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/milk-thumb.webp"
   },
+  "milk-mousse": {
+    "path": "/images/notes/milk.webp",
+    "width": 719,
+    "height": 720,
+    "alt": "Milk as a visual reference for a milky note.",
+    "author": "NIAID",
+    "source": "https://commons.wikimedia.org/wiki/File:Glass_of_Milk_(33657535532).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/milk-thumb.webp",
+    "referenceNote": "Milk illustrates the creamy impression of a milk-mousse note."
+  },
   "mimosa": {
     "path": "/images/notes/mimosa.webp",
     "width": 540,
@@ -2650,6 +3962,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/mimosa-thumb.webp"
+  },
+  "mineral-accord": {
+    "path": "/images/notes/rock-salt.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Rock salt crystals.",
+    "author": "Lech Darski",
+    "source": "https://commons.wikimedia.org/wiki/File:Halit_(NaCl)_-_Kopalnia_soli_Wieliczka,_Polska.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/rock-salt-thumb.webp",
+    "referenceNote": "Mineral crystals provide an evocative reference for a mineral accord."
   },
   "mint": {
     "path": "/images/notes/mint.webp",
@@ -2676,6 +4002,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/mirabelle-thumb.webp"
+  },
+  "monoi": {
+    "path": "/images/notes/tiare.webp",
+    "width": 700,
+    "height": 525,
+    "alt": "A tiare flower.",
+    "author": "FRED",
+    "source": "https://commons.wikimedia.org/wiki/File:Tiar%C3%A9_tahiti.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/tiare-thumb.webp",
+    "referenceNote": "Tiare flowers provide a botanical reference for monoi, not a photograph of a finished monoi oil."
   },
   "moss": {
     "path": "/images/notes/oakmoss.webp",
@@ -2802,6 +4142,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/narcissus-thumb.webp"
+  },
+  "naseberry": {
+    "path": "/images/notes/naseberry.webp",
+    "width": 720,
+    "height": 581,
+    "alt": "Naseberry, a visual reference for the note.",
+    "author": "Sugeesh at Malayalam Wikipedia",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B4%B8%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%8B%E0%B4%9F%E0%B5%8D%E0%B4%9F.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/naseberry-thumb.webp"
   },
   "nebulone": {
     "path": "/images/notes/nebulone.webp",
@@ -2938,6 +4291,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "A perfumer’s palette is shown as a context image for Oceanol. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "olive-tree": {
+    "path": "/images/notes/olive-tree.webp",
+    "width": 720,
+    "height": 572,
+    "alt": "Olive tree, a visual reference for the note.",
+    "author": "Abu Shawka",
+    "source": "https://commons.wikimedia.org/wiki/File:Olea_europaea_cuspidata-africana_Cape_Town.JPG",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/olive-tree-thumb.webp"
   },
   "oolong-tea": {
     "path": "/images/notes/oolong-tea.webp",
@@ -3098,6 +4464,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/palisander-rosewood-thumb.webp"
   },
+  "palmarosa": {
+    "path": "/images/notes/palmarosa.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Palmarosa, a visual reference for the note.",
+    "author": "Yercaud-elango",
+    "source": "https://commons.wikimedia.org/wiki/File:Cymbopogon_martinii-1-sanyasimalai-yercaud-salem-India.JPG",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/palmarosa-thumb.webp"
+  },
   "palo-santo": {
     "path": "/images/notes/palo-santo.webp",
     "width": 479,
@@ -3110,6 +4489,33 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/palo-santo-thumb.webp"
+  },
+  "papaya": {
+    "path": "/images/notes/papaya.webp",
+    "width": 509,
+    "height": 720,
+    "alt": "Botanical illustration of papaya.",
+    "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+    "source": "https://commons.wikimedia.org/wiki/File:Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/papaya-thumb.webp",
+    "kind": "illustration"
+  },
+  "papaya-blossom": {
+    "path": "/images/notes/papaya-blossom.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Papaya blossom, a visual reference for the note.",
+    "author": "Kalaivani Somiah",
+    "source": "https://commons.wikimedia.org/wiki/File:Flower_of_Carica_papaya.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/papaya-blossom-thumb.webp"
   },
   "papyrus": {
     "path": "/images/notes/papyrus.webp",
@@ -3152,6 +4558,19 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Paradisone. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "passion-flower": {
+    "path": "/images/notes/passion-flower.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Passion flower, a visual reference for the note.",
+    "author": "Judy Gallagher",
+    "source": "https://commons.wikimedia.org/wiki/File:Passion_Flower_-_Passiflora_incarnata,_Meadowood_Farm_SRMA,_Mason_Neck,_Virginia.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/passion-flower-thumb.webp"
+  },
   "passion-fruit": {
     "path": "/images/notes/passion-fruit.webp",
     "width": 720,
@@ -3191,6 +4610,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/peach-thumb.webp"
   },
+  "peach-blossom": {
+    "path": "/images/notes/peach-blossom.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Peach blossom, a visual reference for the note.",
+    "author": "Hartaberth558",
+    "source": "https://commons.wikimedia.org/wiki/File:Last_peach_blossom_branches_of_the_Spring_at_YHPV_01-03-2026.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/peach-blossom-thumb.webp"
+  },
   "pear": {
     "path": "/images/notes/pear.webp",
     "width": 473,
@@ -3203,6 +4635,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/pear-thumb.webp"
+  },
+  "pear-blossom": {
+    "path": "/images/notes/pear-blossom.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Pear blossom, a visual reference for the note.",
+    "author": "Anne Burgess",
+    "source": "https://commons.wikimedia.org/wiki/File:Pear_Blossom_-_geograph.org.uk_-_8290107.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/pear-blossom-thumb.webp"
   },
   "peony": {
     "path": "/images/notes/peony.webp",
@@ -3243,6 +4688,33 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/peppermint-thumb.webp"
   },
+  "persimmon": {
+    "path": "/images/notes/persimmon.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Persimmon, a visual reference for the note.",
+    "author": "Frank Schulenburg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fuyu_persimmon_fruits,_one_cut_open.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/persimmon-thumb.webp"
+  },
+  "petalia": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for petalia. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
   "petitgrain": {
     "path": "/images/notes/petitgrain.webp",
     "width": 720,
@@ -3256,6 +4728,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/petitgrain-thumb.webp"
   },
+  "pimento": {
+    "path": "/images/notes/pimento.webp",
+    "width": 456,
+    "height": 592,
+    "alt": "Botanical illustration of pimento.",
+    "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+    "source": "https://commons.wikimedia.org/wiki/File:Pimenta_dioica_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-239.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/pimento-thumb.webp",
+    "kind": "illustration"
+  },
   "pimento-leaves": {
     "path": "/images/notes/pimento-leaves.webp",
     "width": 540,
@@ -3268,6 +4754,45 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/pimento-leaves-thumb.webp"
+  },
+  "pine": {
+    "path": "/images/notes/pine.webp",
+    "width": 481,
+    "height": 720,
+    "alt": "Pine, a visual reference for the note.",
+    "author": "Vlad & Marina Butsky on Flickr",
+    "source": "https://commons.wikimedia.org/wiki/File:Pinus_jeffreyi_at_Lassen_Volcanic_National_Park.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/pine-thumb.webp"
+  },
+  "pine-needle": {
+    "path": "/images/notes/pine-needle.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Pine needle, a visual reference for the note.",
+    "author": "IM027",
+    "source": "https://commons.wikimedia.org/wiki/File:Green_needles_from_Pinus_halepensis_at_the_Mediterranean_coast_in_Catalonia.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/pine-needle-thumb.webp"
+  },
+  "pine-resin": {
+    "path": "/images/notes/pine-resin.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Pine resin, a visual reference for the note.",
+    "author": "Tony Wills",
+    "source": "https://commons.wikimedia.org/wiki/File:Resin_from_Pinus_Radiata_Stump_3.jpg",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/pine-resin-thumb.webp"
   },
   "pineapple": {
     "path": "/images/notes/pineapple.webp",
@@ -3295,6 +4820,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full photograph.",
     "thumbnail": "/images/notes/pink-pepper-thumb.webp"
   },
+  "pistachio": {
+    "path": "/images/notes/pistachio.webp",
+    "width": 720,
+    "height": 405,
+    "alt": "Pistachio, a visual reference for the note.",
+    "author": "THOR",
+    "source": "https://commons.wikimedia.org/wiki/File:Pistachio_vera.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/pistachio-thumb.webp"
+  },
   "plum": {
     "path": "/images/notes/plum.webp",
     "width": 720,
@@ -3307,6 +4845,73 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/plum-thumb.webp"
+  },
+  "pomarose": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for pomarose. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "pomegranate": {
+    "path": "/images/notes/pomegranate.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Pomegranate, a visual reference for the note.",
+    "author": "Ivar Leidus",
+    "source": "https://commons.wikimedia.org/wiki/File:Pomegranate_fruit_-_whole_and_piece_with_arils.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/pomegranate-thumb.webp"
+  },
+  "popcorn": {
+    "path": "/images/notes/popcorn.webp",
+    "width": 720,
+    "height": 479,
+    "alt": "Unpopped popcorn kernels, a visual reference for a popcorn note.",
+    "author": "Bill Ebbesen",
+    "source": "https://commons.wikimedia.org/wiki/File:Popcorn_-_Studio_-_2011.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/popcorn-thumb.webp"
+  },
+  "poppy": {
+    "path": "/images/notes/poppy.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Poppy, a visual reference for the note.",
+    "author": "Kieran Roy Powell",
+    "source": "https://commons.wikimedia.org/wiki/File:Papaver_rhoeas_Lincolnshire_2026.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/poppy-thumb.webp"
+  },
+  "powdery-notes": {
+    "path": "/images/notes/iris-orris.webp",
+    "width": 681,
+    "height": 681,
+    "alt": "A pale purple Iris pallida flower. Orris comes from its rhizome.",
+    "author": "Pamwik",
+    "source": "https://commons.wikimedia.org/wiki/File:Iris_pallida_specie.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-10-31",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full photograph.",
+    "thumbnail": "/images/notes/iris-orris-thumb.webp",
+    "referenceNote": "Iris is an evocative reference for a powdery impression, not a statement that the fragrance contains iris."
   },
   "praline": {
     "path": "/images/notes/praline.webp",
@@ -3363,6 +4968,19 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Prunol. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "pumpkin": {
+    "path": "/images/notes/pumpkin.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Pumpkin, a visual reference for the note.",
+    "author": "Infrogmation of New Orleans",
+    "source": "https://commons.wikimedia.org/wiki/File:FrenchMarketPumpkinsB.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/pumpkin-thumb.webp"
+  },
   "queenwood": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -3377,6 +4995,20 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Queenwood. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "quince": {
+    "path": "/images/notes/quince.webp",
+    "width": 504,
+    "height": 720,
+    "alt": "Botanical illustration of quince.",
+    "author": "Pancrace Bessa",
+    "source": "https://commons.wikimedia.org/wiki/File:Pancrace_Bessa00.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/quince-thumb.webp",
+    "kind": "illustration"
+  },
   "raspberry": {
     "path": "/images/notes/raspberry.webp",
     "width": 720,
@@ -3389,6 +5021,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/raspberry-thumb.webp"
+  },
+  "raspberry-blossom": {
+    "path": "/images/notes/raspberry-blossom.webp",
+    "width": 720,
+    "height": 698,
+    "alt": "Raspberry blossom, a visual reference for the note.",
+    "author": "プクリンチョマン",
+    "source": "https://commons.wikimedia.org/wiki/File:Raspberry-Flower.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/raspberry-blossom-thumb.webp"
   },
   "red-apple": {
     "path": "/images/notes/red-apple.webp",
@@ -3403,6 +5048,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/red-apple-thumb.webp"
   },
+  "red-berries": {
+    "path": "/images/notes/red-currant.webp",
+    "width": 720,
+    "height": 656,
+    "alt": "Red currant, a visual reference for the note.",
+    "author": "Author not listed",
+    "source": "https://commons.wikimedia.org/wiki/File:Ribes_rubrum_1.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/red-currant-thumb.webp",
+    "referenceNote": "Redcurrants illustrate a red-berry impression, not an exact fruit assignment."
+  },
   "red-chili": {
     "path": "/images/notes/hot-pepper.webp",
     "width": 720,
@@ -3415,6 +5074,33 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/hot-pepper-thumb.webp"
+  },
+  "red-currant": {
+    "path": "/images/notes/red-currant.webp",
+    "width": 720,
+    "height": 656,
+    "alt": "Red currant, a visual reference for the note.",
+    "author": "Author not listed",
+    "source": "https://commons.wikimedia.org/wiki/File:Ribes_rubrum_1.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/red-currant-thumb.webp"
+  },
+  "red-fruits": {
+    "path": "/images/notes/red-currant.webp",
+    "width": 720,
+    "height": 656,
+    "alt": "Red currant, a visual reference for the note.",
+    "author": "Author not listed",
+    "source": "https://commons.wikimedia.org/wiki/File:Ribes_rubrum_1.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/red-currant-thumb.webp",
+    "referenceNote": "Redcurrants provide a general visual reference for a red-fruit accord."
   },
   "red-ginger": {
     "path": "/images/notes/red-ginger.webp",
@@ -3429,6 +5115,34 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/red-ginger-thumb.webp"
   },
+  "red-pepper": {
+    "path": "/images/notes/hot-pepper.webp",
+    "width": 720,
+    "height": 576,
+    "alt": "Chili peppers.",
+    "author": "Takeaway",
+    "source": "https://commons.wikimedia.org/wiki/File:Madame_Jeanette_and_other_chillies.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/hot-pepper-thumb.webp",
+    "referenceNote": "Red peppers are a general visual reference. The source does not specify the pepper variety."
+  },
+  "resins": {
+    "path": "/images/notes/benzoin.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Benzoin resin.",
+    "author": "Wibowo Djatmiko (Wie146)",
+    "source": "https://commons.wikimedia.org/wiki/File:Kemenyan_110112-11054_tdp.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/benzoin-thumb.webp",
+    "referenceNote": "Benzoin resin illustrates a resinous impression, not a specific ingredient assignment."
+  },
   "rhubarb": {
     "path": "/images/notes/rhubarb.webp",
     "width": 720,
@@ -3441,6 +5155,34 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/rhubarb-thumb.webp"
+  },
+  "rhubarb-wood": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for rhubarb wood. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "rice-powder": {
+    "path": "/images/notes/basmati-rice.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Basmati rice, a visual reference for the note.",
+    "author": "CNEcija12345",
+    "source": "https://commons.wikimedia.org/wiki/File:Basmati_rice_textureCNE_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/basmati-rice-thumb.webp",
+    "referenceNote": "Rice grains provide a visual reference for a rice-powder impression."
   },
   "rock-salt": {
     "path": "/images/notes/rock-salt.webp",
@@ -3522,6 +5264,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/rose-water-thumb.webp"
   },
+  "rosehip": {
+    "path": "/images/notes/rosehip.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Rosehip, a visual reference for the note.",
+    "author": "Morn the Gorn",
+    "source": "https://commons.wikimedia.org/wiki/File:Rose_hips.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/rosehip-thumb.webp"
+  },
   "rosemary": {
     "path": "/images/notes/rosemary.webp",
     "width": 720,
@@ -3534,6 +5289,20 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/rosemary-thumb.webp"
+  },
+  "rosyfolia": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for rosyfolia. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
   "rum": {
     "path": "/images/notes/rum.webp",
@@ -3575,6 +5344,19 @@
     "kind": "structure",
     "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
     "thumbnail": "/images/notes/safraleine-thumb.webp"
+  },
+  "sage": {
+    "path": "/images/notes/sage.webp",
+    "width": 640,
+    "height": 480,
+    "alt": "Sage, a visual reference for the note.",
+    "author": "Kurt Stüber [1]",
+    "source": "https://commons.wikimedia.org/wiki/File:Salvia_officinalis0.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/sage-thumb.webp"
   },
   "salicylate": {
     "path": "/images/notes/perfume-materials.webp",
@@ -3618,6 +5400,19 @@
     "referenceNote": "An illustrative scent reference. The pictured object is not a statement about the ingredients used in a fragrance.",
     "thumbnail": "/images/notes/salty-caramel-thumb.webp"
   },
+  "sand": {
+    "path": "/images/notes/sand.webp",
+    "width": 720,
+    "height": 480,
+    "alt": "Sand, a visual reference for the note.",
+    "author": "Luca Galuzzi (Lucag)",
+    "source": "https://commons.wikimedia.org/wiki/File:Libya_4608_Idehan_Ubari_Dunes_Luca_Galuzzi_2007.jpg",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/sand-thumb.webp"
+  },
   "sandalore": {
     "path": "/images/notes/sandalore.webp",
     "width": 600,
@@ -3659,6 +5454,47 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "A perfumer’s palette is shown as a context image for Santamanol. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "santolina": {
+    "path": "/images/notes/santolina.webp",
+    "width": 720,
+    "height": 578,
+    "alt": "Santolina, a visual reference for the note.",
+    "author": "User:Stan Shebs",
+    "source": "https://commons.wikimedia.org/wiki/File:Santolina_chamaecyparissus_flowers.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/santolina-thumb.webp"
+  },
+  "satinwood": {
+    "path": "/images/notes/satinwood.webp",
+    "width": 720,
+    "height": 537,
+    "alt": "Satinwood, a visual reference for the note.",
+    "author": "Forestowlet",
+    "source": "https://commons.wikimedia.org/wiki/File:Chloroxylon_swietenia_01.JPG",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/satinwood-thumb.webp",
+    "referenceNote": "The source plant is pictured as a visual reference for this note, not an ingredient claim about the fragrance."
+  },
+  "schinus-molle": {
+    "path": "/images/notes/pink-pepper.webp",
+    "width": 720,
+    "height": 691,
+    "alt": "Pink peppercorns.",
+    "author": "Tiia Monto",
+    "source": "https://commons.wikimedia.org/wiki/File:Pink_peppercorn.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-10-31",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full photograph.",
+    "thumbnail": "/images/notes/pink-pepper-thumb.webp",
+    "referenceNote": "Pink pepper is a botanical reference for Schinus molle, not a claim about provenance."
   },
   "sclarene": {
     "path": "/images/notes/sclarene.webp",
@@ -3717,6 +5553,33 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Serenolide. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "sesame": {
+    "path": "/images/notes/sesame.webp",
+    "width": 408,
+    "height": 594,
+    "alt": "Botanical illustration of sesame.",
+    "author": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+    "source": "https://commons.wikimedia.org/wiki/File:Sesamum_indicum_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-129.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/sesame-thumb.webp",
+    "kind": "illustration"
+  },
+  "shiso": {
+    "path": "/images/notes/shiso.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Shiso, a visual reference for the note.",
+    "author": "Dalgial",
+    "source": "https://commons.wikimedia.org/wiki/File:Perilla_frutescens_var._acuta.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/shiso-thumb.webp"
+  },
   "sichuan-pepper": {
     "path": "/images/notes/sichuan-pepper.webp",
     "width": 720,
@@ -3771,6 +5634,33 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Sinfonide. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "smoke": {
+    "path": "/images/notes/smoke.webp",
+    "width": 720,
+    "height": 521,
+    "alt": "Smoke, a visual reference for the note.",
+    "author": "© 2005 by Tomasz Sienicki [user: tsca, mail: tomasz.sienicki at gmail.com]",
+    "source": "https://commons.wikimedia.org/wiki/File:Ognisko_ubt_0126.jpeg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/smoke-thumb.webp"
+  },
+  "smoked-tea": {
+    "path": "/images/notes/black-tea.webp",
+    "width": 720,
+    "height": 671,
+    "alt": "Black tea leaves.",
+    "author": "AntanO",
+    "source": "https://commons.wikimedia.org/wiki/File:Cup_of_black_tea.JPG",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/black-tea-thumb.webp",
+    "referenceNote": "Black tea illustrates the tea component of a smoky tea impression."
+  },
   "sorbettolide": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -3797,6 +5687,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/spearmint-thumb.webp"
+  },
+  "speculoos": {
+    "path": "/images/notes/speculoos.webp",
+    "width": 480,
+    "height": 720,
+    "alt": "Speculoos, a visual reference for the note.",
+    "author": "Turku Gingerbread from Finland",
+    "source": "https://commons.wikimedia.org/wiki/File:Saint_Nicholas_Speculaas_(6465422349).jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/speculoos-thumb.webp"
   },
   "spicy-notes": {
     "path": "/images/notes/spicy-notes.webp",
@@ -3852,6 +5755,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/strawberry-thumb.webp"
   },
+  "styrax": {
+    "path": "/images/notes/styrax.webp",
+    "width": 720,
+    "height": 479,
+    "alt": "Styrax, a visual reference for the note.",
+    "author": "איתן פרמן",
+    "source": "https://commons.wikimedia.org/wiki/File:Styrax_officinalis_tree.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/styrax-thumb.webp"
+  },
   "suede": {
     "path": "/images/notes/suede.webp",
     "width": 720,
@@ -3879,6 +5795,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "A perfumer’s palette is shown as a context image for Suederal. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
+  },
+  "sugar": {
+    "path": "/images/notes/brown-sugar.webp",
+    "width": 720,
+    "height": 669,
+    "alt": "Sugar, a visual reference for the note.",
+    "author": "Romain Behar",
+    "source": "https://commons.wikimedia.org/wiki/File:Sucre_blanc_cassonade_complet_rapadura.jpg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/brown-sugar-thumb.webp"
   },
   "sweet-pea": {
     "path": "/images/notes/sweet-pea.webp",
@@ -3945,6 +5874,34 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/tea-thumb.webp"
+  },
+  "tea-rose": {
+    "path": "/images/notes/rose.webp",
+    "width": 720,
+    "height": 539,
+    "alt": "A pink Damask rose.",
+    "author": "H. Zell",
+    "source": "https://commons.wikimedia.org/wiki/File:Rosa_damascena_003.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-10-31",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full photograph.",
+    "thumbnail": "/images/notes/rose-thumb.webp",
+    "referenceNote": "A rose is shown as a general botanical reference for a tea-rose note."
+  },
+  "teak-wood": {
+    "path": "/images/notes/teak-wood.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Teak wood, a visual reference for the note.",
+    "author": "Forest & Kim Starr",
+    "source": "https://commons.wikimedia.org/wiki/File:Starr_010304-0485_Tectona_grandis.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/teak-wood-thumb.webp",
+    "referenceNote": "The source plant is pictured as a visual reference for this note, not an ingredient claim about the fragrance."
   },
   "thyme": {
     "path": "/images/notes/thyme.webp",
@@ -4029,6 +5986,19 @@
     "referenceNote": "Tobacco leaves are a visual reference for the accord, not a statement about ingredients.",
     "thumbnail": "/images/notes/tobacco-leaf-thumb.webp"
   },
+  "tobacco-blossom": {
+    "path": "/images/notes/tobacco-blossom.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Pink tobacco flowers.",
+    "author": "Sierraluisfer",
+    "source": "https://commons.wikimedia.org/wiki/File:Flor_de_tabaco_Colombia_Jardin_botanico_bogota_2017_11.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. The thumbnail crops to fit.",
+    "thumbnail": "/images/notes/tobacco-blossom-thumb.webp"
+  },
   "tobacco-leaf": {
     "path": "/images/notes/tobacco-leaf.webp",
     "width": 472,
@@ -4054,6 +6024,19 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/toffee-thumb.webp"
+  },
+  "tomato-leaf": {
+    "path": "/images/notes/tomato-leaf.webp",
+    "width": 720,
+    "height": 332,
+    "alt": "Tomato leaf, a visual reference for the note.",
+    "author": "Sabina Bajracharya",
+    "source": "https://commons.wikimedia.org/wiki/File:Tomato_Plant_Leaves_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/tomato-leaf-thumb.webp"
   },
   "tonalide": {
     "path": "/images/notes/tonalide.webp",
@@ -4111,6 +6094,20 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Transluzone. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "transparent-wood": {
+    "path": "/images/notes/woody-notes.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Wood chips, a visual reference for woody notes.",
+    "author": "Moinats",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaquettes_foresti%C3%A8res.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Wood is shown as an evocative reference for a transparent woody accord.",
+    "thumbnail": "/images/notes/woody-notes-thumb.webp"
+  },
   "triplal": {
     "path": "/images/notes/triplal.webp",
     "width": 600,
@@ -4126,6 +6123,20 @@
     "referenceNote": "A molecular reference, not a formula for a fragrance or a specification of a commercial blend.",
     "thumbnail": "/images/notes/triplal-thumb.webp"
   },
+  "tropical-fruits": {
+    "path": "/images/notes/fruity-notes.webp",
+    "width": 720,
+    "height": 686,
+    "alt": "Fruit as a visual reference for a fruity accord.",
+    "author": "روتانا",
+    "source": "https://commons.wikimedia.org/wiki/File:Fruit_Platter-_Seasonal_Fruits.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Fruit is shown as a general visual reference for a tropical-fruit accord.",
+    "thumbnail": "/images/notes/fruity-notes-thumb.webp"
+  },
   "tuberose": {
     "path": "/images/notes/tuberose.webp",
     "width": 479,
@@ -4138,6 +6149,60 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/tuberose-thumb.webp"
+  },
+  "tulip": {
+    "path": "/images/notes/tulip.webp",
+    "width": 720,
+    "height": 494,
+    "alt": "Tulip, a visual reference for the note.",
+    "author": "Dina L",
+    "source": "https://commons.wikimedia.org/wiki/File:%D7%A6%D7%91%D7%A2%D7%95%D7%A0%D7%99%D7%9D.JPG",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/tulip-thumb.webp"
+  },
+  "turkish-delight": {
+    "path": "/images/notes/turkish-delight.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Turkish delight, a visual reference for the note.",
+    "author": "Quick fix",
+    "source": "https://commons.wikimedia.org/wiki/File:TurkishDelightDisplay.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/turkish-delight-thumb.webp"
+  },
+  "turkish-rose": {
+    "path": "/images/notes/rose.webp",
+    "width": 720,
+    "height": 539,
+    "alt": "A pink Damask rose.",
+    "author": "H. Zell",
+    "source": "https://commons.wikimedia.org/wiki/File:Rosa_damascena_003.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-10-31",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full photograph.",
+    "thumbnail": "/images/notes/rose-thumb.webp",
+    "referenceNote": "A damask rose provides a botanical reference; the photo does not establish geographic origin."
+  },
+  "ultravanil": {
+    "path": "/images/notes/perfume-materials.webp",
+    "width": 720,
+    "height": 541,
+    "alt": "A perfumer’s organ with bottles of aroma materials.",
+    "author": "Mx. Granger",
+    "source": "https://commons.wikimedia.org/wiki/File:Perfume_Organ.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "A perfumer’s palette is shown as a context image for ultravanil. A photograph of this specific material has not been verified.",
+    "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
   "vanilla": {
     "path": "/images/notes/vanilla.webp",
@@ -4179,6 +6244,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "referenceNote": "Flowers evoke a floral impression. The aroma material itself is not pictured.",
     "thumbnail": "/images/notes/floral-notes-thumb.webp"
+  },
+  "verbena": {
+    "path": "/images/notes/verbena.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Verbena, a visual reference for the note.",
+    "author": "H. Zell",
+    "source": "https://commons.wikimedia.org/wiki/File:Aloysia_citriodora_002.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/verbena-thumb.webp"
   },
   "vertofix-coeur": {
     "path": "/images/notes/vertofix-coeur.webp",
@@ -4234,6 +6312,20 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/violet-leaves-thumb.webp"
   },
+  "vodka": {
+    "path": "/images/notes/vodka.webp",
+    "width": 480,
+    "height": 720,
+    "alt": "Vodka, a visual reference for the note.",
+    "author": "Ashley Pomeroy",
+    "source": "https://commons.wikimedia.org/wiki/File:Smirnoff_Red_Label_8213.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/vodka-thumb.webp",
+    "referenceNote": "A food or drink reference for the named scent. It does not identify a brand or ingredient used in the fragrance."
+  },
   "vulcanolide": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,
@@ -4248,6 +6340,33 @@
     "referenceNote": "A perfumer’s palette is shown as a context image for Vulcanolide. A photograph of this specific material has not been verified.",
     "thumbnail": "/images/notes/perfume-materials-thumb.webp"
   },
+  "water-fruits-and-flowers": {
+    "path": "/images/notes/water-lily.webp",
+    "width": 720,
+    "height": 588,
+    "alt": "Water lily, a visual reference for the note.",
+    "author": "Jacek Halicki",
+    "source": "https://commons.wikimedia.org/wiki/File:2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/water-lily-thumb.webp",
+    "referenceNote": "A water lily provides an evocative reference for an aquatic fruit and flower accord."
+  },
+  "water-lily": {
+    "path": "/images/notes/water-lily.webp",
+    "width": 720,
+    "height": 588,
+    "alt": "Water lily, a visual reference for the note.",
+    "author": "Jacek Halicki",
+    "source": "https://commons.wikimedia.org/wiki/File:2016_Kwiat_grzybieni_bia%C5%82ych_2.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/water-lily-thumb.webp"
+  },
   "whiskey": {
     "path": "/images/notes/whiskey.webp",
     "width": 205,
@@ -4260,6 +6379,33 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/whiskey-thumb.webp"
+  },
+  "white-currant": {
+    "path": "/images/notes/white-currant.webp",
+    "width": 568,
+    "height": 720,
+    "alt": "White currant, a visual reference for the note.",
+    "author": "Marie-Lan Nguyen",
+    "source": "https://commons.wikimedia.org/wiki/File:Groseilles_blanches.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/white-currant-thumb.webp"
+  },
+  "white-flowers": {
+    "path": "/images/notes/jasmine.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "White jasmine flowers and leaves.",
+    "author": "Forest & Kim Starr",
+    "source": "https://commons.wikimedia.org/wiki/File:Jasminum_grandiflorum.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "checkedAt": "2026-10-31",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full photograph.",
+    "thumbnail": "/images/notes/jasmine-thumb.webp",
+    "referenceNote": "Jasmine flowers illustrate a white-flower impression, not a specific ingredient assignment."
   },
   "white-moss": {
     "path": "/images/notes/oakmoss.webp",
@@ -4300,6 +6446,47 @@
     "checkedAt": "2026-11-08",
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/white-truffle-thumb.webp"
+  },
+  "white-woods": {
+    "path": "/images/notes/woody-notes.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Wood chips, a visual reference for woody notes.",
+    "author": "Moinats",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaquettes_foresti%C3%A8res.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "referenceNote": "Wood is shown as a general visual reference for a white-wood accord.",
+    "thumbnail": "/images/notes/woody-notes-thumb.webp"
+  },
+  "wild-berries": {
+    "path": "/images/notes/blackberry.webp",
+    "width": 720,
+    "height": 513,
+    "alt": "Blackberries.",
+    "author": "Ragesoss",
+    "source": "https://commons.wikimedia.org/wiki/File:Ripe,_ripening,_and_green_blackberries.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
+    "thumbnail": "/images/notes/blackberry-thumb.webp",
+    "referenceNote": "Blackberries provide a general visual reference for a wild-berry impression."
+  },
+  "wisteria": {
+    "path": "/images/notes/wisteria.webp",
+    "width": 540,
+    "height": 720,
+    "alt": "Wisteria, a visual reference for the note.",
+    "author": "3268zauber",
+    "source": "https://commons.wikimedia.org/wiki/File:Chinese_Wisteria_Bl%C3%BCtentrauben.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+    "thumbnail": "/images/notes/wisteria-thumb.webp"
   },
   "woods": {
     "path": "/images/notes/woody-notes.webp",

@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/smoke.webp",
+  "width": 720,
+  "height": 521,
+  "alt": "Smoke, a visual reference for the note.",
+  "author": "© 2005 by Tomasz Sienicki [user: tsca, mail: tomasz.sienicki at gmail.com]",
+  "source": "https://commons.wikimedia.org/wiki/File:Ognisko_ubt_0126.jpeg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/smoke-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Ognisko_ubt_0126.jpeg/960px-Ognisko_ubt_0126.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "c1f699fe1e55cdbcda1ee283bc3e434d048e693612765de8d5ef51749b867d54"
+}

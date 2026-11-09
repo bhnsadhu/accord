@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/bluebell.webp",
+  "width": 480,
+  "height": 720,
+  "alt": "Bluebell, a visual reference for the note.",
+  "author": "MichaelMaggs",
+  "source": "https://commons.wikimedia.org/wiki/File:Hyacinthoides_non-scripta_(Common_Bluebell).jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/bluebell-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Hyacinthoides_non-scripta_%28Common_Bluebell%29.jpg/960px-Hyacinthoides_non-scripta_%28Common_Bluebell%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "06bfd8674676a73ce642e29440c78a829be0c84119f32256599945e19c2047e7"
+}

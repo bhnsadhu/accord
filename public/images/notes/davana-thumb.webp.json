@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/davana.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Davana, a visual reference for the note.",
+  "author": "Yercaud-elango",
+  "source": "https://commons.wikimedia.org/wiki/File:Artemisia_pallens-1-xavier_cottage-yercaud-salem-India.jpg",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/davana-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Artemisia_pallens-1-xavier_cottage-yercaud-salem-India.jpg/960px-Artemisia_pallens-1-xavier_cottage-yercaud-salem-India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "2033b4e6137d9cb2e84f4671d26790eea019eb1103768501cbc7dc085142cae0"
+}

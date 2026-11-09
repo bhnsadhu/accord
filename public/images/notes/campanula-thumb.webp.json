@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/campanula.webp",
+  "width": 720,
+  "height": 482,
+  "alt": "Campanula, a visual reference for the note.",
+  "author": "Wilson44691",
+  "source": "https://commons.wikimedia.org/wiki/File:Campanula_persicifolia_Tehumardi_Saaremaa.jpg",
+  "license": "CC0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/campanula-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Campanula_persicifolia_Tehumardi_Saaremaa.jpg/960px-Campanula_persicifolia_Tehumardi_Saaremaa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "0570ef036745ae231ecea65f3dd853faef8f7564b808ddceab4d3e44a1193c81"
+}

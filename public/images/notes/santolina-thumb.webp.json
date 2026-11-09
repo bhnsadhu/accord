@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/santolina.webp",
+  "width": 720,
+  "height": 578,
+  "alt": "Santolina, a visual reference for the note.",
+  "author": "User:Stan Shebs",
+  "source": "https://commons.wikimedia.org/wiki/File:Santolina_chamaecyparissus_flowers.jpg",
+  "license": "CC BY-SA 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/santolina-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Santolina_chamaecyparissus_flowers.jpg/960px-Santolina_chamaecyparissus_flowers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "38fe1c422186e23f6bb5f94f40572fad8652c4a129216673f579ecd0944639e8"
+}

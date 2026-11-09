@@ -1,0 +1,15 @@
+{
+  "path": "/images/notes/calophyllum.webp",
+  "width": 720,
+  "height": 540,
+  "alt": "Calophyllum, a visual reference for the note.",
+  "author": "Forest & Kim Starr",
+  "source": "https://commons.wikimedia.org/wiki/File:Starr_010309-0546_Calophyllum_inophyllum.jpg",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized and encoded as WebP. Thumbnails crop to fit; expanded images retain the original composition.",
+  "thumbnail": "/images/notes/calophyllum-thumb.webp",
+  "originalDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Starr_010309-0546_Calophyllum_inophyllum.jpg/960px-Starr_010309-0546_Calophyllum_inophyllum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "originalSha256": "30de835c691df9ddac49df3a6787c895fb8b00d189080cfc07bfaa60aedce0a3"
+}

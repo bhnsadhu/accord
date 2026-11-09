@@ -15,7 +15,11 @@ There are no new paid services, subscriptions, scheduled jobs, runtime AI genera
 3. Write a short original summary. Do not copy marketing paragraphs, community reviews or user ratings. Published facts can differ across editions or reformulations; keep the edition and source explicit.
 4. Record top, heart and base only when the source explicitly assigns those stages. Keep the original catalog note list for comparisons. A flat list is not a pyramid.
 5. Attribute wear descriptions to the source. Brand hours are claims, not Accord measurements. Do not infer projection, longevity, season or occasion from a family, format or ingredient list.
-6. Photos require confirmed reuse permission and a locally stored file. The manifest requires credit, permission and a source reference. The separate media manifests now provide 6 verified bottle photographs and 16 note photographs. See [IMAGERY.md](IMAGERY.md) for exact-edition matching, licenses, credits and the local asset workflow.
+6. Photos require confirmed reuse permission and a locally stored file. The manifest requires credit, permission and a source reference. The separate media manifests cover all catalog notes and additional researched note names with photos, molecular diagrams or labeled visual references. See [IMAGERY.md](IMAGERY.md) for exact-edition matching, licenses, credits and the local asset workflow.
+
+### Santal 33 note stages, 2026-11-08
+
+Le Labo's product description supplies a flat set of featured notes. [Liberty's Santal 33 Eau de Parfum listing](https://www.libertylondon.com/us/santal-33-eau-de-parfum-100ml-1001225081.html) explicitly assigns top, heart and base stages, which are now displayed with Liberty identified as the retailer source. The original Le Labo description and catalog note associations are retained. Violet Accord links to the violet reference, and Papyrus has its own licensed photograph with a library link because it has no catalog article yet.
 
 ## Stable identifiers
 

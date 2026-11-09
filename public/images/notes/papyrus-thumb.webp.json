@@ -1,0 +1,17 @@
+{
+  "path": "/images/notes/papyrus-thumb.webp",
+  "width": 192,
+  "height": 192,
+  "alt": "Papyrus stems and feathery heads in a wetland.",
+  "author": "Bernard DUPONT from FRANCE",
+  "source": "https://commons.wikimedia.org/wiki/File:Papyrus_(Cyperus_papyrus)_(7079191471).jpg",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "checkedAt": "2026-11-08",
+  "changes": "Resized to 192 pixels, center-cropped to a square and encoded as WebP.",
+  "thumbnail": "/images/notes/papyrus-thumb.webp",
+  "sourceFile": "Papyrus_(Cyperus_papyrus)_(7079191471).jpg",
+  "sourceDownload": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Papyrus_%28Cyperus_papyrus%29_%287079191471%29.jpg/960px-Papyrus_%28Cyperus_papyrus%29_%287079191471%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "sourceSha256": "09d579bf9789b5b53be4031195db2f5105a1493c529b2ca70b1f7f493326c625",
+  "derivedFrom": "/images/notes/papyrus.webp"
+}

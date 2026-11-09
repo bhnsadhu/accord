@@ -30,7 +30,7 @@ Visual note disclosures reveal a concise description, attribution and a link int
 
 All reference images are optimized local WebP assets. Note images have a maximum edge of 720 pixels and stay below 300 KB each. Shared pictures are stored once even when several notes use them. No runtime third-party image fetch, image API subscription or generated-image service is required. Next Image serves the preoptimized files without paid image transformations. Thumbnails load lazily, full note images load eagerly, and chemical structures fit inside their frame without cropping. Each asset has an adjacent `.webp.json` provenance sidecar with its source and license details. New sidecars also record the original download and SHA-256 hash. This is fallback file metadata, not metadata embedded inside the WebP.
 
-Library rows and fragrance note tiles use separate 192-pixel thumbnails, each under 50 KB. The six larger starter pictures and individual note articles retain the full images. The 323 note and alias assignments share 212 original images; 34 assignments show molecular structures and 52 use the explicitly labeled perfumer's-palette context picture.
+Library rows and fragrance note tiles use separate 192-pixel thumbnails, each under 50 KB. The six larger starter pictures and individual note articles retain the full images. The 324 note and alias assignments share 213 original images; 34 assignments show molecular structures and 52 use the explicitly labeled perfumer's-palette context picture. Papyrus is pictured for Santal 33's sourced heart notes even though it does not yet have a standalone catalog article.
 
 ## Adding another image
 

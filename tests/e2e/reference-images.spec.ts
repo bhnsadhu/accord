@@ -3,6 +3,27 @@ import AxeBuilder from "@axe-core/playwright";
 
 const santal = "/fragrance/le-labo-santal-33-p14487";
 
+test("Santal 33 displays the sourced pyramid with a picture for every staged note", async ({ page }) => {
+  await page.goto(santal);
+  const notes = page.locator("#notes:visible");
+  const stages = notes.locator(".visual-note-stages > div");
+  await expect(stages).toHaveCount(3);
+  for (const [index, heading, labels] of [
+    [0, "Top notes", ["Violet Accord", "Cardamom"]],
+    [1, "Heart notes", ["Iris", "Papyrus", "Ambrox"]],
+    [2, "Base notes", ["Cedarwood", "Leather", "Sandalwood"]],
+  ] as const) {
+    const stage = stages.nth(index);
+    await expect(stage.getByRole("heading", { name: heading, exact: true })).toBeVisible();
+    await expect(stage.locator("summary > span")).toHaveText([...labels]);
+    await expect(stage.locator("summary img")).toHaveCount(labels.length);
+  }
+  await expect(notes.getByRole("link", { name: "Liberty (retailer)", exact: true })).toHaveAttribute("href", /libertylondon\.com/);
+  const papyrus = stages.locator(".reference-note").filter({ hasText: "Papyrus" });
+  await papyrus.locator("summary").click();
+  await expect(papyrus.getByRole("link", { name: "Explore the note library", exact: true })).toHaveAttribute("href", "/notes");
+});
+
 test("every library note has a local image and representative images load with honest captions", async ({ page }) => {
   await page.goto("/notes");
   const entries = page.locator(".knowledge-index:visible > li");
@@ -61,7 +82,7 @@ test("photographs and note routes fit a phone and unknown notes have a valid way
   const photo = page.locator(".reference-mobile-photo .bottle-photo-trigger img");
   await expect(photo).toBeVisible();
   expect(await photo.evaluate(im => getComputedStyle(im).objectFit)).toBe("contain");
-  const note = page.locator("#notes > .visual-notes > .reference-note").filter({ hasText: "Sandalwood" });
+  const note = page.locator("#notes:visible .visual-note-stages .reference-note").filter({ hasText: "Sandalwood" });
   await note.locator("summary").click();
   await expect(note.locator("summary img")).toHaveAttribute("src", "/images/notes/sandalwood-thumb.webp");
   await note.getByRole("link", { name: "Explore sandalwood", exact: true }).click();

@@ -3111,6 +3111,19 @@
     "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the note page shows the full image.",
     "thumbnail": "/images/notes/palo-santo-thumb.webp"
   },
+  "papyrus": {
+    "path": "/images/notes/papyrus.webp",
+    "width": 720,
+    "height": 540,
+    "alt": "Papyrus stems and feathery heads in a wetland.",
+    "author": "Bernard DUPONT from FRANCE",
+    "source": "https://commons.wikimedia.org/wiki/File:Papyrus_(Cyperus_papyrus)_(7079191471).jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "checkedAt": "2026-11-08",
+    "changes": "Resized and encoded as WebP. Thumbnails crop to fit; the full image retains the original composition.",
+    "thumbnail": "/images/notes/papyrus-thumb.webp"
+  },
   "paradisamide": {
     "path": "/images/notes/perfume-materials.webp",
     "width": 720,

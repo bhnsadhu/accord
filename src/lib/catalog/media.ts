@@ -16,5 +16,5 @@ const notes = noteManifest as Readonly<Record<string, ReferenceImage>>;
 export const noteImage = (key: string): ReferenceImage | undefined => notes[key] ?? notes[noteReferenceKey(key)];
 
 /** Reference aliases do not change the listed note or the catalog's similarity data. */
-const noteAliases: Record<string, string> = { cedar: "cedarwood", iris: "iris-orris", orris: "iris-orris", "jasmine-sambac": "jasmine", "may-rose": "rose", "bourbon-vanilla": "vanilla", "black-leather-accord": "leather", "sicilian-bergamot": "bergamot", "calabrian-bergamot": "bergamot" };
+const noteAliases: Record<string, string> = { cedar: "cedarwood", iris: "iris-orris", orris: "iris-orris", "violet-accord": "violet", "jasmine-sambac": "jasmine", "may-rose": "rose", "bourbon-vanilla": "vanilla", "black-leather-accord": "leather", "sicilian-bergamot": "bergamot", "calabrian-bergamot": "bergamot" };
 export const noteReferenceKey = (key: string) => noteAliases[key] ?? key;

@@ -53,6 +53,17 @@
             "fields": [
               "wear"
             ]
+          },
+          {
+            "id": "liberty-note-stages",
+            "title": "Santal 33 Eau de Parfum: note stages",
+            "publisher": "Liberty (retailer)",
+            "url": "https://www.libertylondon.com/us/santal-33-eau-de-parfum-100ml-1001225081.html",
+            "kind": "reference",
+            "checkedAt": "2026-11-08",
+            "fields": [
+              "noteStages"
+            ]
           }
         ],
         "concentration": "Eau de parfum",
@@ -65,7 +76,23 @@
             "text": "Scento’s editorial guide suggests autumn, winter and spring, during the day or evening. These are suggested settings, not measured performance.",
             "sourceId": "scento-wear"
           }
-        ]
+        ],
+        "noteStages": {
+          "opening": [
+            "Violet Accord",
+            "Cardamom"
+          ],
+          "heart": [
+            "Iris",
+            "Papyrus",
+            "Ambrox"
+          ],
+          "base": [
+            "Cedarwood",
+            "Leather",
+            "Sandalwood"
+          ]
+        }
       }
     },
     {

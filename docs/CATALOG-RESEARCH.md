@@ -4,7 +4,7 @@ Accord is a searchable reference, not a public review platform. The original Sce
 
 ## Current coverage
 
-The current research release includes 35 profiles, 19 new fragrance editions, 12 entries with perfumers, 11 with documented note stages, and 9 with attributed wear guidance. The combined catalog has 24,661 fragrances. The 2026-11-04 release added Moroccanoil Lumière du Jour from the private request inbox and 9 notable 2025 and 2026 launches missing from the source data, which ends in early 2024. New additions must carry at least a sourced summary, concentration, family and release year, like earlier additions. `/learn#catalog` reads live database coverage so these counts are not a promise of universal enrichment. The note dictionary has 42 concise definitions, including 18 added definitions linked to individual ingredient references.
+The current research release includes 628 profiles, 19 new fragrance editions, 12 entries with perfumers, 610 with documented note stages, and 9 with attributed wear guidance. The combined catalog has 24,661 fragrances. The 2026-11-04 release added Moroccanoil Lumière du Jour from the private request inbox and 9 notable 2025 and 2026 launches missing from the source data, which ends in early 2024. New additions must carry at least a sourced summary, concentration, family and release year, like earlier additions. `/learn#catalog` reads live database coverage so these counts are not a promise of universal enrichment. The note dictionary has 42 concise definitions, including 18 added definitions linked to individual ingredient references.
 
 There are no new paid services, subscriptions, scheduled jobs, runtime AI generation, third-party image fetches, reviews, comments or public voting. Browsing uses the existing database and caches.
 
@@ -20,6 +20,25 @@ There are no new paid services, subscriptions, scheduled jobs, runtime AI genera
 ### Santal 33 note stages, 2026-11-08
 
 Le Labo's product description supplies a flat set of featured notes. [Liberty's Santal 33 Eau de Parfum listing](https://www.libertylondon.com/us/santal-33-eau-de-parfum-100ml-1001225081.html) explicitly assigns top, heart and base stages, which are now displayed with Liberty identified as the retailer source. The original Le Labo description and catalog note associations are retained. Violet Accord links to the violet reference, and Papyrus has its own licensed photograph with a library link because it has no catalog article yet.
+
+### Catalog-wide note stages, 2026-11-08
+
+The same rendering rule applies to every fragrance page: show Top notes, Heart notes and Base notes when sourced stages exist. Otherwise keep the pictured notes together and show “Top, heart and base stages: Not listed.” The note library stays alphabetical.
+
+The [Scento open dataset](https://github.com/Scento-com/perfume-dataset) supplies 595 additional exact-edition matches under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This is a separately licensed static release, not a bulk copy of the live API reviewed earlier. Attribution: Scento, https://www.scento.com/perfume-database. The original staged note names are retained; no descriptions, popularity ranks, reviews or wear suggestions are imported. The revision, file hash, coverage and skipped-match counts are recorded in `data/research/note-stage-import.json`.
+
+The matcher compares house and full name, allowing punctuation, accents and explicit concentration suffixes. It rejects conflicting concentrations and years, ambiguous source editions, incomplete pyramids and sources matching multiple catalog identities. Existing sourced stages take precedence. Repeated identical names within a stage are displayed once. A check of 52 source pages for concentration-specific matches excluded three unresolved edition or year conflicts; these are recorded in `data/research/note-stage-exclusions.json` and future preparation runs keep them excluded. Original catalog note associations and similarity inputs do not change. This snapshot does not cover all 24,661 fragrances, and a non-match is not proof that no other source exists.
+
+Three additional retailer checks supply stages for Thé Noir 29 and Sauvage Eau de Toilette from Selfridges, and Tobacco Vanille Eau de Parfum from Harrods. These are attributed as retailer listings. Thé Noir 29's retailer descriptions differ; the displayed breakdown follows the linked Selfridges listing without blending competing stage assignments.
+
+To review a future Scento snapshot, download its `perfumes.jsonl`, check its license and pinned revision, then run:
+
+```sh
+npx tsx scripts/prepare-note-stages.ts path/to/perfumes.jsonl output/note-stages YYYY-MM-DD
+npm run catalog:research -- output/note-stages/changes.json
+```
+
+The preparation command only reads the database and writes a proposed manifest plus a match report. Review the proposed changes and resolve every `missingImages` entry before importing. Preserve previous research fields. Test locally, save and compare production research before applying the reviewed delta, then deploy and verify the exact live pages. Store the merged manifest in `data/research/fragrances.json` so a later full import retains the enrichment.
 
 ## Stable identifiers
 

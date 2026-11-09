@@ -17,7 +17,8 @@ const [input, output, checkedAt] = process.argv.slice(2);
 if (!input || !output || !/^\d{4}-\d{2}-\d{2}$/.test(checkedAt ?? "")) throw new Error("Supply the downloaded Scento JSONL, an output directory and the source check date (YYYY-MM-DD)");
 const raw = await readFile(input, "utf8");
 const recordSchema = z.object({ id: z.string(), house: z.string(), name: z.string(), year: z.number().int().nullable(), concentration: z.string(), url: z.url().refine(url => /^https:\/\/www\.scento\.com\/(perfume-database\/)?perfumes\//.test(url)), top_notes: z.array(z.string()), heart_notes: z.array(z.string()), base_notes: z.array(z.string()) });
-const references = raw.trim().split("\n").map(line => recordSchema.parse(JSON.parse(line))).map(row => ({ id: row.id, brand: row.house, name: row.name, year: row.year, concentration: row.concentration.replace(/-/g, " "), url: row.url, noteStages: { opening: row.top_notes, heart: row.heart_notes, base: row.base_notes } }));
+const references = raw.trim().split("\n").map(line => recordSchema.parse(JSON.parse(line))).map(row => ({ id: row.id, brand: row.house, name: row.name, year: row.year, concentration: row.concentration.replace(/-/g, " "), url: row.url, noteStages: { opening: [...new Set(row.top_notes)], heart: [...new Set(row.heart_notes)], base: [...new Set(row.base_notes)] } }));
+const exclusions = z.array(z.object({ id: z.string(), reason: z.string(), url: z.url(), checkedAt: z.string() })).parse(JSON.parse(await readFile("data/research/note-stage-exclusions.json", "utf8")));
 const manifest = catalogManifestSchema.parse(JSON.parse(await readFile("data/research/fragrances.json", "utf8")));
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, max: 1 });
 try {
@@ -26,7 +27,12 @@ try {
     const research = row.research ? researchSchema.parse(row.research) : null;
     return { ...row, research, year: research?.year ?? row.year, concentration: research?.concentration, hasStages: Boolean(research?.noteStages) };
   });
-  const { matches, skipped } = matchNoteStages(catalog, references);
+  const { matches: candidates, skipped } = matchNoteStages(catalog, references);
+  const matches = candidates.filter(match => {
+    const excluded = exclusions.find(entry => entry.id === match.reference.id);
+    if (excluded) skipped.push({ productId: match.productId, reason: `Source review: ${excluded.reason}` });
+    return !excluded;
+  });
   const changes = matches.map(({ productId, reference }) => {
     const row = catalog.find(row => row.productId === productId)!;
     const existing = manifest.entries.find(entry => entry.productId === productId);

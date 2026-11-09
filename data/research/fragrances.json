@@ -4756,8 +4756,7 @@
           ],
           "base": [
             "Vanilla",
-            "Sandalwood",
-            "Vanilla"
+            "Sandalwood"
           ]
         },
         "aliases": [],
@@ -8017,7 +8016,6 @@
             "Lychee",
             "Melon",
             "Apricot",
-            "Marigold",
             "Ylang-Ylang",
             "Blackcurrant leaf",
             "Oakmoss"
@@ -10933,45 +10931,6 @@
       }
     },
     {
-      "productId": "p07629",
-      "brand": "Diptyque",
-      "name": "Philosykos Eau De Parfum",
-      "research": {
-        "perfumers": [],
-        "featuredNotes": [],
-        "noteStages": {
-          "opening": [
-            "Fig",
-            "Fig"
-          ],
-          "heart": [
-            "Coconut",
-            "Green leaves"
-          ],
-          "base": [
-            "Cedarwood",
-            "Woody notes",
-            "Fig"
-          ]
-        },
-        "aliases": [],
-        "wear": [],
-        "sources": [
-          {
-            "id": "scento-note-stages",
-            "title": "Philosykos Eau De Parfum: note stages",
-            "publisher": "Scento",
-            "url": "https://www.scento.com/perfumes/philosykos-diptyque",
-            "kind": "reference",
-            "checkedAt": "2026-11-08",
-            "fields": [
-              "noteStages"
-            ]
-          }
-        ]
-      }
-    },
-    {
       "productId": "p07633",
       "brand": "Diptyque",
       "name": "Vetyverio Eau De Toilette",
@@ -11192,7 +11151,6 @@
           ],
           "base": [
             "Cedarwood",
-            "Musk",
             "Musk"
           ]
         },
@@ -11343,7 +11301,6 @@
             "Leather"
           ],
           "heart": [
-            "Rose",
             "Rose"
           ],
           "base": [
@@ -12710,8 +12667,7 @@
         "noteStages": {
           "opening": [
             "Geranium",
-            "Blackcurrant",
-            "Geranium"
+            "Blackcurrant"
           ],
           "heart": [
             "Vetiver",
@@ -13507,8 +13463,7 @@
           "heart": [
             "Gardenia",
             "Floral notes",
-            "Green leaves",
-            "Floral notes"
+            "Green leaves"
           ],
           "base": [
             "Musk",
@@ -13554,7 +13509,6 @@
             "Cedarwood",
             "Vetiver",
             "Patchouli",
-            "Cedarwood",
             "Benzoin"
           ]
         },
@@ -13566,46 +13520,6 @@
             "title": "Terre D'Hermès Eau Intense Vétiver: note stages",
             "publisher": "Scento",
             "url": "https://www.scento.com/perfumes/terre-dhermes-eau-intense-vetiver-hermes",
-            "kind": "reference",
-            "checkedAt": "2026-11-08",
-            "fields": [
-              "noteStages"
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "productId": "p11320",
-      "brand": "Hugo Boss",
-      "name": "Boss Bottled Eau De Parfum",
-      "research": {
-        "perfumers": [],
-        "featuredNotes": [],
-        "noteStages": {
-          "opening": [
-            "Apple",
-            "Bergamot",
-            "Pepper"
-          ],
-          "heart": [
-            "Cinnamon",
-            "Nutmeg",
-            "Cardamom"
-          ],
-          "base": [
-            "Vetiver",
-            "Musk"
-          ]
-        },
-        "aliases": [],
-        "wear": [],
-        "sources": [
-          {
-            "id": "scento-note-stages",
-            "title": "Boss Bottled Eau De Parfum: note stages",
-            "publisher": "Scento",
-            "url": "https://www.scento.com/perfumes/boss-bottled-hugo-boss",
             "kind": "reference",
             "checkedAt": "2026-11-08",
             "fields": [
@@ -15962,8 +15876,7 @@
           "opening": [
             "Raspberry",
             "Blackberry",
-            "Blackcurrant",
-            "Blackberry"
+            "Blackcurrant"
           ],
           "heart": [
             "Ylang-Ylang",
@@ -20592,8 +20505,7 @@
         "noteStages": {
           "opening": [
             "Artemisia",
-            "Lavender",
-            "Artemisia"
+            "Lavender"
           ],
           "heart": [
             "Jasmine"
@@ -21764,7 +21676,6 @@
           ],
           "heart": [
             "Rose",
-            "Patchouli",
             "Patchouli"
           ],
           "base": [
@@ -22431,7 +22342,6 @@
         "noteStages": {
           "opening": [
             "Grapefruit",
-            "Sea Notes",
             "Sea Notes"
           ],
           "heart": [
@@ -24358,7 +24268,6 @@
           "base": [
             "Vanilla",
             "Leather",
-            "Oud",
             "Oud"
           ]
         },
@@ -24508,7 +24417,6 @@
             "Cinnamon",
             "Ginger",
             "Cardamom",
-            "Pepper",
             "Pepper"
           ],
           "heart": [
@@ -25376,8 +25284,7 @@
           ],
           "base": [
             "Cedarwood",
-            "Vanilla",
-            "Cedarwood"
+            "Vanilla"
           ]
         },
         "aliases": [],
@@ -25624,7 +25531,6 @@
             "Ambermax"
           ],
           "base": [
-            "Cedarwood",
             "Cedarwood",
             "Vetiver",
             "Patchouli",
@@ -25976,41 +25882,6 @@
             "title": "Babycat: note stages",
             "publisher": "Scento",
             "url": "https://www.scento.com/perfumes/babycat-by-yves-saint-laurent",
-            "kind": "reference",
-            "checkedAt": "2026-11-08",
-            "fields": [
-              "noteStages"
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "productId": "p24407",
-      "brand": "Yves Saint Laurent",
-      "name": "Black Opium Le Parfum",
-      "research": {
-        "perfumers": [],
-        "featuredNotes": [],
-        "noteStages": {
-          "opening": [
-            "Floral notes"
-          ],
-          "heart": [
-            "Vanilla"
-          ],
-          "base": [
-            "Coffee"
-          ]
-        },
-        "aliases": [],
-        "wear": [],
-        "sources": [
-          {
-            "id": "scento-note-stages",
-            "title": "Black Opium Le Parfum: note stages",
-            "publisher": "Scento",
-            "url": "https://www.scento.com/perfumes/black-opium-le-parfum-yves-saint-laurent",
             "kind": "reference",
             "checkedAt": "2026-11-08",
             "fields": [

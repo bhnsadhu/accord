@@ -1,0 +1,20 @@
+[
+  {
+    "id": "diptyque-philosykos-parfum",
+    "reason": "The linked page describes the 1996 release, while the catalog entry is the 2012 Eau de Parfum. Edition identity needs another source.",
+    "url": "https://www.scento.com/perfumes/philosykos-diptyque",
+    "checkedAt": "2026-11-08"
+  },
+  {
+    "id": "hugo-boss-boss-bottled",
+    "reason": "The snapshot says Eau de Parfum, but its linked page explicitly identifies the 1998 Eau de Toilette.",
+    "url": "https://www.scento.com/perfumes/boss-bottled-hugo-boss",
+    "checkedAt": "2026-11-08"
+  },
+  {
+    "id": "ysl-black-opium-le-parfum",
+    "reason": "The linked page gives 2022 and the catalog gives 2023. Hold the import until the release identity is resolved.",
+    "url": "https://www.scento.com/perfumes/black-opium-le-parfum-yves-saint-laurent",
+    "checkedAt": "2026-11-08"
+  }
+]

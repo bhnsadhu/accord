@@ -77,7 +77,7 @@ Catalog pages are prerendered and cached, and refreshed when the data changes. T
 | **Shipped blend** | **12.0%** | **2,717** |
 
 - **109** unit tests. They cover similarity and IDF weighting, cold start, rating-driven re-ranking, avoided-note exclusion, brand diversity and evidence-only explanations. Integration tests run the real Postgres driver against an in-memory database and check cross-user isolation and cascade deletion.
-- **13** Playwright specs: journeys, quick find, mobile, catalog independence, account recovery and accessibility checks (axe) across 19 pages.
+- **14** Playwright specs: journeys, quick find, mobile, catalog independence, account recovery and accessibility checks (axe) across 19 pages.
 - **Scanner contract** verified live: one real bottle photo identified correctly at 0.999 confidence. That took **21.6 s** end to end with the model waking up, and 5.6 s inside the model. This checks the integration, not accuracy; ScentLens documents its own accuracy.
 
 Not measured: whether people enjoy the picks. The hold-out uses fragrance lines as a stand-in for taste, so read the numbers comparatively.

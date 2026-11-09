@@ -1,5 +1,15 @@
 # Progress
 
+## 2026-11-08: useful without community contributions
+
+- Reviewed external data access before removing dependent features. Added attributed editorial wear guidance for Santal 33 and Another 13 through the existing research manifest; both were applied locally and to production after identity and baseline checks.
+- Retired public ratings, reviews, wear votes, member profiles, community charts, co-ownership suggestions and manual catalog requests. Personal shelves, ratings, favourites and taste remain. Releases now use catalog years, with `/charts` redirecting to `/releases`.
+- Validation: lint, typecheck, 109 unit/integration tests and a fresh isolated production build passed. Across targeted runs, all 43 distinct browser cases passed, including 19 accessibility pages, account recovery, guest and account collections, recommendations, quick find and mobile navigation. New test assertions were corrected to follow the existing Wishlist-to-Tried behavior and the collection’s shelf tabs.
+- Visual review covered fragrance detail, Discover, Releases and Le Labo at 390px, 768px and 1440px, including source guidance and release-year links. All 12 route/width checks found no horizontal overflow or broken visible images. An initial shared local build had stale CSS; the isolated build included the current styles.
+- Checkpoint `66f39d9` was pushed to `main` and Vercel reported a successful deployment. Live checks confirmed catalog search without public ratings, Scento attribution on Santal 33, the 308 releases redirect, retired member 404 and request 410 responses, and authenticated database health.
+- The owner’s instruction to commit and push at working checkpoints is recorded in AGENTS.md. Legacy tables and maintenance tools remain to preserve stored data and account-deletion cascades; public routes no longer use them.
+
+
 _Last updated 2026-10-30._
 
 ## Current milestone

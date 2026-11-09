@@ -738,6 +738,10 @@ body:has(.signature-hero) > header { background: #f6f7f9; }
 /* Photographs identify the exact edition; paper remains the catalog's material. */
 .reference-layout { display: grid; grid-template-columns: minmax(0, 180px) minmax(0, 1fr); gap: 80px; }
 .reference-layout-photographed { grid-template-columns: minmax(260px, .7fr) minmax(0, 2fr); gap: clamp(32px, 5vw, 80px); }
+@media (min-width: 1100px) {
+  /* Keep content dividers clear of the sticky specimen and its caption. */
+  .reference-layout .section-divider { border-image-outset: 0; }
+}
 .reference-specimen { min-width: 0; }
 .reference-mobile-photo { display: none; }
 .bottle-photo { min-width: 0; }

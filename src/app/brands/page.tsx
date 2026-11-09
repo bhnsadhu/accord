@@ -13,7 +13,7 @@ export default function BrandsPage({ searchParams }: PageProps<"/brands">) {
     <PageShell width="reference" className="knowledge-page">
       <PageTitle>Fragrance houses</PageTitle>
       <p className="page-intro knowledge-lead">Every house in the catalog, from heritage names to independent perfumers. Open one to see its whole line, its families and its notes.</p>
-      <nav className="reference-wayfinding page-wayfinding" aria-label="Directory navigation"><Link href="/discover">Discover</Link><Link href="/perfumers">Perfumers</Link><Link href="/notes">Notes</Link><Link href="/charts">Member charts</Link></nav>
+      <nav className="reference-wayfinding page-wayfinding" aria-label="Directory navigation"><Link href="/discover">Discover</Link><Link href="/perfumers">Perfumers</Link><Link href="/notes">Notes</Link><Link href="/releases">Releases</Link></nav>
       <Suspense fallback={<p className="reference-empty" role="status">Loading houses.</p>}><BrandIndex searchParams={searchParams} /></Suspense>
     </PageShell>
   );
@@ -38,7 +38,7 @@ async function BrandIndex({ searchParams }: { searchParams: Promise<{ q?: string
     <>
       {!q && (
         <section aria-labelledby="largest-h" className="mt-10">
-          <h2 id="largest-h" className="community-heading">Largest houses in the catalog</h2>
+          <h2 id="largest-h" className="directory-heading">Largest houses in the catalog</h2>
           <div className="directory-featured">
             {brands.slice(0, 12).map(b => <Link key={b.id} href={`/brands/${b.slug}`}><strong>{b.name}</strong><span className="font-mono tabular">{b.fragranceCount.toLocaleString("en-US")} fragrances</span></Link>)}
           </div>

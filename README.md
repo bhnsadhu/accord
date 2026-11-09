@@ -32,7 +32,7 @@ The goal: **a visitor finds a fragrance they want to try, and understands why it
 | **Match is a percentile, not a promise** | "Top 1%" sounds less exciting than "98% match". It is honest: the fragrance outscored 99% of the catalog for this taste, which says nothing certain about whether you'll love it. |
 | **The scanner may say "Not sure"** | Fewer photos get a name. But an unsure guess shown as an answer would cost more trust than it buys, so uncertain candidates appear as faint, unstained strips. |
 | **Useful before sign-up** | Guests keep their taste and shelves only on the device. In return anyone can browse, search and get picks on the first visit; signing in merges what they did. |
-| **Member numbers start at zero** | Ratings, wear votes and reviews look empty at launch. Nothing was seeded or copied, so every number on the site is real. |
+| **Useful without a community** | Discovery uses catalog facts and attributed research. Unsupported ratings, reviews and votes are omitted; personal ratings still improve the visitor’s own recommendations. |
 | **Not a store** | No prices or retailer links, so no obvious way to earn money. It keeps the product about understanding fragrance, not selling it. |
 
 ## Architecture
@@ -49,7 +49,7 @@ flowchart TD
   end
   subgraph ext["Data and model"]
     direction LR
-    neon[("Neon Postgres<br/>catalog, members, reviews")] ~~~ sl["ScentLens on Modal<br/>bottle recognition"]
+    neon[("Neon Postgres<br/>catalog, accounts, collections")] ~~~ sl["ScentLens on Modal<br/>bottle recognition"]
   end
   web --> app
   app --> ext
@@ -65,7 +65,7 @@ Catalog pages are prerendered and cached, and refreshed when the data changes. T
 
 **Turning messy catalog text into structure.** The source lists accords as phrases like "Woody Amber Fresher Citrus". A parser maps each to an Edwards-wheel family, a character and facets, renames the legacy "Oriental" to "Amber", and drops stray perfumer names. The catalog has no accord strengths, so the profile bars are estimated from how strongly each listed note leans toward a family across the catalog, and are labelled as estimates. → [`src/lib/catalog`](src/lib/catalog)
 
-**Community features without fakes or spam.** Ratings reuse a member's collection rating, so there's one rating per person. Charts use a weighted average with a three-rating prior, so one 5★ can't top a chart. Reviews need a verified email, have per-member daily budgets, and three reports from different members hide a review. "Members who have this also have" only appears for pairs shared by at least two members. → [`src/lib/community`](src/lib/community)
+**Reference data without a community dependency.** Published wear guidance carries a named source and checked date. Seasonal guidance for two exact editions was retrieved through Scento’s public API. Unavailable ratings, reviews, votes and public profiles are removed; releases and note-based similarity work from the catalog. → [docs/CATALOG-RESEARCH.md](docs/CATALOG-RESEARCH.md)
 
 ## Results
 
@@ -77,7 +77,7 @@ Catalog pages are prerendered and cached, and refreshed when the data changes. T
 | **Shipped blend** | **12.0%** | **2,717** |
 
 - **109** unit tests. They cover similarity and IDF weighting, cold start, rating-driven re-ranking, avoided-note exclusion, brand diversity and evidence-only explanations. Integration tests run the real Postgres driver against an in-memory database and check cross-user isolation and cascade deletion.
-- **13** Playwright specs: journeys, quick find, mobile, community, account recovery and accessibility checks (axe) across 19 pages.
+- **13** Playwright specs: journeys, quick find, mobile, catalog independence, account recovery and accessibility checks (axe) across 19 pages.
 - **Scanner contract** verified live: one real bottle photo identified correctly at 0.999 confidence. That took **21.6 s** end to end with the model waking up, and 5.6 s inside the model. This checks the integration, not accuracy; ScentLens documents its own accuracy.
 
 Not measured: whether people enjoy the picks. The hold-out uses fragrance lines as a stand-in for taste, so read the numbers comparatively.
@@ -89,7 +89,7 @@ Not measured: whether people enjoy the picks. The hold-out uses fragrance lines 
 3. **The Blotter look.** Fragrances became paper smelling strips on an evaluation bench, each stained by its accord family, with a fanned-out hero.
 4. **Production hardening.** Verified-email sign-up, account recovery, immediate session revocation, data export, security headers, and encrypted daily backups with a tested restore.
 5. **A real reference.** Sourced fragrance profiles, a note library, bottle photos for 24,649 of 24,651 entries, and recent launches added through a request workflow.
-6. **Community.** Member ratings, wear votes, reviews with moderation, house and perfumer pages, and charts. Database migrations run during the production build, so the site never runs ahead of its schema.
+6. **Independent discovery.** House, perfumer and release pages work from the catalog. The initial community experiment was retired after a source-access review; personal collections and taste remain. Database migrations run during the production build, so the site never runs ahead of its schema.
 
 ## Tech stack
 
@@ -124,7 +124,7 @@ src/components/        # Strip module, quick find, scanner, profile builder
 src/lib/catalog/       # Accord parsing, queries, cached readers, accord profile
 src/lib/reco/          # Index, similarity, scoring, graph walk, explanations
 src/lib/scan/          # ScentLens client, image checks, cache, slots, quotas
-src/lib/community/     # Ratings, wear votes, reviews, moderation rules
+src/lib/community/     # Retained legacy data access for maintenance only
 src/db/                # Drizzle schema
 scripts/               # Database server, migrate, seed, evaluation, moderation
 tests/                 # Integration (PGlite) and Playwright specs

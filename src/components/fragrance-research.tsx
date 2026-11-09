@@ -10,15 +10,14 @@ export function SourceLinks({ research, field }: { research: FragranceResearch; 
 }
 
 export function WearGuidance({ research }: { research: FragranceResearch | null }) {
+  if (!research?.wear.length) return null;
   return <section id="wear" className="reference-section" aria-labelledby="wear-h">
     <div className="reference-section-heading"><h2 id="wear-h">Wearing it</h2><Link href="/learn#performance">Understand performance <ArrowIcon /></Link></div>
-    {research?.wear.length ? <>
       <dl className="research-wear">{research.wear.map((report, i) => {
         const source = research.sources.find(s => s.id === report.sourceId)!;
         return <div key={`${report.aspect}-${i}`}><dt>{report.aspect}</dt><dd><p>{report.text}</p><a className="research-attribution" href={source.url}>{source.kind === "brand" ? "Brand guidance" : source.kind === "perfumer" ? "Perfumer’s account" : "Published observation"} · {source.publisher}</a></dd></div>;
       })}</dl>
       <p className="reference-caption mt-4">These are published descriptions, not measurements by Accord. Wear varies with skin, application and conditions.</p>
-    </> : <p className="research-unlisted">Verified wear guidance is not listed yet. This fragrance’s notes and format alone cannot tell us its longevity or projection.</p>}
     <details className="reference-provenance"><summary>What to notice when you try it <PlusIcon /></summary><div><p>Try a small amount on skin and revisit it as it settles. Longevity is how long you can still smell it. Projection is how far it reaches; sillage is the trail it leaves as you move.</p><p>Try it in the setting you have in mind. Temperature, application and your own perception can change the experience.</p></div></details>
   </section>;
 }

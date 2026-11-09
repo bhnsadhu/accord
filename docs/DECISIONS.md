@@ -10,6 +10,7 @@
 | 2026-10-30 | Deploy to Vercel + Neon at accord.bhanusadhu.com and turn the scanner on with budget-sized caps | Approved in chat ("do this all yourself", "turn on") |
 | 2026-10-30 | Logo: four options drafted (`.impeccable/mocks/logo/options.html`); decision deferred | Placeholder strip mark stays until then |
 | 2026-10-30 | Visual world: **Blotter**: fragrances as smelling strips on a neutral evaluation bench, stained by accord family | Chosen over Wheel (dark, Edwards wheel) and Chord (overlapping bands). Preview palette and type (Schibsted Grotesk, Geist Mono) adopted with it. Logo mark is a placeholder pending approval. |
+| 2026-11-08 | Remove dependence on other people’s contributions; try accessible sources first | Owner confirmed in chat. Retire public ratings, reviews, wear votes, member pages and manual requests. Keep private preferences and collections, catalog similarity, houses, perfumers and releases. Use attributed published guidance where available. Supersedes the community portions of the November 5 decision. |
 | 2026-11-05 | Make Accord a full fragrance reference people can use day to day, on par with the large community reference sites, "but make it make sense for Accord" | Owner request. Adds member ratings, wear votes, reviews, "reminds me of", house, perfumer and chart pages in the Blotter world. No copied look; nothing seeded or invented: every member number starts at zero. Pushed to a review branch, not `main`; the production migration still needs to run. |
 | 2026-10-30 | Push and deploy requested changes after checks; no separate preview approval required | Owner will review on the live site. Applies to the current no-underline change and future requested work. Preserve the live paper-and-silver direction; the dark redesign remains shelved. |
 
@@ -38,3 +39,7 @@
 | "Members who have this also have" appears only for pairs shared by at least two members, from owned and tried shelves rated 3 or higher (or unrated) | A real co-occurrence signal that never exposes one person's collection |
 | Production builds apply pending migrations before `next build` (`scripts/deploy-migrate.mjs`, production only) | The agent environment cannot read production secrets; the build already has them and already needs the schema to prerender. A failed migration fails the build, so the live site never runs ahead of its schema. |
 | Community caches tagged per fragrance, lifetime in days, refreshed by `updateTag` on every write and by `revalidateTag` on account deletion | Fragrance pages stay static and cheap on Vercel Hobby and Neon Free, yet show a member's own change immediately |
+
+## Retired community decisions
+
+The member-rating, wear-vote, review and co-ownership rules above document the earlier implementation. Since 2026-11-08 they apply only to retained legacy data and tests, not to the current public experience.

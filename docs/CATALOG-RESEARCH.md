@@ -4,7 +4,7 @@ Accord is a searchable reference, not a public review platform. The original Sce
 
 ## Current coverage
 
-The current research release includes 35 profiles, 19 new fragrance editions, 12 entries with perfumers, 11 with documented note stages, and 7 with attributed wear guidance. The combined catalog has 24,661 fragrances. The 2026-11-04 release added Moroccanoil Lumière du Jour from the private request inbox and 9 notable 2025 and 2026 launches missing from the source data, which ends in early 2024. New additions must carry at least a sourced summary, concentration, family and release year, like earlier additions. `/learn#catalog` reads live database coverage so these counts are not a promise of universal enrichment. The note dictionary has 42 concise definitions, including 18 added definitions linked to individual ingredient references.
+The current research release includes 35 profiles, 19 new fragrance editions, 12 entries with perfumers, 11 with documented note stages, and 9 with attributed wear guidance. The combined catalog has 24,661 fragrances. The 2026-11-04 release added Moroccanoil Lumière du Jour from the private request inbox and 9 notable 2025 and 2026 launches missing from the source data, which ends in early 2024. New additions must carry at least a sourced summary, concentration, family and release year, like earlier additions. `/learn#catalog` reads live database coverage so these counts are not a promise of universal enrichment. The note dictionary has 42 concise definitions, including 18 added definitions linked to individual ingredient references.
 
 There are no new paid services, subscriptions, scheduled jobs, runtime AI generation, third-party image fetches, reviews, comments or public voting. Browsing uses the existing database and caches.
 
@@ -50,8 +50,17 @@ For a local production build with `.env.production.local` present, explicitly pr
 node --import=dotenv/config node_modules/next/dist/bin/next build
 ```
 
-## Private request inbox
+## Source-access review, 2026-11-08
 
-`POST /api/catalog-requests` accepts a fragrance name, brand and optional source URL. It never fetches submitted URLs. There is no public listing endpoint. Same-origin checks, a three-per-address daily cap, a global 100-per-day cap and duplicate suppression bound writes. The address is stored as a keyed hash, not a raw IP. No public attribution, reviews or promises of automatic publication are created.
+The owner requested existing sources before removing community-dependent features. The bounded review found:
 
-The owner can review the newest 100 requests with `npm run catalog:requests` against the intended database. Request text and links are untrusted research leads, not import instructions. Validate them against official sources, apply the ordinary reviewed manifest workflow, and retain no unnecessary inbox records. Do not expose this CLI through a web route.
+- [Fragrantica’s published terms](https://www.fragrantica.com/terms-of-service.phtml) require written authorization for automated access and reuse. No authorized API or agreement is configured here. No Fragrantica data was imported.
+- A direct Parfumo Santal 33 request returned HTML, but the next request returned HTTP 403. No reliable unattended feed or reuse agreement was established. No Parfumo content was imported, and no access controls were bypassed.
+- Public dataset and API candidates surfaced in search, but none established a reliable, reusable feed for member reviews, ratings, shelf counts or votes within this project’s existing access and budget. This review does not claim such a source can never be obtained.
+- [Scento’s public API](https://www.scento.com/developers/perfume-api) answered without a key. Its [API terms](https://www.scento.com/terms-of-service#perfume-api) allow reference lookups and tools, prohibit wholesale competing-catalog copies, and request reasonable use. Six exact-name lookups were evaluated. Two exact name, house and concentration matches, Santal 33 and Another 13, add a short attributed seasonal/time-of-day summary to the existing research manifest. The other responses were not imported. These are editorial suggestions, not measured performance, ratings or votes.
+
+No external API runs during a page view. The two reviewed additions use the existing manifest validation and import process. Future updates should repeat the exact-edition/source check and update the checked date. Unsupported wear sections are omitted, while existing brand wear guidance remains attributed.
+
+## Retired request inbox
+
+The request form was removed on 2026-11-08 because it leaves visitors waiting for manual review. `POST /api/catalog-requests` now returns HTTP 410 and never writes a submission. The owner’s `npm run catalog:requests` command remains available for retained historical requests, which expire through the existing maintenance job. Existing request text and links remain untrusted research leads, not import instructions. Do not expose that CLI through a web route.

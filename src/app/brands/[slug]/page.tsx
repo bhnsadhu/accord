@@ -4,10 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties } from "react";
 import { ArrowIcon } from "@/components/icons";
-import { MatchFigure, StripRow } from "@/components/strip";
+import { StripRow } from "@/components/strip";
 import { cachedBrandOverview, cachedSearch } from "@/lib/catalog/cached";
 import { slugify } from "@/lib/catalog/text";
-import { cachedHouseFavourites } from "@/lib/community/cached";
 import { GENDER_LABEL, hueFor } from "@/lib/hues";
 
 // Prerender a fallback shell; every other house renders on first visit and is then cached.
@@ -44,7 +43,7 @@ async function House({ params, searchParams }: { params: Promise<{ slug: string 
   const sortRaw = one(raw.sort);
   const sort = sortRaw === "oldest" || sortRaw === "name" ? sortRaw : "newest";
   const page = Math.min(Math.max(Number.parseInt(one(raw.page) ?? "1", 10) || 1, 1), 500);
-  const [list, favourites] = await Promise.all([cachedSearch({ brand: slug, sort, page, pageSize: 30 }), cachedHouseFavourites(slug)]);
+  const list = await cachedSearch({ brand: slug, sort, page, pageSize: 30 });
   const pages = Math.max(1, Math.ceil(list.total / list.pageSize));
   const classified = families.reduce((a, f) => a + f.n, 0);
   const query = (patch: Record<string, string | number>) => {
@@ -93,13 +92,6 @@ async function House({ params, searchParams }: { params: Promise<{ slug: string 
           <div className="reference-section-heading"><h2 id="house-perfumers-h">Perfumers</h2><Link href="/perfumers">All perfumers <ArrowIcon /></Link></div>
           <div className="chip-links">{perfumers.map(p => <Link key={p.name} href={`/perfumers/${slugify(p.name)}`}>{p.name}<span>{p.n}</span></Link>)}</div>
           <p className="reference-caption mt-3">From reviewed sources. Most catalog entries do not yet credit a perfumer.</p>
-        </section>
-      )}
-
-      {favourites.length > 0 && (
-        <section className="reference-section section-divider" aria-labelledby="favourites-h">
-          <div className="reference-section-heading"><h2 id="favourites-h">Member favourites</h2><Link href="/charts">Member charts <ArrowIcon /></Link></div>
-          <div className="grid gap-3">{favourites.map(f => <StripRow key={f.productId} fragrance={f.fragrance} aside={<MatchFigure value={f.value.toFixed(1)} label={`${f.count} ${f.count === 1 ? "rating" : "ratings"}`} />} />)}</div>
         </section>
       )}
 

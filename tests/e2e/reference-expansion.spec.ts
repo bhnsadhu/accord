@@ -41,15 +41,12 @@ test("multiple note filters persist and can be removed independently", async ({ 
   await expect(page).toHaveURL(/brand=le-labo/);
 });
 
-test("a private missing-fragrance request saves with feedback", async ({ page }) => {
+test("an empty search offers immediate alternatives without a request queue", async ({ page }) => {
   await page.goto("/discover?q=unlisted-fixture-reference");
   await expect(page.getByText("No fragrance matches all of that.")).toBeVisible();
-  await page.locator(".catalog-request summary").click();
-  await page.getByLabel("Fragrance and version").fill("Private reference test");
-  await page.getByLabel("Brand", { exact: true }).fill("Browser fixture");
-  await page.getByRole("button", { name: "Request fragrance" }).click();
-  await expect(page.getByRole("status").filter({ hasText: "Request saved" })).toBeVisible();
-  expect((await page.request.get("/api/catalog-requests")).status()).toBe(405);
+  await expect(page.getByRole("link", { name: "Explore by note", exact: true })).toBeVisible();
+  await expect(page.locator(".catalog-request")).toHaveCount(0);
+  expect((await page.request.post("/api/catalog-requests", { data: { fragrance: "Unlisted", brand: "Fixture" } })).status()).toBe(410);
 });
 
 test("enriched pages remain accessible and fit a narrow viewport", async ({ page }) => {

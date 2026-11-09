@@ -2,14 +2,12 @@ import { PageShell, PageTitle } from "@/components/page-shell";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { CatalogRequest } from "@/components/catalog-request";
 import { NoteFilter } from "@/components/note-filter";
 import { Bench } from "@/components/bench";
 import { ArchiveFilters, DiscoverResults } from "@/components/discover-results";
 import { withBottleThumbnail } from "@/lib/catalog/bottle-media";
 import { CloseIcon, SearchIcon } from "@/components/icons";
 import { cachedFacets, cachedNotes, cachedSearch } from "@/lib/catalog/cached";
-import { cachedRatings } from "@/lib/community/cached";
 import type { SearchParams } from "@/lib/catalog/queries";
 import { CONCENTRATIONS } from "@/lib/catalog/research-schema";
 import { GENDER_LABEL, hueFor } from "@/lib/hues";
@@ -35,7 +33,7 @@ function parse(raw: Raw): SearchParams {
     perfumer: one(raw.perfumer)?.slice(0, 100),
     year: (() => { const y = Number.parseInt(one(raw.year) ?? "", 10); return y >= 1700 && y <= 2100 ? y : undefined; })(),
     gender: gender === "feminine" || gender === "masculine" || gender === "unisex" ? gender : undefined,
-    sort: sort === "name" || sort === "newest" || sort === "oldest" || sort === "relevance" || sort === "rated" ? sort : undefined,
+    sort: sort === "name" || sort === "newest" || sort === "oldest" || sort === "relevance" ? sort : undefined,
     page: Math.min(Math.max(Number.parseInt(one(raw.page) ?? "1", 10) || 1, 1), 2000),
     pageSize: 24,
   };
@@ -58,7 +56,7 @@ export default function DiscoverPage({ searchParams }: PageProps<"/discover">) {
   return (
     <PageShell className="archive-page">
       <PageTitle>Discover</PageTitle>
-      <nav className="reference-wayfinding archive-learning-links" aria-label="Explore fragrance knowledge"><Link href="/brands">Browse houses</Link><Link href="/notes">Browse notes</Link><Link href="/perfumers">Perfumers</Link><Link href="/charts">Member charts</Link><Link href="/learn">Fragrance guide</Link></nav>
+      <nav className="reference-wayfinding archive-learning-links" aria-label="Explore fragrance knowledge"><Link href="/brands">Browse houses</Link><Link href="/notes">Browse notes</Link><Link href="/perfumers">Perfumers</Link><Link href="/releases">Releases</Link><Link href="/learn">Fragrance guide</Link></nav>
       <Bench />
       <Suspense fallback={<ResultsSkeleton />}>
         <Results searchParams={searchParams} />
@@ -71,7 +69,6 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
   const raw = await searchParams;
   const params = parse(raw);
   const [result, facets, notes] = await Promise.all([cachedSearch(params), cachedFacets(), cachedNotes()]);
-  const ratings = await cachedRatings(result.items.map(f => f.productId));
   const noteLabel = new Map(notes.map((n) => [n.key, n.label]));
   const pages = Math.max(1, Math.ceil(result.total / result.pageSize));
   const active = [
@@ -170,11 +167,11 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             </Link>
           ))}
           <div className="archive-sort ml-auto flex gap-4 text-sm">
-            {(params.q ? (["relevance", "rated", "name", "newest"] as const) : (["name", "rated", "newest", "oldest"] as const)).map((s) => {
+            {(params.q ? (["relevance", "name", "newest"] as const) : (["name", "newest", "oldest"] as const)).map((s) => {
               const current = (params.sort ?? (params.q ? "relevance" : "name")) === s;
               return (
                 <Link key={s} href={href(raw, { sort: s })} aria-current={current ? "true" : undefined} className="capitalize text-ink-3 hover:text-ink aria-[current=true]:text-ink aria-[current=true]:underline">
-                  {s === "rated" ? "Top rated" : s}
+                  {s}
                 </Link>
               );
             })}
@@ -188,7 +185,7 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             <div className="archive-empty-actions">{result.total > 0 && <Link href={href(raw, { page: "1" })}>Back to the first page</Link>}{active.length > 0 && <Link href={params.q ? `/discover?q=${encodeURIComponent(params.q)}` : "/discover"}>Clear filters</Link>}<Link href="/notes">Explore by note</Link></div>
           </div>
         ) : (
-          <DiscoverResults key={result.items.map((f) => f.productId).join(",")} fragrances={result.items.map(f => ({ ...withBottleThumbnail(f), rating: ratings[f.productId] }))} />
+          <DiscoverResults key={result.items.map((f) => f.productId).join(",")} fragrances={result.items.map(withBottleThumbnail)} />
         )}
 
         {pages > 1 && (
@@ -212,7 +209,6 @@ async function Results({ searchParams }: { searchParams: Promise<Raw> }) {
             )}
           </nav>
         )}
-        <CatalogRequest initialName={params.q ?? ""} />
       </section>
     </div>
   );

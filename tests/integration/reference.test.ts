@@ -92,9 +92,7 @@ describe("private catalog requests", () => {
     await submitCatalogRequest(db, { ...input, fragrance: "Third" }, fingerprint);
     expect(await submitCatalogRequest(db, { ...input, fragrance: "Fourth" }, fingerprint)).toEqual({ ok: false, reason: "limit" });
   });
-  it("rejects cross-origin and malformed requests", async () => {
-    const url = "http://localhost:3000/api/catalog-requests";
-    expect((await POST(new Request(url, { method: "POST", headers: { origin: "https://elsewhere.test" }, body: JSON.stringify(input) }))).status).toBe(403);
-    expect((await POST(new Request(url, { method: "POST", headers: { origin: "http://localhost:3000" }, body: "bad" }))).status).toBe(400);
+  it("retires public submissions instead of accepting an unattended request", async () => {
+    expect((await POST()).status).toBe(410);
   });
 });

@@ -17,7 +17,7 @@ const LINKS = [
 /** Reference directories: on desktop beside the main sections, on phones reached from Discover. */
 const DIRECTORIES = [
   { href: "/brands", label: "Houses" },
-  { href: "/charts", label: "Charts" },
+  { href: "/releases", label: "Releases" },
 ];
 
 export function Nav() {

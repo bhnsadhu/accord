@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  redirects() {
+    return [{ source: "/charts", destination: "/releases", permanent: true }];
+  },
   headers() {
     // Inline scripts/styles are required by Next's cached server-rendered shell.
     // Keep this compatible with static rendering; do not pretend it is a nonce CSP.

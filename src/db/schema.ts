@@ -190,8 +190,8 @@ export const scanCache = pgTable(
 );
 
 // ---------------------------------------------------------------------------
-// Community. Everything here is written by signed-in members; nothing is
-// seeded or imported. Public pages show aggregates and published reviews only.
+// Retained legacy community tables. Public routes and contribution actions were
+// retired on 2026-11-08. Keep data and cascading account deletion intact.
 // ---------------------------------------------------------------------------
 
 export const reviewStatusEnum = pgEnum("review_status", ["published", "hidden"]);

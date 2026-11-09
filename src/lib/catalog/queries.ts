@@ -43,7 +43,7 @@ export type SearchParams = {
   concentration?: string;
   perfumer?: string;
   year?: number;
-  sort?: "relevance" | "name" | "newest" | "oldest" | "rated";
+  sort?: "relevance" | "name" | "newest" | "oldest";
   page?: number;
   pageSize?: number;
 };
@@ -131,14 +131,6 @@ export async function searchFragrances(db: Database, params: SearchParams): Prom
           sql`similarity(${q}, ${fragrances.searchText}) desc`,
           asc(fragrances.name),
         ]
-      : sort === "rated"
-        ? [
-            // Weighted toward the average of all member ratings, so one 5-star rating never leads.
-            sql`(select case when count(ci.rating) = 0 then null else (sum(ci.rating) + 3 * (select avg(rating) from collection_items where rating is not null)) / (count(ci.rating) + 3.0) end from collection_items ci where ci.product_id = ${fragrances.productId} and ci.rating is not null) desc nulls last`,
-            sql`(select count(*) from collection_items ci where ci.product_id = ${fragrances.productId} and ci.rating is not null) desc`,
-            asc(brands.name),
-            asc(fragrances.name),
-          ]
       : sort === "newest"
         ? [sql`${summaryColumns.year} desc nulls last`, asc(fragrances.name)]
         : sort === "oldest"

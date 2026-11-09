@@ -1,3 +1,4 @@
+// Legacy data access for maintenance and retention checks only. No public routes use this module.
 import { and, desc, eq, sql } from "drizzle-orm";
 import type { Database } from "@/db";
 import { brands, collectionItems, fragrances, remindsOf, reviewHelpful, reviewReports, reviews, user, wearVotes } from "@/db/schema";

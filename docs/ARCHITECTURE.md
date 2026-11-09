@@ -30,9 +30,9 @@ Postgres via Drizzle and node-postgres. Neon in production (pooled URL, `attachD
 | `user`, `session`, `account`, `verification`, `rate_limit` | Better Auth | Generated schema. Rate limits stored in Postgres because serverless instances share no memory. |
 | `taste_profiles` | Explicit preferences | One JSONB row per user, validated by zod on read and write. Cascades on user delete. |
 | `collection_items` | Shelves, ratings, favourites | PK `(user_id, product_id)`; rating CHECK 1 to 5; cascades on user delete. |
-| `wear_votes` | Member wear votes | PK `(user_id, product_id)`; CHECKed scales for longevity, sillage, reads and value; `seasons[]`, `occasions[]`. Clearing every answer deletes the row. |
-| `reviews`, `review_helpful`, `review_reports` | Member reviews | One review per member and fragrance; `published` or `hidden`; denormalised `helpful` and `reports` counters updated in the same transaction as the vote or report. |
-| `reminds_of` | "Reminds me of" links | PK `(user_id, product_id, other_id)`, at most six per member and fragrance. |
+| `wear_votes` | Retained legacy wear votes | PK `(user_id, product_id)`; CHECKed scales for longevity, sillage, reads and value; `seasons[]`, `occasions[]`. Clearing every answer deletes the row. |
+| `reviews`, `review_helpful`, `review_reports` | Retained legacy reviews | One review per member and fragrance; `published` or `hidden`; denormalised `helpful` and `reports` counters updated in the same transaction as the vote or report. |
+| `reminds_of` | Retained legacy similarity links | PK `(user_id, product_id, other_id)`, at most six per member and fragrance. |
 | `scan_quota`, `scan_slots`, `scan_cache` | Scanner protection | See below. No photos stored. |
 
 Authorization: every write path takes the user id from the verified session (`currentUser()`), never from input, and every query on user data is scoped by it. Integration tests cover cross-user isolation and cascade deletion.
@@ -43,9 +43,11 @@ Authorization: every write path takes the user id from the verified session (`cu
 
 Catalog reads go through `"use cache"` wrappers (`src/lib/catalog/cached.ts`) with `cacheTag("catalog")`, so pages prerender into the static shell and per-fragrance pages are generated on first visit.
 
-## Community (`src/lib/community`)
+## Independent catalog discovery
 
-`rules.ts` holds the vote scales, review validation and chart weighting (a Bayesian average with a three-rating prior). `repo.ts` reads aggregates and writes votes, reviews, helpful marks, reports and links; every write takes the member id from the session. Server actions in `src/app/actions/community.ts` add verified-email checks and per-member budgets (`request_budgets`). Cached readers in `cached.ts` are tagged `community:<productId>` and refreshed with `updateTag` after each write; account deletion revalidates every fragrance the member touched. The member's own votes load through `myCommunityAction` after hydration, so fragrance pages stay prerendered.
+Public community routes, contribution actions and cached aggregate readers were removed on 2026-11-08. Detail, Discover, quick find, house and release pages read only catalog data. Collection ratings are personal recommendation inputs and no longer drive public numbers or sort order. `/charts` redirects to `/releases`; member URLs return 404. The retired catalog-request POST returns 410 without accepting data.
+
+The legacy community tables, maintenance code and retention tests remain so this change does not drop stored data. Account deletion still cascades to those rows. No public route imports `src/lib/community`. Wear guidance is reviewed, attributed research imported with the catalog, with no live API dependency; sections without supported guidance are omitted.
 
 The accord profile (`src/lib/catalog/accord-profile.ts`) estimates relative family strengths from listed notes: for each note, how much more often it appears in each accord family than that family's catalog share. It is cached for weeks with the catalog.
 

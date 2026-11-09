@@ -11,3 +11,7 @@ This block is written and re-added by `next dev`: verify at `node_modules/next/d
 ## Project copy
 
 Do not use em or en dashes in project text, including documentation and UI copy. Use ordinary punctuation, “to” for numeric ranges, and “Not listed” for missing metadata.
+
+## Delivery workflow
+
+Commit and push requested changes at coherent, working checkpoints throughout the task. Do not wait until the end or ask again for permission to commit and push. Run checks appropriate to each checkpoint.

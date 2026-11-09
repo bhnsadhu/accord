@@ -23,7 +23,6 @@ import {
   alsoOnShelves,
   ratingSummaries,
 } from "@/lib/community/repo";
-import { searchFragrances } from "@/lib/catalog/queries";
 import { REMINDS_LIMIT, REPORT_THRESHOLD } from "@/lib/community/rules";
 
 const row = (id: string, name: string): CatalogRow => ({
@@ -109,12 +108,10 @@ describe("ratings and shelves", () => {
 });
 
 describe("search and co-occurrence", () => {
-  it("summarises member ratings for result lists and sorts by them", async () => {
+  it("can inspect retained rating summaries without publishing them", async () => {
     const summary = await ratingSummaries(db, [A, B, C, "not-an-id"]);
     expect(summary[B]).toEqual({ average: 5, count: 4 });
     expect(summary[C]).toBeUndefined();
-    const sorted = await searchFragrances(db, { brand: "community-house", sort: "rated", pageSize: 3 });
-    expect(sorted.items.map(i => i.productId).slice(0, 2)).toEqual([B, A]);
   });
 
   it("links fragrances only when at least two members share them", async () => {

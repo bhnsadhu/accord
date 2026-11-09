@@ -42,11 +42,29 @@
             "fields": [
               "perfumers"
             ]
+          },
+          {
+            "id": "scento-wear",
+            "title": "Santal 33 on Scento",
+            "publisher": "Scento Perfume API",
+            "url": "https://www.scento.com/perfumes/santal-33-le-labo",
+            "kind": "reference",
+            "checkedAt": "2026-11-08",
+            "fields": [
+              "wear"
+            ]
           }
         ],
         "concentration": "Eau de parfum",
         "perfumers": [
           "Frank Voelkl"
+        ],
+        "wear": [
+          {
+            "aspect": "When to wear",
+            "text": "Scento’s editorial guide suggests autumn, winter and spring, during the day or evening. These are suggested settings, not measured performance.",
+            "sourceId": "scento-wear"
+          }
         ]
       }
     },
@@ -77,10 +95,28 @@
               "concentration",
               "year"
             ]
+          },
+          {
+            "id": "scento-wear",
+            "title": "Another 13 on Scento",
+            "publisher": "Scento Perfume API",
+            "url": "https://www.scento.com/perfumes/another-13-le-labo",
+            "kind": "reference",
+            "checkedAt": "2026-11-08",
+            "fields": [
+              "wear"
+            ]
           }
         ],
         "concentration": "Eau de parfum",
-        "year": 2010
+        "year": 2010,
+        "wear": [
+          {
+            "aspect": "When to wear",
+            "text": "Scento’s editorial guide suggests autumn, winter and spring, during the day or evening. These are suggested settings, not measured performance.",
+            "sourceId": "scento-wear"
+          }
+        ]
       }
     },
     {

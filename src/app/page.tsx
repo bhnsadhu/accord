@@ -44,7 +44,7 @@ export default async function Home() {
       <section className="signature-hero" aria-labelledby="signature-heading">
         <div className="signature-heading">
           <div>
-            <h1 id="signature-heading">Find your next signature.</h1>
+            <h1 id="signature-heading">Know the bottle. Find the next one.</h1>
             <p>Fragrance, understood through notes.</p>
           </div>
           <div className="signature-search">

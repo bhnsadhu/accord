@@ -229,7 +229,7 @@ function problemFor(body: { status?: string; scope?: string; kind?: string; erro
     case "failed":
       return body.kind === "timeout"
         ? new Problem("ScentLens took too long.", "It may be starting up. Wait a minute, then try once more.", true)
-        : new Problem("ScentLens didn't respond.", "The recognizer may be down. Try later, or search by name.", true);
+        : new Problem("ScentLens is paused right now.", "Its free hosting may be out of credit for the month. Watch the demo on ScentLens, or search by name.", true);
     case "disabled":
       return new Problem("Scanning is switched off.", "Search by name instead.", false);
     default:

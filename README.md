@@ -1,143 +1,146 @@
-<p align="center"><img src="src/app/apple-icon.png" width="88" height="88" alt="Accord's app icon, a paper smelling strip"></p>
+<p align="center"><img src="src/app/icon.svg" width="72" height="72" alt="Accord mark: a smelling strip"></p>
 
 # Accord
 
-**A fragrance discovery app that explains itself.** Search 24,651 fragrances, identify a bottle from a photo, and get recommendations that say exactly which notes and favourites they come from.
+**Find a fragrance, identify a bottle from a photo, and get picks that name the notes and favourites behind them.** Search 24,661 fragrances with a clear reason attached to every suggestion.
 
-**[Try it → accord.bhanusadhu.com](https://accord.bhanusadhu.com)** · works as a guest, no sign-up needed.
+**[Try it → accord.bhanusadhu.com](https://accord.bhanusadhu.com)** · free, no sign-up needed to browse, search and get recommendations
 
-![Demo: the homepage fans out paper smelling strips, quick find searches "santal 33" and opens Le Labo Santal 33, which is marked Owned and rated 5 stars; For you then lists fragrances ranked top 1% for this taste, each explained as close to Santal 33 and sharing its violet, leather and iris notes](docs/screenshots/demo.gif)
+![Accord in use: quick find opens with the keyboard, Santal 33 is found by typing, its page is marked as owned, and a ranked "For you" list follows, each pick showing a relative percentile match](docs/screenshots/demo.gif)
+
+![The Accord home page: six smelling strips fanned across a silver bench, each stained with the colour of its accord family, with a search box and a scan button](docs/screenshots/home.jpg)
 
 ## The problem
 
-People who love fragrance spend hours researching what to try next, but the big reference sites are cluttered forums, and their recommendations are either popularity lists or a black box. In a store or at a friend's place, the first question is usually "what is this?", and the answer means squinting at a label or asking around.
+People who collect fragrance already know a few notes and a few favourites, then lose hours across review sites and forums trying to answer three questions: what is this bottle, what would I like, and what smells like the one I love. Most tools answer with a popularity chart and no reasoning, and a bottle in your hand has no search box at all.
 
-The goal: **a visitor finds a fragrance they want to try, and understands why it was suggested.**
+Accord aims for one outcome: **a visitor finds a fragrance they want to try and understands why it was suggested.**
 
 ## How it works
 
-1. **Find.** Quick find (⌘K) searches names, houses and aliases and tolerates typos; Discover filters by notes to include or avoid.
-2. **Identify.** Photograph a bottle and [ScentLens](https://scentlens.bhanusadhu.com), a separate recognition model, names it from the catalog, or says it isn't sure.
-3. **Understand.** Each fragrance page shows its accord family, notes, an estimated accord profile, sourced facts (or "Not listed"), and similar fragrances.
-4. **Collect.** Mark bottles as Owned, Tried or Wishlist and rate them. It works on the device as a guest and merges into an account on sign-in.
-5. **Get picks.** For you ranks the whole catalog for your taste and explains every pick with the notes and favourites it shares.
+1. **Find.** Quick find (`⌘K`) and Discover search by name, alias, house, accord family and included or excluded notes, tolerant of typos.
+2. **Learn.** Each fragrance page shows sourced facts, an accord profile estimated from its listed notes, pictured notes, and top, heart and base stages only where a source assigns them.
+3. **Collect.** Mark a bottle Owned, Tried or Wishlist, rate it, and set liked and avoided notes. Guests keep this in the browser and it merges into an account on sign-in.
+4. **Get picks.** "For you" ranks the catalog and says why: the notes you like that a pick contains, and the favourite it resembles. The match is a percentile, never a probability.
+5. **Scan.** Photograph a bottle. [ScentLens](https://github.com/bhnsadhu/scent-lens) names it or says it is not sure, and an unsure result shows ghost strips instead of an answer.
 
-<p align="center"><img src="docs/screenshots/scan.jpg" width="80%" alt="The scan screen explains the four steps: find the bottle, compare it with 24,642 catalog fragrances, read the label, then name it or say it is not sure"></p>
+![The Discover page: a search for "santal" returns 172 fragrances as paper strips, with accord families and counts on the left and a preview of the selected fragrance on the right](docs/screenshots/discover.jpg)
 
 ## Product decisions
 
 | Decision | Trade-off |
 | --- | --- |
-| **Content-based picks, no collaborative filtering** | It can't learn "people who liked X also liked Y". There is no real interaction data to learn from, and faking it would fake the personalisation. |
-| **Match is a percentile, not a promise** | "Top 1%" sounds less exciting than "98% match". It is honest: the fragrance outscored 99% of the catalog for this taste, which says nothing certain about whether you'll love it. |
-| **The scanner may say "Not sure"** | Fewer photos get a name. But an unsure guess shown as an answer would cost more trust than it buys, so uncertain candidates appear as faint, unstained strips. |
-| **Useful before sign-up** | Guests keep their taste and shelves only on the device. In return anyone can browse, search and get picks on the first visit; signing in merges what they did. |
-| **Useful without a community** | Discovery uses catalog facts and attributed research. Unsupported ratings, reviews and votes are omitted; personal ratings still improve the visitor’s own recommendations. |
-| **Not a store** | No prices or retailer links, so no obvious way to earn money. It keeps the product about understanding fragrance, not selling it. |
+| **Useful before sign-up** | Guest state lives in `localStorage`, so it is lost if the browser is cleared, in return for zero friction. It merges into the account on first sign-in. |
+| **Explain every pick, never score it as a probability** | "Top 1%" means a pick outscored 99% of eligible fragrances. It sounds less impressive than "97% match" and is true. |
+| **Text and sourced facts only, "Not listed" when unknown** | Many pages look sparse: only 12 entries name a perfumer and 610 carry sourced note stages out of 24,661. In return nothing on a page is invented. |
+| **Scanner behind hard caps** | Three scans a day across the whole site, so most visitors cannot scan. That keeps spend at $0 on a free Modal credit, and a paused scanner says so and points to the ScentLens demo. |
+| **Built member ratings and reviews, then removed them** | Public ratings, reviews and charts needed real contributors Accord does not have, so they were retired. Private shelves and ratings stay, and every public page now reads catalog data only. |
+| **One visual system, strips on a bench** | Every list is a smelling strip stained by its accord family. It is distinctive and costs some density compared with a plain table. |
 
 ## Architecture
 
 ```mermaid
 flowchart TD
-  subgraph web["Browser"]
+  subgraph client["Browser"]
     direction LR
-    pages["Pages<br/>find, detail, For you"] ~~~ state["Taste and shelves<br/>device or account"]
+    guest["Guest state<br/>localStorage"] ~~~ ui["Strips, quick find"] ~~~ cam["Photo, 1024 px"]
   end
-  subgraph app["Next.js on Vercel"]
+  subgraph server["Next.js on Vercel"]
     direction LR
-    cat["Catalog reads<br/>cached, trigram search"] ~~~ reco["Recommender<br/>in-memory index"] ~~~ scan["Scan route<br/>cache, lease, quota"]
+    cat["Cached catalog<br/>and search"] ~~~ reco["Recommender<br/>in memory"] ~~~ guard["Scan guard<br/>cache, lease, quota"]
   end
-  subgraph ext["Data and model"]
+  subgraph data["Data and engine"]
     direction LR
-    neon[("Neon Postgres<br/>catalog, accounts, collections")] ~~~ sl["ScentLens on Modal<br/>bottle recognition"]
+    db["Neon Postgres"] ~~~ lens["ScentLens<br/>on Modal"]
   end
-  web --> app
-  app --> ext
+  client --> server
+  server --> data
 ```
 
-Catalog pages are prerendered and cached, and refreshed when the data changes. The recommender builds a note index of the whole catalog once per server instance and ranks all 24.6k fragrances in about **40 ms**. Every write takes the user from the verified session, never from the request. → [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+Pages prerender from `"use cache"` catalog reads, the recommender builds a sparse note index once per server instance, and only the scan route talks to ScentLens. Details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Hard problems
 
-**Recommending with no usage data.** With no interaction data there's no ground truth for "would this person enjoy it", so the recommender was judged on a proxy: like four fragrances from one line (say, four Dior Sauvage flankers), hide a fifth, and see where it ranks among 24.6k. The first blend scored *worse* than notes alone at the top of the list. Adding similarity to the single closest liked fragrance lifted the hit rate in the top 24 from **9.0% to 12.0%**, against **0.3%** for random order. → [docs/EVALUATION.md](docs/EVALUATION.md), [`src/lib/reco`](src/lib/reco)
+**Recommending with no interaction data.** Accord has no user history to learn from, so collaborative filtering was off the table. The recommender in [src/lib/reco](src/lib/reco) is content-based: smoothed IDF note vectors, accord similarity, similarity to the closest liked fragrance, and a small personalized PageRank term, diversified with MMR. To check it, a script hides one fragrance from a line the simulated person likes (Chanel Chance, Dior Sauvage) and ranks it among about 24,600 others. My first blend scored worse than notes alone at the top of the list. Adding the nearest-liked term lifted **Hit@24 from 9.0% to 12.0%**, so it shipped.
 
-**A scanner that can't run up a bill.** Recognition runs on a GPU service with a hard monthly limit. Every request passes a kill switch, a size and format check, and a 24-hour cache keyed by the photo's hash. It then needs one of two slots (leased with `FOR UPDATE SKIP LOCKED`) and an atomic quota check across global, account and guest scopes. Only then does it call the model. Abstentions can never be displayed as answers. → [`src/lib/scan`](src/lib/scan)
+**A scanner that cannot overspend.** ScentLens runs on a free Modal credit with a $1 monthly limit, so [src/lib/scan](src/lib/scan) treats every call as money. A kill switch comes first, then size and magic-byte checks, a 24-hour result cache keyed by image hash, two concurrency slots taken with `FOR UPDATE SKIP LOCKED`, and quotas consumed in one transaction for the site, the account and the guest. An abstained result is forced to `product_id: null` so the UI cannot show it as an answer. A production cold scan took **29.9 s**, and unauthorized calls get a 401 before any compute starts.
 
-**Turning messy catalog text into structure.** The source lists accords as phrases like "Woody Amber Fresher Citrus". A parser maps each to an Edwards-wheel family, a character and facets, renames the legacy "Oriental" to "Amber", and drops stray perfumer names. The catalog has no accord strengths, so the profile bars are estimated from how strongly each listed note leans toward a family across the catalog, and are labelled as estimates. → [`src/lib/catalog`](src/lib/catalog)
+**Showing only what a source supports.** Catalog notes are a flat list, but people expect a top, heart and base pyramid. [scripts/prepare-note-stages.ts](scripts/prepare-note-stages.ts) matches an open dataset by house and full name and rejects conflicting concentrations or years, ambiguous editions and incomplete pyramids. Entries with no source keep the flat list and say "Not listed". Accord profile bars are labelled as estimates, with the method one click away. See [docs/CATALOG-RESEARCH.md](docs/CATALOG-RESEARCH.md).
 
-**Reference data without a community dependency.** Published wear guidance carries a named source and checked date. Seasonal guidance for two exact editions was retrieved through Scento’s public API. Unavailable ratings, reviews, votes and public profiles are removed; releases and note-based similarity work from the catalog. → [docs/CATALOG-RESEARCH.md](docs/CATALOG-RESEARCH.md)
+**24,649 bottle photos without bloating Git.** The optimized images ship as a pinned GitHub release asset. `npm run build` downloads it, checks size and SHA-256, rejects unexpected paths and restores the files, so the repository stays small and builds stay reproducible. See [docs/CATALOG-IMAGES.md](docs/CATALOG-IMAGES.md).
+
+![An accord profile for Chance Eau de Parfum: stained bars for Woody Amber, Green, Mossy Woods, Soft Floral, Floral Amber and Floral, each listing the notes behind it, with a link to how the profile is calculated](docs/screenshots/profile.jpg)
 
 ## Results
 
-| Recommender variant (line hold-out, 300 trials) | Hit in top 24 | Median rank of 24.6k |
-| --- | --- | --- |
-| Random order | 0.3% | 12,713 |
-| Notes only | 9.7% | 3,776 |
-| Nearest liked fragrance only | 8.7% | 3,461 |
-| **Shipped blend** | **12.0%** | **2,717** |
+- **116 unit and integration tests in 14 files** (Vitest). The integration tests run the real `pg` driver over in-memory PGlite and cover cross-user isolation, cascade deletion on account removal, scan quotas and leases, and security rules.
+- **74 Playwright tests in 14 files** across desktop and mobile, with the scanner mocked. They include accessibility checks with axe against WCAG 2.2 AA, account recovery, guest and account collections, and quick find.
+- **Recommender, offline line hold-out** (seed 42, 300 trials, 24,642 fragrances at the time): Hit@24 **12.0%** against 0.3% for random order, median rank **2,717** of about 24,600. This is a proxy. Flankers share notes, so it rewards note similarity and says nothing about enjoyment. Full table in [docs/EVALUATION.md](docs/EVALUATION.md).
+- **Ranking latency:** about **40 ms** for a full ranking of the catalog on a laptop, single thread.
+- **Live scan check:** one real photo returned the right fragrance at confidence 0.999 in 21.6 s with a cold container. One photo is a contract check, not an accuracy measurement. Scanner accuracy is measured and reported in the [ScentLens repository](https://github.com/bhnsadhu/scent-lens).
+- **Production hardening:** zero known findings in the production dependency audit, and an encrypted daily backup restored in a PostgreSQL 18 drill, all 18 tables verified. See [docs/OPERATIONS.md](docs/OPERATIONS.md).
 
-- **109** unit tests. They cover similarity and IDF weighting, cold start, rating-driven re-ranking, avoided-note exclusion, brand diversity and evidence-only explanations. Integration tests run the real Postgres driver against an in-memory database and check cross-user isolation and cascade deletion.
-- **14** Playwright specs: journeys, quick find, mobile, catalog independence, account recovery and accessibility checks (axe) across 19 pages.
-- **Scanner contract** verified live: one real bottle photo identified correctly at 0.999 confidence. That took **21.6 s** end to end with the model waking up, and 5.6 s inside the model. This checks the integration, not accuracy; ScentLens documents its own accuracy.
-
-Not measured: whether people enjoy the picks. The hold-out uses fragrance lines as a stand-in for taste, so read the numbers comparatively.
+**Not measured:** real users, satisfaction or whether the picks are enjoyed. No users, ratings or testimonials are shown anywhere because none exist.
 
 ## How it was built
 
-1. **Catalog and recommender.** The schema, typo-tolerant search and the explainable recommender came first, with the offline evaluation deciding the weights.
-2. **A guarded scanner.** ScentLens was wired in behind quotas, with the caps sized to a verified $1 monthly model budget.
-3. **The Blotter look.** Fragrances became paper smelling strips on an evaluation bench, each stained by its accord family, with a fanned-out hero.
-4. **Production hardening.** Verified-email sign-up, account recovery, immediate session revocation, data export, security headers, and encrypted daily backups with a tested restore.
-5. **A real reference.** Sourced fragrance profiles, a note library, bottle photos for 24,649 of 24,651 entries, and recent launches added through a request workflow.
-6. **Independent discovery.** House, perfumer and release pages work from the catalog. The initial community experiment was retired after a source-access review; personal collections and taste remain. Database migrations run during the production build, so the site never runs ahead of its schema.
+- **The engine first.** Schema, catalog seed from the ScentLens export, fuzzy search, the recommender with its evaluation script, then collections and taste profiles.
+- **Scanner behind a guard.** The ScentLens client, validation, quotas and leases landed before any interface for it, and were sized to the verified $1 Modal budget.
+- **A visual world.** After three explored directions, the strips-on-a-bench direction was chosen and applied everywhere, then a finish review fixed eight material problems and two regressions.
+- **Production.** Verified email accounts, expiring recovery links, backups, security headers and a restore drill, deployed on Vercel and Neon at $0.
+- **A reference, not just a recommender.** Licensed and attributed photos for 24,649 bottles, pictured notes, sourced note stages and attributed wear guidance.
+- **A turning point.** Ratings, reviews, wear votes and charts were built, shipped, then retired when the product no longer depended on anyone's contributions. The legacy tables remain so stored data and account deletion keep working.
 
 ## Tech stack
 
 | Layer | Technology |
 | --- | --- |
-| App | Next.js (App Router, Cache Components), React, TypeScript, Tailwind CSS |
-| Data | Neon Postgres, Drizzle ORM, `pg_trgm` search; PGlite locally and in tests |
-| Auth | Better Auth (email and password, verified email) |
-| Recognition | ScentLens on Modal, called through `@gradio/client` |
-| Testing | Vitest, Playwright, axe |
-| Hosting | Vercel Hobby, Neon Free, Modal with a $1 monthly cap ([COSTS.md](COSTS.md)) |
+| Frontend | Next.js 16 (App Router, `cacheComponents`), React 19, TypeScript strict, Tailwind 4, Lenis |
+| Backend | Next.js route handlers and server actions, Better Auth, zod |
+| Data | PostgreSQL with `pg_trgm`, Drizzle ORM, `pg` driver. Neon in production, PGlite locally |
+| Recognition | ScentLens (OWLv2, SigLIP 2, OCR) on Modal, called with `@gradio/client` |
+| Testing | Vitest, Playwright, axe-core |
+| Hosting | Vercel Hobby and Neon Free, $0 ([COSTS.md](COSTS.md)) |
 
 ## Run it locally
 
 ```bash
 npm install
-npm run db:server                      # local Postgres (PGlite) on :5433, keep it running
-npm run db:migrate && npm run db:seed  # schema, then the catalog
-npm run dev                            # http://localhost:3000
+npm run db:server                     # PGlite on 127.0.0.1:5433, keep it running
+npm run db:migrate && npm run db:seed # needs the ScentLens products.csv, not committed
+npm run dev                           # http://localhost:3000, scanner off unless SCANNER_MODE is set
 npm run typecheck && npm run lint && npm test
-npm run test:e2e                       # Playwright, with the scanner mocked
-npx tsx scripts/evaluate-reco.ts       # the recommender hold-out evaluation
+npm run test:e2e                      # builds and serves on :3200 with the scanner mocked
+npx tsx scripts/evaluate-reco.ts      # offline recommender evaluation
 ```
 
-Environment variable names are in `.env.example`. The scanner stays off unless `SCANNER_MODE=live` and `SCENTLENS_URL` are set. Pushes to `main` deploy production on Vercel.
+Environment variable names are listed in `.env.example`. Pushing to `main` deploys to Vercel, and production builds apply pending migrations first.
 
 ## Project structure
 
-```
-src/app/               # Routes, API endpoints and server actions
-src/components/        # Strip module, quick find, scanner, profile builder
-src/lib/catalog/       # Accord parsing, queries, cached readers, accord profile
-src/lib/reco/          # Index, similarity, scoring, graph walk, explanations
-src/lib/scan/          # ScentLens client, image checks, cache, slots, quotas
-src/lib/community/     # Retained legacy data access for maintenance only
-src/db/                # Drizzle schema
-scripts/               # Database server, migrate, seed, evaluation, moderation
-tests/                 # Integration (PGlite) and Playwright specs
-docs/                  # Architecture, decisions, evaluation, operations, design
+```text
+src/app/          routes: discover, fragrance, for-you, collection, scan, houses, releases
+src/components/   the strip module, quick find, scanner, profile builder
+src/lib/reco/     recommender: index, similarity, scoring, graph, explanations
+src/lib/scan/     ScentLens client, image checks, quotas, leases, cache
+src/lib/catalog/  parsing, seeding, cached queries, accord profile
+src/db/           Drizzle schema
+drizzle/          SQL migrations
+scripts/          seed, migrate, evaluation, catalog research import
+tests/            integration (PGlite) and e2e (Playwright)
+docs/             architecture, decisions, evaluation, operations
 ```
 
 ## What's next
 
-Known limits:
-- The source catalog ends in early 2024; newer launches are added one by one after research.
-- Many fragrances still list no perfumer or note stages ("Not listed").
-- Scans are capped at a few a day to stay inside the free model budget, and a cold model takes about 30 s.
+**Known limits**
 
-Next to measure, once members use it: how often a pick gets saved or rated, and whether picks rate higher than fragrances people find on their own.
+- The source catalog ends in early 2024. Later launches are added by hand, and only when sourced.
+- Sparse pages are common: 12 entries have a named perfumer, 610 have sourced note stages and 9 have wear guidance.
+- Bottle photos come from a dataset labelled MIT whose individual photographers' permissions are undocumented. The limitation is disclosed on the site.
+- The scanner is capped by a free credit shared with the ScentLens demo, and a cold scan takes about 30 s.
+- The logo is a placeholder.
 
-[Architecture](docs/ARCHITECTURE.md) · [Decisions](docs/DECISIONS.md) · [Evaluation](docs/EVALUATION.md) · [Operations](docs/OPERATIONS.md) · [Costs](COSTS.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+**Next:** more sourced note stages and perfumers in batches, a real-photo accuracy check of the scanner inside Accord, and a measure of whether explanations change what people try.
+
+[Architecture](docs/ARCHITECTURE.md) · [Decisions](docs/DECISIONS.md) · [Evaluation](docs/EVALUATION.md) · [Operations](docs/OPERATIONS.md) · [Catalog research](docs/CATALOG-RESEARCH.md) · [Costs](COSTS.md)

@@ -12,19 +12,6 @@ export const VALUE = ["Overpriced", "A little high", "Fair", "Good value", "Grea
 export const SEASONS = ["winter", "spring", "summer", "autumn"] as const;
 export const OCCASIONS = ["day", "night"] as const;
 
-export const SEASON_LABEL: Record<(typeof SEASONS)[number], string> = { winter: "Winter", spring: "Spring", summer: "Summer", autumn: "Autumn" };
-export const OCCASION_LABEL: Record<(typeof OCCASIONS)[number], string> = { day: "Day", night: "Night" };
-
-export const SHELF_LABEL = { owned: "Owns it", tried: "Tried it", wishlist: "Wants to try it" } as const;
-
-/** A review or join date, the same on server and client. */
-export function formatDate(value: string) {
-  return new Date(value).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
-}
-
-/** Cache tag for one fragrance's member data. */
-export const communityTag = (productId: string) => `community:${productId}`;
-
 export const productIdSchema = z.string().regex(/^(p\d{5}|a[0-9a-f]{12})$/);
 const scale = (max: number) => z.number().int().min(1).max(max).nullable().default(null);
 
@@ -75,16 +62,4 @@ export const CHART_MIN_RATINGS = 3;
 export function weightedRating(sum: number, count: number, mean: number, prior = CHART_MIN_RATINGS) {
   if (count <= 0) return mean;
   return (prior * mean + sum) / (prior + count);
-}
-
-/** The option most members chose, or null when nobody voted or the top choices tie. */
-export function leading(counts: number[]): number | null {
-  const max = Math.max(0, ...counts);
-  if (max === 0) return null;
-  const top = counts.flatMap((c, i) => (c === max ? [i] : []));
-  return top.length === 1 ? top[0] : null;
-}
-
-export function percent(part: number, whole: number) {
-  return whole > 0 ? Math.round((part / whole) * 100) : 0;
 }

@@ -285,21 +285,6 @@ export async function mostOnShelf(db: Database, shelf: "owned" | "wishlist" | "t
   return rows.map(r => ({ ...r, value: r.count }));
 }
 
-export async function mostReviewed(db: Database, limit = 20): Promise<ChartEntry[]> {
-  const rows = await db
-    .select({ productId: reviews.productId, count: sql<number>`count(*)`.mapWith(Number) })
-    .from(reviews)
-    .where(eq(reviews.status, "published"))
-    .groupBy(reviews.productId)
-    .orderBy(sql`2 desc`, reviews.productId)
-    .limit(limit);
-  return rows.map(r => ({ ...r, value: r.count }));
-}
-
-export async function recentReviews(db: Database, limit = 12): Promise<ReviewItem[]> {
-  return reviewQuery(db).where(eq(reviews.status, "published")).orderBy(desc(reviews.createdAt), desc(reviews.id)).limit(limit);
-}
-
 export async function communityTotals(db: Database) {
   const result = await db.execute<{ members: number; ratings: number; reviews: number; votes: number }>(sql`
     select
@@ -334,16 +319,6 @@ export async function setReviewStatus(db: Database, reviewId: number, status: "p
     if (clearReports) await tx.delete(reviewReports).where(eq(reviewReports.reviewId, reviewId));
     await tx.update(reviews).set({ status, ...(clearReports ? { reports: 0 } : {}) }).where(eq(reviews.id, reviewId));
   });
-}
-
-/** Every fragrance whose public totals include this member, for cache refresh when the account goes. */
-export async function memberFootprint(db: Database, userId: string): Promise<string[]> {
-  const result = await db.execute<{ product_id: string }>(sql`
-    select product_id from ${collectionItems} where user_id = ${userId}
-    union select product_id from ${reviews} where user_id = ${userId}
-    union select product_id from ${wearVotes} where user_id = ${userId}
-    union select product_id from ${remindsOf} where user_id = ${userId}`);
-  return result.rows.map(r => r.product_id);
 }
 
 export type RatingSummary = { average: number; count: number };

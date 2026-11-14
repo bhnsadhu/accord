@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-11-13",
+  "timezone": "America/Chicago",
+  "purpose": "Bounded ten-fragrance evaluation; no production import",
+  "status": "incomplete",
+  "terms": {
+    "url": "https://mcp.scentrev.com/terms",
+    "lastUpdated": "2026-10-12",
+    "scope": "MCP and REST service",
+    "programmaticAccessOffered": true,
+    "bulkExtractionAllowed": false,
+    "directlyCompetingDatasetAllowed": false,
+    "explicitCacheDuration": null,
+    "upstreamCommunityNamed": false,
+    "pageIncludesTemplateNotice": true
+  },
+  "directMcp": {
+    "endpoint": "https://api.scentrev.com/mcp/",
+    "initializeAttempts": 2,
+    "httpStatus": 403,
+    "errorCode": 1010,
+    "errorName": "browser_signature_banned",
+    "source": "Cloudflare response",
+    "apiKeyValidated": false,
+    "fragranceToolCalls": 0,
+    "transportChangedToBypassBlock": false,
+    "note": "Second initialization inspected the error body. Stopped direct requests after the response identified a non-retryable traffic-filter block."
+  },
+  "officialPlayground": {
+    "url": "https://mcp.scentrev.com/playground",
+    "authenticated": true,
+    "calls": 1,
+    "results": [
+      {
+        "recipe": "Full profile for Aventus",
+        "tool": "get_fragrance_profile",
+        "slug": "creed-aventus",
+        "httpStatus": 200,
+        "displayedName": "Aventus",
+        "payloadInspected": false
+      }
+    ]
+  },
+  "plannedSamples": [
+    {
+      "name": "Santal 33",
+      "brand": "Le Labo",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Another 13",
+      "brand": "Le Labo",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Sauvage",
+      "brand": "Dior",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Bleu de Chanel",
+      "brand": "Chanel",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Aventus",
+      "brand": "Creed",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Baccarat Rouge 540",
+      "brand": "Maison Francis Kurkdjian",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Tobacco Vanille",
+      "brand": "Tom Ford",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Black Opium",
+      "brand": "Yves Saint Laurent",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Layton",
+      "brand": "Parfums de Marly",
+      "edition": "Eau de Parfum"
+    },
+    {
+      "name": "Light Blue",
+      "brand": "Dolce&Gabbana",
+      "edition": "Original women's Eau de Toilette"
+    }
+  ],
+  "exactEditionsValidated": 0,
+  "productionImports": 0,
+  "paidServicesStarted": 0
+}

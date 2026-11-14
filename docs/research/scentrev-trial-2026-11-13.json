@@ -644,5 +644,27 @@
     "Full-profile rating scales disclosed Bayesian smoothing for the inspected Aventus and Santal 33 responses. Comparison scales omit that detail; only those two scores were cross-checked across tools.",
     "No low-vote or missing-fragrance response was inspected. Similarity and written reviews remain unvalidated.",
     "Successful browser results do not validate the supplied bearer key or direct backend access."
-  ]
+  ],
+  "directRest": {
+    "checkedAt": "2026-11-13",
+    "observedAtUtc": "2026-11-14T02:04:25.402878+00:00",
+    "documentation": "https://mcp.scentrev.com/perfume-api",
+    "endpoint": "https://api.scentrev.com/rpc/search_fragrances_filtered",
+    "method": "POST",
+    "parameters": {
+      "filter_season": "summer",
+      "min_sillage_category": "moderate",
+      "sort_by": "rating"
+    },
+    "attempts": 1,
+    "automaticRetries": false,
+    "followedRedirects": false,
+    "transport": "Python urllib default client; no browser impersonation",
+    "apiKeyValidated": false,
+    "httpStatus": 403,
+    "cloudflare1010": true,
+    "browserSignatureBanned": false,
+    "responseType": "non-JSON",
+    "note": "Single read-only request using the published REST example. HTTP 403; body contains 1010 and is not JSON. No repeat attempts or transport changes after this result."
+  }
 }

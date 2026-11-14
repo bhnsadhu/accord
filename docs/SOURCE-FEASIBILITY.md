@@ -60,7 +60,9 @@ Some indexed Noteboxd pages still describe v1. The fetched v2 contract and curre
 
 ### ScentRev trial, 2026-11-13
 
-The [trial record](research/scentrev-trial-2026-11-13.json) separates direct transport checks from the official Playground. Two initialization attempts returned HTTP 403. The second inspected the response and identified Cloudflare error 1010, `browser_signature_banned`, marked non-retryable. Direct requests stopped at that point. No fingerprint, proxy or endpoint bypass was attempted, and no fragrance tool was called through the direct API. This response does not establish whether the key is valid.
+The [trial record](research/scentrev-trial-2026-11-13.json) separates direct transport checks from the official Playground. Two initialization attempts returned HTTP 403. The second inspected the response and identified Cloudflare error 1010, `browser_signature_banned`, marked non-retryable. MCP attempts stopped at that point. No fingerprint, proxy or endpoint bypass was attempted, and no fragrance data was returned through the direct API. This response does not establish whether the key is valid.
+
+A follow-up checked the [published REST example](https://mcp.scentrev.com/perfume-api), which the provider recommends for custom backends. One POST to `/rpc/search_fragrances_filtered` with its documented summer/moderate/rating parameters and the existing bearer key also returned HTTP 403. The non-JSON body contained 1010. The default Python HTTP client made no retries, followed no redirects and used no browser impersonation. This does not validate the key or establish that every runtime is blocked. Both documented interfaces have now failed from this environment, so the next access step is provider troubleshooting.
 
 The official [Playground](https://mcp.scentrev.com/playground) returned ten records in a single comparison, plus separately inspected Aventus and Santal 33 profile results and a Santal 33 performance response. The comparison supplied positive `n_records` with ratings, longevity, sillage and all four seasons for every record. These were deliberately selected popular fragrances, not a representative coverage or accuracy benchmark.
 
@@ -116,6 +118,25 @@ The ten-record comparison is inspected and its local presentation can be reviewe
 4. Are source observation dates and concentration-specific metadata available? What happens after the temporary free period?
 
 If these points are resolved, the next implementation should extend the local preview with server-side lookups on reviewed existing Accord identities: an attributed rating, longevity, sillage and seasonal guidance, with clear missing-data and provider-failure behavior. Fetch on demand within the free allowance; do not mirror the catalog or expose the key in the browser. Test a low-vote record, a nonexistent slug and any intended similarity response before publishing. Reviews and live popularity remain separate unvalidated features.
+
+## Provider support request, not sent
+
+Subject: Accord integration: backend HTTP 403 and metric provenance
+
+Hi ScentRev team,
+
+I am evaluating ScentRev for Accord, a fragrance discovery app. The signed-in Playground works, including a ten-fragrance comparison, but my backend requests fail. On November 13, 2026, America/Chicago, MCP initialization at `https://api.scentrev.com/mcp/` returned HTTP 403 with Cloudflare 1010, `browser_signature_banned`. Your published POST example for `https://api.scentrev.com/rpc/search_fragrances_filtered` also returned HTTP 403 with 1010 in a non-JSON response. These used Python's standard HTTP client and bearer authentication. Can you confirm the supported backend setup and help diagnose the traffic filter? I can provide request details privately without sharing the API key.
+
+The intended use is an attributed, on-demand rating and wear summary for individual Accord fragrance pages. Please clarify:
+
+1. Is this use supported, and what attribution, caching duration and post-free-period pricing apply?
+2. Which communities supply the metrics? Your docs describe `n_records` as votes. Are these exact distinct-voter counts, rounded totals or another aggregate? All forty inspected seasonal counts were multiples of 100.
+3. Are any scores or counts predicted or seeded? Are source observation dates, concentration-specific identities and per-field calculation methods available?
+
+Thanks,
+Bhanu
+
+This is an unsent local draft. No provider message has been transmitted. The website's linked GitHub repository returned 404 when checked, so a working support destination has not been verified.
 
 ## Verification and scope
 

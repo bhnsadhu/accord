@@ -75,6 +75,8 @@ node --import=dotenv/config node_modules/next/dist/bin/next build
 
 ## Source-access review, 2026-11-08
 
+The follow-up [external data feasibility review](SOURCE-FEASIBILITY.md), started on 2026-11-13, evaluates whether sources can support restoring the retired features. It records investigation results separately from the current product behavior below.
+
 The owner requested existing sources before removing community-dependent features. The bounded review found:
 
 - [Fragrantica’s published terms](https://www.fragrantica.com/terms-of-service.phtml) require written authorization for automated access and reuse. No authorized API or agreement is configured here. No Fragrantica data was imported.

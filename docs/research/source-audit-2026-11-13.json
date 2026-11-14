@@ -360,11 +360,12 @@
   },
   "scentrev": {
     "documentation": "https://mcp.scentrev.com/docs",
-    "fragranceResponsesTested": false,
-    "reason": "Trial started. Direct MCP initialization blocked by Cloudflare 1010; one official Playground recipe returned HTTP 200 but its metric payload is not yet inspected.",
+    "fragranceResponsesTested": true,
+    "reason": "Ten comparison records inspected through the official signed-in Playground, plus selected profile and performance responses. Direct MCP initialization remains blocked by Cloudflare 1010. Source dates, upstream provenance, exact edition mapping and missing-data behavior remain unresolved.",
     "trialRecord": "scentrev-trial-2026-11-13.json",
     "apiTerms": "https://mcp.scentrev.com/terms",
-    "keySuppliedByUser": true
+    "keySuppliedByUser": true,
+    "comparisonRecordsInspected": 10
   },
   "scentverdict": {
     "endpoint": "https://scentverdict.com/mcp",

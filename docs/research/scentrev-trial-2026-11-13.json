@@ -2,7 +2,7 @@
   "checkedAt": "2026-11-13",
   "timezone": "America/Chicago",
   "purpose": "Bounded ten-fragrance evaluation; no production import",
-  "status": "incomplete",
+  "status": "Ten-record comparison inspected; production suitability not established",
   "terms": {
     "url": "https://mcp.scentrev.com/terms",
     "lastUpdated": "2026-10-12",
@@ -29,7 +29,6 @@
   "officialPlayground": {
     "url": "https://mcp.scentrev.com/playground",
     "authenticated": true,
-    "calls": 1,
     "results": [
       {
         "recipe": "Full profile for Aventus",
@@ -37,9 +36,531 @@
         "slug": "creed-aventus",
         "httpStatus": 200,
         "displayedName": "Aventus",
-        "payloadInspected": false
+        "payloadInspected": true,
+        "observedIdentity": {
+          "name": "Aventus",
+          "brand_name": "Creed",
+          "public_id": "312329ca-0ad9-4a79-a586-2a4b815c18f7"
+        },
+        "observedRating": {
+          "score": 0.864,
+          "n_records": 26137,
+          "category": "excellent",
+          "reliability": "high",
+          "scale": "0 = poor (0 stars), 1 = excellent (5 stars); Bayesian-smoothed (m=50, C=0.80)"
+        },
+        "ratingOutOfFive": 4.32,
+        "inspectionScope": "Partial identity and rating only"
+      },
+      {
+        "tool": "search_fragrances",
+        "query": "creed aventus",
+        "httpStatus": 200,
+        "resultNamesInspected": 5,
+        "note": "Returned Aventus, Aventus Cologne, Aventus 10th Anniversary, Aventus for Her and Aventus Oil.",
+        "payloadInspected": true,
+        "inspectionScope": "Displayed result names and slugs only"
+      },
+      {
+        "tool": "search_fragrances",
+        "query": "Le Labo Santal 33",
+        "httpStatus": 200,
+        "payloadInspected": false,
+        "note": "UI showed HTTP 200 while remaining in a loading state; no result-set conclusion."
+      },
+      {
+        "tool": "search_fragrances",
+        "query": "Santal 33",
+        "httpStatus": 200,
+        "resultNamesInspected": 2,
+        "note": "Returned Santal 33 and Santal 33 Perfume Oil as separate slugs.",
+        "payloadInspected": true,
+        "inspectionScope": "Displayed result names and slugs only"
+      },
+      {
+        "tool": "get_fragrance_profile",
+        "slug": "le-labo-santal-33",
+        "httpStatus": 200,
+        "payloadInspected": true,
+        "topLevelSections": [
+          "identity"
+        ],
+        "rating": {
+          "score": 0.75,
+          "n_records": 12333,
+          "scale": "0 = poor (0 stars), 1 = excellent (5 stars); Bayesian-smoothed (m=50, C=0.80)"
+        },
+        "note": "Default Playground request. No assertion that explicitly requested sections are unavailable."
+      },
+      {
+        "tool": "get_performance",
+        "slug": "le-labo-santal-33",
+        "httpStatus": 200,
+        "payloadInspected": true,
+        "topLevelFields": [
+          "name",
+          "season",
+          "sillage",
+          "longevity",
+          "public_id",
+          "brand_slug",
+          "projection",
+          "time_of_day",
+          "fragrance_slug"
+        ],
+        "scales": {
+          "longevity": "0 = very weak, 1 = eternal",
+          "sillage": "0 = intimate/weak, 1 = enormous",
+          "projection": "0 = weak projection, 1 = strong projection",
+          "season": "per-season suitability 0 = poor fit, 1 = excellent fit",
+          "time_of_day": "0 = day wear, 1 = night wear"
+        },
+        "timeOfDay": {
+          "score": 0.42,
+          "category": "versatile",
+          "n_records": 6900
+        },
+        "projectionDerivedFrom": "sillage"
+      },
+      {
+        "tool": "compare_fragrances",
+        "httpStatus": 200,
+        "requestedRecords": 10,
+        "returnedRecords": 10,
+        "payloadInspected": true,
+        "inputMethod": "Two previously observed slugs plus eight constructed candidate slugs; assessed returned identities rather than assuming resolution from HTTP success.",
+        "records": [
+          {
+            "name": "Another 13",
+            "brand": "Le Labo",
+            "slug": "le-labo-another-13",
+            "publicId": "c3a47a1c-04cc-42f7-b3ce-100d7d85c572",
+            "releaseYear": 2010,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.806,
+              "category": "good",
+              "n_records": 8085,
+              "reviews_count": 1400
+            },
+            "ratingOutOfFive": 4.03,
+            "longevity": {
+              "score": 0.607,
+              "category": "long_lasting",
+              "n_records": 4235
+            },
+            "sillage": {
+              "score": 0.46,
+              "category": "below_average",
+              "n_records": 4263
+            },
+            "projection": {
+              "score": 0.46,
+              "category": "below_average",
+              "n_records": 4263,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 2500,
+              "spring": 2800,
+              "summer": 2400,
+              "winter": 2000
+            },
+            "explicitConcentrationInName": null,
+            "matchingResearchIds": [
+              "p14462"
+            ],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Aventus",
+            "brand": "Creed",
+            "slug": "creed-aventus",
+            "publicId": "312329ca-0ad9-4a79-a586-2a4b815c18f7",
+            "releaseYear": 2010,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.864,
+              "category": "excellent",
+              "n_records": 26137,
+              "reviews_count": 4200
+            },
+            "ratingOutOfFive": 4.32,
+            "longevity": {
+              "score": 0.592,
+              "category": "long_lasting",
+              "n_records": 16309
+            },
+            "sillage": {
+              "score": 0.549,
+              "category": "moderate",
+              "n_records": 16200
+            },
+            "projection": {
+              "score": 0.549,
+              "category": "moderate",
+              "n_records": 16200,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 9200,
+              "spring": 12100,
+              "summer": 12300,
+              "winter": 5500
+            },
+            "explicitConcentrationInName": null,
+            "matchingResearchIds": [
+              "a7fdcb61f966d"
+            ],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Baccarat Rouge 540",
+            "brand": "Maison Francis Kurkdjian",
+            "slug": "maison-francis-kurkdjian-baccarat-rouge-540",
+            "publicId": "897bab5d-e454-489d-9887-2292ed15c45c",
+            "releaseYear": 2015,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.754,
+              "category": "good",
+              "n_records": 27797,
+              "reviews_count": 3800
+            },
+            "ratingOutOfFive": 3.77,
+            "longevity": {
+              "score": 0.737,
+              "category": "long_lasting",
+              "n_records": 15308
+            },
+            "sillage": {
+              "score": 0.678,
+              "category": "strong",
+              "n_records": 15300
+            },
+            "projection": {
+              "score": 0.678,
+              "category": "strong",
+              "n_records": 15300,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 9500,
+              "spring": 6000,
+              "summer": 3900,
+              "winter": 9400
+            },
+            "explicitConcentrationInName": null,
+            "matchingResearchIds": [
+              "p15249"
+            ],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Black Opium",
+            "brand": "Yves Saint Laurent",
+            "slug": "yves-saint-laurent-black-opium",
+            "publicId": "864b15a0-28d8-403a-a375-b9e17941765a",
+            "releaseYear": 2014,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.788,
+              "category": "good",
+              "n_records": 33278,
+              "reviews_count": 2800
+            },
+            "ratingOutOfFive": 3.94,
+            "longevity": {
+              "score": 0.574,
+              "category": "long_lasting",
+              "n_records": 15922
+            },
+            "sillage": {
+              "score": 0.554,
+              "category": "moderate",
+              "n_records": 15600
+            },
+            "projection": {
+              "score": 0.554,
+              "category": "moderate",
+              "n_records": 15600,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 11500,
+              "spring": 3200,
+              "summer": 2100,
+              "winter": 13300
+            },
+            "explicitConcentrationInName": null,
+            "matchingResearchIds": [],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Bleu de Chanel Eau de Parfum",
+            "brand": "Chanel",
+            "slug": "chanel-bleu-de-chanel-eau-de-parfum",
+            "publicId": "1886316b-0c73-44da-9012-37e1fdcbbe01",
+            "releaseYear": 2014,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.886,
+              "category": "excellent",
+              "n_records": 20712,
+              "reviews_count": 2000
+            },
+            "ratingOutOfFive": 4.43,
+            "longevity": {
+              "score": 0.594,
+              "category": "long_lasting",
+              "n_records": 14058
+            },
+            "sillage": {
+              "score": 0.517,
+              "category": "moderate",
+              "n_records": 13831
+            },
+            "projection": {
+              "score": 0.517,
+              "category": "moderate",
+              "n_records": 13831,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 10400,
+              "spring": 11100,
+              "summer": 10700,
+              "winter": 8500
+            },
+            "explicitConcentrationInName": "Eau de Parfum",
+            "matchingResearchIds": [
+              "a0549a9bac3f8"
+            ],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Layton",
+            "brand": "Parfums de Marly",
+            "slug": "parfums-de-marly-layton",
+            "publicId": "5eabfe54-9e31-47a9-aecf-3f1f84323c69",
+            "releaseYear": 2016,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.89,
+              "category": "excellent",
+              "n_records": 17154,
+              "reviews_count": 2400
+            },
+            "ratingOutOfFive": 4.45,
+            "longevity": {
+              "score": 0.693,
+              "category": "long_lasting",
+              "n_records": 11532
+            },
+            "sillage": {
+              "score": 0.638,
+              "category": "moderate",
+              "n_records": 11523
+            },
+            "projection": {
+              "score": 0.638,
+              "category": "moderate",
+              "n_records": 11523,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 9800,
+              "spring": 8200,
+              "summer": 3400,
+              "winter": 9900
+            },
+            "explicitConcentrationInName": null,
+            "matchingResearchIds": [
+              "p18512"
+            ],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Light Blue",
+            "brand": "Dolce&Gabbana",
+            "slug": "dolce-gabbana-light-blue",
+            "publicId": "adf3d452-a85e-448c-9871-fb5e7a8f519c",
+            "releaseYear": 2001,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.772,
+              "category": "good",
+              "n_records": 35067,
+              "reviews_count": 2400
+            },
+            "ratingOutOfFive": 3.86,
+            "longevity": {
+              "score": 0.443,
+              "category": "moderate",
+              "n_records": 13025
+            },
+            "sillage": {
+              "score": 0.428,
+              "category": "below_average",
+              "n_records": 12535
+            },
+            "projection": {
+              "score": 0.428,
+              "category": "below_average",
+              "n_records": 12535,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 2000,
+              "spring": 8700,
+              "summer": 15900,
+              "winter": 1800
+            },
+            "explicitConcentrationInName": null,
+            "matchingResearchIds": [
+              "p07712"
+            ],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Santal 33",
+            "brand": "Le Labo",
+            "slug": "le-labo-santal-33",
+            "publicId": "350b5237-eb99-496b-9274-cbe777e724c1",
+            "releaseYear": 2011,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.75,
+              "category": "good",
+              "n_records": 12333,
+              "reviews_count": 1800
+            },
+            "ratingOutOfFive": 3.75,
+            "longevity": {
+              "score": 0.67,
+              "category": "long_lasting",
+              "n_records": 6238
+            },
+            "sillage": {
+              "score": 0.613,
+              "category": "moderate",
+              "n_records": 6515
+            },
+            "projection": {
+              "score": 0.613,
+              "category": "moderate",
+              "n_records": 6515,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 4300,
+              "spring": 3400,
+              "summer": 2200,
+              "winter": 3200
+            },
+            "explicitConcentrationInName": null,
+            "matchingResearchIds": [
+              "p14487"
+            ],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Sauvage Eau de Parfum",
+            "brand": "Dior",
+            "slug": "dior-sauvage-eau-de-parfum",
+            "publicId": "394555fe-f3c6-4751-8645-5f2f56c46cdc",
+            "releaseYear": 2018,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.842,
+              "category": "good",
+              "n_records": 13645,
+              "reviews_count": 1500
+            },
+            "ratingOutOfFive": 4.21,
+            "longevity": {
+              "score": 0.684,
+              "category": "long_lasting",
+              "n_records": 9837
+            },
+            "sillage": {
+              "score": 0.648,
+              "category": "moderate",
+              "n_records": 9872
+            },
+            "projection": {
+              "score": 0.648,
+              "category": "moderate",
+              "n_records": 9872,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 7300,
+              "spring": 7200,
+              "summer": 6000,
+              "winter": 6700
+            },
+            "explicitConcentrationInName": "Eau de Parfum",
+            "matchingResearchIds": [
+              "a7782dc120305"
+            ],
+            "identityApprovedForImport": false
+          },
+          {
+            "name": "Tobacco Vanille",
+            "brand": "Tom Ford",
+            "slug": "tom-ford-tobacco-vanille",
+            "publicId": "92dcbdb6-1ad3-4543-921f-d4039b949eec",
+            "releaseYear": 2007,
+            "rating": {
+              "scale": "0 = poor (0 stars), 1 = excellent (5 stars)",
+              "score": 0.838,
+              "category": "good",
+              "n_records": 29694,
+              "reviews_count": 3000
+            },
+            "ratingOutOfFive": 4.19,
+            "longevity": {
+              "score": 0.759,
+              "category": "eternal",
+              "n_records": 15270
+            },
+            "sillage": {
+              "score": 0.692,
+              "category": "strong",
+              "n_records": 15172
+            },
+            "projection": {
+              "score": 0.692,
+              "category": "strong",
+              "n_records": 15172,
+              "derived_from": "sillage"
+            },
+            "seasonRecordCounts": {
+              "fall": 11700,
+              "spring": 2500,
+              "summer": 1600,
+              "winter": 14200
+            },
+            "explicitConcentrationInName": null,
+            "matchingResearchIds": [
+              "p22724"
+            ],
+            "identityApprovedForImport": false
+          }
+        ]
+      },
+      {
+        "tool": "get_reminds_of",
+        "slug": "creed-aventus",
+        "limit": 5,
+        "httpStatus": null,
+        "payloadInspected": false,
+        "note": "Recipe initiated, but result was not inspected. No similarity-quality conclusion."
       }
-    ]
+    ],
+    "toolRequestsInitiated": 8,
+    "responsesShowingHttp200": 7
   },
   "plannedSamples": [
     {
@@ -95,5 +616,33 @@
   ],
   "exactEditionsValidated": 0,
   "productionImports": 0,
-  "paidServicesStarted": 0
+  "paidServicesStarted": 0,
+  "summary": {
+    "comparisonRecords": 10,
+    "recordsWithRatingAndPositiveCount": 10,
+    "recordsWithLongevityAndPositiveCount": 10,
+    "recordsWithSillageAndPositiveCount": 10,
+    "recordsWithSeasonScoresAndPositiveCounts": 10,
+    "projectionDerivedFromSillage": 10,
+    "explicitConcentrationInReturnedName": 2,
+    "recordsWithConcentrationField": 0,
+    "recordsWithSourceDate": 0,
+    "recordsWithNamedUpstreamCommunity": 0,
+    "seasonCountsInspected": 40,
+    "seasonCountsDivisibleBy100": 40,
+    "reviewCountsDivisibleBy100": 10,
+    "matchingExistingResearchIdentities": 9,
+    "identitiesApprovedForImport": 0
+  },
+  "validationLimits": [
+    "Popular fragrances selected deliberately; not a representative coverage or accuracy estimate.",
+    "EDP is explicit in two returned names. Other concentrations are not exposed as a field; no production identity mapping was approved.",
+    "Name and brand normalization identifies nine existing research candidates, not a validated catalog import.",
+    "The API labels n_records as community votes; unique voters, upstream source and observation date were not independently verified.",
+    "All forty seasonal counts and all ten written-review counts are multiples of 100. This observation does not establish whether the values are rounded, estimated or generated.",
+    "Projection duplicates sillage and is explicitly marked as derived. It is not a separate measurement.",
+    "Full-profile rating scales disclosed Bayesian smoothing for the inspected Aventus and Santal 33 responses. Comparison scales omit that detail; only those two scores were cross-checked across tools.",
+    "No low-vote or missing-fragrance response was inspected. Similarity and written reviews remain unvalidated.",
+    "Successful browser results do not validate the supplied bearer key or direct backend access."
+  ]
 }

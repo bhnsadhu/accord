@@ -17,7 +17,9 @@
     "catalog:research": "tsx scripts/import-research.ts",
     "catalog:requests": "tsx scripts/catalog-requests.ts",
     "catalog:images": "node scripts/restore-catalog-images.mjs",
-    "community:moderate": "tsx scripts/moderate-reviews.ts"
+    "community:moderate": "tsx scripts/moderate-reviews.ts",
+    "dev:preview": "NEXT_DIST_DIR=.next-scentrev-preview next dev --hostname 127.0.0.1 --port 3210",
+    "test:preview": "playwright test --config playwright.preview.config.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.13",

@@ -1,0 +1,447 @@
+{
+  "capturedAt": "2026-11-13",
+  "source": "ScentRev",
+  "sourceUrl": "https://mcp.scentrev.com/",
+  "records": [
+    {
+      "slug": "le-labo-another-13",
+      "name": "Another 13",
+      "brand": "Le Labo",
+      "year": 2010,
+      "concentration": null,
+      "rating": {
+        "score": 0.806,
+        "category": "good",
+        "n_records": 8085
+      },
+      "longevity": {
+        "score": 0.607,
+        "category": "long_lasting",
+        "n_records": 4235
+      },
+      "sillage": {
+        "score": 0.46,
+        "category": "below_average",
+        "n_records": 4263
+      },
+      "seasons": {
+        "fall": {
+          "score": 0.89,
+          "category": "excellent",
+          "n_records": 2500
+        },
+        "spring": {
+          "score": 0.964,
+          "category": "excellent",
+          "n_records": 2800
+        },
+        "summer": {
+          "score": 0.84,
+          "category": "excellent",
+          "n_records": 2400
+        },
+        "winter": {
+          "score": 0.703,
+          "category": "good",
+          "n_records": 2000
+        }
+      }
+    },
+    {
+      "slug": "creed-aventus",
+      "name": "Aventus",
+      "brand": "Creed",
+      "year": 2010,
+      "concentration": null,
+      "rating": {
+        "score": 0.864,
+        "category": "excellent",
+        "n_records": 26137
+      },
+      "longevity": {
+        "score": 0.592,
+        "category": "long_lasting",
+        "n_records": 16309
+      },
+      "sillage": {
+        "score": 0.549,
+        "category": "moderate",
+        "n_records": 16200
+      },
+      "seasons": {
+        "fall": {
+          "score": 0.747,
+          "category": "good",
+          "n_records": 9200
+        },
+        "spring": {
+          "score": 0.979,
+          "category": "excellent",
+          "n_records": 12100
+        },
+        "summer": {
+          "score": 0.999,
+          "category": "excellent",
+          "n_records": 12300
+        },
+        "winter": {
+          "score": 0.447,
+          "category": "fair",
+          "n_records": 5500
+        }
+      }
+    },
+    {
+      "slug": "maison-francis-kurkdjian-baccarat-rouge-540",
+      "name": "Baccarat Rouge 540",
+      "brand": "Maison Francis Kurkdjian",
+      "year": 2015,
+      "concentration": null,
+      "rating": {
+        "score": 0.754,
+        "category": "good",
+        "n_records": 27797
+      },
+      "longevity": {
+        "score": 0.737,
+        "category": "long_lasting",
+        "n_records": 15308
+      },
+      "sillage": {
+        "score": 0.678,
+        "category": "strong",
+        "n_records": 15300
+      },
+      "seasons": {
+        "fall": {
+          "score": 1,
+          "category": "excellent",
+          "n_records": 9500
+        },
+        "spring": {
+          "score": 0.635,
+          "category": "good",
+          "n_records": 6000
+        },
+        "summer": {
+          "score": 0.412,
+          "category": "fair",
+          "n_records": 3900
+        },
+        "winter": {
+          "score": 0.997,
+          "category": "excellent",
+          "n_records": 9400
+        }
+      }
+    },
+    {
+      "slug": "yves-saint-laurent-black-opium",
+      "name": "Black Opium",
+      "brand": "Yves Saint Laurent",
+      "year": 2014,
+      "concentration": null,
+      "rating": {
+        "score": 0.788,
+        "category": "good",
+        "n_records": 33278
+      },
+      "longevity": {
+        "score": 0.574,
+        "category": "long_lasting",
+        "n_records": 15922
+      },
+      "sillage": {
+        "score": 0.554,
+        "category": "moderate",
+        "n_records": 15600
+      },
+      "seasons": {
+        "fall": {
+          "score": 0.847,
+          "category": "excellent",
+          "n_records": 11500
+        },
+        "spring": {
+          "score": 0.237,
+          "category": "poor",
+          "n_records": 3200
+        },
+        "summer": {
+          "score": 0.152,
+          "category": "poor",
+          "n_records": 2100
+        },
+        "winter": {
+          "score": 0.98,
+          "category": "excellent",
+          "n_records": 13300
+        }
+      }
+    },
+    {
+      "slug": "chanel-bleu-de-chanel-eau-de-parfum",
+      "name": "Bleu de Chanel Eau de Parfum",
+      "brand": "Chanel",
+      "year": 2014,
+      "concentration": "Eau de Parfum",
+      "rating": {
+        "score": 0.886,
+        "category": "excellent",
+        "n_records": 20712
+      },
+      "longevity": {
+        "score": 0.594,
+        "category": "long_lasting",
+        "n_records": 14058
+      },
+      "sillage": {
+        "score": 0.517,
+        "category": "moderate",
+        "n_records": 13831
+      },
+      "seasons": {
+        "fall": {
+          "score": 0.933,
+          "category": "excellent",
+          "n_records": 10400
+        },
+        "spring": {
+          "score": 1,
+          "category": "excellent",
+          "n_records": 11100
+        },
+        "summer": {
+          "score": 0.962,
+          "category": "excellent",
+          "n_records": 10700
+        },
+        "winter": {
+          "score": 0.768,
+          "category": "excellent",
+          "n_records": 8500
+        }
+      }
+    },
+    {
+      "slug": "parfums-de-marly-layton",
+      "name": "Layton",
+      "brand": "Parfums de Marly",
+      "year": 2016,
+      "concentration": null,
+      "rating": {
+        "score": 0.89,
+        "category": "excellent",
+        "n_records": 17154
+      },
+      "longevity": {
+        "score": 0.693,
+        "category": "long_lasting",
+        "n_records": 11532
+      },
+      "sillage": {
+        "score": 0.638,
+        "category": "moderate",
+        "n_records": 11523
+      },
+      "seasons": {
+        "fall": {
+          "score": 0.994,
+          "category": "excellent",
+          "n_records": 9800
+        },
+        "spring": {
+          "score": 0.83,
+          "category": "excellent",
+          "n_records": 8200
+        },
+        "summer": {
+          "score": 0.343,
+          "category": "poor",
+          "n_records": 3400
+        },
+        "winter": {
+          "score": 1,
+          "category": "excellent",
+          "n_records": 9900
+        }
+      }
+    },
+    {
+      "slug": "dolce-gabbana-light-blue",
+      "name": "Light Blue",
+      "brand": "Dolce&Gabbana",
+      "year": 2001,
+      "concentration": null,
+      "rating": {
+        "score": 0.772,
+        "category": "good",
+        "n_records": 35067
+      },
+      "longevity": {
+        "score": 0.443,
+        "category": "moderate",
+        "n_records": 13025
+      },
+      "sillage": {
+        "score": 0.428,
+        "category": "below_average",
+        "n_records": 12535
+      },
+      "seasons": {
+        "fall": {
+          "score": 0.126,
+          "category": "poor",
+          "n_records": 2000
+        },
+        "spring": {
+          "score": 0.549,
+          "category": "fair",
+          "n_records": 8700
+        },
+        "summer": {
+          "score": 1,
+          "category": "excellent",
+          "n_records": 15900
+        },
+        "winter": {
+          "score": 0.113,
+          "category": "poor",
+          "n_records": 1800
+        }
+      }
+    },
+    {
+      "slug": "le-labo-santal-33",
+      "name": "Santal 33",
+      "brand": "Le Labo",
+      "year": 2011,
+      "concentration": null,
+      "rating": {
+        "score": 0.75,
+        "category": "good",
+        "n_records": 12333
+      },
+      "longevity": {
+        "score": 0.67,
+        "category": "long_lasting",
+        "n_records": 6238
+      },
+      "sillage": {
+        "score": 0.613,
+        "category": "moderate",
+        "n_records": 6515
+      },
+      "seasons": {
+        "fall": {
+          "score": 1,
+          "category": "excellent",
+          "n_records": 4300
+        },
+        "spring": {
+          "score": 0.785,
+          "category": "excellent",
+          "n_records": 3400
+        },
+        "summer": {
+          "score": 0.509,
+          "category": "fair",
+          "n_records": 2200
+        },
+        "winter": {
+          "score": 0.743,
+          "category": "good",
+          "n_records": 3200
+        }
+      }
+    },
+    {
+      "slug": "dior-sauvage-eau-de-parfum",
+      "name": "Sauvage Eau de Parfum",
+      "brand": "Dior",
+      "year": 2018,
+      "concentration": "Eau de Parfum",
+      "rating": {
+        "score": 0.842,
+        "category": "good",
+        "n_records": 13645
+      },
+      "longevity": {
+        "score": 0.684,
+        "category": "long_lasting",
+        "n_records": 9837
+      },
+      "sillage": {
+        "score": 0.648,
+        "category": "moderate",
+        "n_records": 9872
+      },
+      "seasons": {
+        "fall": {
+          "score": 1,
+          "category": "excellent",
+          "n_records": 7300
+        },
+        "spring": {
+          "score": 0.986,
+          "category": "excellent",
+          "n_records": 7200
+        },
+        "summer": {
+          "score": 0.818,
+          "category": "excellent",
+          "n_records": 6000
+        },
+        "winter": {
+          "score": 0.918,
+          "category": "excellent",
+          "n_records": 6700
+        }
+      }
+    },
+    {
+      "slug": "tom-ford-tobacco-vanille",
+      "name": "Tobacco Vanille",
+      "brand": "Tom Ford",
+      "year": 2007,
+      "concentration": null,
+      "rating": {
+        "score": 0.838,
+        "category": "good",
+        "n_records": 29694
+      },
+      "longevity": {
+        "score": 0.759,
+        "category": "eternal",
+        "n_records": 15270
+      },
+      "sillage": {
+        "score": 0.692,
+        "category": "strong",
+        "n_records": 15172
+      },
+      "seasons": {
+        "fall": {
+          "score": 0.82,
+          "category": "excellent",
+          "n_records": 11700
+        },
+        "spring": {
+          "score": 0.179,
+          "category": "poor",
+          "n_records": 2500
+        },
+        "summer": {
+          "score": 0.11,
+          "category": "poor",
+          "n_records": 1600
+        },
+        "winter": {
+          "score": 1,
+          "category": "excellent",
+          "n_records": 14200
+        }
+      }
+    }
+  ]
+}

@@ -65,3 +65,6 @@ __pycache__/
 
 # Reproducible catalog photos are restored from the pinned release at build time.
 /public/images/catalog/
+
+# Isolated local ScentRev preview and production verification builds
+/.next-scentrev-*/

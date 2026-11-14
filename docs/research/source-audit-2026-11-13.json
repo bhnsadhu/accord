@@ -1,0 +1,376 @@
+{
+  "checkedAt": "2026-11-13",
+  "timezone": "America/Chicago",
+  "purpose": "Source feasibility only; no production import",
+  "scento": {
+    "url": "https://github.com/Scento-com/perfume-dataset",
+    "revision": "086769ecf1add770ea6646bd4d88d39f0e7cddeb",
+    "sha256": "695d9e7b5a61bb482ab84e04ae82806ca684bd26fab95b2c8e2931b6d561dfe2",
+    "license": "CC BY 4.0",
+    "attribution": "Scento, https://www.scento.com/perfume-database",
+    "rows": 1479,
+    "existingSourceUrlLinks": 597,
+    "linkedWithoutWearGuidance": 595,
+    "seasonTimePatterns": [
+      {
+        "seasons": [
+          "spring",
+          "summer",
+          "autumn"
+        ],
+        "timesOfDay": [
+          "day",
+          "evening"
+        ],
+        "rows": 843
+      },
+      {
+        "seasons": [
+          "autumn",
+          "winter",
+          "spring"
+        ],
+        "timesOfDay": [
+          "day",
+          "evening"
+        ],
+        "rows": 534
+      },
+      {
+        "seasons": [
+          "autumn",
+          "winter"
+        ],
+        "timesOfDay": [
+          "evening",
+          "night"
+        ],
+        "rows": 65
+      },
+      {
+        "seasons": [
+          "spring",
+          "summer"
+        ],
+        "timesOfDay": [
+          "day"
+        ],
+        "rows": 37
+      }
+    ],
+    "communityRatingFields": false,
+    "reviewFields": false,
+    "longevityFields": false,
+    "sillageFields": false
+  },
+  "perfumePicks": {
+    "documentation": "https://github.com/bguillow-rgb/perfume-picks-mcp",
+    "codeRevision": "501e8e35bb579a96df3854d7de79aa5aca981813",
+    "endpoint": "https://jdkwlwyysgofljkobpmr.supabase.co/functions/v1/mcp",
+    "serverVersion": "1.0.6",
+    "auth": "none",
+    "attribution": "Perfume Picks, https://perfumepicks.app/",
+    "scope": "Ten illustrative name lookups, two follow-up searches, one trends call, one similarity call and one dupe call. Not a representative accuracy benchmark.",
+    "summary": {
+      "lookups": 10,
+      "recordsReturned": 10,
+      "recordsWithLongevity": 9,
+      "recordsWithSillage": 9,
+      "recordsWithVoteCounts": 0
+    },
+    "samples": [
+      {
+        "query": "Santal 33",
+        "returned": true,
+        "slug": "le-labo-santal-33",
+        "name": "Le Labo Santal 33",
+        "brand": "Le Labo",
+        "concentration": "edp",
+        "year": 2011,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Another 13",
+        "returned": true,
+        "slug": "le-labo-another-13",
+        "name": "Le Labo Another 13",
+        "brand": "Le Labo",
+        "concentration": "edp",
+        "year": 2010,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Dior Sauvage Eau de Parfum",
+        "returned": true,
+        "slug": "christian-dior-sauvage",
+        "name": "Dior Sauvage",
+        "brand": "Dior",
+        "concentration": "cologne",
+        "year": 2015,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Bleu de Chanel Eau de Parfum",
+        "returned": true,
+        "slug": "chanel-chanel-no-5-l-eau",
+        "name": "Chanel No 5 L'Eau",
+        "brand": "Chanel",
+        "concentration": "edp",
+        "year": 2016,
+        "score_fields": [
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Creed Aventus",
+        "returned": true,
+        "slug": "creed-aventus",
+        "name": "Creed Aventus",
+        "brand": "Creed",
+        "concentration": "edp",
+        "year": 2010,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Baccarat Rouge 540",
+        "returned": true,
+        "slug": "maison-francis-kurkdjian-baccarat-rouge-540",
+        "name": "Maison Francis Kurkdjian Baccarat Rouge 540",
+        "brand": "Maison Francis Kurkdjian",
+        "concentration": "edp",
+        "year": 2015,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Tobacco Vanille",
+        "returned": true,
+        "slug": "tom-ford-tobacco-vanille",
+        "name": "Tom Ford Tobacco Vanille",
+        "brand": "Tom Ford",
+        "concentration": "edp",
+        "year": 2007,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Black Opium",
+        "returned": true,
+        "slug": "yves-saint-laurent-black-opium",
+        "name": "Yves Saint Laurent Black Opium",
+        "brand": "Yves Saint Laurent",
+        "concentration": "edp",
+        "year": 2014,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Layton",
+        "returned": true,
+        "slug": "parfums-de-marly-layton",
+        "name": "Parfums de Marly Layton",
+        "brand": "Parfums de Marly",
+        "concentration": "cologne",
+        "year": 2016,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      },
+      {
+        "query": "Dolce Gabbana Light Blue",
+        "returned": true,
+        "slug": "dolce-gabbana-light-blue",
+        "name": "Dolce & Gabbana Light Blue",
+        "brand": "Dolce & Gabbana",
+        "concentration": "edt",
+        "year": 2007,
+        "score_fields": [
+          "longevity",
+          "sillage",
+          "compliments",
+          "versatility",
+          "office_safe"
+        ],
+        "has_vote_counts": false,
+        "updated": "2026-11-13",
+        "other_top_level_keys": [
+          "fragrance",
+          "attribution"
+        ]
+      }
+    ],
+    "followups": {
+      "bleuSearch": {
+        "query": "Bleu",
+        "brand": "Chanel",
+        "limit": 5,
+        "foundBleu": true
+      },
+      "sauvageSearch": {
+        "query": "Sauvage",
+        "brand": "Dior",
+        "limit": 5,
+        "firstConcentration": "cologne"
+      },
+      "trending": {
+        "method": "wardrobe_adds_last_30_days",
+        "topThreeCounts": [
+          2,
+          1,
+          1
+        ]
+      },
+      "similar": {
+        "query": "Creed Aventus",
+        "method": "curated_ranking",
+        "bundleListingReturned": true
+      },
+      "dupes": {
+        "query": "Baccarat Rouge 540",
+        "count": 5,
+        "sourceTypes": [
+          "community",
+          "editorial",
+          "clone_house",
+          "seed"
+        ],
+        "voteCountsPresent": false
+      }
+    },
+    "observations": [
+      {
+        "query": "Bleu de Chanel Eau de Parfum",
+        "issue": "Name resolution returned Chanel No 5 L'Eau; brand-filtered search did find Bleu entries."
+      },
+      {
+        "query": "Dior Sauvage Eau de Parfum",
+        "issue": "Returned a generic Sauvage record labelled cologne; this cannot be accepted as an exact EDP match."
+      },
+      {
+        "query": "Layton",
+        "issue": "Returned concentration cologne; the official house identifies Layton as Eau de Parfum.",
+        "reference": "https://us.parfums-de-marly.com/products/layton"
+      }
+    ]
+  },
+  "noteboxd": {
+    "contract": "https://api.noteboxd.com/v2/openapi.json",
+    "contractFetched": true,
+    "fragranceResponsesTested": false,
+    "reason": "Requires an account and API key; no key supplied"
+  },
+  "scentrev": {
+    "documentation": "https://mcp.scentrev.com/docs",
+    "fragranceResponsesTested": false,
+    "reason": "Requires account key or OAuth; no key supplied; API embedding and caching terms remain unresolved"
+  },
+  "scentverdict": {
+    "endpoint": "https://scentverdict.com/mcp",
+    "initializeHttpStatus": 403,
+    "fragranceResponsesTested": false,
+    "retryWithBypass": false
+  },
+  "accountsCreated": 0,
+  "paidServicesStarted": 0,
+  "reverseApiCaptures": 0,
+  "productionImports": 0
+}

@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
 /*
- * Accord: Blotter world. A neutral evaluation bench, blotter-paper strips,
- * graphite ink, and one oil-stain hue per Edwards wheel family.
- * Light only: perfume is evaluated on white paper in neutral daylight.
+ * Accord: catalog bottles on a neutral surface, graphite ink,
+ * and restrained colour accents for each Edwards wheel family.
  */
 @theme {
   --color-bench: #f0f1f3;
@@ -290,15 +289,6 @@ a, button {
   font-weight: 600;
 }
 
-/* The chosen direction: cotton paper, stained ends, a silver evaluation bench.
-   Material gradients and cast shadows reproduce the approved references. */
-:root {
-  --paper-texture: url('/materials/blotter-paper.png');
-  --paper-shadow: 0 1px 1px #fff inset, 0 -2px 2px #aaa69a80 inset,
-    1px 2px 1px #bcbab4, 5px 9px 9px -5px #20232c4d, 9px 18px 26px -15px #20232c50;
-  --strip-tip: clamp(36px, 4.6vw, 64px);
-}
-
 body { background-color: var(--color-bench); }
 button, a, input, select { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
@@ -310,68 +300,33 @@ button { cursor: pointer; }
 .accord-navigation kbd { font-family: var(--font-sans); }
 .accord-navigation button { min-height: 44px; }
 
-.strip-v, .strip-h, .archive-choice {
+.fragrance-surface, .archive-choice {
   position: relative;
-  isolation: isolate;
-  background-color: var(--color-paper);
-  background-image: var(--paper-texture);
-  background-size: 360px 360px;
-  border-radius: 3px;
-  box-shadow: var(--paper-shadow);
-  clip-path: none;
+  background: var(--color-paper);
+  border-radius: 4px;
 }
-.strip-v::after, .strip-h::after, .archive-choice::after {
-  content: ''; position: absolute; inset: 0; border: 1px solid #fff9;
-  border-bottom-color: #b7b3aa80; border-right-color: #c5c2b780;
-  border-radius: inherit; pointer-events: none; z-index: 2;
-}
-.stain-v, .stain-h, .archive-choice-tip {
-  position: absolute; pointer-events: none;
-  opacity: .77; mix-blend-mode: multiply;
-  transition: opacity 350ms var(--ease-paper);
-}
-.stain-v {
-  inset: 0 0 auto; height: var(--tip-depth, 14%);
-  border-radius: 3px 3px 0 0;
-  background: linear-gradient(178deg, var(--hue) 0%, color-mix(in srgb, var(--hue) 88%, white) 86%, color-mix(in srgb, var(--hue) 65%, white) 95%, transparent 100%);
-}
-.stain-h, .archive-choice-tip {
-  inset: 0 0 0 auto; width: var(--strip-tip);
-  border-radius: 0 3px 3px 0;
-  background: linear-gradient(92deg, transparent 0%, color-mix(in srgb, var(--hue) 74%, white) 8%, var(--hue) 24%, color-mix(in srgb, var(--hue) 88%, white) 100%);
-}
-.strip-text { padding-left: 24px; padding-right: calc(var(--strip-tip) + 22px); }
-.strip-h.strip-text { padding-left: 16px; padding-right: calc(var(--strip-tip) + 14px); }
-.strip-h.strip-text.h-11 { --strip-tip: 24px; }
-.strip-ghost { background-image: none; background-color: #ffffff36; box-shadow: none; }
-.strip-ghost::after { display: none; }
-.ghost-edge { position: absolute; inset: 0; border: 1px dashed #8d929b; border-radius: 3px; pointer-events: none; }
-.ghost-tip { display: none; }
-.strip-ghost .strip-text { padding-right: 24px; }
-.lift { transition: transform 400ms var(--ease-paper); }
+.fragrance-content { padding: 24px; }
+.is-unconfirmed { background: #ffffff70; }
+.fragrance-status { margin-bottom: 5px; font-size: 12px; color: var(--color-ink-3); }
+.lift { transition: transform 240ms var(--ease-paper); }
 .lift:hover, .lift:focus-within { transform: translateY(-2px); }
-.lift:hover .stain-v, .lift:hover .stain-h { opacity: .94; }
-.fragrance-row .strip-h { min-height: 104px; }
-.fragrance-row .strip-text { gap: 20px; }
-.fragrance-row:focus-within { outline: 2px solid var(--color-focus); outline-offset: 4px; border-radius: 3px; }
-.strip-specimen { display: block; height: 100%; width: 100%; }
-.specimen-print { position: absolute; top: 21%; left: 50%; transform: translateX(-50%); writing-mode: vertical-rl; display: flex; gap: 12px; white-space: nowrap; max-height: 63%; }
-.specimen-print strong { font-size: 21px; font-weight: 500; letter-spacing: -.03em; overflow: hidden; text-overflow: ellipsis; }
-.specimen-print > span { font-size: 12px; color: var(--color-ink-2); }
-.specimen-emboss { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); writing-mode: vertical-rl; font-size: 15px; letter-spacing: -.04em; color: #b3b0a7; text-shadow: 1px 1px 0 white, -1px -1px 0 #96928740; }
-.detail-paper { height: 530px; width: 88px; margin: 0 auto; transform: rotate(3deg); }
+.fragrance-row .fragrance-surface { display: flex; align-items: center; gap: 20px; min-height: 120px; padding: 16px 20px; }
+.fragrance-row .fragrance-content { flex: 1; min-width: 0; gap: 20px; padding: 0; }
+.fragrance-row:focus-within { outline: 2px solid var(--color-focus); outline-offset: 4px; border-radius: 4px; }
+.bottle-thumbnail { display: flex; align-items: center; justify-content: center; flex: none; min-width: 0; }
+.bottle-thumbnail img { min-width: 0; min-height: 0; display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+.bottle-thumbnail-missing { display: grid; place-content: center; width: 100%; height: 100%; min-height: 72px; padding: 8px; color: var(--color-ink-3); font-size: 11px; line-height: 1.4; text-align: center; background: var(--color-bench); }
+.fragrance-row-photo { width: 68px; height: 90px; }
+.fragrance-feature { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 32px; align-items: center; padding: 28px 32px; background: var(--color-paper); border-radius: 4px; }
+.fragrance-feature > .bottle-thumbnail { width: 140px; height: 186px; }
+.family-bottle { width: 60px; height: 80px; }
+.saved-fragrance { gap: 10px; padding: 8px 12px; background: var(--color-paper); border-radius: 4px; }
+.saved-bottle { width: 30px; height: 40px; }
+.saved-bottle .bottle-thumbnail-missing { min-height: 40px; padding: 0; font-size: 8px; }
+.detail-bottle-missing { width: 100%; height: 300px; }
 
-/* Home: loose paper blotters fan across the original silver backdrop. */
-.signature-hero {
-  position: relative; overflow: clip; padding-top: 30px;
-  border-block: 1px solid var(--color-section-rule);
-  background: linear-gradient(167deg, #cbd1d9 0%, #f3f5f7 15%, #cdd3db 29%, #e4e7eb80 37%, #c2c7ce77 57%, #edf0f399 81%, #e2e4e7 100%);
-}
-.signature-hero::before {
-  content: ''; position: absolute; inset: 0 -10%; pointer-events: none;
-  background: linear-gradient(167deg, transparent 12%, #fff8 17%, transparent 27%, #a3a9b36b 33%, #fff9 34%, transparent 37%, #b4bbc44d 54%, #fff9 55%, transparent 60%);
-  filter: blur(14px);
-}
+/* Home: the actual bottles, arranged as an interactive fragrance shelf. */
+.signature-hero { position: relative; overflow: clip; padding-top: 30px; background: #e5e8ec; }
 .signature-heading { position: relative; z-index: 5; max-width: var(--page-max); margin: auto; padding: 0 var(--page-gutter); display: grid; grid-template-columns: minmax(0, 1fr) 430px; align-items: center; gap: 32px; }
 .signature-heading h1 { font-size: clamp(46px, 5vw, 76px); font-weight: 450; line-height: 1.06; letter-spacing: -.055em; text-wrap: balance; }
 .signature-heading > div > p { margin-top: 11px; color: var(--color-ink-2); font-size: 22px; line-height: 1.4; letter-spacing: -.02em; }
@@ -391,23 +346,18 @@ button { cursor: pointer; }
 .signature-scan:hover .signature-scan-arrow { transform: translateX(4px); }
 .signature-scan:hover .signature-scan-camera circle { animation: lens-focus 350ms var(--ease-paper); transform-origin: center; }
 .signature-bench { position: relative; max-width: 1600px; margin: 0 auto; }
-.hero-fan { height: 500px; position: relative; margin-top: 12px; container-type: inline-size; }
-.bench-cast-light { position: absolute; inset: 15% 0 0; background: radial-gradient(ellipse at 40% 30%, #fff9, transparent 60%); mask-image: linear-gradient(transparent, #000 25%, #000 75%, transparent); pointer-events: none; }
-.hero-strip { --fan-angle: var(--angle); --fan-intro-shift: var(--intro-shift); --selection-offset: 0px; position: absolute; left: var(--position); bottom: 40px; width: 70px; height: var(--height); transform-origin: 50% 100%; transform: translateX(-50%) rotate(var(--fan-angle)) translateY(var(--selection-offset)); z-index: 2; transition: transform 650ms var(--ease-paper); border: 0; padding: 0; background: none; }
-.hero-strip::before { content: ''; position: absolute; inset: 8px -18px -6px 15px; background: #252c3969; filter: blur(13px); transform: skewX(-6deg) translateY(8px); pointer-events: none; }
-.hero-strip .strip-specimen { transition: box-shadow 650ms var(--ease-paper); }
-.hero-strip.is-selected { z-index: 6; --selection-offset: 16px; }
-.hero-strip.is-selected .strip-specimen { box-shadow: 0 1px 2px #fff inset, 0 -4px 2px #b4b0a7 inset, 2px 4px 1px #aaa69e, 10px 18px 17px -8px #11182770; }
-.hero-strip.is-selected .stain-v { opacity: .94; }
-.hero-strip:focus-visible { outline-offset: 8px; }
-.hero-strip .specimen-print strong { font-size: 24px; }
-.hero-strip .specimen-print > span { display: none; }
-
-@keyframes fan-arrive {
-  from { transform: translateX(calc(-50% + var(--fan-intro-shift))) translateY(var(--intro-drop, 24px)) rotate(var(--intro-angle)) scale(.94); }
-  to { transform: translateX(-50%) rotate(var(--fan-angle)) translateY(var(--selection-offset)); }
+.hero-bottles { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: end; gap: 12px; padding: 48px var(--page-gutter) 38px; }
+.hero-bottle { mix-blend-mode: multiply; display: flex; flex-direction: column; align-items: center; gap: 18px; min-width: 0; padding: 0; border: 0; background: none; transform: translateY(0); transition: transform 350ms var(--ease-paper); }
+.hero-bottle > .bottle-thumbnail { width: 100%; height: clamp(210px, 23vw, 340px); }
+.hero-bottle.is-selected { transform: translateY(-12px); }
+.hero-bottle:focus-visible { outline-offset: 8px; border-radius: 4px; }
+.hero-bottle-name { font-size: 14px; line-height: 1.3; color: var(--color-ink-2); text-align: center; }
+.hero-bottle.is-selected .hero-bottle-name { color: var(--color-ink); font-weight: 600; }
+@keyframes bottle-arrive {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.signature-bench:not([data-intro="done"]) .hero-strip { animation: fan-arrive 1050ms var(--ease-paper) var(--intro-delay) both; }
+.signature-bench:not([data-intro="done"]) .hero-bottle { animation: bottle-arrive 700ms var(--ease-paper) var(--intro-delay) both; }
 .fan-intro-gate { position: fixed; inset: 0; z-index: 100; margin: 0; padding: 0; width: 100%; height: 100%; max-width: none; max-height: none; border: 0; background: transparent; color: var(--color-ink); }
 .fan-intro-gate::backdrop { background: transparent; }
 .fan-intro-skip { position: absolute; right: 24px; bottom: max(24px, env(safe-area-inset-bottom)); min-height: 44px; padding: 10px 16px; border-radius: 4px; color: var(--color-ink-2); font-size: 13px; }
@@ -441,7 +391,7 @@ html.accord-intro-active, html.accord-intro-active body { overflow: hidden; over
 .home-bench-history { grid-column: 1 / -1; }
 .home-bench-history:empty { display: none; }
 
-/* Discover: 174px filters + fluid result strips + 340px specimen preview. */
+/* Discover: filters, bottle results and a selected fragrance preview. */
 .archive-layout { grid-template-columns: 174px minmax(0, 1fr); gap: 32px; margin-top: 30px; }
 .archive-filters { order: 1; min-width: 0; font-size: 13px; }
 .archive-main { order: 2; min-width: 0; }
@@ -449,7 +399,7 @@ html.accord-intro-active, html.accord-intro-active body { overflow: hidden; over
 .archive-list-column { min-width: 0; }
 .archive-list { display: grid; gap: 30px; }
 .archive-item { position: relative; min-width: 0; }
-.archive-choice { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 86px; padding: 17px 91px 17px 24px; text-align: left; color: var(--color-ink); transition: transform 350ms var(--ease-paper), box-shadow 350ms; }
+.archive-choice { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 86px; padding: 16px 20px; text-align: left; color: var(--color-ink); transition: transform 240ms var(--ease-paper); }
 .archive-choice:hover { transform: translateY(-3px); }
 .archive-choice:active { transform: translateY(-1px); }
 .archive-choice-copy { min-width: 0; display: flex; flex-direction: column; flex: 1; }
@@ -458,17 +408,12 @@ html.accord-intro-active, html.accord-intro-active body { overflow: hidden; over
 .archive-choice-meta { display: none; }
 .archive-choice-selection { flex: none; width: 23px; height: 23px; border-radius: 50%; display: grid; place-items: center; }
 .archive-choice.is-selected .archive-choice-selection { background: var(--color-ink); color: white; }
-.archive-choice-tip { width: 52px; }
+.archive-choice-photo { width: 54px; height: 72px; }
 .archive-open { display: flex; width: fit-content; align-items: center; gap: 6px; margin: 11px 0 -10px 2px; font-size: 11px; color: var(--color-ink-3); }
 .archive-open:hover { color: var(--color-ink); }
 .archive-open svg { width: 13px; height: 13px; }
-.archive-preview { position: sticky; top: 32px; display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 28px; padding: 0 0 0 25px; border-left: 1px solid var(--color-rule); min-height: 570px; }
-.archive-preview-paper { width: 54px; height: 560px; --tip-depth: 11%; }
-.archive-preview-paper .stain-v { top: auto; bottom: 0; transform: rotate(180deg); }
-.archive-preview-paper .specimen-print { top: 40px; max-height: 72%; }
-.archive-preview-paper .specimen-print strong { font-size: 20px; }
-.archive-preview-paper .specimen-emboss { display: none; }
-.archive-preview-content { min-width: 0; padding-top: 26px; }
+.archive-preview { position: sticky; top: 32px; display: block; padding: 0 0 0 25px; min-height: 570px; }
+.archive-preview-content { min-width: 0; }
 .archive-preview-heading h2 { font-size: 40px; letter-spacing: -.045em; line-height: 1.1; font-weight: 450; overflow-wrap: anywhere; }
 .archive-preview-heading p { margin-top: 8px; font-size: 19px; line-height: 1.25; color: var(--color-ink-2); }
 .archive-preview-facts { margin-top: 24px; padding: 20px 0; border-top: 1px solid var(--color-rule); border-bottom: 1px solid var(--color-rule); display: grid; gap: 12px; }
@@ -492,7 +437,7 @@ html.accord-intro-active, html.accord-intro-active body { overflow: hidden; over
 .archive-filter-count { margin-left: 10px; color: var(--color-ink-3); font-size: 12px; }
 main h1 { font-weight: 450; }
 
-/* A note unfolds its connections; the paper remains the primary object. */
+/* A note unfolds its connections to other fragrances. */
 .note-explorer { margin-top: 36px; }
 .note-explorer > h3 { font-size: 13px; color: var(--color-ink-3); }
 .note-explorer-choices { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 8px; }
@@ -517,7 +462,7 @@ main h1 { font-weight: 450; }
 .note-connection svg { flex: none; width: 16px; height: 16px; }
 .family-explorer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
 .family-explorer ol { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
-.family-disclosure summary { display: flex; align-items: center; gap: 16px; min-height: 104px; padding: 20px calc(var(--strip-tip) + 22px) 20px 24px; cursor: pointer; list-style: none; transition: transform 300ms var(--ease-paper), box-shadow 300ms; }
+.family-disclosure summary { display: flex; align-items: center; gap: 16px; min-height: 104px; padding: 16px 20px; cursor: pointer; list-style: none; transition: transform 300ms var(--ease-paper), box-shadow 300ms; }
 .family-disclosure summary::-webkit-details-marker { display: none; }
 .family-disclosure summary:hover { transform: translateY(-2px); }
 .family-disclosure-copy { display: block; min-width: 0; flex: 1; }
@@ -538,11 +483,9 @@ main h1 { font-weight: 450; }
 
 /* Short, interruptible feedback. Content is visible without motion or script. */
 @keyframes ink-arrive { from { opacity: .45; } to { opacity: 1; } }
-@keyframes specimen-place { from { transform: translateY(-10px) rotate(-2deg); opacity: .6; } to { transform: none; opacity: 1; } }
 @keyframes lens-focus { 50% { transform: scale(.8); } }
 @keyframes mark-saved { from { transform: scale(.8); } to { transform: scale(1); } }
 .selection-change { animation: ink-arrive 220ms ease-out; }
-.specimen-change { transform-origin: bottom center; animation: specimen-place 380ms var(--ease-paper); }
 .archive-mobile-preview, .archive-compare-prompt { animation: ink-arrive 220ms ease-out; }
 .archive-filter-toggle { transition: transform 200ms var(--ease-paper); }
 .archive-choice-selection { transition: background-color 180ms; }
@@ -555,7 +498,7 @@ main h1 { font-weight: 450; }
 .archive-view-button, .archive-compare-button { transition: background-color 180ms, transform 140ms var(--ease-paper); }
 .archive-view-button:hover { background: #333942; }
 .archive-view-button:active, .archive-compare-button:active { transform: translateY(1px); }
-/* Approved inset search: a generous field, paper specimens, and a scrolling list. */
+/* Inset search: a generous field, bottle thumbnails and a scrolling list. */
 .quick-find { --search-selected: color-mix(in srgb, var(--color-bench), var(--color-bench-deep) 35%); --search-top: min(80px, 8dvh); width: min(700px, calc(100vw - 48px)); max-width: none; max-height: calc(100dvh - var(--search-top) - 24px); margin: var(--search-top) auto 24px; padding: 0; border: 0; border-radius: 8px; color: var(--color-ink); background: var(--color-paper); box-shadow: var(--shadow-lifted); overflow: hidden; opacity: 0; transform: translateY(-8px) scale(.98); transition: opacity 160ms, transform 240ms var(--ease-paper), overlay 160ms allow-discrete, display 160ms allow-discrete; }
 .quick-find-surface { display: flex; flex-direction: column; max-height: calc(100dvh - var(--search-top) - 24px); }
 .quick-find-header { display: flex; flex-shrink: 0; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 28px 0; }
@@ -576,8 +519,7 @@ main h1 { font-weight: 450; }
 .quick-find-results { display: grid; gap: 6px; }
 .quick-find-result { display: flex; align-items: center; gap: 16px; min-height: 70px; padding: 12px 18px; border-radius: 5px; cursor: pointer; touch-action: manipulation; }
 .quick-find-result[aria-selected="true"], .quick-find-all[aria-selected="true"] { background: var(--search-selected); }
-.quick-find-blotter { position: relative; width: 12px; height: 36px; flex-shrink: 0; border-radius: 2px; background: var(--color-paper) url('/materials/blotter-paper.png') center / 150px; box-shadow: 1px 3px 5px rgb(21 24 28 / .1); }
-.quick-find-blotter::before { content: ''; position: absolute; inset: 0 0 auto; height: 30%; border-radius: 2px 2px 0 0; background: var(--hue); }
+.quick-find-missing { display: grid; place-content: center; width: 40px; height: 50px; flex: none; font-size: 9px; text-align: center; color: var(--color-ink-3); background: var(--color-bench); }
 .quick-find-result-copy { display: grid; min-width: 0; gap: 4px; flex: 1; }
 .quick-find-result-name { font-size: 17px; line-height: 1.35; font-weight: 500; overflow-wrap: anywhere; }
 .quick-find-result-brand { font-size: 13px; line-height: 1.4; color: var(--color-ink-3); overflow-wrap: anywhere; }
@@ -643,10 +585,9 @@ main h1 { font-weight: 450; }
   body { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
   .signature-heading { grid-template-columns: 1fr; gap: 23px; }
   .signature-search { width: min(580px,100%); }
-  .hero-fan { height: 440px; margin-top: 25px; }
-  .hero-strip { --fan-angle: var(--compact-angle); --fan-intro-shift: var(--compact-intro-shift); height: calc(var(--height) * .85); width: 58px; left: var(--compact-position); }
-
-  .hero-strip .specimen-print strong { font-size: 21px; }
+  .hero-bottles { gap: 8px; padding-top: 36px; }
+  .hero-bottle > .bottle-thumbnail { height: 200px; }
+  .hero-bottle-name { font-size: 13px; }
   .signature-selection { max-width: 800px; gap: 15px 32px; }
   .signature-identity h2 { font-size: 30px; }
   .archive-layout { display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
@@ -673,12 +614,11 @@ main h1 { font-weight: 450; }
   .signature-scan { padding: 4px 14px; gap: 12px; }
   .signature-scan strong { font-size: 16px; }
   .signature-scan > span > span { font-size: 12px; }
-  .hero-fan { height: 270px; margin-top: 17px; }
-  .hero-strip { --intro-drop: 12px; height: calc(var(--height) * .51); width: 35px; bottom: 31px; }
-  .hero-strip::before { inset: 3px -8px 0 8px; filter: blur(8px); }
-  .hero-strip .specimen-print strong { font-size: 14px; }
-  .hero-strip .specimen-emboss { font-size: 11px; bottom: 15px; }
-
+  .hero-bottles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 14px; padding: 32px var(--page-gutter) 28px; }
+  .hero-bottle { gap: 8px; }
+  .hero-bottle > .bottle-thumbnail { height: 130px; }
+  .hero-bottle.is-selected { transform: translateY(-5px); }
+  .hero-bottle-name { font-size: 13px; }
   .signature-selection { grid-template-columns: 1fr; gap: 13px; padding: 5px 22px 22px; }
   .signature-identity h2 { font-size: 28px; }.signature-identity p { font-size: 13px; }
   .signature-family { height: 29px; margin-top: 3px; width: 4px; }
@@ -695,18 +635,22 @@ main h1 { font-weight: 450; }
   .archive-mobile-preview p, .archive-mobile-preview li { font-size: 13px; line-height: 1.5; }
   .archive-mobile-preview ul { display: flex; flex-wrap: wrap; gap: 4px 10px; }
   .archive-mobile-preview .archive-preview-actions { grid-template-columns: 1fr 1fr; margin-top: 16px; }
-  .archive-preview-paper { height: 400px; width: 48px; }
   .archive-preview-content { padding-top: 0; }.archive-preview-heading h2 { font-size: 30px; }
   .archive-preview-heading p { font-size: 17px; }
-  .archive-list { gap: 27px; }.archive-choice { min-height: 78px; padding: 16px 67px 16px 18px; gap: 10px; }
+  .archive-list { gap: 27px; }.archive-choice { min-height: 78px; padding: 14px; gap: 10px; }
   .archive-choice-name { font-size: 20px; }.archive-choice-brand { font-size: 13px; }
-  .archive-choice-tip { width: 39px; }.archive-choice-selection { width: 20px; height: 20px; }
+  .archive-choice-photo { width: 42px; height: 60px; }.archive-choice-selection { width: 20px; height: 20px; }
   .archive-open { min-height: 30px; margin-top: 3px; margin-bottom: -15px; font-size: 12px; }
   .archive-filter-body > form { grid-template-columns: 1fr; }
-  .fragrance-row .strip-text { padding: 17px 53px 17px 16px; gap: 12px; }.fragrance-row .strip-h { --strip-tip: 30px; }
-  .fragrance-row .strip-text h3 { font-size: 18px; }.fragrance-row .strip-text p { font-size: 13px; }
-  .strip-ghost .strip-text { padding-right: 16px; }
-  .strip-text { padding-left: 18px; padding-right: calc(var(--strip-tip) + 15px); }
+  .fragrance-row .fragrance-surface { padding: 14px; gap: 14px; }
+  .fragrance-row .fragrance-content { padding: 0; gap: 12px; flex-wrap: wrap; }
+  .fragrance-row .fragrance-content > div:first-child { flex-basis: 150px; }
+  .fragrance-row-photo { width: 48px; height: 64px; }
+  .fragrance-row .fragrance-content h3 { font-size: 18px; }.fragrance-row .fragrance-content p { font-size: 13px; }
+  .fragrance-content { padding: 18px; }
+  .fragrance-feature { grid-template-columns: 76px minmax(0, 1fr); padding: 20px 16px; gap: 16px; }
+  .fragrance-feature > .bottle-thumbnail { width: 76px; height: 110px; }
+  .family-bottle { width: 44px; height: 60px; }
   .note-connection { padding: 18px; }
   .note-connection ul { grid-template-columns: 1fr; gap: 8px; }
   .note-explorer-choices { column-gap: 22px; }
@@ -718,7 +662,7 @@ main h1 { font-weight: 450; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; scroll-behavior: auto !important; }
-  .signature-bench .hero-strip { animation: none !important; }
+  .signature-bench .hero-bottle { animation: none !important; }
   .fan-intro-gate { display: none !important; }
 }
 
@@ -733,7 +677,7 @@ body:has(.signature-hero) > header { background: #f6f7f9; }
 .archive-sort a { display: inline-flex; align-items: center; min-height: 32px; }
 @media(max-width:700px){.accord-wordmark img{width:100px;height:auto}.archive-sort a{min-height:44px}.archive-status{align-items:center}}
 
-@media(min-width:700px) and (max-width:1023px){.comparison-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}.comparison-evidence{grid-column:1/-1;grid-row:2;width:auto;padding-block:12px}.comparison-fragrance .strip-h{min-height:178px}.comparison-evidence>p{margin-top:14px}.comparison-evidence>ul{max-width:560px}}
+@media(min-width:700px) and (max-width:1023px){.comparison-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}.comparison-evidence{grid-column:1/-1;grid-row:2;width:auto;padding-block:12px}.comparison-fragrance .fragrance-surface{min-height:178px}.comparison-evidence>p{margin-top:14px}.comparison-evidence>ul{max-width:560px}}
 
 /* Photographs identify the exact edition; paper remains the catalog's material. */
 .reference-layout { display: grid; grid-template-columns: minmax(0, 180px) minmax(0, 1fr); gap: 80px; }
@@ -751,9 +695,9 @@ body:has(.signature-hero) > header { background: #f6f7f9; }
 .bottle-photo figcaption { margin-top: 12px; color: var(--color-ink-3); font-size: 12px; line-height: 1.6; }
 .image-credit { display: block; color: var(--color-ink-3); font-size: 12px; line-height: 1.6; margin-top: 6px; overflow-wrap: anywhere; }
 .image-credit a { font-weight: 500; }
-.bottle-paper-label { margin-top: 24px; padding: 16px 44px 16px 16px; min-height: 70px; font-size: 17px; --stain-depth: 28px; }
-.bottle-paper-label > span:not(.stain-h), .bottle-paper-label small { display: block; position: relative; }
-.bottle-paper-label small { margin-top: 3px; color: var(--color-ink-2); font-size: 13px; }
+.bottle-label { margin-top: 24px; padding: 0; font-size: 17px; }
+.bottle-label > span, .bottle-label small { display: block; position: relative; }
+.bottle-label small { margin-top: 3px; color: var(--color-ink-2); font-size: 13px; }
 .bottle-dialog { width: min(760px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 20px; overflow-y: auto; background: var(--color-paper); color: var(--color-ink); border: 0; border-radius: 6px; }
 .bottle-dialog::backdrop { background: rgb(21 24 28 / .65); }
 .bottle-dialog[open] { animation: bottle-reveal 180ms var(--ease-paper); }
@@ -769,8 +713,8 @@ body:has(.signature-hero) > header { background: #f6f7f9; }
 .bottle-photo-catalog .bottle-photo-trigger > img { mix-blend-mode: multiply; padding: 16px 12px 44px; }
 .bottle-photo-catalog .bottle-dialog > img { background: white; }
 .image-provenance-note { margin-top: 8px; }
-.archive-bottle { display: grid; place-items: center; width: 96px; height: 120px; margin: 0 auto 20px; background: var(--color-bench); }
-.archive-bottle img { width: 96px; height: 120px; }
+.archive-bottle { display: grid; place-items: center; width: 180px; height: 240px; margin: 0 auto 24px; background: var(--color-bench); }
+.archive-bottle .bottle-thumbnail { width: 180px; height: 240px; }
 .archive-mobile-bottle { float: right; margin: 0 0 12px 16px; }
 .archive-mobile-bottle img { width: 64px; height: 80px; }
 .archive-mobile-preview-actions { clear: both; }
@@ -827,7 +771,7 @@ body:has(.signature-hero) > header { background: #f6f7f9; }
 }
 @media (max-width: 700px) { .reference-identity-photographed { grid-template-columns: minmax(0, 1fr) 124px; gap: 16px; } .reference-mobile-photo .bottle-photo-zoom { font-size: 11px; padding: 6px; } }
 
-/* Accord profile: each family is a stain soaking along a strip, length = relative strength. */
+/* Accord profile: each bar shows the relative strength of a fragrance family. */
 .accord-reading { max-width: 70ch; margin-bottom: 18px; color: var(--color-ink-2); font-size: 16px; line-height: 1.6; }
 .accord-reading strong { color: var(--color-ink); font-weight: 600; }
 .accord-reading .reference-facet-links { align-items: center; margin-top: 4px; font-size: 14px; }

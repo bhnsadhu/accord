@@ -7,7 +7,7 @@ test.afterEach(async ({ page }, testInfo) => {
   }
 });
 
-test("mobile: a tap selects a signature strip and opens its fragrance", async ({ page }) => {
+test("mobile: a tap selects a signature bottle and opens its fragrance", async ({ page }) => {
   await page.goto("/");
   const tobacco = page.getByRole("button", { name: /Preview Tobacco Vanille/ });
   await tobacco.tap();
@@ -20,7 +20,7 @@ test("mobile: a tap selects a signature strip and opens its fragrance", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Tobacco Vanille");
 });
 
-test("mobile: a result reveals its notes beside the selected strip and can be closed", async ({ page }) => {
+test("mobile: a result reveals its notes beside the selected bottle and can be closed", async ({ page }) => {
   await page.goto("/discover?q=santal");
   const row = page.getByRole("list", { name: "Fragrance results" }).locator(":scope > li").nth(1);
   const choice = row.getByRole("button", { name: /^Preview / });

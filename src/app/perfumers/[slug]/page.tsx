@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { StripRow } from "@/components/strip";
+import { FragranceRow } from "@/components/fragrance-row";
 import { cachedPerfumers, cachedSearch } from "@/lib/catalog/cached";
 import { slugify } from "@/lib/catalog/text";
 
@@ -43,7 +43,7 @@ async function Perfumer({ params }: { params: Promise<{ slug: string }> }) {
       </dl>
       <section className="reference-section section-divider" aria-labelledby="works-h">
         <div className="reference-section-heading"><h2 id="works-h">Fragrances</h2></div>
-        <div className="grid gap-3">{list.items.map(f => <StripRow key={f.productId} fragrance={f} meta={<>{f.year ? <> · {f.year}</> : null}{f.wheel ? <> · {f.wheel}</> : null}</>} />)}</div>
+        <div className="grid gap-3">{list.items.map(f => <FragranceRow key={f.productId} fragrance={f} meta={<>{f.year ? <> · {f.year}</> : null}{f.wheel ? <> · {f.wheel}</> : null}</>} />)}</div>
         <p className="reference-caption mt-4">Listed where a source credits {p.name}. Co-authors appear on each fragrance page.</p>
       </section>
     </>

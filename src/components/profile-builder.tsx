@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { BottleThumbnail } from "./bottle-thumbnail";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import { hueFor } from "@/lib/hues";
@@ -9,7 +10,7 @@ import { useAccord } from "@/lib/store";
 import { ArrowIcon, CloseIcon, SearchIcon } from "./icons";
 
 type Note = { key: string; label: string; count: number };
-type Hit = { productId: string; slug: string; name: string; brand: string; wheel: string | null };
+type Hit = { productId: string; slug: string; name: string; brand: string; wheel: string | null; bottleThumbnail?: string };
 
 const QUICK_NOTES = 28;
 
@@ -63,7 +64,7 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
         <NotePicker notes={notes} selected={draft.dislikedNotes} onToggle={(k) => toggle("dislikedNotes", k)} tone="avoid" />
       </Step>
 
-      <Step title="Accord families" hint="From the fragrance wheel. Each colour is the stain you'll see on strips.">
+      <Step title="Accord families" hint="From the fragrance wheel. Each colour represents a family of scents.">
         <ul className="flex flex-wrap gap-2">
           {wheels.map((w) => (
             <li key={w}>
@@ -261,8 +262,8 @@ function FavouriteList({ ids, onRemove }: { ids: string[]; onRemove: (id: string
     <ul className="mt-5 flex flex-wrap gap-2">
       {shown.map((f) => (
         <li key={f.productId} className="lift" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
-          <div className="strip-h strip-text flex h-11 items-center gap-2 pr-2 text-[15px] [--stain-depth:30px]">
-            <span className="stain-h" />
+          <div className="saved-fragrance flex min-h-14 items-center gap-2 pr-2 text-[15px] [--stain-depth:30px]">
+            <BottleThumbnail fragrance={f} className="saved-bottle" />
             <Link href={`/fragrance/${f.slug}`} className="relative max-w-56 truncate hover:underline">
               {f.name}
             </Link>

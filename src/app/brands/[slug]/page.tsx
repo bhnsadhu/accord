@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type CSSProperties } from "react";
 import { ArrowIcon } from "@/components/icons";
-import { StripRow } from "@/components/strip";
+import { FragranceRow } from "@/components/fragrance-row";
 import { cachedBrandOverview, cachedSearch } from "@/lib/catalog/cached";
 import { slugify } from "@/lib/catalog/text";
 import { GENDER_LABEL, hueFor } from "@/lib/hues";
@@ -101,7 +101,7 @@ async function House({ params, searchParams }: { params: Promise<{ slug: string 
           <nav className="archive-sort flex gap-4 text-sm" aria-label="Sort the line">{Object.entries(SORTS).map(([key, label]) => <Link key={key} href={query({ sort: key, page: 1 })} aria-current={sort === key ? "true" : undefined} className="inline-flex min-h-11 items-center text-ink-2 aria-[current=true]:font-semibold aria-[current=true]:text-ink">{label}</Link>)}</nav>
         </div>
         <div className="grid gap-3">
-          {list.items.map(f => <StripRow key={f.productId} fragrance={f} meta={<>{f.year ? <> · {f.year}</> : null}{f.wheel ? <> · {f.wheel}</> : null}{f.concentration ? <> · {f.concentration}</> : null}</>} />)}
+          {list.items.map(f => <FragranceRow key={f.productId} fragrance={f} meta={<>{f.year ? <> · {f.year}</> : null}{f.wheel ? <> · {f.wheel}</> : null}{f.concentration ? <> · {f.concentration}</> : null}</>} />)}
         </div>
         {pages > 1 && (
           <nav className="pagination" aria-label="Pages">

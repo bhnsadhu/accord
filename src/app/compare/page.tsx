@@ -32,7 +32,7 @@ async function Comparison({ searchParams }: { searchParams: Promise<Record<strin
     return (
       <div className="max-w-xl">
         <p className="page-intro">
-          Open any fragrance and choose Compare beside a similar one to lay the two strips side by side.
+          Open any fragrance and choose Compare beside a similar one to view the two fragrances side by side.
         </p>
         <Link href="/discover" className="mt-6 inline-block font-medium underline">
           Go to Discover
@@ -131,9 +131,8 @@ function Side({ f, only }: { f: NonNullable<Awaited<ReturnType<typeof cachedComp
   const photo = bottleImage(f.productId);
   return (
     <article className="comparison-fragrance lift" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
-      <div className="strip-h h-full">
-        <span className="stain-h" />
-        <div className="strip-text relative py-6">
+      <div className="fragrance-surface h-full">
+        <div className="fragrance-content relative py-6">
           {photo && <span className="comparison-bottle"><Image src={photo.thumbnail} width={72} height={90} alt={`${f.name} bottle`} unoptimized /></span>}
           <p className="text-[13px] text-ink-3">
             {f.brand} · {f.wheel ?? f.family ?? "Family not listed"}

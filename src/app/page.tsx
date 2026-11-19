@@ -1,16 +1,17 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
+import { bottleImage } from "@/lib/catalog/bottle-media";
+import { BottleThumbnail } from "@/components/bottle-thumbnail";
 import { Bench } from "@/components/bench";
 import { HomeFan } from "@/components/home-fan";
 import { NoteExplorer } from "@/components/note-explorer";
 import { FamilyExplorer } from "@/components/family-explorer";
 import { ScentLensLink } from "@/components/scentlens-link";
 import { ArrowIcon, CameraIcon, SearchIcon } from "@/components/icons";
-import { MatchFigure, StripRow } from "@/components/strip";
+import { MatchFigure, FragranceRow } from "@/components/fragrance-row";
 import { cachedArchetypes, cachedCoverage, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
 import { hueFor, WHEEL_ORDER } from "@/lib/hues";
 
-// Well-known fragrances for the opening fan, by ScentLens product id.
+// Well-known fragrances for the opening bottle display, by ScentLens product id.
 const FAN = ["p14462", "p14486", "p14487", "p14490", "p14466", "p22724"];
 const DISSECT = "p14487"; // Le Labo Santal 33
 // Chance and two close flankers, for the illustration of answered vs unconfirmed.
@@ -59,7 +60,7 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-        <HomeFan fragrances={fan} />
+        <HomeFan fragrances={fan.map(f => ({ ...f, bottleImage: bottleImage(f.productId)?.path }))} />
       </section>
 
       <section className="home-evidence" aria-label="How Accord connects fragrances">
@@ -72,7 +73,7 @@ export default async function Home() {
         <div className="home-bench-history"><Bench /></div>
       </section>
 
-      {/* One strip, read closely. */}
+      {/* One fragrance, read closely. */}
       {dissect && (
         <section className="site-frame mt-16 lg:mt-24">
           <div className="section-divider grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
@@ -85,10 +86,10 @@ export default async function Home() {
             </p>
           </div>
 
-          <article className="lift mt-12" style={{ "--hue": hueFor(dissect.wheel) } as CSSProperties}>
-            <div className="strip-h [--stain-depth:96px] sm:[--stain-depth:220px]">
-              <span className="stain-h" style={{ "--stain-opacity": "1" } as CSSProperties} />
-              <div className="strip-text relative py-6 pr-6 sm:py-8">
+          <article className="mt-12">
+            <div className="fragrance-feature">
+              <BottleThumbnail fragrance={dissect} src={bottleImage(dissect.productId)?.path} />
+              <div className="min-w-0">
                 <p className="text-sm text-ink-3">{dissect.brand}</p>
                 <h3 className="text-[clamp(28px,3vw,40px)] font-semibold leading-tight tracking-[-0.025em]">
                   <Link href={`/fragrance/${dissect.slug}`} className="hover:underline">
@@ -100,7 +101,7 @@ export default async function Home() {
             </div>
           </article>
 
-          {/* Margin annotations, pencilled beside the strip. */}
+          {/* The fragrance at a glance. */}
           <dl className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-3 lg:pl-6">
             <Annotation term="Accord family">
               <span className="flex items-center gap-2">
@@ -150,7 +151,7 @@ export default async function Home() {
         <FamilyExplorer fragrances={wheelTour} />
       </section>
 
-      {/* The scanner, stated plainly and shown in the strip's own terms. */}
+      {/* The scanner, with identified and unconfirmed examples. */}
       <section className="site-frame mt-16 lg:mt-24">
         <div className="section-divider grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
@@ -168,18 +169,18 @@ export default async function Home() {
           <figure className="min-w-0">
             {sure && (
               <>
-                <p className="text-[13px] text-ink-3">An answer is stained</p>
+                <p className="text-[13px] text-ink-3">Identified fragrance</p>
                 <div className="mt-2">
-                  <StripRow fragrance={sure} />
+                  <FragranceRow fragrance={sure} />
                 </div>
               </>
             )}
             {unsure.length > 0 && (
               <>
-                <p className="mt-6 text-[13px] text-ink-3">Candidates it can&rsquo;t confirm stay blank</p>
+                <p className="mt-6 text-[13px] text-ink-3">Unconfirmed candidates</p>
                 <div className="mt-2 grid gap-2">
                   {unsure.map((f) => (
-                    <StripRow key={f.productId} fragrance={f} ghost />
+                    <FragranceRow key={f.productId} fragrance={f} ghost />
                   ))}
                 </div>
               </>

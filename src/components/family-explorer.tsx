@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { FragranceSummary } from "@/lib/catalog/queries";
 import { hueFor } from "@/lib/hues";
+import { BottleThumbnail } from "./bottle-thumbnail";
 import { ArrowIcon, PlusIcon } from "./icons";
 
 /** Native disclosures keep the wheel usable with a keyboard and without script. */
@@ -12,9 +13,9 @@ export function FamilyExplorer({ fragrances }: { fragrances: FragranceSummary[] 
       <ol key={i} start={i === 0 ? 1 : middle + 1}>
         {column.map(fragrance => <li key={fragrance.productId}>
           <details className="family-disclosure" name="accord-families" style={{ "--hue": hueFor(fragrance.wheel) } as CSSProperties}>
-            <summary className="strip-h">
+            <summary className="fragrance-surface">
               <span className="sr-only">Inspect </span>
-              <span className="stain-h" aria-hidden />
+              <BottleThumbnail fragrance={fragrance} className="family-bottle" />
               <span className="family-disclosure-copy">
                 <span>{fragrance.brand} · {fragrance.wheel ?? "Unclassified"}</span>
                 <strong>{fragrance.name}</strong>

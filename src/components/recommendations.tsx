@@ -6,7 +6,7 @@ import type { FragranceSummary } from "@/lib/catalog/queries";
 import type { PresentedSet } from "@/lib/reco/present";
 import { useAccord } from "@/lib/store";
 import { ArrowIcon } from "./icons";
-import { MatchFigure, StripRow } from "./strip";
+import { MatchFigure, FragranceRow } from "./fragrance-row";
 
 type State = { status: "loading" } | { status: "error" } | { status: "done"; data: PresentedSet };
 
@@ -43,7 +43,7 @@ export function Recommendations() {
     return (
       <div className="mt-8 grid gap-3" aria-busy="true" aria-label="Loading recommendations">
         {Array.from({ length: 5 }, (_, i) => (
-          <div key={i} className="strip-h h-28 animate-pulse opacity-60" />
+          <div key={i} className="fragrance-surface h-28 animate-pulse opacity-60" />
         ))}
       </div>
     );
@@ -74,7 +74,7 @@ export function Recommendations() {
         </div>
         <div className="mt-8 grid gap-3 md:grid-cols-2">
           {data.items.map(({ fragrance }) => (
-            <StripRow key={fragrance.productId} fragrance={fragrance} />
+            <FragranceRow key={fragrance.productId} fragrance={fragrance} />
           ))}
         </div>
       </>
@@ -93,10 +93,10 @@ export function Recommendations() {
       {data.items.length === 0 ? (
         <p className="mt-8 text-lg">Nothing fits every rule you set. Avoid fewer notes or widen &ldquo;Worn as&rdquo;.</p>
       ) : (
-        <ol className="mt-8 grid gap-3 [&_.strip-text]:flex-col [&_.strip-text>div]:w-full md:[&_.strip-text]:flex-row md:[&_.strip-text>div]:w-auto">
+        <ol className="mt-8 grid gap-3 [&_.fragrance-content]:flex-col [&_.fragrance-content>div]:w-full md:[&_.fragrance-content]:flex-row md:[&_.fragrance-content>div]:w-auto">
           {data.items.map((item) => (
             <li key={item.fragrance.productId}>
-              <StripRow
+              <FragranceRow
                 fragrance={item.fragrance}
                 aside={
                   <div className="flex items-end justify-between gap-3 text-left md:flex-col md:text-right">
@@ -110,7 +110,7 @@ export function Recommendations() {
                     <li key={r}>{r}</li>
                   ))}
                 </ul>
-              </StripRow>
+              </FragranceRow>
             </li>
           ))}
         </ol>

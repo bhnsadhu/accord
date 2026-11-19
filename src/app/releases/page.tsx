@@ -16,7 +16,6 @@ export default function ReleasesPage() {
   return (
     <PageShell width="reference" className="knowledge-page">
       <PageTitle>Fragrance releases</PageTitle>
-      <p className="page-intro knowledge-lead">Explore recent releases in the catalog, or revisit a year in fragrance.</p>
       <nav className="reference-wayfinding page-wayfinding" aria-label="Directory navigation"><Link href="/discover">Discover</Link><Link href="/brands">Houses</Link><Link href="/perfumers">Perfumers</Link><Link href="/notes">Notes</Link></nav>
       <Suspense fallback={<p className="reference-empty" role="status">Loading releases.</p>}><Releases /></Suspense>
     </PageShell>

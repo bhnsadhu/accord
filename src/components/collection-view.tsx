@@ -56,8 +56,7 @@ export function CollectionView() {
     return (
       <div className="mt-8 max-w-2xl">
         <p className="text-lg leading-relaxed text-ink-2">
-          Nothing on your shelves yet. Open any fragrance and mark it Owned, Tried or Wishlist; rate what you&rsquo;ve tried and
-          your recommendations follow.
+          Save a fragrance to start your collection.
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
           <Link href="/discover" className="inline-flex h-12 items-center gap-2 bg-ink px-5 font-medium text-paper hover:bg-ink-2" style={{ borderRadius: 4 }}>
@@ -104,14 +103,14 @@ export function CollectionView() {
             <Link href="/sign-up" className="text-ink-2 underline">
               Create an account
             </Link>{" "}
-            and your collection moves with you.
+            to sync.
           </p>
         )}
       </div>
 
       <aside aria-labelledby="profile-h" className="xl:sticky xl:top-8 xl:self-start">
         <h2 id="profile-h" className="text-xl font-semibold tracking-[-0.02em]">
-          What your shelves say
+          Your taste
         </h2>
         <p className="mt-1 text-sm text-ink-3">From fragrances you own, favourite or rated 4 or 5.</p>
         {profile.families.length === 0 ? (

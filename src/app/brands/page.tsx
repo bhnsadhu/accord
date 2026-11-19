@@ -12,7 +12,6 @@ export default function BrandsPage({ searchParams }: PageProps<"/brands">) {
   return (
     <PageShell width="reference" className="knowledge-page">
       <PageTitle>Fragrance houses</PageTitle>
-      <p className="page-intro knowledge-lead">Every house in the catalog, from heritage names to independent perfumers. Open one to see its whole line, its families and its notes.</p>
       <nav className="reference-wayfinding page-wayfinding" aria-label="Directory navigation"><Link href="/discover">Discover</Link><Link href="/perfumers">Perfumers</Link><Link href="/notes">Notes</Link><Link href="/releases">Releases</Link></nav>
       <Suspense fallback={<p className="reference-empty" role="status">Loading houses.</p>}><BrandIndex searchParams={searchParams} /></Suspense>
     </PageShell>

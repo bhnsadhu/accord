@@ -329,7 +329,6 @@ button { cursor: pointer; }
 .signature-hero { position: relative; overflow: clip; padding-top: 30px; background: #e5e8ec; }
 .signature-heading { position: relative; z-index: 5; max-width: var(--page-max); margin: auto; padding: 0 var(--page-gutter); display: grid; grid-template-columns: minmax(0, 1fr) 430px; align-items: center; gap: 32px; }
 .signature-heading h1 { font-size: clamp(46px, 5vw, 76px); font-weight: 450; line-height: 1.06; letter-spacing: -.055em; text-wrap: balance; }
-.signature-heading > div > p { margin-top: 11px; color: var(--color-ink-2); font-size: 22px; line-height: 1.4; letter-spacing: -.02em; }
 .signature-search { --signature-control-height: 54px; }
 .signature-search form { display: flex; gap: 10px; height: var(--signature-control-height); }
 .signature-search label { min-width: 0; display: flex; align-items: center; gap: 12px; border: 1px solid #aeb4bd; background: #ffffffb3; border-radius: 6px; padding: 0 17px; flex: 1; }
@@ -339,7 +338,6 @@ button { cursor: pointer; }
 .signature-scan { display: flex; align-items: center; gap: 15px; height: var(--signature-control-height); margin-top: 12px; padding: 4px 17px; border: 1px solid #aeb4bd; border-radius: 6px; background: #fcfcfbd9; transition: background-color 180ms, border-color 180ms; }
 .signature-scan > span { flex: 1; min-width: 0; }
 .signature-scan strong { display: block; font-size: 17px; line-height: 1.2; font-weight: 550; letter-spacing: -.02em; }
-.signature-scan > span > span { display: block; margin-top: 2px; font-size: 13px; line-height: 1.2; color: var(--color-ink-2); }
 .signature-scan-camera { width: 27px; height: 27px; flex: none; }
 .signature-scan-arrow { width: 20px; height: 20px; flex: none; transition: transform 220ms var(--ease-paper); }
 .signature-scan:hover { background: var(--color-paper); border-color: var(--color-ink-2); }
@@ -358,15 +356,6 @@ button { cursor: pointer; }
 .bench-button { min-height: 46px; display: inline-flex; justify-content: center; align-items: center; gap: 13px; border-radius: 5px; background: var(--color-ink); color: #fff; padding: 0 22px; font-size: 14px; white-space: nowrap; transition: transform 250ms var(--ease-paper), background-color 250ms; }
 .bench-button:hover { background: #333942; }
 .bench-button:active { transform: translateY(1px); }
-.home-evidence { width: 100%; max-width: var(--page-max); margin: 40px auto 0; padding: 32px var(--page-gutter) 0; display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px 65px; }
-.home-evidence h2 { font-size: 25px; font-weight: 500; letter-spacing: -.035em; line-height: 1.2; }
-.home-evidence p { font-size: 14px; color: var(--color-ink-2); line-height: 1.6; margin-top: 8px; }
-.home-evidence-example { display: grid; grid-template-columns: 1fr auto 20px; align-items: center; gap: 24px; }
-.home-evidence-example > div > span { font-size: 12px; color: var(--color-ink-3); }
-.home-evidence-example h3 { margin-top: 2px; font-size: 22px; font-weight: 500; letter-spacing: -.03em; }
-.home-evidence-example p { font-size: 12px; margin-top: 3px; }
-.home-bench-history { grid-column: 1 / -1; }
-.home-bench-history:empty { display: none; }
 
 /* Discover: filters, bottle results and a selected fragrance preview. */
 .archive-layout { grid-template-columns: 174px minmax(0, 1fr); gap: 32px; margin-top: 30px; }
@@ -544,7 +533,6 @@ main h1 { font-weight: 450; }
 @media (max-width: 1199px) {
   .signature-heading { grid-template-columns: 1fr 350px; gap: 24px; }
   .signature-heading h1 { font-size: 55px; }
-  .signature-heading > div > p { font-size: 19px; }
   .signature-search form .bench-button { padding-inline: 14px; }.signature-search form .bench-button svg { display: none; }
   .archive-layout { grid-template-columns: 150px minmax(0,1fr); gap: 24px; }
   .archive-results { grid-template-columns: minmax(0,1fr) 290px; gap: 24px; }
@@ -572,7 +560,6 @@ main h1 { font-weight: 450; }
   .archive-filter-summary, .archive-filter-disclosure[open] > .archive-filter-summary { display: flex; cursor: pointer; font-size: 14px; font-weight: 500; align-items: center; justify-content: space-between; padding: 14px 0; border-block: 1px solid var(--color-rule); }
   .archive-filter-body { padding-top: 20px; }
   .archive-filter-body > form { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
-  .home-evidence { gap: 24px; }
 }
 @media (min-width: 1100px) { .desktop-sections { display: flex; }.mobile-sections { display: none; } }
 @media (max-width: 700px) {
@@ -581,20 +568,16 @@ main h1 { font-weight: 450; }
   .signature-hero { padding-top: 23px; }
   .signature-heading { gap: 24px; }
   .signature-heading h1 { font-size: clamp(42px, 10.5vw, 62px); max-width: 11em; line-height: 1.05; letter-spacing: -.05em; text-wrap: initial; }
-  .signature-heading > div > p { font-size: 16px; margin-top: 12px; }
   .signature-search { --signature-control-height: 48px; }
   .signature-search form { gap: 8px; }.signature-search input { font-size: 13px; }
   .signature-search label { padding-inline: 12px; gap: 8px; }.signature-search label svg { width: 17px; }
   .signature-search .bench-button { min-height: 46px; font-size: 13px; }
   .signature-scan { padding: 4px 14px; gap: 12px; }
   .signature-scan strong { font-size: 16px; }
-  .signature-scan > span > span { font-size: 12px; }
   .hero-bottles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 16px; padding: 32px var(--page-gutter); }
   .hero-bottle { gap: 12px; }
   .hero-bottle > .bottle-thumbnail { height: 130px; }
   .hero-bottle-name { font-size: 14px; }
-  .home-evidence { grid-template-columns: 1fr; margin-top: 26px; padding: 25px var(--page-gutter) 0; gap: 26px; }.home-evidence h2 { font-size: 23px; }.home-evidence p { font-size: 13px; }
-  .home-evidence-example h3 { font-size: 21px; }.home-evidence-example p { font-size: 12px; }.home-evidence-example { gap: 18px; }
   .archive-results { grid-template-columns: minmax(0,1fr); }
   .archive-preview { position: static; border-left: 0; border-top: 1px solid var(--color-rule); margin-top: 10px; padding: 28px 0 0; grid-template-columns: 48px minmax(0,1fr); gap: 24px; min-height: 0; }
   .archive-preview { display: none; }

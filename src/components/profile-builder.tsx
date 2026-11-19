@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { BottleThumbnail } from "./bottle-thumbnail";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { hueFor } from "@/lib/hues";
 import type { TasteProfile } from "@/lib/profile";
 import { useAccord } from "@/lib/store";
@@ -26,7 +26,6 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
     setDraft(profile);
   }
 
-  const labelOf = useMemo(() => new Map(notes.map((n) => [n.key, n.label])), [notes]);
   const toggle = (field: "likedNotes" | "dislikedNotes" | "likedAccords" | "families", value: string) =>
     setDraft((d) => {
       const has = d[field].includes(value);
@@ -48,7 +47,7 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
 
   return (
     <div className={`mt-12 grid grid-cols-1 gap-14 ${ready ? "" : "pointer-events-none opacity-60"}`}>
-      <Step title="Fragrances you love" hint="Search and add a few. They become favourites in your collection.">
+      <Step title="Fragrances you love" hint="Saved as favourites in your collection.">
         <FavouriteSearch
           onAdd={(hit) => saveEntry({ productId: hit.productId, shelf: "owned", rating: null, favorite: true })}
           exclude={new Set(favourites.map((f) => f.productId))}
@@ -56,15 +55,15 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
         <FavouriteList ids={favourites.map((f) => f.productId)} onRemove={removeEntry} />
       </Step>
 
-      <Step title="Notes you like" hint="The most common notes first. Pick as many as feel right.">
+      <Step title="Notes you like">
         <NotePicker notes={notes} selected={draft.likedNotes} onToggle={(k) => toggle("likedNotes", k)} />
       </Step>
 
-      <Step title="Notes you avoid" hint="Fragrances listing these are left out of your recommendations entirely.">
+      <Step title="Notes you avoid" hint="Exclude fragrances with these notes.">
         <NotePicker notes={notes} selected={draft.dislikedNotes} onToggle={(k) => toggle("dislikedNotes", k)} tone="avoid" />
       </Step>
 
-      <Step title="Accord families" hint="From the fragrance wheel. Each colour represents a family of scents.">
+      <Step title="Accord families">
         <ul className="flex flex-wrap gap-2">
           {wheels.map((w) => (
             <li key={w}>
@@ -108,7 +107,6 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
       <div className="sticky bottom-[calc(80px+env(safe-area-inset-bottom))] z-10 flex flex-wrap items-center justify-between gap-4 border-t border-ink bg-bench py-5 min-[1100px]:bottom-0">
         <p className="text-sm text-ink-2">
           {favourites.length} favourites · {draft.likedNotes.length} notes liked
-          {draft.likedNotes.length > 0 && <span className="text-ink-3"> ({draft.likedNotes.slice(0, 3).map((k) => labelOf.get(k) ?? k).join(", ")}{draft.likedNotes.length > 3 ? "…" : ""})</span>}
           {" "}· {draft.dislikedNotes.length} avoided
         </p>
         <button
@@ -125,11 +123,11 @@ export function ProfileBuilder({ notes, wheels, families }: { notes: Note[]; whe
   );
 }
 
-function Step({ title, hint, children }: { title: string; hint: string; children: ReactNode }) {
+function Step({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
   return (
     <section>
       <h2 className="text-2xl font-semibold tracking-[-0.02em]">{title}</h2>
-      <p className="mt-1.5 text-ink-2">{hint}</p>
+      {hint && <p className="mt-1.5 text-ink-2">{hint}</p>}
       <div className="mt-5">{children}</div>
     </section>
   );

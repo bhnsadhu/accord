@@ -6,20 +6,17 @@ import { HomeBottles } from "@/components/home-bottles";
 import { NoteExplorer } from "@/components/note-explorer";
 import { FamilyExplorer } from "@/components/family-explorer";
 import { ArrowIcon, CameraIcon, SearchIcon } from "@/components/icons";
-import { MatchFigure } from "@/components/fragrance-row";
-import { cachedArchetypes, cachedCoverage, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
+import { cachedArchetypes, cachedFragrance, cachedFragrancesByIds, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
 import { WHEEL_ORDER } from "@/lib/hues";
 import { HOME_BOTTLE_IDS } from "@/lib/home-bottles";
 
 const DISSECT = "p14487"; // Le Labo Santal 33
 export default async function Home() {
-  const [featured, example, dissect, similar, tour, coverage] = await Promise.all([
+  const [featured, dissect, similar, tour] = await Promise.all([
     cachedFragrancesByIds(HOME_BOTTLE_IDS),
-    cachedExample(HOME_BOTTLE_IDS),
     cachedFragrance(DISSECT),
     cachedSimilar(DISSECT, 24),
     cachedArchetypes(),
-    cachedCoverage(),
   ]);
   const wheelTour = [...tour].sort((a, b) => WHEEL_ORDER.indexOf(a.wheel ?? "") - WHEEL_ORDER.indexOf(b.wheel ?? ""));
   const noteConnections = dissect ? await Promise.all(dissect.notes.map(async (label, i) => {
@@ -37,7 +34,6 @@ export default async function Home() {
         <div className="signature-heading">
           <div>
             <h1 id="signature-heading">Know the bottle. Find the next one.</h1>
-            <p>Fragrance, understood through notes.</p>
           </div>
           <div className="signature-search">
             <form action="/discover" role="search">
@@ -46,7 +42,7 @@ export default async function Home() {
             </form>
             <Link href="/scan" className="signature-scan">
               <CameraIcon className="signature-scan-camera" />
-              <span><strong>Scan a bottle</strong><span>Identify from a photo</span></span>
+              <span><strong>Scan a bottle</strong></span>
               <ArrowIcon className="signature-scan-arrow" />
             </Link>
           </div>
@@ -54,27 +50,15 @@ export default async function Home() {
         <HomeBottles fragrances={featured.map(f => ({ ...f, bottleImage: bottleImage(f.productId)?.path }))} />
       </section>
 
-      <section className="home-evidence" aria-label="How Accord connects fragrances">
-        <div><h2>Every suggestion has a reason.</h2><p>Explore {coverage.total.toLocaleString("en-US")} fragrances through their notes, accord family, and character.</p></div>
-        {example && <Link href={`/fragrance/${example.fragrance.slug}`} className="home-evidence-example">
-          <div><span>If you love {example.source.name}</span><h3>{example.fragrance.name}</h3><p>{example.fragrance.brand} · Shares {example.sharedNotes.slice(0, 3).join(", ").toLowerCase()}</p></div>
-          {example.similarity !== null && <MatchFigure value={example.similarity} label="similarity" />}
-          <ArrowIcon />
-        </Link>}
-        <div className="home-bench-history"><Bench /></div>
-      </section>
+      <div className="site-frame"><Bench /></div>
 
       {/* One fragrance, read closely. */}
       {dissect && (
         <section className="site-frame mt-16 lg:mt-24">
-          <div className="section-divider grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+          <div className="section-divider">
             <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
-              Read a fragrance, note by note.
+              Explore by note
             </h2>
-            <p className="max-w-[36em] text-lg leading-relaxed text-ink-2 lg:pt-2">
-              Accord turns each catalog entry into notes, an accord family and its character, then compares fragrances on all
-              three. Rare materials count for more than the musk that half the catalog lists.
-            </p>
           </div>
 
           <article className="mt-12">
@@ -87,7 +71,6 @@ export default async function Home() {
                     {dissect.name}
                   </Link>
                 </h3>
-                <p className="mt-3 text-[clamp(17px,1.6vw,22px)] leading-snug text-ink">{dissect.notes.join(" · ")}</p>
               </div>
             </div>
           </article>
@@ -118,12 +101,8 @@ export default async function Home() {
       <section className="site-frame mt-16 lg:mt-24">
         <div className="section-divider flex flex-wrap items-end justify-between gap-6">
           <h2 className="max-w-[18em] text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
-            Start anywhere on the wheel.
+            Explore by family
           </h2>
-          <p className="max-w-[30em] text-ink-2">
-            The most characteristic fragrance of each accord family, in wheel order from Floral round to Fruity, chosen by how
-            closely its notes match the family as a whole.
-          </p>
         </div>
         <FamilyExplorer fragrances={wheelTour} />
       </section>
@@ -131,7 +110,7 @@ export default async function Home() {
       <section className="site-frame mt-24 lg:mt-32">
         <div className="flex flex-col items-start gap-6 pt-10 md:flex-row md:items-end md:justify-between">
           <h2 className="max-w-[16em] text-[clamp(28px,3vw,40px)] font-semibold leading-[1.08] tracking-[-0.025em] text-balance">
-            Tell Accord three things you wear. It does the rest.
+            Recommendations for you
           </h2>
           <Link
             href="/profile"

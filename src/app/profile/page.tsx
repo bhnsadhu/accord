@@ -10,11 +10,10 @@ export default async function ProfilePage() {
   return (
     <PageShell width="workspace">
       <PageTitle>
-        Tell Accord what you wear.
+        Your scent profile
       </PageTitle>
       <p className="page-intro">
-        Every part is optional. Three favourites or a handful of notes is enough for recommendations that explain themselves.
-        Ratings you add later sharpen them.
+        Add favourites or notes. Everything is optional.
       </p>
       <ProfileBuilder
         notes={notes.filter((n) => n.fragranceCount > 0).map((n) => ({ key: n.key, label: n.label, count: n.fragranceCount }))}

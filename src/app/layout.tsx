@@ -65,10 +65,7 @@ function Footer() {
       <div className="site-frame grid gap-6 py-10 text-sm text-ink-3 md:grid-cols-[1fr_auto]">
         <div className="grid max-w-2xl gap-3 leading-relaxed">
           <p>
-            Catalog from <span className="text-ink-2">doevent/perfume</span>, cleaned by <ScentLensLink />, with sourced research by Accord.
-            Your collection and taste stay personal. Bottle recognition by{" "}
-            <ScentLensLink />
-            .
+            Catalog: <span className="text-ink-2">doevent/perfume</span> · Scanning: <ScentLensLink />
           </p>
         </div>
         <ul className="flex flex-wrap gap-x-6 gap-y-3">

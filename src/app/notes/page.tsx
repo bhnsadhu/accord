@@ -13,7 +13,6 @@ export const metadata: Metadata = { title: "Fragrance notes", description: "Get 
 export default function NotesPage({ searchParams }: PageProps<"/notes">) {
   return <PageShell width="reference" className="knowledge-page">
     <PageTitle>The note library</PageTitle>
-    <p className="page-intro knowledge-lead">Put a name to what you smell. Get to know a note, then follow it into a fragrance.</p>
     <nav className="reference-wayfinding page-wayfinding" aria-label="Note navigation"><Link href="/discover">Discover</Link><Link href="/learn">Fragrance guide</Link></nav>
     <Suspense fallback={<p className="reference-empty" role="status">Loading the note library.</p>}><NoteIndex searchParams={searchParams} /></Suspense>
   </PageShell>;
@@ -34,6 +33,6 @@ async function NoteIndex({ searchParams }: { searchParams: Promise<{ q?: string 
       <ul className="knowledge-index">{matches.map(note => <li key={note.key}>
         <Link href={`/notes/${note.key}`}><NotePhoto noteKey={note.key} /><span className="note-index-copy"><strong>{note.label}</strong><span>{NOTE_GUIDE[note.key] ?? `${note.fragranceCount.toLocaleString("en-US")} fragrances list this note`}</span></span><ArrowIcon /></Link>
       </li>)}</ul>}
-    <p className="reference-caption mt-8">Notes describe scent impressions, not a full ingredient list. Short reference descriptions are available for selected notes.</p>
+    <p className="reference-caption mt-8">Notes describe scent impressions, not an ingredient list.</p>
   </>;
 }

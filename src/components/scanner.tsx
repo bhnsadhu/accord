@@ -107,7 +107,7 @@ export function Scanner() {
 
   if (!status.enabled) {
     return (
-      <section className="mt-10 grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <section className="mt-10 max-w-xl">
         <div className="bg-paper p-6 shadow-[var(--shadow-paper)] sm:p-8" style={{ borderRadius: 4 }}>
           <h2 className="text-2xl font-semibold tracking-[-0.02em]">Scanning is temporarily unavailable.</h2>
           <p className="mt-3 leading-relaxed text-ink-2">
@@ -117,7 +117,6 @@ export function Scanner() {
             Find it by name instead <ArrowIcon />
           </Link>
         </div>
-        <HowItWorks />
       </section>
     );
   }
@@ -164,20 +163,20 @@ export function Scanner() {
         {status.mock && (
           <p className="mt-2 text-sm font-medium text-alert">Development mode: results are fixed test data, not recognition.</p>
         )}
-        <p className="mt-2 text-sm text-ink-3">Processed by <ScentLensLink /> to identify your bottle. <Link href="/privacy" className="font-medium text-ink-2">How photos are handled</Link></p>
+        <p className="mt-2 text-sm text-ink-3">Photos processed by <ScentLensLink />. <Link href="/privacy" className="font-medium text-ink-2">Photo privacy</Link></p>
       </div>
 
       <div aria-live="polite" className="scanner-response">
         <div className="selection-change" key={phase.kind}>
-        {phase.kind === "idle" && <HowItWorks />}
+        {phase.kind === "idle" && <ScanTips />}
         {phase.kind === "preparing" && <p className="text-lg">Preparing your photo…</p>}
         {phase.kind === "identifying" && (
           <div>
             <p className="text-2xl font-semibold tracking-[-0.02em]">Reading the bottle…</p>
             <p className="mt-2 text-ink-2">
               <ScentLensText>{waited < 10
-                ? "Finding the bottle, comparing it with the catalog, reading the label."
-                : "ScentLens is waking up. After a quiet spell the first scan takes about a minute; later ones take a few seconds."}</ScentLensText>
+                ? "Matching your photo with the catalog."
+                : "The first scan can take about a minute."}</ScentLensText>
             </p>
             <p className="mt-4 font-mono text-sm text-ink-3 tabular">{waited}s</p>
           </div>
@@ -230,7 +229,7 @@ function problemFor(body: { status?: string; scope?: string; kind?: string; erro
     case "failed":
       return body.kind === "timeout"
         ? new Problem("ScentLens took too long.", "It may be starting up. Wait a minute, then try once more.", true)
-        : new Problem("ScentLens is paused right now.", "Its free hosting may be out of credit for the month. Watch the demo on ScentLens, or search by name.", true);
+        : new Problem("ScentLens is paused right now.", "Try again later, or search by name.", true);
     case "disabled":
       return new Problem("Scanning is switched off.", "Search by name instead.", false);
     default:
@@ -326,23 +325,16 @@ function Result({ data, onAgain }: { data: Done; onAgain: () => void }) {
   );
 }
 
-function HowItWorks() {
+function ScanTips() {
   return (
-    <ol className="grid gap-5 text-[15px] leading-relaxed text-ink-2">
-      <li>
-        <b className="font-semibold text-ink">Find the bottle.</b> OWLv2 locates it in the photo and crops it.
-      </li>
-      <li>
-        <b className="font-semibold text-ink">Compare.</b> A fine-tuned SigLIP 2 model matches the crop against 24,642 catalog
-        fragrances, at three rotations.
-      </li>
-      <li>
-        <b className="font-semibold text-ink">Read the label.</b> OCR checks the words against the best match.
-      </li>
-      <li>
-        <b className="font-semibold text-ink">Decide or abstain.</b> A calibrated confidence decides whether to name it. Below
-        the threshold, Accord shows candidates and says it isn&rsquo;t sure.
-      </li>
-    </ol>
+    <section>
+      <h2 className="text-xl font-semibold">For a clear match</h2>
+      <ul className="mt-4 grid gap-3 text-[15px] text-ink-2">
+        <li>Face the label toward the camera.</li>
+        <li>Fill the frame with one bottle.</li>
+        <li>Use even light and avoid glare.</li>
+      </ul>
+      <Link href="/how-it-works" className="mt-5 inline-flex items-center gap-2 text-sm font-medium">How scanning works <ArrowIcon /></Link>
+    </section>
   );
 }

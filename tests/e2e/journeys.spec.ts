@@ -41,7 +41,7 @@ test("command palette finds a fragrance by keyboard", async ({ page }) => {
 
 test("guest profile drives explained recommendations, and feedback re-ranks them", async ({ page }) => {
   await page.goto("/for-you");
-  await expect(page.getByText("Accord doesn’t know your taste yet.", { exact: false })).toBeVisible();
+  await expect(page.getByText("Explore fragrance families, or add favourites for personal picks.", { exact: false })).toBeVisible();
 
   await page.goto("/profile");
   await page.getByRole("button", { name: "Vanilla", exact: true }).first().click();
@@ -70,7 +70,7 @@ test("collection: shelve, rate and favourite as a guest; it survives a reload", 
   await expect(page.getByRole("button", { name: "Owned" })).toHaveAttribute("aria-pressed", "true");
   await page.goto("/collection");
   await expect(page.getByRole("heading", { name: "Chance Eau De Parfum" })).toBeVisible();
-  await expect(page.getByText("What your shelves say")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Your taste" })).toBeVisible();
 });
 
 test("scanner (mock mode) shows an answer or an honest abstention", async ({ page }) => {

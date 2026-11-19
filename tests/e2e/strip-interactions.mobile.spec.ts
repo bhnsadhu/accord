@@ -9,10 +9,10 @@ test.afterEach(async ({ page }, testInfo) => {
 
 test("mobile: one tap opens a signature fragrance", async ({ page }) => {
   await page.goto("/");
-  const tobacco = page.getByRole("link", { name: "View Tobacco Vanille by Tom Ford" });
-  await expect(tobacco).toHaveAttribute("href", "/fragrance/tom-ford-tobacco-vanille-p22724");
-  await tobacco.tap();
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Tobacco Vanille");
+  const coffee = page.getByRole("link", { name: "View Coffee & Whiskey by Bath & Body Works" });
+  await expect(coffee).toHaveAttribute("href", "/fragrance/bath-and-body-works-coffee-and-whiskey-p03615");
+  await coffee.tap();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Coffee & Whiskey");
 });
 
 test("mobile: a result reveals its notes beside the selected bottle and can be closed", async ({ page }) => {

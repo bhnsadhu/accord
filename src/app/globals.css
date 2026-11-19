@@ -353,7 +353,6 @@ button { cursor: pointer; }
 .hero-bottle-caption { display: grid; gap: 4px; text-align: center; }
 .hero-bottle-name { font-size: 17px; line-height: 1.3; font-weight: 500; }
 .hero-bottle-brand { font-size: 13px; line-height: 1.4; color: var(--color-ink-2); }
-.hero-bottle:hover .hero-bottle-name, .hero-bottle:focus-visible .hero-bottle-name { text-decoration: underline; text-underline-offset: 4px; }
 @media (hover: hover) and (pointer: fine) { .hero-bottle:hover > .bottle-thumbnail { transform: translateY(-4px); } }
 @keyframes bottle-arrive { from { opacity: 0; } to { opacity: 1; } }
 .bench-button { min-height: 46px; display: inline-flex; justify-content: center; align-items: center; gap: 13px; border-radius: 5px; background: var(--color-ink); color: #fff; padding: 0 22px; font-size: 14px; white-space: nowrap; transition: transform 250ms var(--ease-paper), background-color 250ms; }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ArrowIcon } from "@/components/icons";
-import { StripRow } from "@/components/strip";
+import { FragranceRow } from "@/components/fragrance-row";
 import { cachedNote, cachedSearch } from "@/lib/catalog/cached";
 import { GUIDE_SOURCES, NOTE_GUIDE, NOTE_REFERENCES, NOTE_REFERENCE_LABELS } from "@/lib/fragrance-guide";
 import { ImageCredit, NotePhoto } from "@/components/reference-image";
@@ -38,10 +38,10 @@ async function NoteDetail({ params }: { params: Promise<{ key: string }> }) {
     </div>
     <section className="reference-section" aria-labelledby="note-fragrances-h">
       <div className="reference-section-heading"><div><h2 id="note-fragrances-h">Find it in a fragrance</h2><p className="reference-caption mt-2">{examples.total.toLocaleString("en-US")} {examples.total === 1 ? "fragrance lists" : "fragrances list"} {note.label.toLowerCase()}. An alphabetical starting point.</p></div><Link href={`/discover?note=${encodeURIComponent(note.key)}`}>Explore all <ArrowIcon /></Link></div>
-      <div className="note-fragrance-list">{examples.items.map(fragrance => <StripRow key={fragrance.productId} fragrance={fragrance}>
+      <div className="note-fragrance-list">{examples.items.map(fragrance => <FragranceRow key={fragrance.productId} fragrance={fragrance}>
         <p className="mt-1 text-[15px]">Lists {note.label.toLowerCase()}</p>
         <p className="mt-1 truncate text-sm text-ink-2">{fragrance.notes.filter(label => label !== note.label).length > 0 ? `Also ${fragrance.notes.filter(label => label !== note.label).slice(0, 4).join(", ").toLowerCase()}` : "No other notes listed"}</p>
-      </StripRow>)}</div>
+      </FragranceRow>)}</div>
       {examples.total === 0 && <p className="reference-empty">No fragrances currently list this note. <Link href="/notes">Explore another note.</Link></p>}
     </section>
     <aside className="knowledge-next"><div><h2>A note is one part of the story.</h2><p>Family, composition and the way a fragrance develops all shape the impression.</p></div><Link href="/learn">Learn to read a fragrance <ArrowIcon /></Link></aside>

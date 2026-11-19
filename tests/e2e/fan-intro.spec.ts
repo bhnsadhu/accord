@@ -6,7 +6,7 @@ async function stallArrival(page: Page) {
     const attach = () => {
       if (!document.documentElement) return false;
       const style = document.createElement("style");
-      style.textContent = ".signature-bench .hero-strip { animation-duration: 60s !important; }";
+      style.textContent = ".signature-bench .hero-bottle { animation-duration: 60s !important; }";
       document.documentElement.appendChild(style);
       return true;
     };
@@ -37,7 +37,7 @@ test("intro blocks clicks and scrolling, and releases even if motion stalls", as
   await expect(page).toHaveURL(/\/discover$/);
 });
 
-test("skip settles every strip and navigation back does not replay the intro", async ({ page }) => {
+test("skip settles every bottle and navigation back does not replay the intro", async ({ page }) => {
   await stallArrival(page);
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await page.getByRole("button", { name: "Skip intro" }).click();

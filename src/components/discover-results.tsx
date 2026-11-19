@@ -6,7 +6,7 @@ import { useId, useState, useSyncExternalStore, type CSSProperties, type ReactNo
 import type { FragranceSummary } from "@/lib/catalog/queries";
 import { hueFor } from "@/lib/hues";
 import { ArrowIcon, CloseIcon } from "./icons";
-import { StripSpecimen } from "./strip";
+import { BottleThumbnail } from "./bottle-thumbnail";
 
 const FILTER_DESKTOP_QUERY = "(min-width: 1100px)";
 const INLINE_PREVIEW_QUERY = "(max-width: 700px)";
@@ -51,11 +51,11 @@ export function ArchiveFilters({ children, activeCount = 0 }: { children: ReactN
 }
 
 /**
- * A page of server-filtered results with a local specimen selection. The parent
+ * A page of server-filtered results with a local fragrance selection. The parent
  * keys this component by the ordered result ids, so new results start with the
  * first fragrance and cannot retain a comparison from a different page.
  */
-export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary & { bottleThumbnail?: string })[] }) {
+export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary & { bottleImage?: string })[] }) {
   const [selectedId, setSelectedId] = useState(fragrances[0]?.productId ?? "");
   const [comparisonId, setComparisonId] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -145,6 +145,7 @@ export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary 
                   }}
                 >
                   <span className="sr-only">Preview </span>
+                  <BottleThumbnail fragrance={fragrance} className="archive-choice-photo" />
                   <span className="archive-choice-copy">
                     <span className="archive-choice-name">{fragrance.name}</span>
                     <span className="archive-choice-brand">{[fragrance.brand, fragrance.concentration, fragrance.year].filter(Boolean).join(" · ")}</span>
@@ -159,7 +160,6 @@ export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary 
                       </svg>
                     )}
                   </span>
-                  <span className="archive-choice-tip" aria-hidden="true" />
                 </button>
 
                 <Link className="archive-open" href={`/fragrance/${fragrance.slug}`} aria-label={`View fragrance: ${fragrance.name} by ${fragrance.brand}`}>
@@ -208,13 +208,9 @@ export function DiscoverResults({ fragrances }: { fragrances: (FragranceSummary 
       </div>
 
       <aside id={previewId} className="archive-preview" aria-labelledby={titleId}>
-        <div className="archive-preview-strip specimen-change" key={selected.productId} aria-hidden="true">
-          <StripSpecimen fragrance={selected} className="archive-preview-paper" />
-        </div>
-
         <div className="archive-preview-content">
           <header className="archive-preview-heading selection-change" key={`heading-${selected.productId}`}>
-            {selected.bottleThumbnail && <Link href={detailHref} className="archive-bottle"><Image src={selected.bottleThumbnail} width={96} height={120} alt={`${selected.name} bottle`} unoptimized /></Link>}
+            <Link href={detailHref} className="archive-bottle" aria-label={`View ${selected.name}`}><BottleThumbnail fragrance={selected} src={selected.bottleImage} /></Link>
             <h2 id={titleId}>{selected.name}</h2>
             <p>{selected.brand}</p>
           </header>

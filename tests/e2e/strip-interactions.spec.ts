@@ -6,7 +6,7 @@ test.afterEach(async ({ page }, testInfo) => {
   }
 });
 
-test("home: choosing a strip updates the notes and keeps its detail destination", async ({ page }) => {
+test("home: choosing a bottle updates the notes and keeps its detail destination", async ({ page }) => {
   await page.goto("/");
   const selection = page.locator(".signature-selection");
   await expect(selection.getByRole("heading", { level: 2 })).toHaveText("Santal 33");

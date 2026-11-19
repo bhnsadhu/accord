@@ -20,7 +20,7 @@ test("a note reveals real connections, closes, and opens its catalog filter", as
   await expect(page.getByRole("link", { name: "Remove filter: with Amber" })).toBeVisible();
 });
 
-test("family strips disclose one at a time and still work without JavaScript", async ({ browser, baseURL }) => {
+test("family bottles disclose one at a time and still work without JavaScript", async ({ browser, baseURL }) => {
   const page = await browser.newPage({ javaScriptEnabled: false, baseURL });
   await page.goto("/");
   const families = page.locator(".family-disclosure");

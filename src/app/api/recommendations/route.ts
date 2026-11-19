@@ -1,3 +1,4 @@
+import { withBottleThumbnail } from "@/lib/catalog/bottle-media";
 import { z } from "zod";
 import { db } from "@/db";
 import { getCollection, getProfile } from "@/lib/collection/repo";
@@ -37,6 +38,6 @@ export async function POST(request: Request) {
     : [body.data.guest?.profile, body.data.guest?.collection ?? []];
 
   const result = await presentRecommendations(db, profile ?? guestStateSchema.shape.profile.parse({}), collection, body.data.k);
-  return Response.json(result, { headers: { "Cache-Control": "private, no-store" } });
+  return Response.json({ ...result, items: result.items.map(item => ({ ...item, fragrance: withBottleThumbnail(item.fragrance) })) }, { headers: { "Cache-Control": "private, no-store" } });
   } catch { reportFailure("recommendations_unavailable"); return Response.json({ error: "Suggestions are temporarily unavailable. Please try again shortly." }, { status: 503, headers: { "Retry-After": "30", "Cache-Control": "private, no-store" } }); }
 }

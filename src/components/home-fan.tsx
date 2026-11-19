@@ -5,18 +5,13 @@ import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import type { FragranceSummary } from "@/lib/catalog/queries";
 import { hueFor } from "@/lib/hues";
 import { ArrowIcon } from "./icons";
-import { StripSpecimen } from "./strip";
+import { BottleThumbnail } from "./bottle-thumbnail";
 
-const POSITIONS = [18, 32, 47, 61, 73, 83];
-const COMPACT_POSITIONS = [15, 29, 45, 60, 73, 84];
-const COMPACT_ANGLES = [-10, -7, 3, 8, 10, 11];
-const ANGLES = [-24, -13, 5, 16, 24, 32];
-const HEIGHTS = [350, 402, 470, 430, 395, 350];
-const INTRO_DELAYS = [150, 100, 0, 50, 200, 250];
+const INTRO_DELAYS = [100, 50, 0, 50, 100, 150];
 let introSeen = false;
 
-/** Pick up a paper strip, then inspect its fragrance. */
-export function HomeFan({ fragrances }: { fragrances: FragranceSummary[] }) {
+/** Explore a shelf of catalog bottles, then inspect the selected fragrance. */
+export function HomeFan({ fragrances }: { fragrances: (FragranceSummary & { bottleImage?: string })[] }) {
   const benchRef = useRef<HTMLDivElement>(null);
   const gateRef = useRef<HTMLDialogElement>(null);
   const [selectedId, setSelectedId] = useState(() => fragrances.find(f => f.productId === "p14487")?.productId ?? fragrances[0]?.productId);
@@ -30,7 +25,7 @@ export function HomeFan({ fragrances }: { fragrances: FragranceSummary[] }) {
 
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const arrivals = bench.getAnimations({ subtree: true }).filter(animation =>
-      "animationName" in animation && animation.animationName === "fan-arrive",
+      "animationName" in animation && animation.animationName === "bottle-arrive",
     );
     let disposed = false;
     let finished = false;
@@ -38,7 +33,7 @@ export function HomeFan({ fragrances }: { fragrances: FragranceSummary[] }) {
       if (disposed || finished) return;
       finished = true;
       clearTimeout(timeout);
-      // Settle before removing the animation so skipping cannot leave a strip midair.
+      // Settle before removing the animation so skipping cannot leave a bottle midair.
       arrivals.forEach(animation => animation.finish());
       bench.dataset.intro = "done";
       gate.close();
@@ -95,27 +90,26 @@ export function HomeFan({ fragrances }: { fragrances: FragranceSummary[] }) {
   return (
     <div className="signature-bench" ref={benchRef} data-intro="pending">
       <dialog ref={gateRef} open className="fan-intro-gate" aria-label="Welcome to Accord">
-        <p className="sr-only">Arranging your fragrance strips. The site opens when the introduction finishes.</p>
+        <p className="sr-only">Arranging your fragrance bottles. The site opens when the introduction finishes.</p>
         <form method="dialog"><button className="fan-intro-skip" type="submit">Skip intro</button></form>
       </dialog>
-      <noscript><style>{`.fan-intro-gate { display: none !important; } .signature-bench .hero-strip { animation: none !important; }`}</style></noscript>
-      <div className="hero-fan" role="group" aria-label="Explore signature fragrances" onPointerLeave={() => setHoverId(null)}>
-        <div className="bench-cast-light" aria-hidden />
+      <noscript><style>{`.fan-intro-gate { display: none !important; } .signature-bench .hero-bottle { animation: none !important; }`}</style></noscript>
+      <div className="hero-bottles" role="group" aria-label="Explore signature fragrances" onPointerLeave={() => setHoverId(null)}>
         {fragrances.slice(0, 6).map((f, i) => (
           <button
             key={f.productId}
             type="button"
-            className={`hero-strip${f.productId === selected.productId ? " is-selected" : ""}`}
-            style={{ "--position": `${POSITIONS[i]}%`, "--angle": `${ANGLES[i]}deg`, "--compact-position": `${COMPACT_POSITIONS[i]}%`, "--compact-angle": `${COMPACT_ANGLES[i]}deg`, "--height": `${HEIGHTS[i]}px`, "--hue": hueFor(f.wheel), "--intro-shift": `${50 - POSITIONS[i]}cqw`, "--compact-intro-shift": `${50 - COMPACT_POSITIONS[i]}cqw`, "--intro-angle": `${(i - 2) * 2}deg`, "--intro-delay": `${INTRO_DELAYS[i]}ms` } as CSSProperties}
+            className={`hero-bottle${f.productId === selected.productId ? " is-selected" : ""}`}
+            style={{ "--intro-delay": `${INTRO_DELAYS[i]}ms` } as CSSProperties}
             onPointerEnter={event => { if (event.pointerType === "mouse") setHoverId(f.productId); }}
             onFocus={() => setHoverId(f.productId)}
             onBlur={() => setHoverId(null)}
             onClick={() => { setSelectedId(f.productId); setHoverId(null); }}
             aria-pressed={f.productId === selectedId}
           >
-            <span className="sr-only">Preview </span>
-            <StripSpecimen fragrance={f} decorative={false} />
-            <span className="sr-only"> by {f.brand}</span>
+            <span className="sr-only">Preview {f.name} by {f.brand}</span>
+            <BottleThumbnail fragrance={f} src={f.bottleImage} eager />
+            <span className="hero-bottle-name" aria-hidden="true">{f.name}</span>
           </button>
         ))}
       </div>

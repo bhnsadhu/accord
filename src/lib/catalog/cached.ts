@@ -2,6 +2,7 @@ import { cacheLife, cacheTag } from "next/cache";
 import { db } from "@/db";
 import { similarFragrances } from "@/lib/reco/service";
 import { brandOverview, catalogCoverage, facetCounts, getEditions, getFragrance, getFragrancesByIds, getNote, listBrands, listNotes, listPerfumers, noteFamilyStats, searchFragrances, yearCounts, type SearchParams } from "./queries";
+import { withBottleThumbnail } from "./bottle-media";
 import { accordProfile } from "./accord-profile";
 
 // The catalog only changes when it is re-seeded; tag "catalog" invalidates it.
@@ -10,7 +11,7 @@ export async function cachedEditions(group: string) {
   "use cache";
   cacheLife("days");
   cacheTag("catalog");
-  return getEditions(db, group);
+  return (await getEditions(db, group)).map(withBottleThumbnail);
 }
 
 export async function cachedCoverage() {
@@ -24,21 +25,23 @@ export async function cachedFragrance(productId: string) {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return getFragrance(db, productId);
+  const fragrance = await getFragrance(db, productId);
+  return fragrance ? withBottleThumbnail(fragrance) : null;
 }
 
 export async function cachedFragrancesByIds(ids: string[]) {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return getFragrancesByIds(db, ids);
+  return (await getFragrancesByIds(db, ids)).map(withBottleThumbnail);
 }
 
 export async function cachedSearch(params: SearchParams) {
   "use cache";
   cacheLife("days");
   cacheTag("catalog");
-  return searchFragrances(db, params);
+  const result = await searchFragrances(db, params);
+  return { ...result, items: result.items.map(withBottleThumbnail) };
 }
 
 export async function cachedSimilar(productId: string, k = 12) {
@@ -52,7 +55,7 @@ export async function cachedSimilar(productId: string, k = 12) {
   return similar.flatMap((s) => {
     const fragrance = byId.get(s.productId);
     const sharedNotes = s.sharedNotes.map((key) => label.get(key) ?? key);
-    return fragrance ? [{ fragrance, similarity: s.similarity, sharedNotes }] : [];
+    return fragrance ? [{ fragrance: withBottleThumbnail(fragrance), similarity: s.similarity, sharedNotes }] : [];
   });
 }
 
@@ -130,7 +133,7 @@ export async function cachedArchetypes() {
   cacheTag("catalog");
   const { getCatalogIndex } = await import("@/lib/reco/load");
   const { archetypes } = await import("@/lib/reco/discover");
-  return getFragrancesByIds(db, archetypes(await getCatalogIndex(db), 1));
+  return (await getFragrancesByIds(db, archetypes(await getCatalogIndex(db), 1))).map(withBottleThumbnail);
 }
 
 /** Side-by-side comparison of two fragrances with the similarity breakdown. */

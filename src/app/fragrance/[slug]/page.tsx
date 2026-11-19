@@ -11,7 +11,8 @@ import { FragranceSources, SourceLinks, WearGuidance } from "@/components/fragra
 import { FragranceNotes } from "@/components/fragrance-notes";
 import { FragranceTaste } from "@/components/fragrance-taste";
 import { ArrowIcon } from "@/components/icons";
-import { StripRow, StripSpecimen } from "@/components/strip";
+import { BottleThumbnail } from "@/components/bottle-thumbnail";
+import { FragranceRow } from "@/components/fragrance-row";
 import { VisitTracker } from "@/components/visit-tracker";
 import { ReferenceAnchors } from "@/components/reference-anchors";
 import { cachedAccordProfile, cachedEditions, cachedFragrance, cachedNotes, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
@@ -74,16 +75,11 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
       <div className={`reference-layout ${photo ? "reference-layout-photographed" : ""}`}>
         <div className="reference-specimen" style={{ "--hue": hue } as CSSProperties}>
           <div className="sticky top-8">
-            {photo ? <><BottlePhoto image={photo} /><div className="bottle-paper-label strip-h"><span className="stain-h" /><span>{f.name}</span><small>{f.brand}</small></div></> : <div className="lift"><StripSpecimen fragrance={f} className="detail-paper" /></div>}
+            {photo ? <><BottlePhoto image={photo} /><div className="bottle-label"><span>{f.name}</span><small>{f.brand}</small></div></> : <BottleThumbnail fragrance={f} className="detail-bottle-missing" />}
           </div>
         </div>
 
         <div className="min-w-0">
-          <div className="flex items-center gap-3 lg:hidden" style={{ "--hue": hue } as CSSProperties}>
-            <div className="strip-h h-6 w-24 [--stain-depth:70px]">
-              <span className="stain-h" />
-            </div>
-          </div>
           <div className={`reference-identity ${photo ? "reference-identity-photographed" : ""}`}><div className="min-w-0">
           <Link href={`/brands/${encodeURIComponent(f.brandSlug)}`} className="mt-4 inline-block text-lg text-ink-2 lg:mt-0">
             {f.brand}
@@ -125,7 +121,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
           {otherEditions.length > 0 && <section id="editions" className="reference-section section-divider" aria-labelledby="editions-h">
             <div className="reference-section-heading"><h2 id="editions-h">Other versions</h2><Link href="/learn#concentration">Understanding concentration <ArrowIcon /></Link></div>
             <p className="reference-caption">Related editions can change the composition as well as its concentration. Compare the exact versions.</p>
-            <div className="mt-6 grid gap-3">{otherEditions.map(edition => <StripRow key={edition.productId} fragrance={edition} aside={<Link className="relative z-10 text-sm" href={`/compare?a=${f.productId}&b=${edition.productId}`}>Compare</Link>}><p className="mt-1 text-sm text-ink-2">{[edition.concentration, edition.year].filter(Boolean).join(" · ") || "Format and year not listed"}</p></StripRow>)}</div>
+            <div className="mt-6 grid gap-3">{otherEditions.map(edition => <FragranceRow key={edition.productId} fragrance={edition} aside={<Link className="relative z-10 text-sm" href={`/compare?a=${f.productId}&b=${edition.productId}`}>Compare</Link>}><p className="mt-1 text-sm text-ink-2">{[edition.concentration, edition.year].filter(Boolean).join(" · ") || "Format and year not listed"}</p></FragranceRow>)}</div>
           </section>}
 
           <section className="reference-section section-divider" aria-labelledby="similar-h">
@@ -139,7 +135,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
             </div>
             <div className="mt-6 grid gap-3">
               {similar.map((s) => (
-                <StripRow
+                <FragranceRow
                   key={s.fragrance.productId}
                   fragrance={s.fragrance}
                   aside={
@@ -166,7 +162,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
                       s.fragrance.wheel === f.wheel && f.wheel ? "Same accord family, different listed notes" : "Related catalog profile, different listed notes"
                     )}
                   </p>
-                </StripRow>
+                </FragranceRow>
               ))}
             </div>
             <Link href={`/for-you`} className="mt-8 inline-flex items-center gap-2 font-medium">
@@ -175,11 +171,11 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
           </section>
           {perfumerWorks.length > 0 && f.perfumers?.[0] && <section className="reference-section section-divider" aria-labelledby="perfumer-h">
             <div className="reference-section-heading"><h2 id="perfumer-h">More by {f.perfumers[0]}</h2><Link href={`/perfumers/${slugify(f.perfumers[0])}`}>All their fragrances <ArrowIcon /></Link></div>
-            <div className="mt-6 grid gap-3">{perfumerWorks.map(work => <StripRow key={work.productId} fragrance={work} meta={<>{work.year ? <> · {work.year}</> : null}{work.wheel ? <> · {work.wheel}</> : null}</>} />)}</div>
+            <div className="mt-6 grid gap-3">{perfumerWorks.map(work => <FragranceRow key={work.productId} fragrance={work} meta={<>{work.year ? <> · {work.year}</> : null}{work.wheel ? <> · {work.wheel}</> : null}</>} />)}</div>
           </section>}
           {siblings.length > 0 && <section className="reference-section section-divider" aria-labelledby="house-h">
             <div className="reference-section-heading"><h2 id="house-h">More from {f.brand}</h2><Link href={`/brands/${encodeURIComponent(f.brandSlug)}`}>Explore the house <ArrowIcon /></Link></div>
-            <div className="mt-6 grid gap-3">{siblings.map(sibling => <StripRow key={sibling.productId} fragrance={sibling} />)}</div>
+            <div className="mt-6 grid gap-3">{siblings.map(sibling => <FragranceRow key={sibling.productId} fragrance={sibling} />)}</div>
           </section>}
         </div>
       </div>
@@ -199,7 +195,7 @@ function Fact({ term, children }: { term: string; children: React.ReactNode }) {
 function DetailSkeleton() {
   return (
     <div className="grid gap-10 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-20" aria-busy="true" aria-label="Loading fragrance">
-      <div className="strip-v mx-auto hidden h-[560px] w-[104px] animate-pulse opacity-60 lg:block" />
+      <div className="fragrance-surface mx-auto hidden h-[400px] w-full animate-pulse opacity-60 lg:block" />
       <div>
         <div className="h-6 w-40 bg-paper/70" />
         <div className="mt-3 h-16 w-3/4 bg-paper/70" />

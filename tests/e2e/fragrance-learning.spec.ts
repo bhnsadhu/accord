@@ -41,7 +41,7 @@ test("note search, empty search, and an unannotated note remain useful", async (
   await expect(page.getByRole("main").getByText("A scent description is not yet included", { exact: false })).toBeVisible();
   await expect(page.locator("main .note-fragrance-list article").first()).toBeVisible();
   await page.goto("/notes/not-a-catalog-note");
-  await expect(page.getByRole("heading", { name: "No strip by that name." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "No fragrance by that name." })).toBeVisible();
   // Next streams this route, so an absent resource uses not-found UI and noindex.
   await expect(page.locator('meta[name="robots"][content="noindex"]').first()).toBeAttached();
 });

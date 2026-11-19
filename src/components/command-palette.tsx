@@ -3,8 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { hueFor } from "@/lib/hues";
+import { createContext, useCallback, useContext, useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { ArrowIcon, CloseIcon, SearchIcon } from "./icons";
 
 type Hit = { productId: string; slug: string; name: string; brand: string; wheel: string | null; concentration?: string | null; year?: number | null; bottleThumbnail?: string };
@@ -139,7 +138,7 @@ export function PaletteProvider({ children }: { children: ReactNode }) {
               {shownHits.map((hit, i) => (
                 <li key={hit.productId} id={`${listId}-${i}`} data-option-index={i} role="option" aria-selected={i === active}
                   onPointerMove={(e) => { if (e.pointerType === "mouse") setActive(i); }} onClick={() => go(`/fragrance/${hit.slug}`)} className="quick-find-result">
-                  {hit.bottleThumbnail ? <Image className="quick-find-bottle" src={hit.bottleThumbnail} width={40} height={50} alt="" unoptimized /> : <span className="quick-find-blotter" aria-hidden="true" style={{ "--hue": hueFor(hit.wheel) } as CSSProperties} />}
+                  {hit.bottleThumbnail ? <Image className="quick-find-bottle" src={hit.bottleThumbnail} width={40} height={50} alt="" unoptimized /> : <span className="quick-find-missing" aria-hidden="true">Photo<br />not listed</span>}
                   <span className="quick-find-result-copy"><span className="quick-find-result-name">{hit.name}</span><span className="quick-find-result-brand">{[hit.brand, hit.concentration, hit.year].filter(Boolean).join(" · ")}</span></span>
                 </li>
               ))}

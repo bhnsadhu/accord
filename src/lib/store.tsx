@@ -16,7 +16,7 @@ type Store = {
   account: Account;
   profile: TasteProfile;
   collection: CollectionEntry[];
-  /** Fragrances recently opened, newest first: the strips laid on the bench. */
+  /** Fragrances recently opened, newest first. */
   trail: string[];
   error: string | null;
   entryFor: (productId: string) => CollectionEntry | undefined;

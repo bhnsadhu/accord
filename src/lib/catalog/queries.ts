@@ -6,6 +6,7 @@ import type { FragranceResearch } from "./research-schema";
 
 export type FragranceSummary = {
   productId: string;
+  bottleThumbnail?: string;
   slug: string;
   name: string;
   brand: string;

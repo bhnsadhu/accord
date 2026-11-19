@@ -7,7 +7,8 @@ import { hueFor } from "@/lib/hues";
 import type { IdentifyResult } from "@/lib/scan/scentlens";
 import { ArrowIcon, CameraIcon } from "./icons";
 import { CollectionControls } from "./collection-controls";
-import { StripRow } from "./strip";
+import { BottleThumbnail } from "./bottle-thumbnail";
+import { FragranceRow } from "./fragrance-row";
 import { ScentLensLink, ScentLensText } from "./scentlens-link";
 
 type Status = { enabled: false } | { enabled: true; mock: boolean; remaining: number; signedIn: boolean; limitedBy?: "month" | "global" | "caller" | null; canIncreaseWithAccount?: boolean };
@@ -248,9 +249,9 @@ function Result({ data, onAgain }: { data: Done; onAgain: () => void }) {
       <div>
         <p className="text-[13px] text-ink-3">Identified</p>
         <article className="lift mt-2" style={{ "--hue": hueFor(answer.wheel) } as CSSProperties}>
-          <div className="strip-h">
-            <span className="stain-h" style={{ "--stain-opacity": "1" } as CSSProperties} />
-            <div className="strip-text relative py-5 pr-6">
+          <div className="fragrance-feature">
+            <BottleThumbnail fragrance={answer} />
+            <div className="min-w-0">
               <p className="text-sm text-ink-3">
                 {answer.brand}
                 {answer.wheel && <> · {answer.wheel}</>}
@@ -286,7 +287,7 @@ function Result({ data, onAgain }: { data: Done; onAgain: () => void }) {
             <h3 className="text-[13px] text-ink-3">Other close matches</h3>
             <div className="mt-2 grid gap-2">
               {others.map((f) => (
-                <StripRow key={f.productId} fragrance={f} ghost />
+                <FragranceRow key={f.productId} fragrance={f} ghost />
               ))}
             </div>
           </section>
@@ -307,7 +308,7 @@ function Result({ data, onAgain }: { data: Done; onAgain: () => void }) {
       <div className="mt-6 grid gap-2">
         {result.matches.map((m) => {
           const f = byId.get(m.product_id);
-          return f ? <StripRow key={f.productId} fragrance={f} ghost /> : null;
+          return f ? <FragranceRow key={f.productId} fragrance={f} ghost /> : null;
         })}
       </div>
       <p className="mt-6 text-[15px] text-ink-2">

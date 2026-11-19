@@ -7,7 +7,7 @@ import { hueFor } from "@/lib/hues";
 import type { CollectionEntry, Shelf } from "@/lib/profile";
 import { useAccord } from "@/lib/store";
 import { ArrowIcon, HeartIcon, StarIcon } from "./icons";
-import { StripRow } from "./strip";
+import { FragranceRow } from "./fragrance-row";
 
 type Tab = Shelf | "favourites";
 const TABS: { id: Tab; label: string }[] = [
@@ -88,13 +88,13 @@ export function CollectionView() {
             </button>
           ))}
         </div>
-        <div role="tabpanel" className="mt-6 grid gap-3 [&_.strip-text]:flex-col [&_.strip-text>div]:w-full md:[&_.strip-text]:flex-row md:[&_.strip-text>div]:w-auto">
+        <div role="tabpanel" className="mt-6 grid gap-3 [&_.fragrance-content]:flex-col [&_.fragrance-content>div]:w-full md:[&_.fragrance-content]:flex-row md:[&_.fragrance-content>div]:w-auto">
           {shown.length === 0 && <p className="text-ink-2">This shelf is empty.</p>}
           {shown.map((entry) => {
             const f = rows.get(entry.productId);
-            if (!f) return loading ? <div key={entry.productId} className="strip-h h-24 animate-pulse opacity-60" /> : null;
+            if (!f) return loading ? <div key={entry.productId} className="fragrance-surface h-24 animate-pulse opacity-60" /> : null;
             return (
-              <StripRow key={entry.productId} fragrance={f} aside={<EntryControls entry={entry} onSave={saveEntry} onRemove={removeEntry} name={f.name} />} />
+              <FragranceRow key={entry.productId} fragrance={f} aside={<EntryControls entry={entry} onSave={saveEntry} onRemove={removeEntry} name={f.name} />} />
             );
           })}
         </div>

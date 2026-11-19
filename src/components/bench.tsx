@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { BottleThumbnail } from "./bottle-thumbnail";
 import { useEffect, useState, type CSSProperties } from "react";
 import { hueFor } from "@/lib/hues";
 import { useAccord } from "@/lib/store";
 
-type Mini = { productId: string; slug: string; name: string; brand: string; wheel: string | null };
+type Mini = { productId: string; slug: string; name: string; brand: string; wheel: string | null; bottleThumbnail?: string };
 
 /**
- * The strips you have picked up recently, laid on the bench in order:
+ * The fragrances you have opened recently:
  * a trail you can walk back along.
  */
 export function Bench() {
@@ -33,8 +34,8 @@ export function Bench() {
       <ol className="mt-3 flex gap-2 overflow-x-auto pb-2">
         {shown.map((f) => (
           <li key={f.productId} className="shrink-0" style={{ "--hue": hueFor(f.wheel) } as CSSProperties}>
-            <Link href={`/fragrance/${f.slug}`} className="lift strip-h strip-text flex h-11 max-w-64 items-center pr-4 text-sm [--stain-depth:30px]" title={`${f.brand} ${f.name}`}>
-              <span className="stain-h" />
+            <Link href={`/fragrance/${f.slug}`} className="lift saved-fragrance flex min-h-14 max-w-64 items-center pr-4 text-sm [--stain-depth:30px]" title={`${f.brand} ${f.name}`}>
+              <BottleThumbnail fragrance={f} className="saved-bottle" />
               <span className="relative truncate">{f.name}</span>
             </Link>
           </li>

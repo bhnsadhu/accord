@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { PageShell, PageTitle } from "@/components/page-shell";
 import { ArrowIcon } from "@/components/icons";
-import { StripRow } from "@/components/strip";
+import { FragranceRow } from "@/components/fragrance-row";
 import { cachedSearch, cachedYears } from "@/lib/catalog/cached";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ async function Releases() {
     <>
       <section className="reference-section" aria-labelledby="newest-h">
         <div className="reference-section-heading"><h2 id="newest-h">Newest in the catalog</h2><Link href="/discover?sort=newest">All by release year <ArrowIcon /></Link></div>
-        <div className="grid gap-3">{newest.items.map(f => <StripRow key={f.productId} fragrance={f} meta={<>{f.year ? <> · {f.year}</> : null}{f.wheel ? <> · {f.wheel}</> : null}</>} />)}</div>
+        <div className="grid gap-3">{newest.items.map(f => <FragranceRow key={f.productId} fragrance={f} meta={<>{f.year ? <> · {f.year}</> : null}{f.wheel ? <> · {f.wheel}</> : null}</>} />)}</div>
         <p className="reference-caption mt-4">Ordered by listed release year. Catalog coverage varies by house and year.</p>
       </section>
       <section className="reference-section" aria-labelledby="years-h">

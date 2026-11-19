@@ -1,3 +1,4 @@
+import { withBottleThumbnail } from "@/lib/catalog/bottle-media";
 import { db } from "@/db";
 import { getFragrancesByIds } from "@/lib/catalog/queries";
 import { remainingQuota } from "@/lib/scan/guard";
@@ -52,7 +53,7 @@ export async function POST(request: Request) {
     case "done": {
       const ids = outcome.result.matches.map((m) => m.product_id);
       const fragrances = await getFragrancesByIds(db, ids);
-      return Response.json({ ...outcome, fragrances, mock: mode === "mock" }, { headers: noStore });
+      return Response.json({ ...outcome, fragrances: fragrances.map(withBottleThumbnail), mock: mode === "mock" }, { headers: noStore });
     }
     case "invalid":
       return Response.json(outcome, { status: 400, headers: noStore });

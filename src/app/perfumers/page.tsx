@@ -11,7 +11,6 @@ export default function PerfumersPage() {
   return (
     <PageShell width="reference" className="knowledge-page">
       <PageTitle>Perfumers</PageTitle>
-      <p className="page-intro knowledge-lead">The noses behind the fragrances. Accord credits a perfumer only when a brand, the perfumer or a named reference source confirms it.</p>
       <nav className="reference-wayfinding page-wayfinding" aria-label="Directory navigation"><Link href="/brands">Houses</Link><Link href="/discover">Discover</Link><Link href="/notes">Notes</Link></nav>
       <Suspense fallback={<p className="reference-empty" role="status">Loading perfumers.</p>}><PerfumerIndex /></Suspense>
     </PageShell>
@@ -29,7 +28,7 @@ async function PerfumerIndex() {
       ) : (
         <p className="reference-empty mt-10">No perfumer credits have been verified yet.</p>
       )}
-      <p className="reference-caption mt-8">Perfumer credits cover {coverage.withPerfumers.toLocaleString("en-US")} of {coverage.total.toLocaleString("en-US")} catalog entries so far. More are added as each one is checked against a source. <Link href="/learn#catalog">How the catalog grows</Link></p>
+      <p className="reference-caption mt-8">Credits verified for {coverage.withPerfumers.toLocaleString("en-US")} of {coverage.total.toLocaleString("en-US")} fragrances. <Link href="/learn#catalog">How the catalog grows</Link></p>
     </>
   );
 }

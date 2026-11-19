@@ -105,7 +105,6 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
             <Fact term="Character">{f.character ?? "Not listed"}</Fact>
             <Fact term="Marketed as">{f.gender ? GENDER_LABEL[f.gender] : "Not listed"}</Fact>
           </dl>
-          <p className="reference-caption mt-3">Anyone can wear it. <a href="#sources">See the sources behind these details.</a></p>
 
           <section id="collection" className="reference-collection" aria-label="Your collection">
             <CollectionControls productId={f.productId} />
@@ -120,7 +119,6 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
           <FragranceSources fragrance={f} />
           {otherEditions.length > 0 && <section id="editions" className="reference-section section-divider" aria-labelledby="editions-h">
             <div className="reference-section-heading"><h2 id="editions-h">Other versions</h2><Link href="/learn#concentration">Understanding concentration <ArrowIcon /></Link></div>
-            <p className="reference-caption">Related editions can change the composition as well as its concentration. Compare the exact versions.</p>
             <div className="mt-6 grid gap-3">{otherEditions.map(edition => <FragranceRow key={edition.productId} fragrance={edition} aside={<Link className="relative z-10 text-sm" href={`/compare?a=${f.productId}&b=${edition.productId}`}>Compare</Link>}><p className="mt-1 text-sm text-ink-2">{[edition.concentration, edition.year].filter(Boolean).join(" · ") || "Format and year not listed"}</p></FragranceRow>)}</div>
           </section>}
 
@@ -130,7 +128,7 @@ async function Detail({ params }: { params: Promise<{ slug: string }> }) {
                 Smells similar
               </h2>
               <p className="max-w-[28em] text-sm text-ink-3">
-                Compared by listed notes, family and character. A catalog similarity score, not a rating or a promise of an identical smell.
+                Based on listed notes, family and character.
               </p>
             </div>
             <div className="mt-6 grid gap-3">

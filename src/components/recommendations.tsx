@@ -65,8 +65,7 @@ export function Recommendations() {
       <>
         <div className="mt-5 flex flex-col items-start gap-5 border-b border-rule pb-8 md:flex-row md:items-end md:justify-between">
           <p className="max-w-[36em] text-lg leading-relaxed text-ink-2">
-            Accord doesn&rsquo;t know your taste yet. Add a few favourites or notes and this page becomes yours. Until then, here is
-            the most characteristic fragrance of each accord family.
+            Explore fragrance families, or add favourites for personal picks.
           </p>
           <Link href="/profile" className="inline-flex h-[52px] shrink-0 items-center gap-2 bg-ink px-6 font-medium text-paper hover:bg-ink-2" style={{ borderRadius: 4 }}>
             Build your profile <ArrowIcon />
@@ -84,12 +83,18 @@ export function Recommendations() {
   return (
     <>
       <p className="page-intro">
-        Ranked for your taste. &ldquo;Top 1%&rdquo; means it outscored at least 99% of eligible catalog fragrances:
-        a relative fit, not a promise you&rsquo;ll love it.{" "}
+        Based on your taste.{" "}
         <Link href="/profile" className="text-ink underline">
           Adjust your profile
         </Link>
       </p>
+      <details className="mt-3 text-sm text-ink-2">
+        <summary className="w-fit cursor-pointer">About match scores</summary>
+        <p className="mt-2 max-w-2xl leading-relaxed">
+          &ldquo;Top 1%&rdquo; means it outscored at least 99% of eligible catalog fragrances:
+          a relative fit, not a promise you&rsquo;ll love it.
+        </p>
+      </details>
       {data.items.length === 0 ? (
         <p className="mt-8 text-lg">Nothing fits every rule you set. Avoid fewer notes or widen &ldquo;Worn as&rdquo;.</p>
       ) : (

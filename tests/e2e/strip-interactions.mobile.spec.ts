@@ -7,16 +7,11 @@ test.afterEach(async ({ page }, testInfo) => {
   }
 });
 
-test("mobile: a tap selects a signature bottle and opens its fragrance", async ({ page }) => {
+test("mobile: one tap opens a signature fragrance", async ({ page }) => {
   await page.goto("/");
-  const tobacco = page.getByRole("button", { name: /Preview Tobacco Vanille/ });
+  const tobacco = page.getByRole("link", { name: "View Tobacco Vanille by Tom Ford" });
+  await expect(tobacco).toHaveAttribute("href", "/fragrance/tom-ford-tobacco-vanille-p22724");
   await tobacco.tap();
-  await expect(tobacco).toHaveAttribute("aria-pressed", "true");
-  const selection = page.locator(".signature-selection");
-  await expect(selection.getByRole("heading", { level: 2 })).toHaveText("Tobacco Vanille");
-  const view = selection.getByRole("link", { name: "View fragrance" });
-  await expect(view).toHaveAttribute("href", "/fragrance/tom-ford-tobacco-vanille-p22724");
-  await view.tap();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Tobacco Vanille");
 });
 

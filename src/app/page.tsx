@@ -2,35 +2,27 @@ import Link from "next/link";
 import { bottleImage } from "@/lib/catalog/bottle-media";
 import { BottleThumbnail } from "@/components/bottle-thumbnail";
 import { Bench } from "@/components/bench";
-import { HomeFan } from "@/components/home-fan";
+import { HomeBottles } from "@/components/home-bottles";
 import { NoteExplorer } from "@/components/note-explorer";
 import { FamilyExplorer } from "@/components/family-explorer";
-import { ScentLensLink } from "@/components/scentlens-link";
 import { ArrowIcon, CameraIcon, SearchIcon } from "@/components/icons";
-import { MatchFigure, FragranceRow } from "@/components/fragrance-row";
+import { MatchFigure } from "@/components/fragrance-row";
 import { cachedArchetypes, cachedCoverage, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
-import { hueFor, WHEEL_ORDER } from "@/lib/hues";
+import { WHEEL_ORDER } from "@/lib/hues";
 
 // Well-known fragrances for the opening bottle display, by ScentLens product id.
-const FAN = ["p14462", "p14486", "p14487", "p14490", "p14466", "p22724"];
+const FEATURED = ["p14462", "p14486", "p14487", "p14490", "p14466", "p22724"];
 const DISSECT = "p14487"; // Le Labo Santal 33
-// Chance and two close flankers, for the illustration of answered vs unconfirmed.
-const SURE = "p05819";
-const UNSURE = ["p05820", "p05821"];
-
 export default async function Home() {
-  const [fan, example, dissect, similar, tour, illustration, coverage] = await Promise.all([
-    cachedFragrancesByIds(FAN),
-    cachedExample(FAN),
+  const [featured, example, dissect, similar, tour, coverage] = await Promise.all([
+    cachedFragrancesByIds(FEATURED),
+    cachedExample(FEATURED),
     cachedFragrance(DISSECT),
     cachedSimilar(DISSECT, 24),
     cachedArchetypes(),
-    cachedFragrancesByIds([SURE, ...UNSURE]),
     cachedCoverage(),
   ]);
   const wheelTour = [...tour].sort((a, b) => WHEEL_ORDER.indexOf(a.wheel ?? "") - WHEEL_ORDER.indexOf(b.wheel ?? ""));
-  const sure = illustration.find((f) => f.productId === SURE);
-  const unsure = illustration.filter((f) => UNSURE.includes(f.productId));
   const noteConnections = dissect ? await Promise.all(dissect.notes.map(async (label, i) => {
     const key = dissect.noteKeys[i];
     const result = await cachedSearch({ notes: [key], pageSize: 4 });
@@ -60,7 +52,7 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-        <HomeFan fragrances={fan.map(f => ({ ...f, bottleImage: bottleImage(f.productId)?.path }))} />
+        <HomeBottles fragrances={featured.map(f => ({ ...f, bottleImage: bottleImage(f.productId)?.path }))} />
       </section>
 
       <section className="home-evidence" aria-label="How Accord connects fragrances">
@@ -101,20 +93,6 @@ export default async function Home() {
             </div>
           </article>
 
-          {/* The fragrance at a glance. */}
-          <dl className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-3 lg:pl-6">
-            <Annotation term="Accord family">
-              <span className="flex items-center gap-2">
-                <i className="inline-block size-2.5 rounded-full" style={{ background: hueFor(dissect.wheel) }} />
-                {dissect.wheel ?? "Unclassified"}
-              </span>
-            </Annotation>
-            <Annotation term="Character">{dissect.character ?? "Not listed"}</Annotation>
-            <Annotation term="Catalog family">
-              {[...new Set([dissect.family, dissect.subfamily].filter(Boolean))].join(" · ") || "Not listed"}
-            </Annotation>
-          </dl>
-
           <NoteExplorer connections={noteConnections} />
 
           <div className="mt-12 lg:pl-6">
@@ -151,45 +129,6 @@ export default async function Home() {
         <FamilyExplorer fragrances={wheelTour} />
       </section>
 
-      {/* The scanner, with identified and unconfirmed examples. */}
-      <section className="site-frame mt-16 lg:mt-24">
-        <div className="section-divider grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <h2 className="text-[clamp(32px,3.6vw,48px)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
-              A careful eye for your next scent.
-            </h2>
-            <p className="mt-6 max-w-[34em] text-lg leading-relaxed text-ink-2">
-              <ScentLensLink /> finds the bottle, compares it with 24,642 catalog fragrances and reads its label. When the evidence is thin it
-              says so and shows its best candidates as unconfirmed, instead of guessing.
-            </p>
-            <Link href="/scan" className="mt-6 inline-flex items-center gap-2 font-medium hover:underline">
-              How scanning works <ArrowIcon />
-            </Link>
-          </div>
-          <figure className="min-w-0">
-            {sure && (
-              <>
-                <p className="text-[13px] text-ink-3">Identified fragrance</p>
-                <div className="mt-2">
-                  <FragranceRow fragrance={sure} />
-                </div>
-              </>
-            )}
-            {unsure.length > 0 && (
-              <>
-                <p className="mt-6 text-[13px] text-ink-3">Unconfirmed candidates</p>
-                <div className="mt-2 grid gap-2">
-                  {unsure.map((f) => (
-                    <FragranceRow key={f.productId} fragrance={f} ghost />
-                  ))}
-                </div>
-              </>
-            )}
-            <figcaption className="mt-4 text-sm text-ink-3">An illustration of the two states, not a scan result.</figcaption>
-          </figure>
-        </div>
-      </section>
-
       <section className="site-frame mt-24 lg:mt-32">
         <div className="flex flex-col items-start gap-6 pt-10 md:flex-row md:items-end md:justify-between">
           <h2 className="max-w-[16em] text-[clamp(28px,3vw,40px)] font-semibold leading-[1.08] tracking-[-0.025em] text-balance">
@@ -205,14 +144,5 @@ export default async function Home() {
         </div>
       </section>
     </>
-  );
-}
-
-function Annotation({ term, children }: { term: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <dt className="text-[13px] text-ink-3">{term}</dt>
-      <dd className="mt-1 text-lg font-medium">{children}</dd>
-    </div>
   );
 }

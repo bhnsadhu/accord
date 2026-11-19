@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 // Lenis eases the wheel. These checks pin the three places it must stay out of
-// the way: the entrance gate, modal dialogs, and reduced motion.
+// the way: page entry, modal dialogs, and reduced motion.
 
 const scrollY = (page: import("@playwright/test").Page) => page.evaluate(() => Math.round(window.scrollY));
 
@@ -18,15 +18,9 @@ test("the wheel is eased, not jumped", async ({ page }) => {
   expect(await scrollY(page)).toBe(600);
 });
 
-test("the page does not scroll while the entrance plays", async ({ page }) => {
+test("the homepage scrolls as soon as it opens", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator(".signature-bench")).toHaveAttribute("data-intro", "playing");
   await page.mouse.move(700, 450);
-  await page.mouse.wheel(0, 800);
-  await page.waitForTimeout(150);
-  expect(await scrollY(page)).toBe(0);
-  // Once the entrance hands over, the wheel works again.
-  await expect(page.locator("html")).not.toHaveClass(/accord-intro-active/, { timeout: 4000 });
   await page.mouse.wheel(0, 600);
   await expect.poll(() => scrollY(page), { timeout: 3000 }).toBeGreaterThan(0);
 });

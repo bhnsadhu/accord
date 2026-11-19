@@ -345,42 +345,20 @@ button { cursor: pointer; }
 .signature-scan:hover { background: var(--color-paper); border-color: var(--color-ink-2); }
 .signature-scan:hover .signature-scan-arrow { transform: translateX(4px); }
 .signature-scan:hover .signature-scan-camera circle { animation: lens-focus 350ms var(--ease-paper); transform-origin: center; }
-.signature-bench { position: relative; max-width: 1600px; margin: 0 auto; }
-.hero-bottles { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); align-items: end; gap: 12px; padding: 48px var(--page-gutter) 38px; }
-.hero-bottle { mix-blend-mode: multiply; display: flex; flex-direction: column; align-items: center; gap: 18px; min-width: 0; padding: 0; border: 0; background: none; transform: translateY(0); transition: transform 350ms var(--ease-paper); }
-.hero-bottle > .bottle-thumbnail { width: 100%; height: clamp(210px, 23vw, 340px); }
-.hero-bottle.is-selected { transform: translateY(-12px); }
+.hero-bottles { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; max-width: var(--page-max); margin: 0 auto; padding: 48px var(--page-gutter); }
+.hero-bottles > li { min-width: 0; }
+.hero-bottle { mix-blend-mode: multiply; display: flex; flex-direction: column; align-items: center; gap: 16px; min-width: 0; }
+.hero-bottle > .bottle-thumbnail { width: 100%; height: clamp(180px, 19vw, 280px); transition: transform 180ms var(--ease-paper); animation: bottle-arrive 400ms ease-out var(--intro-delay) backwards; }
 .hero-bottle:focus-visible { outline-offset: 8px; border-radius: 4px; }
-.hero-bottle-name { font-size: 14px; line-height: 1.3; color: var(--color-ink-2); text-align: center; }
-.hero-bottle.is-selected .hero-bottle-name { color: var(--color-ink); font-weight: 600; }
-@keyframes bottle-arrive {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.signature-bench:not([data-intro="done"]) .hero-bottle { animation: bottle-arrive 700ms var(--ease-paper) var(--intro-delay) both; }
-.fan-intro-gate { position: fixed; inset: 0; z-index: 100; margin: 0; padding: 0; width: 100%; height: 100%; max-width: none; max-height: none; border: 0; background: transparent; color: var(--color-ink); }
-.fan-intro-gate::backdrop { background: transparent; }
-.fan-intro-skip { position: absolute; right: 24px; bottom: max(24px, env(safe-area-inset-bottom)); min-height: 44px; padding: 10px 16px; border-radius: 4px; color: var(--color-ink-2); font-size: 13px; }
-.fan-intro-skip:hover { color: var(--color-ink); }
-html.accord-intro-active { scrollbar-gutter: stable; }
-html.accord-intro-active, html.accord-intro-active body { overflow: hidden; overscroll-behavior: none; }
-/* If hydration fails, the nonmodal shield releases after the CSS sequence. */
-@keyframes intro-shield-release { to { visibility: hidden; } }
-.signature-bench[data-intro="pending"] .fan-intro-gate { animation: intro-shield-release 1500ms step-end forwards; }
-.signature-selection { position: relative; z-index: 7; max-width: 1050px; margin: 0 auto; padding: 4px 32px 32px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 15px 60px; }
-.signature-identity { display: flex; align-items: flex-start; gap: 17px; }
-.signature-family { flex: none; margin-top: 5px; width: 5px; height: 34px; background: var(--hue); border-radius: 2px; }
-.signature-identity h2 { font-size: 34px; letter-spacing: -.04em; font-weight: 450; line-height: 1.1; }
-.signature-identity p { margin-top: 5px; font-size: 15px; }
-.signature-identity p span { color: var(--color-ink-3); }
-.signature-notes { align-self: center; font-size: 14px; line-height: 1.6; }
-.signature-notes > span { font-size: 12px; color: var(--color-ink-3); }
-.signature-actions { grid-column: 1 / -1; display: flex; gap: 12px; padding-left: 22px; }
+.hero-bottle-caption { display: grid; gap: 4px; text-align: center; }
+.hero-bottle-name { font-size: 17px; line-height: 1.3; font-weight: 500; }
+.hero-bottle-brand { font-size: 13px; line-height: 1.4; color: var(--color-ink-2); }
+.hero-bottle:hover .hero-bottle-name, .hero-bottle:focus-visible .hero-bottle-name { text-decoration: underline; text-underline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) { .hero-bottle:hover > .bottle-thumbnail { transform: translateY(-4px); } }
+@keyframes bottle-arrive { from { opacity: 0; } to { opacity: 1; } }
 .bench-button { min-height: 46px; display: inline-flex; justify-content: center; align-items: center; gap: 13px; border-radius: 5px; background: var(--color-ink); color: #fff; padding: 0 22px; font-size: 14px; white-space: nowrap; transition: transform 250ms var(--ease-paper), background-color 250ms; }
 .bench-button:hover { background: #333942; }
 .bench-button:active { transform: translateY(1px); }
-.bench-button.secondary { color: var(--color-ink); background: transparent; border: 1px solid #aab0ba; }
-.bench-button.secondary:hover { background: #fff8; }
 .home-evidence { width: 100%; max-width: var(--page-max); margin: 40px auto 0; padding: 32px var(--page-gutter) 0; display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px 65px; }
 .home-evidence h2 { font-size: 25px; font-weight: 500; letter-spacing: -.035em; line-height: 1.2; }
 .home-evidence p { font-size: 14px; color: var(--color-ink-2); line-height: 1.6; margin-top: 8px; }
@@ -585,11 +563,9 @@ main h1 { font-weight: 450; }
   body { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
   .signature-heading { grid-template-columns: 1fr; gap: 23px; }
   .signature-search { width: min(580px,100%); }
-  .hero-bottles { gap: 8px; padding-top: 36px; }
+  .hero-bottles { gap: 16px; padding-block: 40px; }
   .hero-bottle > .bottle-thumbnail { height: 200px; }
-  .hero-bottle-name { font-size: 13px; }
-  .signature-selection { max-width: 800px; gap: 15px 32px; }
-  .signature-identity h2 { font-size: 30px; }
+  .hero-bottle-name { font-size: 14px; }
   .archive-layout { display: flex; flex-direction: column; gap: 24px; margin-top: 24px; }
   .archive-filters { order: 0; }.archive-main { order: 1; }
   .archive-results { grid-template-columns: minmax(0,1fr) 280px; }
@@ -614,18 +590,10 @@ main h1 { font-weight: 450; }
   .signature-scan { padding: 4px 14px; gap: 12px; }
   .signature-scan strong { font-size: 16px; }
   .signature-scan > span > span { font-size: 12px; }
-  .hero-bottles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 14px; padding: 32px var(--page-gutter) 28px; }
-  .hero-bottle { gap: 8px; }
+  .hero-bottles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 16px; padding: 32px var(--page-gutter); }
+  .hero-bottle { gap: 12px; }
   .hero-bottle > .bottle-thumbnail { height: 130px; }
-  .hero-bottle.is-selected { transform: translateY(-5px); }
-  .hero-bottle-name { font-size: 13px; }
-  .signature-selection { grid-template-columns: 1fr; gap: 13px; padding: 5px 22px 22px; }
-  .signature-identity h2 { font-size: 28px; }.signature-identity p { font-size: 13px; }
-  .signature-family { height: 29px; margin-top: 3px; width: 4px; }
-  .signature-identity { gap: 12px; }
-  .signature-notes { padding-left: 16px; font-size: 13px; }.signature-notes > span { font-size: 11px; }
-  .signature-actions { padding-left: 16px; gap: 9px; flex-wrap: wrap; }.signature-actions .bench-button { padding-inline: 15px; font-size: 12px; }
-  .signature-actions .bench-button svg { width: 16px; }
+  .hero-bottle-name { font-size: 14px; }
   .home-evidence { grid-template-columns: 1fr; margin-top: 26px; padding: 25px var(--page-gutter) 0; gap: 26px; }.home-evidence h2 { font-size: 23px; }.home-evidence p { font-size: 13px; }
   .home-evidence-example h3 { font-size: 21px; }.home-evidence-example p { font-size: 12px; }.home-evidence-example { gap: 18px; }
   .archive-results { grid-template-columns: minmax(0,1fr); }
@@ -662,8 +630,7 @@ main h1 { font-weight: 450; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; scroll-behavior: auto !important; }
-  .signature-bench .hero-bottle { animation: none !important; }
-  .fan-intro-gate { display: none !important; }
+  .hero-bottle > .bottle-thumbnail { animation: none; }
 }
 
 body:has(.signature-hero) > header { background: #f6f7f9; }

@@ -2,7 +2,6 @@ import { expect, test } from "@playwright/test";
 
 test("a note reveals real connections, closes, and opens its catalog filter", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator(".signature-bench")).toHaveAttribute("data-intro", "done");
   const sandalwood = page.getByRole("button", { name: "Sandalwood", exact: true });
   await sandalwood.focus();
   await page.keyboard.press("Enter");
@@ -61,9 +60,8 @@ test("scan entry opens the scanner and its frame preserves upload and error reco
 test("reduced motion keeps exploration and quick find usable", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
-  await page.getByRole("button", { name: /Preview Bergamote 22/ }).click();
-  await expect(page.locator(".signature-selection h2")).toHaveText("Bergamote 22");
-  expect(await page.locator(".signature-identity").evaluate(el => getComputedStyle(el).animationDuration)).toBe("0s");
+  const bottle = page.getByRole("link", { name: "View Bergamote 22 by Le Labo" });
+  expect(await bottle.locator(".bottle-thumbnail").evaluate(el => getComputedStyle(el).animationName)).toBe("none");
   const find = page.getByRole("button", { name: "Find a fragrance", exact: true });
   await find.click();
   await expect(page.getByRole("dialog")).toBeVisible();

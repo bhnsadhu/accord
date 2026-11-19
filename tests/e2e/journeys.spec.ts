@@ -9,7 +9,6 @@ const photo = "tests/e2e/fixtures/photo.jpg";
 test("search from the homepage, open a fragrance, see why others are similar", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Know the bottle. Find the next one.");
-  await expect(page.locator(".signature-bench")).toHaveAttribute("data-intro", "done");
   await page.getByRole("searchbox", { name: "Search fragrances" }).first().fill("santal 33");
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/discover\?q=santal\+33/);

@@ -6,34 +6,20 @@ test.afterEach(async ({ page }, testInfo) => {
   }
 });
 
-test("home: choosing a bottle updates the notes and keeps its detail destination", async ({ page }) => {
+test("home: a bottle opens its fragrance directly", async ({ page }) => {
   await page.goto("/");
-  const selection = page.locator(".signature-selection");
-  await expect(selection.getByRole("heading", { level: 2 })).toHaveText("Santal 33");
-  await expect(selection.getByRole("link", { name: "View fragrance" })).toHaveAttribute("href", "/fragrance/le-labo-santal-33-p14487");
-
-  const bergamote = page.getByRole("button", { name: /Preview Bergamote 22/ });
+  const bottles = page.getByRole("list", { name: "Signature fragrances" });
+  await expect(bottles.getByRole("link")).toHaveCount(6);
+  const bergamote = bottles.getByRole("link", { name: "View Bergamote 22 by Le Labo" });
+  await expect(bergamote).toHaveAttribute("href", "/fragrance/le-labo-bergamote-22-p14466");
   await bergamote.click();
-  await expect(bergamote).toHaveAttribute("aria-pressed", "true");
-  await page.getByRole("heading", { level: 1 }).hover();
-  await expect(selection.getByRole("heading", { level: 2 })).toHaveText("Bergamote 22");
-  await expect(selection.locator(".signature-notes")).toContainText("Bergamot");
-  await expect(selection.getByRole("link", { name: "View fragrance" })).toHaveAttribute("href", "/fragrance/le-labo-bergamote-22-p14466");
-  await selection.getByRole("link", { name: "View fragrance" }).click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Bergamote 22");
 });
 
-test("home: a keyboard selection survives leaving the fan", async ({ page }) => {
+test("home: a bottle can be opened with the keyboard", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator(".signature-bench")).toHaveAttribute("data-intro", "done");
-  const another = page.getByRole("button", { name: /Preview Another 13/ });
+  const another = page.getByRole("link", { name: "View Another 13 by Le Labo" });
   await another.focus();
-  await page.keyboard.press("Enter");
-  await expect(another).toHaveAttribute("aria-pressed", "true");
-  const selection = page.locator(".signature-selection");
-  await selection.getByRole("link", { name: "View fragrance" }).focus();
-  await expect(selection.getByRole("heading", { level: 2 })).toHaveText("Another 13");
-  await expect(selection.getByRole("link", { name: "View fragrance" })).toHaveAttribute("href", "/fragrance/le-labo-another-13-p14462");
   await page.keyboard.press("Enter");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Another 13");
 });

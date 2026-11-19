@@ -9,14 +9,13 @@ import { ArrowIcon, CameraIcon, SearchIcon } from "@/components/icons";
 import { MatchFigure } from "@/components/fragrance-row";
 import { cachedArchetypes, cachedCoverage, cachedExample, cachedFragrance, cachedFragrancesByIds, cachedSearch, cachedSimilar } from "@/lib/catalog/cached";
 import { WHEEL_ORDER } from "@/lib/hues";
+import { HOME_BOTTLE_IDS } from "@/lib/home-bottles";
 
-// Well-known fragrances for the opening bottle display, by ScentLens product id.
-const FEATURED = ["p14462", "p14486", "p14487", "p14490", "p14466", "p22724"];
 const DISSECT = "p14487"; // Le Labo Santal 33
 export default async function Home() {
   const [featured, example, dissect, similar, tour, coverage] = await Promise.all([
-    cachedFragrancesByIds(FEATURED),
-    cachedExample(FEATURED),
+    cachedFragrancesByIds(HOME_BOTTLE_IDS),
+    cachedExample(HOME_BOTTLE_IDS),
     cachedFragrance(DISSECT),
     cachedSimilar(DISSECT, 24),
     cachedArchetypes(),

@@ -10,18 +10,18 @@ test("home: a bottle opens its fragrance directly", async ({ page }) => {
   await page.goto("/");
   const bottles = page.getByRole("list", { name: "Signature fragrances" });
   await expect(bottles.getByRole("link")).toHaveCount(6);
-  const bergamote = bottles.getByRole("link", { name: "View Bergamote 22 by Le Labo" });
-  await expect(bergamote).toHaveAttribute("href", "/fragrance/le-labo-bergamote-22-p14466");
-  await bergamote.click();
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Bergamote 22");
+  const mostWanted = bottles.getByRole("link", { name: "View The Most Wanted by Azzaro" });
+  await expect(mostWanted).toHaveAttribute("href", "/fragrance/azzaro-the-most-wanted-p03345");
+  await mostWanted.click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("The Most Wanted");
 });
 
 test("home: a bottle can be opened with the keyboard", async ({ page }) => {
   await page.goto("/");
-  const another = page.getByRole("link", { name: "View Another 13 by Le Labo" });
-  await another.focus();
+  const santal = page.getByRole("link", { name: "View Santal 33 by Le Labo" });
+  await santal.focus();
   await page.keyboard.press("Enter");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Another 13");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Santal 33");
 });
 
 test("discover: preview stays in the results and comparison opens the chosen pair", async ({ page }) => {

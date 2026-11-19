@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { FragranceSummary } from "@/lib/catalog/queries";
+import { homeBottleName } from "@/lib/home-bottles";
 import { BottleThumbnail } from "./bottle-thumbnail";
 
 /** Each bottle leads straight to its fragrance, including without JavaScript. */
@@ -16,7 +17,7 @@ export function HomeBottles({ fragrances }: { fragrances: (FragranceSummary & { 
         >
           <BottleThumbnail fragrance={fragrance} src={fragrance.bottleImage} eager />
           <span className="hero-bottle-caption">
-            <span className="hero-bottle-name">{fragrance.name}</span>
+            <span className="hero-bottle-name">{homeBottleName(fragrance)}</span>
             <span className="hero-bottle-brand">{fragrance.brand}</span>
           </span>
         </Link>

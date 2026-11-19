@@ -60,7 +60,7 @@ test("scan entry opens the scanner and its frame preserves upload and error reco
 test("reduced motion keeps exploration and quick find usable", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
-  const bottle = page.getByRole("link", { name: "View Bergamote 22 by Le Labo" });
+  const bottle = page.getByRole("link", { name: "View The Most Wanted by Azzaro" });
   expect(await bottle.locator(".bottle-thumbnail").evaluate(el => getComputedStyle(el).animationName)).toBe("none");
   const find = page.getByRole("button", { name: "Find a fragrance", exact: true });
   await find.click();

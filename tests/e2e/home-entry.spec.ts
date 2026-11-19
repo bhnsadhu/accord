@@ -14,14 +14,14 @@ test("the entrance never blocks navigation, even if an animation stalls", async 
   await page.keyboard.press("ControlOrMeta+k");
   await expect(page.getByRole("dialog", { name: "Find a fragrance" })).toBeVisible();
   await page.keyboard.press("Escape");
-  await page.getByRole("link", { name: "View Another 13 by Le Labo" }).click();
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Another 13");
+  await page.getByRole("link", { name: "View Santal 33 by Le Labo" }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Santal 33");
 });
 
 test("the bottle links navigate without JavaScript", async ({ browser, baseURL }) => {
   const page = await browser.newPage({ javaScriptEnabled: false, baseURL });
   await page.goto("/");
-  await page.getByRole("link", { name: "View Bergamote 22 by Le Labo" }).click();
-  await expect(page).toHaveURL(/\/fragrance\/le-labo-bergamote-22-p\d+$/);
+  await page.getByRole("link", { name: "View The Most Wanted by Azzaro" }).click();
+  await expect(page).toHaveURL(/\/fragrance\/azzaro-the-most-wanted-p03345$/);
   await page.close();
 });

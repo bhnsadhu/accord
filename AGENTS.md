@@ -14,4 +14,4 @@ Do not use em or en dashes in project text, including documentation and UI copy.
 
 ## Delivery workflow
 
-Commit and push requested changes at coherent, working checkpoints throughout the task. Do not wait until the end or ask again for permission to commit and push. Run checks appropriate to each checkpoint.
+Commit and push requested changes to `main` at coherent, working checkpoints throughout the task. Do not leave completed work only on a feature or preview branch. Do not wait until the end or ask again for permission to commit and push. Run checks appropriate to each checkpoint.

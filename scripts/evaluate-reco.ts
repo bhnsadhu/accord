@@ -16,7 +16,7 @@ import { Pool } from "pg";
 import * as schema from "../src/db/schema";
 import { foldText } from "../src/lib/catalog/text";
 import { buildCatalogIndex, type CatalogIndex } from "../src/lib/reco/catalog-index";
-import { loadFeatures } from "../src/lib/reco/load";
+import { loadFeatures } from "../src/lib/reco/postgres-features";
 import { rankAll, SCORE_WEIGHTS } from "../src/lib/reco/recommend";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });

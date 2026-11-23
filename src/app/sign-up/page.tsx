@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { AuthForm } from "@/components/auth-form";
-import { githubEnabled } from "@/lib/auth";
 import { authEmailEnabled } from "@/lib/email";
+import { accountsEnabled } from "@/lib/availability";
+import { AccountsPaused } from "@/components/accounts-paused";
 
 export const metadata: Metadata = { title: "Create an account" };
 
-export default function SignUpPage() {
+export default async function SignUpPage() {
+  if (!accountsEnabled()) return <AccountsPaused />;
+  const { githubEnabled } = await import("@/lib/auth");
   return <AuthForm mode="sign-up" github={githubEnabled} emailEnabled={authEmailEnabled()} />;
 }

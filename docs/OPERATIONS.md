@@ -2,6 +2,18 @@
 
 Accord is a small, free service. Keep the approved interface and truthful catalog coverage. Service limits pause features rather than silently introducing paid infrastructure.
 
+## Bundled catalog and browser collections
+
+The public catalog ships in `data/catalog/snapshot.json.gz`. Search, fragrance details, comparisons, directories and recommendations read this server-only file. Deployments and cold starts do not fetch catalog rows from Neon. The browser receives only the requested results.
+
+Rebuild it with `npm run catalog:bundle` after changing reviewed research or the source export. The command reads `SCENTLENS_PRODUCTS_CSV` (default `../scent-lens/artifacts/export/products.csv`) and `data/research/fragrances.json`, seeds a disposable local Postgres instance, and exports an explicit public-field allowlist. It never reads `DATABASE_URL` and cannot export production accounts or collections. Commit the resulting compressed snapshot with its source changes. Next's output tracing includes the snapshot in server functions.
+
+Accounts default to paused. `ACCORD_ACCOUNTS_ENABLED=false` means no session requests, account writes, database migrations or scan inference. Guest collections and taste preferences keep using the existing browser storage key. Existing account cookies and Neon data are retained. Clearing browser data removes guest collections. Account pages explain the pause instead of accepting credentials.
+
+To restore account sync after Neon recovers, verify the database and migration state, set `ACCORD_ACCOUNTS_ENABLED=true` in the deployment environment, and redeploy. This also restores the scanner's database-backed quotas; `SCANNER_MODE` and upstream availability still determine whether scanning works. The public catalog continues to use its bundle. Account migrations must succeed before this deployment goes live.
+
+Recommendation requests use bounded, expiring counters per server instance. These are best-effort abuse limits, not distributed quotas. Body validation, same-origin checks and result limits remain enforced. Paid scanning and email retain their original distributed quotas.
+
 ## Accounts and email
 
 Production uses Better Auth with a domain-restricted, sending-only Resend key in Vercel. `AUTH_EMAIL_ENABLED=true`, `AUTH_EMAIL_FROM`, and `RESEND_API_KEY` enable verification and recovery. No secret belongs in source control. Verification links last one hour. Password reset links last 30 minutes, are single-use, and revoke other sessions. All private API reads check the database session, bypassing the signed-cookie cache.
@@ -12,7 +24,7 @@ App email budgets: 70 per UTC day, 2,000 per calendar month, three per recipient
 
 ## Monitoring
 
-The public repository's `Production availability` workflow checks the homepage, protected database health endpoint, and a known search hourly. It retries once and fails visibly on an outage. `MONITOR_SECRET` exists in Vercel and GitHub Actions. Unauthenticated health requests return 401 without querying the database. Monitoring never warms the scanner.
+The public repository's `Production availability` workflow checks the homepage, protected application health endpoint, and a known search hourly. It retries once and fails visibly on an outage. `MONITOR_SECRET` exists in Vercel and GitHub Actions. Unauthenticated health requests return 401 without querying the database. Monitoring never warms the scanner.
 
 GitHub scheduled jobs can be delayed. Actions notifications follow the owner's GitHub settings; this is an hourly availability check, not a paging service or uptime SLA. Check both Actions and Vercel runtime logs after deployment. Structured events contain route patterns, event names, kinds and digests, not request bodies, email addresses, photos or tokens. Provider access logs are separate.
 
@@ -52,6 +64,6 @@ Default allowance: three global scans/day, 60/calendar month, two/user/day, one/
 
 ## Deploy and rollback
 
-Run lint, typecheck, unit/integration tests, browser journeys and production build. Migrations must be additive. Since November 5, 2026, the Vercel production build applies pending migrations itself (`scripts/deploy-migrate.mjs`, run before `next build` only when `VERCEL_ENV` is `production`); if a migration fails, the build fails and the previous deployment stays live. Push main to trigger Vercel. For anything beyond an additive change, run the migration by hand after a verified backup instead. Check health, search, account recovery pages, headers and scanner status on the live domain. Never load-test live scan inference.
+Run lint, typecheck, unit/integration tests, browser journeys and production build. Migrations must be additive. Since November 5, 2026, the Vercel production build applies pending migrations itself (`scripts/deploy-migrate.mjs`, run before `next build` only when `VERCEL_ENV` is `production` and `ACCORD_ACCOUNTS_ENABLED=true`); if a migration fails, the build fails and the previous deployment stays live. Push main to trigger Vercel. For anything beyond an additive change, run the migration by hand after a verified backup instead. Check health, search, account recovery pages, headers and scanner status on the live domain. Never load-test live scan inference.
 
 For an application regression, roll Vercel back to the previous ready deployment. The request-budget migration is additive and may remain. For email incidents, inspect Resend and Vercel delivery events; disabling email verification also reopens unverified signup, so prefer fixing delivery or temporarily disabling signup instead of silently relaxing verification.

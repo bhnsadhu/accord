@@ -9,7 +9,9 @@ import { drizzle } from "drizzle-orm/node-postgres";
 import { migrate } from "drizzle-orm/node-postgres/migrator";
 import pg from "pg";
 
-if (process.env.VERCEL_ENV !== "production") {
+if (process.env.ACCORD_ACCOUNTS_ENABLED !== "true") {
+  console.log("deploy-migrate: browser-only collections enabled; no database is used or migrated.");
+} else if (process.env.VERCEL_ENV !== "production") {
   console.log("deploy-migrate: not a Vercel production build, skipping.");
 } else {
   const connectionString = process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL;

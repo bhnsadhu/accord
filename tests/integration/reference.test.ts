@@ -5,7 +5,7 @@ import { catalogRequests, fragrances, user } from "@/db/schema";
 import { seedCatalog } from "@/lib/catalog/seed";
 import { importResearch } from "@/lib/catalog/import-research";
 import { catalogManifestSchema, type CatalogManifest } from "@/lib/catalog/research-schema";
-import { getEditions, getFragrance, searchFragrances } from "@/lib/catalog/queries";
+import { getEditions, getFragrance, searchFragrances } from "@/lib/catalog/postgres-queries";
 import { productIdFromSlug } from "@/lib/catalog/text";
 import { getCollection, upsertEntry } from "@/lib/collection/repo";
 import { requestFingerprint, requestSchema, submitCatalogRequest } from "@/lib/catalog/requests";

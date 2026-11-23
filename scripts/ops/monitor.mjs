@@ -7,7 +7,7 @@ for (const path of ['/', '/api/health', '/api/search?q=santal']) {
     try {
       const response = await fetch(base + path, { headers: path === '/api/health' ? headers : {}, signal: AbortSignal.timeout(12000) });
       if (response.status !== 200) throw new Error('Unhealthy response');
-      if (path === '/api/health' && (await response.json()).status !== 'ok') throw new Error('Database unhealthy');
+      if (path === '/api/health' && (await response.json()).status !== 'ok') throw new Error('Application unhealthy');
       if (path.includes('/api/search') && !(await response.json()).items?.length) throw new Error('Search unavailable');
       passed = true; break;
     } catch { if (attempt === 0) await new Promise(r => setTimeout(r, 3000)); }

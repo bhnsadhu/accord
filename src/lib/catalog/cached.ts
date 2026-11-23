@@ -1,5 +1,4 @@
 import { cacheLife, cacheTag } from "next/cache";
-import { db } from "@/db";
 import { similarFragrances } from "@/lib/reco/service";
 import { brandOverview, catalogCoverage, facetCounts, getEditions, getFragrance, getFragrancesByIds, getNote, listBrands, listNotes, listPerfumers, noteFamilyStats, searchFragrances, yearCounts, type SearchParams } from "./queries";
 import { withBottleThumbnail } from "./bottle-media";
@@ -11,21 +10,21 @@ export async function cachedEditions(group: string) {
   "use cache";
   cacheLife("days");
   cacheTag("catalog");
-  return (await getEditions(db, group)).map(withBottleThumbnail);
+  return (await getEditions(group)).map(withBottleThumbnail);
 }
 
 export async function cachedCoverage() {
   "use cache";
   cacheLife("days");
   cacheTag("catalog");
-  return catalogCoverage(db);
+  return catalogCoverage();
 }
 
 export async function cachedFragrance(productId: string) {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  const fragrance = await getFragrance(db, productId);
+  const fragrance = await getFragrance(productId);
   return fragrance ? withBottleThumbnail(fragrance) : null;
 }
 
@@ -33,14 +32,14 @@ export async function cachedFragrancesByIds(ids: string[]) {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return (await getFragrancesByIds(db, ids)).map(withBottleThumbnail);
+  return (await getFragrancesByIds(ids)).map(withBottleThumbnail);
 }
 
 export async function cachedSearch(params: SearchParams) {
   "use cache";
   cacheLife("days");
   cacheTag("catalog");
-  const result = await searchFragrances(db, params);
+  const result = await searchFragrances(params);
   return { ...result, items: result.items.map(withBottleThumbnail) };
 }
 
@@ -48,8 +47,8 @@ export async function cachedSimilar(productId: string, k = 12) {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  const similar = await similarFragrances(db, productId, k);
-  const [rows, notes] = await Promise.all([getFragrancesByIds(db, similar.map((s) => s.productId)), listNotes(db)]);
+  const similar = await similarFragrances(productId, k);
+  const [rows, notes] = await Promise.all([getFragrancesByIds(similar.map((s) => s.productId)), listNotes()]);
   const byId = new Map(rows.map((r) => [r.productId, r]));
   const label = new Map(notes.map((n) => [n.key, n.label]));
   return similar.flatMap((s) => {
@@ -63,21 +62,21 @@ export async function cachedFacets() {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return facetCounts(db);
+  return facetCounts();
 }
 
 export async function cachedNotes() {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return listNotes(db);
+  return listNotes();
 }
 
 export async function cachedNote(key: string) {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return getNote(db, key);
+  return getNote(key);
 }
 
 /**
@@ -92,7 +91,7 @@ export async function cachedExample(sourceIds: string[]) {
   const { getCatalogIndex } = await import("@/lib/reco/load");
   const { recommend } = await import("@/lib/reco/recommend");
   const { similarity: sim } = await import("@/lib/reco/similarity");
-  const index = await getCatalogIndex(db);
+  const index = await getCatalogIndex();
   // Among well-known sources, show the pair the engine itself scores closest.
   let best: { sourceId: string; pick: ReturnType<typeof recommend>[number]; score: number } | null = null;
   for (const sourceId of sourceIds) {
@@ -111,7 +110,7 @@ export async function cachedExample(sourceIds: string[]) {
   if (!best) return null;
   const { sourceId, pick } = best;
   const shared = pick.reasons.find((x) => x.kind === "shared-notes");
-  const [rows, notes] = await Promise.all([getFragrancesByIds(db, [sourceId, pick.productId]), listNotes(db)]);
+  const [rows, notes] = await Promise.all([getFragrancesByIds([sourceId, pick.productId]), listNotes()]);
   const label = new Map(notes.map((n) => [n.key, n.label]));
   const source = rows.find((r) => r.productId === sourceId);
   const fragrance = rows.find((r) => r.productId === pick.productId);
@@ -133,7 +132,7 @@ export async function cachedArchetypes() {
   cacheTag("catalog");
   const { getCatalogIndex } = await import("@/lib/reco/load");
   const { archetypes } = await import("@/lib/reco/discover");
-  return (await getFragrancesByIds(db, archetypes(await getCatalogIndex(db), 1))).map(withBottleThumbnail);
+  return (await getFragrancesByIds(archetypes(await getCatalogIndex(), 1))).map(withBottleThumbnail);
 }
 
 /** Side-by-side comparison of two fragrances with the similarity breakdown. */
@@ -143,7 +142,7 @@ export async function cachedCompare(a: string, b: string) {
   cacheTag("catalog");
   const { getCatalogIndex } = await import("@/lib/reco/load");
   const { similarityBreakdown } = await import("@/lib/reco/similarity");
-  const [fa, fb, index] = await Promise.all([getFragrance(db, a), getFragrance(db, b), getCatalogIndex(db)]);
+  const [fa, fb, index] = await Promise.all([getFragrance(a), getFragrance(b), getCatalogIndex()]);
   if (!fa || !fb) return null;
   const ia = index.byId.get(a);
   const ib = index.byId.get(b);
@@ -165,33 +164,33 @@ export async function cachedAccordProfile(noteKeys: string[], primary: string | 
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return accordProfile(noteKeys, await noteFamilyStats(db), { primary });
+  return accordProfile(noteKeys, await noteFamilyStats(), { primary });
 }
 
 export async function cachedBrands() {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return listBrands(db, 5000);
+  return listBrands(5000);
 }
 
 export async function cachedBrandOverview(slug: string) {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return brandOverview(db, slug);
+  return brandOverview(slug);
 }
 
 export async function cachedPerfumers() {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return listPerfumers(db);
+  return listPerfumers();
 }
 
 export async function cachedYears() {
   "use cache";
   cacheLife("weeks");
   cacheTag("catalog");
-  return yearCounts(db);
+  return yearCounts();
 }

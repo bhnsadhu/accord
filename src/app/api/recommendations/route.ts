@@ -6,7 +6,8 @@ import { guestStateSchema } from "@/lib/profile";
 import { presentRecommendations } from "@/lib/reco/present";
 import { currentUser } from "@/lib/session";
 import { BodyTooLarge, readBody, requestKey, sameOrigin } from "@/lib/security/request";
-import { consumeBudget, limitedResponse } from "@/lib/security/budget";
+import { limitedResponse } from "@/lib/security/budget";
+import { consumeLocalBudget } from "@/lib/security/local-budget";
 import { reportFailure } from "@/lib/observability";
 
 const bodySchema = z.object({ guest: guestStateSchema.optional(), k: z.number().int().min(1).max(48).default(24) });
@@ -31,13 +32,13 @@ export async function POST(request: Request) {
   if (!body.success) return Response.json({ error: "Invalid request" }, { status: 400 });
 
   try {
-  if (!await consumeBudget(db, [{ scope: "0:recommend:global", limit: 240, seconds: 60 }, { scope: `recommend:${requestKey(request)}`, limit: 30, seconds: 60 }])) return limitedResponse();
+  if (!consumeLocalBudget([{ scope: "0:recommend:instance", limit: 240, seconds: 60 }, { scope: `recommend:${requestKey(request)}`, limit: 30, seconds: 60 }])) return limitedResponse();
   const user = await currentUser();
   const [profile, collection] = user
     ? await Promise.all([getProfile(db, user.id), getCollection(db, user.id)])
     : [body.data.guest?.profile, body.data.guest?.collection ?? []];
 
-  const result = await presentRecommendations(db, profile ?? guestStateSchema.shape.profile.parse({}), collection, body.data.k);
+  const result = await presentRecommendations(profile ?? guestStateSchema.shape.profile.parse({}), collection, body.data.k);
   return Response.json({ ...result, items: result.items.map(item => ({ ...item, fragrance: withBottleThumbnail(item.fragrance) })) }, { headers: { "Cache-Control": "private, no-store" } });
   } catch { reportFailure("recommendations_unavailable"); return Response.json({ error: "Suggestions are temporarily unavailable. Please try again shortly." }, { status: 503, headers: { "Retry-After": "30", "Cache-Control": "private, no-store" } }); }
 }

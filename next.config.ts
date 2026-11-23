@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  outputFileTracingIncludes: { "/*": ["./data/catalog/snapshot.json.gz"] },
   redirects() {
     return [{ source: "/charts", destination: "/releases", permanent: true }];
   },

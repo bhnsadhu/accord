@@ -1,6 +1,6 @@
 import "server-only";
 import { headers } from "next/headers";
-import { auth } from "./auth";
+import { accountsEnabled } from "./availability";
 
 /**
  * The signed-in user, or null for guests. Always checked against the session
@@ -8,6 +8,8 @@ import { auth } from "./auth";
  * the account revokes access immediately, even for a replayed cookie.
  */
 export async function currentUser() {
+  if (!accountsEnabled()) return null;
+  const { auth } = await import("./auth");
   const session = await auth.api.getSession({ headers: await headers(), query: { disableCookieCache: true } });
   return session?.user ?? null;
 }

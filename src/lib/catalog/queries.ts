@@ -1,303 +1,150 @@
-import { and, asc, desc, eq, sql, type SQL } from "drizzle-orm";
-import type { Database } from "@/db";
-import { brands, fragranceNotes, fragranceResearch, fragrances, notes } from "@/db/schema";
+import "server-only";
+import { getCatalogSnapshot } from "./snapshot";
 import { parseFragranceQuery } from "./search-query";
-import type { FragranceResearch } from "./research-schema";
+import { foldText } from "./text";
+import type { CatalogRecord } from "./snapshot-types";
+import type { FragranceDetail, FragranceSummary, SearchParams, SearchResult } from "./types";
+export type { FragranceDetail, FragranceSummary, SearchParams, SearchResult } from "./types";
 
-export type FragranceSummary = {
-  productId: string;
-  bottleThumbnail?: string;
-  slug: string;
-  name: string;
-  brand: string;
-  brandSlug: string;
-  family: string | null;
-  subfamily: string | null;
-  wheel: string | null;
-  character: string | null;
-  facets: string[];
-  gender: "feminine" | "masculine" | "unisex" | null;
-  year: number | null;
-  notes: string[];
-  concentration?: string | null;
-  perfumers?: string[];
-  editionGroup?: string | null;
-  editionLabel?: string | null;
-};
-
-export type FragranceDetail = FragranceSummary & {
-  accordsRaw: string;
-  notes: string[];
-  noteKeys: string[];
-  research: FragranceResearch | null;
-};
-
-export type SearchParams = {
-  q?: string;
-  family?: string;
-  wheel?: string;
-  facet?: string;
-  notes?: string[];
-  excludeNotes?: string[];
-  gender?: "feminine" | "masculine" | "unisex";
-  brand?: string;
-  concentration?: string;
-  perfumer?: string;
-  year?: number;
-  sort?: "relevance" | "name" | "newest" | "oldest";
-  page?: number;
-  pageSize?: number;
-};
-
-export type SearchResult = { items: FragranceSummary[]; total: number; page: number; pageSize: number };
-
-const noteLabels = sql<string[]>`coalesce((
-  select array_agg(n.label order by fn.position)
-  from ${fragranceNotes} fn join ${notes} n on n.id = fn.note_id
-  where fn.product_id = ${fragrances.productId}
-), '{}')`;
-
-const concentrationColumn = sql<string | null>`coalesce(${fragranceResearch.concentration}, case
-  when lower(${fragrances.name}) like '%extrait de parfum%' then 'Extrait de parfum'
-  when lower(${fragrances.name}) like '%eau de parfum%' then 'Eau de parfum'
-  when lower(${fragrances.name}) like '%eau de toilette%' then 'Eau de toilette'
-  when lower(${fragrances.name}) like '%eau de cologne%' then 'Eau de cologne'
-  end)`;
-
-const summaryColumns = {
-  productId: fragrances.productId,
-  slug: fragrances.slug,
-  name: fragrances.name,
-  brand: brands.name,
-  brandSlug: brands.slug,
-  family: fragrances.family,
-  subfamily: fragrances.subfamily,
-  wheel: fragrances.wheel,
-  character: fragrances.character,
-  facets: fragrances.facets,
-  gender: fragrances.gender,
-  year: sql<number | null>`coalesce((${fragranceResearch.data}->>'year')::int, ${fragrances.year})`,
-  notes: noteLabels,
-  concentration: concentrationColumn,
-  perfumers: sql<string[]>`coalesce(${fragranceResearch.perfumers}, '{}')`,
-  editionGroup: fragranceResearch.editionGroup,
-  editionLabel: sql<string | null>`${fragranceResearch.data}->>'editionLabel'`,
-};
-
-function hasNote(key: string): SQL {
-  return sql`exists (
-    select 1 from ${fragranceNotes} fn join ${notes} n on n.id = fn.note_id
-    where fn.product_id = ${fragrances.productId} and n.key = ${key})`;
+const alphabetical = (a: string, b: string) => a.localeCompare(b, "en");
+let indexed: Promise<Awaited<ReturnType<typeof createIndex>>> | undefined;
+async function createIndex() {
+  const snapshot = await getCatalogSnapshot();
+  return {
+    snapshot,
+    byId: new Map(snapshot.fragrances.map(f => [f.productId, f])),
+    search: snapshot.fragrances.map(f => {
+      const text = foldText(`${f.searchText} ${f.aliasesText}`);
+      return { f, text, name: foldText(f.name), words: text.split(/\s+/) };
+    }),
+  };
+}
+function index() {
+  indexed ??= createIndex().catch(error => { indexed = undefined; throw error; });
+  return indexed;
 }
 
-/**
- * Fuzzy name/brand search plus attribute filters, all in Postgres.
- * A row matches the text query when it contains every query word, contains
- * the whole phrase, or is trigram-similar enough to absorb a typo.
- */
-export async function searchFragrances(db: Database, params: SearchParams): Promise<SearchResult> {
+function detail(f: CatalogRecord): FragranceDetail {
+  const { searchText: _search, aliasesText: _aliases, featureYear: _year, ...result } = f;
+  return result;
+}
+function summary(f: CatalogRecord): FragranceSummary {
+  const { accordsRaw: _accords, noteKeys: _keys, research: _research, ...result } = detail(f);
+  return result;
+}
+
+/** Small edit distances also allow an adjacent transposition, such as "santla". */
+function distance(a: string, b: string, limit: number): number {
+  if (Math.abs(a.length - b.length) > limit) return limit + 1;
+  let previous = Array.from({ length: b.length + 1 }, (_, i) => i);
+  let beforePrevious = previous;
+  for (let i = 1; i <= a.length; i++) {
+    const row = [i];
+    for (let j = 1; j <= b.length; j++) {
+      row[j] = Math.min(row[j - 1] + 1, previous[j] + 1, previous[j - 1] + Number(a[i - 1] !== b[j - 1]));
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) row[j] = Math.min(row[j], beforePrevious[j - 2] + 1);
+    }
+    if (Math.min(...row) > limit) return limit + 1;
+    beforePrevious = previous;
+    previous = row;
+  }
+  return previous[b.length];
+}
+function fuzzyCost(query: string[], words: string[]) {
+  let total = 0;
+  for (const word of query) {
+    if (words.some(candidate => candidate.startsWith(word))) continue;
+    const limit = word.length >= 6 ? 2 : word.length >= 4 ? 1 : 0;
+    if (!limit) return null;
+    const cost = Math.min(...words.map(candidate => distance(word, candidate, limit)));
+    if (cost > limit) return null;
+    total += cost;
+  }
+  return total;
+}
+
+/** Filter and rank the bundled public catalog without a database connection. */
+export async function searchFragrances(params: SearchParams): Promise<SearchResult> {
   const pageSize = Number.isFinite(params.pageSize) ? Math.min(Math.max(Math.trunc(params.pageSize!), 1), 60) : 24;
   const page = Number.isFinite(params.page) ? Math.min(Math.max(Math.trunc(params.page!), 1), 2000) : 1;
-  const parsed = parseFragranceQuery(params.q ?? "");
+  const parsed = parseFragranceQuery((params.q ?? "").slice(0, 200));
   const q = parsed.text;
   const words = q.split(" ").filter(Boolean);
-  const searchable = sql`(${fragrances.searchText} || ' ' || coalesce(${fragranceResearch.aliasesText}, ''))`;
-  const allWords = words.length ? and(...words.map((w) => sql`${searchable} like ${`%${w}%`}`))! : sql`true`;
-
-  const filters: SQL[] = [];
-  if (q) {
-    filters.push(sql`(${allWords} or ${q} <% ${fragrances.searchText} or ${q} <% ${fragranceResearch.aliasesText})`);
-  }
-  if (params.family) filters.push(eq(fragrances.family, params.family));
-  if (params.wheel) filters.push(eq(fragrances.wheel, params.wheel));
-  if (params.facet) filters.push(sql`${fragrances.facets} @> array[${params.facet}]::text[]`);
-  if (params.gender) filters.push(eq(fragrances.gender, params.gender));
-  if (params.brand) filters.push(eq(brands.slug, params.brand));
-  if (params.concentration || parsed.concentration) filters.push(sql`${concentrationColumn} = ${params.concentration || parsed.concentration}`);
-  if (params.year && Number.isInteger(params.year)) filters.push(sql`${summaryColumns.year} = ${params.year}`);
-  if (params.perfumer) filters.push(sql`${fragranceResearch.perfumers} @> array[${params.perfumer}]::text[]`);
-  for (const key of [...new Set(params.notes ?? [])].slice(0, 12)) filters.push(hasNote(key));
-  for (const key of [...new Set(params.excludeNotes ?? [])].slice(0, 12)) filters.push(sql`not ${hasNote(key)}`);
-
+  const concentration = params.concentration || parsed.concentration;
+  const included = [...new Set(params.notes ?? [])].slice(0, 12);
+  const excluded = [...new Set(params.excludeNotes ?? [])].slice(0, 12);
   const sort = params.sort ?? (q ? "relevance" : "name");
-  const order: SQL[] =
-    sort === "relevance" && q
-      ? [
-          sql`(${fragrances.searchText} = ${q}) desc`,
-          sql`(lower(${fragrances.name}) = ${q}) desc`,
-          sql`${allWords} desc`,
-          sql`(lower(${fragrances.name}) like ${`${q}%`}) desc`,
-          sql`(${fragrances.searchText} like ${`${q}%`} or ${fragrances.searchText} like ${`% ${q}%`}) desc`,
-          sql`word_similarity(${q}, ${fragrances.searchText}) desc`,
-          sql`similarity(${q}, ${fragrances.searchText}) desc`,
-          asc(fragrances.name),
-        ]
-      : sort === "newest"
-        ? [sql`${summaryColumns.year} desc nulls last`, asc(fragrances.name)]
-        : sort === "oldest"
-          ? [sql`${summaryColumns.year} asc nulls last`, asc(fragrances.name)]
-          : [asc(brands.name), asc(fragrances.name)];
-
-  const rows = await db
-    .select({ ...summaryColumns, total: sql<number>`count(*) over ()`.mapWith(Number) })
-    .from(fragrances)
-    .innerJoin(brands, eq(brands.id, fragrances.brandId))
-    .leftJoin(fragranceResearch, eq(fragranceResearch.productId, fragrances.productId))
-    .where(filters.length ? and(...filters) : undefined)
-    .orderBy(...order, asc(fragrances.productId))
-    .limit(pageSize)
-    .offset((page - 1) * pageSize);
-
-  // A page beyond the last result still needs the actual total for recovery.
-  const total = rows[0]?.total ?? (page > 1 ? (await db.select({ n: sql<number>`count(*)`.mapWith(Number) }).from(fragrances).innerJoin(brands, eq(brands.id, fragrances.brandId)).leftJoin(fragranceResearch, eq(fragranceResearch.productId, fragrances.productId)).where(filters.length ? and(...filters) : undefined))[0].n : 0);
-  return {
-    items: rows.map(({ total: _total, ...item }) => item),
-    total,
-    page,
-    pageSize,
-  };
+  const matches: { f: CatalogRecord; rank: number[] }[] = [];
+  for (const entry of (await index()).search) {
+    const { f, text, name } = entry;
+    if (params.family && f.family !== params.family || params.wheel && f.wheel !== params.wheel || params.facet && !f.facets.includes(params.facet) ||
+        params.gender && f.gender !== params.gender || params.brand && f.brandSlug !== params.brand || concentration && f.concentration !== concentration ||
+        params.year && Number.isInteger(params.year) && f.year !== params.year || params.perfumer && !f.perfumers?.includes(params.perfumer) ||
+        !included.every(key => f.noteKeys.includes(key)) || excluded.some(key => f.noteKeys.includes(key))) continue;
+    const allWords = words.every(word => text.includes(word));
+    const cost = allWords ? 0 : fuzzyCost(words, entry.words);
+    if (cost === null) continue;
+    const rank = q ? [Number(f.searchText === q), Number(name === q), Number(allWords), Number(name.startsWith(q)), Number(text.startsWith(q) || text.includes(` ${q}`)), -cost] : [];
+    matches.push({ f, rank });
+  }
+  matches.sort((a, b) => {
+    if (sort === "relevance" && q) {
+      for (let i = 0; i < a.rank.length; i++) if (a.rank[i] !== b.rank[i]) return b.rank[i] - a.rank[i];
+    } else if (sort === "newest" || sort === "oldest") {
+      if (a.f.year !== b.f.year) {
+        if (a.f.year === null) return 1;
+        if (b.f.year === null) return -1;
+        return sort === "newest" ? b.f.year - a.f.year : a.f.year - b.f.year;
+      }
+    } else {
+      const brand = alphabetical(a.f.brand, b.f.brand);
+      if (brand) return brand;
+    }
+    return alphabetical(a.f.name, b.f.name) || alphabetical(a.f.productId, b.f.productId);
+  });
+  return { items: matches.slice((page - 1) * pageSize, page * pageSize).map(({ f }) => summary(f)), total: matches.length, page, pageSize };
 }
 
-export async function getFragrance(db: Database, productId: string): Promise<FragranceDetail | null> {
-  const [row] = await db
-    .select({
-      ...summaryColumns,
-      accordsRaw: fragrances.accordsRaw,
-      research: fragranceResearch.data,
-      noteKeys: sql<string[]>`coalesce((
-        select array_agg(n.key order by fn.position)
-        from ${fragranceNotes} fn join ${notes} n on n.id = fn.note_id
-        where fn.product_id = ${fragrances.productId}
-      ), '{}')`,
-    })
-    .from(fragrances)
-    .innerJoin(brands, eq(brands.id, fragrances.brandId))
-    .leftJoin(fragranceResearch, eq(fragranceResearch.productId, fragrances.productId))
-    .where(eq(fragrances.productId, productId));
-  return row ?? null;
+export async function getFragrance(productId: string): Promise<FragranceDetail | null> {
+  const f = (await index()).byId.get(productId);
+  return f ? detail(f) : null;
 }
-
-export async function getFragrancesByIds(db: Database, ids: string[]): Promise<FragranceSummary[]> {
-  if (ids.length === 0) return [];
-  const rows = await db
-    .select(summaryColumns)
-    .from(fragrances)
-    .innerJoin(brands, eq(brands.id, fragrances.brandId))
-    .leftJoin(fragranceResearch, eq(fragranceResearch.productId, fragrances.productId))
-    .where(sql`${fragrances.productId} = any(${sql.param(ids)}::text[])`);
-  const byId = new Map(rows.map((r) => [r.productId, r]));
-  return ids.flatMap((id) => byId.get(id) ?? []);
+export async function getFragrancesByIds(ids: string[]): Promise<FragranceSummary[]> {
+  const { byId } = await index();
+  return ids.flatMap(id => { const f = byId.get(id); return f ? [summary(f)] : []; });
 }
-
-export async function getBrand(db: Database, slug: string) {
-  const [row] = await db.select().from(brands).where(eq(brands.slug, slug));
-  return row ?? null;
+export async function getBrand(slug: string) { return (await getCatalogSnapshot()).brands.find(b => b.slug === slug) ?? null; }
+export async function getEditions(group: string) {
+  return (await getCatalogSnapshot()).fragrances.filter(f => f.editionGroup === group)
+    .sort((a, b) => (a.featureYear ?? Infinity) - (b.featureYear ?? Infinity) || alphabetical(a.name, b.name)).map(summary);
 }
+export async function catalogCoverage() { return (await getCatalogSnapshot()).coverage; }
+export async function getNote(key: string) { return (await getCatalogSnapshot()).notes.find(n => n.key === key) ?? null; }
+export async function listNotes() { return (await getCatalogSnapshot()).notes; }
+export async function listBrands(limit = 2000) { return (await getCatalogSnapshot()).brands.slice(0, limit); }
+export async function facetCounts() { return (await getCatalogSnapshot()).facets; }
+export async function noteFamilyStats() { return (await getCatalogSnapshot()).noteFamilies; }
+export async function listPerfumers() { return (await getCatalogSnapshot()).perfumers; }
+export async function yearCounts() { return (await getCatalogSnapshot()).years; }
 
-export async function getEditions(db: Database, group: string) {
-  return db.select(summaryColumns).from(fragrances)
-    .innerJoin(brands, eq(brands.id, fragrances.brandId))
-    .innerJoin(fragranceResearch, eq(fragranceResearch.productId, fragrances.productId))
-    .where(eq(fragranceResearch.editionGroup, group)).orderBy(asc(fragrances.year), asc(fragrances.name));
+function counts(values: string[]) {
+  const totals = new Map<string, number>();
+  for (const value of values) totals.set(value, (totals.get(value) ?? 0) + 1);
+  return [...totals].map(([value, n]) => ({ value, n })).sort((a, b) => b.n - a.n || alphabetical(a.value, b.value));
 }
-
-export async function catalogCoverage(db: Database) {
-  const [row] = await db.select({
-    total: sql<number>`count(*)`.mapWith(Number),
-    researched: sql<number>`count(${fragranceResearch.productId})`.mapWith(Number),
-    withPerfumers: sql<number>`count(*) filter (where cardinality(${fragranceResearch.perfumers}) > 0)`.mapWith(Number),
-    withStages: sql<number>`count(*) filter (where ${fragranceResearch.data} ? 'noteStages')`.mapWith(Number),
-    withWear: sql<number>`count(*) filter (where jsonb_array_length(${fragranceResearch.data}->'wear') > 0)`.mapWith(Number),
-    lastVerified: sql<string | null>`max(${fragranceResearch.verifiedAt})::text`,
-  }).from(fragrances).leftJoin(fragranceResearch, eq(fragranceResearch.productId, fragrances.productId));
-  return row;
-}
-
-export async function getNote(db: Database, key: string) {
-  const [row] = await db.select().from(notes).where(eq(notes.key, key));
-  return row ?? null;
-}
-
-export async function listNotes(db: Database) {
-  return db.select().from(notes).orderBy(desc(notes.fragranceCount), asc(notes.label));
-}
-
-export async function listBrands(db: Database, limit = 2000) {
-  return db.select().from(brands).orderBy(desc(brands.fragranceCount), asc(brands.name)).limit(limit);
-}
-
-export async function facetCounts(db: Database) {
-  const [families, wheels, facets] = await Promise.all([
-    db
-      .select({ value: fragrances.family, count: sql<number>`count(*)`.mapWith(Number) })
-      .from(fragrances)
-      .where(sql`${fragrances.family} is not null`)
-      .groupBy(fragrances.family)
-      .orderBy(sql`2 desc`),
-    db
-      .select({ value: fragrances.wheel, count: sql<number>`count(*)`.mapWith(Number) })
-      .from(fragrances)
-      .where(sql`${fragrances.wheel} is not null`)
-      .groupBy(fragrances.wheel)
-      .orderBy(sql`2 desc`),
-    db.execute<{ value: string; count: number }>(sql`
-      select f as value, count(*)::int as count
-      from ${fragrances}, unnest(${fragrances.facets}) f
-      group by f order by 2 desc`),
-  ]);
-  return {
-    families: families as { value: string; count: number }[],
-    wheels: wheels as { value: string; count: number }[],
-    facets: facets.rows,
-  };
-}
-
-/** Which accord families each note appears in, across the whole catalog. */
-export async function noteFamilyStats(db: Database) {
-  const [rows, families] = await Promise.all([
-    db.execute<{ key: string; wheel: string; n: number }>(sql`
-      select n.key, f.wheel, count(*)::int as n
-      from ${fragranceNotes} fn join ${notes} n on n.id = fn.note_id join ${fragrances} f on f.product_id = fn.product_id
-      where f.wheel is not null group by n.key, f.wheel`),
-    db.execute<{ wheel: string; n: number }>(sql`select wheel, count(*)::int as n from ${fragrances} where wheel is not null group by wheel`),
-  ]);
-  const byNote: Record<string, Record<string, number>> = {};
-  for (const r of rows.rows) (byNote[r.key] ??= {})[r.wheel] = r.n;
-  const familyCounts = Object.fromEntries(families.rows.map(r => [r.wheel, r.n]));
-  return { byNote, families: familyCounts, total: families.rows.reduce((a, r) => a + r.n, 0) };
-}
-
-/** A house at a glance: span of years, family mix, perfumers and most-used notes. */
-export async function brandOverview(db: Database, slug: string) {
-  const brand = await getBrand(db, slug);
+export async function brandOverview(slug: string) {
+  const snapshot = await getCatalogSnapshot();
+  const brand = await getBrand(slug);
   if (!brand) return null;
-  const [span, families, perfumers, topNotes, genders] = await Promise.all([
-    db.execute<{ first: number | null; last: number | null; dated: number }>(sql`
-      select min(coalesce((r.data->>'year')::int, f.year))::int as first, max(coalesce((r.data->>'year')::int, f.year))::int as last,
-        count(coalesce((r.data->>'year')::int, f.year))::int as dated
-      from ${fragrances} f left join ${fragranceResearch} r on r.product_id = f.product_id where f.brand_id = ${brand.id}`),
-    db.execute<{ wheel: string; n: number }>(sql`select wheel, count(*)::int as n from ${fragrances} where brand_id = ${brand.id} and wheel is not null group by wheel order by 2 desc, 1`),
-    db.execute<{ name: string; n: number }>(sql`select p as name, count(*)::int as n from ${fragrances} f join ${fragranceResearch} r on r.product_id = f.product_id, unnest(r.perfumers) p where f.brand_id = ${brand.id} group by p order by 2 desc, 1`),
-    db.execute<{ key: string; label: string; n: number }>(sql`select n.key, n.label, count(*)::int as n from ${fragranceNotes} fn join ${notes} n on n.id = fn.note_id join ${fragrances} f on f.product_id = fn.product_id where f.brand_id = ${brand.id} group by n.key, n.label order by 3 desc, 2 limit 12`),
-    db.execute<{ gender: string; n: number }>(sql`select gender::text, count(*)::int as n from ${fragrances} where brand_id = ${brand.id} and gender is not null group by gender order by 2 desc`),
-  ]);
-  return { brand, span: span.rows[0], families: families.rows, perfumers: perfumers.rows, topNotes: topNotes.rows, genders: genders.rows };
-}
-
-/** Every credited perfumer in reviewed research, with how many catalog entries credit them. */
-export async function listPerfumers(db: Database) {
-  const result = await db.execute<{ name: string; n: number; houses: string[] }>(sql`
-    select p as name, count(*)::int as n, array_agg(distinct b.name order by b.name) as houses
-    from ${fragranceResearch} r join ${fragrances} f on f.product_id = r.product_id join ${brands} b on b.id = f.brand_id, unnest(r.perfumers) p
-    group by p order by 2 desc, 1`);
-  return result.rows;
-}
-
-/** Catalog entries released in each year, newest first, for the release index. */
-export async function yearCounts(db: Database) {
-  const result = await db.execute<{ year: number; n: number }>(sql`
-    select coalesce((r.data->>'year')::int, f.year)::int as year, count(*)::int as n
-    from ${fragrances} f left join ${fragranceResearch} r on r.product_id = f.product_id
-    where coalesce((r.data->>'year')::int, f.year) is not null group by 1 order by 1 desc`);
-  return result.rows;
+  const rows = snapshot.fragrances.filter(f => f.brandSlug === slug);
+  const years = rows.flatMap(f => f.year === null ? [] : [f.year]);
+  const labels = new Map(snapshot.notes.map(n => [n.key, n.label]));
+  return {
+    brand,
+    span: { first: years.length ? Math.min(...years) : null, last: years.length ? Math.max(...years) : null, dated: years.length },
+    families: counts(rows.flatMap(f => f.wheel ? [f.wheel] : [])).map(({ value: wheel, n }) => ({ wheel, n })),
+    perfumers: counts(rows.flatMap(f => f.perfumers ?? [])).map(({ value: name, n }) => ({ name, n })),
+    topNotes: counts(rows.flatMap(f => f.noteKeys)).map(({ value: key, n }) => ({ key, label: labels.get(key) ?? key, n })).sort((a, b) => b.n - a.n || alphabetical(a.label, b.label)).slice(0, 12),
+    genders: counts(rows.flatMap(f => f.gender ? [f.gender] : [])).map(({ value: gender, n }) => ({ gender, n })),
+  };
 }

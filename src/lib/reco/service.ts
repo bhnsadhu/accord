@@ -1,4 +1,3 @@
-import type { Database } from "@/db";
 import type { CollectionEntry, TasteProfile } from "@/lib/profile";
 import { archetypes, similarTo } from "./discover";
 import { getCatalogIndex } from "./load";
@@ -21,17 +20,16 @@ export type RecommendationSet =
 
 /** Personal recommendations when there is any signal; otherwise a tour of the wheel. */
 export async function recommendationsFor(
-  db: Database,
   profile: TasteProfile,
   collection: CollectionEntry[],
   k = 24,
 ): Promise<RecommendationSet> {
-  const index = await getCatalogIndex(db);
+  const index = await getCatalogIndex();
   const signals = signalsFrom(profile, collection);
   if (!hasSignals(signals)) return { kind: "starter", productIds: archetypes(index, 3) };
   return { kind: "personal", items: recommend(index, signals, { k }) };
 }
 
-export async function similarFragrances(db: Database, productId: string, k = 12) {
-  return similarTo(await getCatalogIndex(db), productId, k);
+export async function similarFragrances(productId: string, k = 12) {
+  return similarTo(await getCatalogIndex(), productId, k);
 }

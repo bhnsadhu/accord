@@ -23,7 +23,13 @@ function createPool(): Pool {
   return pool;
 }
 
-// Reuse one pool across hot reloads in development.
-const pool = (globalThis.__accordPool ??= createPool());
-
-export const db: Database = drizzle(pool, { schema });
+let database: Database | undefined;
+// Importing account actions must not require database credentials in guest mode.
+// Actual account operations still use the same pool and Drizzle adapter.
+export const db: Database = new Proxy({} as Database, {
+  get(_target, property) {
+    database ??= drizzle(globalThis.__accordPool ??= createPool(), { schema });
+    const value = Reflect.get(database, property);
+    return typeof value === "function" ? value.bind(database) : value;
+  },
+});

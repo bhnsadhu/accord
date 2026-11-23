@@ -7,6 +7,7 @@ import { identifierFor, quotaScopes, scan, scannerMode, type Caller } from "@/li
 import { currentUser } from "@/lib/session";
 import { BodyTooLarge, readBody, requestKey, sameOrigin } from "@/lib/security/request";
 import { reportFailure } from "@/lib/observability";
+import { accountsEnabled } from "@/lib/availability";
 
 // A cold ScentLens container takes about a minute to start.
 export const maxDuration = 120;
@@ -21,7 +22,7 @@ async function callerFor(request: Request): Promise<Caller> {
 const noStore = { "Cache-Control": "private, no-store" };
 
 export async function GET(request: Request) {
-  const mode = scannerMode();
+  const mode = accountsEnabled() ? scannerMode() : "off";
   if (mode === "off") return Response.json({ enabled: false }, { headers: noStore });
   try {
     const caller = await callerFor(request);
@@ -38,7 +39,7 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   if (!sameOrigin(request)) return Response.json({ status: "invalid", error: "Please scan from Accord." }, { status: 403, headers: noStore });
-  const mode = scannerMode();
+  const mode = accountsEnabled() ? scannerMode() : "off";
   if (mode === "off") return Response.json({ status: "disabled" }, { status: 503, headers: noStore });
 
   const declared = Number(request.headers.get("content-length") ?? "0");
@@ -52,7 +53,7 @@ export async function POST(request: Request) {
   switch (outcome.status) {
     case "done": {
       const ids = outcome.result.matches.map((m) => m.product_id);
-      const fragrances = await getFragrancesByIds(db, ids);
+      const fragrances = await getFragrancesByIds(ids);
       return Response.json({ ...outcome, fragrances: fragrances.map(withBottleThumbnail), mock: mode === "mock" }, { headers: noStore });
     }
     case "invalid":

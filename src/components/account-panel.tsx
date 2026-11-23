@@ -5,15 +5,17 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useAccord } from "@/lib/store";
+import { AccountsPaused } from "./accounts-paused";
 
 export function AccountPanel() {
-  const { ready, account, collection } = useAccord();
+  const { ready, account, collection, accountsAvailable } = useAccord();
   const router = useRouter();
   const [confirm, setConfirm] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
 
+  if (!accountsAvailable) return <AccountsPaused />;
   if (!ready) return <div className="mt-8 h-40" aria-busy="true" />;
   if (!account) {
     return (

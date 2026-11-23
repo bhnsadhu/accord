@@ -22,7 +22,7 @@ const DIRECTORIES = [
 
 export function Nav() {
   const pathname = usePathname();
-  const { account, ready } = useAccord();
+  const { account, ready, accountsAvailable } = useAccord();
   const palette = usePalette();
 
   return (
@@ -78,9 +78,9 @@ export function Nav() {
             </Link>
           ) : (
             <>
-              <Link href="/sign-in" className="hidden text-ink hover:underline sm:inline">
+              {accountsAvailable && <Link href="/sign-in" className="hidden text-ink hover:underline sm:inline">
                 Sign in
-              </Link>
+              </Link>}
               <Link href="/profile" className="border border-ink px-3.5 py-1.5 transition-colors hover:bg-ink hover:text-paper" style={{ borderRadius: 4 }}>
                 Your taste
               </Link>

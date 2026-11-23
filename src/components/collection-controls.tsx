@@ -14,7 +14,7 @@ const SHELVES: { value: Shelf; label: string }[] = [
 
 /** Shelf, rating and favourite for one fragrance. Works for guests and accounts. */
 export function CollectionControls({ productId }: { productId: string }) {
-  const { entryFor, saveEntry, removeEntry, account, ready } = useAccord();
+  const { entryFor, saveEntry, removeEntry, account, ready, accountsAvailable } = useAccord();
   const entry = entryFor(productId);
   const ratingId = useId();
 
@@ -85,10 +85,10 @@ export function CollectionControls({ productId }: { productId: string }) {
       {ready && !account && entry && (
         <p className="text-sm text-ink-3">
           Saved on this device.{" "}
-          <Link href="/sign-up" className="text-ink-2 underline">
+          {accountsAvailable && <><Link href="/sign-up" className="text-ink-2">
             Create an account
           </Link>{" "}
-          to keep it everywhere.
+          to keep it everywhere.</>}
         </p>
       )}
     </div>

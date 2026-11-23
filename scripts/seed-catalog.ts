@@ -1,7 +1,7 @@
 /**
  * Seed the catalog from the ScentLens export. The CSV holds text metadata only
  * (no images, no descriptions) and is read from the ScentLens checkout; it is
- * never copied into this repository. See docs/ARCHITECTURE.md#catalog.
+ * not committed verbatim. catalog:bundle publishes derived public metadata.
  */
 import "dotenv/config";
 import { readFileSync } from "node:fs";

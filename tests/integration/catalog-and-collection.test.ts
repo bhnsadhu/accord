@@ -2,7 +2,7 @@ import { beforeAll, describe, expect, it } from "vitest";
 import { db } from "@/db";
 import { user } from "@/db/schema";
 import { getCollection, getProfile, mergeGuestState, removeEntry, saveProfile, upsertEntry } from "@/lib/collection/repo";
-import { getFragrance, getFragrancesByIds, searchFragrances } from "@/lib/catalog/queries";
+import { getFragrance, getFragrancesByIds, searchFragrances } from "@/lib/catalog/postgres-queries";
 import { seedCatalog, type CatalogRow } from "@/lib/catalog/seed";
 import { productIdFromSlug } from "@/lib/catalog/text";
 

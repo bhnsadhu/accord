@@ -12,6 +12,7 @@ const TRAIL_LIMIT = 12;
 type Account = { id: string; name: string; email: string } | null;
 
 type Store = {
+  accountsAvailable: boolean;
   ready: boolean;
   account: Account;
   profile: TasteProfile;
@@ -86,8 +87,21 @@ function subscribeTrail(notify: () => void) {
 
 const emptyGuest: GuestState = { version: 1, profile: emptyProfile, collection: [] };
 
-export function AccordProvider({ children }: { children: ReactNode }) {
+const guestSession = { isPending: false, data: null };
+type SessionState = { isPending: boolean; data: { user: { id: string } } | null };
+
+export function AccordProvider({ children, accountsAvailable }: { children: ReactNode; accountsAvailable: boolean }) {
+  return accountsAvailable
+    ? <SignedInProvider>{children}</SignedInProvider>
+    : <StoreProvider session={guestSession} accountsAvailable={false}>{children}</StoreProvider>;
+}
+
+function SignedInProvider({ children }: { children: ReactNode }) {
   const session = authClient.useSession();
+  return <StoreProvider session={session} accountsAvailable>{children}</StoreProvider>;
+}
+
+function StoreProvider({ children, session, accountsAvailable }: { children: ReactNode; session: SessionState; accountsAvailable: boolean }) {
   const [ready, setReady] = useState(false);
   const [account, setAccount] = useState<Account>(null);
   const [profile, setProfile] = useState<TasteProfile>(emptyProfile);
@@ -99,13 +113,14 @@ export function AccordProvider({ children }: { children: ReactNode }) {
   const loadedFor = useRef<string | null | undefined>(undefined);
 
   const loadAccount = useCallback(async () => {
+    if (!accountsAvailable) return;
     const res = await fetch("/api/me", { cache: "no-store" });
     if (!res.ok) throw new Error("load failed");
     const data = (await res.json()) as { user: NonNullable<Account>; profile: TasteProfile; collection: CollectionEntry[] };
     setAccount(data.user);
     setProfile(data.profile);
     setCollection(data.collection);
-  }, []);
+  }, [accountsAvailable]);
 
   useEffect(() => {
     if (session.isPending || loadedFor.current === userId) return;
@@ -191,6 +206,7 @@ export function AccordProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<Store>(
     () => ({
+      accountsAvailable,
       ready,
       account,
       profile,
@@ -205,7 +221,7 @@ export function AccordProvider({ children }: { children: ReactNode }) {
       clearError: () => setError(null),
       refresh: loadAccount,
     }),
-    [ready, account, profile, collection, trail, error, saveEntry, removeEntry, saveProfile, visit, loadAccount],
+    [accountsAvailable, ready, account, profile, collection, trail, error, saveEntry, removeEntry, saveProfile, visit, loadAccount],
   );
 
   return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>;

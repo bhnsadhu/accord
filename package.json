@@ -17,7 +17,9 @@
     "catalog:research": "tsx scripts/import-research.ts",
     "catalog:requests": "tsx scripts/catalog-requests.ts",
     "catalog:images": "node scripts/restore-catalog-images.mjs",
-    "community:moderate": "tsx scripts/moderate-reviews.ts"
+    "community:moderate": "tsx scripts/moderate-reviews.ts",
+    "catalog:bundle": "tsx scripts/bundle-catalog.ts",
+    "test:e2e:guest": "playwright test --config playwright.guest.config.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.13",

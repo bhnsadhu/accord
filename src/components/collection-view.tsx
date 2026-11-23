@@ -18,7 +18,7 @@ const TABS: { id: Tab; label: string }[] = [
 ];
 
 export function CollectionView() {
-  const { ready, account, collection, saveEntry, removeEntry } = useAccord();
+  const { ready, account, collection, saveEntry, removeEntry, accountsAvailable } = useAccord();
   const [tab, setTab] = useState<Tab>("owned");
   const [rows, setRows] = useState<Map<string, FragranceSummary>>(new Map());
   const ids = collection.map((e) => e.productId).join(",");
@@ -100,10 +100,10 @@ export function CollectionView() {
         {!account && (
           <p className="mt-8 text-sm text-ink-3">
             Saved on this device only.{" "}
-            <Link href="/sign-up" className="text-ink-2 underline">
+            {accountsAvailable ? <><Link href="/sign-up" className="text-ink-2">
               Create an account
             </Link>{" "}
-            to sync.
+            to sync.</> : "Account sync is temporarily paused."}
           </p>
         )}
       </div>

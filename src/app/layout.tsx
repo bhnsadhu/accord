@@ -7,6 +7,7 @@ import { ScentLensLink } from "@/components/scentlens-link";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Toaster } from "@/components/toaster";
 import { AccordProvider } from "@/lib/store";
+import { accountsEnabled } from "@/lib/availability";
 import "./globals.css";
 
 const schibsted = Schibsted_Grotesk({ variable: "--font-schibsted", subsets: ["latin", "latin-ext"] });
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SmoothScroll />
-        <AccordProvider>
+        <AccordProvider accountsAvailable={accountsEnabled()}>
           <PaletteProvider>
             <Nav />
             <main id="main" className="flex flex-1 flex-col">

@@ -57,6 +57,7 @@ next-env.d.ts
 /.next-e2e/
 /.next-review/
 /.next-imagery/
+/.next-catalog/
 /backup-output/
 
 # local Python deployment bytecode

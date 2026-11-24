@@ -39,6 +39,7 @@
 | "Members who have this also have" appears only for pairs shared by at least two members, from owned and tried shelves rated 3 or higher (or unrated) | A real co-occurrence signal that never exposes one person's collection |
 | Production builds apply pending migrations before `next build` (`scripts/deploy-migrate.mjs`, production only) | The agent environment cannot read production secrets; the build already has them and already needs the schema to prerender. A failed migration fails the build, so the live site never runs ahead of its schema. |
 | Community caches tagged per fragrance, lifetime in days, refreshed by `updateTag` on every write and by `revalidateTag` on account deletion | Fragrance pages stay static and cheap on Vercel Hobby and Neon Free, yet show a member's own change immediately |
+| `robots.ts` blocks AI training and bulk crawlers by name and disallows `/discover?*` and `/compare?*` for everyone | In Nov 2026 GPTBot and Meta crawlers followed every Discover filter link, used about 96% of the team's Vercel Hobby CPU and paused all projects. Each distinct query string is an uncached server render, so the combinations are endless. Search engines can still crawl pages. |
 
 ## Retired community decisions
 

@@ -25,7 +25,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: BLOCKED_BOTS, disallow: "/" },
       // Everyone else (search engines): crawl pages, but not infinite filter/sort/page combos.
-      { userAgent: "*", allow: "/", disallow: ["/api/", "/discover?*", "/compare?*"] },
+      { userAgent: "*", allow: "/", disallow: ["/api/", "/discover?*", "/compare?*", "/brands?*", "/notes?*", "/reset-password"] },
     ],
   };
 }
